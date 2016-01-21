@@ -1,32 +1,32 @@
 ######################
-CodeIgniterへようこそ
+CodeIgniter へようこそ
 ######################
 
-CodeIgniter はPHPを使ってwebサイトを構築する人向けのアプリケーション開発
-フレームワーク - ツールキット - です。Its goal is to enable you to
-develop projects much faster than you could if you were writing code
-from scratch, by providing a rich set of libraries for commonly needed
-tasks, as well as a simple interface and logical structure to access
-these libraries. CodeIgniter lets you creatively focus on your project
-by minimizing the amount of code needed for a given task.
+CodeIgniter は PHP を使って Web サイトを構築する人向けのアプリケーション
+開発フレームワーク - ツールキット - です。一般的に必要とされるタスクを実行
+するための豊富なライブラリだけでなく、ライブラリにアクセスするための単純な
+インターフェースと論理構造を提供することで、 1からコードを書くのに比べて
+プロジェクトの開発速度を加速させることが目的です。 CodeIgniter を使えば、
+与えられたタスクにおいて必要とされるコードの量を最小限にすることができ、
+創造的にプロジェクトに集中することが可能になります。
 
-***********************
-CodeIgniterは誰のためのものですか？
-***********************
+****************************************
+CodeIgniter はどんな人に向いていますか?
+****************************************
 
-CodeIgniter はこんな人のためにあります:
+CodeIgniter は、こんな人にぴったりです:
 
--  You want a framework with a small footprint.
--  You need exceptional performance.
--  You need broad compatibility with standard hosting accounts that run
-   a variety of PHP versions and configurations.
--  You want a framework that requires nearly zero configuration.
--  You want a framework that does not require you to use the command
-   line.
--  You want a framework that does not require you to adhere to
-   restrictive coding rules.
--  You are not interested in large-scale monolithic libraries like PEAR.
--  You do not want to be forced to learn a templating language (although
-   a template parser is optionally available if you desire one).
--  You eschew complexity, favoring simple solutions.
--  You need clear, thorough documentation.
+-  省スペースのフレームワークが欲しい人。
+-  圧倒的なパフォーマンスを求める人。
+-  PHP のバージョンや環境設定の違う一般的なホスティング(レンタルサーバ)
+   で幅広く動作するものが欲しい人。
+-  ほとんど設定がいらないフレームワークを希望する人。
+-  コマンドラインを使う必要がないフレームワークを
+   好む人。
+-  決められたコーディングルールに厳格に従う必要がないフレームワークが
+   欲しい人。
+-  PEAR のような大規模な一枚岩のライブラリには興味がない人。
+-  テンプレート言語を習得しなければならないのが嫌な人(必要な場合だけに
+   オプションでテンプレートパーサが利用できるようなものは除く)。
+-  複雑なものを避け、シンプルな解決策を好む人。
+-  わかりやすく詳細なドキュメントが欲しい人。

@@ -2,20 +2,20 @@
 サーバ要件
 ###################
 
-`PHP <http://php.net/>`_ version 5.5 or newer is recommended.
+`PHP <http://php.net/>`_ バージョン 5.5 以上を推奨します。
 
-It should work on 5.2.4 as well, but we strongly advise you NOT to run
-such old versions of PHP, because of potential security and performance
-issues, as well as missing features.
+5.2.4 でも動作しますが、そのような古いバージョンを使わないことを強く
+アドバイスします。潜在的なセキュリティおよびパフォーマンス上の問題や
+機能不足があるためです。
 
-A database is required for most web application programming.
-Currently supported databases are:
+ほとんどの Web アプリケーションプログラミングにおいてデータベースが必要です。
+現在サポートされているデータベース:
 
-  - MySQL (5.1+) via the *mysql* (deprecated), *mysqli* and *pdo* drivers
-  - Oracle via the *oci8* and *pdo* drivers
-  - PostgreSQL via the *postgre* and *pdo* drivers
-  - MS SQL via the *mssql*, *sqlsrv* (version 2005 and above only) and *pdo* drivers
-  - SQLite via the *sqlite* (version 2), *sqlite3* (version 3) and *pdo* drivers
-  - CUBRID via the *cubrid* and *pdo* drivers
-  - Interbase/Firebird via the *ibase* and *pdo* drivers
-  - ODBC via the *odbc* and *pdo* drivers (you should know that ODBC is actually an abstraction layer)is actually an abstraction layer)
+  - MySQL (5.1+)、*mysql* (廃止予定)、 *mysqli* そして *pdo* ドライバを利用
+  - Oracle、 *oci8* と *pdo* ドライバを利用
+  - PostgreSQL、 *postgre* と *pdo* ドライバを利用
+  - MS SQL、 *mssql*、 *sqlsrv* (バージョン 2005 以上のみ) そして *pdo* ドライバを利用
+  - SQLite、 *sqlite* (バージョン 2)、 *sqlite3* (バージョン 3) そして *pdo* ドライバを利用
+  - CUBRID、 *cubrid* と *pdo* ドライバを利用
+  - Interbase/Firebird、 *ibase* と *pdo* ドライバを利用
+  - ODBC、 *odbc* と *pdo* ドライバを利用 (ODBC は実際には抽象化レイヤーです)

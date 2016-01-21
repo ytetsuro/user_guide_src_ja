@@ -1,6 +1,6 @@
-###############
-フォームバリデーション(検証)
-###############
+###########################
+フォームバリデーション (検証)
+###########################
 
 CodeIgniter provides a comprehensive form validation and data prepping
 class that helps minimize the amount of code you'll write.
@@ -969,6 +969,7 @@ use:
                                      返します。
 **less_than_equal_to**    Yes        指定した値よりも（数字的に）等しいもしくは大きいか、数字でない時にFALSEを                        	   less_than_equal_to[8]
                                      返します。
+**in_list**               Yes        Returns FALSE if the form element is not within a predetermined list.                         in_list[red,blue,green]
 **alpha**                 No         アルファベット以外の文字を含む場合、FALSEを返します。
 **alpha_numeric**         No         アルファベット・数字以外の文字を含む場合、FALSEを返します。
 **alpha_numeric_spaces**  No         Returns FALSE if the form element contains anything other than alpha-numeric characters
@@ -1021,9 +1022,9 @@ to use:
 
 .. _class-reference:
 
-***************
+*****************
 クラスリファレンス
-***************
+*****************
 
 .. php:class:: CI_Form_validation
 
@@ -1124,9 +1125,9 @@ to use:
 
 .. _helper-functions:
 
-****************
+*******************
 ヘルパーリファレンス
-****************
+*******************
 
 Please refer to the :doc:`Form Helper <../helpers/form_helper>` manual for
 the following functions:

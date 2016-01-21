@@ -1,0 +1,4 @@
+build/*
+cilexer/build/*
+cilexer/dist/*
+cilexer/pycilexer.egg-info/*

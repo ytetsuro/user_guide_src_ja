@@ -1,6 +1,6 @@
-#######
-Credits
-#######
+##############
+クレジット表示
+##############
 
 CodeIgniter was originally developed by `Rick Ellis <https://ellislab.com/>`_
 (CEO of `EllisLab, Inc. <https://ellislab.com/>`_). The framework was written for
