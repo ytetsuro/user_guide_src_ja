@@ -120,9 +120,3 @@ CodeIgniter への貢献
 	database/index
 	tutorial/index
 	general/credits
-
-***************************
-ユーザガイド翻訳について
-***************************
-
-- :doc:`translation_japanese`
