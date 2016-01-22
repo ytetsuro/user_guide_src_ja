@@ -15,7 +15,7 @@ supported character-set information.
   <div class="custom-index container"></div>
 
 **************************
-ユーザーエージェントクラスの使い方
+ユーザエージェントクラスの使い方
 **************************
 
 クラスの初期化
