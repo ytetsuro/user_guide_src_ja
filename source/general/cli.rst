@@ -1,5 +1,5 @@
 ###################
-CLIを使用して実行する
+CLI からの実行
 ###################
 
 As well as calling an applications :doc:`Controllers <./controllers>`
@@ -8,15 +8,15 @@ interface (CLI).
 
 .. contents:: Page Contents
 
-CLIとは何ですか？
-================
+CLI とは何ですか?
+==================
 
 The command-line interface is a text-based method of interacting with
 computers. For more information, check the `Wikipedia
 article <http://en.wikipedia.org/wiki/Command-line_interface>`_.
 
-なぜ、コマンドラインで実行するのでしょうか？
-=============================
+なぜ、コマンドラインから実行するのでしょうか?
+=============================================
 
 There are many reasons for running CodeIgniter from the command-line,
 but they are not always obvious.
@@ -29,8 +29,8 @@ but they are not always obvious.
 -  Integrate with other applications in other languages. For example, a
    random C++ script could call one command and run code in your models!
 
-Hello Worldを試してみましょう！
-==========================
+Hello World! を試してみましょう
+================================
 
 Let's create a simple controller so you can see it in action. Using your
 text editor, create a file called Tools.php, and put the following code
@@ -70,8 +70,8 @@ work. "John Smith" is passed as a argument and output is::
 
 	Hello John Smith!
 
-さいごに！
-==========
+これだけです!
+=============
 
 That, in a nutshell, is all there is to know about controllers on the
 command line. Remember that this is just a normal controller, so routing

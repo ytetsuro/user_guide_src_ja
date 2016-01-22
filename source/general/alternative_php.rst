@@ -1,5 +1,5 @@
 ###################################
-ビューファイルに対するPHP代替の構文
+ビューファイル向けの代替の PHP 構文
 ###################################
 
 If you do not utilize CodeIgniter's :doc:`template
@@ -10,8 +10,8 @@ alternative syntax for control structures and short tag echo statements.
 If you are not familiar with this syntax, it allows you to eliminate the
 braces from your code, and eliminate "echo" statements.
 
-自動ショートタグのサポート
-===========================
+自動でのショートタグサポート
+=============================
 
 .. note:: If you find that the syntax described in this page does not
 	work on your server it might be that "short tags" are disabled in your
@@ -24,8 +24,8 @@ encountered in your **view files**, the error message and line number
 will not be accurately shown. Instead, all errors will be shown as
 ``eval()`` errors.
 
-echoのかわりになるもの
-=================
+echo による出力の代替
+=====================
 
 Normally to echo, or print out a variable you would do this::
 
@@ -35,7 +35,7 @@ With the alternative syntax you can instead do it this way::
 
 	<?=$variable?>
 
-代替の制御構造
+制御構造の代替
 ==============================
 
 Controls structures, like if, for, foreach, and while can be written in

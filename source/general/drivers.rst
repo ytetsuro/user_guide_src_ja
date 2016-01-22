@@ -1,6 +1,6 @@
-#########################
-CodeIgniterのドライバを使う
-#########################
+#############################
+CodeIgniter のドライバの使用
+#############################
 
 Drivers are a special type of Library that has a parent class and any
 number of potential child classes. Child classes have access to the
@@ -33,7 +33,7 @@ through the parent class, without initializing them::
 	$this->some_parent->child_one->some_method();
 	$this->some_parent->child_two->another_method();
 
-独自のドライバを作成する
+独自のドライバの作成
 =========================
 
 Please read the section of the user guide that discusses how to :doc:`create
