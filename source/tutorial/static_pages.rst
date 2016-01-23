@@ -15,11 +15,11 @@
 	http://example.com/news/latest/10
 
 我々は "news" という名前のコントローラがあるのだと推測します。
-呼ばれるメソッドは "latest" となります。news メソッドの仕事は、
+呼ばれるメソッドは "latest" となります。その news のメソッドの仕事は、
 10 件のニュース記事を取ってきてページ上に描画することかもしれません。
-MVCでは非常に頻繁にこのような URL のパターンが見られます:
+MVC では非常に頻繁にこのような URL のパターンが見られます:
 
-	http://example.com/[controller-class]/[controller-method]/[arguments]
+	http://example.com/[コントローラクラス]/[コントローラメソッド]/[引数]
 
 URL スキームが複雑化するにつれてこのパターンは変化するかもしれません。
 しかし、一旦はこれを知っていれば十分です。
@@ -69,7 +69,7 @@ CodeIgniter の非常に専門的な議論において、これは *スーパー
 ヘッダにはメインのビューをロードする前に表示させたい単純な HTML コードが
 見出しと共に含まれています。ここで後々コントローラにて定義する ``$title``
 変数を出力させる事にもなります。では次は
-*application/views/templates/footer.php* にフッターを作成し、
+*application/views/templates/footer.php* にフッタを作成し、
 下記のコードを記述してください:
 
 ::
@@ -103,7 +103,7 @@ CodeIgniter の非常に専門的な議論において、これは *スーパー
 			show_404();
 		}
 
-		$data['title'] = ucfirst($page); // Capitalize the first letter
+		$data['title'] = ucfirst($page); // 頭文字を大文字に
 
 		$this->load->view('templates/header', $data);
 		$this->load->view('pages/'.$page, $data);
@@ -141,7 +141,7 @@ about ページが見えるはずです。
 
 独自のルーティング規則を使い、あなたはどんな URI でも好きなコントローラの好きな
 メソッドにマッピングする事ができ、下記の通常の規約から自由になることができます:
-``http://example.com/[controller-class]/[controller-method]/[arguments]``
+``http://example.com/[コントローラクラス]/[コントローラメソッド]/[引数]``
 
 実際にやってみましょう。*application/config/routes.php* に配置されている
 ルーティングファイルを開き、次の 2 行を追記してください。
