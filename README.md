@@ -12,6 +12,10 @@ Pull Request がマージされたら、[CREDITS.md](CREDITS.md) にご自分の
 
 * develop_japanese ブランチ (本家 develop ブランチに対応。現在 3.1.0-dev)
 
+翻訳状況は、以下の Google Docs で管理されています。
+
+- [3.1.0-dev 翻訳状況](https://docs.google.com/spreadsheets/d/1ZWD5XqwH-Uo9X7MR644jbL6O8p5LxIngLT8M547H8wc/edit?pref=2&pli=1#gid=0)
+
 また、過去のバージョンの翻訳途中のものが
 
 * <https://github.com/codeigniter-jp/ci-ja/tree/develop/user_guide_ja_src/source>
