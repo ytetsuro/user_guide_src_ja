@@ -775,58 +775,60 @@ CodeIgniter 3.0 で削除されました。</p>
 </div>
 <div class="section" id="step-16-drop-table">
 <h2>Step 16: データベースフォージの drop_table() メソッドの使い方を更新する<a class="headerlink" href="#step-16-drop-table" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>Up until now, <tt class="docutils literal"><span class="pre">drop_table()</span></tt> added an IF EXISTS clause by default or it didn&#8217;t work
-at all with some drivers. In CodeIgniter 3.0, the IF EXISTS condition is no longer added
-by default and has an optional second parameter that allows that instead and is set to
-FALSE by default.</p>
-<p>If your application relies on IF EXISTS, you&#8217;ll have to change its usage.</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="c1">// Now produces just DROP TABLE `table_name`</span>
+<p>今まで <tt class="docutils literal"><span class="pre">drop_table()</span></tt> は IF EXISTS 句をデフォルトで追加していましたが、
+いくつかのドライバでは全く動作しませんでした。
+CodeIgniter 3.0 では、IF EXISTS 条件はデフォルトでは追加されず、
+オプションの第 2 引数が追加され、デフォルトは FALSE です。</p>
+<p>もし、アプリケーションが IF EXISTS を使っているなら、使い方を変更する必要があります。</p>
+<div class="highlight-ci"><div class="highlight"><pre><span class="c1">// 今は DROP TABLE `table_name` だけを生成します</span>
 <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">dbforge</span><span class="o">-&gt;</span><span class="na">drop_table</span><span class="p">(</span><span class="s1">&#39;table_name&#39;</span><span class="p">);</span>
 
-<span class="c1">// Produces DROP TABLE IF EXISTS `table_name`</span>
+<span class="c1">// DROP TABLE IF EXISTS `table_name` を生成します</span>
 <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">dbforge</span><span class="o">-&gt;</span><span class="na">drop_table</span><span class="p">(</span><span class="s1">&#39;table_name&#39;</span><span class="p">,</span> <span class="k">TRUE</span><span class="p">);</span>
 </pre></div>
 </div>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
-<p class="last">The given example uses MySQL-specific syntax, but it should work across
-all drivers with the exception of ODBC.</p>
+<p class="last">この例では MySQL 固有の文法を使っていますが、ODBC 以外のすべての
+ドライバで機能します。</p>
 </div>
 </div>
 <div class="section" id="step-17-email">
-<h2>Step 17: Email ライブラリでの複数メールの使い方を変更する<a class="headerlink" href="#step-17-email" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>The <a class="reference internal" href="../libraries/email.html"><em>Email Library</em></a> will automatically clear the
-set parameters after successfully sending emails. To override this behaviour,
-pass FALSE as the first parameter in the <tt class="docutils literal"><span class="pre">send()</span></tt> method:</p>
+<h2>Step 17: Email ライブラリでの複数メールの扱いを変更する<a class="headerlink" href="#step-17-email" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p><a class="reference internal" href="../libraries/email.html"><em>Email ライブラリ</em></a> は、メール送信が成功した後に、
+自動的に設定されたパラメータをクリアします。
+この振る舞いを上書きしたい場合は、<tt class="docutils literal"><span class="pre">send()</span></tt> メソッドの第 1 引数に FALSE
+を渡します:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="k">if</span> <span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">email</span><span class="o">-&gt;</span><span class="na">send</span><span class="p">(</span><span class="k">FALSE</span><span class="p">))</span>
 <span class="p">{</span>
-        <span class="c1">// Parameters won&#39;t be cleared</span>
+        <span class="c1">// パラメータはクリアされません</span>
 <span class="p">}</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="step-18-form-validation">
 <h2>Step 18: Form_validation の言語ファイルを更新する<a class="headerlink" href="#step-18-form-validation" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>Two improvements have been made to the <a class="reference internal" href="../libraries/form_validation.html"><em>Form Validation Library</em></a>&#8216;s <a class="reference internal" href="../libraries/language.html"><em>language</em></a>
-files and error messages format:</p>
+<p><a class="reference internal" href="../libraries/form_validation.html"><em>Form Validation ライブラリ</em></a> の
+<a class="reference internal" href="../libraries/language.html"><em>言語</em></a> ファイルとエラーメッセージのフォーマットに
+2 つの改良が加えられました:</p>
 <blockquote>
 <div><ul>
-<li><p class="first"><a class="reference internal" href="../libraries/language.html"><em>Language Library</em></a> line keys now must be
-prefixed with <strong>form_validation_</strong> in order to avoid collisions:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="c1">// Old</span>
+<li><p class="first"><a class="reference internal" href="../libraries/language.html"><em>Language ライブラリ</em></a> の行のキーは、衝突を
+避けるために、接頭辞 <strong>form_validation_</strong> を付けなければなりません:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span class="c1">// 以前</span>
 <span class="nv">$lang</span><span class="p">[</span><span class="s1">&#39;rule&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="o">...</span>
 
-<span class="c1">// New</span>
+<span class="c1">// 今後</span>
 <span class="nv">$lang</span><span class="p">[</span><span class="s1">&#39;form_validation_rule&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="o">...</span>
 </pre></div>
 </div>
 </li>
-<li><p class="first">The error messages format has been changed to use named parameters, to
-allow more flexibility than what <cite>sprintf()</cite> offers:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="c1">// Old</span>
+<li><p class="first">エラーメッセージのフォーマットが名前付きパラメータを使うように変更されました。
+<cite>sprintf()</cite> よりも柔軟にするためです:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span class="c1">// 以前</span>
 <span class="s1">&#39;The %s field does not match the %s field.&#39;</span>
 
-<span class="c1">// New</span>
+<span class="c1">// 今後</span>
 <span class="s1">&#39;The {field} field does not match the {param} field.&#39;</span>
 </pre></div>
 </div>
@@ -835,27 +837,26 @@ allow more flexibility than what <cite>sprintf()</cite> offers:</p>
 </div></blockquote>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
-<p class="last">The old formatting still works, but the non-prefixed line keys
-are DEPRECATED and scheduled for removal in CodeIgniter 3.1+.
-Therefore you&#8217;re encouraged to update its usage sooner rather than
-later.</p>
+<p class="last">古いフォーマットもまだ動作しますが、接頭辞のない行のキーは廃止予定
+であり、CodeIgniter 3.1+ で削除される予定です。
+よって、早めに更新することが推奨されます。</p>
 </div>
 </div>
 <div class="section" id="step-19-base-url">
 <h2>Step 19: &#8216;base_url&#8217; の設定値が空でないことを確認する<a class="headerlink" href="#step-19-base-url" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>When <tt class="docutils literal"><span class="pre">$config['base_url']</span></tt> is not set, CodeIgniter tries to automatically
-detect what your website&#8217;s base URL is. This is done purely for convenience
-when you are starting development of a new application.</p>
-<p>Auto-detection is never reliable and also has security implications, which
-is why you should <strong>always</strong> have it manually configured!</p>
-<p>One of the changes in CodeIgniter 3.0.3 is how this auto-detection works,
-and more specifically it now falls back to the server&#8217;s IP address instead
-of the hostname requested by the client. Therefore, if you&#8217;ve ever relied
-on auto-detection, it will change how your website works now.</p>
-<p>In case you need to allow e.g. multiple domains, or both <a class="reference external" href="http://">http://</a> and
-<a class="reference external" href="https://">https://</a> prefixes to be dynamically used depending on the request,
-remember that <em>application/config/config.php</em> is still a PHP script, in
-which you can create this logic with a few lines of code. For example:</p>
+<p><tt class="docutils literal"><span class="pre">$config['base_url']</span></tt> が設定されていないとき、CodeIgniter は Web サイトの
+ベース URL を自動的に検知しようとします。これは、純粋に新しいアプリケーションの
+開発を開始する際、便利なようになされているものです。</p>
+<p>自動検知は決して信頼できるものではなく、セキュリティと関連します。
+だから、<strong>いつでも</strong> 手動で設定すべきものです。</p>
+<p>CodeIgniter 3.0.3 での変更点の 1 つは、自動検知がどう機能するかです。
+より具体的に言えば、クライアントによりリクエストされたホスト名ではなく、
+サーバの IP アドレスにフォールバックするようになりました。ゆえに、
+もしあなたが自動検知に頼っている場合、Web サイトの振る舞いが変更されるでしょう。</p>
+<p>例えば、複数のドメインを使っていたり、<a class="reference external" href="http://">http://</a> と <a class="reference external" href="https://">https://</a> の両方のプリフィックス
+をリクエストに応じて動的に使っている場合、
+<em>application/config/config.php</em> は PHP スクリプトであることを思い出してください。
+例えば、次のような数行のコードでロジックを記述できます:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$allowed_domains</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span><span class="s1">&#39;domain1.tld&#39;</span><span class="p">,</span> <span class="s1">&#39;domain2.tld&#39;</span><span class="p">);</span>
 <span class="nv">$default_domain</span>  <span class="o">=</span> <span class="s1">&#39;domain1.tld&#39;</span><span class="p">;</span>
 
@@ -881,90 +882,90 @@ which you can create this logic with a few lines of code. For example:</p>
 </div>
 <div class="section" id="step-20">
 <h2>Step 20: (以前から) 廃止予定の機能を削除する<a class="headerlink" href="#step-20" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>In addition to the <tt class="docutils literal"><span class="pre">$autoload['core']</span></tt> configuration setting, there&#8217;s a
-number of other functionalities that have been removed in CodeIgniter 3.0.0:</p>
-<div class="section" id="the-sha1-library">
-<h3>The SHA1 library<a class="headerlink" href="#the-sha1-library" title="このヘッドラインへのパーマリンク">¶</a></h3>
-<p>The previously deprecated SHA1 library has been removed, alter your code to use PHP&#8217;s native
-<tt class="docutils literal"><span class="pre">sha1()</span></tt> function to generate a SHA1 hash.</p>
-<p>Additionally, the <tt class="docutils literal"><span class="pre">sha1()</span></tt> method in the <a class="reference internal" href="../libraries/encrypt.html"><em>Encrypt Library</em></a> has been removed.</p>
+<p><tt class="docutils literal"><span class="pre">$autoload['core']</span></tt> の設定以外にも、CodeIgniter 3.0.0 で削除された機能は
+たくさんあります。</p>
+<div class="section" id="sha1">
+<h3>SHA1 ライブラリ<a class="headerlink" href="#sha1" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>以前から廃止予定だった SHA1 ライブラリが削除されました。
+SHA1 ハッシュを生成するには、PHP のネイティブの <tt class="docutils literal"><span class="pre">sha1()</span></tt> 関数を使うようにコードを変更してください。</p>
+<p>加えて、<a class="reference internal" href="../libraries/encrypt.html"><em>Encrypt ライブラリ</em></a> の <tt class="docutils literal"><span class="pre">sha1()</span></tt> メソッド も削除されました。</p>
 </div>
-<div class="section" id="the-ext-constant">
-<h3>The EXT constant<a class="headerlink" href="#the-ext-constant" title="このヘッドラインへのパーマリンク">¶</a></h3>
-<p>Usage of the <tt class="docutils literal"><span class="pre">EXT</span></tt> constant has been deprecated since dropping support for PHP 4. There&#8217;s no
-longer a need to maintain different filename extensions and in this new CodeIgniter version,
-the <tt class="docutils literal"><span class="pre">EXT</span></tt> constant has been removed. Use just &#8216;.php&#8217; instead.</p>
+<div class="section" id="ext">
+<h3>EXT 定数<a class="headerlink" href="#ext" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>PHP 4 のサポートをドロップして以来、<tt class="docutils literal"><span class="pre">EXT</span></tt> 定数の使用は推奨されていません。この
+新しい CodeIgniter のバージョンで、もはや異なるファイル名の拡張子を保持する必要は
+ありません。<tt class="docutils literal"><span class="pre">EXT</span></tt> 定数は削除されました。代わりに、単に &#8216;.php&#8217; を使って下さい。</p>
 </div>
-<div class="section" id="smiley-helper">
-<h3>Smiley helper<a class="headerlink" href="#smiley-helper" title="このヘッドラインへのパーマリンク">¶</a></h3>
-<p>The <a class="reference internal" href="../helpers/smiley_helper.html"><em>Smiley Helper</em></a> is a legacy feature from EllisLab&#8217;s
-ExpressionEngine product. However, it is too specific for a general purpose framework like
-CodeIgniter and as such it is now deprecated.</p>
-<p>Also, the previously deprecated <tt class="docutils literal"><span class="pre">js_insert_smiley()</span></tt> (since version 1.7.2) is now removed.</p>
+<div class="section" id="smiley">
+<h3>Smiley ヘルパー<a class="headerlink" href="#smiley" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p><a class="reference internal" href="../helpers/smiley_helper.html"><em>Smiley ヘルパー</em></a> は EllisLab の製品
+ExpressEngine 由来のレガシーな機能です。CodeIgniter のような一般的な用途の
+フレームワークにとっては、具体的すぎるため、廃止予定となりました。</p>
+<p>また、以前から廃止予定の <tt class="docutils literal"><span class="pre">js_insert_smiley()</span></tt> (バージョン 1.7.2 から) は削除されました。</p>
 </div>
-<div class="section" id="the-encrypt-library">
-<h3>The Encrypt library<a class="headerlink" href="#the-encrypt-library" title="このヘッドラインへのパーマリンク">¶</a></h3>
-<p>Following numerous vulnerability reports, the <a class="reference internal" href="../libraries/encrypt.html"><em>Encrypt Library</em></a> has
-been deprecated and a new, <a class="reference internal" href="../libraries/encryption.html"><em>Encryption Library</em></a> is added to take
-its place.</p>
-<p>The new library requires either the <a class="reference external" href="http://php.net/mcrypt">MCrypt extension</a> (and /dev/urandom
-availability) or PHP 5.3.3 and the <a class="reference external" href="http://php.net/openssl">OpenSSL extension</a>.
-While this might be rather inconvenient, it is a requirement that allows us to have properly
-implemented cryptographic functions.</p>
+<div class="section" id="encrypt">
+<h3>Encrypt ライブラリ<a class="headerlink" href="#encrypt" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>多数の脆弱性報告に従い、 <a class="reference internal" href="../libraries/encrypt.html"><em>Encrypt ライブラリ</em></a> は
+廃止予定となり、新たな <a class="reference internal" href="../libraries/encryption.html"><em>Encryption ライブラリ</em></a>
+が代わりに追加されました。</p>
+<p>新しいライブラリは <a class="reference external" href="http://php.net/mcrypt">MCrypt 機能拡張</a>
+(そして /dev/urandom が利用可能なこと) または PHP 5.3.3 と
+<a class="reference external" href="http://php.net/openssl">OpenSSL 機能拡張</a> を必要とします。
+これは少々不便ですが、暗号の機能を適切に実装するための必要条件です。</p>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
-<p class="last">The <a class="reference internal" href="../libraries/encrypt.html"><em>Encrypt Library</em></a> is still available for the purpose
-of keeping backwards compatibility.</p>
+<p class="last"><a class="reference internal" href="../libraries/encrypt.html"><em>Encrypt ライブラリ</em></a> はまだ後方互換の
+ために使用可能です。</p>
 </div>
 <div class="admonition important">
 <p class="first admonition-title">重要</p>
-<p class="last">You are strongly encouraged to switch to the new <a class="reference internal" href="../libraries/encryption.html"><em>Encryption Library</em></a> as soon as possible!</p>
+<p class="last">できるだけ早く新しい <a class="reference internal" href="../libraries/encryption.html"><em>Encryption ライブラリ</em></a> に移行することが強く推奨されます!</p>
 </div>
 </div>
-<div class="section" id="the-cart-library">
-<h3>The Cart library<a class="headerlink" href="#the-cart-library" title="このヘッドラインへのパーマリンク">¶</a></h3>
-<p>The <a class="reference internal" href="../libraries/cart.html"><em>Cart Library</em></a>, similarly to the <a class="reference internal" href="../helpers/smiley_helper.html"><em>Smiley Helper</em></a> is too specific for CodeIgniter. It is now deprecated
-and scheduled for removal in CodeIgniter 3.1+.</p>
+<div class="section" id="cart">
+<h3>Cart ライブラリ<a class="headerlink" href="#cart" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p><a class="reference internal" href="../libraries/cart.html"><em>Cart ライブラリ</em></a> は <a class="reference internal" href="../helpers/smiley_helper.html"><em>Smiley ヘルパー</em></a> と同じように、CodeIgniter にとっては具体的
+過ぎます。現在、廃止予定であり、CodeIgniter 3.1+ で削除される予定です。</p>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
-<p class="last">The library is still available, but you&#8217;re strongly encouraged to remove its usage sooner
-rather than later.</p>
+<p class="last">このライブラリはまだ使用可能ですが、早急に使用を止めることを強く
+推奨します。</p>
 </div>
 </div>
-<div class="section" id="database-drivers-mysql-sqlite-mssql-pdo-dblib">
-<h3>Database drivers &#8216;mysql&#8217;, &#8216;sqlite&#8217;, &#8216;mssql&#8217;, &#8216;pdo/dblib&#8217;<a class="headerlink" href="#database-drivers-mysql-sqlite-mssql-pdo-dblib" title="このヘッドラインへのパーマリンク">¶</a></h3>
-<p>The <strong>mysql</strong> driver utilizes the old &#8216;mysql&#8217; PHP extension, known for its aging code base and
-many low-level problems. The extension is deprecated as of PHP 5.5 and CodeIgniter deprecates
-it in version 3.0, switching the default configured MySQL driver to <strong>mysqli</strong>.</p>
-<p>Please use either the &#8216;mysqli&#8217; or &#8216;pdo/mysql&#8217; drivers for MySQL. The old &#8216;mysql&#8217; driver will be
-removed at some point in the future.</p>
-<p>The <strong>sqlite</strong>, <strong>mssql</strong> and <strong>pdo/dblib</strong> (also known as pdo/mssql or pdo/sybase) drivers
-all depend on PHP extensions that for different reasons no longer exist since PHP 5.3.</p>
-<p>Therefore we are now deprecating these drivers as we will have to remove them in one of the next
-CodeIgniter versions. You should use the more advanced, <strong>sqlite3</strong>, <strong>sqlsrv</strong> or <strong>pdo/sqlsrv</strong>
-drivers respectively.</p>
+<div class="section" id="mysql-sqlite-mssql-pdo-dblib">
+<h3>データベースドライバ &#8216;mysql&#8217;、&#8217;sqlite&#8217;、&#8217;mssql&#8217;、&#8217;pdo/dblib&#8217;<a class="headerlink" href="#mysql-sqlite-mssql-pdo-dblib" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p><strong>mysql</strong> ドライバは、古いコードベースと多くの低レベルでの問題で知られる、古い &#8216;mysql&#8217; PHP 機能拡張を利用します。
+この機能拡張は PHP 5.5 で廃止予定となり、CodeIgniter ではバージョン 3.0 で
+廃止予定となり、デフォルトの MySQL ドライバ設定は <strong>mysqli</strong> に変更されました。</p>
+<p>&#8216;mysqli&#8217; または &#8216;pdo/mysql&#8217; ドライバのいずれかを使用してください。古い
+&#8216;mysql&#8217; ドライバは将来削除されます。</p>
+<p><strong>sqlite</strong>、<strong>mssql</strong> そして <strong>pdo/dblib</strong> (pdo/mssql または pdo/sybase としても知られる) ドライバはすべて、さまざまな理由から PHP 5.3 には存在しない PHP 機能拡張に依存しています。</p>
+<p>それゆえ、それらのドライバも廃止予定であり、CodeIgniter の次のバージョンで
+削除されます。
+より進歩した <strong>sqlite3</strong>、<strong>sqlsrv</strong> または <strong>pdo/sqlsrv</strong> ドライバを
+使うべきです。</p>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
-<p class="last">These drivers are still available, but you&#8217;re strongly encouraged to switch to other ones
-sooner rather than later.</p>
+<p class="last">これらのドライバはまだ使用可能ですが、早急に他のドライバに
+変更することを強く推奨します。</p>
 </div>
 </div>
-<div class="section" id="security-helper-do-hash">
-<h3>Security helper do_hash()<a class="headerlink" href="#security-helper-do-hash" title="このヘッドラインへのパーマリンク">¶</a></h3>
-<p><a class="reference internal" href="../helpers/security_helper.html"><em>Security Helper</em></a> function <tt class="docutils literal"><span class="pre">do_hash()</span></tt> is now just an alias for
-PHP&#8217;s native <tt class="docutils literal"><span class="pre">hash()</span></tt> function. It is deprecated and scheduled for removal in CodeIgniter 3.1+.</p>
+<div class="section" id="security-do-hash">
+<h3>Security ヘルパーの do_hash()<a class="headerlink" href="#security-do-hash" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p><a class="reference internal" href="../helpers/security_helper.html"><em>Security ヘルパー</em></a> の関数 <tt class="docutils literal"><span class="pre">do_hash()</span></tt> は
+現在 PHP のネイティブ <tt class="docutils literal"><span class="pre">hash()</span></tt> 関数の単なるエイリアスです。
+廃止予定であり、CodeIgniter 3.1+ で削除される予定です。</p>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
-<p class="last">This function is still available, but you&#8217;re strongly encouraged to remove its usage sooner
-rather than later.</p>
+<p class="last">このライブラリはまだ使用可能ですが、早急に使用を止めることを強く
+推奨します。</p>
 </div>
 </div>
-<div class="section" id="the-config-global-xss-filtering-setting">
-<h3>The $config[&#8216;global_xss_filtering&#8217;] setting<a class="headerlink" href="#the-config-global-xss-filtering-setting" title="このヘッドラインへのパーマリンク">¶</a></h3>
-<p>As already explained above, XSS filtering should not be done on input data,
-but on output instead. Therefore, the <tt class="docutils literal"><span class="pre">$config['global_xss_filtering']</span></tt>,
-which automatically filters <em>input</em> data, is considered a bad practice and
-is now deprecated.</p>
+<div class="section" id="config-global-xss-filtering">
+<h3>$config[&#8216;global_xss_filtering&#8217;] 設定<a class="headerlink" href="#config-global-xss-filtering" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>上記ですでに説明したように、XSS フィルタリングは入力データに対しするものではなく、
+出力にすべきものです。ゆえに、自動的に <em>入力</em> データをフィルタする
+<tt class="docutils literal"><span class="pre">$config['global_xss_filtering']</span></tt> は悪い実践だと考えられ、廃止予定とされました。</p>
 <p>Instead, you should manually escape any user-provided data via the
 <a class="reference internal" href="../helpers/security_helper.html#xss_clean" title="xss_clean"><tt class="xref php php-func docutils literal"><span class="pre">xss_clean()</span></tt></a> function when you need to output it, or use a
 library like <a class="reference external" href="http://htmlpurifier.org/">HTML Purifier</a> that does that
@@ -975,8 +976,8 @@ for you.</p>
 remove its usage sooner rather than later.</p>
 </div>
 </div>
-<div class="section" id="file-helper-read-file">
-<h3>File helper read_file()<a class="headerlink" href="#file-helper-read-file" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<div class="section" id="file-read-file">
+<h3>File ヘルパーの read_file()<a class="headerlink" href="#file-read-file" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p><a class="reference internal" href="../helpers/file_helper.html"><em>File Helper</em></a> function <tt class="docutils literal"><span class="pre">read_file()</span></tt> is now just an alias for
 PHP&#8217;s native <tt class="docutils literal"><span class="pre">file_get_contents()</span></tt> function. It is deprecated and scheduled for removal in
 CodeIgniter 3.1+.</p>
@@ -986,8 +987,8 @@ CodeIgniter 3.1+.</p>
 rather than later.</p>
 </div>
 </div>
-<div class="section" id="string-helper-repeater">
-<h3>String helper repeater()<a class="headerlink" href="#string-helper-repeater" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<div class="section" id="string-repeater">
+<h3>String ヘルパーの repeater()<a class="headerlink" href="#string-repeater" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p><a class="reference internal" href="../helpers/string_helper.html"><em>String Helper</em></a> function <a class="reference internal" href="../helpers/string_helper.html#repeater" title="repeater"><tt class="xref php php-func docutils literal"><span class="pre">repeater()</span></tt></a> is now just an alias for
 PHP&#8217;s native <tt class="docutils literal"><span class="pre">str_repeat()</span></tt> function. It is deprecated and scheduled for removal in CodeIgniter 3.1+.</p>
 <div class="admonition note">
@@ -996,8 +997,8 @@ PHP&#8217;s native <tt class="docutils literal"><span class="pre">str_repeat()</
 rather than later.</p>
 </div>
 </div>
-<div class="section" id="string-helper-trim-slashes">
-<h3>String helper trim_slashes()<a class="headerlink" href="#string-helper-trim-slashes" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<div class="section" id="string-trim-slashes">
+<h3>String ヘルパーの trim_slashes()<a class="headerlink" href="#string-trim-slashes" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p><a class="reference internal" href="../helpers/string_helper.html"><em>String Helper</em></a> function <a class="reference internal" href="../helpers/string_helper.html#trim_slashes" title="trim_slashes"><tt class="xref php php-func docutils literal"><span class="pre">trim_slashes()</span></tt></a> is now just an alias
 for PHP&#8217;s native <tt class="docutils literal"><span class="pre">trim()</span></tt> function (with a slash passed as its second argument). It is deprecated and
 scheduled for removal in CodeIgniter 3.1+.</p>
@@ -1007,8 +1008,8 @@ scheduled for removal in CodeIgniter 3.1+.</p>
 rather than later.</p>
 </div>
 </div>
-<div class="section" id="form-helper-form-prep">
-<h3>Form helper form_prep()<a class="headerlink" href="#form-helper-form-prep" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<div class="section" id="form-form-prep">
+<h3>Form ヘルパーの form_prep()<a class="headerlink" href="#form-form-prep" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p><a class="reference internal" href="../helpers/form_helper.html"><em>Form Helper</em></a> function <a class="reference internal" href="../helpers/form_helper.html#form_prep" title="form_prep"><tt class="xref php php-func docutils literal"><span class="pre">form_prep()</span></tt></a>
 is now just an alias for <a class="reference internal" href="../general/common_functions.html"><em>common function</em></a>
 <tt class="xref py py-func docutils literal"><span class="pre">html_escape()</span></tt>. It is deprecated and will be removed in the future.</p>
@@ -1019,8 +1020,8 @@ is now just an alias for <a class="reference internal" href="../general/common_f
 to remove its usage sooner rather than later.</p>
 </div>
 </div>
-<div class="section" id="email-helper-functions">
-<h3>Email helper functions<a class="headerlink" href="#email-helper-functions" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<div class="section" id="email">
+<h3>Email ヘルパーの関数<a class="headerlink" href="#email" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p><a class="reference internal" href="../helpers/email_helper.html"><em>Email Helper</em></a> only has two functions</p>
 <blockquote>
 <div><ul class="simple">
@@ -1037,8 +1038,8 @@ is scheduled for removal in CodeIgniter 3.1+.</p>
 sooner rather than later.</p>
 </div>
 </div>
-<div class="section" id="date-helper-standard-date">
-<h3>Date helper standard_date()<a class="headerlink" href="#date-helper-standard-date" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<div class="section" id="date-standard-date">
+<h3>Date ヘルパーの standard_date()<a class="headerlink" href="#date-standard-date" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p><a class="reference internal" href="../helpers/date_helper.html"><em>Date Helper</em></a> function <tt class="docutils literal"><span class="pre">standard_date()</span></tt> is being deprecated due
 to the availability of native PHP <a class="reference external" href="http://php.net/manual/en/class.datetime.php#datetime.constants.types">constants</a>,
 which when combined with <tt class="docutils literal"><span class="pre">date()</span></tt> provide the same functionality. Furthermore, they have the
@@ -1063,8 +1064,8 @@ its usage:</p>
 rather than later as it is scheduled for removal in CodeIgniter 3.1+.</p>
 </div>
 </div>
-<div class="section" id="html-helpers-nbs-br">
-<h3>HTML helpers nbs(), br()<a class="headerlink" href="#html-helpers-nbs-br" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<div class="section" id="html-nbs-br">
+<h3>HTML ヘルパーの nbs()、br()<a class="headerlink" href="#html-nbs-br" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p><a class="reference internal" href="../helpers/html_helper.html"><em>HTML Helper</em></a> functions <tt class="docutils literal"><span class="pre">nbs()</span></tt> and <tt class="docutils literal"><span class="pre">br()</span></tt> are just aliases
 for the native <tt class="docutils literal"><span class="pre">str_repeat()</span></tt> function used with <tt class="docutils literal"><span class="pre">&amp;nbsp;</span></tt> and <tt class="docutils literal"><span class="pre">&lt;br</span> <span class="pre">&gt;</span></tt> respectively.</p>
 <p>Because there&#8217;s no point in just aliasing native PHP functions, they are now deprecated and
@@ -1075,8 +1076,8 @@ scheduled for removal in CodeIgniter 3.1+.</p>
 sooner rather than later.</p>
 </div>
 </div>
-<div class="section" id="pagination-library-anchor-class-setting">
-<h3>Pagination library &#8216;anchor_class&#8217; setting<a class="headerlink" href="#pagination-library-anchor-class-setting" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<div class="section" id="pagination-anchor-class">
+<h3>Pagination ライブラリの &#8216;anchor_class&#8217; 設定<a class="headerlink" href="#pagination-anchor-class" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p>The <a class="reference internal" href="../libraries/pagination.html"><em>Pagination Library</em></a> now supports adding pretty much any HTML
 attribute to your anchors via the &#8216;attributes&#8217; configuration setting. This includes passing the
 &#8216;class&#8217; attribute and using the separate &#8216;anchor_class&#8217; setting no longer makes sense.
@@ -1088,8 +1089,8 @@ CodeIgniter 3.1+.</p>
 rather than later.</p>
 </div>
 </div>
-<div class="section" id="string-helper-random-string-types-unique-and-encrypt">
-<h3>String helper random_string() types &#8216;unique&#8217; and &#8216;encrypt&#8217;<a class="headerlink" href="#string-helper-random-string-types-unique-and-encrypt" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<div class="section" id="string-random-string-unique-encrypt">
+<h3>String ヘルパーの random_string() のタイプ &#8216;unique&#8217; と &#8216;encrypt&#8217;<a class="headerlink" href="#string-random-string-unique-encrypt" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p>When using the <a class="reference internal" href="../helpers/string_helper.html"><em>String Helper</em></a> function <a class="reference internal" href="../helpers/string_helper.html#random_string" title="random_string"><tt class="xref php php-func docutils literal"><span class="pre">random_string()</span></tt></a>,
 you should no longer pass the <strong>unique</strong> and <strong>encrypt</strong> randomization types. They are only
 aliases for <strong>md5</strong> and <strong>sha1</strong> respectively and are now deprecated and scheduled for removal
@@ -1100,8 +1101,8 @@ in CodeIgniter 3.1+.</p>
 sooner rather than later.</p>
 </div>
 </div>
-<div class="section" id="url-helper-url-title-separators-dash-and-underscore">
-<h3>URL helper url_title() separators &#8216;dash&#8217; and &#8216;underscore&#8217;<a class="headerlink" href="#url-helper-url-title-separators-dash-and-underscore" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<div class="section" id="url-url-title-dash-and-underscore">
+<h3>URL ヘルパーの url_title() のセパレータ &#8216;dash&#8217; and &#8216;underscore&#8217;<a class="headerlink" href="#url-url-title-dash-and-underscore" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p>When using the <a class="reference internal" href="../helpers/url_helper.html"><em>URL Helper</em></a> function <a class="reference internal" href="../helpers/url_helper.html#url_title" title="url_title"><tt class="xref php php-func docutils literal"><span class="pre">url_title()</span></tt></a>, you
 should no longer pass <strong>dash</strong> or <strong>underscore</strong> as the word separator. This function will
 now accept any character and you should just pass the chosen character directly, so you
@@ -1114,8 +1115,8 @@ in CodeIgniter 3.1+.</p>
 sooner rather than later.</p>
 </div>
 </div>
-<div class="section" id="session-library-method-all-userdata">
-<h3>Session Library method all_userdata()<a class="headerlink" href="#session-library-method-all-userdata" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<div class="section" id="session-all-userdata">
+<h3>Session ライブラリの all_userdata() メソッド<a class="headerlink" href="#session-all-userdata" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p>As seen in the <a class="reference internal" href="../changelog.html"><em>Change Log</em></a>, <a class="reference internal" href="../libraries/sessions.html"><em>Session Library</em></a>
 method <tt class="docutils literal"><span class="pre">userdata()</span></tt> now allows you to fetch all userdata by simply omitting its parameter:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">session</span><span class="o">-&gt;</span><span class="na">userdata</span><span class="p">();</span>
@@ -1130,8 +1131,8 @@ in CodeIgniter 3.1+.</p>
 sooner rather than later.</p>
 </div>
 </div>
-<div class="section" id="database-forge-method-add-column-with-an-after-clause">
-<h3>Database Forge method add_column() with an AFTER clause<a class="headerlink" href="#database-forge-method-add-column-with-an-after-clause" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<div class="section" id="database-forge-after-add-column">
+<h3>Database Forge の AFTER 句を伴う add_column() メソッド<a class="headerlink" href="#database-forge-after-add-column" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p>If you have used the <strong>third parameter</strong> for <a class="reference internal" href="../database/forge.html"><em>Database Forge</em></a> method
 <tt class="docutils literal"><span class="pre">add_column()</span></tt> to add a field for an AFTER clause, then you should change its usage.</p>
 <p>That third parameter has been deprecated and scheduled for removal in CodeIgniter 3.1+.</p>
@@ -1162,14 +1163,14 @@ sooner rather than later.</p>
 clause and will silently ignore it.</p>
 </div>
 </div>
-<div class="section" id="uri-routing-methods-fetch-directory-fetch-class-fetch-method">
-<h3>URI Routing methods fetch_directory(), fetch_class(), fetch_method()<a class="headerlink" href="#uri-routing-methods-fetch-directory-fetch-class-fetch-method" title="このヘッドラインへのパーマリンク">¶</a></h3>
-<p>With properties <tt class="docutils literal"><span class="pre">CI_Router::$directory</span></tt>, <tt class="docutils literal"><span class="pre">CI_Router::$class</span></tt> and <tt class="docutils literal"><span class="pre">CI_Router::$method</span></tt>
-being public and their respective <tt class="docutils literal"><span class="pre">fetch_*()</span></tt> no longer doing anything else to just return
-the properties - it doesn&#8217;t make sense to keep them.</p>
-<p>Those are all internal, undocumented methods, but we&#8217;ve opted to deprecate them for now
-in order to maintain backwards-compatibility just in case. If some of you have utilized them,
-then you can now just access the properties instead:</p>
+<div class="section" id="uri-fetch-directory-fetch-class-fetch-method">
+<h3>URI ルーティングのメソッド fetch_directory()、fetch_class()、fetch_method()<a class="headerlink" href="#uri-fetch-directory-fetch-class-fetch-method" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>プロパティ <tt class="docutils literal"><span class="pre">CI_Router::$directory</span></tt>、<tt class="docutils literal"><span class="pre">CI_Router::$class</span></tt> そして <tt class="docutils literal"><span class="pre">CI_Router::$method</span></tt>
+は public であり、対応する <tt class="docutils literal"><span class="pre">fetch_*()</span></tt> はそれらのプロパティを返すだけです。
+なので、これらのメソッドを持つ意味はありません。</p>
+<p>それらはすべて内部的な文書化されていないメソッドですが、もしものため、
+後方互換性を維持するため、それらを廃止予定とします。
+もし、それらのメソッドを使っている人は、代わりにプロパティにアクセスしてください:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">router</span><span class="o">-&gt;</span><span class="na">directory</span><span class="p">;</span>
 <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">router</span><span class="o">-&gt;</span><span class="na">class</span><span class="p">;</span>
 <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">router</span><span class="o">-&gt;</span><span class="na">method</span><span class="p">;</span>
@@ -1177,12 +1178,12 @@ then you can now just access the properties instead:</p>
 </div>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
-<p class="last">Those methods are still available, but you&#8217;re strongly encouraged to remove their usage
-sooner rather than later.</p>
+<p class="last">これらのメソッドはまだ利用可能ですが、早急に使用を止めることを強く
+推奨します。</p>
 </div>
 </div>
-<div class="section" id="input-library-method-is-cli-request">
-<h3>Input library method is_cli_request()<a class="headerlink" href="#input-library-method-is-cli-request" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<div class="section" id="input-is-cli-request">
+<h3>Input ライブラリの is_cli_request() メソッド<a class="headerlink" href="#input-is-cli-request" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p>Calls to the <tt class="docutils literal"><span class="pre">CI_Input::is_cli_request()</span></tt> method are necessary at many places
 in the CodeIgniter internals and this is often before the <a class="reference internal" href="../libraries/input.html"><em>Input Library</em></a> is loaded. Because of that, it is being replaced by a common
 function named <a class="reference internal" href="../general/common_functions.html#is_cli" title="is_cli"><tt class="xref php php-func docutils literal"><span class="pre">is_cli()</span></tt></a> and this method is now just an alias.</p>
@@ -1202,8 +1203,8 @@ CodeIgniter 3.1+.</p>
 sooner rather than later.</p>
 </div>
 </div>
-<div class="section" id="config-library-method-system-url">
-<h3>Config library method system_url()<a class="headerlink" href="#config-library-method-system-url" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<div class="section" id="config-system-url">
+<h3>Config ライブラリの system_url() メソッド<a class="headerlink" href="#config-system-url" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p>Usage of <tt class="docutils literal"><span class="pre">CI_Config::system_url()</span></tt> encourages insecure coding practices.
 Namely, your CodeIgniter <em>system/</em> directory shouldn&#8217;t be publicly accessible
 from a security point of view.</p>
@@ -1214,15 +1215,15 @@ CodeIgniter 3.1+.</p>
 <p class="last">This method is still available, but you&#8217;re strongly encouraged to remove its usage
 sooner rather than later.</p>
 </div>
-<div class="section" id="the-javascript-library">
-<h4>The Javascript library<a class="headerlink" href="#the-javascript-library" title="このヘッドラインへのパーマリンク">¶</a></h4>
-<p>The <a class="reference internal" href="../libraries/javascript.html"><em>Javascript Library</em></a> has always had an
-&#8216;experimental&#8217; status and was never really useful, nor a proper solution.</p>
-<p>It is now deprecated and scheduled for removal in CodeIgniter 3.1+.</p>
+<div class="section" id="the-javascript">
+<h4>The Javascript ライブラリ<a class="headerlink" href="#the-javascript" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<p><a class="reference internal" href="../libraries/javascript.html"><em>Javascript ライブラリ</em></a> は今までずっと &#8216;実験&#8217;
+状態であり、そんなに役に立たず、また、適切な解決策でもありませんでした。</p>
+<p>現在、廃止予定であり、CodeIgniter 3.1+ で削除される予定です。</p>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
-<p class="last">This library is still available, but you&#8217;re strongly encouraged to remove its usage
-sooner rather than later.</p>
+<p class="last">このライブラリはまだ使えますが、早急に使用を中止することを
+強く推奨します。</p>
 </div>
 </div>
 </div>

@@ -430,291 +430,119 @@
 アップグレードの注意事項をお読みください。</p>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="upgrade_310.html">    Upgrading from 3.0.x to 3.1.x</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="upgrade_310.html#step-1-update-your-codeigniter-files">Step 1: Update your CodeIgniter files</a></li>
-<li class="toctree-l2"><a class="reference internal" href="upgrade_310.html#step-2-change-database-connection-handling">Step 2: Change database connection handling</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="upgrade_310.html#remove-db-set-charset-calls">Remove db_set_charset() calls</a></li>
+<li class="toctree-l1"><a class="reference internal" href="upgrade_310.html">Upgrading from 3.0.x to 3.1.x</a><ul class="simple">
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="upgrade_310.html#step-3-check-usage-of-doctype-html-helper">Step 3: Check usage of doctype() HTML helper</a></li>
+<li class="toctree-l1"><a class="reference internal" href="upgrade_305.html">Upgrading from 3.0.4 to 3.0.5</a><ul class="simple">
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="upgrade_305.html">    Upgrading from 3.0.4 to 3.0.5</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="upgrade_305.html#step-1-update-your-codeigniter-files">Step 1: Update your CodeIgniter files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="upgrade_304.html">Upgrading from 3.0.3 to 3.0.4</a><ul class="simple">
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="upgrade_304.html">    Upgrading from 3.0.3 to 3.0.4</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="upgrade_304.html#step-1-update-your-codeigniter-files">Step 1: Update your CodeIgniter files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="upgrade_303.html">Upgrading from 3.0.2 to 3.0.3</a><ul class="simple">
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="upgrade_303.html">    Upgrading from 3.0.2 to 3.0.3</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="upgrade_303.html#step-1-update-your-codeigniter-files">Step 1: Update your CodeIgniter files</a></li>
-<li class="toctree-l2"><a class="reference internal" href="upgrade_303.html#step-2-make-sure-your-base-url-config-value-is-not-empty">Step 2: Make sure your &#8216;base_url&#8217; config value is not empty</a></li>
+<li class="toctree-l1"><a class="reference internal" href="upgrade_302.html">Upgrading from 3.0.1 to 3.0.2</a><ul class="simple">
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="upgrade_302.html">    Upgrading from 3.0.1 to 3.0.2</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="upgrade_302.html#step-1-update-your-codeigniter-files">Step 1: Update your CodeIgniter files</a></li>
-<li class="toctree-l2"><a class="reference internal" href="upgrade_302.html#step-2-update-your-application-config-constants-php-file">Step 2: Update your application/config/constants.php file</a></li>
+<li class="toctree-l1"><a class="reference internal" href="upgrade_301.html">Upgrading from 3.0.0 to 3.0.1</a><ul class="simple">
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="upgrade_301.html">    Upgrading from 3.0.0 to 3.0.1</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="upgrade_301.html#step-1-update-your-codeigniter-files">Step 1: Update your CodeIgniter files</a></li>
-<li class="toctree-l2"><a class="reference internal" href="upgrade_301.html#step-2-update-your-cli-error-templates">Step 2: Update your CLI error templates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="upgrade_300.html">2.2.x から 3.0.0 へのアップグレード</a><ul class="simple">
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="upgrade_300.html">    2.2.x から 3.0.0 へのアップグレード</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="upgrade_300.html#step-1-codeigniter">Step 1: CodeIgniter ファイルを更新する</a></li>
-<li class="toctree-l2"><a class="reference internal" href="upgrade_300.html#step-2">Step 2: クラスファイルの名前を更新する</a></li>
-<li class="toctree-l2"><a class="reference internal" href="upgrade_300.html#step-3-config-mimes-php">Step 3: config/mimes.php を置き換える</a></li>
-<li class="toctree-l2"><a class="reference internal" href="upgrade_300.html#step-4-config-autoload-php-autoload-core">Step 4: config/autoload.php から $autoload[&#8216;core&#8217;] を削除する</a></li>
-<li class="toctree-l2"><a class="reference internal" href="upgrade_300.html#step-5-log">Step 5: Log クラスへの拡張・置き換えを移動する</a></li>
-<li class="toctree-l2"><a class="reference internal" href="upgrade_300.html#step-6">Step 6: セッションライブラリの使い方を更新する</a></li>
-<li class="toctree-l2"><a class="reference internal" href="upgrade_300.html#step-7-config-database-php">Step 7: config/database.php を更新する</a></li>
-<li class="toctree-l2"><a class="reference internal" href="upgrade_300.html#step-8">Step 8: エラーテンプレートを置き換える</a></li>
-<li class="toctree-l2"><a class="reference internal" href="upgrade_300.html#step-9-config-routes-php">Step 9: config/routes.php ファイルを更新する</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="upgrade_300.html#any">:any を含むルート</a></li>
-<li class="toctree-l3"><a class="reference internal" href="upgrade_300.html#default-controller-404-override">ディレクトリと &#8216;default_controller&#8217;、&#8216;404_override&#8217;</a></li>
+<li class="toctree-l1"><a class="reference internal" href="upgrade_223.html">Upgrading from 2.2.2 to 2.2.3</a><ul class="simple">
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="upgrade_300.html#step-10-false-null">Step 10: 多くの関数が要素がないとき FALSE ではなく NULL を返すようになりました</a></li>
-<li class="toctree-l2"><a class="reference internal" href="upgrade_300.html#step-11-xss">Step 11: XSS フィルタの使い方</a></li>
-<li class="toctree-l2"><a class="reference internal" href="upgrade_300.html#step-12-uri-xss">Step 12: URI にまつわる潜在的な XSS 問題をチェックする</a></li>
-<li class="toctree-l2"><a class="reference internal" href="upgrade_300.html#step-13-xss-clean">Step 13: バリデーションルール &#8216;xss_clean&#8217; の使い方をチェックする</a></li>
-<li class="toctree-l2"><a class="reference internal" href="upgrade_300.html#step-14-get-post">Step 14: 入力クラスの get_post() メソッドの使い方を更新する</a></li>
-<li class="toctree-l2"><a class="reference internal" href="upgrade_300.html#step-15-directory-map">Step 15: ディレクトリヘルパーの directory_map() 関数の使い方を更新する</a></li>
-<li class="toctree-l2"><a class="reference internal" href="upgrade_300.html#step-16-drop-table">Step 16: データベースフォージの drop_table() メソッドの使い方を更新する</a></li>
-<li class="toctree-l2"><a class="reference internal" href="upgrade_300.html#step-17-email">Step 17: Email ライブラリでの複数メールの使い方を変更する</a></li>
-<li class="toctree-l2"><a class="reference internal" href="upgrade_300.html#step-18-form-validation">Step 18: Form_validation の言語ファイルを更新する</a></li>
-<li class="toctree-l2"><a class="reference internal" href="upgrade_300.html#step-19-base-url">Step 19: &#8216;base_url&#8217; の設定値が空でないことを確認する</a></li>
-<li class="toctree-l2"><a class="reference internal" href="upgrade_300.html#step-20">Step 20: (以前から) 廃止予定の機能を削除する</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="upgrade_300.html#the-sha1-library">The SHA1 library</a></li>
-<li class="toctree-l3"><a class="reference internal" href="upgrade_300.html#the-ext-constant">The EXT constant</a></li>
-<li class="toctree-l3"><a class="reference internal" href="upgrade_300.html#smiley-helper">Smiley helper</a></li>
-<li class="toctree-l3"><a class="reference internal" href="upgrade_300.html#the-encrypt-library">The Encrypt library</a></li>
-<li class="toctree-l3"><a class="reference internal" href="upgrade_300.html#the-cart-library">The Cart library</a></li>
-<li class="toctree-l3"><a class="reference internal" href="upgrade_300.html#database-drivers-mysql-sqlite-mssql-pdo-dblib">Database drivers &#8216;mysql&#8217;, &#8216;sqlite&#8217;, &#8216;mssql&#8217;, &#8216;pdo/dblib&#8217;</a></li>
-<li class="toctree-l3"><a class="reference internal" href="upgrade_300.html#security-helper-do-hash">Security helper do_hash()</a></li>
-<li class="toctree-l3"><a class="reference internal" href="upgrade_300.html#the-config-global-xss-filtering-setting">The $config[&#8216;global_xss_filtering&#8217;] setting</a></li>
-<li class="toctree-l3"><a class="reference internal" href="upgrade_300.html#file-helper-read-file">File helper read_file()</a></li>
-<li class="toctree-l3"><a class="reference internal" href="upgrade_300.html#string-helper-repeater">String helper repeater()</a></li>
-<li class="toctree-l3"><a class="reference internal" href="upgrade_300.html#string-helper-trim-slashes">String helper trim_slashes()</a></li>
-<li class="toctree-l3"><a class="reference internal" href="upgrade_300.html#form-helper-form-prep">Form helper form_prep()</a></li>
-<li class="toctree-l3"><a class="reference internal" href="upgrade_300.html#email-helper-functions">Email helper functions</a></li>
-<li class="toctree-l3"><a class="reference internal" href="upgrade_300.html#date-helper-standard-date">Date helper standard_date()</a></li>
-<li class="toctree-l3"><a class="reference internal" href="upgrade_300.html#html-helpers-nbs-br">HTML helpers nbs(), br()</a></li>
-<li class="toctree-l3"><a class="reference internal" href="upgrade_300.html#pagination-library-anchor-class-setting">Pagination library &#8216;anchor_class&#8217; setting</a></li>
-<li class="toctree-l3"><a class="reference internal" href="upgrade_300.html#string-helper-random-string-types-unique-and-encrypt">String helper random_string() types &#8216;unique&#8217; and &#8216;encrypt&#8217;</a></li>
-<li class="toctree-l3"><a class="reference internal" href="upgrade_300.html#url-helper-url-title-separators-dash-and-underscore">URL helper url_title() separators &#8216;dash&#8217; and &#8216;underscore&#8217;</a></li>
-<li class="toctree-l3"><a class="reference internal" href="upgrade_300.html#session-library-method-all-userdata">Session Library method all_userdata()</a></li>
-<li class="toctree-l3"><a class="reference internal" href="upgrade_300.html#database-forge-method-add-column-with-an-after-clause">Database Forge method add_column() with an AFTER clause</a></li>
-<li class="toctree-l3"><a class="reference internal" href="upgrade_300.html#uri-routing-methods-fetch-directory-fetch-class-fetch-method">URI Routing methods fetch_directory(), fetch_class(), fetch_method()</a></li>
-<li class="toctree-l3"><a class="reference internal" href="upgrade_300.html#input-library-method-is-cli-request">Input library method is_cli_request()</a></li>
-<li class="toctree-l3"><a class="reference internal" href="upgrade_300.html#config-library-method-system-url">Config library method system_url()</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="upgrade_300.html#the-javascript-library">The Javascript library</a></li>
+<li class="toctree-l1"><a class="reference internal" href="upgrade_222.html">Upgrading from 2.2.1 to 2.2.2</a><ul class="simple">
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="upgrade_221.html">2.2.0 から 2.2.1 へのアップグレード</a><ul class="simple">
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="upgrade_300.html#step-21-text-highlight-phrase">Step 21: Text ヘルパーの highlight_phrase() の使い方を確認する</a></li>
+<li class="toctree-l1"><a class="reference internal" href="upgrade_220.html">2.1.4 から 2.2.0 へのアップグレード</a><ul class="simple">
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="upgrade_223.html">    Upgrading from 2.2.2 to 2.2.3</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="upgrade_223.html#step-1-update-your-codeigniter-files">Step 1: Update your CodeIgniter files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="upgrade_214.html">2.1.3 から 2.1.4 へのアップグレード</a><ul class="simple">
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="upgrade_222.html">    Upgrading from 2.2.1 to 2.2.2</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="upgrade_222.html#step-1-update-your-codeigniter-files">Step 1: Update your CodeIgniter files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="upgrade_213.html">2.1.2 から 2.1.3 へのアップグレード</a><ul class="simple">
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="upgrade_221.html">    2.2.0 から 2.2.1 へのアップグレード</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="upgrade_221.html#step-1-update-your-codeigniter-files">Step 1: Update your CodeIgniter files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="upgrade_212.html">2.1.1 から 2.1.2 へのアップグレード</a><ul class="simple">
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="upgrade_220.html">    2.1.4 から 2.2.0 へのアップグレード</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="upgrade_220.html#step-1-update-your-codeigniter-files">Step 1: Update your CodeIgniter files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="upgrade_211.html">2.1.0 から 2.1.1 へのアップグレード</a><ul class="simple">
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="upgrade_214.html">    2.1.3 から 2.1.4 へのアップグレード</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="upgrade_214.html#step-1-update-your-codeigniter-files">Step 1: Update your CodeIgniter files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="upgrade_210.html">2.0.3 から 2.1.0 へのアップグレード</a><ul class="simple">
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="upgrade_213.html">2.1.2 から 2.1.3 へのアップグレード</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="upgrade_213.html#step-1-update-your-codeigniter-files">Step 1: Update your CodeIgniter files</a></li>
-<li class="toctree-l2"><a class="reference internal" href="upgrade_213.html#step-2-update-your-user-guide">Step 2: Update your user guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="upgrade_203.html">2.0.2 から 2.0.3 へのアップグレード</a><ul class="simple">
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="upgrade_212.html">2.1.1 から 2.1.2 へのアップグレード</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="upgrade_212.html#step-1-update-your-codeigniter-files">Step 1: Update your CodeIgniter files</a></li>
-<li class="toctree-l2"><a class="reference internal" href="upgrade_212.html#step-2-update-your-user-guide">Step 2: Update your user guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="upgrade_202.html">2.0.1 から 2.0.2 へのアップグレード</a><ul class="simple">
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="upgrade_211.html">2.1.0 から 2.1.1 へのアップグレード</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="upgrade_211.html#step-1-update-your-codeigniter-files">Step 1: Update your CodeIgniter files</a></li>
-<li class="toctree-l2"><a class="reference internal" href="upgrade_211.html#step-2-replace-config-mimes-php">Step 2: Replace config/mimes.php</a></li>
-<li class="toctree-l2"><a class="reference internal" href="upgrade_211.html#step-3-update-your-ip-address-tables">Step 3: Update your IP address tables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="upgrade_201.html">2.0 から 2.0.1 へのアップグレード</a><ul class="simple">
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="upgrade_210.html">2.0.3 から 2.1.0 へのアップグレード</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="upgrade_210.html#step-1-update-your-codeigniter-files">Step 1: Update your CodeIgniter files</a></li>
-<li class="toctree-l2"><a class="reference internal" href="upgrade_210.html#step-2-replace-config-user-agents-php">Step 2: Replace config/user_agents.php</a></li>
-<li class="toctree-l2"><a class="reference internal" href="upgrade_210.html#step-3-update-your-user-guide">Step 3: Update your user guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="upgrade_200.html">1.7.2 から 2.0 へのアップグレード</a><ul class="simple">
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="upgrade_203.html">2.0.2 から 2.0.3 へのアップグレード</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="upgrade_203.html#step-1-update-your-codeigniter-files">Step 1: Update your CodeIgniter files</a></li>
-<li class="toctree-l2"><a class="reference internal" href="upgrade_203.html#step-2-update-your-main-index-php-file">Step 2: Update your main index.php file</a></li>
-<li class="toctree-l2"><a class="reference internal" href="upgrade_203.html#step-3-replace-config-user-agents-php">Step 3: Replace config/user_agents.php</a></li>
-<li class="toctree-l2"><a class="reference internal" href="upgrade_203.html#step-4-change-references-of-the-ext-constant-to-php">Step 4: Change references of the EXT constant to &#8221;.php&#8221;</a></li>
-<li class="toctree-l2"><a class="reference internal" href="upgrade_203.html#step-5-remove-apppath-third-party-from-autoload-php">Step 5: Remove APPPATH.&#8217;third_party&#8217; from autoload.php</a></li>
-<li class="toctree-l2"><a class="reference internal" href="upgrade_203.html#update-sessions-database-tables">Update Sessions Database Tables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="upgrade_172.html">1.7.1 から 1.7.2 へのアップグレード</a><ul class="simple">
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="upgrade_202.html">2.0.1 から 2.0.2 へのアップグレード</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="upgrade_202.html#step-1-update-your-codeigniter-files">Step 1: Update your CodeIgniter files</a></li>
-<li class="toctree-l2"><a class="reference internal" href="upgrade_202.html#step-2-remove-loading-calls-for-the-security-library">Step 2: Remove loading calls for the Security Library</a></li>
-<li class="toctree-l2"><a class="reference internal" href="upgrade_202.html#step-3-move-my-security">Step 3: Move MY_Security</a></li>
+<li class="toctree-l1"><a class="reference internal" href="upgrade_171.html">1.7.0 から 1.7.1 へのアップグレード</a><ul class="simple">
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="upgrade_201.html">2.0 から 2.0.1 へのアップグレード</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="upgrade_201.html#step-1-update-your-codeigniter-files">Step 1: Update your CodeIgniter files</a></li>
-<li class="toctree-l2"><a class="reference internal" href="upgrade_201.html#step-2-replace-config-mimes-php">Step 2: Replace config/mimes.php</a></li>
-<li class="toctree-l2"><a class="reference internal" href="upgrade_201.html#step-3-check-for-forms-posting-to-default-controller">Step 3: Check for forms posting to default controller</a></li>
+<li class="toctree-l1"><a class="reference internal" href="upgrade_170.html">1.6.3 から 1.7.0 へのアップグレード</a><ul class="simple">
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="upgrade_200.html">1.7.2 から 2.0 へのアップグレード</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="upgrade_200.html#update-instructions">Update Instructions</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="upgrade_200.html#step-1-update-your-codeigniter-files">Step 1: Update your CodeIgniter files</a></li>
-<li class="toctree-l3"><a class="reference internal" href="upgrade_200.html#step-2-adjust-get-dir-file-info-where-necessary">Step 2: Adjust get_dir_file_info() where necessary</a></li>
-<li class="toctree-l3"><a class="reference internal" href="upgrade_200.html#step-3-convert-your-plugins-to-helpers">Step 3: Convert your Plugins to Helpers</a></li>
-<li class="toctree-l3"><a class="reference internal" href="upgrade_200.html#step-4-update-stored-encrypted-data">Step 4: Update stored encrypted data</a></li>
-<li class="toctree-l3"><a class="reference internal" href="upgrade_200.html#step-5-remove-loading-calls-for-the-compatibility-helper">Step 5: Remove loading calls for the compatibility helper.</a></li>
-<li class="toctree-l3"><a class="reference internal" href="upgrade_200.html#step-6-update-class-extension">Step 6: Update Class extension</a></li>
-<li class="toctree-l3"><a class="reference internal" href="upgrade_200.html#step-7-update-parent-constructor-calls">Step 7: Update Parent Constructor calls</a></li>
-<li class="toctree-l3"><a class="reference internal" href="upgrade_200.html#step-8-move-any-core-extensions-to-application-core">Step 8: Move any core extensions to application/core</a></li>
-<li class="toctree-l3"><a class="reference internal" href="upgrade_200.html#step-9-update-your-user-guide">Step 9: Update your user guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="upgrade_163.html">1.6.2 から 1.6.3 へのアップグレード</a><ul class="simple">
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="upgrade_200.html#update-notes">Update Notes</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="upgrade_200.html#the-config-folder">The config folder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="upgrade_162.html">1.6.1 から 1.6.2 へのアップグレード</a><ul class="simple">
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="upgrade_161.html">1.6.0 から 1.6.1 へのアップグレード</a><ul class="simple">
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="upgrade_172.html">1.7.1 から 1.7.2 へのアップグレード</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="upgrade_172.html#step-1-update-your-codeigniter-files">Step 1: Update your CodeIgniter files</a></li>
-<li class="toctree-l2"><a class="reference internal" href="upgrade_172.html#step-2-remove-header-from-404-error-template">Step 2: Remove header() from 404 error template</a></li>
-<li class="toctree-l2"><a class="reference internal" href="upgrade_172.html#step-3-confirm-your-system-path">Step 3: Confirm your system_path</a></li>
-<li class="toctree-l2"><a class="reference internal" href="upgrade_172.html#step-4-update-your-user-guide">Step 4: Update your user guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="upgrade_160.html">1.5.4 から 1.6.0 へのアップグレード</a><ul class="simple">
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="upgrade_171.html">1.7.0 から 1.7.1 へのアップグレード</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="upgrade_171.html#step-1-update-your-codeigniter-files">Step 1: Update your CodeIgniter files</a></li>
-<li class="toctree-l2"><a class="reference internal" href="upgrade_171.html#step-2-update-your-user-guide">Step 2: Update your user guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="upgrade_154.html">1.5.3 から 1.5.4 へのアップグレード</a><ul class="simple">
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="upgrade_170.html">1.6.3 から 1.7.0 へのアップグレード</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="upgrade_170.html#step-1-update-your-codeigniter-files">Step 1: Update your CodeIgniter files</a></li>
-<li class="toctree-l2"><a class="reference internal" href="upgrade_170.html#step-2-update-your-session-table">Step 2: Update your Session Table</a></li>
-<li class="toctree-l2"><a class="reference internal" href="upgrade_170.html#step-3-update-your-validation-syntax">Step 3: Update your Validation Syntax</a></li>
-<li class="toctree-l2"><a class="reference internal" href="upgrade_170.html#step-4-update-your-user-guide">Step 4: Update your user guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="upgrade_153.html">1.5.2 から 1.5.3 へのアップグレード</a><ul class="simple">
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="upgrade_163.html">1.6.2 から 1.6.3 へのアップグレード</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="upgrade_163.html#step-1-update-your-codeigniter-files">Step 1: Update your CodeIgniter files</a></li>
-<li class="toctree-l2"><a class="reference internal" href="upgrade_163.html#step-2-update-your-user-guide">Step 2: Update your user guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="upgrade_152.html">1.5.0 または 1.5.1 から 1.5.2 へのアップグレード</a><ul class="simple">
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="upgrade_162.html">1.6.1 から 1.6.2 へのアップグレード</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="upgrade_162.html#step-1-update-your-codeigniter-files">Step 1: Update your CodeIgniter files</a></li>
-<li class="toctree-l2"><a class="reference internal" href="upgrade_162.html#step-2-encryption-key">Step 2: Encryption Key</a></li>
-<li class="toctree-l2"><a class="reference internal" href="upgrade_162.html#step-3-constants-file">Step 3: Constants File</a></li>
-<li class="toctree-l2"><a class="reference internal" href="upgrade_162.html#step-4-mimes-file">Step 4: Mimes File</a></li>
-<li class="toctree-l2"><a class="reference internal" href="upgrade_162.html#step-5-update-your-user-guide">Step 5: Update your user guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="upgrade_150.html">1.4.1 から 1.5.0 へのアップグレード</a><ul class="simple">
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="upgrade_161.html">1.6.0 から 1.6.1 へのアップグレード</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="upgrade_161.html#step-1-update-your-codeigniter-files">Step 1: Update your CodeIgniter files</a></li>
-<li class="toctree-l2"><a class="reference internal" href="upgrade_161.html#step-2-update-your-user-guide">Step 2: Update your user guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="upgrade_141.html">1.4.0 から 1.4.1 へのアップグレード</a><ul class="simple">
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="upgrade_160.html">1.5.4 から 1.6.0 へのアップグレード</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="upgrade_160.html#step-1-update-your-codeigniter-files">Step 1: Update your CodeIgniter files</a></li>
-<li class="toctree-l2"><a class="reference internal" href="upgrade_160.html#step-2-add-time-to-update-to-your-config-php">Step 2: Add time_to_update to your config.php</a></li>
-<li class="toctree-l2"><a class="reference internal" href="upgrade_160.html#step-3-add-autoload-model">Step 3: Add $autoload[&#8216;model&#8217;]</a></li>
-<li class="toctree-l2"><a class="reference internal" href="upgrade_160.html#step-4-add-to-your-database-php">Step 4: Add to your database.php</a></li>
-<li class="toctree-l2"><a class="reference internal" href="upgrade_160.html#step-5-update-your-user-guide">Step 5: Update your user guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="upgrade_140.html">1.3.3 から 1.4.0 へのアップグレード</a><ul class="simple">
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="upgrade_154.html">1.5.3 から 1.5.4 へのアップグレード</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="upgrade_154.html#step-1-update-your-codeigniter-files">Step 1: Update your CodeIgniter files</a></li>
-<li class="toctree-l2"><a class="reference internal" href="upgrade_154.html#step-2-add-charset-to-your-config-php">Step 2: Add charset to your config.php</a></li>
-<li class="toctree-l2"><a class="reference internal" href="upgrade_154.html#step-3-autoloading-language-files">Step 3: Autoloading language files</a></li>
-<li class="toctree-l2"><a class="reference internal" href="upgrade_154.html#step-4-update-your-user-guide">Step 4: Update your user guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="upgrade_133.html">1.3.2 から 1.3.3 へのアップグレード</a><ul class="simple">
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="upgrade_153.html">1.5.2 から 1.5.3 へのアップグレード</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="upgrade_153.html#step-1-update-your-codeigniter-files">Step 1: Update your CodeIgniter files</a></li>
-<li class="toctree-l2"><a class="reference internal" href="upgrade_153.html#step-2-update-your-user-guide">Step 2: Update your user guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="upgrade_132.html">1.3.1 から 1.3.2 へのアップグレード</a><ul class="simple">
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="upgrade_152.html">1.5.0 または 1.5.1 から 1.5.2 へのアップグレード</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="upgrade_152.html#step-1-update-your-codeigniter-files">Step 1: Update your CodeIgniter files</a></li>
-<li class="toctree-l2"><a class="reference internal" href="upgrade_152.html#step-2-update-your-user-guide">Step 2: Update your user guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="upgrade_131.html">1.3 から 1.3.1 へのアップグレード</a><ul class="simple">
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="upgrade_150.html">1.4.1 から 1.5.0 へのアップグレード</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="upgrade_150.html#step-1-update-your-codeigniter-files">Step 1: Update your CodeIgniter files</a></li>
-<li class="toctree-l2"><a class="reference internal" href="upgrade_150.html#step-2-update-your-database-php-file">Step 2: Update your database.php file</a></li>
-<li class="toctree-l2"><a class="reference internal" href="upgrade_150.html#step-3-update-your-config-php-file">Step 3: Update your config.php file</a></li>
-<li class="toctree-l2"><a class="reference internal" href="upgrade_150.html#step-4-update-your-main-index-php-file">Step 4: Update your main index.php file</a></li>
-<li class="toctree-l2"><a class="reference internal" href="upgrade_150.html#step-5-update-your-user-guide">Step 5: Update your user guide</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="upgrade_141.html">1.4.0 から 1.4.1 へのアップグレード</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="upgrade_141.html#step-1-codeigniter">Step 1: CodeIgniter ファイルのアップグレード</a></li>
-<li class="toctree-l2"><a class="reference internal" href="upgrade_141.html#step-2-config-php">Step 2: config.php ファイルのアップグレード</a></li>
-<li class="toctree-l2"><a class="reference internal" href="upgrade_141.html#step-3-autoload">Step 3: Autoload 項目の名前変更</a></li>
-<li class="toctree-l2"><a class="reference internal" href="upgrade_141.html#step-4">Step 4: ユーザガイドの更新</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="upgrade_140.html">1.3.3 から 1.4.0 へのアップグレード</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="upgrade_140.html#step-1-codeigniter">Step 1: CodeIgniter ファイルのアップグレード</a></li>
-<li class="toctree-l2"><a class="reference internal" href="upgrade_140.html#step-2-config-php">Step 2: config.php ファイルのアップグレード</a></li>
-<li class="toctree-l2"><a class="reference internal" href="upgrade_140.html#step-3">Step 3: ユーザガイドの更新</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="upgrade_133.html">1.3.2 から 1.3.3 へのアップグレード</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="upgrade_133.html#step-1-codeigniter">Step 1: CodeIgniter ファイルのアップグレード</a></li>
-<li class="toctree-l2"><a class="reference internal" href="upgrade_133.html#step-2-model">Step 2: Model のアップグレード</a></li>
-<li class="toctree-l2"><a class="reference internal" href="upgrade_133.html#step-3">Step 3: ユーザガイドの更新</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="upgrade_132.html">1.3.1 から 1.3.2 へのアップグレード</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="upgrade_132.html#step-1-codeigniter">Step 1: CodeIgniterファイルのアップデート</a></li>
-<li class="toctree-l2"><a class="reference internal" href="upgrade_132.html#step-2">Step 2: ユーザガイドの更新</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="upgrade_131.html">1.3 から 1.3.1 へのアップグレード</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="upgrade_131.html#step-1-codeigniter">Step 1: CodeIgniterファイルのアップデート</a></li>
-<li class="toctree-l2"><a class="reference internal" href="upgrade_131.html#step-2">Step 2: ユーザガイドの更新</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="upgrade_130.html">1.2 から 1.3 へのアップグレード</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="upgrade_130.html#step-1-codeigniter">Step 1: CodeIgniterファイルのアップデート</a></li>
-<li class="toctree-l2"><a class="reference internal" href="upgrade_130.html#step-2">Step 2: エラーファイルのアップデート</a></li>
-<li class="toctree-l2"><a class="reference internal" href="upgrade_130.html#step-3-index-php">Step 3: index.php ファイルのアップデート</a></li>
-<li class="toctree-l2"><a class="reference internal" href="upgrade_130.html#step-4-config-php">Step 4: config.php ファイルのアップデート</a></li>
-<li class="toctree-l2"><a class="reference internal" href="upgrade_130.html#step-5-database-php">Step 5: database.php ファイルのアップデート</a></li>
-<li class="toctree-l2"><a class="reference internal" href="upgrade_130.html#step-6">Step 6: ユーザガイドの更新</a></li>
+<li class="toctree-l1"><a class="reference internal" href="upgrade_130.html">1.2 から 1.3 へのアップグレード</a><ul class="simple">
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="upgrade_120.html">1.1 から 1.2 へのアップグレード</a></li>
-<li class="toctree-l1"><a class="reference internal" href="upgrade_b11.html">Beta 1.0 から Beta 1.1 へのアップグレード</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="upgrade_b11.html#step-1-index">Step 1: index ファイルの置き換え</a></li>
-<li class="toctree-l2"><a class="reference internal" href="upgrade_b11.html#step-2-config">Step 2: config フォルダの移動</a></li>
-<li class="toctree-l2"><a class="reference internal" href="upgrade_b11.html#step-3">Step 3: ディレクトリの置き換え</a></li>
-<li class="toctree-l2"><a class="reference internal" href="upgrade_b11.html#step-4-calendar">Step 4: calendar 言語ファイルの追加</a></li>
-<li class="toctree-l2"><a class="reference internal" href="upgrade_b11.html#step-5-config">Step 5: config ファイルの編集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="upgrade_b11.html">Beta 1.0 から Beta 1.1 へのアップグレード</a><ul class="simple">
 </ul>
 </li>
 </ul>
