@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>暗号化ライブラリ &mdash; CodeIgniter 3.1.0-dev ドキュメント</title>
+  <title>Encryption ライブラリ &mdash; CodeIgniter 3.1.0-dev ドキュメント</title>
   
 
   
@@ -33,7 +33,7 @@
     <link rel="top" title="CodeIgniter 3.1.0-dev ドキュメント" href="../index.html"/>
         <link rel="up" title="ライブラリ" href="index.html"/>
         <link rel="next" title="ファイルアップロードクラス" href="file_uploading.html"/>
-        <link rel="prev" title="暗号化クラス" href="encrypt.html"/> 
+        <link rel="prev" title="Encrypt クラス" href="encrypt.html"/> 
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -128,8 +128,8 @@
 <li class="toctree-l2"><a class="reference internal" href="cart.html">ショッピングカートクラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="config.html">設定クラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="email.html">Email クラス</a></li>
-<li class="toctree-l2"><a class="reference internal" href="encrypt.html">暗号化クラス</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="">暗号化ライブラリ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="encrypt.html">Encrypt クラス</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Encryption ライブラリ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="file_uploading.html">ファイルアップロードクラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="form_validation.html">フォームバリデーション (検証)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ftp.html">FTP クラス</a></li>
@@ -314,8 +314,8 @@
 <li class="toctree-l2"><a class="reference internal" href="cart.html">ショッピングカートクラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="config.html">設定クラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="email.html">Email クラス</a></li>
-<li class="toctree-l2"><a class="reference internal" href="encrypt.html">暗号化クラス</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="">暗号化ライブラリ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="encrypt.html">Encrypt クラス</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Encryption ライブラリ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="file_uploading.html">ファイルアップロードクラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="form_validation.html">フォームバリデーション (検証)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ftp.html">FTP クラス</a></li>
@@ -411,7 +411,7 @@
       
         <li><a href="index.html">ライブラリ</a> &raquo;</li>
       
-    <li>暗号化ライブラリ</li>
+    <li>Encryption ライブラリ</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -424,8 +424,8 @@
 </div>
           <div role="main" class="document">
             
-  <div class="section" id="id1">
-<h1>暗号化ライブラリ<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
+  <div class="section" id="encryption">
+<h1>Encryption ライブラリ<a class="headerlink" href="#encryption" title="このヘッドラインへのパーマリンク">¶</a></h1>
 <div class="admonition important">
 <p class="first admonition-title">重要</p>
 <p class="last">DO NOT use this or any other <em>encryption</em> library for
@@ -446,33 +446,33 @@ you a good enough implementation to meet the high standards required
 for proper cryptography.</p>
 <div class="contents local topic" id="contents">
 <ul class="simple">
-<li><a class="reference internal" href="#using-the-encryption-library" id="id3">Using the Encryption Library</a><ul>
-<li><a class="reference internal" href="#initializing-the-class" id="id4">Initializing the Class</a></li>
-<li><a class="reference internal" href="#default-behavior" id="id5">Default behavior</a></li>
-<li><a class="reference internal" href="#setting-your-encryption-key" id="id6">Setting your encryption_key</a></li>
-<li><a class="reference internal" href="#supported-encryption-ciphers-and-modes" id="id7">Supported encryption ciphers and modes</a><ul>
-<li><a class="reference internal" href="#portable-ciphers" id="id8">Portable ciphers</a></li>
-<li><a class="reference internal" href="#driver-specific-ciphers" id="id9">Driver-specific ciphers</a></li>
-<li><a class="reference internal" href="#encryption-modes" id="id10">Encryption modes</a></li>
+<li><a class="reference internal" href="#using-the-encryption-library" id="id2">Using the Encryption Library</a><ul>
+<li><a class="reference internal" href="#initializing-the-class" id="id3">Initializing the Class</a></li>
+<li><a class="reference internal" href="#default-behavior" id="id4">Default behavior</a></li>
+<li><a class="reference internal" href="#setting-your-encryption-key" id="id5">Setting your encryption_key</a></li>
+<li><a class="reference internal" href="#supported-encryption-ciphers-and-modes" id="id6">Supported encryption ciphers and modes</a><ul>
+<li><a class="reference internal" href="#portable-ciphers" id="id7">Portable ciphers</a></li>
+<li><a class="reference internal" href="#driver-specific-ciphers" id="id8">Driver-specific ciphers</a></li>
+<li><a class="reference internal" href="#encryption-modes" id="id9">Encryption modes</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#message-length" id="id11">Message Length</a></li>
-<li><a class="reference internal" href="#configuring-the-library" id="id12">Configuring the library</a></li>
-<li><a class="reference internal" href="#encrypting-and-decrypting-data" id="id13">Encrypting and decrypting data</a><ul>
-<li><a class="reference internal" href="#how-it-works" id="id14">How it works</a></li>
-<li><a class="reference internal" href="#using-custom-parameters" id="id15">Using custom parameters</a></li>
-<li><a class="reference internal" href="#supported-hmac-authentication-algorithms" id="id16">Supported HMAC authentication algorithms</a></li>
+<li><a class="reference internal" href="#message-length" id="id10">Message Length</a></li>
+<li><a class="reference internal" href="#configuring-the-library" id="id11">Configuring the library</a></li>
+<li><a class="reference internal" href="#encrypting-and-decrypting-data" id="id12">Encrypting and decrypting data</a><ul>
+<li><a class="reference internal" href="#how-it-works" id="id13">How it works</a></li>
+<li><a class="reference internal" href="#using-custom-parameters" id="id14">Using custom parameters</a></li>
+<li><a class="reference internal" href="#supported-hmac-authentication-algorithms" id="id15">Supported HMAC authentication algorithms</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a class="reference internal" href="#class-reference" id="id17">Class Reference</a></li>
+<li><a class="reference internal" href="#class-reference" id="id16">Class Reference</a></li>
 </ul>
 </div>
 <div class="custom-index container"></div><div class="section" id="using-the-encryption-library">
-<h2><a class="toc-backref" href="#id3">Using the Encryption Library</a><a class="headerlink" href="#using-the-encryption-library" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2><a class="toc-backref" href="#id2">Using the Encryption Library</a><a class="headerlink" href="#using-the-encryption-library" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <div class="section" id="initializing-the-class">
-<h3><a class="toc-backref" href="#id4">Initializing the Class</a><a class="headerlink" href="#initializing-the-class" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<h3><a class="toc-backref" href="#id3">Initializing the Class</a><a class="headerlink" href="#initializing-the-class" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p>Like most other classes in CodeIgniter, the Encryption library is
 initialized in your controller using the <tt class="docutils literal"><span class="pre">$this-&gt;load-&gt;library()</span></tt>
 method:</p>
@@ -485,7 +485,7 @@ method:</p>
 </div>
 </div>
 <div class="section" id="default-behavior">
-<h3><a class="toc-backref" href="#id5">Default behavior</a><a class="headerlink" href="#default-behavior" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<h3><a class="toc-backref" href="#id4">Default behavior</a><a class="headerlink" href="#default-behavior" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p>By default, the Encryption Library will use the AES-128 cipher in CBC
 mode, using your configured <em>encryption_key</em> and SHA512 HMAC authentication.</p>
 <div class="admonition note">
@@ -503,7 +503,7 @@ encryption and authentication is a bad practice.</p>
 done via a technique called <a class="reference external" href="http://en.wikipedia.org/wiki/HKDF">HMAC-based Key Derivation Function</a> (HKDF).</p>
 </div>
 <div class="section" id="setting-your-encryption-key">
-<h3><a class="toc-backref" href="#id6">Setting your encryption_key</a><a class="headerlink" href="#setting-your-encryption-key" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<h3><a class="toc-backref" href="#id5">Setting your encryption_key</a><a class="headerlink" href="#setting-your-encryption-key" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p>An <em>encryption key</em> is a piece of information that controls the
 cryptographic process and permits a plain-text string to be encrypted,
 and afterwards - decrypted. It is the secret &#8220;ingredient&#8221; in the whole
@@ -555,13 +555,13 @@ a more friendly manner. For example:</p>
 </div>
 </div>
 <div class="section" id="supported-encryption-ciphers-and-modes">
-<span id="ciphers-and-modes"></span><h3><a class="toc-backref" href="#id7">Supported encryption ciphers and modes</a><a class="headerlink" href="#supported-encryption-ciphers-and-modes" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<span id="ciphers-and-modes"></span><h3><a class="toc-backref" href="#id6">Supported encryption ciphers and modes</a><a class="headerlink" href="#supported-encryption-ciphers-and-modes" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
 <p class="last">The terms &#8216;cipher&#8217; and &#8216;encryption algorithm&#8217; are interchangeable.</p>
 </div>
 <div class="section" id="portable-ciphers">
-<h4><a class="toc-backref" href="#id8">Portable ciphers</a><a class="headerlink" href="#portable-ciphers" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<h4><a class="toc-backref" href="#id7">Portable ciphers</a><a class="headerlink" href="#portable-ciphers" title="このヘッドラインへのパーマリンク">¶</a></h4>
 <p>Because MCrypt and OpenSSL (also called drivers throughout this document)
 each support different sets of encryption algorithms and often implement
 them in different ways, our Encryption library is designed to use them in
@@ -657,7 +657,7 @@ also a bad practice to use such low-length keys anyway.</p>
 </div>
 </div>
 <div class="section" id="driver-specific-ciphers">
-<h4><a class="toc-backref" href="#id9">Driver-specific ciphers</a><a class="headerlink" href="#driver-specific-ciphers" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<h4><a class="toc-backref" href="#id8">Driver-specific ciphers</a><a class="headerlink" href="#driver-specific-ciphers" title="このヘッドラインへのパーマリンク">¶</a></h4>
 <p>As noted above, MCrypt and OpenSSL support different sets of encryption
 ciphers. For portability reasons and because we haven&#8217;t tested them
 properly, we do not advise you to use the ones that are driver-specific,
@@ -809,7 +809,7 @@ is not properly implementing it.</p>
 </div>
 </div>
 <div class="section" id="encryption-modes">
-<span id="id2"></span><h4><a class="toc-backref" href="#id10">Encryption modes</a><a class="headerlink" href="#encryption-modes" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<span id="id1"></span><h4><a class="toc-backref" href="#id9">Encryption modes</a><a class="headerlink" href="#encryption-modes" title="このヘッドラインへのパーマリンク">¶</a></h4>
 <p>Different modes of encryption have different characteristics and serve
 for different purposes. Some are stronger than others, some are faster
 and some offer extra features.
@@ -883,7 +883,7 @@ general purposes.</p>
 </div>
 </div>
 <div class="section" id="message-length">
-<h3><a class="toc-backref" href="#id11">Message Length</a><a class="headerlink" href="#message-length" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<h3><a class="toc-backref" href="#id10">Message Length</a><a class="headerlink" href="#message-length" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p>It&#8217;s probably important for you to know that an encrypted string is usually
 longer than the original, plain-text string (depending on the cipher).</p>
 <p>This is influenced by the cipher algorithm itself, the IV prepended to the
@@ -894,7 +894,7 @@ for storage and transmission, regardless of a possible character set in use.</p>
 Cookies, for example, can only hold 4K of information.</p>
 </div>
 <div class="section" id="configuring-the-library">
-<span id="configuration"></span><h3><a class="toc-backref" href="#id12">Configuring the library</a><a class="headerlink" href="#configuring-the-library" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<span id="configuration"></span><h3><a class="toc-backref" href="#id11">Configuring the library</a><a class="headerlink" href="#configuring-the-library" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p>For usability, performance, but also historical reasons tied to our old
 <a class="reference internal" href="encrypt.html"><em>Encrypt Class</em></a>, the Encryption library is designed to
 use repeatedly the same driver, encryption cipher, mode and key.</p>
@@ -954,7 +954,7 @@ have both, but want to use MCrypt instead of OpenSSL:</p>
 </div>
 </div>
 <div class="section" id="encrypting-and-decrypting-data">
-<h3><a class="toc-backref" href="#id13">Encrypting and decrypting data</a><a class="headerlink" href="#encrypting-and-decrypting-data" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<h3><a class="toc-backref" href="#id12">Encrypting and decrypting data</a><a class="headerlink" href="#encrypting-and-decrypting-data" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p>Encrypting and decrypting data with the already configured library
 settings is simple. As simple as just passing the string to the
 <tt class="docutils literal"><span class="pre">encrypt()</span></tt> and/or <tt class="docutils literal"><span class="pre">decrypt()</span></tt> methods:</p>
@@ -976,7 +976,7 @@ configuration, you should always check the return value
 of <tt class="docutils literal"><span class="pre">decrypt()</span></tt> in production code.</p>
 </div>
 <div class="section" id="how-it-works">
-<h4><a class="toc-backref" href="#id14">How it works</a><a class="headerlink" href="#how-it-works" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<h4><a class="toc-backref" href="#id13">How it works</a><a class="headerlink" href="#how-it-works" title="このヘッドラインへのパーマリンク">¶</a></h4>
 <p>If you must know how the process works, here&#8217;s what happens under
 the hood:</p>
 <ul class="simple">
@@ -1013,7 +1013,7 @@ cipher-text using that IV and the derived encryption key.</li>
 </ul>
 </div>
 <div class="section" id="using-custom-parameters">
-<span id="custom-parameters"></span><h4><a class="toc-backref" href="#id15">Using custom parameters</a><a class="headerlink" href="#using-custom-parameters" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<span id="custom-parameters"></span><h4><a class="toc-backref" href="#id14">Using custom parameters</a><a class="headerlink" href="#using-custom-parameters" title="このヘッドラインへのパーマリンク">¶</a></h4>
 <p>Let&#8217;s say you have to interact with another system that is out
 of your control and uses another method to encrypt data. A
 method that will most certainly not match the above-described
@@ -1123,7 +1123,7 @@ is set to FALSE.</p>
 </div>
 </div>
 <div class="section" id="supported-hmac-authentication-algorithms">
-<span id="digests"></span><h4><a class="toc-backref" href="#id16">Supported HMAC authentication algorithms</a><a class="headerlink" href="#supported-hmac-authentication-algorithms" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<span id="digests"></span><h4><a class="toc-backref" href="#id15">Supported HMAC authentication algorithms</a><a class="headerlink" href="#supported-hmac-authentication-algorithms" title="このヘッドラインへのパーマリンク">¶</a></h4>
 <p>For HMAC message authentication, the Encryption library supports
 usage of the SHA-2 family of algorithms:</p>
 <table border="1" class="docutils">
@@ -1168,7 +1168,7 @@ appear and become widely available.</p>
 </div>
 </div>
 <div class="section" id="class-reference">
-<h2><a class="toc-backref" href="#id17">Class Reference</a><a class="headerlink" href="#class-reference" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2><a class="toc-backref" href="#id16">Class Reference</a><a class="headerlink" href="#class-reference" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <dl class="class">
 <dt id="CI_Encryption">
 <em class="property">class </em><tt class="descname">CI_Encryption</tt><a class="headerlink" href="#CI_Encryption" title="この定義へのパーマリンク">¶</a></dt>
@@ -1346,7 +1346,7 @@ doesn&#8217;t support SHA1.</p>
         <a href="file_uploading.html" class="btn btn-neutral float-right" title="ファイルアップロードクラス">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="encrypt.html" class="btn btn-neutral" title="暗号化クラス"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="encrypt.html" class="btn btn-neutral" title="Encrypt クラス"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

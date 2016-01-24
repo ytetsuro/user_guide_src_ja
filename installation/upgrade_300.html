@@ -128,8 +128,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../libraries/cart.html">ショッピングカートクラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/config.html">設定クラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/email.html">Email クラス</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../libraries/encrypt.html">暗号化クラス</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../libraries/encryption.html">暗号化ライブラリ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/encrypt.html">Encrypt クラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/encryption.html">Encryption ライブラリ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/file_uploading.html">ファイルアップロードクラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/form_validation.html">フォームバリデーション (検証)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/ftp.html">FTP クラス</a></li>
@@ -314,8 +314,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../libraries/cart.html">ショッピングカートクラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/config.html">設定クラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/email.html">Email クラス</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../libraries/encrypt.html">暗号化クラス</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../libraries/encryption.html">暗号化ライブラリ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/encrypt.html">Encrypt クラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/encryption.html">Encryption ライブラリ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/file_uploading.html">ファイルアップロードクラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/form_validation.html">フォームバリデーション (検証)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/ftp.html">FTP クラス</a></li>
@@ -428,41 +428,41 @@
             
   <div class="section" id="x-3-0-0">
 <h1>2.2.x から 3.0.0 へのアップグレード<a class="headerlink" href="#x-3-0-0" title="このヘッドラインへのパーマリンク">¶</a></h1>
-<p>アップグレードを行う前に、 index.phpファイルを静的ページに置き換えて、オフラインにする必要があります。</p>
+<p>アップグレードを行う前に、 index.php ファイルを静的ページに置き換えて、サイトをオフラインにする必要があります。</p>
 <div class="section" id="step-1-codeigniter">
-<h2>Step 1: CodeIgniter ファイルのアップグレード<a class="headerlink" href="#step-1-codeigniter" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p><strong>Replace</strong> &#8220;system&#8221; フォルダのすべてのファイルを新しいものに置き換えてください。
-index.php に何か変更を加えていた場合、
+<h2>Step 1: CodeIgniter ファイルを更新する<a class="headerlink" href="#step-1-codeigniter" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p><em>system/</em> ディレクトリのすべてのファイルと index.php を新しいものに
+<strong>置き換えてください</strong>。index.php に何か変更を加えていた場合、
 新しいファイルに再度適用する必要があります。</p>
 <div class="admonition important">
 <p class="first admonition-title">重要</p>
-<p class="last">You have to delete the old <em>system/</em> directory first and
-then put the new one in its place. A simple copy-paste may cause
-issues.</p>
+<p class="last">まず、古い <em>system/</em> ディレクトリを削除し、
+それから新しいものを配置する必要があります。単にコピーペーストすると、
+問題が生じる可能性があります。</p>
 </div>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
-<p class="last">もし独自に開発したファイルをこのフォルダに入れているなら、
+<p class="last">もし独自に開発したファイルをこれらのフォルダに入れているなら、
 新しいもので置き換える前にコピーを取ってください。</p>
 </div>
 </div>
 <div class="section" id="step-2">
-<h2>Step 2: クラスファイルの名前を更新<a class="headerlink" href="#step-2" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2>Step 2: クラスファイルの名前を更新する<a class="headerlink" href="#step-2" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>CodeIgniter 3.0 以降、全てのクラスファイル
-（ライブラリ・ドライバ・コントローラ・モデル）はUcfirst形式、
+（ライブラリ、ドライバ、コントローラ、そしてモデル）の名前は Ucfirst 形式、
 つまり大文字で始まるようにしなければなりません。</p>
-<p>例えばあなたが次のようなライブラリを持っているなら</p>
+<p>例えば、あなたが次のようなライブラリを持っているなら:</p>
 <blockquote>
 <div>application/libraries/mylibrary.php</div></blockquote>
-<p>このようにファイル名を変更します。</p>
+<p>このようにファイル名を変更します:</p>
 <blockquote>
 <div>application/libraries/Mylibrary.php</div></blockquote>
-<p>ドライバライブラリ、エクステンション、それからCodeIgniter付属の
-コアクラスやライブラリを上書きしている場合も同様です。</p>
+<p>ドライバライブラリ、それから CodeIgniter 付属の
+コアクラスやライブラリを拡張や置き換えしている場合も同様です。</p>
 <blockquote>
 <div>application/libraries/MY_email.php
 application/core/MY_log.php</div></blockquote>
-<p>これらのファイル名は次のように変更します。</p>
+<p>これらのファイル名は次のように変更します:</p>
 <blockquote>
 <div>application/libraries/MY_Email.php
 application/core/MY_Log.php</div></blockquote>
@@ -472,26 +472,26 @@ application/core/MY_Log.php</div></blockquote>
 <p>モデル:</p>
 <blockquote>
 <div>application/models/misc_model.php       -&gt;      application/models/Misc_model.php</div></blockquote>
-<p>このルールはディレクトリ名、設定ファイル、ビュー、ヘルパー、フック等には適用されません。
-クラスのみが対象です。</p>
-<p>まとめると、次のシンプルなルールになります。
-クラス名はUcfirst、それ以外はlowercaseです。</p>
+<p>このルールはディレクトリ名、設定ファイル、ビュー、ヘルパー、フック等には適用
+されません。クラスのみが対象です。</p>
+<p>まとめると、次のシンプルな 1 つのルールになります。
+クラス名は Ucfirst、それ以外は小文字です。</p>
 </div>
 <div class="section" id="step-3-config-mimes-php">
-<h2>Step 3: config/mimes.php の更新<a class="headerlink" href="#step-3-config-mimes-php" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>より多くのMIMEタイプを含むように更新されています。
-これを _application/config/mimes.php* にコピーしてください.</p>
+<h2>Step 3: config/mimes.php を置き換える<a class="headerlink" href="#step-3-config-mimes-php" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>より多くの MIME タイプを含むように更新されています。
+これを <strong>application/config/mimes.php</strong> にコピーしてください.</p>
 </div>
 <div class="section" id="step-4-config-autoload-php-autoload-core">
 <h2>Step 4: config/autoload.php から $autoload[&#8216;core&#8217;] を削除する<a class="headerlink" href="#step-4-config-autoload-php-autoload-core" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p><tt class="docutils literal"><span class="pre">$autoload['core']</span></tt> は CodeIgniter 1.4.1 で非推奨になっていましたが、ついに削除されました。
 もし何か指定されていれば <tt class="docutils literal"><span class="pre">$autoload['libraries']</span></tt> に移動してください。</p>
 </div>
-<div class="section" id="step-5">
-<h2>Step 5: ログクラスへの拡張・置き換えを移動する<a class="headerlink" href="#step-5" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>ログクラスは &#8220;core&#8221; クラスとして扱われるようになったため、
-<strong>system/core/</strong> ディレクトリに移動されました。
-もしこのクラスを拡張・置き換えていた場合、それらのファイルを <strong>application/core/</strong> に移動してください:</p>
+<div class="section" id="step-5-log">
+<h2>Step 5: Log クラスへの拡張・置き換えを移動する<a class="headerlink" href="#step-5-log" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>Log クラスは &#8220;core&#8221; クラスとして扱われるようになったため、
+<strong>system/core/</strong> ディレクトリに移動されました。もし Log クラスを拡張・置き換えて
+いた場合、それらのファイルを <strong>application/core/</strong> に移動してください:</p>
 <blockquote>
 <div>application/libraries/Log.php -&gt; application/core/Log.php
 application/libraries/MY_Log.php -&gt; application/core/MY_Log.php</div></blockquote>
@@ -504,30 +504,30 @@ application/libraries/MY_Log.php -&gt; application/core/MY_Log.php</div></blockq
 <p>最も大きな変更は、（暗号化された）クッキーの代わりに
 独立したストレージを使うようになったことです。
 データの格納先としてのクッキーは完全に廃止されたので、
-今後はサーバー上のストレージを使わなければなりません。
+今後はサーバ上の何らかのストレージエンジンを使わなければなりません。
 デフォルトではファイルシステムが使われます。</p>
-<p>新しいセッションクラスはPHPのカスタムセッションハンドラを利用しています。
+<p>新しいセッションクラスは PHP のカスタムセッションハンドラを利用しています。
 これによりスーパーグローバルの <tt class="docutils literal"><span class="pre">$_SESSION</span></tt> からも
-セッションにアクセスできるようになりました。
-（これまで同様 &#8220;userdata&#8221; としても使えます）</p>
-<p>構成オプションも追加・削除されています。
+セッションデータにアクセスできるようになりました
+（これまで同様 &#8220;userdata&#8221; としても使えます）。</p>
+<p>設定オプションも追加・削除されています。
 詳しくは <a class="reference internal" href="../libraries/sessions.html"><em>セッションライブラリのマニュアル</em></a> を
-確認されることをお勧めしますが、
+すべて読まれることをお勧めしますが、
 ここでもいくつかのポイントを説明します。</p>
 <blockquote>
 <div><ul>
-<li><p class="first"><tt class="docutils literal"><span class="pre">$config['sess_driver']</span></tt> の追加</p>
+<li><p class="first"><tt class="docutils literal"><span class="pre">$config['sess_driver']</span></tt> を設定する</p>
 <p>デフォルトは &#8216;files&#8217; ですが、もしあなたが
 <tt class="docutils literal"><span class="pre">$config['sess_use_database']</span></tt> を設定していた場合は
 &#8216;database&#8217; になります。</p>
 </li>
-<li><p class="first"><tt class="docutils literal"><span class="pre">$config['sess_save_path']</span></tt> の追加</p>
+<li><p class="first"><tt class="docutils literal"><span class="pre">$config['sess_save_path']</span></tt> を設定する</p>
 <p>&#8216;database&#8217; ドライバでは <tt class="docutils literal"><span class="pre">$config['sess_table_name']</span></tt> に
 フォールバックしますが、それ以外のドライバではマニュアルを参照して
-適切な値を設定する必要があります。</p>
+選択したドライバでの適切な値を設定する必要があります。</p>
 </li>
-<li><p class="first"><tt class="docutils literal"><span class="pre">ci_sessions</span></tt> テーブルの変更 (&#8216;database&#8217; ドライバのみ)</p>
-<p>テーブルの構造が少し変更されています。</p>
+<li><p class="first"><tt class="docutils literal"><span class="pre">ci_sessions</span></tt> テーブルを変更する (&#8216;database&#8217; ドライバのみ)</p>
+<p>テーブルの構造が少し変更されています。具体的には:</p>
 <blockquote>
 <div><ul class="simple">
 <li><tt class="docutils literal"><span class="pre">session_id</span></tt> 列は <tt class="docutils literal"><span class="pre">id</span></tt> に名前が変わりました</li>
@@ -536,8 +536,8 @@ application/libraries/MY_Log.php -&gt; application/core/MY_Log.php</div></blockq
 <li><tt class="docutils literal"><span class="pre">last_activity</span></tt> 列は <tt class="docutils literal"><span class="pre">timestamp</span></tt> に名前が変わりました</li>
 </ul>
 </div></blockquote>
-<p>これに伴いインデックスも更新が必要です。
-詳しくは <a class="reference external" href="../libraries/sessions.html#database-driver">databaseドライバ</a> の説明を参照してください。</p>
+<p>これに伴いインデックスの更新も必要です。
+詳しくは <a class="reference external" href="../libraries/sessions.html#database-driver">Session Database ドライバ</a> の説明を参照してください。</p>
 <div class="admonition important">
 <p class="first admonition-title">重要</p>
 <p class="last">現在公式にサポートしているのは MySQL と PostgreSQL のみです。
@@ -546,53 +546,53 @@ application/libraries/MY_Log.php -&gt; application/core/MY_Log.php</div></blockq
 この場合は他のドライバを検討してください。</p>
 </div>
 </li>
-<li><p class="first"><tt class="docutils literal"><span class="pre">$config['sess_match_useragent']</span></tt> の廃止</p>
-<p>User-Agent はブラウザから提供される値、つまりクライアントからの
+<li><p class="first"><tt class="docutils literal"><span class="pre">$config['sess_match_useragent']</span></tt> を削除する</p>
+<p>ユーザエージェント文字列はブラウザから提供される値、つまりクライアントからの
 入力値です。これを検証しても意味がないので、
 この機能は廃止されました。</p>
 </li>
-<li><p class="first"><tt class="docutils literal"><span class="pre">$config['sess_encrypt_cookie']</span></tt> の廃止</p>
+<li><p class="first"><tt class="docutils literal"><span class="pre">$config['sess_encrypt_cookie']</span></tt> を削除する</p>
 <p>前述の通り、今後クッキーにセッションデータが格納されることは
 ありませんから、このオプションもお役御免になりました。</p>
 </li>
-<li><p class="first"><tt class="docutils literal"><span class="pre">$config['sess_expire_on_close']</span></tt> の廃止</p>
+<li><p class="first"><tt class="docutils literal"><span class="pre">$config['sess_expire_on_close']</span></tt> を削除する</p>
 <p>このオプションはまだ使えますが、後方互換性のためだけに残されています。
-同じ効果は <tt class="docutils literal"><span class="pre">$config['sess_expiration']</span></tt> を 0 に設定することでも
+同じ効果は <tt class="docutils literal"><span class="pre">$config['sess_expiration']</span></tt> を 0 に設定することで
 得ることができます。</p>
 </li>
-<li><p class="first">&#8220;flashdata&#8221; と &#8220;userdata&#8221; の衝突に注意</p>
+<li><p class="first">&#8220;flashdata&#8221; と &#8220;userdata&#8221; の衝突をチェックする</p>
 <p>フラッシュデータは次のリクエストで削除するようにマークされている以外は
-ただの &#8220;userdata&#8221; になりました。 つまり、同じ名前の &#8220;userdata&#8221; と
+ただの &#8220;userdata&#8221; になりました。つまり、同じ名前の &#8220;userdata&#8221; と
 &#8220;flashdata&#8221; を別々に扱うことはできません。</p>
 </li>
-<li><p class="first">セッションメタデータについて</p>
+<li><p class="first">セッションメタデータをチェックする</p>
 <p>これまでは &#8216;session_id&#8217; 、&#8217;ip_address&#8217; 、&#8217;user_agent&#8217; 、&#8217;last_activity&#8217;
-といったメタデータに userdata としてアクセスできましたが、
-今後はできません。もしこれらのデータを利用しているなら、
+といったメタデータにも userdata としてアクセスできました。
+今後はできませんので、もしこれらのデータを利用しているなら、
 <a class="reference external" href="../libraries/sessions.html#accessing-session-metadata">セッションメタデータ</a>
 に関する説明を参照してください。</p>
 </li>
-<li><p class="first"><tt class="docutils literal"><span class="pre">unset_userdata()</span></tt> について</p>
+<li><p class="first"><tt class="docutils literal"><span class="pre">unset_userdata()</span></tt> の使い方をチェックする</p>
 <p>これまでは <tt class="docutils literal"><span class="pre">'key'</span> <span class="pre">=&gt;</span> <span class="pre">'dummy</span> <span class="pre">value'</span></tt> といった連想配列で、
-一度に複数のキーを削除していました。
-この無駄な方法は廃止されたので、
+一度に複数のキーを削除することができました。
+しかし、この方法は無意味なので、
 今後はキー <em>だけ</em> を配列の要素として渡さなければなりません。</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="c1">// Old</span>
+<div class="highlight-ci"><div class="highlight"><pre><span class="c1">// 以前</span>
 <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">session</span><span class="o">-&gt;</span><span class="na">unset_userdata</span><span class="p">(</span><span class="k">array</span><span class="p">(</span><span class="s1">&#39;item&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;item2&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;&#39;</span><span class="p">));</span>
 
-<span class="c1">// New</span>
+<span class="c1">// 今後</span>
 <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">session</span><span class="o">-&gt;</span><span class="na">unset_userdata</span><span class="p">(</span><span class="k">array</span><span class="p">(</span><span class="s1">&#39;item&#39;</span><span class="p">,</span> <span class="s1">&#39;item2&#39;</span><span class="p">));</span>
 </pre></div>
 </div>
 </li>
 </ul>
 </div></blockquote>
-<p>もしセッション拡張を使っていたら、
-（おそらく修正が必要ですが）
-<em>application/libraries/Session/</em> ディレクトリに移動してください。</p>
+<p>最後に、もしセッションを拡張して使っていたら、
+<em>application/libraries/Session/</em> ディレクトリに移動してください。
+たぶん、コードの書き換えも必要でしょうが。</p>
 </div>
 <div class="section" id="step-7-config-database-php">
-<h2>Step 7: config/database.php の更新<a class="headerlink" href="#step-7-config-database-php" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2>Step 7: config/database.php を更新する<a class="headerlink" href="#step-7-config-database-php" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>3.0.0 で Active Record から Query Builder に名前が変更されたので、
 <strong>config/database.php</strong> の <tt class="docutils literal"><span class="pre">$active_record</span></tt> 変数も
 <tt class="docutils literal"><span class="pre">$query_builder</span></tt> に変更する必要があります:</p>
@@ -603,16 +603,16 @@ application/libraries/MY_Log.php -&gt; application/core/MY_Log.php</div></blockq
 </div>
 </div>
 <div class="section" id="step-8">
-<h2>Step 8: エラーテンプレートの置き換え<a class="headerlink" href="#step-8" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2>Step 8: エラーテンプレートを置き換える<a class="headerlink" href="#step-8" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>CodeIgniter 3.0 ではエラーテンプレートもビューとして扱われ、
-_application/views/errors* ディレクトリに移動されました。</p>
-<p>また、CLI向けにプレインテキストのエラーテンプレートを
+<strong>application/views/errors</strong> ディレクトリに移動されました。</p>
+<p>また、CLI 向けにプレインテキストのエラーテンプレートを
 サポートするようになりました。これも新たに分ける必要があります。</p>
-<p>これまでのテンプレートは _application/errors* から _application/views/errors/html* にそのまま移動して構いませんが、
-新しい _application/views/errors/cli* ディレクトリには CodeIgniter のアーカイブからコピーしてください。</p>
+<p>これまでのテンプレートは <strong>application/errors</strong> から <strong>application/views/errors/html</strong> にそのまま移動して構いませんが、
+新しい <strong>application/views/errors/cli</strong> ディレクトリは CodeIgniter のアーカイブからコピーしてください。</p>
 </div>
 <div class="section" id="step-9-config-routes-php">
-<h2>Step 9: config/routes.php ファイルの更新<a class="headerlink" href="#step-9-config-routes-php" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2>Step 9: config/routes.php ファイルを更新する<a class="headerlink" href="#step-9-config-routes-php" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <div class="section" id="any">
 <h3>:any を含むルート<a class="headerlink" href="#any" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p>歴史的に、 CodeIgniter はこれまでずっとワイルドカード <strong>:any</strong> を
@@ -621,10 +621,10 @@ _application/views/errors* ディレクトリに移動されました。</p>
 <p>しかし実際の <strong>:any</strong> は <strong>.+</strong> という正規表現のエイリアスとして
 処理されていました。この正規表現は URI セグメントの
 区切り文字である / (スラッシュ) にもマッチするため、
-意図しない挙動を生むことになります。</p>
+意図しない挙動を生むことになります。これはバグと考えられます。</p>
 <p>CodeIgniter 3 では <strong>:any</strong> が <strong>[^/]+</strong> を表わすようになり、
 スラッシュにマッチすることはなくなりました。</p>
-<p>一方でこのバグを活用していた開発者もいることでしょう。
+<p>一方でこのバグを活用していた開発者もたくさんいることでしょう。
 もしあなたがその一人で、引き続きスラッシュにマッチさせたいなら、
 正規表現 <strong>.+</strong> を使ってください:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="p">(</span><span class="o">.+</span><span class="p">)</span>    <span class="c1">// 全ての文字にマッチする</span>
@@ -633,46 +633,46 @@ _application/views/errors* ディレクトリに移動されました。</p>
 </div>
 </div>
 <div class="section" id="default-controller-404-override">
-<h3>ディレクトリと &#8216;default_controller&#8217;, &#8216;404_override&#8217;<a class="headerlink" href="#default-controller-404-override" title="このヘッドラインへのパーマリンク">¶</a></h3>
-<p>As you should know, the <tt class="docutils literal"><span class="pre">$route['default_controller']</span></tt> and
-<tt class="docutils literal"><span class="pre">$route['404_override']</span></tt> settings accept not only a controller name, but
-also <em>controller/method</em> pairs. However, a bug in the routing logic has
-made it possible for some users to use that as <em>directory/controller</em>
-instead.</p>
-<p>As already said, this behavior was incidental and was never intended, nor
-documented. If you&#8217;ve relied on it, your application will break with
-CodeIgniter 3.0.</p>
-<p>Another notable change in version 3 is that &#8216;default_controller&#8217; and
-&#8216;404_override&#8217; are now applied <em>per directory</em>. To explain what this means,
-let&#8217;s take the following example:</p>
+<h3>ディレクトリと &#8216;default_controller&#8217;、&#8216;404_override&#8217;<a class="headerlink" href="#default-controller-404-override" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>ご存じのように <tt class="docutils literal"><span class="pre">$route['default_controller']</span></tt> と
+<tt class="docutils literal"><span class="pre">$route['404_override']</span></tt> の設定は、コントローラ名だけでなく、
+<em>コントローラ/メソッド</em> のペアも受け取ります。しかしながら、ルーティングロジック
+にバグがあり、
+<em>ディレクトリ/コントローラ</em> として使っているユーザがみられます。</p>
+<p>この振る舞いは意図したものではなく、偶然であり文書化もされていません。
+もしあなたのアプリケーションがこれを使っていたら、CodeIgniter 3.0 では動かなく
+なります。</p>
+<p>バージョン 3 における他の言及すべき変更は、&#8217;default_controller&#8217; と
+&#8216;404_override&#8217; が <em>ディレクトリ毎に</em> 適用されることです。説明のために、
+以下の例を用います:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$route</span><span class="p">[</span><span class="s1">&#39;default_controller&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;main&#39;</span><span class="p">;</span>
 </pre></div>
 </div>
-<p>Now, assuming that your website is located at <em>example.com</em>, you already
-know that if a user visits <tt class="docutils literal"><span class="pre">http://example.com/</span></tt>, the above setting will
-cause your &#8216;Main&#8217; controller to be loaded.</p>
-<p>However, what happens if you have an <em>application/controllers/admin/</em>
-directory and the user visits <tt class="docutils literal"><span class="pre">http://example.com/admin/</span></tt>?
-In CodeIgniter 3, the router will look for a &#8216;Main&#8217; controller under the
-admin/ directory as well. If not found, a Not Found (404) will be triggered.</p>
-<p>The same rule applies to the &#8216;404_override&#8217; setting.</p>
+<p>あなたの Web サイトが <em>example.com</em> にあるとすると、ユーザが
+<tt class="docutils literal"><span class="pre">http://example.com/</span></tt> にアクセスすると、上記の設定が
+&#8216;Main&#8217; コントローラをロードします。</p>
+<p>ところで、もし <em>application/controllers/admin/</em> ディレクトリがあり、
+ユーザが <tt class="docutils literal"><span class="pre">http://example.com/admin/</span></tt> にアクセスしたらどうなるでしょう?
+CodeIgniter 3 では、ルータが admin/ ディレクトリの下の &#8216;Main&#8217; コントローラ
+を探します。見つからなければ、Not Found (404) が起こります。</p>
+<p>同じルールが &#8216;404_override&#8217; 設定にも適用されます。</p>
 </div>
 </div>
-<div class="section" id="step-10-falsenull">
-<h2>Step 10: 要素が存在しないとき、FALSEではなくNULLを返すようになりました<a class="headerlink" href="#step-10-falsenull" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>Many methods and functions now return NULL instead of FALSE when the required items don&#8217;t exist:</p>
+<div class="section" id="step-10-false-null">
+<h2>Step 10: 多くの関数が要素がないとき FALSE ではなく NULL を返すようになりました<a class="headerlink" href="#step-10-false-null" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>多くのメソッドと関数は、要求された要素が存在しないとき、FALSE ではなく NULL を返すようになりました:</p>
 <blockquote>
 <div><ul class="simple">
-<li><a class="reference internal" href="../general/common_functions.html"><em>Common functions</em></a><ul>
+<li><a class="reference internal" href="../general/common_functions.html"><em>共通関数</em></a><ul>
 <li>config_item()</li>
 </ul>
 </li>
-<li><a class="reference internal" href="../libraries/config.html"><em>Config Class</em></a><ul>
+<li><a class="reference internal" href="../libraries/config.html"><em>Config クラス</em></a><ul>
 <li>config-&gt;item()</li>
 <li>config-&gt;slash_item()</li>
 </ul>
 </li>
-<li><a class="reference internal" href="../libraries/input.html"><em>Input Class</em></a><ul>
+<li><a class="reference internal" href="../libraries/input.html"><em>Input クラス</em></a><ul>
 <li>input-&gt;get()</li>
 <li>input-&gt;post()</li>
 <li>input-&gt;get_post()</li>
@@ -682,17 +682,17 @@ admin/ directory as well. If not found, a Not Found (404) will be triggered.</p>
 <li>input-&gt;get_request_header()</li>
 </ul>
 </li>
-<li><a class="reference internal" href="../libraries/sessions.html"><em>Session Class</em></a><ul>
+<li><a class="reference internal" href="../libraries/sessions.html"><em>Session クラス</em></a><ul>
 <li>session-&gt;userdata()</li>
 <li>session-&gt;flashdata()</li>
 </ul>
 </li>
-<li><a class="reference internal" href="../libraries/uri.html"><em>URI Class</em></a><ul>
+<li><a class="reference internal" href="../libraries/uri.html"><em>URI クラス</em></a><ul>
 <li>uri-&gt;segment()</li>
 <li>uri-&gt;rsegment()</li>
 </ul>
 </li>
-<li><a class="reference internal" href="../helpers/array_helper.html"><em>Array Helper</em></a><ul>
+<li><a class="reference internal" href="../helpers/array_helper.html"><em>Array クラス</em></a><ul>
 <li>element()</li>
 <li>elements()</li>
 </ul>
@@ -701,19 +701,19 @@ admin/ directory as well. If not found, a Not Found (404) will be triggered.</p>
 </div></blockquote>
 </div>
 <div class="section" id="step-11-xss">
-<h2>Step 11: XSS フィルタについて<a class="headerlink" href="#step-11-xss" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>Many functions in CodeIgniter allow you to use its XSS filtering feature
-on demand by passing a boolean parameter. The default value of that
-parameter used to be boolean FALSE, but it is now changed to NULL and it
-will be dynamically determined by your <tt class="docutils literal"><span class="pre">$config['global_xss_filtering']</span></tt>
-value.</p>
-<p>If you used to manually pass a boolean value for the <tt class="docutils literal"><span class="pre">$xss_filter</span></tt>
-parameter or if you&#8217;ve always had <tt class="docutils literal"><span class="pre">$config['global_xss_filtering']</span></tt> set
-to FALSE, then this change doesn&#8217;t concern you.</p>
-<p>Otherwise however, please review your usage of the following functions:</p>
+<h2>Step 11: XSS フィルタの使い方<a class="headerlink" href="#step-11-xss" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>CodeIgniter の多くの関数は、論理値のパラメータを渡すことで、
+XSS フィルタリング機能を使うことができます。
+そのデフォルト値は以前は FALSE でしたが、今は NULL に変更され、
+<tt class="docutils literal"><span class="pre">$config['global_xss_filtering']</span></tt> の値により動的に
+決定されます。</p>
+<p>もし、手動で論理値を <tt class="docutils literal"><span class="pre">$xss_filter</span></tt> パラメータに渡していたり、
+<tt class="docutils literal"><span class="pre">$config['global_xss_filtering']</span></tt> に FALSE を設定していた場合は、
+この変更は影響しません。</p>
+<p>そうでない場合は、次の関数の使い方を確認してください:</p>
 <blockquote>
 <div><ul class="simple">
-<li><a class="reference internal" href="../libraries/input.html"><em>Input Library</em></a><ul>
+<li><a class="reference internal" href="../libraries/input.html"><em>Input ライブラリ</em></a><ul>
 <li>input-&gt;get()</li>
 <li>input-&gt;post()</li>
 <li>input-&gt;get_post()</li>
@@ -722,59 +722,59 @@ to FALSE, then this change doesn&#8217;t concern you.</p>
 <li>input-&gt;input_stream()</li>
 </ul>
 </li>
-<li><a class="reference internal" href="../helpers/cookie_helper.html"><em>Cookie Helper</em></a> <a class="reference internal" href="../helpers/cookie_helper.html#get_cookie" title="get_cookie"><tt class="xref php php-func docutils literal"><span class="pre">get_cookie()</span></tt></a></li>
+<li><a class="reference internal" href="../helpers/cookie_helper.html"><em>Cookie ヘルパー</em></a> <a class="reference internal" href="../helpers/cookie_helper.html#get_cookie" title="get_cookie"><tt class="xref php php-func docutils literal"><span class="pre">get_cookie()</span></tt></a></li>
 </ul>
 </div></blockquote>
 <div class="admonition important">
 <p class="first admonition-title">重要</p>
-<p class="last">Another related change is that the <tt class="docutils literal"><span class="pre">$_GET</span></tt>, <tt class="docutils literal"><span class="pre">$_POST</span></tt>,
-<tt class="docutils literal"><span class="pre">$_COOKIE</span></tt> and <tt class="docutils literal"><span class="pre">$_SERVER</span></tt> superglobals are no longer
-automatically overwritten when global XSS filtering is turned on.</p>
+<p class="last">他の関連する変更点として、 <tt class="docutils literal"><span class="pre">$_GET</span></tt>、<tt class="docutils literal"><span class="pre">$_POST</span></tt>、
+<tt class="docutils literal"><span class="pre">$_COOKIE</span></tt> そして <tt class="docutils literal"><span class="pre">$_SERVER</span></tt> スーパーグローバルは、グローバル XSS
+フィルタリングがオンの場合に、自動的に上書きされなくなりました。</p>
 </div>
 </div>
 <div class="section" id="step-12-uri-xss">
-<h2>Step 12: URI にまつわる潜在的な XSS 問題に注意<a class="headerlink" href="#step-12-uri-xss" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>The <a class="reference internal" href="../libraries/uri.html"><em>URI Library</em></a> used to automatically convert
-a certain set of &#8220;programmatic characters&#8221; to HTML entities when they
-are encountered in a URI segment.</p>
-<p>This was aimed at providing some automatic XSS protection, in addition
-to the <tt class="docutils literal"><span class="pre">$config['permitted_uri_chars']</span></tt> setting, but has proven to be
-problematic and is now removed in CodeIgniter 3.0.</p>
-<p>If your application has relied on this feature, you should update it to
-filter URI segments through <tt class="docutils literal"><span class="pre">$this-&gt;security-&gt;xss_clean()</span></tt> whenever you
-output them.</p>
+<h2>Step 12: URI にまつわる潜在的な XSS 問題をチェックする<a class="headerlink" href="#step-12-uri-xss" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p><a class="reference internal" href="../libraries/uri.html"><em>URI ライブラリ</em></a> は以前は特定の &#8220;問題のある文字&#8221;
+が URI セグメントに含まれるとき、HTML エンティティに自動的に
+変換していました。</p>
+<p>これは、<tt class="docutils literal"><span class="pre">$config['permitted_uri_chars']</span></tt> の設定に加えて、
+自動 XSS 保護の提供を目的としていましたが、問題があることが判明したため、
+CodeIgniter 3.0 で削除されました。</p>
+<p>もし、あなたのアプリケーションがこの機能に頼っているなら、
+出力時に <tt class="docutils literal"><span class="pre">$this-&gt;security-&gt;xss_clean()</span></tt> で URI セグメントを
+フィルタするように更新するべきです。</p>
 </div>
 <div class="section" id="step-13-xss-clean">
-<h2>Step 13: バリデーションルールから &#8216;xss_clean&#8217; を使う際の注意<a class="headerlink" href="#step-13-xss-clean" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>A largely unknown rule about XSS cleaning is that it should <em>only be
-applied to output</em>, as opposed to input data.</p>
-<p>We&#8217;ve made that mistake ourselves with our automatic and global XSS cleaning
-feature (see previous step about XSS above), so now in an effort to discourage that
-practice, we&#8217;re also removing &#8216;xss_clean&#8217; from the officially supported
-list of <a class="reference internal" href="../libraries/form_validation.html"><em>form validation</em></a> rules.</p>
-<p>Because the <a class="reference internal" href="../libraries/form_validation.html"><em>Form Validation library</em></a>
-generally validates <em>input</em> data, the &#8216;xss_clean&#8217; rule simply doesn&#8217;t
-belong in it.</p>
-<p>If you really, really need to apply that rule, you should now also load the
-<a class="reference internal" href="../helpers/security_helper.html"><em>Security Helper</em></a>, which contains
-<tt class="docutils literal"><span class="pre">xss_clean()</span></tt> as a regular function and therefore can be also used as
-a validation rule.</p>
+<h2>Step 13: バリデーションルール &#8216;xss_clean&#8217; の使い方をチェックする<a class="headerlink" href="#step-13-xss-clean" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>XSS クリーニングについて広く知られていないルールとして、
+入力データに対してではなく、<em>出力にのみ適用すべき</em> があります。</p>
+<p>我々は自動グローバル XSS クリーニング機能 (上の XSS についてのステップを参照)
+においてミスを犯しました。そのため、現在、そのような実践に反対するために、
+<a class="reference internal" href="../libraries/form_validation.html"><em>フォームバリデーション</em></a> のルールの
+公式サポートリストから、&#8217;xss_clean&#8217; を削除しています。</p>
+<p>何故なら、<a class="reference internal" href="../libraries/form_validation.html"><em>フォームバリデーションライブラリ</em></a>
+は一般的に <em>入力</em> データを検証するため、
+&#8216;xss_clean&#8217; ルールは単純にそこに属さないからです。</p>
+<p>もし本当に本当にそのルールを適用する必要があるなら、
+通常の関数として <tt class="docutils literal"><span class="pre">xss_clean()</span></tt> が含まれる
+<a class="reference internal" href="../helpers/security_helper.html"><em>Security ヘルパー</em></a> をロードしてください。
+通常の関数なら検証ルールとして今でも使用できます。</p>
 </div>
 <div class="section" id="step-14-get-post">
-<h2>Step 14: 入力クラス get_post() メソッドの変更点<a class="headerlink" href="#step-14-get-post" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>Previously, the <a class="reference internal" href="../libraries/input.html"><em>Input Class</em></a> method <tt class="docutils literal"><span class="pre">get_post()</span></tt>
-was searching first in POST data, then in GET data. This method has been
-modified so that it searches in GET then in POST, as its name suggests.</p>
-<p>A method has been added, <tt class="docutils literal"><span class="pre">post_get()</span></tt>, which searches in POST then in GET, as
-<tt class="docutils literal"><span class="pre">get_post()</span></tt> was doing before.</p>
+<h2>Step 14: 入力クラスの get_post() メソッドの使い方を更新する<a class="headerlink" href="#step-14-get-post" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>以前は、 <a class="reference internal" href="../libraries/input.html"><em>Input クラス</em></a> の <tt class="docutils literal"><span class="pre">get_post()</span></tt>
+メソッドは最初に POST データを探し、それから GET データを探しました。
+このメソッドは、その名前が示すように、GET を先に探しその後 POST を
+探すように変更されました。</p>
+<p>以前と同じようにするために、POST を先に探し GET を探す <tt class="docutils literal"><span class="pre">post_get()</span></tt> メソッドが追加されました。</p>
 </div>
 <div class="section" id="step-15-directory-map">
-<h2>Step 15: ディレクトリヘルパー directory_map() 関数の変更点<a class="headerlink" href="#step-15-directory-map" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>In the resulting array, directories now end with a trailing directory
-separator (i.e. a slash, usually).</p>
+<h2>Step 15: ディレクトリヘルパーの directory_map() 関数の使い方を更新する<a class="headerlink" href="#step-15-directory-map" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>結果の配列の中で、ディレクトリはディレクトリセパレータ (通常はスラッシュ)
+で終わるようになりました。</p>
 </div>
 <div class="section" id="step-16-drop-table">
-<h2>Step 16: データベースフォージ drop_table() メソッドの変更点<a class="headerlink" href="#step-16-drop-table" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2>Step 16: データベースフォージの drop_table() メソッドの使い方を更新する<a class="headerlink" href="#step-16-drop-table" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>Up until now, <tt class="docutils literal"><span class="pre">drop_table()</span></tt> added an IF EXISTS clause by default or it didn&#8217;t work
 at all with some drivers. In CodeIgniter 3.0, the IF EXISTS condition is no longer added
 by default and has an optional second parameter that allows that instead and is set to
@@ -794,7 +794,7 @@ all drivers with the exception of ODBC.</p>
 </div>
 </div>
 <div class="section" id="step-17-email">
-<h2>Step 17: Email ライブラリで複数のメールを送る際の変更点<a class="headerlink" href="#step-17-email" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2>Step 17: Email ライブラリでの複数メールの使い方を変更する<a class="headerlink" href="#step-17-email" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>The <a class="reference internal" href="../libraries/email.html"><em>Email Library</em></a> will automatically clear the
 set parameters after successfully sending emails. To override this behaviour,
 pass FALSE as the first parameter in the <tt class="docutils literal"><span class="pre">send()</span></tt> method:</p>
@@ -806,7 +806,7 @@ pass FALSE as the first parameter in the <tt class="docutils literal"><span clas
 </div>
 </div>
 <div class="section" id="step-18-form-validation">
-<h2>Step 18: Form_validation の言語ファイル<a class="headerlink" href="#step-18-form-validation" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2>Step 18: Form_validation の言語ファイルを更新する<a class="headerlink" href="#step-18-form-validation" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>Two improvements have been made to the <a class="reference internal" href="../libraries/form_validation.html"><em>Form Validation Library</em></a>&#8216;s <a class="reference internal" href="../libraries/language.html"><em>language</em></a>
 files and error messages format:</p>
 <blockquote>
@@ -841,8 +841,8 @@ Therefore you&#8217;re encouraged to update its usage sooner rather than
 later.</p>
 </div>
 </div>
-<div class="section" id="step-19-make-sure-your-base-url-config-value-is-not-empty">
-<h2>Step 19: Make sure your &#8216;base_url&#8217; config value is not empty<a class="headerlink" href="#step-19-make-sure-your-base-url-config-value-is-not-empty" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="section" id="step-19-base-url">
+<h2>Step 19: &#8216;base_url&#8217; の設定値が空でないことを確認する<a class="headerlink" href="#step-19-base-url" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>When <tt class="docutils literal"><span class="pre">$config['base_url']</span></tt> is not set, CodeIgniter tries to automatically
 detect what your website&#8217;s base URL is. This is done purely for convenience
 when you are starting development of a new application.</p>
@@ -879,8 +879,8 @@ which you can create this logic with a few lines of code. For example:</p>
 </pre></div>
 </div>
 </div>
-<div class="section" id="step-20-remove-usage-of-previously-deprecated-functionalities">
-<h2>Step 20: Remove usage of (previously) deprecated functionalities<a class="headerlink" href="#step-20-remove-usage-of-previously-deprecated-functionalities" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="section" id="step-20">
+<h2>Step 20: (以前から) 廃止予定の機能を削除する<a class="headerlink" href="#step-20" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>In addition to the <tt class="docutils literal"><span class="pre">$autoload['core']</span></tt> configuration setting, there&#8217;s a
 number of other functionalities that have been removed in CodeIgniter 3.0.0:</p>
 <div class="section" id="the-sha1-library">
@@ -1227,8 +1227,8 @@ sooner rather than later.</p>
 </div>
 </div>
 </div>
-<div class="section" id="step-21-check-your-usage-of-text-helper-highlight-phrase">
-<h2>Step 21: Check your usage of Text helper highlight_phrase()<a class="headerlink" href="#step-21-check-your-usage-of-text-helper-highlight-phrase" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="section" id="step-21-text-highlight-phrase">
+<h2>Step 21: Text ヘルパーの highlight_phrase() の使い方を確認する<a class="headerlink" href="#step-21-text-highlight-phrase" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>The default HTML tag used by <a class="reference internal" href="../helpers/text_helper.html"><em>Text Helper</em></a> function
 <tt class="xref py py-func docutils literal"><span class="pre">highlight_phrase()</span></tt> has been changed from <tt class="docutils literal"><span class="pre">&lt;strong&gt;</span></tt> to the new HTML5
 tag <tt class="docutils literal"><span class="pre">&lt;mark&gt;</span></tt>.</p>
