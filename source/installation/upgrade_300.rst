@@ -400,90 +400,90 @@ Step 15: ディレクトリヘルパーの directory_map() 関数の使い方を
 Step 16: データベースフォージの drop_table() メソッドの使い方を更新する
 ***********************************************************************
 
-Up until now, ``drop_table()`` added an IF EXISTS clause by default or it didn't work
-at all with some drivers. In CodeIgniter 3.0, the IF EXISTS condition is no longer added
-by default and has an optional second parameter that allows that instead and is set to
-FALSE by default.
+今まで ``drop_table()`` は IF EXISTS 句をデフォルトで追加していましたが、
+いくつかのドライバでは全く動作しませんでした。
+CodeIgniter 3.0 では、IF EXISTS 条件はデフォルトでは追加されず、
+オプションの第 2 引数が追加され、デフォルトは FALSE です。
 
-If your application relies on IF EXISTS, you'll have to change its usage.
+もし、アプリケーションが IF EXISTS を使っているなら、使い方を変更する必要があります。
 
 ::
 
-	// Now produces just DROP TABLE `table_name`
+	// 今は DROP TABLE `table_name` だけを生成します
 	$this->dbforge->drop_table('table_name');
 
-	// Produces DROP TABLE IF EXISTS `table_name`
+	// DROP TABLE IF EXISTS `table_name` を生成します
 	$this->dbforge->drop_table('table_name', TRUE);
 
-.. note:: The given example uses MySQL-specific syntax, but it should work across
-	all drivers with the exception of ODBC.
+.. note:: この例では MySQL 固有の文法を使っていますが、ODBC 以外のすべての
+	ドライバで機能します。
 
 ***********************************************************
-Step 17: Email ライブラリでの複数メールの使い方を変更する
+Step 17: Email ライブラリでの複数メールの扱いを変更する
 ***********************************************************
 
-The :doc:`Email Library <../libraries/email>` will automatically clear the
-set parameters after successfully sending emails. To override this behaviour,
-pass FALSE as the first parameter in the ``send()`` method:
+:doc:`Email ライブラリ <../libraries/email>` は、メール送信が成功した後に、
+自動的に設定されたパラメータをクリアします。
+この振る舞いを上書きしたい場合は、``send()`` メソッドの第 1 引数に FALSE
+を渡します:
 
 ::
 
 	if ($this->email->send(FALSE))
  	{
- 		// Parameters won't be cleared
+ 		// パラメータはクリアされません
  	}
 
 ***************************************************
 Step 18: Form_validation の言語ファイルを更新する
 ***************************************************
 
-Two improvements have been made to the :doc:`Form Validation Library
-<../libraries/form_validation>`'s :doc:`language <../libraries/language>`
-files and error messages format:
+:doc:`Form Validation ライブラリ <../libraries/form_validation>` の
+:doc:`言語 <../libraries/language>` ファイルとエラーメッセージのフォーマットに
+2 つの改良が加えられました:
 
- - :doc:`Language Library <../libraries/language>` line keys now must be
-   prefixed with **form_validation_** in order to avoid collisions::
+ - :doc:`Language ライブラリ <../libraries/language>` の行のキーは、衝突を
+   避けるために、接頭辞 **form_validation_** を付けなければなりません::
 
-	// Old
+	// 以前
 	$lang['rule'] = ...
 
-	// New
+	// 今後
 	$lang['form_validation_rule'] = ...
 
- - The error messages format has been changed to use named parameters, to
-   allow more flexibility than what `sprintf()` offers::
+ - エラーメッセージのフォーマットが名前付きパラメータを使うように変更されました。
+   `sprintf()` よりも柔軟にするためです::
 
-	// Old
+	// 以前
 	'The %s field does not match the %s field.'
 
-	// New
+	// 今後
 	'The {field} field does not match the {param} field.'
 
-.. note:: The old formatting still works, but the non-prefixed line keys
-	are DEPRECATED and scheduled for removal in CodeIgniter 3.1+.
-	Therefore you're encouraged to update its usage sooner rather than
-	later.
+.. note:: 古いフォーマットもまだ動作しますが、接頭辞のない行のキーは廃止予定
+	であり、CodeIgniter 3.1+ で削除される予定です。
+	よって、早めに更新することが推奨されます。
 
 ************************************************************
 Step 19: 'base_url' の設定値が空でないことを確認する
 ************************************************************
 
-When ``$config['base_url']`` is not set, CodeIgniter tries to automatically
-detect what your website's base URL is. This is done purely for convenience
-when you are starting development of a new application.
+``$config['base_url']`` が設定されていないとき、CodeIgniter は Web サイトの
+ベース URL を自動的に検知しようとします。これは、純粋に新しいアプリケーションの
+開発を開始する際、便利なようになされているものです。
 
-Auto-detection is never reliable and also has security implications, which
-is why you should **always** have it manually configured!
+自動検知は決して信頼できるものではなく、セキュリティと関連します。
+だから、**いつでも** 手動で設定すべきものです。
 
-One of the changes in CodeIgniter 3.0.3 is how this auto-detection works,
-and more specifically it now falls back to the server's IP address instead
-of the hostname requested by the client. Therefore, if you've ever relied
-on auto-detection, it will change how your website works now.
+CodeIgniter 3.0.3 での変更点の 1 つは、自動検知がどう機能するかです。
+より具体的に言えば、クライアントによりリクエストされたホスト名ではなく、
+サーバの IP アドレスにフォールバックするようになりました。ゆえに、
+もしあなたが自動検知に頼っている場合、Web サイトの振る舞いが変更されるでしょう。
 
-In case you need to allow e.g. multiple domains, or both http:// and
-https:// prefixes to be dynamically used depending on the request,
-remember that *application/config/config.php* is still a PHP script, in
-which you can create this logic with a few lines of code. For example::
+例えば、複数のドメインを使っていたり、http:// と https:// の両方のプリフィックス
+をリクエストに応じて動的に使っている場合、
+*application/config/config.php* は PHP スクリプトであることを思い出してください。
+例えば、次のような数行のコードでロジックを記述できます::
 
 	$allowed_domains = array('domain1.tld', 'domain2.tld');
 	$default_domain  = 'domain1.tld';
@@ -511,97 +511,97 @@ which you can create this logic with a few lines of code. For example::
 Step 20: (以前から) 廃止予定の機能を削除する
 ****************************************************************
 
-In addition to the ``$autoload['core']`` configuration setting, there's a
-number of other functionalities that have been removed in CodeIgniter 3.0.0:
+``$autoload['core']`` の設定以外にも、CodeIgniter 3.0.0 で削除された機能は
+たくさんあります。
 
-The SHA1 library
+SHA1 ライブラリ
 ================
 
-The previously deprecated SHA1 library has been removed, alter your code to use PHP's native
-``sha1()`` function to generate a SHA1 hash.
+以前から廃止予定だった SHA1 ライブラリが削除されました。
+SHA1 ハッシュを生成するには、PHP のネイティブの ``sha1()`` 関数を使うようにコードを変更してください。
 
-Additionally, the ``sha1()`` method in the :doc:`Encrypt Library <../libraries/encrypt>` has been removed.
+加えて、:doc:`Encrypt ライブラリ <../libraries/encrypt>` の ``sha1()`` メソッド も削除されました。
 
-The EXT constant
+EXT 定数
 ================
 
-Usage of the ``EXT`` constant has been deprecated since dropping support for PHP 4. There's no
-longer a need to maintain different filename extensions and in this new CodeIgniter version,
-the ``EXT`` constant has been removed. Use just '.php' instead.
+PHP 4 のサポートをドロップして以来、``EXT`` 定数の使用は推奨されていません。この
+新しい CodeIgniter のバージョンで、もはや異なるファイル名の拡張子を保持する必要は
+ありません。``EXT`` 定数は削除されました。代わりに、単に '.php' を使って下さい。
 
-Smiley helper
-=============
+Smiley ヘルパー
+===============
 
-The :doc:`Smiley Helper <../helpers/smiley_helper>` is a legacy feature from EllisLab's
-ExpressionEngine product. However, it is too specific for a general purpose framework like
-CodeIgniter and as such it is now deprecated.
+:doc:`Smiley ヘルパー <../helpers/smiley_helper>` は EllisLab の製品
+ExpressEngine 由来のレガシーな機能です。CodeIgniter のような一般的な用途の
+フレームワークにとっては、具体的すぎるため、廃止予定となりました。
 
-Also, the previously deprecated ``js_insert_smiley()`` (since version 1.7.2) is now removed.
+また、以前から廃止予定の ``js_insert_smiley()`` (バージョン 1.7.2 から) は削除されました。
 
-The Encrypt library
+Encrypt ライブラリ
 ===================
 
-Following numerous vulnerability reports, the :doc:`Encrypt Library <../libraries/encrypt>` has
-been deprecated and a new, :doc:`Encryption Library <../libraries/encryption>` is added to take
-its place.
+多数の脆弱性報告に従い、 :doc:`Encrypt ライブラリ <../libraries/encrypt>` は
+廃止予定となり、新たな :doc:`Encryption ライブラリ <../libraries/encryption>`
+が代わりに追加されました。
 
-The new library requires either the `MCrypt extension <http://php.net/mcrypt>`_ (and /dev/urandom
-availability) or PHP 5.3.3 and the `OpenSSL extension <http://php.net/openssl>`_.
-While this might be rather inconvenient, it is a requirement that allows us to have properly
-implemented cryptographic functions.
+新しいライブラリは `MCrypt 機能拡張 <http://php.net/mcrypt>`_ 
+(そして /dev/urandom が利用可能なこと) または PHP 5.3.3 と 
+`OpenSSL 機能拡張 <http://php.net/openssl>`_ を必要とします。
+これは少々不便ですが、暗号の機能を適切に実装するための必要条件です。
 
-.. note:: The :doc:`Encrypt Library <../libraries/encrypt>` is still available for the purpose
-	of keeping backwards compatibility.
+.. note:: :doc:`Encrypt ライブラリ <../libraries/encrypt>` はまだ後方互換の
+	ために使用可能です。
 
-.. important:: You are strongly encouraged to switch to the new :doc:`Encryption Library
-	<../libraries/encryption>` as soon as possible!
+.. important:: できるだけ早く新しい :doc:`Encryption ライブラリ
+	<../libraries/encryption>` に移行することが強く推奨されます!
 
-The Cart library
+Cart ライブラリ
 ================
 
-The :doc:`Cart Library <../libraries/cart>`, similarly to the :doc:`Smiley Helper
-<../helpers/smiley_helper>` is too specific for CodeIgniter. It is now deprecated
-and scheduled for removal in CodeIgniter 3.1+.
+:doc:`Cart ライブラリ <../libraries/cart>` は :doc:`Smiley ヘルパー
+<../helpers/smiley_helper>` と同じように、CodeIgniter にとっては具体的
+過ぎます。現在、廃止予定であり、CodeIgniter 3.1+ で削除される予定です。
 
-.. note:: The library is still available, but you're strongly encouraged to remove its usage sooner
-	rather than later.
+.. note:: このライブラリはまだ使用可能ですが、早急に使用を止めることを強く
+	推奨します。
 
-Database drivers 'mysql', 'sqlite', 'mssql', 'pdo/dblib'
-========================================================
+データベースドライバ 'mysql'、'sqlite'、'mssql'、'pdo/dblib'
+============================================================
 
-The **mysql** driver utilizes the old 'mysql' PHP extension, known for its aging code base and
-many low-level problems. The extension is deprecated as of PHP 5.5 and CodeIgniter deprecates
-it in version 3.0, switching the default configured MySQL driver to **mysqli**.
+**mysql** ドライバは、古いコードベースと多くの低レベルでの問題で知られる、古い 'mysql' PHP 機能拡張を利用します。
+この機能拡張は PHP 5.5 で廃止予定となり、CodeIgniter ではバージョン 3.0 で
+廃止予定となり、デフォルトの MySQL ドライバ設定は **mysqli** に変更されました。
 
-Please use either the 'mysqli' or 'pdo/mysql' drivers for MySQL. The old 'mysql' driver will be
-removed at some point in the future.
+'mysqli' または 'pdo/mysql' ドライバのいずれかを使用してください。古い
+'mysql' ドライバは将来削除されます。
 
-The **sqlite**, **mssql** and **pdo/dblib** (also known as pdo/mssql or pdo/sybase) drivers
-all depend on PHP extensions that for different reasons no longer exist since PHP 5.3.
+**sqlite**、**mssql** そして **pdo/dblib** (pdo/mssql または pdo/sybase としても知られる) ドライバはすべて、さまざまな理由から PHP 5.3 には存在しない PHP 機能拡張に依存しています。
 
-Therefore we are now deprecating these drivers as we will have to remove them in one of the next
-CodeIgniter versions. You should use the more advanced, **sqlite3**, **sqlsrv** or **pdo/sqlsrv**
-drivers respectively.
+それゆえ、それらのドライバも廃止予定であり、CodeIgniter の次のバージョンで
+削除されます。
+より進歩した **sqlite3**、**sqlsrv** または **pdo/sqlsrv** ドライバを
+使うべきです。
 
-.. note:: These drivers are still available, but you're strongly encouraged to switch to other ones
-	sooner rather than later.
+.. note:: これらのドライバはまだ使用可能ですが、早急に他のドライバに
+	変更することを強く推奨します。
 
-Security helper do_hash()
-=========================
+Security ヘルパーの do_hash()
+===============================
 
-:doc:`Security Helper <../helpers/security_helper>` function ``do_hash()`` is now just an alias for
-PHP's native ``hash()`` function. It is deprecated and scheduled for removal in CodeIgniter 3.1+.
+:doc:`Security ヘルパー <../helpers/security_helper>` の関数 ``do_hash()`` は
+現在 PHP のネイティブ ``hash()`` 関数の単なるエイリアスです。
+廃止予定であり、CodeIgniter 3.1+ で削除される予定です。
 
-.. note:: This function is still available, but you're strongly encouraged to remove its usage sooner
-	rather than later.
+.. note:: このライブラリはまだ使用可能ですが、早急に使用を止めることを強く
+	推奨します。
 
-The $config['global_xss_filtering'] setting
+$config['global_xss_filtering'] 設定
 ===========================================
 
-As already explained above, XSS filtering should not be done on input data,
-but on output instead. Therefore, the ``$config['global_xss_filtering']``,
-which automatically filters *input* data, is considered a bad practice and
-is now deprecated.
+上記ですでに説明したように、XSS フィルタリングは入力データに対しするものではなく、
+出力にすべきものです。ゆえに、自動的に *入力* データをフィルタする
+``$config['global_xss_filtering']`` は悪い実践だと考えられ、廃止予定とされました。
 
 Instead, you should manually escape any user-provided data via the
 :php:func:`xss_clean()` function when you need to output it, or use a
@@ -611,8 +611,8 @@ for you.
 .. note:: The setting is still available, but you're strongly encouraged to
 	remove its usage sooner rather than later.
 
-File helper read_file()
-=======================
+File ヘルパーの read_file()
+=============================
 
 :doc:`File Helper <../helpers/file_helper>` function ``read_file()`` is now just an alias for
 PHP's native ``file_get_contents()`` function. It is deprecated and scheduled for removal in
@@ -621,8 +621,8 @@ CodeIgniter 3.1+.
 .. note:: This function is still available, but you're strongly encouraged to remove its usage sooner
 	rather than later.
 
-String helper repeater()
-========================
+String ヘルパーの repeater()
+============================
 
 :doc:`String Helper <../helpers/string_helper>` function :php:func:`repeater()` is now just an alias for
 PHP's native ``str_repeat()`` function. It is deprecated and scheduled for removal in CodeIgniter 3.1+.
@@ -630,8 +630,8 @@ PHP's native ``str_repeat()`` function. It is deprecated and scheduled for remov
 .. note:: This function is still available, but you're strongly encouraged to remove its usage sooner
 	rather than later.
 
-String helper trim_slashes()
-============================
+String ヘルパーの trim_slashes()
+================================
 
 :doc:`String Helper <../helpers/string_helper>` function :php:func:`trim_slashes()` is now just an alias
 for PHP's native ``trim()`` function (with a slash passed as its second argument). It is deprecated and
@@ -640,8 +640,8 @@ scheduled for removal in CodeIgniter 3.1+.
 .. note:: This function is still available, but you're strongly encouraged to remove its usage sooner
 	rather than later.
 
-Form helper form_prep()
-=======================
+Form ヘルパーの form_prep()
+=============================
 
 :doc:`Form Helper <../helpers/form_helper>` function :php:func:`form_prep()`
 is now just an alias for :doc:`common function </general/common_functions>`
@@ -652,7 +652,7 @@ Please use :php:func:`html_escape()` instead.
 .. note:: This function is still available, but you're strongly encouraged
 	to remove its usage sooner rather than later.
 
-Email helper functions
+Email ヘルパーの関数
 ======================
 
 :doc:`Email Helper <../helpers/email_helper>` only has two functions
@@ -667,8 +667,8 @@ is scheduled for removal in CodeIgniter 3.1+.
 .. note:: These functions are still available, but you're strongly encouraged to remove their usage
 	sooner rather than later.
 
-Date helper standard_date()
-===========================
+Date ヘルパーの standard_date()
+================================
 
 :doc:`Date Helper <../helpers/date_helper>` function ``standard_date()`` is being deprecated due
 to the availability of native PHP `constants <http://php.net/manual/en/class.datetime.php#datetime.constants.types>`_,
@@ -693,8 +693,8 @@ its usage:
 .. note:: This function is still available, but you're strongly encouraged to remove its usage sooner
 	rather than later as it is scheduled for removal in CodeIgniter 3.1+.
 
-HTML helpers nbs(), br()
-========================
+HTML ヘルパーの nbs()、br()
+============================
 
 :doc:`HTML Helper <../helpers/html_helper>` functions ``nbs()`` and ``br()`` are just aliases
 for the native ``str_repeat()`` function used with ``&nbsp;`` and ``<br >`` respectively.
@@ -705,8 +705,8 @@ scheduled for removal in CodeIgniter 3.1+.
 .. note:: These functions are still available, but you're strongly encouraged to remove their usage
 	sooner rather than later.
 
-Pagination library 'anchor_class' setting
-=========================================
+Pagination ライブラリの 'anchor_class' 設定
+=============================================
 
 The :doc:`Pagination Library <../libraries/pagination>` now supports adding pretty much any HTML
 attribute to your anchors via the 'attributes' configuration setting. This includes passing the
@@ -717,8 +717,8 @@ CodeIgniter 3.1+.
 .. note:: This setting is still available, but you're strongly encouraged to remove its usage sooner
 	rather than later.
 
-String helper random_string() types 'unique' and 'encrypt'
-==========================================================
+String ヘルパーの random_string() のタイプ 'unique' と 'encrypt'
+==================================================================
 
 When using the :doc:`String Helper <../helpers/string_helper>` function :php:func:`random_string()`,
 you should no longer pass the **unique** and **encrypt** randomization types. They are only
@@ -728,8 +728,8 @@ in CodeIgniter 3.1+.
 .. note:: These options are still available, but you're strongly encouraged to remove their usage
 	sooner rather than later.
 
-URL helper url_title() separators 'dash' and 'underscore'
-=========================================================
+URL ヘルパーの url_title() のセパレータ 'dash' and 'underscore'
+===============================================================
 
 When using the :doc:`URL Helper <../helpers/url_helper>` function :php:func:`url_title()`, you
 should no longer pass **dash** or **underscore** as the word separator. This function will
@@ -742,8 +742,8 @@ in CodeIgniter 3.1+.
 .. note:: These options are still available, but you're strongly encouraged to remove their usage
 	sooner rather than later.
 
-Session Library method all_userdata()
-=====================================
+Session ライブラリの all_userdata() メソッド
+=============================================
 
 As seen in the :doc:`Change Log <../changelog>`, :doc:`Session Library <../libraries/sessions>`
 method ``userdata()`` now allows you to fetch all userdata by simply omitting its parameter::
@@ -757,7 +757,7 @@ in CodeIgniter 3.1+.
 .. note:: This method is still available, but you're strongly encouraged to remove its usage
 	sooner rather than later.
 
-Database Forge method add_column() with an AFTER clause
+Database Forge の AFTER 句を伴う add_column() メソッド 
 =======================================================
 
 If you have used the **third parameter** for :doc:`Database Forge <../database/forge>` method
@@ -787,26 +787,26 @@ You should now put AFTER clause field names in the field definition array instea
 .. note:: This is for MySQL and CUBRID databases only! Other drivers don't support this
 	clause and will silently ignore it.
 
-URI Routing methods fetch_directory(), fetch_class(), fetch_method()
-====================================================================
+URI ルーティングのメソッド fetch_directory()、fetch_class()、fetch_method()
+============================================================================
 
-With properties ``CI_Router::$directory``, ``CI_Router::$class`` and ``CI_Router::$method``
-being public and their respective ``fetch_*()`` no longer doing anything else to just return
-the properties - it doesn't make sense to keep them.
+プロパティ ``CI_Router::$directory``、``CI_Router::$class`` そして ``CI_Router::$method``
+は public であり、対応する ``fetch_*()`` はそれらのプロパティを返すだけです。
+なので、これらのメソッドを持つ意味はありません。
 
-Those are all internal, undocumented methods, but we've opted to deprecate them for now
-in order to maintain backwards-compatibility just in case. If some of you have utilized them,
-then you can now just access the properties instead::
+それらはすべて内部的な文書化されていないメソッドですが、もしものため、
+後方互換性を維持するため、それらを廃止予定とします。
+もし、それらのメソッドを使っている人は、代わりにプロパティにアクセスしてください::
 
 	$this->router->directory;
 	$this->router->class;
 	$this->router->method;
 
-.. note:: Those methods are still available, but you're strongly encouraged to remove their usage
-	sooner rather than later.
+.. note:: これらのメソッドはまだ利用可能ですが、早急に使用を止めることを強く
+	推奨します。
 
-Input library method is_cli_request()
-=====================================
+Input ライブラリの is_cli_request() メソッド
+=============================================
 
 Calls to the ``CI_Input::is_cli_request()`` method are necessary at many places
 in the CodeIgniter internals and this is often before the :doc:`Input Library
@@ -829,8 +829,8 @@ CodeIgniter 3.1+.
 .. note:: This method is still available, but you're strongly encouraged to remove its usage
 	sooner rather than later.
 
-Config library method system_url()
-==================================
+Config ライブラリの system_url() メソッド
+=========================================
 
 Usage of ``CI_Config::system_url()`` encourages insecure coding practices.
 Namely, your CodeIgniter *system/* directory shouldn't be publicly accessible
@@ -842,17 +842,17 @@ CodeIgniter 3.1+.
 .. note:: This method is still available, but you're strongly encouraged to remove its usage
 	sooner rather than later.
 
-======================
-The Javascript library
-======================
+=========================
+The Javascript ライブラリ
+=========================
 
-The :doc:`Javascript Library <../libraries/javascript>` has always had an
-'experimental' status and was never really useful, nor a proper solution.
+:doc:`Javascript ライブラリ <../libraries/javascript>` は今までずっと '実験' 
+状態であり、そんなに役に立たず、また、適切な解決策でもありませんでした。
 
-It is now deprecated and scheduled for removal in CodeIgniter 3.1+.
+現在、廃止予定であり、CodeIgniter 3.1+ で削除される予定です。
 
-.. note:: This library is still available, but you're strongly encouraged to remove its usage
-	sooner rather than later.
+.. note:: このライブラリはまだ使えますが、早急に使用を中止することを
+	強く推奨します。
 
 **************************************************************
 Step 21: Text ヘルパーの highlight_phrase() の使い方を確認する
