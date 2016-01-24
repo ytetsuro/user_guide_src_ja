@@ -1,6 +1,6 @@
-#############
-暗号化クラス
-#############
+##############
+Encrypt クラス
+##############
 
 The Encrypt Class provides two-way data encryption. It encrypted using
 the Mcrypt PHP extension, which is required for the Encrypt Class to run.

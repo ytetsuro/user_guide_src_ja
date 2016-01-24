@@ -1,6 +1,6 @@
-##################
-暗号化ライブラリ
-##################
+#####################
+Encryption ライブラリ
+#####################
 
 .. important:: DO NOT use this or any other *encryption* library for
 	user password storage! Passwords must be *hashed* instead, and you
