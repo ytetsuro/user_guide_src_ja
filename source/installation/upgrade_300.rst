@@ -679,7 +679,7 @@ Date ヘルパーの standard_date()
 ::
 
 	// 以前の方法
-	standard_date(); // defaults to standard_date('DATE_RFC822', now());
+	standard_date(); // デフォルトは standard_date('DATE_RFC822', now());
 
 	// 置き換え
 	date(DATE_RFC822, now());
