@@ -590,8 +590,7 @@ Security ヘルパーの do_hash()
 ===============================
 
 :doc:`Security ヘルパー <../helpers/security_helper>` の関数 ``do_hash()`` は
-現在 PHP のネイティブ ``hash()`` 関数の単なるエイリアスです。
-廃止予定であり、CodeIgniter 3.1+ で削除される予定です。
+現在 PHP のネイティブ ``hash()`` 関数の単なるエイリアスです。廃止予定であり、CodeIgniter 3.1+ で削除される予定です。
 
 .. note:: このライブラリはまだ使用可能ですが、早急に使用を止めることを強く
 	推奨します。
@@ -601,191 +600,192 @@ $config['global_xss_filtering'] 設定
 
 上記ですでに説明したように、XSS フィルタリングは入力データに対しするものではなく、
 出力にすべきものです。ゆえに、自動的に *入力* データをフィルタする
-``$config['global_xss_filtering']`` は悪い実践だと考えられ、廃止予定とされました。
+``$config['global_xss_filtering']`` は悪い実践だと考えられ、
+廃止予定とされました。
 
-Instead, you should manually escape any user-provided data via the
-:php:func:`xss_clean()` function when you need to output it, or use a
-library like `HTML Purifier <http://htmlpurifier.org/>`_ that does that
-for you.
+代わりに、出力が必要なときに :php:func:`xss_clean()` 関数を使い、
+ユーザの提供したデータを手動でエスケープするか、
+`HTML Purifier <http://htmlpurifier.org/>`_ のようなライブラリを
+使って下さい。
 
-.. note:: The setting is still available, but you're strongly encouraged to
-	remove its usage sooner rather than later.
+.. note:: この設定はまだ利用可能ですが、早急に使用を止めることを強く
+	推奨します。
 
 File ヘルパーの read_file()
 =============================
 
-:doc:`File Helper <../helpers/file_helper>` function ``read_file()`` is now just an alias for
-PHP's native ``file_get_contents()`` function. It is deprecated and scheduled for removal in
-CodeIgniter 3.1+.
+:doc:`File ヘルパー <../helpers/file_helper>` の ``read_file()`` 関数は、
+現在単なる PHP のネイティブ関数 ``file_get_contents()`` のエイリアスです。
+廃止予定であり、CodeIgniter 3.1+ で削除される予定です。
 
-.. note:: This function is still available, but you're strongly encouraged to remove its usage sooner
-	rather than later.
+.. note:: この関数はまだ利用可能ですが、早急に使用を止めることを強く
+	推奨します。
 
 String ヘルパーの repeater()
 ============================
 
-:doc:`String Helper <../helpers/string_helper>` function :php:func:`repeater()` is now just an alias for
-PHP's native ``str_repeat()`` function. It is deprecated and scheduled for removal in CodeIgniter 3.1+.
+:doc:`String ヘルパー <../helpers/string_helper>` の :php:func:`repeater()`
+関数は、現在単なる PHP のネイティブ関数 ``str_repeat()`` のエイリアスです。廃止予定であり、CodeIgniter 3.1+ で削除される予定です。
 
-.. note:: This function is still available, but you're strongly encouraged to remove its usage sooner
-	rather than later.
+.. note:: この関数はまだ利用可能ですが、早急に使用を止めることを強く
+	推奨します。
 
 String ヘルパーの trim_slashes()
 ================================
 
-:doc:`String Helper <../helpers/string_helper>` function :php:func:`trim_slashes()` is now just an alias
-for PHP's native ``trim()`` function (with a slash passed as its second argument). It is deprecated and
-scheduled for removal in CodeIgniter 3.1+.
+:doc:`String ヘルパー <../helpers/string_helper>` の :php:func:`trim_slashes()` 関数は、現在単なる PHP のネイティブ関数
+``trim()`` (第 2 引数にスラッシュが渡されて) のエイリアスです。
+廃止予定であり、CodeIgniter 3.1+ で削除される予定です。
 
-.. note:: This function is still available, but you're strongly encouraged to remove its usage sooner
-	rather than later.
+.. note:: この関数はまだ利用可能ですが、早急に使用を止めることを強く
+	推奨します。
 
 Form ヘルパーの form_prep()
 =============================
 
-:doc:`Form Helper <../helpers/form_helper>` function :php:func:`form_prep()`
-is now just an alias for :doc:`common function </general/common_functions>`
-:func:`html_escape()`. It is deprecated and will be removed in the future.
+:doc:`Form ヘルパー <../helpers/form_helper>` の :php:func:`form_prep()`
+関数は、現在、 :doc:`共通関数 </general/common_functions>`
+:func:`html_escape()` の単なるエイリアスです。 廃止予定であり、将来削除される予定です。
 
-Please use :php:func:`html_escape()` instead.
+代わりに :php:func:`html_escape()` を使って下さい。
 
-.. note:: This function is still available, but you're strongly encouraged
-	to remove its usage sooner rather than later.
+.. note:: この関数はまだ利用可能ですが、早急に使用を止めることを強く
+	推奨します。
 
 Email ヘルパーの関数
 ======================
 
-:doc:`Email Helper <../helpers/email_helper>` only has two functions
+:doc:`Email ヘルパー <../helpers/email_helper>` は 2 つの関数しか持っていません。
 
  - :php:func:`valid_email()`
  - :php:func:`send_email()`
 
-Both of them are now aliases for PHP's native ``filter_var()`` and ``mail()`` functions, respectively.
-Therefore the :doc:`Email Helper <../helpers/email_helper>` altogether is being deprecated and
-is scheduled for removal in CodeIgniter 3.1+.
+どちらも現在 PHP ネイティブ関数 ``filter_var()`` と ``mail()`` のエイリアスです。
+よって、:doc:`Email ヘルパー <../helpers/email_helper>` は廃止予定とされ、
+CodeIgniter 3.1+ で削除される予定です。
 
-.. note:: These functions are still available, but you're strongly encouraged to remove their usage
-	sooner rather than later.
+.. note:: この関数はまだ利用可能ですが、早急に使用を止めることを強く
+	推奨します。
 
 Date ヘルパーの standard_date()
 ================================
 
-:doc:`Date Helper <../helpers/date_helper>` function ``standard_date()`` is being deprecated due
-to the availability of native PHP `constants <http://php.net/manual/en/class.datetime.php#datetime.constants.types>`_,
-which when combined with ``date()`` provide the same functionality. Furthermore, they have the
-exact same names as the ones supported by ``standard_date()``. Here are examples of how to replace
-its usage:
+:doc:`Date ヘルパー <../helpers/date_helper>` の ``standard_date()`` 関数は、
+ネイティブの PHP `定数 <http://php.net/manual/en/class.datetime.php#datetime.constants.types>`_ と ``date()`` を組み合わせて
+同じ機能を提供できるため、廃止予定とされました。
+さらに、`standard_date()`` でサポートされているものと全く同じ名前を使えます。
+置き換えの例は次のようになります:
 
 ::
 
-	// Old way
+	// 以前の方法
 	standard_date(); // defaults to standard_date('DATE_RFC822', now());
 
-	// Replacement
+	// 置き換え
 	date(DATE_RFC822, now());
 
-	// Old way
+	// 以前の方法
 	standard_date('DATE_ATOM', $time);
 
-	// Replacement
+	// 置き換え
 	date(DATE_ATOM, $time);
 
-.. note:: This function is still available, but you're strongly encouraged to remove its usage sooner
-	rather than later as it is scheduled for removal in CodeIgniter 3.1+.
+.. note:: この関数はまだ利用可能ですが、CodeIgniter 3.1+ で削除される予定のため
+	早急に使用を止めることを強く推奨します。
 
 HTML ヘルパーの nbs()、br()
 ============================
 
-:doc:`HTML Helper <../helpers/html_helper>` functions ``nbs()`` and ``br()`` are just aliases
-for the native ``str_repeat()`` function used with ``&nbsp;`` and ``<br >`` respectively.
+:doc:`HTML ヘルパー <../helpers/html_helper>` の関数 ``nbs()`` と ``br()`` は
+``&nbsp;`` と ``<br >`` を使った場合のネイティブ関数 ``str_repeat()`` の単なるエイリアスです。
 
-Because there's no point in just aliasing native PHP functions, they are now deprecated and
-scheduled for removal in CodeIgniter 3.1+.
+PHP ネイティブ関数の単なるエイリアスというだけなので、廃止予定とされ、
+CodeIgniter 3.1+ で削除される予定です。
 
-.. note:: These functions are still available, but you're strongly encouraged to remove their usage
-	sooner rather than later.
+.. note:: この関数はまだ利用可能ですが、早急に使用を止めることを強く
+	推奨します。
 
 Pagination ライブラリの 'anchor_class' 設定
 =============================================
 
-The :doc:`Pagination Library <../libraries/pagination>` now supports adding pretty much any HTML
-attribute to your anchors via the 'attributes' configuration setting. This includes passing the
-'class' attribute and using the separate 'anchor_class' setting no longer makes sense.
-As a result of that, the 'anchor_class' setting is now deprecated and scheduled for removal in
-CodeIgniter 3.1+.
+:doc:`Pagination ライブラリ <../libraries/pagination>` は現在、'attributes' 設定を使うことで、アンカーにあらゆる HTML 属性を追加できます。
+これにより、'class' 属性も設定できるため、別の 'anchor_class' 設定を使う意味は
+もはやありません。
+そこで 'anchor_class' 設定は廃止予定になり、CodeIgniter 3.1+ で
+削除される予定です。
 
-.. note:: This setting is still available, but you're strongly encouraged to remove its usage sooner
-	rather than later.
+.. note:: この設定はまだ利用可能ですが、早急に使用を止めることを強く
+	推奨します。
 
 String ヘルパーの random_string() のタイプ 'unique' と 'encrypt'
 ==================================================================
 
-When using the :doc:`String Helper <../helpers/string_helper>` function :php:func:`random_string()`,
-you should no longer pass the **unique** and **encrypt** randomization types. They are only
-aliases for **md5** and **sha1** respectively and are now deprecated and scheduled for removal
-in CodeIgniter 3.1+.
+:doc:`String ヘルパー <../helpers/string_helper>` の 
+:php:func:`random_string()` 関数を使う際、 **unique** と **encrypt** をランダム化のタイプとして使うことはできなくなりました。
+それらは、単に **md5** と **sha1** へのエイリアスです。
+廃止予定であり、CodeIgniter 3.1+ で削除される予定です。
 
-.. note:: These options are still available, but you're strongly encouraged to remove their usage
-	sooner rather than later.
+.. note:: これらのオプションはまだ利用可能ですが、早急に使用を止めることを強く
+	推奨します。
 
 URL ヘルパーの url_title() のセパレータ 'dash' and 'underscore'
 ===============================================================
 
-When using the :doc:`URL Helper <../helpers/url_helper>` function :php:func:`url_title()`, you
-should no longer pass **dash** or **underscore** as the word separator. This function will
-now accept any character and you should just pass the chosen character directly, so you
-should write '-' instead of 'dash' and '_' instead of 'underscore'.
+:doc:`URL ヘルパー <../helpers/url_helper>` の :php:func:`url_title()` 関数を
+使う際、区切り文字として **dash** と **underscore** は使えません。
+この関数は現在、どんな文字も受け取りますので、選択した文字を直接渡して下さい。
+'dash' の代わりに '-' を、'underscore' の代わりに '_' を記述してください。
 
-**dash** and **underscore** now act as aliases and are deprecated and scheduled for removal
-in CodeIgniter 3.1+.
+**dash** と **underscore** は、現在、エイリアスとして振る舞いますが、これらは廃止予定であり、
+CodeIgniter 3.1+ で削除される予定です。
 
-.. note:: These options are still available, but you're strongly encouraged to remove their usage
-	sooner rather than later.
+.. note:: これらのオプションはまだ利用可能ですが、早急に使用を止めることを強く
+	推奨します。
 
 Session ライブラリの all_userdata() メソッド
 =============================================
 
-As seen in the :doc:`Change Log <../changelog>`, :doc:`Session Library <../libraries/sessions>`
-method ``userdata()`` now allows you to fetch all userdata by simply omitting its parameter::
+:doc:`変更履歴 <../changelog>` で見たように、 :doc:`Session ライブラリ <../libraries/sessions>`
+の ``userdata()`` メソッドは、パラメータなしの場合、すべてのユーザデータを返します::
 
 	$this->session->userdata();
 
-This makes the ``all_userdata()`` method redudant and therefore it is now just an alias for
-``userdata()`` with the above shown usage and is being deprecated and scheduled for removal
-in CodeIgniter 3.1+.
+これにより、``all_userdata()`` メソッドは冗長となり、現在、上記の
+``userdata()`` への単なるエイリアスです。
+廃止予定であり、CodeIgniter 3.1+ で削除される予定です。
 
-.. note:: This method is still available, but you're strongly encouraged to remove its usage
-	sooner rather than later.
+.. note:: このメソッドはまだ利用可能ですが、早急に使用を止めることを強く
+	推奨します。
 
 Database Forge の AFTER 句を伴う add_column() メソッド 
 =======================================================
 
-If you have used the **third parameter** for :doc:`Database Forge <../database/forge>` method
-``add_column()`` to add a field for an AFTER clause, then you should change its usage.
+もし、:doc:`Database Forge <../database/forge>` の 
+``add_column()`` メソッドの **第 3 引数** を、AFTER 句にフィールドを追加するために使っていたなら、使い方を変更する必要があります。
 
-That third parameter has been deprecated and scheduled for removal in CodeIgniter 3.1+.
+その第 3 引数は廃止予定であり、CodeIgniter 3.1+ で削除される予定です。
 
-You should now put AFTER clause field names in the field definition array instead::
+代わりに AFTER 句のフィールド名は、フィールド定義の配列に記述します::
 
-	// Old usage:
+	// 以前の使い方:
 	$field = array(
 		'new_field' => array('type' => 'TEXT')
 	);
 
 	$this->dbforge->add_column('table_name', $field, 'another_field');
 
-	// New usage:
+	// 新しい使い方:
 	$field = array(
 		'new_field' => array('type' => 'TEXT', 'after' => 'another_field')
 	);
 
 	$this->dbforge->add_column('table_name', $field);
 
-.. note:: The parameter is still available, but you're strongly encouraged to remove its usage
-	sooner rather than later.
+.. note:: このパラメータはまだ利用可能ですが、早急に使用を止めることを強く
+	推奨します。
 
-.. note:: This is for MySQL and CUBRID databases only! Other drivers don't support this
-	clause and will silently ignore it.
+.. note:: これは MySQL と CUBRID データベースだけで使えます! 他のドライバはこの句をサポートしておらず、
+	黙って無視します。
 
 URI ルーティングのメソッド fetch_directory()、fetch_class()、fetch_method()
 ============================================================================
@@ -794,9 +794,9 @@ URI ルーティングのメソッド fetch_directory()、fetch_class()、fetch_
 は public であり、対応する ``fetch_*()`` はそれらのプロパティを返すだけです。
 なので、これらのメソッドを持つ意味はありません。
 
-それらはすべて内部的な文書化されていないメソッドですが、もしものため、
-後方互換性を維持するため、それらを廃止予定とします。
-もし、それらのメソッドを使っている人は、代わりにプロパティにアクセスしてください::
+これらはすべて内部的な文書化されていないメソッドですが、もしもの
+後方互換性を維持するため、廃止予定とします。
+もし、これらのメソッドを使っている人は、代わりにプロパティにアクセスしてください::
 
 	$this->router->directory;
 	$this->router->class;
@@ -808,39 +808,39 @@ URI ルーティングのメソッド fetch_directory()、fetch_class()、fetch_
 Input ライブラリの is_cli_request() メソッド
 =============================================
 
-Calls to the ``CI_Input::is_cli_request()`` method are necessary at many places
-in the CodeIgniter internals and this is often before the :doc:`Input Library
-<../libraries/input>` is loaded. Because of that, it is being replaced by a common
-function named :php:func:`is_cli()` and this method is now just an alias.
+``CI_Input::is_cli_request()`` メソッドの呼び出しは CodeIgniter の内部の
+たくさんの場所で必要であり、しばしば、:doc:`Input Library
+<../libraries/input>` がロードされる前に起こります。そのため、共通関数の
+:php:func:`is_cli()` 関数に置き換えられ、このメソッドは現在単なるエイリアスです。
 
-The new function is both available at all times for you to use and shorter to type.
+新しい関数はいつでも利用可能であり、タイプする文字も少なくて済みます。
 
 ::
 
-	// Old
+	// 以前
 	$this->input->is_cli_request();
 
-	// New
+	// 以後
 	is_cli();
 
-``CI_Input::is_cli_request()`` is now now deprecated and scheduled for removal in
-CodeIgniter 3.1+.
+``CI_Input::is_cli_request()`` は現在廃止予定であり、
+CodeIgniter 3.1+ で削除される予定です。
 
-.. note:: This method is still available, but you're strongly encouraged to remove its usage
-	sooner rather than later.
+.. note:: このメソッドはまだ利用可能ですが、早急に使用を止めることを強く
+	推奨します。
 
 Config ライブラリの system_url() メソッド
 =========================================
 
-Usage of ``CI_Config::system_url()`` encourages insecure coding practices.
-Namely, your CodeIgniter *system/* directory shouldn't be publicly accessible
-from a security point of view.
+``CI_Config::system_url()`` の使用は安全でないコーディングの実践を推奨してしまいます。
+すなわち、CodeIgniter の *system/* ディレクトリは、セキュリティの観点から、
+外部からアクセス可能であるべきではありません。
 
-Because of this, this method is now deprecated and scheduled for removal in
-CodeIgniter 3.1+.
+そのため、このメソッドは現在、廃止予定であり、
+CodeIgniter 3.1+ で削除される予定です。
 
-.. note:: This method is still available, but you're strongly encouraged to remove its usage
-	sooner rather than later.
+.. note:: このメソッドはまだ利用可能ですが、早急に使用を止めることを強く
+	推奨します。
 
 =========================
 The Javascript ライブラリ
@@ -858,14 +858,14 @@ The Javascript ライブラリ
 Step 21: Text ヘルパーの highlight_phrase() の使い方を確認する
 **************************************************************
 
-The default HTML tag used by :doc:`Text Helper <../helpers/text_helper>` function
-:func:`highlight_phrase()` has been changed from ``<strong>`` to the new HTML5
-tag ``<mark>``.
+:doc:`Text ヘルパー <../helpers/text_helper>` の
+:func:`highlight_phrase()` 関数が使うデフォルトの HTML タグは
+``<strong>`` から 新しい HTML5 の ``<mark>`` タグに変更されました。
 
-Unless you've used your own highlighting tags, this might cause trouble
-for your visitors who use older web browsers such as Internet Explorer 8.
-We therefore suggest that you add the following code to your CSS files
-in order to avoid backwards compatibility with old browsers::
+独自のハイライトタグを使っていない限り、この変更は Internet Explorer 8 のような
+より古い Web ブラウザを使っているユーザにトラブルを起こすかも知れません。
+そこで、古いブラウザでの後方互換のために、以下のコードを CSS ファイルに
+追加することを提案します::
 
 	mark {
 		background: #ff0;
