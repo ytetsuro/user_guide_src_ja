@@ -447,6 +447,15 @@
 <div class="section" id="version-3-0-5">
 <h2>Version 3.0.5<a class="headerlink" href="#version-3-0-5" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>リリース日: 未リリース</p>
+<div class="section" id="bug-fixes-for-3-0-5">
+<h3>Bug fixes for 3.0.5<a class="headerlink" href="#bug-fixes-for-3-0-5" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<ul class="simple">
+<li>Fixed a bug (#4391) - <a class="reference internal" href="libraries/email.html"><em>Email Library</em></a> method <tt class="docutils literal"><span class="pre">reply_to()</span></tt> didn&#8217;t apply Q-encoding.</li>
+<li>Fixed a bug (#4384) - <a class="reference internal" href="libraries/pagination.html"><em>Pagination Library</em></a> ignored (possible) <em>cur_page</em> configuration value.</li>
+<li>Fixed a bug (#4395) - <a class="reference internal" href="database/query_builder.html"><em>Query Builder</em></a> method <tt class="docutils literal"><span class="pre">count_all_results()</span></tt> still fails if an <tt class="docutils literal"><span class="pre">ORDER</span> <span class="pre">BY</span></tt> condition is used.</li>
+<li>Fixed a bug (#4399) - <a class="reference internal" href="database/query_builder.html"><em>Query Builder</em></a> methods <tt class="docutils literal"><span class="pre">insert_batch()</span></tt>, <tt class="docutils literal"><span class="pre">update_batch()</span></tt> produced confusing error messages when called with no data and <em>db_debug</em> is enabled.</li>
+</ul>
+</div>
 </div>
 <div class="section" id="version-3-0-4">
 <h2>Version 3.0.4<a class="headerlink" href="#version-3-0-4" title="このヘッドラインへのパーマリンク">¶</a></h2>
@@ -3770,7 +3779,7 @@ and fixed various typos.</li>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2016, British Columbia Institute of Technology.
-      最終更新: Jan 25, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>
+      最終更新: Jan 29, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>
     </p>
   </div>
 

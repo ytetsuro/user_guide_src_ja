@@ -425,52 +425,52 @@
           <div role="main" class="document">
             
   <div class="section" id="id1">
-<h1><a class="toc-backref" href="#id29">フォームバリデーション (検証)</a><a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
-<p>CodeIgniter provides a comprehensive form validation and data prepping
-class that helps minimize the amount of code you&#8217;ll write.</p>
+<h1><a class="toc-backref" href="#id30">フォームバリデーション (検証)</a><a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>CodeIgniter は、最小限のコードで総合的なフォームバリデーションとデータ
+の準備をするクラスを提供します。</p>
 <div class="contents topic" id="page-contents">
 <p class="topic-title first">Page Contents</p>
 <ul class="simple">
-<li><a class="reference internal" href="#id1" id="id29">フォームバリデーション (検証)</a><ul>
-<li><a class="reference internal" href="#id2" id="id30">概要</a></li>
-<li><a class="reference internal" href="#id3" id="id31">チュートリアル</a><ul>
-<li><a class="reference internal" href="#id4" id="id32">入力フォーム</a></li>
-<li><a class="reference internal" href="#id5" id="id33">成功ページ</a></li>
-<li><a class="reference internal" href="#id6" id="id34">コントローラ</a></li>
-<li><a class="reference internal" href="#id7" id="id35">動かしてみよう!</a></li>
-<li><a class="reference internal" href="#id8" id="id36">解説</a></li>
-<li><a class="reference internal" href="#setting-validation-rules" id="id37">検証ルールを設定する</a></li>
-<li><a class="reference internal" href="#id10" id="id38">配列を使った検証ルールの指定</a></li>
-<li><a class="reference internal" href="#id11" id="id39">ルールの連結(カスケード)</a></li>
-<li><a class="reference internal" href="#id12" id="id40">データの整形</a></li>
-<li><a class="reference internal" href="#id13" id="id41">フォームの再表示（データの引き継ぎ）</a></li>
-<li><a class="reference internal" href="#id14" id="id42">コールバック: ユーザ定義の検証メソッド</a></li>
-<li><a class="reference internal" href="#callable-use-anything-as-a-rule" id="id43">Callable: Use anything as a rule</a></li>
-<li><a class="reference internal" href="#setting-error-messages" id="id44">エラーメッセージの設定</a></li>
-<li><a class="reference internal" href="#translating-field-names" id="id45">フィールド名の変換</a></li>
-<li><a class="reference internal" href="#changing-delimiters" id="id46">エラーメッセージを囲む文字の変更</a></li>
-<li><a class="reference internal" href="#id18" id="id47">個別にエラーを表示する</a></li>
-<li><a class="reference internal" href="#post" id="id48">配列（$_POST以外の）のバリデーション</a></li>
+<li><a class="reference internal" href="#id1" id="id30">フォームバリデーション (検証)</a><ul>
+<li><a class="reference internal" href="#id2" id="id31">概要</a></li>
+<li><a class="reference internal" href="#id3" id="id32">チュートリアル</a><ul>
+<li><a class="reference internal" href="#id4" id="id33">入力フォーム</a></li>
+<li><a class="reference internal" href="#id5" id="id34">成功ページ</a></li>
+<li><a class="reference internal" href="#id6" id="id35">コントローラ</a></li>
+<li><a class="reference internal" href="#id7" id="id36">動かしてみよう!</a></li>
+<li><a class="reference internal" href="#id8" id="id37">解説</a></li>
+<li><a class="reference internal" href="#setting-validation-rules" id="id38">検証ルールを設定する</a></li>
+<li><a class="reference internal" href="#id10" id="id39">配列を使った検証ルールの指定</a></li>
+<li><a class="reference internal" href="#id11" id="id40">ルールの連結 (カスケード)</a></li>
+<li><a class="reference internal" href="#id12" id="id41">データの整形</a></li>
+<li><a class="reference internal" href="#id13" id="id42">フォームの再表示 (データの引き継ぎ)</a></li>
+<li><a class="reference internal" href="#id14" id="id43">コールバック: ユーザ定義の検証メソッド</a></li>
+<li><a class="reference internal" href="#id15" id="id44">コーラブル: 何でもルールとして使う</a></li>
+<li><a class="reference internal" href="#setting-error-messages" id="id45">エラーメッセージの設定</a></li>
+<li><a class="reference internal" href="#translating-field-names" id="id46">フィールド名の変換</a></li>
+<li><a class="reference internal" href="#changing-delimiters" id="id47">エラーメッセージを囲む文字の変更</a></li>
+<li><a class="reference internal" href="#id19" id="id48">個別にエラーを表示する</a></li>
+<li><a class="reference internal" href="#post" id="id49">配列 ($_POST 以外の) のバリデーション</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#saving-groups" id="id49">検証ルールを設定ファイルに保存</a><ul>
-<li><a class="reference internal" href="#id20" id="id50">ルールの保存方法</a></li>
-<li><a class="reference internal" href="#id21" id="id51">検証ルールのセットを作る</a></li>
-<li><a class="reference internal" href="#id22" id="id52">特定のルールグループを呼び出す</a></li>
-<li><a class="reference internal" href="#id23" id="id53">コントローラー内のメソッドにルールグループを関連づける</a></li>
+<li><a class="reference internal" href="#saving-groups" id="id50">検証ルールを設定ファイルに保存</a><ul>
+<li><a class="reference internal" href="#id21" id="id51">ルールの保存方法</a></li>
+<li><a class="reference internal" href="#id22" id="id52">検証ルールのセットを作る</a></li>
+<li><a class="reference internal" href="#id23" id="id53">特定のルールグループを呼び出す</a></li>
+<li><a class="reference internal" href="#id24" id="id54">コントローラー内のメソッドにルールグループを関連づける</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#using-arrays-as-field-names" id="id54">フィールド名の指定に配列を使う</a></li>
-<li><a class="reference internal" href="#id25" id="id55">ルールリファレンス</a></li>
-<li><a class="reference internal" href="#id26" id="id56">整形処理のリファレンス</a></li>
-<li><a class="reference internal" href="#class-reference" id="id57">クラスリファレンス</a></li>
-<li><a class="reference internal" href="#helper-functions" id="id58">ヘルパーリファレンス</a></li>
+<li><a class="reference internal" href="#using-arrays-as-field-names" id="id55">フィールド名の指定に配列を使う</a></li>
+<li><a class="reference internal" href="#id26" id="id56">ルールリファレンス</a></li>
+<li><a class="reference internal" href="#id27" id="id57">整形処理のリファレンス</a></li>
+<li><a class="reference internal" href="#class-reference" id="id58">クラスリファレンス</a></li>
+<li><a class="reference internal" href="#helper-functions" id="id59">ヘルパーリファレンス</a></li>
 </ul>
 </li>
 </ul>
 </div>
 <div class="section" id="id2">
-<h2><a class="toc-backref" href="#id30">概要</a><a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2><a class="toc-backref" href="#id31">概要</a><a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>Before explaining CodeIgniter&#8217;s approach to data validation, let&#8217;s
 describe the ideal scenario:</p>
 <ol class="arabic simple">
@@ -502,7 +502,7 @@ HTML. Form validation, while simple to create, is generally very messy
 and tedious to implement.</p>
 </div>
 <div class="section" id="id3">
-<h2><a class="toc-backref" href="#id31">チュートリアル</a><a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2><a class="toc-backref" href="#id32">チュートリアル</a><a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>What follows is a &#8220;hands on&#8221; tutorial for implementing CodeIgniters Form
 Validation.</p>
 <p>In order to implement form validation you&#8217;ll need three things:</p>
@@ -516,7 +516,7 @@ process the submitted data.</li>
 <p>Let&#8217;s create those three things, using a member sign-up form as the
 example.</p>
 <div class="section" id="id4">
-<h3><a class="toc-backref" href="#id32">入力フォーム</a><a class="headerlink" href="#id4" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<h3><a class="toc-backref" href="#id33">入力フォーム</a><a class="headerlink" href="#id4" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p>Using a text editor, create a form called myform.php. In it, place this
 code and save it to your application/views/ folder:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="o">&lt;</span><span class="nx">html</span><span class="o">&gt;</span>
@@ -551,7 +551,7 @@ code and save it to your application/views/ folder:</p>
 </div>
 </div>
 <div class="section" id="id5">
-<h3><a class="toc-backref" href="#id33">成功ページ</a><a class="headerlink" href="#id5" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<h3><a class="toc-backref" href="#id34">成功ページ</a><a class="headerlink" href="#id5" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p>Using a text editor, create a form called formsuccess.php. In it, place
 this code and save it to your application/views/ folder:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="o">&lt;</span><span class="nx">html</span><span class="o">&gt;</span>
@@ -570,7 +570,7 @@ this code and save it to your application/views/ folder:</p>
 </div>
 </div>
 <div class="section" id="id6">
-<h3><a class="toc-backref" href="#id34">コントローラ</a><a class="headerlink" href="#id6" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<h3><a class="toc-backref" href="#id35">コントローラ</a><a class="headerlink" href="#id6" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p>Using a text editor, create a controller called Form.php. In it, place
 this code and save it to your application/controllers/ folder:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="o">&lt;?</span><span class="nx">php</span>
@@ -597,7 +597,7 @@ this code and save it to your application/controllers/ folder:</p>
 </div>
 </div>
 <div class="section" id="id7">
-<h3><a class="toc-backref" href="#id35">動かしてみよう!</a><a class="headerlink" href="#id7" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<h3><a class="toc-backref" href="#id36">動かしてみよう!</a><a class="headerlink" href="#id7" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p>To try your form, visit your site using a URL similar to this one:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nx">example</span><span class="o">.</span><span class="nx">com</span><span class="o">/</span><span class="nx">index</span><span class="o">.</span><span class="nx">php</span><span class="o">/</span><span class="nx">form</span><span class="o">/</span>
 </pre></div>
@@ -610,7 +610,7 @@ only returns TRUE if it has successfully applied your rules without any
 of them failing.</strong></p>
 </div>
 <div class="section" id="id8">
-<h3><a class="toc-backref" href="#id36">解説</a><a class="headerlink" href="#id8" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<h3><a class="toc-backref" href="#id37">解説</a><a class="headerlink" href="#id8" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p>You&#8217;ll notice several things about the above pages:</p>
 <p>The form (myform.php) is a standard web form with a couple exceptions:</p>
 <ol class="arabic">
@@ -635,7 +635,7 @@ Based on whether the validation was successful it either presents the
 form or the success page.</p>
 </div>
 <div class="section" id="setting-validation-rules">
-<span id="id9"></span><h3><a class="toc-backref" href="#id37">検証ルールを設定する</a><a class="headerlink" href="#setting-validation-rules" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<span id="id9"></span><h3><a class="toc-backref" href="#id38">検証ルールを設定する</a><a class="headerlink" href="#setting-validation-rules" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p>CodeIgniter lets you set as many validation rules as you need for a
 given field, cascading them in order, and it even lets you prep and
 pre-process the field data at the same time. To set validation rules you
@@ -705,32 +705,32 @@ when there is an error. We&#8217;ll get to that shortly.</p>
 </div>
 </div>
 <div class="section" id="id10">
-<h3><a class="toc-backref" href="#id38">配列を使った検証ルールの指定</a><a class="headerlink" href="#id10" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<h3><a class="toc-backref" href="#id39">配列を使った検証ルールの指定</a><a class="headerlink" href="#id10" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p>Before moving on it should be noted that the rule setting method can
 be passed an array if you prefer to set all your rules in one action. If
 you use this approach, you must name your array keys as indicated:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$config</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
         <span class="k">array</span><span class="p">(</span>
                 <span class="s1">&#39;field&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;username&#39;</span><span class="p">,</span>
-                <span class="s1">&#39;label&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Username&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;label&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;ユーザ名&#39;</span><span class="p">,</span>
                 <span class="s1">&#39;rules&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;required&#39;</span>
         <span class="p">),</span>
         <span class="k">array</span><span class="p">(</span>
                 <span class="s1">&#39;field&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;password&#39;</span><span class="p">,</span>
-                <span class="s1">&#39;label&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Password&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;label&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;パスワード&#39;</span><span class="p">,</span>
                 <span class="s1">&#39;rules&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;required&#39;</span><span class="p">,</span>
                 <span class="s1">&#39;errors&#39;</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
-                        <span class="s1">&#39;required&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;You must provide a %s.&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;required&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;%s は必須です。&#39;</span><span class="p">,</span>
                 <span class="p">),</span>
         <span class="p">),</span>
         <span class="k">array</span><span class="p">(</span>
                 <span class="s1">&#39;field&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;passconf&#39;</span><span class="p">,</span>
-                <span class="s1">&#39;label&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Password Confirmation&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;label&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;パスワードの確認&#39;</span><span class="p">,</span>
                 <span class="s1">&#39;rules&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;required&#39;</span>
         <span class="p">),</span>
         <span class="k">array</span><span class="p">(</span>
                 <span class="s1">&#39;field&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;email&#39;</span><span class="p">,</span>
-                <span class="s1">&#39;label&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Email&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;label&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;メールアドレス&#39;</span><span class="p">,</span>
                 <span class="s1">&#39;rules&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;required&#39;</span>
         <span class="p">)</span>
 <span class="p">);</span>
@@ -740,7 +740,7 @@ you use this approach, you must name your array keys as indicated:</p>
 </div>
 </div>
 <div class="section" id="id11">
-<h3><a class="toc-backref" href="#id39">ルールの連結(カスケード)</a><a class="headerlink" href="#id11" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<h3><a class="toc-backref" href="#id40">ルールの連結 (カスケード)</a><a class="headerlink" href="#id11" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p>CodeIgniter lets you pipe multiple rules together. Let&#8217;s try it. Change
 your rules in the third parameter of rule setting method, like this:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">form_validation</span><span class="o">-&gt;</span><span class="na">set_rules</span><span class="p">(</span>
@@ -776,7 +776,7 @@ instead of a string. Example:</p>
 </div>
 </div>
 <div class="section" id="id12">
-<h3><a class="toc-backref" href="#id40">データの整形</a><a class="headerlink" href="#id12" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<h3><a class="toc-backref" href="#id41">データの整形</a><a class="headerlink" href="#id12" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p>In addition to the validation method like the ones we used above, you
 can also prep your data in various ways. For example, you can set up
 rules like this:</p>
@@ -798,7 +798,7 @@ original data will be shown in the form.</p>
 </div>
 </div>
 <div class="section" id="id13">
-<h3><a class="toc-backref" href="#id41">フォームの再表示（データの引き継ぎ）</a><a class="headerlink" href="#id13" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<h3><a class="toc-backref" href="#id42">フォームの再表示 (データの引き継ぎ)</a><a class="headerlink" href="#id13" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p>Thus far we have only been dealing with errors. It&#8217;s time to repopulate
 the form field with the submitted data. CodeIgniter offers several
 helper functions that permit you to do this. The one you will use most
@@ -859,18 +859,18 @@ must supply it as an array to the function. Example:</p>
 <p>For more info please see the <a class="reference internal" href="#using-arrays-as-field-names"><em>フィールド名の指定に配列を使う</em></a> section below.</p>
 </div>
 <div class="section" id="id14">
-<h3><a class="toc-backref" href="#id42">コールバック: ユーザ定義の検証メソッド</a><a class="headerlink" href="#id14" title="このヘッドラインへのパーマリンク">¶</a></h3>
-<p>The validation system supports callbacks to your own validation
-methods. This permits you to extend the validation class to meet your
-needs. For example, if you need to run a database query to see if the
-user is choosing a unique username, you can create a callback method
-that does that. Let&#8217;s create an example of this.</p>
-<p>In your controller, change the &#8220;username&#8221; rule to this:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">form_validation</span><span class="o">-&gt;</span><span class="na">set_rules</span><span class="p">(</span><span class="s1">&#39;username&#39;</span><span class="p">,</span> <span class="s1">&#39;Username&#39;</span><span class="p">,</span> <span class="s1">&#39;callback_username_check&#39;</span><span class="p">);</span>
+<h3><a class="toc-backref" href="#id43">コールバック: ユーザ定義の検証メソッド</a><a class="headerlink" href="#id14" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>ユーザ定義の検証メソッドへのコールバックがシステムでサポートされていま
+す。これを使えば、それぞれのニーズに合わせるため検証クラスを拡張するこ
+とができます。 たとえば、選択したユーザが固有の名前かどうかを調べるた
+めデータベースクエリを実行する必要があるとき、それを行うコールバックメ
+ソッドを作成できます。 次に示す例のように作ってみましょう。</p>
+<p>コントローラで、&#8221;username&#8221; ルールを次のように変更します:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">form_validation</span><span class="o">-&gt;</span><span class="na">set_rules</span><span class="p">(</span><span class="s1">&#39;username&#39;</span><span class="p">,</span> <span class="s1">&#39;ユーザ名&#39;</span><span class="p">,</span> <span class="s1">&#39;callback_username_check&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>Then add a new method called <tt class="docutils literal"><span class="pre">username_check()</span></tt> to your controller.
-Here&#8217;s how your controller should now look:</p>
+<p>次に <tt class="docutils literal"><span class="pre">username_check()</span></tt> という名前のメソッドをコントローラに追加します。
+コントローラは以下のようになっているはずです:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="o">&lt;?</span><span class="nx">php</span>
 
 <span class="k">class</span> <span class="nc">Form</span> <span class="k">extends</span> <span class="nx">CI_Controller</span> <span class="p">{</span>
@@ -881,10 +881,10 @@ Here&#8217;s how your controller should now look:</p>
 
                 <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">library</span><span class="p">(</span><span class="s1">&#39;form_validation&#39;</span><span class="p">);</span>
 
-                <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">form_validation</span><span class="o">-&gt;</span><span class="na">set_rules</span><span class="p">(</span><span class="s1">&#39;username&#39;</span><span class="p">,</span> <span class="s1">&#39;Username&#39;</span><span class="p">,</span> <span class="s1">&#39;callback_username_check&#39;</span><span class="p">);</span>
-                <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">form_validation</span><span class="o">-&gt;</span><span class="na">set_rules</span><span class="p">(</span><span class="s1">&#39;password&#39;</span><span class="p">,</span> <span class="s1">&#39;Password&#39;</span><span class="p">,</span> <span class="s1">&#39;required&#39;</span><span class="p">);</span>
-                <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">form_validation</span><span class="o">-&gt;</span><span class="na">set_rules</span><span class="p">(</span><span class="s1">&#39;passconf&#39;</span><span class="p">,</span> <span class="s1">&#39;Password Confirmation&#39;</span><span class="p">,</span> <span class="s1">&#39;required&#39;</span><span class="p">);</span>
-                <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">form_validation</span><span class="o">-&gt;</span><span class="na">set_rules</span><span class="p">(</span><span class="s1">&#39;email&#39;</span><span class="p">,</span> <span class="s1">&#39;Email&#39;</span><span class="p">,</span> <span class="s1">&#39;required|is_unique[users.email]&#39;</span><span class="p">);</span>
+                <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">form_validation</span><span class="o">-&gt;</span><span class="na">set_rules</span><span class="p">(</span><span class="s1">&#39;username&#39;</span><span class="p">,</span> <span class="s1">&#39;ユーザ名&#39;</span><span class="p">,</span> <span class="s1">&#39;callback_username_check&#39;</span><span class="p">);</span>
+                <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">form_validation</span><span class="o">-&gt;</span><span class="na">set_rules</span><span class="p">(</span><span class="s1">&#39;password&#39;</span><span class="p">,</span> <span class="s1">&#39;パスワード&#39;</span><span class="p">,</span> <span class="s1">&#39;required&#39;</span><span class="p">);</span>
+                <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">form_validation</span><span class="o">-&gt;</span><span class="na">set_rules</span><span class="p">(</span><span class="s1">&#39;passconf&#39;</span><span class="p">,</span> <span class="s1">&#39;パスワードの確認&#39;</span><span class="p">,</span> <span class="s1">&#39;required&#39;</span><span class="p">);</span>
+                <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">form_validation</span><span class="o">-&gt;</span><span class="na">set_rules</span><span class="p">(</span><span class="s1">&#39;email&#39;</span><span class="p">,</span> <span class="s1">&#39;メールアドレス&#39;</span><span class="p">,</span> <span class="s1">&#39;required|is_unique[users.email]&#39;</span><span class="p">);</span>
 
                 <span class="k">if</span> <span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">form_validation</span><span class="o">-&gt;</span><span class="na">run</span><span class="p">()</span> <span class="o">==</span> <span class="k">FALSE</span><span class="p">)</span>
                 <span class="p">{</span>
@@ -900,7 +900,7 @@ Here&#8217;s how your controller should now look:</p>
         <span class="p">{</span>
                 <span class="k">if</span> <span class="p">(</span><span class="nv">$str</span> <span class="o">==</span> <span class="s1">&#39;test&#39;</span><span class="p">)</span>
                 <span class="p">{</span>
-                        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">form_validation</span><span class="o">-&gt;</span><span class="na">set_message</span><span class="p">(</span><span class="s1">&#39;username_check&#39;</span><span class="p">,</span> <span class="s1">&#39;The {field} field can not be the word &quot;test&quot;&#39;</span><span class="p">);</span>
+                        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">form_validation</span><span class="o">-&gt;</span><span class="na">set_message</span><span class="p">(</span><span class="s1">&#39;username_check&#39;</span><span class="p">,</span> <span class="s1">&#39;{field} 欄に &quot;test&quot; は使えません&#39;</span><span class="p">);</span>
                         <span class="k">return</span> <span class="k">FALSE</span><span class="p">;</span>
                 <span class="p">}</span>
                 <span class="k">else</span>
@@ -912,30 +912,30 @@ Here&#8217;s how your controller should now look:</p>
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>Reload your form and submit it with the word &#8220;test&#8221; as the username. You
-can see that the form field data was passed to your callback method
-for you to process.</p>
-<p>To invoke a callback just put the method name in a rule, with
-&#8220;callback_&#8221; as the rule <strong>prefix</strong>. If you need to receive an extra
-parameter in your callback method, just add it normally after the
-method name between square brackets, as in: &#8220;callback_foo**[bar]**&#8221;,
-then it will be passed as the second argument of your callback method.</p>
+<p>フォームを再読み込みして、ユーザ名に &#8220;test&#8221; と入力して送信します。
+フォームフィールドのデータがコールバックメソッドに渡され処理されたのが
+わかります。</p>
+<p>コールバックを呼び出すには、あるルールに従ってメソッド名を指定します。そのルール
+とは、&#8221;callback_&#8221; という <strong>プリフィックス</strong> をメソッド名に付け加えるという
+ものです。もし、コールバックメソッドが追加のパラメータを受け取る必要がある
+場合、&#8221;callback_foo**[bar]**&#8221; のようにメソッド名の後の角カッコの間にパラメータを
+追加してください。そうすれば、第 2 引数としてコールバックメソッドに渡されます。</p>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
-<p class="last">You can also process the form data that is passed to your
-callback and return it. If your callback returns anything other than a
-boolean TRUE/FALSE it is assumed that the data is your newly processed
-form data.</p>
+<p class="last">また、コールバックに渡されたフォームデータを処理し、
+結果を返すことができます。
+コールバックが論理型の TRUE/FALSE 以外の値を返す場合、
+そのデータは新たに処理されたフォームデータであるとみなされます。</p>
 </div>
 </div>
-<div class="section" id="callable-use-anything-as-a-rule">
-<h3><a class="toc-backref" href="#id43">Callable: Use anything as a rule</a><a class="headerlink" href="#callable-use-anything-as-a-rule" title="このヘッドラインへのパーマリンク">¶</a></h3>
-<p>If callback rules aren&#8217;t good enough for you (for example, because they are
-limited to your controller), don&#8217;t get disappointed, there&#8217;s one more way
-to create custom rules: anything that <tt class="docutils literal"><span class="pre">is_callable()</span></tt> would return TRUE for.</p>
-<p>Consider the following example:</p>
+<div class="section" id="id15">
+<h3><a class="toc-backref" href="#id44">コーラブル: 何でもルールとして使う</a><a class="headerlink" href="#id15" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>もしコールバックルールが十分でないない場合 (例えば、コールバックはコントローラ内
+に制限されます)、がっかりしないでください。
+もう 1 つ独自ルールを作成する方法があります。<tt class="docutils literal"><span class="pre">is_callable()</span></tt> が TRUE を返すものをルールとする方法です。</p>
+<p>次の例を検討してみましょう:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">form_validation</span><span class="o">-&gt;</span><span class="na">set_rules</span><span class="p">(</span>
-        <span class="s1">&#39;username&#39;</span><span class="p">,</span> <span class="s1">&#39;Username&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;username&#39;</span><span class="p">,</span> <span class="s1">&#39;ユーザ名&#39;</span><span class="p">,</span>
         <span class="k">array</span><span class="p">(</span>
                 <span class="s1">&#39;required&#39;</span><span class="p">,</span>
                 <span class="k">array</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">users_model</span><span class="p">,</span> <span class="s1">&#39;valid_username&#39;</span><span class="p">)</span>
@@ -943,30 +943,30 @@ to create custom rules: anything that <tt class="docutils literal"><span class="
 <span class="p">);</span>
 </pre></div>
 </div>
-<p>The above code would use the <tt class="docutils literal"><span class="pre">valid_username()</span></tt> method from your
-<tt class="docutils literal"><span class="pre">Users_model</span></tt> object.</p>
-<p>This is just an example of course, and callbacks aren&#8217;t limited to models.
-You can use any object/method that accepts the field value as its&#8217; first
-parameter. Or if you&#8217;re running PHP 5.3+, you can also use an anonymous
-function:</p>
+<p>上のコードは <tt class="docutils literal"><span class="pre">Users_model</span></tt> オブジェクトの <tt class="docutils literal"><span class="pre">valid_username()</span></tt> メソッド
+を使っています。</p>
+<p>もちろんこれは 1 つの例であり、コールバック関数はモデルに限定されません。
+第 1 引数にフィールドの値を受け取るあらゆるオブジェクト/メソッドを使うことが
+できます。また、もし PHP 5.3+ であれば、
+匿名関数を使うこともできます:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">form_validation</span><span class="o">-&gt;</span><span class="na">set_rules</span><span class="p">(</span>
-        <span class="s1">&#39;username&#39;</span><span class="p">,</span> <span class="s1">&#39;Username&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;username&#39;</span><span class="p">,</span> <span class="s1">&#39;ユーザ名&#39;</span><span class="p">,</span>
         <span class="k">array</span><span class="p">(</span>
                 <span class="s1">&#39;required&#39;</span><span class="p">,</span>
                 <span class="k">function</span><span class="p">(</span><span class="nv">$value</span><span class="p">)</span>
                 <span class="p">{</span>
-                        <span class="c1">// Check $value</span>
+                        <span class="c1">// $value をチェックする</span>
                 <span class="p">}</span>
         <span class="p">)</span>
 <span class="p">);</span>
 </pre></div>
 </div>
-<p>Of course, since a Callable rule by itself is not a string, it isn&#8217;t
-a rule name either. That is a problem when you want to set error messages
-for them. In order to get around that problem, you can put such rules as
-the second element of an array, with the first one being the rule name:</p>
+<p>もちろん、コーラブルルールは文字列ではなく、ルール名でもありません。
+これは、エラーメッセージを設定したい場合、問題になります。
+そのため、それらのルールの配列の第 1 要素にルール名、
+第 2 要素にルールを記述できます:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">form_validation</span><span class="o">-&gt;</span><span class="na">set_rules</span><span class="p">(</span>
-        <span class="s1">&#39;username&#39;</span><span class="p">,</span> <span class="s1">&#39;Username&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;username&#39;</span><span class="p">,</span> <span class="s1">&#39;ユーザ名&#39;</span><span class="p">,</span>
         <span class="k">array</span><span class="p">(</span>
                 <span class="s1">&#39;required&#39;</span><span class="p">,</span>
                 <span class="k">array</span><span class="p">(</span><span class="s1">&#39;username_callable&#39;</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">users_model</span><span class="p">,</span> <span class="s1">&#39;valid_username&#39;</span><span class="p">))</span>
@@ -974,16 +974,16 @@ the second element of an array, with the first one being the rule name:</p>
 <span class="p">);</span>
 </pre></div>
 </div>
-<p>Anonymous function (PHP 5.3+) version:</p>
+<p>匿名関数 (PHP 5.3+) 版:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">form_validation</span><span class="o">-&gt;</span><span class="na">set_rules</span><span class="p">(</span>
-        <span class="s1">&#39;username&#39;</span><span class="p">,</span> <span class="s1">&#39;Username&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;username&#39;</span><span class="p">,</span> <span class="s1">&#39;ユーザ名&#39;</span><span class="p">,</span>
         <span class="k">array</span><span class="p">(</span>
                 <span class="s1">&#39;required&#39;</span><span class="p">,</span>
                 <span class="k">array</span><span class="p">(</span>
                         <span class="s1">&#39;username_callable&#39;</span><span class="p">,</span>
                         <span class="k">function</span><span class="p">(</span><span class="nv">$str</span><span class="p">)</span>
                         <span class="p">{</span>
-                                <span class="c1">// Check validity of $str and return TRUE or FALSE</span>
+                                <span class="c1">// $str を検証し TRUE または FALSE を返す</span>
                         <span class="p">}</span>
                 <span class="p">)</span>
         <span class="p">)</span>
@@ -992,7 +992,7 @@ the second element of an array, with the first one being the rule name:</p>
 </div>
 </div>
 <div class="section" id="setting-error-messages">
-<span id="id15"></span><h3><a class="toc-backref" href="#id44">エラーメッセージの設定</a><a class="headerlink" href="#setting-error-messages" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<span id="id16"></span><h3><a class="toc-backref" href="#id45">エラーメッセージの設定</a><a class="headerlink" href="#setting-error-messages" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p>All of the native error messages are located in the following language
 file: <strong>system/language/english/form_validation_lang.php</strong></p>
 <p>To set your own global custom message for a rule, you can either
@@ -1033,7 +1033,7 @@ the name of the method (without the &#8220;callback_&#8221; prefix):</p>
 </div>
 </div>
 <div class="section" id="translating-field-names">
-<span id="id16"></span><h3><a class="toc-backref" href="#id45">フィールド名の変換</a><a class="headerlink" href="#translating-field-names" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<span id="id17"></span><h3><a class="toc-backref" href="#id46">フィールド名の変換</a><a class="headerlink" href="#translating-field-names" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p>If you would like to store the &#8220;human&#8221; name you passed to the
 <tt class="docutils literal"><span class="pre">set_rules()</span></tt> method in a language file, and therefore make the name
 able to be translated, here&#8217;s how:</p>
@@ -1059,7 +1059,7 @@ controller using:</p>
 language files.</p>
 </div>
 <div class="section" id="changing-delimiters">
-<span id="id17"></span><h3><a class="toc-backref" href="#id46">エラーメッセージを囲む文字の変更</a><a class="headerlink" href="#changing-delimiters" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<span id="id18"></span><h3><a class="toc-backref" href="#id47">エラーメッセージを囲む文字の変更</a><a class="headerlink" href="#changing-delimiters" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p>By default, the Form Validation class adds a paragraph tag (&lt;p&gt;) around
 each error message shown. You can either change these delimiters
 globally, individually, or change the defaults in a config file.</p>
@@ -1092,8 +1092,8 @@ You can add your error delimiters in application/config/form_validation.php as f
 </li>
 </ol>
 </div>
-<div class="section" id="id18">
-<h3><a class="toc-backref" href="#id47">個別にエラーを表示する</a><a class="headerlink" href="#id18" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<div class="section" id="id19">
+<h3><a class="toc-backref" href="#id48">個別にエラーを表示する</a><a class="headerlink" href="#id19" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p>If you prefer to show an error message next to each form field, rather
 than as a list, you can use the <a class="reference internal" href="../helpers/form_helper.html#form_error" title="form_error"><tt class="xref php php-func docutils literal"><span class="pre">form_error()</span></tt></a> function.</p>
 <p>Try it! Change your form so that it looks like this:</p>
@@ -1128,7 +1128,7 @@ must supply it as an array to the function. Example:</p>
 <p>For more info please see the <a class="reference internal" href="#using-arrays-as-field-names"><em>フィールド名の指定に配列を使う</em></a> section below.</p>
 </div>
 <div class="section" id="post">
-<h3><a class="toc-backref" href="#id48">配列（$_POST以外の）のバリデーション</a><a class="headerlink" href="#post" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<h3><a class="toc-backref" href="#id49">配列 ($_POST 以外の) のバリデーション</a><a class="headerlink" href="#post" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p>Sometimes you may want to validate an array that does not originate from <tt class="docutils literal"><span class="pre">$_POST</span></tt> data.</p>
 <p>In this case, you can specify the array to be validated:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$data</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
@@ -1158,14 +1158,14 @@ before setting up rules and validating the new array.</p>
 </div>
 </div>
 <div class="section" id="saving-groups">
-<span id="id19"></span><h2><a class="toc-backref" href="#id49">検証ルールを設定ファイルに保存</a><a class="headerlink" href="#saving-groups" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<span id="id20"></span><h2><a class="toc-backref" href="#id50">検証ルールを設定ファイルに保存</a><a class="headerlink" href="#saving-groups" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>A nice feature of the Form Validation class is that it permits you to
 store all your validation rules for your entire application in a config
 file. You can organize these rules into &#8220;groups&#8221;. These groups can
 either be loaded automatically when a matching controller/method is
 called, or you can manually call each set as needed.</p>
-<div class="section" id="id20">
-<h3><a class="toc-backref" href="#id50">ルールの保存方法</a><a class="headerlink" href="#id20" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<div class="section" id="id21">
+<h3><a class="toc-backref" href="#id51">ルールの保存方法</a><a class="headerlink" href="#id21" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p>To store your validation rules, simply create a file named
 form_validation.php in your application/config/ folder. In that file
 you will place an array named $config with your rules. As shown earlier,
@@ -1198,8 +1198,8 @@ the validation array will have this prototype:</p>
 call the <tt class="docutils literal"><span class="pre">run()</span></tt> method.</p>
 <p>Please note that you MUST name your <tt class="docutils literal"><span class="pre">$config</span></tt> array.</p>
 </div>
-<div class="section" id="id21">
-<h3><a class="toc-backref" href="#id51">検証ルールのセットを作る</a><a class="headerlink" href="#id21" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<div class="section" id="id22">
+<h3><a class="toc-backref" href="#id52">検証ルールのセットを作る</a><a class="headerlink" href="#id22" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p>In order to organize your rules into &#8220;sets&#8221; requires that you place them
 into &#8220;sub arrays&#8221;. Consider the following example, showing two sets of
 rules. We&#8217;ve arbitrarily called these two rules &#8220;signup&#8221; and &#8220;email&#8221;.
@@ -1253,8 +1253,8 @@ You can name your rules anything you want:</p>
 </pre></div>
 </div>
 </div>
-<div class="section" id="id22">
-<h3><a class="toc-backref" href="#id52">特定のルールグループを呼び出す</a><a class="headerlink" href="#id22" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<div class="section" id="id23">
+<h3><a class="toc-backref" href="#id53">特定のルールグループを呼び出す</a><a class="headerlink" href="#id23" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p>In order to call a specific group, you will pass its name to the <tt class="docutils literal"><span class="pre">run()</span></tt>
 method. For example, to call the signup rule you will do this:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="k">if</span> <span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">form_validation</span><span class="o">-&gt;</span><span class="na">run</span><span class="p">(</span><span class="s1">&#39;signup&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="k">FALSE</span><span class="p">)</span>
@@ -1268,8 +1268,8 @@ method. For example, to call the signup rule you will do this:</p>
 </pre></div>
 </div>
 </div>
-<div class="section" id="id23">
-<h3><a class="toc-backref" href="#id53">コントローラー内のメソッドにルールグループを関連づける</a><a class="headerlink" href="#id23" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<div class="section" id="id24">
+<h3><a class="toc-backref" href="#id54">コントローラー内のメソッドにルールグループを関連づける</a><a class="headerlink" href="#id24" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p>An alternate (and more automatic) method of calling a rule group is to
 name it according to the controller class/method you intend to use it
 with. For example, let&#8217;s say you have a controller named Member and a
@@ -1328,7 +1328,7 @@ class/method.</p>
 </div>
 </div>
 <div class="section" id="using-arrays-as-field-names">
-<span id="id24"></span><h2><a class="toc-backref" href="#id54">フィールド名の指定に配列を使う</a><a class="headerlink" href="#using-arrays-as-field-names" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<span id="id25"></span><h2><a class="toc-backref" href="#id55">フィールド名の指定に配列を使う</a><a class="headerlink" href="#using-arrays-as-field-names" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>The Form Validation class supports the use of arrays as field names.
 Consider this example:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="o">&lt;</span><span class="nx">input</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;text&quot;</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;options[]&quot;</span> <span class="nx">value</span><span class="o">=</span><span class="s2">&quot;&quot;</span> <span class="nx">size</span><span class="o">=</span><span class="s2">&quot;50&quot;</span> <span class="o">/&gt;</span>
@@ -1381,8 +1381,8 @@ that all selections will be added to the POST array:</p>
 </pre></div>
 </div>
 </div>
-<div class="section" id="id25">
-<h2><a class="toc-backref" href="#id55">ルールリファレンス</a><a class="headerlink" href="#id25" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="section" id="id26">
+<h2><a class="toc-backref" href="#id56">ルールリファレンス</a><a class="headerlink" href="#id26" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>The following is a list of all the native rules that are available to
 use:</p>
 <table border="1" class="docutils">
@@ -1563,8 +1563,8 @@ to two parameters, where at least one is required (to pass
 the field data).</p>
 </div>
 </div>
-<div class="section" id="id26">
-<h2><a class="toc-backref" href="#id56">整形処理のリファレンス</a><a class="headerlink" href="#id26" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="section" id="id27">
+<h2><a class="toc-backref" href="#id57">整形処理のリファレンス</a><a class="headerlink" href="#id27" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>The following is a list of all the prepping methods that are available
 to use:</p>
 <div class="admonition note">
@@ -1575,7 +1575,7 @@ etc.</p>
 </div>
 </div>
 <div class="section" id="class-reference">
-<span id="id27"></span><h2><a class="toc-backref" href="#id57">クラスリファレンス</a><a class="headerlink" href="#class-reference" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<span id="id28"></span><h2><a class="toc-backref" href="#id58">クラスリファレンス</a><a class="headerlink" href="#class-reference" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <dl class="class">
 <dt id="CI_Form_validation">
 <em class="property">class </em><tt class="descname">CI_Form_validation</tt><a class="headerlink" href="#CI_Form_validation" title="この定義へのパーマリンク">¶</a></dt>
@@ -1799,7 +1799,7 @@ prefix and/or suffix to it (usually HTML tags).</p>
 
 </div>
 <div class="section" id="helper-functions">
-<span id="id28"></span><h2><a class="toc-backref" href="#id58">ヘルパーリファレンス</a><a class="headerlink" href="#helper-functions" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<span id="id29"></span><h2><a class="toc-backref" href="#id59">ヘルパーリファレンス</a><a class="headerlink" href="#helper-functions" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>Please refer to the <a class="reference internal" href="../helpers/form_helper.html"><em>Form Helper</em></a> manual for
 the following functions:</p>
 <ul class="simple">
@@ -1834,7 +1834,7 @@ to prepend them with <tt class="docutils literal"><span class="pre">$this-&gt;fo
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2016, British Columbia Institute of Technology.
-      最終更新: Jan 25, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>
+      最終更新: Jan 29, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>
     </p>
   </div>
 
