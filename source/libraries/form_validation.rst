@@ -2,8 +2,8 @@
 フォームバリデーション (検証)
 ###########################
 
-CodeIgniter provides a comprehensive form validation and data prepping
-class that helps minimize the amount of code you'll write.
+CodeIgniter は、最小限のコードで総合的なフォームバリデーションとデータ
+の準備をするクラスを提供します。
 
 .. contents:: Page Contents
 
@@ -141,7 +141,7 @@ this code and save it to your application/controllers/ folder::
 	}
 
 動かしてみよう!
-=======
+=================
 
 To try your form, visit your site using a URL similar to this one::
 
@@ -260,33 +260,33 @@ you use this approach, you must name your array keys as indicated::
 	$config = array(
 		array(
 			'field' => 'username',
-			'label' => 'Username',
+			'label' => 'ユーザ名',
 			'rules' => 'required'
 		),
 		array(
 			'field' => 'password',
-			'label' => 'Password',
+			'label' => 'パスワード',
 			'rules' => 'required',
 			'errors' => array(
-				'required' => 'You must provide a %s.',
+				'required' => '%s は必須です。',
 			),
 		),
 		array(
 			'field' => 'passconf',
-			'label' => 'Password Confirmation',
+			'label' => 'パスワードの確認',
 			'rules' => 'required'
 		),
 		array(
 			'field' => 'email',
-			'label' => 'Email',
+			'label' => 'メールアドレス',
 			'rules' => 'required'
 		)
 	);
 
 	$this->form_validation->set_rules($config);
 
-ルールの連結(カスケード)
-===============
+ルールの連結 (カスケード)
+=========================
 
 CodeIgniter lets you pipe multiple rules together. Let's try it. Change
 your rules in the third parameter of rule setting method, like this::
@@ -341,8 +341,8 @@ rule, like ``htmlspecialchars()``, ``trim()``, etc.**
 	**after** the validation rules so if there is an error, the
 	original data will be shown in the form.
 
-フォームの再表示（データの引き継ぎ）
-======================
+フォームの再表示 (データの引き継ぎ)
+==================================
 
 Thus far we have only been dealing with errors. It's time to repopulate
 the form field with the submitted data. CodeIgniter offers several
@@ -405,18 +405,18 @@ For more info please see the :ref:`using-arrays-as-field-names` section below.
 コールバック: ユーザ定義の検証メソッド
 ======================================
 
-The validation system supports callbacks to your own validation
-methods. This permits you to extend the validation class to meet your
-needs. For example, if you need to run a database query to see if the
-user is choosing a unique username, you can create a callback method
-that does that. Let's create an example of this.
+ユーザ定義の検証メソッドへのコールバックがシステムでサポートされていま
+す。これを使えば、それぞれのニーズに合わせるため検証クラスを拡張するこ
+とができます。 たとえば、選択したユーザが固有の名前かどうかを調べるた
+めデータベースクエリを実行する必要があるとき、それを行うコールバックメ
+ソッドを作成できます。 次に示す例のように作ってみましょう。
 
-In your controller, change the "username" rule to this::
+コントローラで、"username" ルールを次のように変更します::
 
-	$this->form_validation->set_rules('username', 'Username', 'callback_username_check');
+	$this->form_validation->set_rules('username', 'ユーザ名', 'callback_username_check');
 
-Then add a new method called ``username_check()`` to your controller.
-Here's how your controller should now look::
+次に ``username_check()`` という名前のメソッドをコントローラに追加します。
+コントローラは以下のようになっているはずです::
 
 	<?php
 
@@ -428,10 +428,10 @@ Here's how your controller should now look::
 
 			$this->load->library('form_validation');
 
-			$this->form_validation->set_rules('username', 'Username', 'callback_username_check');
-			$this->form_validation->set_rules('password', 'Password', 'required');
-			$this->form_validation->set_rules('passconf', 'Password Confirmation', 'required');
-			$this->form_validation->set_rules('email', 'Email', 'required|is_unique[users.email]');
+			$this->form_validation->set_rules('username', 'ユーザ名', 'callback_username_check');
+			$this->form_validation->set_rules('password', 'パスワード', 'required');
+			$this->form_validation->set_rules('passconf', 'パスワードの確認', 'required');
+			$this->form_validation->set_rules('email', 'メールアドレス', 'required|is_unique[users.email]');
 
 			if ($this->form_validation->run() == FALSE)
 			{
@@ -447,7 +447,7 @@ Here's how your controller should now look::
 		{
 			if ($str == 'test')
 			{
-				$this->form_validation->set_message('username_check', 'The {field} field can not be the word "test"');
+				$this->form_validation->set_message('username_check', '{field} 欄に "test" は使えません');
 				return FALSE;
 			}
 			else
@@ -458,81 +458,81 @@ Here's how your controller should now look::
 
 	}
 
-Reload your form and submit it with the word "test" as the username. You
-can see that the form field data was passed to your callback method
-for you to process.
+フォームを再読み込みして、ユーザ名に "test" と入力して送信します。
+フォームフィールドのデータがコールバックメソッドに渡され処理されたのが
+わかります。
 
-To invoke a callback just put the method name in a rule, with
-"callback\_" as the rule **prefix**. If you need to receive an extra
-parameter in your callback method, just add it normally after the
-method name between square brackets, as in: "callback_foo**[bar]**",
-then it will be passed as the second argument of your callback method.
+コールバックを呼び出すには、あるルールに従ってメソッド名を指定します。そのルール
+とは、"callback\_" という **プリフィックス** をメソッド名に付け加えるという
+ものです。もし、コールバックメソッドが追加のパラメータを受け取る必要がある
+場合、"callback_foo**[bar]**" のようにメソッド名の後の角カッコの間にパラメータを
+追加してください。そうすれば、第 2 引数としてコールバックメソッドに渡されます。
 
-.. note:: You can also process the form data that is passed to your
-	callback and return it. If your callback returns anything other than a
-	boolean TRUE/FALSE it is assumed that the data is your newly processed
-	form data.
+.. note:: また、コールバックに渡されたフォームデータを処理し、
+	結果を返すことができます。
+	コールバックが論理型の TRUE/FALSE 以外の値を返す場合、
+	そのデータは新たに処理されたフォームデータであるとみなされます。
 
-Callable: Use anything as a rule
+コーラブル: 何でもルールとして使う
 ================================
 
-If callback rules aren't good enough for you (for example, because they are
-limited to your controller), don't get disappointed, there's one more way
-to create custom rules: anything that ``is_callable()`` would return TRUE for.
+もしコールバックルールが十分でないない場合 (例えば、コールバックはコントローラ内
+に制限されます)、がっかりしないでください。
+もう 1 つ独自ルールを作成する方法があります。``is_callable()`` が TRUE を返すものをルールとする方法です。
 
-Consider the following example::
+次の例を検討してみましょう::
 
 	$this->form_validation->set_rules(
-		'username', 'Username',
+		'username', 'ユーザ名',
 		array(
 			'required',
 			array($this->users_model, 'valid_username')
 		)
 	);
 
-The above code would use the ``valid_username()`` method from your
-``Users_model`` object.
+上のコードは ``Users_model`` オブジェクトの ``valid_username()`` メソッド
+を使っています。
 
-This is just an example of course, and callbacks aren't limited to models.
-You can use any object/method that accepts the field value as its' first
-parameter. Or if you're running PHP 5.3+, you can also use an anonymous
-function::
+もちろんこれは 1 つの例であり、コールバック関数はモデルに限定されません。
+第 1 引数にフィールドの値を受け取るあらゆるオブジェクト/メソッドを使うことが
+できます。また、もし PHP 5.3+ であれば、
+匿名関数を使うこともできます::
 
 	$this->form_validation->set_rules(
-		'username', 'Username',
+		'username', 'ユーザ名',
 		array(
 			'required',
 			function($value)
 			{
-				// Check $value
+				// $value をチェックする
 			}
 		)
 	);
 
-Of course, since a Callable rule by itself is not a string, it isn't
-a rule name either. That is a problem when you want to set error messages
-for them. In order to get around that problem, you can put such rules as
-the second element of an array, with the first one being the rule name::
+もちろん、コーラブルルールは文字列ではなく、ルール名でもありません。
+これは、エラーメッセージを設定したい場合、問題になります。
+そのため、それらのルールの配列の第 1 要素にルール名、
+第 2 要素にルールを記述できます::
 
 	$this->form_validation->set_rules(
-		'username', 'Username',
+		'username', 'ユーザ名',
 		array(
 			'required',
 			array('username_callable', array($this->users_model, 'valid_username'))
 		)
 	);
 
-Anonymous function (PHP 5.3+) version::
+匿名関数 (PHP 5.3+) 版::
 
 	$this->form_validation->set_rules(
-		'username', 'Username',
+		'username', 'ユーザ名',
 		array(
 			'required',
 			array(
 				'username_callable',
 				function($str)
 				{
-					// Check validity of $str and return TRUE or FALSE
+					// $str を検証し TRUE または FALSE を返す
 				}
 			)
 		)
@@ -677,7 +677,7 @@ message will appear.
 
 For more info please see the :ref:`using-arrays-as-field-names` section below.
 
-配列（$_POST以外の）のバリデーション
+配列 ($_POST 以外の) のバリデーション
 =======================================
 
 Sometimes you may want to validate an array that does not originate from ``$_POST`` data.
@@ -824,7 +824,7 @@ method. For example, to call the signup rule you will do this::
 	}
 
 コントローラー内のメソッドにルールグループを関連づける
-=================================================
+===================================================
 
 An alternate (and more automatic) method of calling a rule group is to
 name it according to the controller class/method you intend to use it
@@ -884,9 +884,9 @@ class/method.
 
 .. _using-arrays-as-field-names:
 
-***************************
+*****************************
 フィールド名の指定に配列を使う
-***************************
+*****************************
 
 The Form Validation class supports the use of arrays as field names.
 Consider this example::
@@ -941,9 +941,9 @@ When you use a helper function you'll include the bracket as well::
 	<?php echo form_error('options[color][]'); ?>
 
 
-**************
+*******************
 ルールリファレンス
-**************
+*******************
 
 The following is a list of all the native rules that are available to
 use:
@@ -1000,21 +1000,21 @@ use:
 	to two parameters, where at least one is required (to pass
 	the field data).
 
-******************
+**********************
 整形処理のリファレンス
-******************
+**********************
 
 The following is a list of all the prepping methods that are available
 to use:
 
-==================== ========= =======================================================================================================
-名前                  Parameter 説明
-==================== ========= =======================================================================================================
+==================== ========== =======================================================================================================
+名前                 パラメータ 説明
+==================== ========== =======================================================================================================
 **prep_for_form**    No        Converts special characters so that HTML data can be shown in a form field without breaking it.
 **prep_url**         No        Adds "\http://" to URLs if missing.
 **strip_image_tags** No        Strips the HTML from image tags leaving the raw URL.
 **encode_php_tags**  No        Converts PHP tags to entities.
-==================== ========= =======================================================================================================
+==================== ========== =======================================================================================================
 
 .. note:: You can also use any native PHP functions that permits one
 	parameter, like ``trim()``, ``htmlspecialchars()``, ``urldecode()``,
@@ -1065,7 +1065,7 @@ to use:
 
 		:パラメータ	string	$prefix: Error message prefix
 		:パラメータ	string	$suffix: Error message suffix
-		:返り値:	    CI_Form_validation instance (method chaining)
+		:返り値:	CI_Form_validation instance (method chaining)
 		:返り値型:	CI_Form_validation
 
 		Sets the default prefix and suffix for error messages.
@@ -1081,7 +1081,7 @@ to use:
 
 	.. php:method:: reset_validation()
 
-		:返り値:	    CI_Form_validation instance (method chaining)
+		:返り値:	CI_Form_validation instance (method chaining)
 		:返り値型:	CI_Form_validation
 
 		Permits you to reset the validation when you validate more than one array.
@@ -1089,7 +1089,7 @@ to use:
 
 	.. php:method:: error_array()
 
-		:返り値:	    Array of error messages
+		:返り値:	Array of error messages
 		:返り値型:	array
 
 		Returns the error messages as an array.
@@ -1098,7 +1098,7 @@ to use:
 
 		:パラメータ	string	$prefix: Error message prefix
 		:パラメータ	string	$suffix: Error message suffix
-		:返り値:	    Error messages as a string
+		:返り値:	Error messages as a string
 		:返り値型:	string
 
 		Returns all error messages (as returned from error_array()) formatted as a
@@ -1109,7 +1109,7 @@ to use:
 		:パラメータ	string $field: Field name
 		:パラメータ	string $prefix: Optional prefix
 		:パラメータ	string $suffix: Optional suffix
-		:返り値:	    Error message string
+		:返り値:	Error message string
 		:返り値型:	string
 
 		Returns the error message for a specific field, optionally adding a
@@ -1118,7 +1118,7 @@ to use:
 	.. php:method:: has_rule($field)
 
 		:パラメータ	string	$field: Field name
-		:返り値:	    TRUE if the field has rules set, FALSE if not
+		:返り値:	TRUE if the field has rules set, FALSE if not
 		:返り値型:	bool
 
 		Checks to see if there is a rule set for the specified field.
