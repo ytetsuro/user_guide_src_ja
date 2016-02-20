@@ -4,23 +4,23 @@
 
 このチュートリアルでは本格的なコンテンツ管理システムに求める全てのものを
 網羅しきれていませんが、一番重要なルーティング、コントローラ作成、そして
-モデル作成について学ぶ事が出来ました。このチュートリアルがCodeIgniterの
+モデル作成について学ぶ事が出来ました。このチュートリアルが CodeIgniter の
 基本的なデザインパターンの習得と、先々の知識の追求に役立てたのであれば
 幸いです。
 
 チュートリアルが終わったら、残りのドキュメンテーションに目を通す事を
-お勧めします。CodeIgniterはその包括的なドキュメントのおかげでよく好評
+お勧めします。CodeIgniter はその包括的なドキュメントのおかげでよく好評
 を頂いています。是非これを活かして、"イントロダクション"や"一般的な
 トピック"を精読してみてください。クラスやヘルパーのリファレンスは必要に
 応じて読むと良いでしょう。
 
-ほとんどの中級PHPプログラマーなら数日のうちにCodeIgniterを理解することが
+ほとんどの中級 PHP プログラマーなら数日のうちに CodeIgniter を理解することが
 できるはずです。
 
-もしまだフレームワークや自分のCodeIgniterコードについて質問があれば、
+もしまだフレームワークや自分の CodeIgniter コードについて質問があれば、
 下記を参考にしてみてください（現在全て英語で提供されております）：
 
-- `CodeIgniterフォーラム <http://forum.codeigniter.com/>`_
-- `IRCチャットルーム <https://github.com/bcit-ci/CodeIgniter/wiki/IRC>`_
+- `CodeIgniter フォーラム <http://forum.codeigniter.com/>`_
+- `IRC チャットルーム <https://github.com/bcit-ci/CodeIgniter/wiki/IRC>`_
 - `CodeIgniter Wiki <https://github.com/bcit-ci/CodeIgniter/wiki/>`_
 
