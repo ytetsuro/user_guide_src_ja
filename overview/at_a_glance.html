@@ -77,7 +77,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../tutorial/index.html">チュートリアル</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../tutorial/static_pages.html">静的なページ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../tutorial/news_section.html">ニュースセクション</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../tutorial/create_news_items.html">ニュース項目を作成</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorial/create_news_items.html">ニュース記事を作成</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../tutorial/conclusion.html">おわりに</a></li>
 </ul>
 </li>
@@ -263,7 +263,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../tutorial/index.html">チュートリアル</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../tutorial/static_pages.html">静的なページ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../tutorial/news_section.html">ニュースセクション</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../tutorial/create_news_items.html">ニュース項目を作成</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorial/create_news_items.html">ニュース記事を作成</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../tutorial/conclusion.html">おわりに</a></li>
 </ul>
 </li>
@@ -495,10 +495,10 @@ CodeIgniter は、URLに動的システムの代名詞ともいえる一般的�
 ンの構文は基本的な PHP より少し簡単な程度です。例えば、こんな PHP のコードを思い
 浮かべてみてください:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="o">&lt;</span><span class="nx">ul</span><span class="o">&gt;</span>
-<span class="o">&lt;?</span><span class="nx">php</span> <span class="k">foreach</span> <span class="p">(</span><span class="nv">$addressbook</span> <span class="k">as</span> <span class="nv">$name</span><span class="p">)</span><span class="o">:?&gt;</span>
-        <span class="o">&lt;</span><span class="nx">li</span><span class="o">&gt;&lt;?=</span><span class="nv">$name</span><span class="cp">?&gt;</span><span class="nt">&lt;/li&gt;</span>
+<span class="o">&lt;?</span><span class="nx">php</span> <span class="k">foreach</span> <span class="p">(</span><span class="nv">$addressbook</span> <span class="k">as</span> <span class="nv">$name</span><span class="p">)</span><span class="o">:</span><span class="cp">?&gt;</span>
+        <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span><span class="cp">&lt;?</span><span class="o">=</span><span class="nv">$name</span><span class="cp">?&gt;</span><span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
 <span class="cp">&lt;?php</span> <span class="k">endforeach</span><span class="p">;</span> <span class="cp">?&gt;</span>
-<span class="nt">&lt;/ul&gt;</span>
+<span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
 </pre></div>
 </div>
 <p>これに対して、テンプレートエンジンで使われる擬似コードはこんな感じです:</p>
@@ -547,7 +547,7 @@ CodeIgniter は、URLに動的システムの代名詞ともいえる一般的�
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2016, British Columbia Institute of Technology.
-      最終更新: Jan 29, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>
+      最終更新: Feb 20, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>
     </p>
   </div>
 

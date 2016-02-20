@@ -77,7 +77,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../tutorial/index.html">チュートリアル</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../tutorial/static_pages.html">静的なページ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../tutorial/news_section.html">ニュースセクション</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../tutorial/create_news_items.html">ニュース項目を作成</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorial/create_news_items.html">ニュース記事を作成</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../tutorial/conclusion.html">おわりに</a></li>
 </ul>
 </li>
@@ -263,7 +263,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../tutorial/index.html">チュートリアル</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../tutorial/static_pages.html">静的なページ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../tutorial/news_section.html">ニュースセクション</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../tutorial/create_news_items.html">ニュース項目を作成</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorial/create_news_items.html">ニュース記事を作成</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../tutorial/conclusion.html">おわりに</a></li>
 </ul>
 </li>
@@ -655,19 +655,19 @@ found in URL protocol prefixes (e.g. http&amp;#58;//).</p>
 </table>
 <p>Removes any slashes from an array of strings.</p>
 <p>Example:</p>
-<div class="highlight-ci"><div class="highlight"><pre>$str = array(
-        &#39;question&#39;  =&gt; &#39;Is your name O\&#39;reilly?&#39;,
-        &#39;answer&#39; =&gt; &#39;No, my name is O\&#39;connor.&#39;
-);
+<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$str</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+        <span class="s1">&#39;question&#39;</span><span class="nx">  </span><span class="o">=&gt;</span> <span class="s1">&#39;Is your name O\&#39;reilly?&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;answer&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;No, my name is O\&#39;connor.&#39;</span>
+<span class="p">);</span>
 
-$str = strip_slashes($str);
+<span class="nv">$str</span> <span class="o">=</span> <span class="nx">strip_slashes</span><span class="p">(</span><span class="nv">$str</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>The above will return the following array:</p>
-<div class="highlight-ci"><div class="highlight"><pre>array(
-        &#39;question&#39;  =&gt; &quot;Is your name O&#39;reilly?&quot;,
-        &#39;answer&#39; =&gt; &quot;No, my name is O&#39;connor.&quot;
-);
+<div class="highlight-ci"><div class="highlight"><pre><span class="k">array</span><span class="p">(</span>
+        <span class="s1">&#39;question&#39;</span><span class="nx">  </span><span class="o">=&gt;</span> <span class="s2">&quot;Is your name O&#39;reilly?&quot;</span><span class="p">,</span>
+        <span class="s1">&#39;answer&#39;</span> <span class="o">=&gt;</span> <span class="s2">&quot;No, my name is O&#39;connor.&quot;</span>
+<span class="p">);</span>
 </pre></div>
 </div>
 <div class="admonition note">
@@ -824,7 +824,7 @@ entities. Example:</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2016, British Columbia Institute of Technology.
-      最終更新: Jan 29, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>
+      最終更新: Feb 20, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>
     </p>
   </div>
 

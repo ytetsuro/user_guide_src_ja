@@ -77,7 +77,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../tutorial/index.html">チュートリアル</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../tutorial/static_pages.html">静的なページ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../tutorial/news_section.html">ニュースセクション</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../tutorial/create_news_items.html">ニュース項目を作成</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorial/create_news_items.html">ニュース記事を作成</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../tutorial/conclusion.html">おわりに</a></li>
 </ul>
 </li>
@@ -263,7 +263,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../tutorial/index.html">チュートリアル</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../tutorial/static_pages.html">静的なページ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../tutorial/news_section.html">ニュースセクション</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../tutorial/create_news_items.html">ニュース項目を作成</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorial/create_news_items.html">ニュース記事を作成</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../tutorial/conclusion.html">おわりに</a></li>
 </ul>
 </li>
@@ -579,14 +579,14 @@ CodeIgniter の セッションクラス を利用しますので、
 利用しているのを注意してください。</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="o">&lt;?</span><span class="nx">php</span> <span class="k">echo</span> <span class="nx">form_open</span><span class="p">(</span><span class="s1">&#39;path/to/controller/update/method&#39;</span><span class="p">);</span> <span class="cp">?&gt;</span>
 
-<span class="nt">&lt;table</span> <span class="na">cellpadding=</span><span class="s">&quot;6&quot;</span> <span class="na">cellspacing=</span><span class="s">&quot;1&quot;</span> <span class="na">style=</span><span class="s">&quot;width:100%&quot;</span> <span class="na">border=</span><span class="s">&quot;0&quot;</span><span class="nt">&gt;</span>
+<span class="p">&lt;</span><span class="nt">table</span> <span class="na">cellpadding</span><span class="o">=</span><span class="s">&quot;6&quot;</span> <span class="na">cellspacing</span><span class="o">=</span><span class="s">&quot;1&quot;</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;width:100%&quot;</span> <span class="na">border</span><span class="o">=</span><span class="s">&quot;0&quot;</span><span class="p">&gt;</span>
 
-<span class="nt">&lt;tr&gt;</span>
-        <span class="nt">&lt;th&gt;</span>数量<span class="nt">&lt;/th&gt;</span>
-        <span class="nt">&lt;th&gt;</span>商品説明<span class="nt">&lt;/th&gt;</span>
-        <span class="nt">&lt;th</span> <span class="na">style=</span><span class="s">&quot;text-align:right&quot;</span><span class="nt">&gt;</span>価格<span class="nt">&lt;/th&gt;</span>
-        <span class="nt">&lt;th</span> <span class="na">style=</span><span class="s">&quot;text-align:right&quot;</span><span class="nt">&gt;</span>小計<span class="nt">&lt;/th&gt;</span>
-<span class="nt">&lt;/tr&gt;</span>
+<span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">th</span><span class="p">&gt;</span>数量<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">th</span><span class="p">&gt;</span>商品説明<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">th</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;text-align:right&quot;</span><span class="p">&gt;</span>価格<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">th</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;text-align:right&quot;</span><span class="p">&gt;</span>小計<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
 
 <span class="cp">&lt;?php</span> <span class="nv">$i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="cp">?&gt;</span>
 
@@ -594,41 +594,41 @@ CodeIgniter の セッションクラス を利用しますので、
 
         <span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nx">form_hidden</span><span class="p">(</span><span class="nv">$i</span><span class="o">.</span><span class="s1">&#39;[rowid]&#39;</span><span class="p">,</span> <span class="nv">$items</span><span class="p">[</span><span class="s1">&#39;rowid&#39;</span><span class="p">]);</span> <span class="cp">?&gt;</span>
 
-        <span class="nt">&lt;tr&gt;</span>
-                <span class="nt">&lt;td&gt;</span><span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nx">form_input</span><span class="p">(</span><span class="k">array</span><span class="p">(</span><span class="s1">&#39;name&#39;</span> <span class="o">=&gt;</span> <span class="nv">$i</span><span class="o">.</span><span class="s1">&#39;[qty]&#39;</span><span class="p">,</span> <span class="s1">&#39;value&#39;</span> <span class="o">=&gt;</span> <span class="nv">$items</span><span class="p">[</span><span class="s1">&#39;qty&#39;</span><span class="p">],</span> <span class="s1">&#39;maxlength&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;3&#39;</span><span class="p">,</span> <span class="s1">&#39;size&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;5&#39;</span><span class="p">));</span> <span class="cp">?&gt;</span><span class="nt">&lt;/td&gt;</span>
-                <span class="nt">&lt;td&gt;</span>
+        <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span><span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nx">form_input</span><span class="p">(</span><span class="k">array</span><span class="p">(</span><span class="s1">&#39;name&#39;</span> <span class="o">=&gt;</span> <span class="nv">$i</span><span class="o">.</span><span class="s1">&#39;[qty]&#39;</span><span class="p">,</span> <span class="s1">&#39;value&#39;</span> <span class="o">=&gt;</span> <span class="nv">$items</span><span class="p">[</span><span class="s1">&#39;qty&#39;</span><span class="p">],</span> <span class="s1">&#39;maxlength&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;3&#39;</span><span class="p">,</span> <span class="s1">&#39;size&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;5&#39;</span><span class="p">));</span> <span class="cp">?&gt;</span><span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>
                         <span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nv">$items</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">];</span> <span class="cp">?&gt;</span>
 
                         <span class="cp">&lt;?php</span> <span class="k">if</span> <span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">cart</span><span class="o">-&gt;</span><span class="na">has_options</span><span class="p">(</span><span class="nv">$items</span><span class="p">[</span><span class="s1">&#39;rowid&#39;</span><span class="p">])</span> <span class="o">==</span> <span class="k">TRUE</span><span class="p">)</span><span class="o">:</span> <span class="cp">?&gt;</span>
 
-                                <span class="nt">&lt;p&gt;</span>
+                                <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>
                                         <span class="cp">&lt;?php</span> <span class="k">foreach</span> <span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">cart</span><span class="o">-&gt;</span><span class="na">product_options</span><span class="p">(</span><span class="nv">$items</span><span class="p">[</span><span class="s1">&#39;rowid&#39;</span><span class="p">])</span> <span class="k">as</span> <span class="nv">$option_name</span> <span class="o">=&gt;</span> <span class="nv">$option_value</span><span class="p">)</span><span class="o">:</span> <span class="cp">?&gt;</span>
 
-                                                <span class="nt">&lt;strong&gt;</span><span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nv">$option_name</span><span class="p">;</span> <span class="cp">?&gt;</span>:<span class="nt">&lt;/strong&gt;</span> <span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nv">$option_value</span><span class="p">;</span> <span class="cp">?&gt;</span><span class="nt">&lt;br</span> <span class="nt">/&gt;</span>
+                                                <span class="p">&lt;</span><span class="nt">strong</span><span class="p">&gt;</span><span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nv">$option_name</span><span class="p">;</span> <span class="cp">?&gt;</span>:<span class="p">&lt;/</span><span class="nt">strong</span><span class="p">&gt;</span> <span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nv">$option_value</span><span class="p">;</span> <span class="cp">?&gt;</span><span class="p">&lt;</span><span class="nt">br</span> <span class="p">/&gt;</span>
 
                                         <span class="cp">&lt;?php</span> <span class="k">endforeach</span><span class="p">;</span> <span class="cp">?&gt;</span>
-                                <span class="nt">&lt;/p&gt;</span>
+                                <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
 
                         <span class="cp">&lt;?php</span> <span class="k">endif</span><span class="p">;</span> <span class="cp">?&gt;</span>
 
-                <span class="nt">&lt;/td&gt;</span>
-                <span class="nt">&lt;td</span> <span class="na">style=</span><span class="s">&quot;text-align:right&quot;</span><span class="nt">&gt;</span><span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">cart</span><span class="o">-&gt;</span><span class="na">format_number</span><span class="p">(</span><span class="nv">$items</span><span class="p">[</span><span class="s1">&#39;price&#39;</span><span class="p">]);</span> <span class="cp">?&gt;</span><span class="nt">&lt;/td&gt;</span>
-                <span class="nt">&lt;td</span> <span class="na">style=</span><span class="s">&quot;text-align:right&quot;</span><span class="nt">&gt;</span>$<span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">cart</span><span class="o">-&gt;</span><span class="na">format_number</span><span class="p">(</span><span class="nv">$items</span><span class="p">[</span><span class="s1">&#39;subtotal&#39;</span><span class="p">]);</span> <span class="cp">?&gt;</span><span class="nt">&lt;/td&gt;</span>
-        <span class="nt">&lt;/tr&gt;</span>
+                <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">td</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;text-align:right&quot;</span><span class="p">&gt;</span><span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">cart</span><span class="o">-&gt;</span><span class="na">format_number</span><span class="p">(</span><span class="nv">$items</span><span class="p">[</span><span class="s1">&#39;price&#39;</span><span class="p">]);</span> <span class="cp">?&gt;</span><span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">td</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;text-align:right&quot;</span><span class="p">&gt;</span>$<span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">cart</span><span class="o">-&gt;</span><span class="na">format_number</span><span class="p">(</span><span class="nv">$items</span><span class="p">[</span><span class="s1">&#39;subtotal&#39;</span><span class="p">]);</span> <span class="cp">?&gt;</span><span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
 
 <span class="cp">&lt;?php</span> <span class="nv">$i</span><span class="o">++</span><span class="p">;</span> <span class="cp">?&gt;</span>
 
 <span class="cp">&lt;?php</span> <span class="k">endforeach</span><span class="p">;</span> <span class="cp">?&gt;</span>
 
-<span class="nt">&lt;tr&gt;</span>
-        <span class="nt">&lt;td</span> <span class="na">colspan=</span><span class="s">&quot;2&quot;</span><span class="nt">&gt;</span> <span class="nt">&lt;/td&gt;</span>
-        <span class="nt">&lt;td</span> <span class="na">class=</span><span class="s">&quot;right&quot;</span><span class="nt">&gt;&lt;strong&gt;</span>Total<span class="nt">&lt;/strong&gt;&lt;/td&gt;</span>
-        <span class="nt">&lt;td</span> <span class="na">class=</span><span class="s">&quot;right&quot;</span><span class="nt">&gt;</span>$<span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">cart</span><span class="o">-&gt;</span><span class="na">format_number</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">cart</span><span class="o">-&gt;</span><span class="na">total</span><span class="p">());</span> <span class="cp">?&gt;</span><span class="nt">&lt;/td&gt;</span>
-<span class="nt">&lt;/tr&gt;</span>
+<span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">td</span> <span class="na">colspan</span><span class="o">=</span><span class="s">&quot;2&quot;</span><span class="p">&gt;</span> <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">td</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;right&quot;</span><span class="p">&gt;&lt;</span><span class="nt">strong</span><span class="p">&gt;</span>Total<span class="p">&lt;/</span><span class="nt">strong</span><span class="p">&gt;&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">td</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;right&quot;</span><span class="p">&gt;</span>$<span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">cart</span><span class="o">-&gt;</span><span class="na">format_number</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">cart</span><span class="o">-&gt;</span><span class="na">total</span><span class="p">());</span> <span class="cp">?&gt;</span><span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
 
-<span class="nt">&lt;/table&gt;</span>
+<span class="p">&lt;/</span><span class="nt">table</span><span class="p">&gt;</span>
 
-<span class="nt">&lt;p&gt;</span><span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nx">form_submit</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;カートを更新する&#39;</span><span class="p">);</span> <span class="cp">?&gt;</span><span class="nt">&lt;/p&gt;</span>
+<span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span><span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nx">form_submit</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;カートを更新する&#39;</span><span class="p">);</span> <span class="cp">?&gt;</span><span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
 </pre></div>
 </div>
 </div>
@@ -948,7 +948,7 @@ owid を渡す必要があるので、カートを表示する の例で示す�
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2016, British Columbia Institute of Technology.
-      最終更新: Jan 29, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>
+      最終更新: Feb 20, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>
     </p>
   </div>
 

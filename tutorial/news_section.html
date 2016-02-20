@@ -32,7 +32,7 @@
   
     <link rel="top" title="CodeIgniter 3.1.0-dev ドキュメント" href="../index.html"/>
         <link rel="up" title="チュートリアル" href="index.html"/>
-        <link rel="next" title="ニュース項目を作成" href="create_news_items.html"/>
+        <link rel="next" title="ニュース記事を作成" href="create_news_items.html"/>
         <link rel="prev" title="静的なページ" href="static_pages.html"/> 
 
   
@@ -77,7 +77,7 @@
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">チュートリアル</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="static_pages.html">静的なページ</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="">ニュースセクション</a></li>
-<li class="toctree-l2"><a class="reference internal" href="create_news_items.html">ニュース項目を作成</a></li>
+<li class="toctree-l2"><a class="reference internal" href="create_news_items.html">ニュース記事を作成</a></li>
 <li class="toctree-l2"><a class="reference internal" href="conclusion.html">おわりに</a></li>
 </ul>
 </li>
@@ -263,7 +263,7 @@
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">チュートリアル</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="static_pages.html">静的なページ</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="">ニュースセクション</a></li>
-<li class="toctree-l2"><a class="reference internal" href="create_news_items.html">ニュース項目を作成</a></li>
+<li class="toctree-l2"><a class="reference internal" href="create_news_items.html">ニュース記事を作成</a></li>
 <li class="toctree-l2"><a class="reference internal" href="conclusion.html">おわりに</a></li>
 </ul>
 </li>
@@ -548,15 +548,15 @@
 今度はニュース記事を描画するためのビューを作成する必要があります。
 <em>application/views/news/index.php</em> を作成し、
 次のコードを追加してください。</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="o">&lt;</span><span class="nx">h2</span><span class="o">&gt;&lt;?</span><span class="nx">php</span> <span class="k">echo</span> <span class="nv">$title</span><span class="p">;</span> <span class="cp">?&gt;</span><span class="nt">&lt;/h2&gt;</span>
+<div class="highlight-ci"><div class="highlight"><pre><span class="o">&lt;</span><span class="nx">h2</span><span class="o">&gt;&lt;?</span><span class="nx">php</span> <span class="k">echo</span> <span class="nv">$title</span><span class="p">;</span> <span class="cp">?&gt;</span><span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
 
 <span class="cp">&lt;?php</span> <span class="k">foreach</span> <span class="p">(</span><span class="nv">$news</span> <span class="k">as</span> <span class="nv">$news_item</span><span class="p">)</span><span class="o">:</span> <span class="cp">?&gt;</span>
 
-        <span class="nt">&lt;h3&gt;</span><span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nv">$news_item</span><span class="p">[</span><span class="s1">&#39;title&#39;</span><span class="p">];</span> <span class="cp">?&gt;</span><span class="nt">&lt;/h3&gt;</span>
-        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;main&quot;</span><span class="nt">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span><span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nv">$news_item</span><span class="p">[</span><span class="s1">&#39;title&#39;</span><span class="p">];</span> <span class="cp">?&gt;</span><span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;main&quot;</span><span class="p">&gt;</span>
                 <span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nv">$news_item</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">];</span> <span class="cp">?&gt;</span>
-        <span class="nt">&lt;/div&gt;</span>
-        <span class="nt">&lt;p&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;</span><span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nx">site_url</span><span class="p">(</span><span class="s1">&#39;news/&#39;</span><span class="o">.</span><span class="nv">$news_item</span><span class="p">[</span><span class="s1">&#39;slug&#39;</span><span class="p">]);</span> <span class="cp">?&gt;</span><span class="s">&quot;</span><span class="nt">&gt;</span>View article<span class="nt">&lt;/a&gt;&lt;/p&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;</span><span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nx">site_url</span><span class="p">(</span><span class="s1">&#39;news/&#39;</span><span class="o">.</span><span class="nv">$news_item</span><span class="p">[</span><span class="s1">&#39;slug&#39;</span><span class="p">]);</span> <span class="cp">?&gt;</span><span class="s">&quot;</span><span class="p">&gt;</span>View article<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
 
 <span class="cp">&lt;?php</span> <span class="k">endforeach</span><span class="p">;</span> <span class="cp">?&gt;</span>
 </pre></div>
@@ -623,7 +623,7 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="create_news_items.html" class="btn btn-neutral float-right" title="ニュース項目を作成">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="create_news_items.html" class="btn btn-neutral float-right" title="ニュース記事を作成">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="static_pages.html" class="btn btn-neutral" title="静的なページ"><span class="fa fa-arrow-circle-left"></span> Previous</a>
@@ -636,7 +636,7 @@
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2016, British Columbia Institute of Technology.
-      最終更新: Jan 29, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>
+      最終更新: Feb 20, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>
     </p>
   </div>
 

@@ -77,7 +77,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../tutorial/index.html">チュートリアル</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../tutorial/static_pages.html">静的なページ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../tutorial/news_section.html">ニュースセクション</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../tutorial/create_news_items.html">ニュース項目を作成</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorial/create_news_items.html">ニュース記事を作成</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../tutorial/conclusion.html">おわりに</a></li>
 </ul>
 </li>
@@ -263,7 +263,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../tutorial/index.html">チュートリアル</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../tutorial/static_pages.html">静的なページ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../tutorial/news_section.html">ニュースセクション</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../tutorial/create_news_items.html">ニュース項目を作成</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorial/create_news_items.html">ニュース記事を作成</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../tutorial/conclusion.html">おわりに</a></li>
 </ul>
 </li>
@@ -467,11 +467,11 @@ a simplified format as well. Here is an example using <tt class="docutils litera
 
 <span class="o">&lt;?</span><span class="nx">php</span> <span class="k">foreach</span> <span class="p">(</span><span class="nv">$todo</span> <span class="k">as</span> <span class="nv">$item</span><span class="p">)</span><span class="o">:</span> <span class="cp">?&gt;</span>
 
-        <span class="nt">&lt;li&gt;</span><span class="cp">&lt;?</span><span class="o">=</span><span class="nv">$item</span><span class="cp">?&gt;</span><span class="nt">&lt;/li&gt;</span>
+        <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span><span class="cp">&lt;?</span><span class="o">=</span><span class="nv">$item</span><span class="cp">?&gt;</span><span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
 
 <span class="cp">&lt;?php</span> <span class="k">endforeach</span><span class="p">;</span> <span class="cp">?&gt;</span>
 
-<span class="nt">&lt;/ul&gt;</span>
+<span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
 </pre></div>
 </div>
 <p>Notice that there are no braces. Instead, the end brace is replaced with
@@ -482,15 +482,15 @@ closing syntax: <tt class="docutils literal"><span class="pre">endif</span></tt>
 <p>Here is another example, using <tt class="docutils literal"><span class="pre">if</span></tt>/<tt class="docutils literal"><span class="pre">elseif</span></tt>/<tt class="docutils literal"><span class="pre">else</span></tt>. Notice the colons:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="o">&lt;?</span><span class="nx">php</span> <span class="k">if</span> <span class="p">(</span><span class="nv">$username</span> <span class="o">===</span> <span class="s1">&#39;sally&#39;</span><span class="p">)</span><span class="o">:</span> <span class="cp">?&gt;</span>
 
-        <span class="nt">&lt;h3&gt;</span>Hi Sally<span class="nt">&lt;/h3&gt;</span>
+        <span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span>Hi Sally<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
 
 <span class="cp">&lt;?php</span> <span class="k">elseif</span> <span class="p">(</span><span class="nv">$username</span> <span class="o">===</span> <span class="s1">&#39;joe&#39;</span><span class="p">)</span><span class="o">:</span> <span class="cp">?&gt;</span>
 
-        <span class="nt">&lt;h3&gt;</span>Hi Joe<span class="nt">&lt;/h3&gt;</span>
+        <span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span>Hi Joe<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
 
 <span class="cp">&lt;?php</span> <span class="k">else</span><span class="o">:</span> <span class="cp">?&gt;</span>
 
-        <span class="nt">&lt;h3&gt;</span>Hi unknown user<span class="nt">&lt;/h3&gt;</span>
+        <span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span>Hi unknown user<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
 
 <span class="cp">&lt;?php</span> <span class="k">endif</span><span class="p">;</span> <span class="cp">?&gt;</span>
 </pre></div>
@@ -517,7 +517,7 @@ closing syntax: <tt class="docutils literal"><span class="pre">endif</span></tt>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2016, British Columbia Institute of Technology.
-      最終更新: Jan 29, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>
+      最終更新: Feb 20, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>
     </p>
   </div>
 
