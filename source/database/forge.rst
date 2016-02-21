@@ -1,81 +1,81 @@
-####################
-Database Forge Class
-####################
+##########################
+データベースフォージクラス
+##########################
 
-The Database Forge Class contains methods that help you manage your
-database.
+データベースフォージクラスは、データベースを管理するメソッドを
+搭載しています。
 
-.. contents:: Table of Contents
-    :depth: 3
+.. contents:: 目次
+   :depth: 3
 
 ****************************
-Initializing the Forge Class
+フォージクラスの初期化
 ****************************
 
-.. important:: In order to initialize the Forge class, your database
-	driver must already be running, since the forge class relies on it.
+.. important:: フォージクラスはデータベースドライバを必要とするので、
+	フォージクラスを初期化するには、あらかじめデータベースドライバが動いている必要があります。
 
-Load the Forge Class as follows::
+フォージクラスは次のようにロードします::
 
 	$this->load->dbforge()
 
-You can also pass another database object to the DB Forge loader, in case
-the database you want to manage isn't the default one::
+デフォルト意外のデータベースを管理したい場合は、DBフォージのローダーに
+別のデータベースオブジェクトを渡すこともできます::
 
 	$this->myforge = $this->load->dbforge($this->other_db, TRUE);
 
-In the above example, we're passing a custom database object as the first
-parameter and then tell it to return the dbforge object, instead of
-assigning it directly to ``$this->dbforge``.
+上記の例では、我々はカスタムデータベースオブジェクトを第一引数に渡しており、
+``$this->dbforge`` に割り当てる代わりにdbforgeオブジェクトを返すように命令
+しています。
 
-.. note:: Both of the parameters can be used individually, just pass an empty
-	value as the first one if you wish to skip it.
+.. note:: 両方の引数は別々に使うことができます。第一引数をスキップするには
+	空の値を渡してください。
 
-Once initialized you will access the methods using the ``$this->dbforge``
-object::
+いったん初期化されれば、フォージのメソッドは、 ``$this->dbforge``
+オブジェクトを利用してアクセスできます::
 
 	$this->dbforge->some_method();
 
 *******************************
-Creating and Dropping Databases
+データベースの作成と削除
 *******************************
 
 **$this->dbforge->create_database('db_name')**
 
-Permits you to create the database specified in the first parameter.
-Returns TRUE/FALSE based on success or failure::
+最初の引数で渡した名前でデータベースを作成します。戻り値は TRUE/FALSE
+で成功したか失敗したかを示します::
 
 	if ($this->dbforge->create_database('my_db'))
 	{
-		echo 'Database created!';
+		echo 'Database が作成されました!';
 	}
 
 **$this->dbforge->drop_database('db_name')**
 
-Permits you to drop the database specified in the first parameter.
-Returns TRUE/FALSE based on success or failure::
+最初の引数で示された名前のデータベースを削除します。戻り値は
+TRUE/FALSE で成功か失敗を示します::
 
 	if ($this->dbforge->drop_database('my_db'))
 	{
-		echo 'Database deleted!';
+		echo 'Database が削除されました!';
 	}
 
 
-****************************
-Creating and Dropping Tables
-****************************
+*******************************
+テーブルの作成と削除
+*******************************
 
-There are several things you may wish to do when creating tables. Add
-fields, add keys to the table, alter columns. CodeIgniter provides a
-mechanism for this.
+テーブルを作成するためには、やらなければならないことがいくつかあります
+。フィールドを追加したり、キーをテーブルに追加したり、カラムを変更した
+りです。CodeIgniterはこのようなことに関してのメカニズムを提供しています。
 
-Adding fields
-=============
+フィールドの追加
+=================
 
-Fields are created via an associative array. Within the array you must
-include a 'type' key that relates to the datatype of the field. For
-example, INT, VARCHAR, TEXT, etc. Many datatypes (for example VARCHAR)
-also require a 'constraint' key.
+フィールドは連想配列を通して作成されます。配列の中には、フィールドのデ
+ータタイプを指定する 'type' キーが必要となります。たとえば、
+INT、VARCHAR、TEXT などです。多くのデータタイプ (たとえば VARCHAR
+など) は 'constraint' キーも必要です。
 
 ::
 
@@ -85,18 +85,18 @@ also require a 'constraint' key.
 			'constraint' => '100',
 		),
 	);
-	// will translate to "users VARCHAR(100)" when the field is added.
+	// "users VARCHAR(100)" と解釈され、フィールドが追加されます。
 
 
-Additionally, the following key/values can be used:
+さらに、以下のキー/値が使えます:
 
--  unsigned/true : to generate "UNSIGNED" in the field definition.
--  default/value : to generate a default value in the field definition.
--  null/true : to generate "NULL" in the field definition. Without this,
-   the field will default to "NOT NULL".
--  auto_increment/true : generates an auto_increment flag on the
-   field. Note that the field type must be a type that supports this,
-   such as integer.
+-  unsigned/true : フィールド定義として "UNSIGNED" を生成します。
+-  default/値 : フィールド定義としてデフォルト値を生成します。
+-  null/true : フィールド定義として "NULL"
+   を生成します。この指定がないと、フィールドは "NOT NULL" となります。
+-  auto_increment/true : フィールドのフラグとして、auto_increment を立
+   てます。フィールドタイプは整数の様なタイプをサポートするものでないとい
+   けません。
 
 ::
 
@@ -123,138 +123,138 @@ Additionally, the following key/values can be used:
 	);
 
 
-After the fields have been defined, they can be added using
-``$this->dbforge->add_field($fields);`` followed by a call to the
-``create_table()`` method.
+フィールドが定義された後で、 ``$this->dbforge->add_field($fields);`` 
+の後に呼ばれる ``create_table()`` メソッドでフィールドが追加
+されます。
 
 **$this->dbforge->add_field()**
 
-The add fields method will accept the above array.
+add_fields メソッドは上のような配列を受け入れます。
 
 
-Passing strings as fields
--------------------------
+フィールド定義を文字列として渡す
+---------------------------------
 
-If you know exactly how you want a field to be created, you can pass the
-string into the field definitions with add_field()
+フィールド作成をどのようにしたらよいか正確にわかっている場合、
+add_field() メソッドを使って、フィールド定義を文字列として渡すこともできます。
 
 ::
 
 	$this->dbforge->add_field("label varchar(100) NOT NULL DEFAULT 'default label'");
 
 
-.. note:: Passing raw strings as fields cannot be followed by ``add_key()`` calls on those fields.
+.. note:: 生の文字列をフィールドとして渡してからそれらのフィールドに ``add_key()`` を呼ぶことはできません。
 
-.. note:: Multiple calls to add_field() are cumulative.
+.. note:: add_field() を複数回呼ぶと、複数回の処理が累積されていきます。
 
-Creating an id field
---------------------
+id フィールドの作成
+-----------------------
 
-There is a special exception for creating id fields. A field with type
-id will automatically be assigned as an INT(9) auto_incrementing
-Primary Key.
+ひとつの特別な例外として、id フィールドの作成があります。type が id
+のフィールドは、自動的に INT(9) の auto_increment な主キーに
+なります。
 
 ::
 
 	$this->dbforge->add_field('id');
-	// gives id INT(9) NOT NULL AUTO_INCREMENT
+	// これで id は INT(9) NOT NULL AUTO_INCREMENT になります。
 
 
-Adding Keys
-===========
+キーの追加
+==========
 
-Generally speaking, you'll want your table to have Keys. This is
-accomplished with $this->dbforge->add_key('field'). An optional second
-parameter set to TRUE will make it a primary key. Note that add_key()
-must be followed by a call to create_table().
+一般的にテーブルにはキーがあります。キーは 
+$this->dbforge->add_key('field') で設定できます。オプションの2つ目の引数は、
+TRUE を指定すると主キーになります。 add_key() の後に create_table()
+を呼ぶ必要があることに注意してください。
 
-Multiple column non-primary keys must be sent as an array. Sample output
-below is for MySQL.
+複数のカラムの主ではないキーは配列で送る必要があります。以下は MySQL
+用のサンプルです。
 
 ::
 
 	$this->dbforge->add_key('blog_id', TRUE);
-	// gives PRIMARY KEY `blog_id` (`blog_id`)
+	// PRIMARY KEY は `blog_id`(`blog_id`) になります。
 	
 	$this->dbforge->add_key('blog_id', TRUE);
 	$this->dbforge->add_key('site_id', TRUE);
-	// gives PRIMARY KEY `blog_id_site_id` (`blog_id`, `site_id`)
+	// PRIMARY KEY は `blog_id_site_id` (`blog_id`, `site_id`) になります。
 	
 	$this->dbforge->add_key('blog_name');
-	// gives KEY `blog_name` (`blog_name`)
+	// KEY は `blog_name` (`blog_name`) になります。
 	
 	$this->dbforge->add_key(array('blog_name', 'blog_label'));
-	// gives KEY `blog_name_blog_label` (`blog_name`, `blog_label`)
+	// KEY は `blog_name_blog_label` (`blog_name`, `blog_label`) になります。
 
 
-Creating a table
-================
+テーブルの作成
+==============
 
-After fields and keys have been declared, you can create a new table
-with
+フィールドとキーが宣言された後、新しいテーブルを次に紹介するメソッドを
+呼ぶことで作成することができます。
 
 ::
 
 	$this->dbforge->create_table('table_name');
-	// gives CREATE TABLE table_name
+	// CREATE TABLE table_name になります
 
 
-An optional second parameter set to TRUE adds an "IF NOT EXISTS" clause
-into the definition
+オプションの 2つ目の引数が TRUE のとき、"IF NOT EXISTS"
+を定義に追加します。
 
 ::
 
 	$this->dbforge->create_table('table_name', TRUE);
-	// gives CREATE TABLE IF NOT EXISTS table_name
+	// CREATE TABLE IF NOT EXISTS table_name になります
 
-You could also pass optional table attributes, such as MySQL's ``ENGINE``::
+さらに、MySQLの ``ENGINE`` のような任意のテーブル属性を渡すこともできます::
 
 	$attributes = array('ENGINE' => 'InnoDB');
 	$this->dbforge->create_table('table_name', FALSE, $attributes);
 	// produces: CREATE TABLE `table_name` (...) ENGINE = InnoDB DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci
 
-.. note:: Unless you specify the ``CHARACTER SET`` and/or ``COLLATE`` attributes,
-	``create_table()`` will always add them with your configured *char_set*
-	and *dbcollat* values, as long as they are not empty (MySQL only).
+.. note:: ``CHARACTER SET`` と ``COLLATE`` 属性の両方またはどちらか指定しない限り、
+	``create_table()`` は設定済みの *char_set* と *dbcollat* 値で追加されます
+	（MySQLのみ）。
 
 
-Dropping a table
-================
+テーブルの削除
+===============
 
-Execute a DROP TABLE statement and optionally add an IF EXISTS clause.
+DROP TABLE sql を実行し、任意で IF EXISTS 文を追加します。
 
 ::
 
-	// Produces: DROP TABLE table_name
+	// DROP TABLE table_name になります
 	$this->dbforge->drop_table('table_name');
 
-	// Produces: DROP TABLE IF EXISTS table_name
+	// DROP TABLE IF EXISTS  table_name になります
 	$this->dbforge->drop_table('table_name',TRUE);
 
 
-Renaming a table
+テーブル名の変更
 ================
 
-Executes a TABLE rename
+TABLE rename を実行します。
 
 ::
 
-	$this->dbforge->rename_table('old_table_name', 'new_table_name');
-	// gives ALTER TABLE old_table_name RENAME TO new_table_name
+	$this->dbforge->rename_table('old_table_name', 'new_table_name'); 
+	// ALTER TABLE old_table_name RENAME TO new_table_name になります
 
 
 ****************
-Modifying Tables
+テーブルの変更
 ****************
 
-Adding a Column to a Table
-==========================
+テーブルにカラムを追加
+============================
 
 **$this->dbforge->add_column()**
 
-The ``add_column()`` method is used to modify an existing table. It
-accepts the same field array as above, and can be used for an unlimited
-number of additional fields.
+``add_column()`` メソッドは既存のテーブルを変更するときに使います。上記と
+同じフィールド定義の配列を採り、いくつでもフィールドを追加することがで
+きます。
 
 ::
 
@@ -262,30 +262,30 @@ number of additional fields.
 		'preferences' => array('type' => 'TEXT')
 	);
 	$this->dbforge->add_column('table_name', $fields); 
-	// Executes: ALTER TABLE table_name ADD preferences TEXT
+	// ALTER TABLE table_name ADD preferences TEXT となります
 
-If you are using MySQL or CUBIRD, then you can take advantage of their
-AFTER and FIRST clauses to position the new column.
+MySQL か CUBIRD をお使いの場合、 AFTER と FIRST 文を活用してカラム位置を
+指定することができます。
 
-Examples::
+例::
 
-	// Will place the new column after the `another_field` column:
+	// 新しいカラムを `another_field` カラムの後ろに配置:
 	$fields = array(
 		'preferences' => array('type' => 'TEXT', 'after' => 'another_field')
 	);
 
-	// Will place the new column at the start of the table definition:
+	// 新しいカラムを `another_field` テーブル定義の先頭に配置:
 	$fields = array(
 		'preferences' => array('type' => 'TEXT', 'first' => TRUE)
 	);
 
 
-Dropping a Column From a Table
-==============================
+テーブルのカラムを削除
+=============================
 
 **$this->dbforge->drop_column()**
 
-Used to remove a column from a table.
+テーブルのカラムを削除します。
 
 ::
 
@@ -293,14 +293,14 @@ Used to remove a column from a table.
 
 
 
-Modifying a Column in a Table
-=============================
+テーブルのカラムを変更
+===============================
 
 **$this->dbforge->modify_column()**
 
-The usage of this method is identical to ``add_column()``, except it
-alters an existing column rather than adding a new one. In order to
-change the name you can add a "name" key into the field defining array.
+このメソッドの使用法は、``add_column()`` と同じです。ただし、新しいカラム
+を追加するのではなく、既存のカラムを変更します。カラム名を変更するには
+配列の "name" キーで指定します。
 
 ::
 
@@ -311,100 +311,100 @@ change the name you can add a "name" key into the field defining array.
 		),
 	);
 	$this->dbforge->modify_column('table_name', $fields);
-	// gives ALTER TABLE table_name CHANGE old_name new_name TEXT
+	// ALTER TABLE table_name CHANGE old_name new_name TEXT になります
 
 
 ***************
-Class Reference
+クラスリファレンス
 ***************
 
 .. php:class:: CI_DB_forge
 
 	.. php:method:: add_column($table[, $field = array()[, $_after = NULL]])
 
-		:param	string	$table: Table name to add the column to
-		:param	array	$field: Column definition(s)
-		:param	string	$_after: Column for AFTER clause (deprecated)
-		:returns:	TRUE on success, FALSE on failure
+		:param	string	$table: カラムを追加するテーブル名
+		:param	array	$field: カラム定義（複数可）
+		:param	string	$_after: AFTER 文のためのカラム（非推奨）
+		:returns:	成功時 TRUE、失敗時 FALSE
 		:rtype:	bool
 
-		Adds a column to a table. Usage:  See `Adding a Column to a Table`_.
+		テーブルにカラムを追加します。使い方は `テーブルにカラムを追加`_ を参照。
 
 	.. php:method:: add_field($field)
 
-		:param	array	$field: Field definition to add
-		:returns:	CI_DB_forge instance (method chaining)
+		:param	array	$field: 追加するフィールド定義
+		:returns:	CI_DB_forge インスタンス（メソッドチェイン用）
 		:rtype:	CI_DB_forge
 
-                Adds a field to the set that will be used to create a table. Usage:  See `Adding fields`_.
+		テーブル作成用セットにフィールドを追加します。使い方は `フィールドの追加`_ を参照。
 
 	.. php:method:: add_key($key[, $primary = FALSE])
 
-		:param	array	$key: Name of a key field
-		:param	bool	$primary: Set to TRUE if it should be a primary key or a regular one
-		:returns:	CI_DB_forge instance (method chaining)
+		:param	array	$key: キーのフィールド名
+		:param	bool	$primary: 主キーの場合はTRUEに設定
+		:returns:	CI_DB_forge インスタンス（メソッドチェイン用）
 		:rtype:	CI_DB_forge
 
-		Adds a key to the set that will be used to create a table. Usage:  See `Adding Keys`_.
+		テーブル作成用セットにキーを追加します。使い方は `キーの追加`_ を参照。
 
 	.. php:method:: create_database($db_name)
 
-		:param	string	$db_name: Name of the database to create
-		:returns:	TRUE on success, FALSE on failure
+		:param	string	$db_name: 作成するデータベース名
+		:returns:	成功時 TRUE、失敗時 FALSE
 		:rtype:	bool
 
-		Creates a new database. Usage:  See `Creating and Dropping Databases`_.
+		新しいデータベースを作成します。使い方は `データベースの作成と削除`_ を参照。
 
 	.. php:method:: create_table($table[, $if_not_exists = FALSE[, array $attributes = array()]])
 
-		:param	string	$table: Name of the table to create
-		:param	string	$if_not_exists: Set to TRUE to add an 'IF NOT EXISTS' clause
-		:param	string	$attributes: An associative array of table attributes
-		:returns:  TRUE on success, FALSE on failure
+		:param	string	$table: 作成するテーブル名
+		:param	string	$if_not_exists: TRUE にすると 'IF NOT EXISTS' 文を追加
+		:param	string	$attributes: テーブル属性の連想配列
+		:returns:  成功時 TRUE、失敗時 FALSE
 		:rtype:	bool
 
-		Creates a new table. Usage:  See `Creating a table`_.
+		新しいテーブルを作成。使い方は `テーブルの作成`_ を参照。
 
 	.. php:method:: drop_column($table, $column_name)
 
-		:param	string	$table: Table name
-		:param	array	$column_name: The column name to drop
-		:returns:	TRUE on success, FALSE on failure
+		:param	string	$table: テーブル名
+		:param	array	$column_name: 削除するカラム名
+		:returns:	成功時 TRUE、失敗時 FALSE
 		:rtype:	bool
 
-		Drops a column from a table. Usage:  See `Dropping a Column From a Table`_.
+		テーブルのカラムを削除。使い方は `テーブルのカラムを削除`_ を参照。
 
 	.. php:method:: drop_database($db_name)
 
-		:param	string	$db_name: Name of the database to drop
-		:returns:	TRUE on success, FALSE on failure
+		:param	string	$db_name: 削除するデータベース名
+		:returns:	成功時 TRUE、失敗時 FALSE
 		:rtype:	bool
 
-		Drops a database. Usage:  See `Creating and Dropping Databases`_.
+		データベースを削除。使い方は `データベースの作成と削除`_ を参照。
 
 	.. php:method:: drop_table($table_name[, $if_exists = FALSE])
 
-		:param	string	$table: Name of the table to drop
-		:param	string	$if_exists: Set to TRUE to add an 'IF EXISTS' clause
-		:returns:	TRUE on success, FALSE on failure
+		:param	string	$table: 削除するテーブル名
+		:param	string	$if_exists: TRUE にすると 'IF EXISTS' 文を追加
+		:returns:	成功時 TRUE、失敗時 FALSE
 		:rtype:	bool
 
-		Drops a table. Usage:  See `Dropping a table`_.
+		テーブルを削除。使い方は `テーブルの削除`_ を参照。
 
 	.. php:method:: modify_column($table, $field)
 
-		:param	string	$table: Table name
-		:param	array	$field: Column definition(s)
-		:returns:	TRUE on success, FALSE on failure
+		:param	string	$table: テーブル名
+		:param	array	$field: フィールド定義（複数可）
+		:returns:	成功時 TRUE、失敗時 FALSE
 		:rtype:	bool
 
-		Modifies a table column. Usage:  See `Modifying a Column in a Table`_.
+		テーブルのカラムを変更。使い方は `テーブルのカラムを変更`_ を参照。
 
 	.. php:method:: rename_table($table_name, $new_table_name)
 
-		:param	string	$table: Current of the table
-		:param	string	$new_table_name: New name of the table
-		:returns:	TRUE on success, FALSE on failure
+		:param	string	$table: 現在のテーブル名
+		:param	string	$new_table_name: 新しいテーブル名
+		:returns:	成功時 TRUE、失敗時 FALSE
 		:rtype:	bool
 
-		Renames a table. Usage:  See `Renaming a table`_.
+		テーブル名を変更。使い方は `テーブル名を変更`_ を参照。
