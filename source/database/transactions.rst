@@ -1,39 +1,39 @@
-############
-Transactions
-############
+#################
+トランザクション
+#################
 
-CodeIgniter's database abstraction allows you to use transactions with
-databases that support transaction-safe table types. In MySQL, you'll
-need to be running InnoDB or BDB table types rather than the more common
-MyISAM. Most other database platforms support transactions natively.
+CodeIgniter の抽象データベースでは、トランザクションセーフなテーブルタイプ [ 訳注:
+テーブルの管理方式がトランザクションをサポートするものという意味 ]
+をサポートしているデータベースで トランザクションを利用することができます。 
+MySQL では、より一般的な MyISAM ではなくInnoDB か BDB のテーブルタイプで
+実行されている必要があります。他のほとんどのデータベースでは、トランザクションは
+ネイティブにサポートされています。
+トランザクションについてあまり知らない場合は、
+利用中のデータベースのトランザクションについて学習するために、
+良いオンラインリソースを探すことをおすすめします。
 
-If you are not familiar with transactions we recommend you find a good
-online resource to learn about them for your particular database. The
-information below assumes you have a basic understanding of
-transactions.
+CodeIgniter のトランザクションに対するアプローチ
+================================================
 
-CodeIgniter's Approach to Transactions
-======================================
+CodeIgniter のトランザクションに対するアプローチでは、ポピュラーなデー
+タベースクラスである ADODB で使われている手順と大変よく似たものが採用
+されています。 トランザクションの実行プロセスが非常に単純になるので、
+このアプローチを採用しています。ほとんどの場合、それは2行のコードが必要になるだけです。
 
-CodeIgniter utilizes an approach to transactions that is very similar to
-the process used by the popular database class ADODB. We've chosen that
-approach because it greatly simplifies the process of running
-transactions. In most cases all that is required are two lines of code.
+従来は、クエリを絶えず追跡し、クエリの成否にもとづいて、 コミット
+するか ロールバック するかを決めなければならないため、
+トランザクションの実装には多くの作業を必要としてきました。
+これは、入れ子になったクエリでは特に邪魔になります。 対照的に、私たち
+は自動的にそれら全部を実行するスマートなトランザクションシステムを実装
+しました (実際のところ利点はないですが、やりたければ手動でトランザクシ
+ョンを管理することもできます)。
 
-Traditionally, transactions have required a fair amount of work to
-implement since they demand that you keep track of your queries and
-determine whether to commit or rollback based on the success or failure
-of your queries. This is particularly cumbersome with nested queries. In
-contrast, we've implemented a smart transaction system that does all
-this for you automatically (you can also manage your transactions
-manually if you choose to, but there's really no benefit).
+トランザクションの実行
+=======================
 
-Running Transactions
-====================
-
-To run your queries using transactions you will use the
-$this->db->trans_start() and $this->db->trans_complete() functions as
-follows::
+トランザクションを使ってクエリを実行するには、次のように
+$this->db->trans_start() メソッドと $this->db->trans_complete()
+メソッドを使います::
 
 	$this->db->trans_start();
 	$this->db->query('AN SQL QUERY...');
@@ -41,29 +41,29 @@ follows::
 	$this->db->query('AND YET ANOTHER QUERY...');
 	$this->db->trans_complete();
 
-You can run as many queries as you want between the start/complete
-functions and they will all be committed or rolled back based on success
-or failure of any given query.
+start メソッドと complete
+メソッドの間に、どれだけ多くのクエリを実行しても構いません。
+各クエリの成否により、それら全体がコミットまたはロールバックされます。
 
-Strict Mode
-===========
+厳密な(Strict)モード
+======================
 
-By default CodeIgniter runs all transactions in Strict Mode. When strict
-mode is enabled, if you are running multiple groups of transactions, if
-one group fails all groups will be rolled back. If strict mode is
-disabled, each group is treated independently, meaning a failure of one
-group will not affect any others.
-
-Strict Mode can be disabled as follows::
+デフォルトでは CodeIgniter はすべてのトランザクションを Strict モード
+で実行します。 Strict モードが有効な場合、複数のトランザクションのグル
+ープを実行している場合、ひとつのグループの実行が失敗すると他のすべての
+グループのトランザクションもロールバックされます。 Strict モードが無効
+の場合、各グループは独立したものとして扱われ、ひとつのグループのトラン
+ザクションが失敗しても他のグループに影響を与えません。
+Strict モードは以下のようにして無効にします::
 
 	$this->db->trans_strict(FALSE);
 
-Managing Errors
+エラーの管理
 ===============
 
-If you have error reporting enabled in your config/database.php file
-you'll see a standard error message if the commit was unsuccessful. If
-debugging is turned off, you can manage your own errors like this::
+コミットが失敗した場合に、標準のエラーメッセージを見たい場合は、
+config/database.php ファイルでエラー報告機能を有効化できます。
+デバッグ機能が OFF の場合は、次のように自分でエラーを管理することもできます::
 
 	$this->db->trans_start();
 	$this->db->query('AN SQL QUERY...');
@@ -75,12 +75,12 @@ debugging is turned off, you can manage your own errors like this::
 		// generate an error... or use the log_message() function to log your error
 	}
 
-Enabling Transactions
-=====================
+トランザクションの有効化
+=========================
 
-Transactions are enabled automatically the moment you use
-$this->db->trans_start(). If you would like to disable transactions you
-can do so using $this->db->trans_off()::
+$this->db->trans_start() を使った瞬間にトランザクションが
+自動的に有効になります。トランザクションを無効にしたい場合は 
+$this->db->trans_off() を実行することで無効化できます::
 
 	$this->db->trans_off();
 	
@@ -88,25 +88,25 @@ can do so using $this->db->trans_off()::
 	$this->db->query('AN SQL QUERY...');
 	$this->db->trans_complete();
 
-When transactions are disabled, your queries will be auto-commited, just
-as they are when running queries without transactions.
+トランザクション機能が無効になっている場合、トランザクションなしにクエ
+リが実行されたときのように、クエリは自動的にコミットされます。
 
-Test Mode
-=========
+テストモード
+=============
 
-You can optionally put the transaction system into "test mode", which
-will cause your queries to be rolled back -- even if the queries produce
-a valid result. To use test mode simply set the first parameter in the
-$this->db->trans_start() function to TRUE::
+オプションで、クエリが正しい結果になった場合でもロールバックされる
+"テストモード" のトランザクションを実行することができます。
+テストモードを使うには、 $this->db->trans_start() メソッドの第1引数に
+TRUE を設定するだけです::
 
 	$this->db->trans_start(TRUE); // Query will be rolled back
 	$this->db->query('AN SQL QUERY...');
 	$this->db->trans_complete();
 
-Running Transactions Manually
-=============================
+トランザクションを手動で実行する
+================================
 
-If you would like to run transactions manually you can do so as follows::
+手動でトランザクションを実行したい場合は、次のように行えます::
 
 	$this->db->trans_begin();
 	
@@ -123,5 +123,5 @@ If you would like to run transactions manually you can do so as follows::
 		$this->db->trans_commit();
 	}
 
-.. note:: Make sure to use $this->db->trans_begin() when running manual
-	transactions, **NOT** $this->db->trans_start().
+.. note:: 手動でトランザクションを実行する場合は #this->db->trans_start() 
+	**ではなく**、 $this->db->trans_begin() を使うようにしてください。
