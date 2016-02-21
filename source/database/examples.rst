@@ -1,26 +1,26 @@
-##################################
-Database Quick Start: Example Code
-##################################
+######################################
+データベース Quick Start: コードの例文
+######################################
 
-The following page contains example code showing how the database class
-is used. For complete details please read the individual pages
-describing each function.
+このページでは、データベースクラスの使用方法が示されています。
+詳細を全部知るには、各関数の説明がある個別のページを
+ご覧ください。
 
-Initializing the Database Class
-===============================
+データベースクラスの初期化
+===========================
 
-The following code loads and initializes the database class based on
-your :doc:`configuration <configuration>` settings::
+次のコードは :doc:`設定ファイル <configuration>`
+での設定に基づいてデータベースクラスをロードし初期化します::
 
 	$this->load->database();
 
-Once loaded the class is ready to be used as described below.
+いったんロードされれば、クラスは、後述する例のように使うための準備が整います。
 
-Note: If all your pages require database access you can connect
-automatically. See the :doc:`connecting <connecting>` page for details.
+Note: 全ページでデータベースアクセスが必要な場合は、自動的に接続することもできます。 
+ :doc:`接続 <connecting>` のページで詳細をご覧ください。
 
-Standard Query With Multiple Results (Object Version)
-=====================================================
+複数の結果を取得する標準的な問い合わせ(オブジェクトを用いる方法)
+================================================================
 
 ::
 
@@ -35,11 +35,11 @@ Standard Query With Multiple Results (Object Version)
 	
 	echo 'Total Results: ' . $query->num_rows();
 
-The above result() function returns an array of **objects**. Example:
+上の result() メソッドは **オブジェクト** の配列を返します。例:
 $row->title
 
-Standard Query With Multiple Results (Array Version)
-====================================================
+複数の結果を取得する標準的な問い合わせ (配列を用いる方法)
+=========================================================
 
 ::
 
@@ -52,22 +52,22 @@ Standard Query With Multiple Results (Array Version)
 		echo $row['email'];
 	}
 
-The above result_array() function returns an array of standard array
-indexes. Example: $row['title']
+上の result_array() メソッドは標準的な添字を使う配列を返します。例:
+$row['title']
 
-Standard Query With Single Result
-=================================
+一つの結果を返す標準的な問い合わせ
+==================================
 
 ::
 
-	$query = $this->db->query('SELECT name FROM my_table LIMIT 1'); 
+	$query = $this->db->query('SELECT name FROM my_table LIMIT 1');
 	$row = $query->row();
 	echo $row->name;
 
-The above row() function returns an **object**. Example: $row->name
+上の row() メソッドは **オブジェクト** を返します。例: $row->name
 
-Standard Query With Single Result (Array version)
-=================================================
+一つの結果を返す標準的な問い合わせ (配列を使う方法)
+===================================================
 
 ::
 
@@ -75,11 +75,11 @@ Standard Query With Single Result (Array version)
 	$row = $query->row_array();
 	echo $row['name'];
 
-The above row_array() function returns an **array**. Example:
+上の row_array() メソッドは **配列** を返します。 例: 
 $row['name']
 
-Standard Insert
-===============
+標準的な新規レコード作成
+========================
 
 ::
 
@@ -87,11 +87,11 @@ Standard Insert
 	$this->db->query($sql);
 	echo $this->db->affected_rows();
 
-Query Builder Query
-===================
+Query Builder クエリ
+================================
 
-The :doc:`Query Builder Pattern <query_builder>` gives you a simplified
-means of retrieving data::
+ :doc:`Query Builder パターン<query_builder>` を使うと、
+簡単にデータ取得が行えます::
 
 	$query = $this->db->get('table_name');
 	
@@ -100,12 +100,12 @@ means of retrieving data::
 		echo $row->title;
 	}
 
-The above get() function retrieves all the results from the supplied
-table. The :doc:`Query Builder <query_builder>` class contains a full
-compliment of functions for working with data.
+上の get() メソッドは 指定されたテーブルの全データを取得します。
+:doc:`Query Builder <query_builder>` クラスは、
+データを処理するためのフル装備の関数をもっています。
 
-Query Builder Insert
-====================
+Query Builder を使った新規レコード作成
+======================================
 
 ::
 

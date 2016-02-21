@@ -1,61 +1,61 @@
-###########################
-Connecting to your Database
-###########################
+####################
+データベースへの接続
+####################
 
-There are two ways to connect to a database:
+データベースへの接続方法は2つあります:
 
-Automatically Connecting
-========================
+自動接続
+========
 
-The "auto connect" feature will load and instantiate the database class
-with every page load. To enable "auto connecting", add the word database
-to the library array, as indicated in the following file:
+"自動接続" 機能は、ページが読み込まれるたびにデータベースクラスをロードし、
+インスタンス化するというものです。 "自動接続"を有効にするには、次のファイルの中にある
+ライブラリ配列の中に、 databaseという語句を指定してください:
 
 application/config/autoload.php
 
-Manually Connecting
-===================
+手動接続
+========
 
-If only some of your pages require database connectivity you can
-manually connect to your database by adding this line of code in any
-function where it is needed, or in your class constructor to make the
-database available globally in that class.
+ページの中で数ページだけがデータベース接続を必要とする場合は、手動でデ
+ータベースに接続することができます。 手動でデータベースに接続するには
+、必要とするメソッド内で随時下記のコードを追加するか、 そのクラスでグ
+ローバルに使用したい場合はコンストラクタに下記のコードを追加します。
 
 ::
 
 	$this->load->database();
 
-If the above function does **not** contain any information in the first
-parameter it will connect to the group specified in your database config
-file. For most people, this is the preferred method of use.
+上のメソッドの第1引数に 何も指定しない場合は、設定ファイルで指定されている
+グループ [ 訳注:デフォルトのグループ ] に接続します。
+多くの人にとっては、この方法が使いやすいと思います。
 
-Available Parameters
+使用可能なパラメータ
 --------------------
 
-#. The database connection values, passed either as an array or a DSN
-   string.
-#. TRUE/FALSE (boolean). Whether to return the connection ID (see
-   Connecting to Multiple Databases below).
-#. TRUE/FALSE (boolean). Whether to enable the Query Builder class. Set
-   to TRUE by default.
+#. 配列またはDSN文字列によるデータベース
+   接続値
+#. TRUE/FALSE (boolean)。
+   接続IDを返すかどうか(以下の複数のデータベースへの接続をご覧ください)。
+#. TRUE/FALSE (boolean)。Query Builder 
+   クラスを利用するかどうか。初期値は TRUE がセットされます。
 
-Manually Connecting to a Database
----------------------------------
+データベースへの手動接続
+-------------------------
 
-The first parameter of this function can **optionally** be used to
-specify a particular database group from your config file, or you can
-even submit connection values for a database that is not specified in
-your config file. Examples:
+メソッドの第1引数は、 オプションで 設定ファイルに定義した特定のデータ
+ベース接続グループを指定するのに使用します。 また、設定ファイルで指定
+されていない接続用のデータを渡すこともできます。
+例としては:
 
-To choose a specific group from your config file you can do this::
+設定ファイルで定義したグループを選択するには次のようにします::
 
 	$this->load->database('group_name');
 
-Where group_name is the name of the connection group from your config
-file.
+ここでの group_name が設定ファイルで定義した接続グループの名前に
+なります。
 
-To connect manually to a desired database you can pass an array of
-values::
+手動で任意のデータベースに接続するには、次のように配列でデータを渡しま
+す::
 
 	$config['hostname'] = 'localhost';
 	$config['username'] = 'myusername';
@@ -71,84 +71,84 @@ values::
 	$config['dbcollat'] = 'utf8_general_ci';
 	$this->load->database($config);
 
-For information on each of these values please see the :doc:`configuration
-page <configuration>`.
+接続用の各データについての情報は、 :doc:`設定について <configuration>`
+をご覧ください。
 
-.. note:: For the PDO driver, you should use the $config['dsn'] setting
-	instead of 'hostname' and 'database':
+.. note:: PDO ドライバの場合、'hostname'と'database'ではなく
+	$config['dsn'] 設定をお使いください。
 
 	|
 	| $config['dsn'] = 'mysql:host=localhost;dbname=mydatabase';
 
-Or you can submit your database values as a Data Source Name. DSNs must
-have this prototype::
+あるいは、データベースの接続データをデータソースネーム(DSN)を使って渡
+すこともできます。DSN は次のような形になっている必要があります::
 
-	$dsn = 'dbdriver://username:password@hostname/database';  
+	$dsn = 'dbdriver://username:password@hostname/database';
 	$this->load->database($dsn);
 
-To override default config values when connecting with a DSN string, add
-the config variables as a query string.
+データソースネーム(DSN)で設定ファイルのデフォルト値を上書きする場合に
+は、接続データをクエリで追加します。
 
 ::
 
 	$dsn = 'dbdriver://username:password@hostname/database?char_set=utf8&dbcollat=utf8_general_ci&cache_on=true&cachedir=/path/to/cache';  
 	$this->load->database($dsn);
 
-Connecting to Multiple Databases
-================================
+複数のデータベースへの接続
+==========================
 
-If you need to connect to more than one database simultaneously you can
-do so as follows::
+同時に 2つ以上のデータベースに接続する必要がある場合は次のようにするこ
+とで可能になります::
 
-	$DB1 = $this->load->database('group_one', TRUE); 
+	$DB1 = $this->load->database('group_one', TRUE);
 	$DB2 = $this->load->database('group_two', TRUE);
 
-Note: Change the words "group_one" and "group_two" to the specific
-group names you are connecting to (or you can pass the connection values
-as indicated above).
+Note: "group_one" と "group_two"の部分は接続したい
+グループ名に変えてください
+(あるいは、上で説明したように接続用データを渡してください)。
 
-By setting the second parameter to TRUE (boolean) the function will
-return the database object.
+メソッドの第2引数に TRUE (boolean)
+を指定すると、データベースオブジェクトを返すようになります。
 
-.. note:: When you connect this way, you will use your object name to issue
-	commands rather than the syntax used throughout this guide. In other
-	words, rather than issuing commands with:
-	
+.. note:: このガイドで一貫して使われている構文を使わずに、上記のような方法で接続
+	すると、オブジェクト名を使ってコマンドを発行できます。つまり、以下のよ
+	うな方法でコマンドを発行するのではなく:
+
 	|
 	| $this->db->query();
 	| $this->db->result();
 	| etc...
 	|
-	| You will instead use:
+	| 代わりに下記のように使います: 
 	|
 	| $DB1->query();
 	| $DB1->result();
 	| etc...
 
-.. note:: You don't need to create separate database configurations if you
-	only need to use a different database on the same connection. You
-	can switch to a different database when you need to, like this:
+.. note:: 同じ接続で別のデータベースのみを利用したい場合は、わざわざ個別の
+	データベース接続設定を作成する必要はありません。別のデータベースに移りたい場合は
+	下記のように行えます:
 
 	| $this->db->db_select($database2_name);
 
-Reconnecting / Keeping the Connection Alive
-===========================================
+再接続 / 接続状態の維持
+=======================
 
-If the database server's idle timeout is exceeded while you're doing
-some heavy PHP lifting (processing an image, for instance), you should
-consider pinging the server by using the reconnect() method before
-sending further queries, which can gracefully keep the connection alive
-or re-establish it.
+何らかの重いPHPの処理 (たとえば画像の処理など)を行っている間に、データ
+ベースサーバのアイドルタイムアウトを過ぎてしまった場合、追加のクエリを
+送信する前に reconnect() メソッドを使ってサーバーの応答確認(pinging)す
+るのを検討すべきです。このメソッドは、適切に接続状態を維持したり、再接
+続したりできます。
 
 ::
 
 	$this->db->reconnect();
 
-Manually closing the Connection
-===============================
+手動切断
+========
 
-While CodeIgniter intelligently takes care of closing your database
-connections, you can explicitly close the connection.
+CodeIgniter はデータベースの切断を賢く行なってくれますが、
+明示的に接続を閉じることもできます。
 
 ::
 

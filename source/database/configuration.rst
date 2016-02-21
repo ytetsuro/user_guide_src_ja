@@ -1,16 +1,16 @@
-######################
-Database Configuration
-######################
+################
+データベース設定
+################
 
-CodeIgniter has a config file that lets you store your database
-connection values (username, password, database name, etc.). The config
-file is located at application/config/database.php. You can also set
-database connection values for specific
-:doc:`environments <../libraries/config>` by placing **database.php**
-in the respective environment config folder.
+CodeIgniter には、データベース接続用項目(ユーザ名、パスワード、デ
+ータベース名など)を保存できる設定ファイルがあります。 設定ファイルは
+application/config/database.php にあります。また、特定の :doc:`環境
+<../libraries/config>` のためのデータベース接続用項目を設定をするため
+に、それぞれの環境の設定フォルダの中に **database.php**
+を置くこともできます。
 
-The config settings are stored in a multi-dimensional array with this
-prototype::
+設定は、次のひな形で、多次元配列で保存されて
+います::
 
 	$db['default'] = array(
 		'dsn'	=> '',
@@ -33,10 +33,10 @@ prototype::
 		'failover' => array()
 	);
 
-Some database drivers (such as PDO, PostgreSQL, Oracle, ODBC) might
-require a full DSN string to be provided. If that is the case, you
-should use the 'dsn' configuration setting, as if you're using the
-driver's underlying native PHP extension, like this::
+いくつかのデータベースドライバ（PDO,PostgreSQL, Oracle, ODBCなど）は
+完全なDSN文字列を要求することもあります。その場合は 'dsn' 設定を、ドライバの
+ネイティブPHP拡張を使うかのように使用してください。
+下記が例になります::
 
 	// PDO
 	$db['default']['dsn'] = 'pgsql:host=localhost;port=5432;dbname=database_name';
@@ -44,15 +44,15 @@ driver's underlying native PHP extension, like this::
 	// Oracle
 	$db['default']['dsn'] = '//localhost/XE';
 
-.. note:: If you do not specify a DSN string for a driver that requires it, CodeIgniter
-	will try to build it with the rest of the provided settings.
+.. note:: DSN文字列を要求するドライバに対してそれを指定しない場合、CodeIgniterは
+	その他の設定を元にビルドを試みます。
 
-.. note:: If you provide a DSN string and it is missing some valid settings (e.g. the
-	database character set), which are present in the rest of the configuration
-	fields, CodeIgniter will append them.
+.. note:: もし指定したDSN文字列に必要設定が抜けており（データベース文字セットなど）、
+	他の設定項目に存在している場合、
+	CodeIgniterは自動でそれらを追記します。
 
-You can also specify failovers for the situation when the main connection cannot connect for some reason.
-These failovers can be specified by setting the failover for a connection like this::
+加えて、何らかの理由によりメインの接続先に接続できない場合のフェイルオーバー先を指定することも
+できます。これらのフェイルオーバー先は、接続先のフェイルオーバー設定をこのように設定できます::
 
 	$db['default']['failover'] = array(
 			array(
@@ -93,14 +93,14 @@ These failovers can be specified by setting the failover for a connection like t
 			)
 		);
 
-You can specify as many failovers as you like.
+フェイルオーバー先はいくつでも指定できます。
 
-The reason we use a multi-dimensional array rather than a more simple
-one is to permit you to optionally store multiple sets of connection
-values. If, for example, you run multiple environments (development,
-production, test, etc.) under a single installation, you can set up a
-connection group for each, then switch between groups as needed. For
-example, to set up a "test" environment you would do this::
+単純な１次元配列を使わずに、多次元配列を使う理由は、オプションで、接続
+用のデータを複数セット利用できるようにするためです。 たとえば、ひとつ
+のインストール方法で、複数の環境(開発用、製品用、テスト用など)で実行す
+るような場合に、 各環境ごとに接続設定をグループ化しておき、動かす環境
+に必要なグループに切り替えるといったことが可能です。 たとえば、"test"
+用の環境をセットアップするには次のようにします::
 
 	$db['test'] = array(
 		'dsn'	=> '',
@@ -123,85 +123,85 @@ example, to set up a "test" environment you would do this::
 		'failover' => array()
 	);
 
-Then, to globally tell the system to use that group you would set this
-variable located in the config file::
+次に、システムに対して全体でそのグループを使うことを通知するため、設定
+ファイルにある下記の変数にグループ名をセットします::
 
 	$active_group = 'test';
 
-.. note:: The name 'test' is arbitrary. It can be anything you want. By
-	default we've used the word "default" for the primary connection,
-	but it too can be renamed to something more relevant to your project.
+.. note:: 名前の "test"は任意です。好きなように設定できます。初期状態では、"default" 
+	を優先（プライマリ）接続として使っていますが、この名前もプロジェクトにふさわし
+	い名前にリネームすることができます。
 
 Query Builder
--------------
+--------------
 
-The :doc:`Query Builder Class <query_builder>` is globally enabled or
-disabled by setting the $query_builder variable in the database
-configuration file to TRUE/FALSE (boolean). The default setting is TRUE.
-If you are not using the
-query builder class, setting it to FALSE will utilize fewer resources
-when the database classes are initialized.
+:doc:`Query Builder クラス <query_builder>`
+はデータベース設定ファイルの $query_builder 変数に TRUE/FALSE(ブール値
+)をセットすることによりグローバルに有効または無効にできます。
+query builder クラスを使用しない場合は、
+FALSEをセットするとデータベースクラスを初期化したときに、
+少ないリソースを有効活用できます。
 
 ::
 
 	$query_builder = TRUE;
 
-.. note:: that some CodeIgniter classes such as Sessions require Query
-	Builder to be enabled to access certain functionality.
+.. note:: Sessionなど、いくつかのCodeIgniterのクラスは特定の機能に
+	アクセスするために Query Builder を有効にする必要があります。
 
-Explanation of Values:
+設定データの説明:
 ----------------------
 
 ======================  ===========================================================================================================
- Name Config             Description
+   設定名             説明
 ======================  ===========================================================================================================
-**dsn**			The DSN connect string (an all-in-one configuration sequence).
-**hostname** 		The hostname of your database server. Often this is 'localhost'.
-**username**		The username used to connect to the database.
-**password**		The password used to connect to the database.
-**database**		The name of the database you want to connect to.
-**dbdriver**		The database type. ie: mysqli, postgre, odbc, etc. Must be specified in lower case.
-**dbprefix**		An optional table prefix which will added to the table name when running
-			:doc:`Query Builder <query_builder>` queries. This permits multiple CodeIgniter
-			installations to share one database.
-**pconnect**		TRUE/FALSE (boolean) - Whether to use a persistent connection.
-**db_debug**		TRUE/FALSE (boolean) - Whether database errors should be displayed.
-**cache_on**		TRUE/FALSE (boolean) - Whether database query caching is enabled,
-			see also :doc:`Database Caching Class <caching>`.
-**cachedir**		The absolute server path to your database query cache directory.
-**char_set**		The character set used in communicating with the database.
-**dbcollat**		The character collation used in communicating with the database
+**dsn**			DSN接続文字列（包括的な設定シーケンス）。
+**hostname** 		データベースサーバのホスト名。"localhost"になることがよくあります。
+**username**		データベースに接続するために使用するユーザ名。
+**password**		データベースに接続するために使用するパスワード。
+**database**		接続したいデータベース名。
+**dbdriver**		データベースの種類。例: mysql、postgres、odbc など。小文字で指定しなければなりません。
+**dbprefix**		オプションのテーブル名プリフィックス(接頭辞)。これは、 :doc:`Query Builder <query_builder>` 
+	を使った問い合わせを実行するときに、テーブル名に付加される接頭辞になります。これを指定すると、
+	単一のデータベースを共有して CodeIgniter を複数インストールすることが可能になります。
 
-			.. note:: Only used in the 'mysql' and 'mysqli' drivers.
+**pconnect**		TRUE/FALSE (boolean) - 永続的な接続を使うかどうか。
+**db_debug**		TRUE/FALSE (boolean) - データベースエラーを表示するかどうか。
+**cache_on**		TRUE/FALSE (boolean) - データベースクエリのキャッシュを有効にするかどうか。
+			:doc:`データベースキャッシュクラス <caching>` を参照してください。
+**cachedir**		データベースクエリのキャッシュディレクトリへの絶対サーバパス。
+**char_set**		データベースとの通信に使用される文字セット。
+**dbcollat**		データベースとの通信に使用される照合順序。
 
-**swap_pre**		A default table prefix that should be swapped with dbprefix. This is useful for distributed
-			applications where you might run manually written queries, and need the prefix to still be
-			customizable by the end user.
-**schema**		The database schema, defaults to 'public'. Used by PostgreSQL and ODBC drivers.
-**encrypt**		Whether or not to use an encrypted connection.
+			.. note:: 'mysql' および 'mysqli' ドライバのみで使用。
 
-			  - 'mysql' (deprecated), 'sqlsrv' and 'pdo/sqlsrv' drivers accept TRUE/FALSE
-			  - 'mysqli' and 'pdo/mysql' drivers accept an array with the following options:
-			  
-			    - 'ssl_key'    - Path to the private key file
-			    - 'ssl_cert'   - Path to the public key certificate file
-			    - 'ssl_ca'     - Path to the certificate authority file
-			    - 'ssl_capath' - Path to a directory containing trusted CA certificats in PEM format
-			    - 'ssl_cipher' - List of *allowed* ciphers to be used for the encryption, separated by colons (':')
-			    - 'ssl_verify' - TRUE/FALSE; Whether to verify the server certificate or not ('mysqli' only)
+**swap_pre**		デフォルトのテーブル接頭辞が dbprefix と置き換えられます。
+			これは、配布されたアプリケーションに手動で記述されたクエリが含まれる場合でも、
+			接頭辞をエンドユーザにカスタマイズ可能にする必要がある場合に役に立ちます。
+**schema**		データベースのスキーマで、デフォルトは 'public' 。PostgreSQL および ODBC ドライバで使用。
+**encrypt**		暗号化された接続を使用するかどうか。
+			  - 'mysql' (非推奨)、 'sqlsrv' および 'pdo/sqlsrv' ドライバは TRUE/FALSE を受け付けます。
+			　- 'mysqli' および 'pdo/mysql' ドライバは次のオプションを含んだ配列を受け付けます:
+			    - 'ssl_key'    - 秘密鍵ファイルへのパス
+			    - 'ssl_cert'   - 公開鍵証明書ファイルへのパス
+			    - 'ssl_ca'     - 認証局ファイルへのパス
+			    - 'ssl_capath' - PEM形式のCA証明書を含んだディレクトリへのパス
+			    - 'ssl_cipher' - コロン(:)区切りの、 *許可された* 暗号化用cipherのリスト
+			    - 'ssl_verify' - TRUE/FALSE; サーバー証明書の正当性を確認するかどうか（'mysqli' のみ）
 
-**compress**		Whether or not to use client compression (MySQL only).
-**stricton**		TRUE/FALSE (boolean) - Whether to force "Strict Mode" connections, good for ensuring strict SQL
-			while developing an application.
-**port**		The database port number. To use this value you have to add a line to the database config array.
-			::
+**compress**		クライアント圧縮を使用するかどうか（MySQLのみ）。
+**stricton**		TRUE/FASLE (boolean) - "Strict Mode" での接続を強制するかどうか、アプリケーションの開発中に SQL
+			の厳密性を確保するのに良い方法です。
+**port**		データベースのポート番号。この値を利用するには、データベース
+ 			設定の配列に以下のような行を追加する必要があります。
 
-				$db['default']['port'] = 5432;
+::
+
+	$db['default']['port'] =  5432;
 
 ======================  ===========================================================================================================
 
-.. note:: Depending on what database platform you are using (MySQL, PostgreSQL,
-	etc.) not all values will be needed. For example, when using SQLite you
-	will not need to supply a username or password, and the database name
-	will be the path to your database file. The information above assumes
-	you are using MySQL.
+.. note:: 使用しているデータベースプラットフォーム (MySQL、Postgres など) によっては、
+	すべての設定データが必要になるとは限りません。たとえば、SQLiteを使うときは、
+	ユーザ名やパスワードは不要で、 データベース名はデータベースファイルへのパスになります。
+	上の情報は、MySQLを利用していると仮定しています。

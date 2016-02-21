@@ -1,38 +1,38 @@
-#####################
-Custom Function Calls
-#####################
+############################
+カスタム関数呼び出し
+############################
 
 $this->db->call_function();
-============================
+===========================
 
-This function enables you to call PHP database functions that are not
-natively included in CodeIgniter, in a platform independent manner. For
-example, let's say you want to call the mysql_get_client_info()
-function, which is **not** natively supported by CodeIgniter. You could
-do so like this::
+このメソッドを使えば、プラットフォームに依存しないという設計思想のため
+に CodeIgniter でネイティブにサポートされていない PHP
+のデータベース関数を呼び出すのが可能になります。 たとえば、CodeIgniter
+でネイティブに サポート**されていない** mysql_get_client_info()
+関数を呼び出したいとしたら、次のようにして呼び出すことができます::
 
 	$this->db->call_function('get_client_info');
 
-You must supply the name of the function, **without** the mysql\_
-prefix, in the first parameter. The prefix is added automatically based
-on which database driver is currently being used. This permits you to
-run the same function on different database platforms. Obviously not all
-function calls are identical between platforms, so there are limits to
-how useful this function can be in terms of portability.
+第1引数で、プリフィックスの mysql_ を **付けずに** 
+関数名を渡す必要があります。プリフィックスは、 利用中のデータベース
+ドライバに応じて自動で付加されます。こうすることで、異なるデータベース
+プラットフォームであっても同じ名前で実行できるようになります。 言うま
+でもなく、すべての関数の呼出しがプラットフォーム間で一致するわけではあ
+りませんので、このメソッドが移植性にどれほど役立つかは限られています。
 
-Any parameters needed by the function you are calling will be added to
-the second parameter.
+呼び出そうとする関数において必要なパラメータは、第2引数で指定すること
+ができます。
 
 ::
 
 	$this->db->call_function('some_function', $param1, $param2, etc..);
 
-Often, you will either need to supply a database connection ID or a
-database result ID. The connection ID can be accessed using::
+データベースの接続ID や データベースの結果IDを渡すのが必要になる時がよ
+くあります。接続IDは次のようにしてアクセスできます::
 
 	$this->db->conn_id;
 
-The result ID can be accessed from within your result object, like this::
+次のようにして、結果オブジェクトで、結果IDにアクセスできます::
 
 	$query = $this->db->query("SOME QUERY");
 	
