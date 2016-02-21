@@ -1,162 +1,162 @@
-######################
-Database Caching Class
-######################
+############################
+データベースキャッシュクラス
+############################
 
-The Database Caching Class permits you to cache your queries as text
-files for reduced database load.
+データベースキャッシュクラスを利用すれば、データベース読み込みの負荷を
+軽減するために、問合せ結果をテキストファイルとしてキャッシュすることが可能になります。
 
-.. important:: This class is initialized automatically by the database
-	driver when caching is enabled. Do NOT load this class manually.
+.. important:: このクラスは、キャッシュが有効な場合、データベースドライバにより
+	自動的に初期化されます。手動でロードしてはいけません。
 
-.. important:: Not all query result functions are available when you
-	use caching. Please read this page carefully.
+.. important:: キャッシュを使った場合、クエリ結果のメソッドの一部が
+	利用できません。このページを注意して読んでください。
 
-Enabling Caching
-================
+キャッシュの有効化
+==================
 
-Caching is enabled in three steps:
+次の3つのステップで、キャッシュを有効にするにできます:
 
--  Create a writable directory on your server where the cache files can
-   be stored.
--  Set the path to your cache folder in your
-   application/config/database.php file.
--  Enable the caching feature, either globally by setting the preference
-   in your application/config/database.php file, or manually as
-   described below.
+-  キャッシュファイルを保存できる書き込み可能なディレクトリをサーバに作
+   成します。
+-  application/config/database.php
+   ファイルに作成したキャッシュフォルダのパスをセットします。
+-  application/config/database.php ファイルで設定してグローバルに
+   キャッシュを有効化するか、後述するように手動で
+   有効化します。
 
-Once enabled, caching will happen automatically whenever a page is
-loaded that contains database queries.
+有効化されると、データベースクエリを含むページが読み込まれると自動的に
+キャッシュが作成されます。
 
-How Does Caching Work?
-======================
+キャッシュ機能はどのように動作しますか?
+=======================================
 
-CodeIgniter's query caching system happens dynamically when your pages
-are viewed. When caching is enabled, the first time a web page is
-loaded, the query result object will be serialized and stored in a text
-file on your server. The next time the page is loaded the cache file
-will be used instead of accessing your database. Your database usage can
-effectively be reduced to zero for any pages that have been cached.
+CodeIgniter のクエリキャッシュシステムは、ページが閲覧されるときに動的
+に動作します。 キャッシュが有効な時、初回アクセス時には、Web
+ページが読み込まれ、 クエリ結果オブジェクトがサーバのテキストファイル
+にシリアライズされて保管されます。次回アクセスしたときには、ページはデ
+ータベースにアクセスするかわりに キャッシュファイルを読み込みます。キ
+ャッシュされているページでは、データベースの使用率が0まで効果的に下がります。
 
-Only read-type (SELECT) queries can be cached, since these are the only
-type of queries that produce a result. Write-type (INSERT, UPDATE, etc.)
-queries, since they don't generate a result, will not be cached by the
-system.
+結果を生成するのは 読み込みタイプ (SELECT)
+のクエリだけなので、このタイプだけがキャッシュ可能です。
+書き込みタイプ (INSERT、UPDATE、など)
+のクエリは、結果を生成しないので、システムではキャッシュされません。
 
-Cache files DO NOT expire. Any queries that have been cached will remain
-cached until you delete them. The caching system permits you clear
-caches associated with individual pages, or you can delete the entire
-collection of cache files. Typically you'll want to use the housekeeping
-functions described below to delete cache files after certain events
-take place, like when you've added new information to your database.
+キャッシュファイルは期限切れになりません。キャッシュ済みのクエリはみな
+、それを消すまでキャッシュされたままです。システムでは、 個別のページ
+に関連付けられたキャッシュをそれぞれ消すことができますし、キャッシュフ
+ァイル全体を削除することもできます。 通常は、データベースに新しい情報
+を追加したときなど、何らかのイベントが発生した後に、
+後述する清掃メソッドを使ってキャッシュファイルを削除するべきです。
 
-Will Caching Improve Your Site's Performance?
+キャッシュ機能によりサイトのパフォーマンスは改善しますか?
+=========================================================
+
+キャッシュを利用することによってどれだけパフォーマンスを得られるかは、
+さまざまな要因に依存します。データベースの読み込みが非常に少なく、高度
+に最適化されている場合は、パフォーマンスが高まったのがおそらくわからな
+いと思います。 データベースが高負荷で利用されている場合は、ファイルシ
+ステムが高負荷の状態でないなら、 応答速度が改善されるのがわかると思い
+ます。キャッシュ機能は、データの取得方法を単に変更し、 データベースの
+操作をファイルシステムの操作にシフトさせるだけだということを覚えておいてください。
+
+たとえば、あるクラスタサーバ環境では、ファイルシステムのオペレーション
+が高負荷になるので、キャッシュ機能はパフォーマンスの弊害になるかもしれ
+ません。 単一サーバの共有環境であれば、キャッシュ機能はおそらく有益で
+す。不幸なことに、 データベースをキャッシュすべきかどうかということに
+対する一つの答えはありません。本当に、状況に依存しているのです。
+
+キャッシュファイルはどのように保存されますか?
 =============================================
 
-Getting a performance gain as a result of caching depends on many
-factors. If you have a highly optimized database under very little load,
-you probably won't see a performance boost. If your database is under
-heavy use you probably will see an improved response, assuming your
-file-system is not overly taxed. Remember that caching simply changes
-how your information is retrieved, shifting it from being a database
-operation to a file-system one.
+CodeIgniter では、各クエリが別々のキャッシュファイルに保存されます。 
+コントローラのメソッドの名前がついたサブフォルダの中にキャッシュファイ
+ルが保管されます。正確にいうと、
+URIの最初の2セグメントと同じ名前のサブフォルダ
+(コントローラの名前とメソッドの名前)になります。
 
-In some clustered server environments, for example, caching may be
-detrimental since file-system operations are so intense. On single
-servers in shared environments, caching will probably be beneficial.
-Unfortunately there is no single answer to the question of whether you
-should cache your database. It really depends on your situation.
+たとえば、3つのクエリが実行される comments というメソッドがある blog
+という名前のコントローラを作成していたとします。 キャッシュシステムは
+、blog+comments という名前のキャッシュフォルダを作成し、
+その中に3つのキャッシュファイルを書き込みます。
 
-How are Cache Files Stored?
-===========================
+結果がURIの情報によって変わるような動的なクエリを使用している場合
+(たとえばページネーションを使用しているとき)、異なる各クエリは、
+それぞれ別のキャッシュファイルを生成します。ですので、
+クエリの数よりも多くのキャッシュファイルが生成されることになります。
 
-CodeIgniter places the result of EACH query into its own cache file.
-Sets of cache files are further organized into sub-folders corresponding
-to your controller functions. To be precise, the sub-folders are named
-identically to the first two segments of your URI (the controller class
-name and function name).
+キャッシュファイルの管理
+========================
 
-For example, let's say you have a controller called blog with a function
-called comments that contains three queries. The caching system will
-create a cache folder called blog+comments, into which it will write
-three cache files.
+キャッシュには有効期限がないので、ご自身でアプリケーションにキャッシュの
+削除処理を構築しなければなりません。たとえば、ユーザがコメントできるブログを
+作成していたとします。新しいコメントが送信されるたびに、コントローラ
+のコメントを表示するメソッドに関連付けられたキャッシュファイルを削除し
+たいはずです。
+後述する2つの削除メソッドを使って、データをクリアできます。
 
-If you use dynamic queries that change based on information in your URI
-(when using pagination, for example), each instance of the query will
-produce its own cache file. It's possible, therefore, to end up with
-many times more cache files than you have queries.
+キャッシュ利用中には全データベース機能が使えるわけではありません
+================================================================
 
-Managing your Cache Files
-=========================
+最後に、キャッシュされた結果オブジェクトは、完全な結果オブジェクトを単
+純化したバージョンだという点を知っておく必要があります。
+このため、結果オブジェクトのメソッドはいくつか利用できません。
 
-Since cache files do not expire, you'll need to build deletion routines
-into your application. For example, let's say you have a blog that
-allows user commenting. Whenever a new comment is submitted you'll want
-to delete the cache files associated with the controller function that
-serves up your comments. You'll find two delete functions described
-below that help you clear data.
-
-Not All Database Functions Work with Caching
-============================================
-
-Lastly, we need to point out that the result object that is cached is a
-simplified version of the full result object. For that reason, some of
-the query result functions are not available for use.
-
-The following functions ARE NOT available when using a cached result
-object:
+キャッシュされた結果オブジェクトでは、次のメソッドは、利用できません
+:
 
 -  num_fields()
 -  field_names()
 -  field_data()
 -  free_result()
 
-Also, the two database resources (result_id and conn_id) are not
-available when caching, since result resources only pertain to run-time
-operations.
+また、結果リソースは実行時の操作のみに付随するものなので、キャッシュし
+たときには、2つのデータベースリソース(result_id と conn_id)
+が利用できなくなります。
 
-******************
-Function Reference
-******************
+********************
+関数リファレンス
+********************
 
 $this->db->cache_on() / $this->db->cache_off()
 ================================================
 
-Manually enables/disables caching. This can be useful if you want to
-keep certain queries from being cached. Example::
+手動でキャッシュ機能を有効化/無効化します。特定のクエリを
+キャッシュさせないようにするときに役立ちます。例::
 
-	// Turn caching on
+	// キャッシュ機能を ON
 	$this->db->cache_on();
 	$query = $this->db->query("SELECT * FROM mytable");
 	
-	// Turn caching off for this one query
+	// このクエリは、キャッシュ機能を OFF
 	$this->db->cache_off();
 	$query = $this->db->query("SELECT * FROM members WHERE member_id = '$current_user'");
 	
-	// Turn caching back on
+	// キャッシュ機能を ON に戻す
 	$this->db->cache_on();
 	$query = $this->db->query("SELECT * FROM another_table");
 
 $this->db->cache_delete()
 ==========================
 
-Deletes the cache files associated with a particular page. This is
-useful if you need to clear caching after you update your database.
+特定のページに関連付けられたキャッシュファイルを削除します。データベー
+スを更新したときにキャッシュを更新する必要がある場合に役立ちます。
 
-The caching system saves your cache files to folders that correspond to
-the URI of the page you are viewing. For example, if you are viewing a
-page at example.com/index.php/blog/comments, the caching system will put
-all cache files associated with it in a folder called blog+comments. To
-delete those particular cache files you will use::
+キャッシュシステムは、閲覧中のページの URI に関連したフォルダにキャッシュファイルを保存します。
+たとえば、example.com/index.php/blog/comments というページを見ているとき、
+キャッシュシステムは、その URI に関連するすべてのキャッシュファイルを blog+comments
+という名前のフォルダに保存します。それらの特定のキャッシュファイルを
+削除するには次のようなコードを使います::
 
 	$this->db->cache_delete('blog', 'comments');
 
-If you do not use any parameters the current URI will be used when
-determining what should be cleared.
+パラメータを指定していないときは、現在の URI をもとにどのキャッシュ
+を消すべきかが決められます。
 
 $this->db->cache_delete_all()
-===============================
+=============================
 
-Clears all existing cache files. Example::
+すべてのキャッシュファイルを削除します。例::
 
 	$this->db->cache_delete_all();
 
