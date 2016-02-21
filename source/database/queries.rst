@@ -1,41 +1,41 @@
 #######
-Queries
+クエリ
 #######
 
 ************
-Query Basics
+クエリの基本
 ************
 
-Regular Queries
+標準的なクエリ
 ===============
 
-To submit a query, use the **query** function::
+クエリを実行するには、**query** メソッドを使います::
 
-	$this->db->query('YOUR QUERY HERE');
+	$this->db->query('ここにクエリを記述');
 
-The query() function returns a database result **object** when "read"
-type queries are run, which you can use to :doc:`show your
-results <results>`. When "write" type queries are run it simply
-returns TRUE or FALSE depending on success or failure. When retrieving
-data you will typically assign the query to your own variable, like
-this::
+query() メソッドは、「読み取り」タイプのクエリが実行されたときには、
+:doc:`結果を表示する <results>` ために使用するデータベースの結果
+**オブジェクト** を返します。 「書き込み」タイプの問い合わせを実行したとき
+には、単純にクエリが成功したかどうかによって TRUE か FALSE
+が返ります。データを取得するときには、通常は query
+メソッドの結果を受け取る変数を次のように用意
+します:::
 
 	$query = $this->db->query('YOUR QUERY HERE');
 
-Simplified Queries
+単純化されたクエリ
 ==================
 
-The **simple_query** method is a simplified version of the 
-$this->db->query() method. It DOES
-NOT return a database result set, nor does it set the query timer, or
-compile bind data, or store your query for debugging. It simply lets you
-submit a query. Most users will rarely use this function.
+**simple_query** は、 $this->db->query() メソッドが単純化されたものです。
+成功か失敗かを TRUE/FALSE で返します。結果セットは「返しません」。クエリ
+時間の計測や、データのバインディングをコンパイルしたり、デバッグ用にクエリ
+を保存することもありません。 これを使うと、クエリの単純な送信ができます。
+ほとんどのユーザは、このメソッドをまれにしか使用しないでしょう。
 
-It returns whatever the database drivers' "execute" function returns.
-That typically is TRUE/FALSE on success or failure for write type queries
-such as INSERT, DELETE or UPDATE statements (which is what it really
-should be used for) and a resource/object on success for queries with
-fetchable results.
+データベースドライバの "execute" 関数の実行結果を返します。
+大抵は、 INSERT, DELETE, UPDATE などの書き込みクエリに関しては
+成功時か失敗時に TRUE/FALSE （本来はこれらのために使われるべきです）、
+フェッチ結果があるクエリに関してはリソースかオブジェクトです。
 
 ::
 
@@ -48,76 +48,76 @@ fetchable results.
 		echo "Query failed!";
 	}
 
-.. note:: PostgreSQL's ``pg_exec()`` function (for example) always
-	returns a resource on success, even for write type queries.
-	So take that in mind if you're looking for a boolean value.
+.. note:: たとえば PostreSQL の ``pg_exec()`` は書き込みクエリでも
+	必ず成功時にリソースを返します。 boolean 値を期待している場合は
+	それを考慮してください。
 
-***************************************
-Working with Database prefixes manually
-***************************************
+************************************************
+データベースプリフィックス(接頭辞)を手動で扱う
+************************************************
 
-If you have configured a database prefix and would like to prepend it to
-a table name for use in a native SQL query for example, then you can use
-the following::
+データベースプリフィックス(接頭辞)が設定済みの場合で、ネイティブな SQL
+文の使用でテーブル名にプリフィックスを追加したいときは、以下のようにし
+ます::
 
 	$this->db->dbprefix('tablename'); // outputs prefix_tablename
 
 
-If for any reason you would like to change the prefix programatically
-without needing to create a new connection, you can use this method::
+何らかの理由で、新しく接続することなしにプログラムでプリフィックスを変
+更したい場合は、以下のメソッドを使います::
 
 	$this->db->set_dbprefix('newprefix');
 	$this->db->dbprefix('tablename'); // outputs newprefix_tablename
 
 
 **********************
-Protecting identifiers
+識別子の保護
 **********************
 
-In many databases it is advisable to protect table and field names - for
-example with backticks in MySQL. **Query Builder queries are
-automatically protected**, however if you need to manually protect an
-identifier you can use::
+多くのデータベースでは、テーブル名やフィールド名を保護すること - たとえば 
+MySQL では、バッククォート(バックチック)を使います - が推奨されます。
+**Query Builder のクエリは自動的に保護されます** が、
+識別子を手動で保護する必要がある場合は、次を利用できます::
 
 	$this->db->protect_identifiers('table_name');
 
-.. important:: Although the Query Builder will try its best to properly
-	quote any field and table names that you feed it, note that it
-	is NOT designed to work with arbitrary user input. DO NOT feed it
-	with unsanitized user data.
+.. important:: Query Builder は入力されたテーブル名やフィールド名に対して
+	適切にクオートを付与するため最大限努めますが、恣意的なユーザ入力に
+	対して動作するように設計されていないことを考慮してください。
+	サニタイズされていないユーザデータを入力しないでください。
 
-This function will also add a table prefix to your table, assuming you
-have a prefix specified in your database config file. To enable the
-prefixing set TRUE (boolean) via the second parameter::
+このメソッドは、データベース設定ファイルで指定したデータベースプリフィ
+ックス(接頭辞)をテーブル名に追加できます。これを利用するには、第2引数
+に TRUE (ブール値)を指定します::
 
 	$this->db->protect_identifiers('table_name', TRUE);
 
 
-****************
-Escaping Queries
-****************
+***********************
+クエリのエスケープ処理
+***********************
 
-It's a very good security practice to escape your data before submitting
-it into your database. CodeIgniter has three methods that help you do
-this:
+データベースにデータを送信する前にデータをエスケープ処理するのは、大変
+優れたセキュリティ上のプラクティスです。 CodeIgniter
+には、これを支援するメソッドが3つあります:
 
-#. **$this->db->escape()** This function determines the data type so
-   that it can escape only string data. It also automatically adds
-   single quotes around the data so you don't have to:
+#. **$this->db->escape()** このメソッドは、データの型を決定し、 文字列デー
+   タだけをエスケープ処理します。また、自分でやらなくて済むように
+   自動でデータをシングルクォーテーションで囲んでくれます:
    ::
 
 	$sql = "INSERT INTO table (title) VALUES(".$this->db->escape($title).")";
 
-#. **$this->db->escape_str()** This function escapes the data passed to
-   it, regardless of type. Most of the time you'll use the above
-   function rather than this one. Use the function like this:
+#. **$this->db->escape_str()** このメソッドは、型を無視して渡されたデータを
+   エスケープします。 ほとんどの場合はこれを使わず、上のメソッドを利用することに
+   なると思います。このメソッドは、次のように使用します:
    ::
 
 	$sql = "INSERT INTO table (title) VALUES('".$this->db->escape_str($title)."')";
 
-#. **$this->db->escape_like_str()** This method should be used when
-   strings are to be used in LIKE conditions so that LIKE wildcards
-   ('%', '\_') in the string are also properly escaped.
+#. **$this->db->escape_like_str()** 文字列の中の LIKE 句で使用される
+   ワイルドカード('%', '\_')についても適切にエスケープされるように、 
+   文字列が LIKE条件で使用されるときには、このメソッドを使用するべきです。
 
 ::
 
@@ -126,42 +126,42 @@ this:
             $this->db->escape_like_str($search)."%'";
 
 
-**************
-Query Bindings
-**************
+************************
+クエリのバインディング
+************************
 
-Bindings enable you to simplify your query syntax by letting the system
-put the queries together for you. Consider the following example::
+バインディングを使うと、システムにクエリを組み立てさせることで、クエリ
+の構文を単純化することができます。次のような例があげられます::
 
 	$sql = "SELECT * FROM some_table WHERE id = ? AND status = ? AND author = ?";
 	$this->db->query($sql, array(3, 'live', 'Rick'));
 
-The question marks in the query are automatically replaced with the
-values in the array in the second parameter of the query function.
+クエリの中のクエスチョンマークは、query
+メソッドの第2引数で指定した配列のデータに自動的に置き換わります。
 
-Binding also work with arrays, which will be transformed to IN sets::
+バインディングは配列でも使用できます。この場合は IN セットに変換されます::
 
 	$sql = "SELECT * FROM some_table WHERE id IN ? AND status = ? AND author = ?";
 	$this->db->query($sql, array(array(3, 6), 'live', 'Rick'));
 
-The resulting query will be::
+結果のクエリはこのようになります::
 
 	SELECT * FROM some_table WHERE id IN (3,6) AND status = 'live' AND author = 'Rick'
 
-The secondary benefit of using binds is that the values are
-automatically escaped, producing safer queries. You don't have to
-remember to manually escape data; the engine does it automatically for
-you.
+バインディングを利用する第2の利点は、値が自動的にエスケープされ、安全
+なクエリが生成されるということです。手動をデータをエスケープするのを気
+に留める必要がなく、あなたに代わってエンジンが自動でそれを行ってくれま
+す。
 
-***************
-Handling Errors
-***************
+*******************
+エラーハンドリング
+*******************
 
 **$this->db->error();**
 
-If you need to get the last error that has occured, the error() method
-will return an array containing its code and message. Here's a quick
-example::
+最後に発生したエラーを取得した場合、error() メソッドが code と message 
+を含んだ配列を返してくれます。こちらが簡単な例
+です::
 
 	if ( ! $this->db->simple_query('SELECT `example_field` FROM `example_table`'))
 	{
