@@ -1,20 +1,20 @@
-#################
-Database Metadata
-#################
+#######################
+データベースのメタデータ
+#######################
 
-**************
-Table MetaData
-**************
+*******************
+テーブルのメタデータ
+*******************
 
-These functions let you fetch table information.
+これらのメソッドを使ってテーブル情報をフェッチできます。
 
-List the Tables in Your Database
-================================
+データベース内のテーブルをリストする
+=====================================
 
 **$this->db->list_tables();**
 
-Returns an array containing the names of all the tables in the database
-you are currently connected to. Example::
+現在接続しているデータベース内のすべてのテーブル名の
+配列を返します。例::
 
 	$tables = $this->db->list_tables();
 	
@@ -24,36 +24,36 @@ you are currently connected to. Example::
 	}
 
 
-Determine If a Table Exists
-===========================
+テーブルが存在するかを確認する
+===============================
 
 **$this->db->table_exists();**
 
-Sometimes it's helpful to know whether a particular table exists before
-running an operation on it. Returns a boolean TRUE/FALSE. Usage example::
+テーブルに対して操作をする前に、テーブルが存在するかを確認した方が役立つ
+ことがあります。 TRUE/FALSE boolean を返します。使用例::
 
 	if ($this->db->table_exists('table_name'))
 	{
 		// some code...
 	}
 
-.. note:: Replace *table_name* with the name of the table you are looking for.
+.. note:: *table_name* は探したいテーブル名の名前に替えてください。
+
+*********************
+フィールドのメタデータ
+*********************
 
 
-**************
-Field MetaData
-**************
-
-List the Fields in a Table
-==========================
+テーブル内のフィールドをリストする
+====================================
 
 **$this->db->list_fields()**
 
-Returns an array containing the field names. This query can be called
-two ways:
+フィールド名を含んだ配列を返します。このクエリは２つの方法で
+呼び出すことができます:
 
-1. You can supply the table name and call it from the $this->db->
-object::
+1. $this->db-> オブジェクトにテーブル名を渡して呼び出す
+ことができます::
 
 	$fields = $this->db->list_fields('table_name');
 	
@@ -62,8 +62,8 @@ object::
 		echo $field;
 	}
 
-2. You can gather the field names associated with any query you run by
-calling the function from your query result object::
+2. クエリ結果オブジェクトから呼び出すことで、
+クエリに関連付けられたフィールド名を集めることができます::
 
 	$query = $this->db->query('SELECT * FROM some_table');
 	
@@ -73,37 +73,37 @@ calling the function from your query result object::
 	}
 
 
-Determine If a Field is Present in a Table
-==========================================
+テーブル内にフィールドが存在するか確認する
+===========================================
 
 **$this->db->field_exists()**
 
-Sometimes it's helpful to know whether a particular field exists before
-performing an action. Returns a boolean TRUE/FALSE. Usage example::
+何かの操作をする前に、フィールドが存在するか確認した方が役立つ
+ことがあります。 TRUE/FALSE boolean を返します。使用例::
 
 	if ($this->db->field_exists('field_name', 'table_name'))
 	{
 		// some code...
 	}
 
-.. note:: Replace *field_name* with the name of the column you are looking
-	for, and replace *table_name* with the name of the table you are
-	looking for.
+.. note:: *field_name* は探したいフィールド名に、
+	*table_name* は探したいテーブル名に替えて
+	ください。
 
 
-Retrieve Field Metadata
-=======================
+フィールドのメタデータを取得
+============================
 
 **$this->db->field_data()**
 
-Returns an array of objects containing field information.
+フィールド情報を含んだオブジェクトの配列を返します。
 
-Sometimes it's helpful to gather the field names or other metadata, like
-the column type, max length, etc.
+フィールド名やカラム型や最大長などのメタデータを集めるのが
+役立つことがあります。
 
-.. note:: Not all databases provide meta-data.
+.. note:: メタデータを提供していないデータベースもあります。
 
-Usage example::
+使用例::
 
 	$fields = $this->db->field_data('table_name');
 	
@@ -115,16 +115,16 @@ Usage example::
 		echo $field->primary_key;
 	}
 
-If you have run a query already you can use the result object instead of
-supplying the table name::
+すでにクエリを実行させた場合は、テーブル名のかわりにクエリの
+結果オブジェクトを使うことができます::
 
 	$query = $this->db->query("YOUR QUERY");
 	$fields = $query->field_data();
 
-The following data is available from this function if supported by your
-database:
+次のデータがメソッドから得ることができます（データベースで
+サポートされている場合のみ）:
 
--  name - column name
--  max_length - maximum length of the column
--  primary_key - 1 if the column is a primary key
--  type - the type of the column
+-  name - カラム名
+-  max_length - カラムの最大長
+-  primary_key - カラムが主キーの場合は1
+-  type - カラムの型
