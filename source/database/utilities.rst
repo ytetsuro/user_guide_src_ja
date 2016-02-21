@@ -1,50 +1,50 @@
-######################
-Database Utility Class
-######################
+################################
+データベースユーティリティクラス
+################################
 
-The Database Utility Class contains methods that help you manage your
-database.
+データベースユーティリティクラスは、データベースの管理に便利なメソッド
+を持っています。
 
 .. contents::
     :local:
     :depth: 2
 
 ******************************
-Initializing the Utility Class
+ユーティリティクラスの初期化
 ******************************
 
-.. important:: In order to initialize the Utility class, your database
-	driver must already be running, since the utilities class relies on it.
+.. important:: ユーティリティクラスは、データベースドライバに依存しているので、 
+	初期化するには、あらかじめデータベースドライバが実行されている必要があります。
 
-Load the Utility Class as follows::
+ユーティリティクラスは次のようにロードします::
 
 	$this->load->dbutil();
 
-You can also pass another database object to the DB Utility loader, in case
-the database you want to manage isn't the default one::
+デフォルト以外のDBユーティリティローダを使いたい場合、別のデータベースオブジェクト
+を渡すこともできます::
 
 	$this->myutil = $this->load->dbutil($this->other_db, TRUE);
 
-In the above example, we're passing a custom database object as the first
-parameter and then tell it to return the dbutil object, instead of
-assigning it directly to ``$this->dbutil``.
+上記の例では、第1引数にカスタムデータベースオブジェクトを渡して、
+``$this->dbutil`` に直接アサインするかわりに dbutil オブジェクトを返すように
+命令しています。
 
-.. note:: Both of the parameters can be used individually, just pass an empty
-	value as the first one if you wish to skip it.
+.. note:: 両方の引数は独立して使えるので、第1引数をスキップしたい場合は
+	空の値を渡せば良いです。
 
-Once initialized you will access the methods using the ``$this->dbutil``
-object::
+いったん初期化されれば、ユーティリティのメソッドは、 ``$this->dbutil``
+オブジェクトを利用してアクセスできます::
 
 	$this->dbutil->some_method();
 
-****************************
-Using the Database Utilities
-****************************
+*********************************
+データベースユーティリティを使う
+*********************************
 
-Retrieve list of database names
+データベース名の配列を取得
 ================================
 
-Returns an array of database names::
+データベース名の配列を返します::
 
 	$dbs = $this->dbutil->list_databases();
 
@@ -54,53 +54,53 @@ Returns an array of database names::
 	}
 
 
-Determine If a Database Exists
+データベースが存在するか確認
 ==============================
 
-Sometimes it's helpful to know whether a particular database exists.
-Returns a boolean TRUE/FALSE. Usage example::
+特定のデータベースが存在するかどうかを確認するのが役立つことがあります。
+ブール値の TRUE/FALSE を返します。使用例::
 
 	if ($this->dbutil->database_exists('database_name'))
 	{
 		// some code...
 	}
 
-.. note:: Replace *database_name* with the name of the database you are
-	looking for. This method is case sensitive.
+.. note:: *database_name* を探しているテーブル名に置き換えてください。
+	このメソッドは大文字小文字を区別します。
 
-Optimize a Table
-================
+テーブルの最適化
+=================
 
-Permits you to optimize a table using the table name specified in the
-first parameter. Returns TRUE/FALSE based on success or failure::
+第1引数に渡したテーブルを最適化してくれます。
+成功か失敗かに応じて TRUE/FALSE を返します::
 
 	if ($this->dbutil->optimize_table('table_name'))
 	{
 		echo 'Success!';
 	}
 
-.. note:: Not all database platforms support table optimization. It is
-	mostly for use with MySQL.
+.. note:: すべてのデータベースプラットフォームがテーブルの最適化を
+	サポートしているわけではありません。ほとんどの場合は MySQL で使われます。
 
-Repair a Table
-==============
+テーブルの修復
+===============
 
-Permits you to repair a table using the table name specified in the
-first parameter. Returns TRUE/FALSE based on success or failure::
+第1引数に渡したテーブルを修復してくれます。
+成功か失敗かに応じて TRUE/FALSE を返します::
 
 	if ($this->dbutil->repair_table('table_name'))
 	{
 		echo 'Success!';
 	}
 
-.. note:: Not all database platforms support table repairs.
+.. note:: すべてのデータベースプラットフォームがテーブルの修復をサポートしているわけではありません。
 
-Optimize a Database
-===================
+データベースの最適化
+=====================
 
-Permits you to optimize the database your DB class is currently
-connected to. Returns an array containing the DB status messages or
-FALSE on failure.
+DBクラスが現在接続しているデータベースを最適化してくれます。
+DBステータスメッセージの配列または、失敗した場合に 
+FALSE を返します。
 
 ::
 
@@ -111,15 +111,15 @@ FALSE on failure.
 		print_r($result);
 	}
 
-.. note:: Not all database platforms support database optimization. It
-	it is mostly for use with MySQL.
+.. note:: すべてのデータベースプラットフォームがデータベースの最適化を
+	サポートしているわけではありません。ほとんどの場合は MySQL で使われます。
 
-Export a Query Result as a CSV File
-===================================
+クエリ結果を CSV ファイルとしてエクスポート
+============================================
 
-Permits you to generate a CSV file from a query result. The first
-parameter of the method must contain the result object from your
-query. Example::
+クエリ結果から CSV ファイルを生成してくれます。
+メソッドの第1引数にはクエリの結果オブジェクトを
+含む必要があります。例::
 
 	$this->load->dbutil();
 
@@ -127,10 +127,10 @@ query. Example::
 
 	echo $this->dbutil->csv_from_result($query);
 
-The second, third, and fourth parameters allow you to set the delimiter
-newline, and enclosure characters respectively. By default commas are
-used as the delimiter, "\n" is used as a new line, and a double-quote
-is used as the enclosure. Example::
+第2、第３、第4引数はそれぞれ区切り文字、改行文字、囲み文字
+をセットするためのものです。デフォルトでは区切り文字はカンマ、
+改行文字"\n"、囲み文字にはダブルクオートが使用されます。
+例::
 
 	$delimiter = ",";
 	$newline = "\r\n";
@@ -138,16 +138,16 @@ is used as the enclosure. Example::
 
 	echo $this->dbutil->csv_from_result($query, $delimiter, $newline, $enclosure);
 
-.. important:: This method will NOT write the CSV file for you. It
-	simply creates the CSV layout. If you need to write the file
-	use the :doc:`File Helper <../helpers/file_helper>`.
+.. important:: このメソッドは、CSV をファイルには書き出しません。
+	単に、CSV に整形するだけです。ファイルに書き込む必要がある場合は、
+	 :doc:`ファイルヘルパー <../helpers/file_helper>` を利用します。
 
-Export a Query Result as an XML Document
-========================================
+クエリ結果を XML ドキュメントとしてエクスポート
+=================================================
 
-Permits you to generate an XML file from a query result. The first
-parameter expects a query result object, the second may contain an
-optional array of config parameters. Example::
+クエリの結果からXMLを生成します。第1引数には、結果オブジェクトが入り、
+第2引数には、オプションで設定パラメータの配列が入ります。
+例::
 
 	$this->load->dbutil();
 
@@ -162,155 +162,155 @@ optional array of config parameters. Example::
 
 	echo $this->dbutil->xml_from_result($query, $config);
 
-.. important:: This method will NOT write the XML file for you. It
-	simply creates the XML layout. If you need to write the file
-	use the :doc:`File Helper <../helpers/file_helper>`.
+.. important:: このメソッドは、XML をファイルには書き出しません。
+	単に、XML に整形するだけです。ファイルに書き込む必要がある場合は、
+	 :doc:`ファイルヘルパー <../helpers/file_helper>` を利用します。
 
-********************
-Backup Your Database
-********************
+***************************
+データベースのバックアップ
+***************************
 
-Database Backup Notes
-=====================
+データベースバックアップの注意事項
+=====================================
 
-Permits you to backup your full database or individual tables. The
-backup data can be compressed in either Zip or Gzip format.
+データベース全体もしくは個別のテーブルをバックアップできます。バックア
+ップデータは Zip または Gzip フォーマットのどちらかの形式で圧縮できます。
 
-.. note:: This feature is only available for MySQL and Interbase/Firebird databases.
+.. note:: このメソッドは MySQL と Interbase/Firebird データベースでのみ使用できます。
 
-.. note:: For Interbase/Firebird databases, the backup file name is the only parameter.
+.. note:: Interbase/Firebird データベースをお使いの場合は、バックアップファイル名が唯一の引数です。
 
 		$this->dbutil->backup('db_backup_filename');
 
-.. note:: Due to the limited execution time and memory available to PHP,
-	backing up very large databases may not be possible. If your database is
-	very large you might need to backup directly from your SQL server via
-	the command line, or have your server admin do it for you if you do not
-	have root privileges.
+.. note:: 実行制限時間と PHPが利用できる空きメモリ容量に注意してください。 
+	大規模なデータベースのバックアップはできないかもしれません。
+	データベースが大規模な場合は、サーバで直接 SQL を使ってバックアップ
+	する必要があるかしれません。ルート権限を持たない場合には
+	サーバ管理者がそれを行う必要があります。
 
-Usage Example
+使用例
 =============
 
 ::
 
-	// Load the DB utility class
+	// DB ユーティリティクラスをロード
 	$this->load->dbutil();
 
-	// Backup your entire database and assign it to a variable
+	// データベース全体をバックアップしその結果を変数に代入
 	$backup = $this->dbutil->backup();
 
-	// Load the file helper and write the file to your server
+	// ファイルヘルパーをロードし、サーバにファイルを書き出す
 	$this->load->helper('file');
 	write_file('/path/to/mybackup.gz', $backup);
 
-	// Load the download helper and send the file to your desktop
+	// ダウンロードヘルパーをロードし、ファイルをデスクトップに送信する
 	$this->load->helper('download');
 	force_download('mybackup.gz', $backup);
 
-Setting Backup Preferences
-==========================
+バックアップオプションの設定
+===============================
 
-Backup preferences are set by submitting an array of values to the first
-parameter of the ``backup()`` method. Example::
+バックアップのオプションは、 ``backup()`` メソッドの第1引数で配列で渡す
+ことができます。例::
 
 	$prefs = array(
-		'tables'	=> array('table1', 'table2'),	// Array of tables to backup.
-		'ignore'	=> array(),			// List of tables to omit from the backup
+		'tables'	=> array('table1', 'table2'),	// バックアップするテーブルの配列。
+		'ignore'	=> array(),			// バックアップしないテーブルのリスト。
 		'format'	=> 'txt',			// gzip, zip, txt
-		'filename'	=> 'mybackup.sql',		// File name - NEEDED ONLY WITH ZIP FILES
-		'add_drop'	=> TRUE,			// Whether to add DROP TABLE statements to backup file
-		'add_insert'	=> TRUE,			// Whether to add INSERT data to backup file
-		'newline'	=> "\n"				// Newline character used in backup file
+		'filename'	=> 'mybackup.sql',		// ファイル名 - ZIP ファイルのときだけ必要
+		'add_drop'	=> TRUE,			// バックアップファイルにDROP TABLE 文を追加するかどうか
+		'add_insert'	=> TRUE,			// バックアップファイルにINSERT 文を追加するかどうか
+		'newline'	=> "\n"				// バックアップファイルで使う改行文字
 	);
 
 	$this->dbutil->backup($prefs);
 
-Description of Backup Preferences
+バックアップオプションの説明
 =================================
 
 ======================= ======================= ======================= ========================================================================
-Preference              Default Value           Options                 Description
+設定項目                  初期値                   選択肢                 説明
 ======================= ======================= ======================= ========================================================================
-**tables**               empty array             None                    An array of tables you want backed up. If left blank all tables will be
-                                                                         exported.
-**ignore**               empty array             None                    An array of tables you want the backup routine to ignore.
-**format**               gzip                    gzip, zip, txt          The file format of the export file.
-**filename**             the current date/time   None                    The name of the backed-up file. The name is needed only if you are using
-                                                                         zip compression.
-**add_drop**             TRUE                    TRUE/FALSE              Whether to include DROP TABLE statements in your SQL export file.
-**add_insert**           TRUE                    TRUE/FALSE              Whether to include INSERT statements in your SQL export file.
-**newline**              "\\n"                   "\\n", "\\r", "\\r\\n"  Type of newline to use in your SQL export file.
-**foreign_key_checks**   TRUE                    TRUE/FALSE              Whether output should keep foreign key checks enabled.
+**tables**               空の配列                なし                    バックアップしたいテーブルの配列。空のままにしておけば、全テーブルが
+                                                                         エクスポートされます。
+**ignore**               空の配列                なし                    バックアップ処理の対象外にするテーブルの配列
+**format**               gzip                    gzip, zip, txt          エクスポートファイルのファイル形式。
+**filename**             現在日時                なし                    バックアップファイルの名前。名前は、ZIP圧縮を使う場合のみ必要
+                                                                         になります。
+**add_drop**             TRUE                    TRUE/FALSE              SQL エクスポートファイルに、DROP TABLE 文を追加するかどうか。
+**add_insert**           TRUE                    TRUE/FALSE              SQL エクスポートファイルに、INSERT 文を追加するかどうか。
+**newline**              "\\n"                   "\\n", "\\r", "\\r\\n"  SQL エクスポートファイルで使う改行文字の種類。
+**foreign_key_checks**   TRUE                    TRUE/FALSE              出力が外部キーチェックを有効にするかどうか。
 ======================= ======================= ======================= ========================================================================
 
-***************
-Class Reference
-***************
+*********************
+クラスリファレンス
+*********************
 
 .. php:class:: CI_DB_utility
 
 	.. php:method:: backup([$params = array()])
 
-		:param	array	$params: An associative array of options
-		:returns:	raw/(g)zipped SQL query string
+		:param	array	$params: オプションの連想配列
+		:returns:	生の/(g)zip された SQL クエリ文字列
 		:rtype:	string
 
-		Perform a database backup, per user preferences.
+		ユーザーオプションに基づいてデータベースバックアップを実行。
 
 	.. php:method:: database_exists($database_name)
 
-		:param	string	$database_name: Database name
-		:returns:	TRUE if the database exists, FALSE otherwise
+		:param	string	$database_name: データベース名
+		:returns:	存在する場合 TRUE , それ以外は FALSE
 		:rtype:	bool
 
-		Check for the existence of a database.
+		データベースの存在を確認。
 
 	.. php:method:: list_databases()
 
-		:returns:	Array of database names found
+		:returns:	見つかったデータベース名の配列
 		:rtype:	array
 
-		Retrieve a list of all the database names.
+		すべてのデータベース名の配列を取得。
 
 	.. php:method:: optimize_database()
 
-		:returns:	Array of optimization messages or FALSE on failure
+		:returns:	最適化メッセージの配列か、失敗時は FALSE
 		:rtype:	array
 
-		Optimizes the database.
+		データベースを最適化。
 
 	.. php:method:: optimize_table($table_name)
 
-		:param	string	$table_name:	Name of the table to optimize
-		:returns:	Array of optimization messages or FALSE on failure
+		:param	string	$table_name:	最適化するテーブル名
+		:returns:	最適化メッセージの配列か、失敗時は FALSE
 		:rtype:	array
 
-		Optimizes a database table.
+		データベース内のテーブルを最適化。
 
 	.. php:method:: repair_table($table_name)
 
-		:param	string	$table_name:	Name of the table to repair
-		:returns:	Array of repair messages or FALSE on failure
+		:param	string	$table_name:	修復したいテーブル名
+		:returns:	修復メッセージの配列か、失敗時は FALSE
 		:rtype:	array
 
-		Repairs a database table.
+		データベース内のテーブルを修復。
 
 	.. php:method:: csv_from_result($query[, $delim = ','[, $newline = "\n"[, $enclosure = '"']]])
 
-		:param	object	$query:	A database result object
-		:param	string	$delim: The CSV field delimiter to use
-		:param	string	$newline: The newline character to use
-		:param	string	$enclosure: The enclosure delimiter to use
-		:returns:	The generated CSV file as a string
+		:param	object	$query:	データベース結果オブジェクト
+		:param	string	$delim: CSV フィールド区切り文字
+		:param	string	$newline: 改行文字
+		:param	string	$enclosure: 囲み文字
+		:returns:	生成された CSV ドキュメントの文字列
 		:rtype:	string
 
-		Translates a database result object into a CSV document.
+		データベース結果オブジェクトを CSV ドキュメントに変換。
 
 	.. php:method:: xml_from_result($query[, $params = array()])
 
-		:param	object	$query: A database result object
-		:param	array	$params: An associative array of preferences
-		:returns:	The generated XML document as a string
+		:param	object	$query: データベース結果オブジェクト
+		:param	array	$params: オプションの連想配列
+		:returns:	生成された XML ドキュメントの文字列
 		:rtype:	string
 
-		Translates a database result object into an XML document.
+		データベース結果オブジェクトを XML ドキュメントに変換。
