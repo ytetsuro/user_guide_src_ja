@@ -407,4 +407,4 @@ MySQL か CUBIRD をお使いの場合、 AFTER と FIRST 文を活用してカ�
 		:returns:	成功時 TRUE、失敗時 FALSE
 		:rtype:	bool
 
-		テーブル名を変更。使い方は `テーブル名を変更`_ を参照。
+		テーブル名を変更。使い方は `テーブル名の変更`_ を参照。
