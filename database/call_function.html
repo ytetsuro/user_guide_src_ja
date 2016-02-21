@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Custom Function Calls &mdash; CodeIgniter 3.1.0-dev ドキュメント</title>
+  <title>カスタム関数呼び出し &mdash; CodeIgniter 3.1.0-dev ドキュメント</title>
   
 
   
@@ -31,9 +31,9 @@
 
   
     <link rel="top" title="CodeIgniter 3.1.0-dev ドキュメント" href="../index.html"/>
-        <link rel="up" title="Database Reference" href="index.html"/>
-        <link rel="next" title="Database Caching Class" href="caching.html"/>
-        <link rel="prev" title="Database Metadata" href="metadata.html"/> 
+        <link rel="up" title="データベースリファレンス" href="index.html"/>
+        <link rel="next" title="データベースキャッシュクラス" href="caching.html"/>
+        <link rel="prev" title="Transactions" href="transactions.html"/> 
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -156,21 +156,18 @@
 </li>
 </ul>
 <ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="index.html">Database Reference</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="examples.html">Quick Start: Usage Examples</a></li>
-<li class="toctree-l2"><a class="reference internal" href="configuration.html">Database Configuration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="connecting.html">Connecting to a Database</a></li>
-<li class="toctree-l2"><a class="reference internal" href="queries.html">Running Queries</a></li>
-<li class="toctree-l2"><a class="reference internal" href="results.html">Generating Query Results</a></li>
-<li class="toctree-l2"><a class="reference internal" href="helpers.html">Query Helper Functions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="query_builder.html">Query Builder Class</a></li>
-<li class="toctree-l2"><a class="reference internal" href="transactions.html">Transactions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="metadata.html">Getting MetaData</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="">Custom Function Calls</a></li>
-<li class="toctree-l2"><a class="reference internal" href="caching.html">Query Caching</a></li>
-<li class="toctree-l2"><a class="reference internal" href="forge.html">Database Manipulation with Database Forge</a></li>
-<li class="toctree-l2"><a class="reference internal" href="utilities.html">Database Utilities Class</a></li>
-<li class="toctree-l2"><a class="reference internal" href="db_driver_reference.html">Database Driver Reference</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">データベースリファレンス</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="examples.html">Quick Start: 使用例</a></li>
+<li class="toctree-l2"><a class="reference internal" href="configuration.html">データベース設定</a></li>
+<li class="toctree-l2"><a class="reference internal" href="connecting.html">データベースへの接続</a></li>
+<li class="toctree-l2"><a class="reference internal" href="queries.html">クエリの実行</a></li>
+<li class="toctree-l2"><a class="reference internal" href="results.html">クエリ結果の生成</a></li>
+<li class="toctree-l2"><a class="reference internal" href="helpers.html">クエリヘルパーメソッド</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transactions.html">トランザクション</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">カスタム関数の呼び出し</a></li>
+<li class="toctree-l2"><a class="reference internal" href="caching.html">クエリのキャッシュ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="forge.html">データベースフォージによるデータベースの操作</a></li>
+<li class="toctree-l2"><a class="reference internal" href="utilities.html">データベースユーティリティクラス</a></li>
 </ul>
 </li>
 </ul>
@@ -342,21 +339,18 @@
 </li>
 </ul>
 <ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="index.html">Database Reference</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="examples.html">Quick Start: Usage Examples</a></li>
-<li class="toctree-l2"><a class="reference internal" href="configuration.html">Database Configuration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="connecting.html">Connecting to a Database</a></li>
-<li class="toctree-l2"><a class="reference internal" href="queries.html">Running Queries</a></li>
-<li class="toctree-l2"><a class="reference internal" href="results.html">Generating Query Results</a></li>
-<li class="toctree-l2"><a class="reference internal" href="helpers.html">Query Helper Functions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="query_builder.html">Query Builder Class</a></li>
-<li class="toctree-l2"><a class="reference internal" href="transactions.html">Transactions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="metadata.html">Getting MetaData</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="">Custom Function Calls</a></li>
-<li class="toctree-l2"><a class="reference internal" href="caching.html">Query Caching</a></li>
-<li class="toctree-l2"><a class="reference internal" href="forge.html">Database Manipulation with Database Forge</a></li>
-<li class="toctree-l2"><a class="reference internal" href="utilities.html">Database Utilities Class</a></li>
-<li class="toctree-l2"><a class="reference internal" href="db_driver_reference.html">Database Driver Reference</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">データベースリファレンス</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="examples.html">Quick Start: 使用例</a></li>
+<li class="toctree-l2"><a class="reference internal" href="configuration.html">データベース設定</a></li>
+<li class="toctree-l2"><a class="reference internal" href="connecting.html">データベースへの接続</a></li>
+<li class="toctree-l2"><a class="reference internal" href="queries.html">クエリの実行</a></li>
+<li class="toctree-l2"><a class="reference internal" href="results.html">クエリ結果の生成</a></li>
+<li class="toctree-l2"><a class="reference internal" href="helpers.html">クエリヘルパーメソッド</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transactions.html">トランザクション</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">カスタム関数の呼び出し</a></li>
+<li class="toctree-l2"><a class="reference internal" href="caching.html">クエリのキャッシュ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="forge.html">データベースフォージによるデータベースの操作</a></li>
+<li class="toctree-l2"><a class="reference internal" href="utilities.html">データベースユーティリティクラス</a></li>
 </ul>
 </li>
 </ul>
@@ -409,9 +403,9 @@
   <ul class="wy-breadcrumbs">
     <li><a href="../index.html">Docs</a> &raquo;</li>
       
-        <li><a href="index.html">Database Reference</a> &raquo;</li>
+        <li><a href="index.html">データベースリファレンス</a> &raquo;</li>
       
-    <li>Custom Function Calls</li>
+    <li>カスタム関数呼び出し</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -424,35 +418,35 @@
 </div>
           <div role="main" class="document">
             
-  <div class="section" id="custom-function-calls">
-<h1>Custom Function Calls<a class="headerlink" href="#custom-function-calls" title="このヘッドラインへのパーマリンク">¶</a></h1>
+  <div class="section" id="id1">
+<h1>カスタム関数呼び出し<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
 <div class="section" id="this-db-call-function">
 <h2>$this-&gt;db-&gt;call_function();<a class="headerlink" href="#this-db-call-function" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>This function enables you to call PHP database functions that are not
-natively included in CodeIgniter, in a platform independent manner. For
-example, let&#8217;s say you want to call the mysql_get_client_info()
-function, which is <strong>not</strong> natively supported by CodeIgniter. You could
-do so like this:</p>
+<p>このメソッドを使えば、プラットフォームに依存しないという設計思想のため
+に CodeIgniter でネイティブにサポートされていない PHP
+のデータベース関数を呼び出すのが可能になります。 たとえば、CodeIgniter
+でネイティブに サポート**されていない** mysql_get_client_info()
+関数を呼び出したいとしたら、次のようにして呼び出すことができます:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">call_function</span><span class="p">(</span><span class="s1">&#39;get_client_info&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>You must supply the name of the function, <strong>without</strong> the mysql_
-prefix, in the first parameter. The prefix is added automatically based
-on which database driver is currently being used. This permits you to
-run the same function on different database platforms. Obviously not all
-function calls are identical between platforms, so there are limits to
-how useful this function can be in terms of portability.</p>
-<p>Any parameters needed by the function you are calling will be added to
-the second parameter.</p>
+<p>第1引数で、プリフィックスの <a href="#id2"><span class="problematic" id="id3">mysql_</span></a> を <strong>付けずに</strong>
+関数名を渡す必要があります。プリフィックスは、 利用中のデータベース
+ドライバに応じて自動で付加されます。こうすることで、異なるデータベース
+プラットフォームであっても同じ名前で実行できるようになります。 言うま
+でもなく、すべての関数の呼出しがプラットフォーム間で一致するわけではあ
+りませんので、このメソッドが移植性にどれほど役立つかは限られています。</p>
+<p>呼び出そうとする関数において必要なパラメータは、第2引数で指定すること
+ができます。</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">call_function</span><span class="p">(</span><span class="s1">&#39;some_function&#39;</span><span class="p">,</span> <span class="nv">$param1</span><span class="p">,</span> <span class="nv">$param2</span><span class="p">,</span> <span class="nx">etc</span><span class="o">..</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>Often, you will either need to supply a database connection ID or a
-database result ID. The connection ID can be accessed using:</p>
+<p>データベースの接続ID や データベースの結果IDを渡すのが必要になる時がよ
+くあります。接続IDは次のようにしてアクセスできます:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">conn_id</span><span class="p">;</span>
 </pre></div>
 </div>
-<p>The result ID can be accessed from within your result object, like this:</p>
+<p>次のようにして、結果オブジェクトで、結果IDにアクセスできます:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">query</span><span class="p">(</span><span class="s2">&quot;SOME QUERY&quot;</span><span class="p">);</span>
 
 <span class="nv">$query</span><span class="o">-&gt;</span><span class="na">result_id</span><span class="p">;</span>
@@ -467,10 +461,10 @@ database result ID. The connection ID can be accessed using:</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="caching.html" class="btn btn-neutral float-right" title="Database Caching Class">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="caching.html" class="btn btn-neutral float-right" title="データベースキャッシュクラス">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="metadata.html" class="btn btn-neutral" title="Database Metadata"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="transactions.html" class="btn btn-neutral" title="Transactions"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -480,7 +474,7 @@ database result ID. The connection ID can be accessed using:</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2016, British Columbia Institute of Technology.
-      最終更新: Feb 20, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>
+      最終更新: Feb 21, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>
     </p>
   </div>
 

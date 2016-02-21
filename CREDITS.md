@@ -5,6 +5,7 @@ CodeIgniter Users Group in Japan, Japanese Translation Team
 ## Version 3.1.0
   * Contributers to <https://github.com/NEKOGET/ci_user_guide_src>
   * Kenji Suzuki <kenji@codeigniter.jp>
+  * ashiina
 
 ## Version 2.1.0
   * Kenji Suzuki <kenji@codeigniter.jp>
