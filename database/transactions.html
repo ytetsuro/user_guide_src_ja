@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Transactions &mdash; CodeIgniter 3.1.0-dev ドキュメント</title>
+  <title>トランザクション &mdash; CodeIgniter 3.1.0-dev ドキュメント</title>
   
 
   
@@ -405,7 +405,7 @@
       
         <li><a href="index.html">データベースリファレンス</a> &raquo;</li>
       
-    <li>Transactions</li>
+    <li>トランザクション</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -418,35 +418,36 @@
 </div>
           <div role="main" class="document">
             
-  <div class="section" id="transactions">
-<h1>Transactions<a class="headerlink" href="#transactions" title="このヘッドラインへのパーマリンク">¶</a></h1>
-<p>CodeIgniter&#8217;s database abstraction allows you to use transactions with
-databases that support transaction-safe table types. In MySQL, you&#8217;ll
-need to be running InnoDB or BDB table types rather than the more common
-MyISAM. Most other database platforms support transactions natively.</p>
-<p>If you are not familiar with transactions we recommend you find a good
-online resource to learn about them for your particular database. The
-information below assumes you have a basic understanding of
-transactions.</p>
-<div class="section" id="codeigniter-s-approach-to-transactions">
-<h2>CodeIgniter&#8217;s Approach to Transactions<a class="headerlink" href="#codeigniter-s-approach-to-transactions" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>CodeIgniter utilizes an approach to transactions that is very similar to
-the process used by the popular database class ADODB. We&#8217;ve chosen that
-approach because it greatly simplifies the process of running
-transactions. In most cases all that is required are two lines of code.</p>
-<p>Traditionally, transactions have required a fair amount of work to
-implement since they demand that you keep track of your queries and
-determine whether to commit or rollback based on the success or failure
-of your queries. This is particularly cumbersome with nested queries. In
-contrast, we&#8217;ve implemented a smart transaction system that does all
-this for you automatically (you can also manage your transactions
-manually if you choose to, but there&#8217;s really no benefit).</p>
+  <div class="section" id="id1">
+<h1>トランザクション<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>CodeIgniter の抽象データベースでは、トランザクションセーフなテーブルタイプ [ 訳注:
+テーブルの管理方式がトランザクションをサポートするものという意味 ]
+をサポートしているデータベースで トランザクションを利用することができます。
+MySQL では、より一般的な MyISAM ではなくInnoDB か BDB のテーブルタイプで
+実行されている必要があります。他のほとんどのデータベースでは、トランザクションは
+ネイティブにサポートされています。
+トランザクションについてあまり知らない場合は、
+利用中のデータベースのトランザクションについて学習するために、
+良いオンラインリソースを探すことをおすすめします。</p>
+<div class="section" id="codeigniter">
+<h2>CodeIgniter のトランザクションに対するアプローチ<a class="headerlink" href="#codeigniter" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>CodeIgniter のトランザクションに対するアプローチでは、ポピュラーなデー
+タベースクラスである ADODB で使われている手順と大変よく似たものが採用
+されています。 トランザクションの実行プロセスが非常に単純になるので、
+このアプローチを採用しています。ほとんどの場合、それは2行のコードが必要になるだけです。</p>
+<p>従来は、クエリを絶えず追跡し、クエリの成否にもとづいて、 コミット
+するか ロールバック するかを決めなければならないため、
+トランザクションの実装には多くの作業を必要としてきました。
+これは、入れ子になったクエリでは特に邪魔になります。 対照的に、私たち
+は自動的にそれら全部を実行するスマートなトランザクションシステムを実装
+しました (実際のところ利点はないですが、やりたければ手動でトランザクシ
+ョンを管理することもできます)。</p>
 </div>
-<div class="section" id="running-transactions">
-<h2>Running Transactions<a class="headerlink" href="#running-transactions" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>To run your queries using transactions you will use the
-$this-&gt;db-&gt;trans_start() and $this-&gt;db-&gt;trans_complete() functions as
-follows:</p>
+<div class="section" id="id2">
+<h2>トランザクションの実行<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>トランザクションを使ってクエリを実行するには、次のように
+$this-&gt;db-&gt;trans_start() メソッドと $this-&gt;db-&gt;trans_complete()
+メソッドを使います:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">trans_start</span><span class="p">();</span>
 <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">query</span><span class="p">(</span><span class="s1">&#39;AN SQL QUERY...&#39;</span><span class="p">);</span>
 <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">query</span><span class="p">(</span><span class="s1">&#39;ANOTHER QUERY...&#39;</span><span class="p">);</span>
@@ -454,27 +455,28 @@ follows:</p>
 <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">trans_complete</span><span class="p">();</span>
 </pre></div>
 </div>
-<p>You can run as many queries as you want between the start/complete
-functions and they will all be committed or rolled back based on success
-or failure of any given query.</p>
+<p>start メソッドと complete
+メソッドの間に、どれだけ多くのクエリを実行しても構いません。
+各クエリの成否により、それら全体がコミットまたはロールバックされます。</p>
 </div>
-<div class="section" id="strict-mode">
-<h2>Strict Mode<a class="headerlink" href="#strict-mode" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>By default CodeIgniter runs all transactions in Strict Mode. When strict
-mode is enabled, if you are running multiple groups of transactions, if
-one group fails all groups will be rolled back. If strict mode is
-disabled, each group is treated independently, meaning a failure of one
-group will not affect any others.</p>
-<p>Strict Mode can be disabled as follows:</p>
+<div class="section" id="strict">
+<h2>厳密な(Strict)モード<a class="headerlink" href="#strict" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>デフォルトでは CodeIgniter はすべてのトランザクションを Strict モード
+で実行します。 Strict モードが有効な場合、複数のトランザクションのグル
+ープを実行している場合、ひとつのグループの実行が失敗すると他のすべての
+グループのトランザクションもロールバックされます。 Strict モードが無効
+の場合、各グループは独立したものとして扱われ、ひとつのグループのトラン
+ザクションが失敗しても他のグループに影響を与えません。
+Strict モードは以下のようにして無効にします:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">trans_strict</span><span class="p">(</span><span class="k">FALSE</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
-<div class="section" id="managing-errors">
-<h2>Managing Errors<a class="headerlink" href="#managing-errors" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>If you have error reporting enabled in your config/database.php file
-you&#8217;ll see a standard error message if the commit was unsuccessful. If
-debugging is turned off, you can manage your own errors like this:</p>
+<div class="section" id="id3">
+<h2>エラーの管理<a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>コミットが失敗した場合に、標準のエラーメッセージを見たい場合は、
+config/database.php ファイルでエラー報告機能を有効化できます。
+デバッグ機能が OFF の場合は、次のように自分でエラーを管理することもできます:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">trans_start</span><span class="p">();</span>
 <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">query</span><span class="p">(</span><span class="s1">&#39;AN SQL QUERY...&#39;</span><span class="p">);</span>
 <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">query</span><span class="p">(</span><span class="s1">&#39;ANOTHER QUERY...&#39;</span><span class="p">);</span>
@@ -487,11 +489,11 @@ debugging is turned off, you can manage your own errors like this:</p>
 </pre></div>
 </div>
 </div>
-<div class="section" id="enabling-transactions">
-<h2>Enabling Transactions<a class="headerlink" href="#enabling-transactions" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>Transactions are enabled automatically the moment you use
-$this-&gt;db-&gt;trans_start(). If you would like to disable transactions you
-can do so using $this-&gt;db-&gt;trans_off():</p>
+<div class="section" id="id4">
+<h2>トランザクションの有効化<a class="headerlink" href="#id4" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>$this-&gt;db-&gt;trans_start() を使った瞬間にトランザクションが
+自動的に有効になります。トランザクションを無効にしたい場合は
+$this-&gt;db-&gt;trans_off() を実行することで無効化できます:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">trans_off</span><span class="p">();</span>
 
 <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">trans_start</span><span class="p">();</span>
@@ -499,24 +501,24 @@ can do so using $this-&gt;db-&gt;trans_off():</p>
 <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">trans_complete</span><span class="p">();</span>
 </pre></div>
 </div>
-<p>When transactions are disabled, your queries will be auto-commited, just
-as they are when running queries without transactions.</p>
+<p>トランザクション機能が無効になっている場合、トランザクションなしにクエ
+リが実行されたときのように、クエリは自動的にコミットされます。</p>
 </div>
-<div class="section" id="test-mode">
-<h2>Test Mode<a class="headerlink" href="#test-mode" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>You can optionally put the transaction system into &#8220;test mode&#8221;, which
-will cause your queries to be rolled back &#8211; even if the queries produce
-a valid result. To use test mode simply set the first parameter in the
-$this-&gt;db-&gt;trans_start() function to TRUE:</p>
+<div class="section" id="id5">
+<h2>テストモード<a class="headerlink" href="#id5" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>オプションで、クエリが正しい結果になった場合でもロールバックされる
+&#8220;テストモード&#8221; のトランザクションを実行することができます。
+テストモードを使うには、 $this-&gt;db-&gt;trans_start() メソッドの第1引数に
+TRUE を設定するだけです:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">trans_start</span><span class="p">(</span><span class="k">TRUE</span><span class="p">);</span> <span class="c1">// Query will be rolled back</span>
 <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">query</span><span class="p">(</span><span class="s1">&#39;AN SQL QUERY...&#39;</span><span class="p">);</span>
 <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">trans_complete</span><span class="p">();</span>
 </pre></div>
 </div>
 </div>
-<div class="section" id="running-transactions-manually">
-<h2>Running Transactions Manually<a class="headerlink" href="#running-transactions-manually" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>If you would like to run transactions manually you can do so as follows:</p>
+<div class="section" id="id6">
+<h2>トランザクションを手動で実行する<a class="headerlink" href="#id6" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>手動でトランザクションを実行したい場合は、次のように行えます:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">trans_begin</span><span class="p">();</span>
 
 <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">query</span><span class="p">(</span><span class="s1">&#39;AN SQL QUERY...&#39;</span><span class="p">);</span>
@@ -535,8 +537,8 @@ $this-&gt;db-&gt;trans_start() function to TRUE:</p>
 </div>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
-<p class="last">Make sure to use $this-&gt;db-&gt;trans_begin() when running manual
-transactions, <strong>NOT</strong> $this-&gt;db-&gt;trans_start().</p>
+<p class="last">手動でトランザクションを実行する場合は #this-&gt;db-&gt;trans_start()
+<strong>ではなく</strong>、 $this-&gt;db-&gt;trans_begin() を使うようにしてください。</p>
 </div>
 </div>
 </div>
@@ -560,7 +562,7 @@ transactions, <strong>NOT</strong> $this-&gt;db-&gt;trans_start().</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2016, British Columbia Institute of Technology.
-      最終更新: Feb 21, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>
+      最終更新: Feb 24, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>
     </p>
   </div>
 

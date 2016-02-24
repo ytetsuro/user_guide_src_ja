@@ -552,7 +552,7 @@ might be a good starting point.</p>
 routing rules to process the back-references. Example:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$route</span><span class="p">[</span><span class="s1">&#39;products/([a-zA-Z]+)/edit/(\d+)&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="k">function</span> <span class="p">(</span><span class="nv">$product_type</span><span class="p">,</span> <span class="nv">$id</span><span class="p">)</span>
 <span class="p">{</span>
-        <span class="k">return</span> <span class="s1">&#39;catalog/product_edit/&#39;</span> <span class="o">.</span> <span class="nx">strtolower</span><span class="p">(</span><span class="nv">$product_type</span><span class="p">)</span> <span class="o">.</span> <span class="s1">&#39;/&#39;</span> <span class="o">.</span> <span class="nv">$id</span><span class="p">;</span>
+        <span class="k">return</span> <span class="s1">&#39;catalog/product_edit/&#39;</span> <span class="o">.</span> <span class="nb">strtolower</span><span class="p">(</span><span class="nv">$product_type</span><span class="p">)</span> <span class="o">.</span> <span class="s1">&#39;/&#39;</span> <span class="o">.</span> <span class="nv">$id</span><span class="p">;</span>
 <span class="p">};</span>
 </pre></div>
 </div>
@@ -639,7 +639,7 @@ regular expression routes.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2016, British Columbia Institute of Technology.
-      最終更新: Feb 21, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>
+      最終更新: Feb 24, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>
     </p>
   </div>
 

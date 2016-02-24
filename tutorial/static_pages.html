@@ -469,7 +469,7 @@ CodeIgniter の非常に専門的な議論において、これは <em>スーパ
         <span class="o">&lt;/</span><span class="nx">head</span><span class="o">&gt;</span>
         <span class="o">&lt;</span><span class="nx">body</span><span class="o">&gt;</span>
 
-                <span class="o">&lt;</span><span class="nx">h1</span><span class="o">&gt;&lt;?</span><span class="nx">php</span> <span class="k">echo</span> <span class="nv">$title</span><span class="p">;</span> <span class="cp">?&gt;</span><span class="nt">&lt;/h1&gt;</span>
+                <span class="o">&lt;</span><span class="nx">h1</span><span class="o">&gt;&lt;?</span><span class="nx">php</span> <span class="k">echo</span> <span class="nv">$title</span><span class="p">;</span> <span class="cp">?&gt;</span><span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
 </pre></div>
 </div>
 <p>ヘッダにはメインのビューをロードする前に表示させたい単純な HTML コードが
@@ -501,7 +501,7 @@ CodeIgniter の非常に専門的な議論において、これは <em>スーパ
                 <span class="nx">show_404</span><span class="p">();</span>
         <span class="p">}</span>
 
-        <span class="nv">$data</span><span class="p">[</span><span class="s1">&#39;title&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nx">ucfirst</span><span class="p">(</span><span class="nv">$page</span><span class="p">);</span> <span class="c1">// 頭文字を大文字に</span>
+        <span class="nv">$data</span><span class="p">[</span><span class="s1">&#39;title&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">ucfirst</span><span class="p">(</span><span class="nv">$page</span><span class="p">);</span> <span class="c1">// 頭文字を大文字に</span>
 
         <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">view</span><span class="p">(</span><span class="s1">&#39;templates/header&#39;</span><span class="p">,</span> <span class="nv">$data</span><span class="p">);</span>
         <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">view</span><span class="p">(</span><span class="s1">&#39;pages/&#39;</span><span class="o">.</span><span class="nv">$page</span><span class="p">,</span> <span class="nv">$data</span><span class="p">);</span>
@@ -578,7 +578,7 @@ about ページが見えるはずです。</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2016, British Columbia Institute of Technology.
-      最終更新: Feb 21, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>
+      最終更新: Feb 24, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>
     </p>
   </div>
 

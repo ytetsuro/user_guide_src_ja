@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Database Metadata &mdash; CodeIgniter 3.1.0-dev ドキュメント</title>
+  <title>データベースのメタデータ &mdash; CodeIgniter 3.1.0-dev ドキュメント</title>
   
 
   
@@ -400,7 +400,7 @@
   <ul class="wy-breadcrumbs">
     <li><a href="../index.html">Docs</a> &raquo;</li>
       
-    <li>Database Metadata</li>
+    <li>データベースのメタデータ</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -413,16 +413,16 @@
 </div>
           <div role="main" class="document">
             
-  <div class="section" id="database-metadata">
-<h1>Database Metadata<a class="headerlink" href="#database-metadata" title="このヘッドラインへのパーマリンク">¶</a></h1>
-<div class="section" id="table-metadata">
-<h2>Table MetaData<a class="headerlink" href="#table-metadata" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>These functions let you fetch table information.</p>
-<div class="section" id="list-the-tables-in-your-database">
-<h3>List the Tables in Your Database<a class="headerlink" href="#list-the-tables-in-your-database" title="このヘッドラインへのパーマリンク">¶</a></h3>
+  <div class="section" id="id1">
+<h1>データベースのメタデータ<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<div class="section" id="id2">
+<h2>テーブルのメタデータ<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>これらのメソッドを使ってテーブル情報をフェッチできます。</p>
+<div class="section" id="id3">
+<h3>データベース内のテーブルをリストする<a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p><strong>$this-&gt;db-&gt;list_tables();</strong></p>
-<p>Returns an array containing the names of all the tables in the database
-you are currently connected to. Example:</p>
+<p>現在接続しているデータベース内のすべてのテーブル名の
+配列を返します。例:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$tables</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">list_tables</span><span class="p">();</span>
 
 <span class="k">foreach</span> <span class="p">(</span><span class="nv">$tables</span> <span class="k">as</span> <span class="nv">$table</span><span class="p">)</span>
@@ -432,11 +432,11 @@ you are currently connected to. Example:</p>
 </pre></div>
 </div>
 </div>
-<div class="section" id="determine-if-a-table-exists">
-<h3>Determine If a Table Exists<a class="headerlink" href="#determine-if-a-table-exists" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<div class="section" id="id4">
+<h3>テーブルが存在するかを確認する<a class="headerlink" href="#id4" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p><strong>$this-&gt;db-&gt;table_exists();</strong></p>
-<p>Sometimes it&#8217;s helpful to know whether a particular table exists before
-running an operation on it. Returns a boolean TRUE/FALSE. Usage example:</p>
+<p>テーブルに対して操作をする前に、テーブルが存在するかを確認した方が役立つ
+ことがあります。 TRUE/FALSE boolean を返します。使用例:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="k">if</span> <span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">table_exists</span><span class="p">(</span><span class="s1">&#39;table_name&#39;</span><span class="p">))</span>
 <span class="p">{</span>
         <span class="c1">// some code...</span>
@@ -445,19 +445,19 @@ running an operation on it. Returns a boolean TRUE/FALSE. Usage example:</p>
 </div>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
-<p class="last">Replace <em>table_name</em> with the name of the table you are looking for.</p>
+<p class="last"><em>table_name</em> は探したいテーブル名の名前に替えてください。</p>
 </div>
 </div>
 </div>
-<div class="section" id="field-metadata">
-<h2>Field MetaData<a class="headerlink" href="#field-metadata" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<div class="section" id="list-the-fields-in-a-table">
-<h3>List the Fields in a Table<a class="headerlink" href="#list-the-fields-in-a-table" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<div class="section" id="id5">
+<h2>フィールドのメタデータ<a class="headerlink" href="#id5" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="section" id="id6">
+<h3>テーブル内のフィールドをリストする<a class="headerlink" href="#id6" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p><strong>$this-&gt;db-&gt;list_fields()</strong></p>
-<p>Returns an array containing the field names. This query can be called
-two ways:</p>
-<p>1. You can supply the table name and call it from the $this-&gt;db-&gt;
-object:</p>
+<p>フィールド名を含んだ配列を返します。このクエリは２つの方法で
+呼び出すことができます:</p>
+<p>1. $this-&gt;db-&gt; オブジェクトにテーブル名を渡して呼び出す
+ことができます:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$fields</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">list_fields</span><span class="p">(</span><span class="s1">&#39;table_name&#39;</span><span class="p">);</span>
 
 <span class="k">foreach</span> <span class="p">(</span><span class="nv">$fields</span> <span class="k">as</span> <span class="nv">$field</span><span class="p">)</span>
@@ -466,8 +466,8 @@ object:</p>
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>2. You can gather the field names associated with any query you run by
-calling the function from your query result object:</p>
+<p>2. クエリ結果オブジェクトから呼び出すことで、
+クエリに関連付けられたフィールド名を集めることができます:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">query</span><span class="p">(</span><span class="s1">&#39;SELECT * FROM some_table&#39;</span><span class="p">);</span>
 
 <span class="k">foreach</span> <span class="p">(</span><span class="nv">$query</span><span class="o">-&gt;</span><span class="na">list_fields</span><span class="p">()</span> <span class="k">as</span> <span class="nv">$field</span><span class="p">)</span>
@@ -477,11 +477,11 @@ calling the function from your query result object:</p>
 </pre></div>
 </div>
 </div>
-<div class="section" id="determine-if-a-field-is-present-in-a-table">
-<h3>Determine If a Field is Present in a Table<a class="headerlink" href="#determine-if-a-field-is-present-in-a-table" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<div class="section" id="id7">
+<h3>テーブル内にフィールドが存在するか確認する<a class="headerlink" href="#id7" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p><strong>$this-&gt;db-&gt;field_exists()</strong></p>
-<p>Sometimes it&#8217;s helpful to know whether a particular field exists before
-performing an action. Returns a boolean TRUE/FALSE. Usage example:</p>
+<p>何かの操作をする前に、フィールドが存在するか確認した方が役立つ
+ことがあります。 TRUE/FALSE boolean を返します。使用例:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="k">if</span> <span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">field_exists</span><span class="p">(</span><span class="s1">&#39;field_name&#39;</span><span class="p">,</span> <span class="s1">&#39;table_name&#39;</span><span class="p">))</span>
 <span class="p">{</span>
         <span class="c1">// some code...</span>
@@ -490,22 +490,22 @@ performing an action. Returns a boolean TRUE/FALSE. Usage example:</p>
 </div>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
-<p class="last">Replace <em>field_name</em> with the name of the column you are looking
-for, and replace <em>table_name</em> with the name of the table you are
-looking for.</p>
+<p class="last"><em>field_name</em> は探したいフィールド名に、
+<em>table_name</em> は探したいテーブル名に替えて
+ください。</p>
 </div>
 </div>
-<div class="section" id="retrieve-field-metadata">
-<h3>Retrieve Field Metadata<a class="headerlink" href="#retrieve-field-metadata" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<div class="section" id="id8">
+<h3>フィールドのメタデータを取得<a class="headerlink" href="#id8" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p><strong>$this-&gt;db-&gt;field_data()</strong></p>
-<p>Returns an array of objects containing field information.</p>
-<p>Sometimes it&#8217;s helpful to gather the field names or other metadata, like
-the column type, max length, etc.</p>
+<p>フィールド情報を含んだオブジェクトの配列を返します。</p>
+<p>フィールド名やカラム型や最大長などのメタデータを集めるのが
+役立つことがあります。</p>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
-<p class="last">Not all databases provide meta-data.</p>
+<p class="last">メタデータを提供していないデータベースもあります。</p>
 </div>
-<p>Usage example:</p>
+<p>使用例:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$fields</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">field_data</span><span class="p">(</span><span class="s1">&#39;table_name&#39;</span><span class="p">);</span>
 
 <span class="k">foreach</span> <span class="p">(</span><span class="nv">$fields</span> <span class="k">as</span> <span class="nv">$field</span><span class="p">)</span>
@@ -517,19 +517,19 @@ the column type, max length, etc.</p>
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>If you have run a query already you can use the result object instead of
-supplying the table name:</p>
+<p>すでにクエリを実行させた場合は、テーブル名のかわりにクエリの
+結果オブジェクトを使うことができます:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">query</span><span class="p">(</span><span class="s2">&quot;YOUR QUERY&quot;</span><span class="p">);</span>
 <span class="nv">$fields</span> <span class="o">=</span> <span class="nv">$query</span><span class="o">-&gt;</span><span class="na">field_data</span><span class="p">();</span>
 </pre></div>
 </div>
-<p>The following data is available from this function if supported by your
-database:</p>
+<p>次のデータがメソッドから得ることができます（データベースで
+サポートされている場合のみ）:</p>
 <ul class="simple">
-<li>name - column name</li>
-<li>max_length - maximum length of the column</li>
-<li>primary_key - 1 if the column is a primary key</li>
-<li>type - the type of the column</li>
+<li>name - カラム名</li>
+<li>max_length - カラムの最大長</li>
+<li>primary_key - カラムが主キーの場合は1</li>
+<li>type - カラムの型</li>
 </ul>
 </div>
 </div>
@@ -545,7 +545,7 @@ database:</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2016, British Columbia Institute of Technology.
-      最終更新: Feb 21, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>
+      最終更新: Feb 24, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>
     </p>
   </div>
 
