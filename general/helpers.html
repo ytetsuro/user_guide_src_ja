@@ -143,7 +143,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../libraries/pagination.html">ページネーションクラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/parser.html">テンプレートパーサクラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/security.html">セキュリティクラス</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../libraries/sessions.html">セッションドライバ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/sessions.html">セッションライブラリ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/table.html">HTML テーブルクラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/trackback.html">トラックバッククラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/typography.html">タイポグラフィークラス</a></li>
@@ -326,7 +326,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../libraries/pagination.html">ページネーションクラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/parser.html">テンプレートパーサクラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/security.html">セキュリティクラス</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../libraries/sessions.html">セッションドライバ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/sessions.html">セッションライブラリ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/table.html">HTML テーブルクラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/trackback.html">トラックバッククラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/typography.html">タイポグラフィークラス</a></li>
@@ -442,14 +442,14 @@ global <em>system/helpers/</em> directory.</p>
 <div class="section" id="loading-a-helper">
 <h2>Loading a Helper<a class="headerlink" href="#loading-a-helper" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>Loading a helper file is quite simple using the following method:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">helper</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">);</span>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">helper</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>Where <strong>name</strong> is the file name of the helper, without the .php file
 extension or the &#8220;helper&#8221; part.</p>
 <p>For example, to load the <strong>URL Helper</strong> file, which is named
 <strong>url_helper.php</strong>, you would do this:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">helper</span><span class="p">(</span><span class="s1">&#39;url&#39;</span><span class="p">);</span>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">helper</span><span class="p">(</span><span class="s1">&#39;url&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>A helper can be loaded anywhere within your controller methods (or
@@ -468,7 +468,7 @@ don&#8217;t try to assign it to a variable. Just use it as shown.</p>
 <h2>Loading Multiple Helpers<a class="headerlink" href="#loading-multiple-helpers" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>If you need to load more than one helper you can specify them in an
 array, like this:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">helper</span><span class="p">(</span>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">helper</span><span class="p">(</span>
         <span class="k">array</span><span class="p">(</span><span class="s1">&#39;helper1&#39;</span><span class="p">,</span> <span class="s1">&#39;helper2&#39;</span><span class="p">,</span> <span class="s1">&#39;helper3&#39;</span><span class="p">)</span>
 <span class="p">);</span>
 </pre></div>
@@ -487,7 +487,7 @@ file and adding the helper to the autoload array.</p>
 use, you&#8217;ll call it the way you would a standard PHP function.</p>
 <p>For example, to create a link using the <tt class="docutils literal"><span class="pre">anchor()</span></tt> function in one of
 your view files you would do this:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="o">&lt;?</span><span class="nx">php</span> <span class="k">echo</span> <span class="nx">anchor</span><span class="p">(</span><span class="s1">&#39;blog/comments&#39;</span><span class="p">,</span> <span class="s1">&#39;Click Here&#39;</span><span class="p">);</span><span class="cp">?&gt;</span>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span> <span class="k">echo</span> <span class="nx">anchor</span><span class="p">(</span><span class="s1">&#39;blog/comments&#39;</span><span class="p">,</span> <span class="s1">&#39;Click Here&#39;</span><span class="p">);</span><span class="cp">?&gt;</span>
 </pre></div>
 </div>
 <p>Where &#8220;Click Here&#8221; is the name of the link, and &#8220;blog/comments&#8221; is the
@@ -512,7 +512,7 @@ add to or or to replace the functions a Helper provides.</p>
 <p>For example, to extend the native <strong>Array Helper</strong> you&#8217;ll create a file
 named <strong>application/helpers/MY_array_helper.php</strong>, and add or override
 functions:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="c1">// any_in_array() is not in the Array Helper, so it defines a new function</span>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="c1">// any_in_array() is not in the Array Helper, so it defines a new function</span>
 <span class="k">function</span> <span class="nf">any_in_array</span><span class="p">(</span><span class="nv">$needle</span><span class="p">,</span> <span class="nv">$haystack</span><span class="p">)</span>
 <span class="p">{</span>
         <span class="nv">$needle</span> <span class="o">=</span> <span class="nb">is_array</span><span class="p">(</span><span class="nv">$needle</span><span class="p">)</span> <span class="o">?</span> <span class="nv">$needle</span> <span class="o">:</span> <span class="k">array</span><span class="p">(</span><span class="nv">$needle</span><span class="p">);</span>
@@ -541,7 +541,7 @@ functions:</p>
 <p>The filename prefix for &#8220;extending&#8221; Helpers is the same used to extend
 libraries and core classes. To set your own prefix, open your
 <strong>application/config/config.php</strong> file and look for this item:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$config</span><span class="p">[</span><span class="s1">&#39;subclass_prefix&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;MY_&#39;</span><span class="p">;</span>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$config</span><span class="p">[</span><span class="s1">&#39;subclass_prefix&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;MY_&#39;</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>Please note that all native CodeIgniter libraries are prefixed with <strong>CI_</strong>
@@ -574,7 +574,7 @@ Files. Browse each one to see what they do.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2016, British Columbia Institute of Technology.
-      最終更新: Feb 24, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>
+      最終更新: Mar 21, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>
     </p>
   </div>
 

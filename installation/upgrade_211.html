@@ -143,7 +143,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../libraries/pagination.html">ページネーションクラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/parser.html">テンプレートパーサクラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/security.html">セキュリティクラス</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../libraries/sessions.html">セッションドライバ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/sessions.html">セッションライブラリ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/table.html">HTML テーブルクラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/trackback.html">トラックバッククラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/typography.html">タイポグラフィークラス</a></li>
@@ -326,7 +326,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../libraries/pagination.html">ページネーションクラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/parser.html">テンプレートパーサクラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/security.html">セキュリティクラス</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../libraries/sessions.html">セッションドライバ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/sessions.html">セッションライブラリ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/table.html">HTML テーブルクラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/trackback.html">トラックバッククラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/typography.html">タイポグラフィークラス</a></li>
@@ -443,7 +443,7 @@ it to _application/config/mimes.php*.</p>
 <p>This upgrade adds support for IPv6 IP addresses. In order to store them, you need
 to enlarge your ip_address columns to 45 characters. For example, CodeIgniter&#8217;s
 session table will need to change</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="nx">ALTER</span> <span class="nx">TABLE</span> <span class="nx">ci_sessions</span> <span class="nx">CHANGE</span> <span class="nx">ip_address</span> <span class="nx">ip_address</span> <span class="nx">varchar</span><span class="p">(</span><span class="mi">45</span><span class="p">)</span> <span class="k">default</span> <span class="s1">&#39;0&#39;</span> <span class="k">NOT</span> <span class="k">NULL</span>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nx">ALTER</span> <span class="nx">TABLE</span> <span class="nx">ci_sessions</span> <span class="nx">CHANGE</span> <span class="nx">ip_address</span> <span class="nx">ip_address</span> <span class="nx">varchar</span><span class="p">(</span><span class="mi">45</span><span class="p">)</span> <span class="k">default</span> <span class="s1">&#39;0&#39;</span> <span class="k">NOT</span> <span class="k">NULL</span>
 </pre></div>
 </div>
 </div>
@@ -468,7 +468,7 @@ session table will need to change</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2016, British Columbia Institute of Technology.
-      最終更新: Feb 24, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>
+      最終更新: Mar 21, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>
     </p>
   </div>
 

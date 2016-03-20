@@ -143,7 +143,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../libraries/pagination.html">ページネーションクラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/parser.html">テンプレートパーサクラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/security.html">セキュリティクラス</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../libraries/sessions.html">セッションドライバ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/sessions.html">セッションライブラリ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/table.html">HTML テーブルクラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/trackback.html">トラックバッククラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/typography.html">タイポグラフィークラス</a></li>
@@ -326,7 +326,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../libraries/pagination.html">ページネーションクラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/parser.html">テンプレートパーサクラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/security.html">セキュリティクラス</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../libraries/sessions.html">セッションドライバ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/sessions.html">セッションライブラリ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/table.html">HTML テーブルクラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/trackback.html">トラックバッククラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/typography.html">タイポグラフィークラス</a></li>
@@ -442,7 +442,7 @@ It is currently only kept for backwards compatibility.</p>
 <div class="custom-index container"></div><div class="section" id="loading-this-helper">
 <h2><a class="toc-backref" href="#id2">Loading this Helper</a><a class="headerlink" href="#loading-this-helper" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>This helper is loaded using the following code:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">helper</span><span class="p">(</span><span class="s1">&#39;smiley&#39;</span><span class="p">);</span>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">helper</span><span class="p">(</span><span class="s1">&#39;smiley&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
@@ -480,7 +480,7 @@ function below so that it points to your smiley folder.</p>
 </div>
 <p>You&#8217;ll notice that in addition to the smiley helper, we are also using
 the <a class="reference internal" href="../libraries/table.html"><em>Table Class</em></a>:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="o">&lt;?</span><span class="nx">php</span>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
 
 <span class="k">class</span> <span class="nc">Smileys</span> <span class="k">extends</span> <span class="nx">CI_Controller</span> <span class="p">{</span>
 
@@ -501,7 +501,7 @@ the <a class="reference internal" href="../libraries/table.html"><em>Table Class
 </div>
 <p>In your <strong>application/views/</strong> directory, create a file called <strong>smiley_view.php</strong>
 and place this code in it:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="o">&lt;</span><span class="nx">html</span><span class="o">&gt;</span>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="nx">html</span><span class="o">&gt;</span>
         <span class="o">&lt;</span><span class="nx">head</span><span class="o">&gt;</span>
                 <span class="o">&lt;</span><span class="nx">title</span><span class="o">&gt;</span><span class="nx">Smileys</span><span class="o">&lt;/</span><span class="nx">title</span><span class="o">&gt;</span>
                 <span class="o">&lt;?</span><span class="nx">php</span> <span class="k">echo</span> <span class="nx">smiley_js</span><span class="p">();</span> <span class="cp">?&gt;</span>
@@ -523,12 +523,12 @@ and place this code in it:</p>
 <p>When making changes to a view it can be inconvenient to have the field
 id in the controller. To work around this, you can give your smiley
 links a generic name that will be tied to a specific id in your view.</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$image_array</span> <span class="o">=</span> <span class="nx">get_smiley_links</span><span class="p">(</span><span class="s2">&quot;http://example.com/images/smileys/&quot;</span><span class="p">,</span> <span class="s2">&quot;comment_textarea_alias&quot;</span><span class="p">);</span>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$image_array</span> <span class="o">=</span> <span class="nx">get_smiley_links</span><span class="p">(</span><span class="s2">&quot;http://example.com/images/smileys/&quot;</span><span class="p">,</span> <span class="s2">&quot;comment_textarea_alias&quot;</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>To map the alias to the field id, pass them both into the
 <tt class="xref py py-func docutils literal"><span class="pre">smiley_js()</span></tt> function:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$image_array</span> <span class="o">=</span> <span class="nx">smiley_js</span><span class="p">(</span><span class="s2">&quot;comment_textarea_alias&quot;</span><span class="p">,</span> <span class="s2">&quot;comments&quot;</span><span class="p">);</span>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$image_array</span> <span class="o">=</span> <span class="nx">smiley_js</span><span class="p">(</span><span class="s2">&quot;comment_textarea_alias&quot;</span><span class="p">,</span> <span class="s2">&quot;comments&quot;</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
@@ -560,7 +560,7 @@ links a generic name that will be tied to a specific id in your view.</p>
 link. You must supply the URL to your smiley folder and a field id or
 field alias.</p>
 <p>Example:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$image_array</span> <span class="o">=</span> <span class="nx">get_clickable_smileys</span><span class="p">(</span><span class="s1">&#39;http://example.com/images/smileys/&#39;</span><span class="p">,</span> <span class="s1">&#39;comment&#39;</span><span class="p">);</span>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$image_array</span> <span class="o">=</span> <span class="nx">get_clickable_smileys</span><span class="p">(</span><span class="s1">&#39;http://example.com/images/smileys/&#39;</span><span class="p">,</span> <span class="s1">&#39;comment&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -593,7 +593,7 @@ when generating your smiley links, you need to pass the alias and
 corresponding form id into the function. This function is designed to be
 placed into the &lt;head&gt; area of your web page.</p>
 <p>Example:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="o">&lt;?</span><span class="nx">php</span> <span class="k">echo</span> <span class="nx">smiley_js</span><span class="p">();</span> <span class="cp">?&gt;</span>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span> <span class="k">echo</span> <span class="nx">smiley_js</span><span class="p">();</span> <span class="cp">?&gt;</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -624,7 +624,7 @@ placed into the &lt;head&gt; area of your web page.</p>
 smileys into the image equivalent. The first parameter must contain your
 string, the second must contain the URL to your smiley folder</p>
 <p>Example:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$str</span> <span class="o">=</span> <span class="s1">&#39;Here are some smileys: :-)  ;-)&#39;</span><span class="p">;</span>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$str</span> <span class="o">=</span> <span class="s1">&#39;Here are some smileys: :-)  ;-)&#39;</span><span class="p">;</span>
 <span class="nv">$str</span> <span class="o">=</span> <span class="nx">parse_smileys</span><span class="p">(</span><span class="nv">$str</span><span class="p">,</span> <span class="s1">&#39;http://example.com/images/smileys/&#39;</span><span class="p">);</span>
 <span class="k">echo</span> <span class="nv">$str</span><span class="p">;</span>
 </pre></div>
@@ -653,7 +653,7 @@ string, the second must contain the URL to your smiley folder</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2016, British Columbia Institute of Technology.
-      最終更新: Feb 24, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>
+      最終更新: Mar 21, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>
     </p>
   </div>
 

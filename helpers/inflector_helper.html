@@ -143,7 +143,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../libraries/pagination.html">ページネーションクラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/parser.html">テンプレートパーサクラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/security.html">セキュリティクラス</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../libraries/sessions.html">セッションドライバ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/sessions.html">セッションライブラリ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/table.html">HTML テーブルクラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/trackback.html">トラックバッククラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/typography.html">タイポグラフィークラス</a></li>
@@ -326,7 +326,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../libraries/pagination.html">ページネーションクラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/parser.html">テンプレートパーサクラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/security.html">セキュリティクラス</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../libraries/sessions.html">セッションドライバ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/sessions.html">セッションライブラリ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/table.html">HTML テーブルクラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/trackback.html">トラックバッククラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/typography.html">タイポグラフィークラス</a></li>
@@ -431,7 +431,7 @@ words to plural, singular, camel case, etc.</p>
 <div class="custom-index container"></div><div class="section" id="loading-this-helper">
 <h2><a class="toc-backref" href="#id2">Loading this Helper</a><a class="headerlink" href="#loading-this-helper" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>This helper is loaded using the following code:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">helper</span><span class="p">(</span><span class="s1">&#39;inflector&#39;</span><span class="p">);</span>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">helper</span><span class="p">(</span><span class="s1">&#39;inflector&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
@@ -459,7 +459,7 @@ words to plural, singular, camel case, etc.</p>
 </tbody>
 </table>
 <p>Changes a plural word to singular. Example:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="k">echo</span> <span class="nx">singular</span><span class="p">(</span><span class="s1">&#39;dogs&#39;</span><span class="p">);</span> <span class="c1">// Prints &#39;dog&#39;</span>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">echo</span> <span class="nx">singular</span><span class="p">(</span><span class="s1">&#39;dogs&#39;</span><span class="p">);</span> <span class="c1">// Prints &#39;dog&#39;</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -485,7 +485,7 @@ words to plural, singular, camel case, etc.</p>
 </tbody>
 </table>
 <p>Changes a singular word to plural. Example:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="k">echo</span> <span class="nx">plural</span><span class="p">(</span><span class="s1">&#39;dog&#39;</span><span class="p">);</span> <span class="c1">// Prints &#39;dogs&#39;</span>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">echo</span> <span class="nx">plural</span><span class="p">(</span><span class="s1">&#39;dog&#39;</span><span class="p">);</span> <span class="c1">// Prints &#39;dogs&#39;</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -512,7 +512,7 @@ words to plural, singular, camel case, etc.</p>
 </table>
 <p>Changes a string of words separated by spaces or underscores to camel
 case. Example:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="k">echo</span> <span class="nx">camelize</span><span class="p">(</span><span class="s1">&#39;my_dog_spot&#39;</span><span class="p">);</span> <span class="c1">// Prints &#39;myDogSpot&#39;</span>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">echo</span> <span class="nx">camelize</span><span class="p">(</span><span class="s1">&#39;my_dog_spot&#39;</span><span class="p">);</span> <span class="c1">// Prints &#39;myDogSpot&#39;</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -539,7 +539,7 @@ case. Example:</p>
 </table>
 <p>Takes multiple words separated by spaces and underscores them.
 Example:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="k">echo</span> <span class="nx">underscore</span><span class="p">(</span><span class="s1">&#39;my dog spot&#39;</span><span class="p">);</span> <span class="c1">// Prints &#39;my_dog_spot&#39;</span>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">echo</span> <span class="nx">underscore</span><span class="p">(</span><span class="s1">&#39;my dog spot&#39;</span><span class="p">);</span> <span class="c1">// Prints &#39;my_dog_spot&#39;</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -568,11 +568,11 @@ Example:</p>
 <p>Takes multiple words separated by underscores and adds spaces between
 them. Each word is capitalized.</p>
 <p>Example:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="k">echo</span> <span class="nx">humanize</span><span class="p">(</span><span class="s1">&#39;my_dog_spot&#39;</span><span class="p">);</span> <span class="c1">// Prints &#39;My Dog Spot&#39;</span>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">echo</span> <span class="nx">humanize</span><span class="p">(</span><span class="s1">&#39;my_dog_spot&#39;</span><span class="p">);</span> <span class="c1">// Prints &#39;My Dog Spot&#39;</span>
 </pre></div>
 </div>
 <p>To use dashes instead of underscores:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="k">echo</span> <span class="nx">humanize</span><span class="p">(</span><span class="s1">&#39;my-dog-spot&#39;</span><span class="p">,</span> <span class="s1">&#39;-&#39;</span><span class="p">);</span> <span class="c1">// Prints &#39;My Dog Spot&#39;</span>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">echo</span> <span class="nx">humanize</span><span class="p">(</span><span class="s1">&#39;my-dog-spot&#39;</span><span class="p">,</span> <span class="s1">&#39;-&#39;</span><span class="p">);</span> <span class="c1">// Prints &#39;My Dog Spot&#39;</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -598,7 +598,7 @@ them. Each word is capitalized.</p>
 </tbody>
 </table>
 <p>Checks if the given word has a plural version. Example:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="nx">is_countable</span><span class="p">(</span><span class="s1">&#39;equipment&#39;</span><span class="p">);</span> <span class="c1">// Returns FALSE</span>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nx">is_countable</span><span class="p">(</span><span class="s1">&#39;equipment&#39;</span><span class="p">);</span> <span class="c1">// Returns FALSE</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -625,7 +625,7 @@ them. Each word is capitalized.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2016, British Columbia Institute of Technology.
-      最終更新: Feb 24, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>
+      最終更新: Mar 21, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>
     </p>
   </div>
 

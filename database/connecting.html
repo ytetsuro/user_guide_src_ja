@@ -143,7 +143,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../libraries/pagination.html">ページネーションクラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/parser.html">テンプレートパーサクラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/security.html">セキュリティクラス</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../libraries/sessions.html">セッションドライバ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/sessions.html">セッションライブラリ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/table.html">HTML テーブルクラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/trackback.html">トラックバッククラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/typography.html">タイポグラフィークラス</a></li>
@@ -326,7 +326,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../libraries/pagination.html">ページネーションクラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/parser.html">テンプレートパーサクラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/security.html">セキュリティクラス</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../libraries/sessions.html">セッションドライバ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/sessions.html">セッションライブラリ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/table.html">HTML テーブルクラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/trackback.html">トラックバッククラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/typography.html">タイポグラフィークラス</a></li>
@@ -434,7 +434,7 @@
 ータベースに接続することができます。 手動でデータベースに接続するには
 、必要とするメソッド内で随時下記のコードを追加するか、 そのクラスでグ
 ローバルに使用したい場合はコンストラクタに下記のコードを追加します。</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">database</span><span class="p">();</span>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">database</span><span class="p">();</span>
 </pre></div>
 </div>
 <p>上のメソッドの第1引数に 何も指定しない場合は、設定ファイルで指定されている
@@ -458,14 +458,14 @@
 されていない接続用のデータを渡すこともできます。
 例としては:</p>
 <p>設定ファイルで定義したグループを選択するには次のようにします:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">database</span><span class="p">(</span><span class="s1">&#39;group_name&#39;</span><span class="p">);</span>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">database</span><span class="p">(</span><span class="s1">&#39;group_name&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>ここでの group_name が設定ファイルで定義した接続グループの名前に
 なります。</p>
 <p>手動で任意のデータベースに接続するには、次のように配列でデータを渡しま
 す:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$config</span><span class="p">[</span><span class="s1">&#39;hostname&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;localhost&#39;</span><span class="p">;</span>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$config</span><span class="p">[</span><span class="s1">&#39;hostname&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;localhost&#39;</span><span class="p">;</span>
 <span class="nv">$config</span><span class="p">[</span><span class="s1">&#39;username&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;myusername&#39;</span><span class="p">;</span>
 <span class="nv">$config</span><span class="p">[</span><span class="s1">&#39;password&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;mypassword&#39;</span><span class="p">;</span>
 <span class="nv">$config</span><span class="p">[</span><span class="s1">&#39;database&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;mydatabase&#39;</span><span class="p">;</span>
@@ -493,13 +493,13 @@ $config[&#8216;dsn&#8217;] 設定をお使いください。</p>
 </div>
 <p>あるいは、データベースの接続データをデータソースネーム(DSN)を使って渡
 すこともできます。DSN は次のような形になっている必要があります:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$dsn</span> <span class="o">=</span> <span class="s1">&#39;dbdriver://username:password@hostname/database&#39;</span><span class="p">;</span>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$dsn</span> <span class="o">=</span> <span class="s1">&#39;dbdriver://username:password@hostname/database&#39;</span><span class="p">;</span>
 <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">database</span><span class="p">(</span><span class="nv">$dsn</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>データソースネーム(DSN)で設定ファイルのデフォルト値を上書きする場合に
 は、接続データをクエリで追加します。</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$dsn</span> <span class="o">=</span> <span class="s1">&#39;dbdriver://username:password@hostname/database?char_set=utf8&amp;dbcollat=utf8_general_ci&amp;cache_on=true&amp;cachedir=/path/to/cache&#39;</span><span class="p">;</span>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$dsn</span> <span class="o">=</span> <span class="s1">&#39;dbdriver://username:password@hostname/database?char_set=utf8&amp;dbcollat=utf8_general_ci&amp;cache_on=true&amp;cachedir=/path/to/cache&#39;</span><span class="p">;</span>
 <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">database</span><span class="p">(</span><span class="nv">$dsn</span><span class="p">);</span>
 </pre></div>
 </div>
@@ -509,7 +509,7 @@ $config[&#8216;dsn&#8217;] 設定をお使いください。</p>
 <h2>複数のデータベースへの接続<a class="headerlink" href="#id6" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>同時に 2つ以上のデータベースに接続する必要がある場合は次のようにするこ
 とで可能になります:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$DB1</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">database</span><span class="p">(</span><span class="s1">&#39;group_one&#39;</span><span class="p">,</span> <span class="k">TRUE</span><span class="p">);</span>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$DB1</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">database</span><span class="p">(</span><span class="s1">&#39;group_one&#39;</span><span class="p">,</span> <span class="k">TRUE</span><span class="p">);</span>
 <span class="nv">$DB2</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">database</span><span class="p">(</span><span class="s1">&#39;group_two&#39;</span><span class="p">,</span> <span class="k">TRUE</span><span class="p">);</span>
 </pre></div>
 </div>
@@ -553,7 +553,7 @@ $config[&#8216;dsn&#8217;] 設定をお使いください。</p>
 送信する前に reconnect() メソッドを使ってサーバーの応答確認(pinging)す
 るのを検討すべきです。このメソッドは、適切に接続状態を維持したり、再接
 続したりできます。</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">reconnect</span><span class="p">();</span>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">reconnect</span><span class="p">();</span>
 </pre></div>
 </div>
 </div>
@@ -561,7 +561,7 @@ $config[&#8216;dsn&#8217;] 設定をお使いください。</p>
 <h2>手動切断<a class="headerlink" href="#id8" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>CodeIgniter はデータベースの切断を賢く行なってくれますが、
 明示的に接続を閉じることもできます。</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">close</span><span class="p">();</span>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">close</span><span class="p">();</span>
 </pre></div>
 </div>
 </div>
@@ -586,7 +586,7 @@ $config[&#8216;dsn&#8217;] 設定をお使いください。</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2016, British Columbia Institute of Technology.
-      最終更新: Feb 24, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>
+      最終更新: Mar 21, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>
     </p>
   </div>
 

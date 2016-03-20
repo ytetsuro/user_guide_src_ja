@@ -143,7 +143,7 @@
 <li class="toctree-l2"><a class="reference internal" href="pagination.html">ページネーションクラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="parser.html">テンプレートパーサクラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="security.html">セキュリティクラス</a></li>
-<li class="toctree-l2"><a class="reference internal" href="sessions.html">セッションドライバ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sessions.html">セッションライブラリ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="table.html">HTML テーブルクラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="trackback.html">トラックバッククラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="typography.html">タイポグラフィークラス</a></li>
@@ -326,7 +326,7 @@
 <li class="toctree-l2"><a class="reference internal" href="pagination.html">ページネーションクラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="parser.html">テンプレートパーサクラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="security.html">セキュリティクラス</a></li>
-<li class="toctree-l2"><a class="reference internal" href="sessions.html">セッションドライバ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sessions.html">セッションライブラリ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="table.html">HTML テーブルクラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="trackback.html">トラックバッククラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="typography.html">タイポグラフィークラス</a></li>
@@ -466,7 +466,7 @@ name for the migration. For example:</p>
 <p>This will be the first migration for a new site which has a blog. All
 migrations go in the <strong>application/migrations/</strong> directory and have names such
 as <em>20121031100537_add_blog.php</em>.</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="o">&lt;?</span><span class="nx">php</span>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
 
 <span class="nb">defined</span><span class="p">(</span><span class="s1">&#39;BASEPATH&#39;</span><span class="p">)</span> <span class="k">OR</span> <span class="k">exit</span><span class="p">(</span><span class="s1">&#39;No direct script access allowed&#39;</span><span class="p">);</span>
 
@@ -507,7 +507,7 @@ as <em>20121031100537_add_blog.php</em>.</p>
 <h2><a class="toc-backref" href="#id9">使用例</a><a class="headerlink" href="#id4" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>In this example some simple code is placed in <strong>application/controllers/Migrate.php</strong>
 to update the schema.:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="o">&lt;?</span><span class="nx">php</span>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
 
 <span class="k">class</span> <span class="nc">Migrate</span> <span class="k">extends</span> <span class="nx">CI_Controller</span>
 <span class="p">{</span>
@@ -674,7 +674,7 @@ newest migration found in the filesystem.</p>
 </table>
 <p>Version can be used to roll back changes or step forwards programmatically to
 specific versions. It works just like <tt class="docutils literal"><span class="pre">current()</span></tt> but ignores <tt class="docutils literal"><span class="pre">$config['migration_version']</span></tt>.</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">migration</span><span class="o">-&gt;</span><span class="na">version</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">migration</span><span class="o">-&gt;</span><span class="na">version</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -703,7 +703,7 @@ specific versions. It works just like <tt class="docutils literal"><span class="
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2016, British Columbia Institute of Technology.
-      最終更新: Feb 24, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>
+      最終更新: Mar 21, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>
     </p>
   </div>
 

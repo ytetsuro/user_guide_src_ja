@@ -140,7 +140,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../libraries/pagination.html">ページネーションクラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/parser.html">テンプレートパーサクラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/security.html">セキュリティクラス</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../libraries/sessions.html">セッションドライバ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/sessions.html">セッションライブラリ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/table.html">HTML テーブルクラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/trackback.html">トラックバッククラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/typography.html">タイポグラフィークラス</a></li>
@@ -323,7 +323,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../libraries/pagination.html">ページネーションクラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/parser.html">テンプレートパーサクラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/security.html">セキュリティクラス</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../libraries/sessions.html">セッションドライバ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/sessions.html">セッションライブラリ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/table.html">HTML テーブルクラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/trackback.html">トラックバッククラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/typography.html">タイポグラフィークラス</a></li>
@@ -1336,11 +1336,11 @@ and applies the configured <em>dbprefix</em> to it.</p>
 <p>Some logic is necessary in order to deal with
 column names that include the path.</p>
 <p>Consider a query like this:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="nx">SELECT</span> <span class="o">*</span> <span class="nx">FROM</span> <span class="nx">hostname</span><span class="o">.</span><span class="nx">database</span><span class="o">.</span><span class="nx">table</span><span class="o">.</span><span class="nx">column</span> <span class="k">AS</span> <span class="nx">c</span> <span class="nx">FROM</span> <span class="nx">hostname</span><span class="o">.</span><span class="nx">database</span><span class="o">.</span><span class="nx">table</span>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nx">SELECT</span> <span class="o">*</span> <span class="nx">FROM</span> <span class="nx">hostname</span><span class="o">.</span><span class="nx">database</span><span class="o">.</span><span class="nx">table</span><span class="o">.</span><span class="nx">column</span> <span class="k">AS</span> <span class="nx">c</span> <span class="nx">FROM</span> <span class="nx">hostname</span><span class="o">.</span><span class="nx">database</span><span class="o">.</span><span class="nx">table</span>
 </pre></div>
 </div>
 <p>Or a query with aliasing:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="nx">SELECT</span> <span class="nx">m</span><span class="o">.</span><span class="nx">member_id</span><span class="p">,</span> <span class="nx">m</span><span class="o">.</span><span class="nx">member_name</span> <span class="nx">FROM</span> <span class="nx">members</span> <span class="k">AS</span> <span class="nx">m</span>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nx">SELECT</span> <span class="nx">m</span><span class="o">.</span><span class="nx">member_id</span><span class="p">,</span> <span class="nx">m</span><span class="o">.</span><span class="nx">member_name</span> <span class="nx">FROM</span> <span class="nx">members</span> <span class="k">AS</span> <span class="nx">m</span>
 </pre></div>
 </div>
 <p>Since the column name can include up to four segments
@@ -1365,7 +1365,7 @@ position, and escape only the correct identifiers.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2016, British Columbia Institute of Technology.
-      最終更新: Feb 24, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>
+      最終更新: Mar 21, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>
     </p>
   </div>
 

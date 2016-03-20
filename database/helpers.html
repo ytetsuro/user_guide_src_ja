@@ -143,7 +143,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../libraries/pagination.html">ページネーションクラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/parser.html">テンプレートパーサクラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/security.html">セキュリティクラス</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../libraries/sessions.html">セッションドライバ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/sessions.html">セッションライブラリ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/table.html">HTML テーブルクラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/trackback.html">トラックバッククラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/typography.html">タイポグラフィークラス</a></li>
@@ -326,7 +326,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../libraries/pagination.html">ページネーションクラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/parser.html">テンプレートパーサクラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/security.html">セキュリティクラス</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../libraries/sessions.html">セッションドライバ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/sessions.html">セッションライブラリ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/table.html">HTML テーブルクラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/trackback.html">トラックバッククラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/typography.html">タイポグラフィークラス</a></li>
@@ -443,7 +443,7 @@
 <p><strong>$this-&gt;db-&gt;last_query()</strong></p>
 <p>最後に実行されたクエリを返します
 (クエリの文字列で、結果ではありません)。例:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$str</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">last_query</span><span class="p">();</span>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$str</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">last_query</span><span class="p">();</span>
 
 <span class="c1">// 次のように生成されます:  SELECT * FROM sometable....</span>
 </pre></div>
@@ -459,7 +459,7 @@
 <p><strong>$this-&gt;db-&gt;count_all()</strong></p>
 <p>特定のテーブルの行数を数えられます。テーブル名を第1引数で渡します。
 例:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="k">echo</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">count_all</span><span class="p">(</span><span class="s1">&#39;my_table&#39;</span><span class="p">);</span>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">echo</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">count_all</span><span class="p">(</span><span class="s1">&#39;my_table&#39;</span><span class="p">);</span>
 
 <span class="c1">// 25のような整数が返ります</span>
 </pre></div>
@@ -467,12 +467,12 @@
 <p><strong>$this-&gt;db-&gt;platform()</strong></p>
 <p>実行しているデータベースプラットフォーム(MySQL、MS SQL、Postgres
 など…)を出力します:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="k">echo</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">platform</span><span class="p">();</span>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">echo</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">platform</span><span class="p">();</span>
 </pre></div>
 </div>
 <p><strong>$this-&gt;db-&gt;version()</strong></p>
 <p>実行しているデータベースのバージョンを出力します:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="k">echo</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">version</span><span class="p">();</span>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">echo</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">version</span><span class="p">();</span>
 </pre></div>
 </div>
 </div>
@@ -481,14 +481,14 @@
 <p><strong>$this-&gt;db-&gt;insert_string()</strong></p>
 <p>このメソッドは、データベースにデータを新規追加するのを単純化します。
 これは、SQL の INSERT ステートメントを正しくフォーマットして返します。例:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$data</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span><span class="s1">&#39;name&#39;</span> <span class="o">=&gt;</span> <span class="nv">$name</span><span class="p">,</span> <span class="s1">&#39;email&#39;</span> <span class="o">=&gt;</span> <span class="nv">$email</span><span class="p">,</span> <span class="s1">&#39;url&#39;</span> <span class="o">=&gt;</span> <span class="nv">$url</span><span class="p">);</span>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$data</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span><span class="s1">&#39;name&#39;</span> <span class="o">=&gt;</span> <span class="nv">$name</span><span class="p">,</span> <span class="s1">&#39;email&#39;</span> <span class="o">=&gt;</span> <span class="nv">$email</span><span class="p">,</span> <span class="s1">&#39;url&#39;</span> <span class="o">=&gt;</span> <span class="nv">$url</span><span class="p">);</span>
 
 <span class="nv">$str</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">insert_string</span><span class="p">(</span><span class="s1">&#39;table_name&#39;</span><span class="p">,</span> <span class="nv">$data</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>第1引数はテーブル名で、第2引数は挿入するデータの連想配列です。上の例で
 は、次のような文を生成します:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="nx">INSERT</span> <span class="nx">INTO</span> <span class="nx">table_name</span> <span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">email</span><span class="p">,</span> <span class="nx">url</span><span class="p">)</span> <span class="nx">VALUES</span> <span class="p">(</span><span class="s1">&#39;Rick&#39;</span><span class="p">,</span> <span class="s1">&#39;rick@example.com&#39;</span><span class="p">,</span> <span class="s1">&#39;example.com&#39;</span><span class="p">)</span>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nx">INSERT</span> <span class="nx">INTO</span> <span class="nx">table_name</span> <span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">email</span><span class="p">,</span> <span class="nx">url</span><span class="p">)</span> <span class="nx">VALUES</span> <span class="p">(</span><span class="s1">&#39;Rick&#39;</span><span class="p">,</span> <span class="s1">&#39;rick@example.com&#39;</span><span class="p">,</span> <span class="s1">&#39;example.com&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 <div class="admonition note">
@@ -498,7 +498,7 @@
 <p><strong>$this-&gt;db-&gt;update_string()</strong></p>
 <p>このメソッドは、データベースに更新書き込みをするのを単純化します。
 これは、SQL の UPDATE ステートメントの文字列を正しくフォーマットして返します。例:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$data</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span><span class="s1">&#39;name&#39;</span> <span class="o">=&gt;</span> <span class="nv">$name</span><span class="p">,</span> <span class="s1">&#39;email&#39;</span> <span class="o">=&gt;</span> <span class="nv">$email</span><span class="p">,</span> <span class="s1">&#39;url&#39;</span> <span class="o">=&gt;</span> <span class="nv">$url</span><span class="p">);</span>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$data</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span><span class="s1">&#39;name&#39;</span> <span class="o">=&gt;</span> <span class="nv">$name</span><span class="p">,</span> <span class="s1">&#39;email&#39;</span> <span class="o">=&gt;</span> <span class="nv">$email</span><span class="p">,</span> <span class="s1">&#39;url&#39;</span> <span class="o">=&gt;</span> <span class="nv">$url</span><span class="p">);</span>
 
 <span class="nv">$where</span> <span class="o">=</span> <span class="s2">&quot;author_id = 1 AND status = &#39;active&#39;&quot;</span><span class="p">;</span>
 
@@ -508,7 +508,7 @@
 <p>第1引数はテーブル名で、第2引数は更新するデータの連想配列で、
 第3引数は &#8220;WHERE&#8221; 句になります。上の例は次のような文を生成
 します:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="nx">UPDATE</span> <span class="nx">table_name</span> <span class="nx">SET</span> <span class="nx">name</span> <span class="o">=</span> <span class="s1">&#39;Rick&#39;</span><span class="p">,</span> <span class="nx">email</span> <span class="o">=</span> <span class="s1">&#39;rick@example.com&#39;</span><span class="p">,</span> <span class="nx">url</span> <span class="o">=</span> <span class="s1">&#39;example.com&#39;</span> <span class="nx">WHERE</span> <span class="nx">author_id</span> <span class="o">=</span> <span class="mi">1</span> <span class="k">AND</span> <span class="nx">status</span> <span class="o">=</span> <span class="s1">&#39;active&#39;</span>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nx">UPDATE</span> <span class="nx">table_name</span> <span class="nx">SET</span> <span class="nx">name</span> <span class="o">=</span> <span class="s1">&#39;Rick&#39;</span><span class="p">,</span> <span class="nx">email</span> <span class="o">=</span> <span class="s1">&#39;rick@example.com&#39;</span><span class="p">,</span> <span class="nx">url</span> <span class="o">=</span> <span class="s1">&#39;example.com&#39;</span> <span class="nx">WHERE</span> <span class="nx">author_id</span> <span class="o">=</span> <span class="mi">1</span> <span class="k">AND</span> <span class="nx">status</span> <span class="o">=</span> <span class="s1">&#39;active&#39;</span>
 </pre></div>
 </div>
 <div class="admonition note">
@@ -537,7 +537,7 @@
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2016, British Columbia Institute of Technology.
-      最終更新: Feb 24, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>
+      最終更新: Mar 21, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>
     </p>
   </div>
 

@@ -143,7 +143,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../libraries/pagination.html">ページネーションクラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/parser.html">テンプレートパーサクラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/security.html">セキュリティクラス</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../libraries/sessions.html">セッションドライバ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/sessions.html">セッションライブラリ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/table.html">HTML テーブルクラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/trackback.html">トラックバッククラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/typography.html">タイポグラフィークラス</a></li>
@@ -326,7 +326,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../libraries/pagination.html">ページネーションクラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/parser.html">テンプレートパーサクラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/security.html">セキュリティクラス</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../libraries/sessions.html">セッションドライバ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/sessions.html">セッションライブラリ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/table.html">HTML テーブルクラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/trackback.html">トラックバッククラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/typography.html">タイポグラフィークラス</a></li>
@@ -447,11 +447,11 @@ used to be to post to the default controller, but it will now just leave
 an empty action=&#8221;&#8221; meaning the form will submit to the current URL. If
 submitting to the default controller was the expected behavior it will
 need to be changed from:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="k">echo</span> <span class="nx">form_open</span><span class="p">();</span> <span class="c1">//&lt;form action=&quot;&quot; method=&quot;post&quot; accept-charset=&quot;utf-8&quot;&gt;</span>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">echo</span> <span class="nx">form_open</span><span class="p">();</span> <span class="c1">//&lt;form action=&quot;&quot; method=&quot;post&quot; accept-charset=&quot;utf-8&quot;&gt;</span>
 </pre></div>
 </div>
 <p>to use either a / or base_url():</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="k">echo</span> <span class="nx">form_open</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">);</span> <span class="c1">//&lt;form action=&quot;http://example.com/index.php/&quot; method=&quot;post&quot; accept-charset=&quot;utf-8&quot;&gt;</span>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">echo</span> <span class="nx">form_open</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">);</span> <span class="c1">//&lt;form action=&quot;http://example.com/index.php/&quot; method=&quot;post&quot; accept-charset=&quot;utf-8&quot;&gt;</span>
 <span class="k">echo</span> <span class="nx">form_open</span><span class="p">(</span><span class="nx">base_url</span><span class="p">());</span> <span class="c1">//&lt;form action=&quot;http://example.com/&quot; method=&quot;post&quot; accept-charset=&quot;utf-8&quot;&gt;</span>
 </pre></div>
 </div>
@@ -477,7 +477,7 @@ need to be changed from:</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2016, British Columbia Institute of Technology.
-      最終更新: Feb 24, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>
+      最終更新: Mar 21, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>
     </p>
   </div>
 

@@ -143,7 +143,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../libraries/pagination.html">ページネーションクラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/parser.html">テンプレートパーサクラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/security.html">セキュリティクラス</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../libraries/sessions.html">セッションドライバ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/sessions.html">セッションライブラリ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/table.html">HTML テーブルクラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/trackback.html">トラックバッククラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/typography.html">タイポグラフィークラス</a></li>
@@ -326,7 +326,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../libraries/pagination.html">ページネーションクラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/parser.html">テンプレートパーサクラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/security.html">セキュリティクラス</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../libraries/sessions.html">セッションドライバ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/sessions.html">セッションライブラリ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/table.html">HTML テーブルクラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/trackback.html">トラックバッククラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/typography.html">タイポグラフィークラス</a></li>
@@ -466,7 +466,7 @@ software keep track of your scripts and the health of your application.</p>
 </table>
 <p>This function will display the error message supplied to it using
 the error template appropriate to your execution:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="nx">application</span><span class="o">/</span><span class="nx">views</span><span class="o">/</span><span class="nx">errors</span><span class="o">/</span><span class="nx">html</span><span class="o">/</span><span class="nx">error_general</span><span class="o">.</span><span class="nx">php</span>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nx">application</span><span class="o">/</span><span class="nx">views</span><span class="o">/</span><span class="nx">errors</span><span class="o">/</span><span class="nx">html</span><span class="o">/</span><span class="nx">error_general</span><span class="o">.</span><span class="nx">php</span>
 </pre></div>
 </div>
 <p>or:</p>
@@ -502,7 +502,7 @@ You can check in <em>application/config/constants.php</em> for more detail.</p>
 </table>
 <p>This function will display the 404 error message supplied to it
 using the error template appropriate to your execution:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="nx">application</span><span class="o">/</span><span class="nx">views</span><span class="o">/</span><span class="nx">errors</span><span class="o">/</span><span class="nx">html</span><span class="o">/</span><span class="nx">error_404</span><span class="o">.</span><span class="nx">php</span>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nx">application</span><span class="o">/</span><span class="nx">views</span><span class="o">/</span><span class="nx">errors</span><span class="o">/</span><span class="nx">html</span><span class="o">/</span><span class="nx">error_404</span><span class="o">.</span><span class="nx">php</span>
 </pre></div>
 </div>
 <p>or:</p>
@@ -541,7 +541,7 @@ supply one of three &#8220;levels&#8221; in the first parameter, indicating what
 type of message it is (debug, error, info), with the message itself
 in the second parameter.</p>
 <p>Example:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="k">if</span> <span class="p">(</span><span class="nv">$some_var</span> <span class="o">==</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="nv">$some_var</span> <span class="o">==</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
 <span class="p">{</span>
         <span class="nx">log_message</span><span class="p">(</span><span class="s1">&#39;error&#39;</span><span class="p">,</span> <span class="s1">&#39;Some variable did not contain a value.&#39;</span><span class="p">);</span>
 <span class="p">}</span>
@@ -595,7 +595,7 @@ two types. If you set it to zero logging will be disabled.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2016, British Columbia Institute of Technology.
-      最終更新: Feb 24, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>
+      最終更新: Mar 21, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>
     </p>
   </div>
 

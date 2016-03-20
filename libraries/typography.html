@@ -143,7 +143,7 @@
 <li class="toctree-l2"><a class="reference internal" href="pagination.html">ページネーションクラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="parser.html">テンプレートパーサクラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="security.html">セキュリティクラス</a></li>
-<li class="toctree-l2"><a class="reference internal" href="sessions.html">セッションドライバ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sessions.html">セッションライブラリ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="table.html">HTML テーブルクラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="trackback.html">トラックバッククラス</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="">タイポグラフィークラス</a></li>
@@ -326,7 +326,7 @@
 <li class="toctree-l2"><a class="reference internal" href="pagination.html">ページネーションクラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="parser.html">テンプレートパーサクラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="security.html">セキュリティクラス</a></li>
-<li class="toctree-l2"><a class="reference internal" href="sessions.html">セッションドライバ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sessions.html">セッションライブラリ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="table.html">HTML テーブルクラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="trackback.html">トラックバッククラス</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="">タイポグラフィークラス</a></li>
@@ -436,11 +436,11 @@
 <h3><a class="toc-backref" href="#id6">クラスの初期化</a><a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p>Like most other classes in CodeIgniter, the Typography class is
 initialized in your controller using the <tt class="docutils literal"><span class="pre">$this-&gt;load-&gt;library()</span></tt> method:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">library</span><span class="p">(</span><span class="s1">&#39;typography&#39;</span><span class="p">);</span>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">library</span><span class="p">(</span><span class="s1">&#39;typography&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>Once loaded, the Typography library object will be available using:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">typography</span>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">typography</span>
 </pre></div>
 </div>
 </div>
@@ -457,7 +457,7 @@ initialized in your controller using the <tt class="docutils literal"><span clas
 it can often be desirable to protect single and double quotes within curly braces.
 To enable this, set the <tt class="docutils literal"><span class="pre">protect_braced_quotes</span></tt> class property to TRUE.</p>
 <p>Usage example:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">library</span><span class="p">(</span><span class="s1">&#39;typography&#39;</span><span class="p">);</span>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">library</span><span class="p">(</span><span class="s1">&#39;typography&#39;</span><span class="p">);</span>
 <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">typography</span><span class="o">-&gt;</span><span class="na">protect_braced_quotes</span> <span class="o">=</span> <span class="k">TRUE</span><span class="p">;</span>
 </pre></div>
 </div>
@@ -494,7 +494,7 @@ To enable this, set the <tt class="docutils literal"><span class="pre">protect_b
 </ul>
 </div></blockquote>
 <p>Usage example:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$string</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">typography</span><span class="o">-&gt;</span><span class="na">format_characters</span><span class="p">(</span><span class="nv">$string</span><span class="p">);</span>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$string</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">typography</span><span class="o">-&gt;</span><span class="na">format_characters</span><span class="p">(</span><span class="nv">$string</span><span class="p">);</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -522,7 +522,7 @@ To enable this, set the <tt class="docutils literal"><span class="pre">protect_b
 <p>Converts newlines to &lt;br /&gt; tags unless they appear within &lt;pre&gt; tags.
 This method is identical to the native PHP <tt class="xref php php-func docutils literal"><span class="pre">nl2br()</span></tt> function, except that it ignores &lt;pre&gt; tags.</p>
 <p>Usage example:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$string</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">typography</span><span class="o">-&gt;</span><span class="na">nl2br_except_pre</span><span class="p">(</span><span class="nv">$string</span><span class="p">);</span>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$string</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">typography</span><span class="o">-&gt;</span><span class="na">nl2br_except_pre</span><span class="p">(</span><span class="nv">$string</span><span class="p">);</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -551,7 +551,7 @@ This method is identical to the native PHP <tt class="xref php php-func docutils
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2016, British Columbia Institute of Technology.
-      最終更新: Feb 24, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>
+      最終更新: Mar 21, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>
     </p>
   </div>
 

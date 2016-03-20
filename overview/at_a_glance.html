@@ -143,7 +143,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../libraries/pagination.html">ページネーションクラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/parser.html">テンプレートパーサクラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/security.html">セキュリティクラス</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../libraries/sessions.html">セッションドライバ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/sessions.html">セッションライブラリ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/table.html">HTML テーブルクラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/trackback.html">トラックバッククラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/typography.html">タイポグラフィークラス</a></li>
@@ -326,7 +326,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../libraries/pagination.html">ページネーションクラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/parser.html">テンプレートパーサクラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/security.html">セキュリティクラス</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../libraries/sessions.html">セッションドライバ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/sessions.html">セッションライブラリ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/table.html">HTML テーブルクラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/trackback.html">トラックバッククラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/typography.html">タイポグラフィークラス</a></li>
@@ -463,7 +463,7 @@ MVC の解説ページで詳しく述べます。</p>
 CodeIgniter は、URLに動的システムの代名詞ともいえる一般的な
 「クエリ文字列」アプローチを使用せず、セグメントベースの
 アプローチを採用しています:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="nx">example</span><span class="o">.</span><span class="nx">com</span><span class="o">/</span><span class="nx">news</span><span class="o">/</span><span class="nx">article</span><span class="o">/</span><span class="mi">345</span>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nx">example</span><span class="o">.</span><span class="nx">com</span><span class="o">/</span><span class="nx">news</span><span class="o">/</span><span class="nx">article</span><span class="o">/</span><span class="mi">345</span>
 </pre></div>
 </div>
 <p>注: 初期設定では URL に index.php ファイルが入りますが、簡単な
@@ -488,7 +488,7 @@ CodeIgniter は、URLに動的システムの代名詞ともいえる一般的�
 は単純にパフォーマンスでかないませんし、覚えなければならないテンプレートエンジ
 ンの構文は基本的な PHP より少し簡単な程度です。例えば、こんな PHP のコードを思い
 浮かべてみてください:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="o">&lt;</span><span class="nx">ul</span><span class="o">&gt;</span>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="nx">ul</span><span class="o">&gt;</span>
 <span class="o">&lt;?</span><span class="nx">php</span> <span class="k">foreach</span> <span class="p">(</span><span class="nv">$addressbook</span> <span class="k">as</span> <span class="nv">$name</span><span class="p">)</span><span class="o">:</span><span class="cp">?&gt;</span>
         <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span><span class="cp">&lt;?</span><span class="o">=</span><span class="nv">$name</span><span class="cp">?&gt;</span><span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
 <span class="cp">&lt;?php</span> <span class="k">endforeach</span><span class="p">;</span> <span class="cp">?&gt;</span>
@@ -496,7 +496,7 @@ CodeIgniter は、URLに動的システムの代名詞ともいえる一般的�
 </pre></div>
 </div>
 <p>これに対して、テンプレートエンジンで使われる擬似コードはこんな感じです:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="o">&lt;</span><span class="nx">ul</span><span class="o">&gt;</span>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="nx">ul</span><span class="o">&gt;</span>
 <span class="p">{</span><span class="k">foreach</span> <span class="nx">from</span><span class="o">=</span><span class="nv">$addressbook</span> <span class="nx">item</span><span class="o">=</span><span class="s2">&quot;name&quot;</span><span class="p">}</span>
         <span class="o">&lt;</span><span class="nx">li</span><span class="o">&gt;</span><span class="p">{</span><span class="nv">$name</span><span class="p">}</span><span class="o">&lt;/</span><span class="nx">li</span><span class="o">&gt;</span>
 <span class="p">{</span><span class="o">/</span><span class="k">foreach</span><span class="p">}</span>
@@ -541,7 +541,7 @@ CodeIgniter は、URLに動的システムの代名詞ともいえる一般的�
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2016, British Columbia Institute of Technology.
-      最終更新: Feb 24, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>
+      最終更新: Mar 21, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>
     </p>
   </div>
 

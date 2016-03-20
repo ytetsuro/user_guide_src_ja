@@ -143,7 +143,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../libraries/pagination.html">ページネーションクラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/parser.html">テンプレートパーサクラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/security.html">セキュリティクラス</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../libraries/sessions.html">セッションドライバ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/sessions.html">セッションライブラリ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/table.html">HTML テーブルクラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/trackback.html">トラックバッククラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/typography.html">タイポグラフィークラス</a></li>
@@ -326,7 +326,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../libraries/pagination.html">ページネーションクラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/parser.html">テンプレートパーサクラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/security.html">セキュリティクラス</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../libraries/sessions.html">セッションドライバ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/sessions.html">セッションライブラリ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/table.html">HTML テーブルクラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/trackback.html">トラックバッククラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/typography.html">タイポグラフィークラス</a></li>
@@ -530,7 +530,7 @@ URIの最初の2セグメントと同じ名前のサブフォルダ
 <h2>$this-&gt;db-&gt;cache_on() / $this-&gt;db-&gt;cache_off()<a class="headerlink" href="#this-db-cache-on-this-db-cache-off" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>手動でキャッシュ機能を有効化/無効化します。特定のクエリを
 キャッシュさせないようにするときに役立ちます。例:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="c1">// キャッシュ機能を ON</span>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="c1">// キャッシュ機能を ON</span>
 <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">cache_on</span><span class="p">();</span>
 <span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">query</span><span class="p">(</span><span class="s2">&quot;SELECT * FROM mytable&quot;</span><span class="p">);</span>
 
@@ -553,7 +553,7 @@ URIの最初の2セグメントと同じ名前のサブフォルダ
 キャッシュシステムは、その URI に関連するすべてのキャッシュファイルを blog+comments
 という名前のフォルダに保存します。それらの特定のキャッシュファイルを
 削除するには次のようなコードを使います:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">cache_delete</span><span class="p">(</span><span class="s1">&#39;blog&#39;</span><span class="p">,</span> <span class="s1">&#39;comments&#39;</span><span class="p">);</span>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">cache_delete</span><span class="p">(</span><span class="s1">&#39;blog&#39;</span><span class="p">,</span> <span class="s1">&#39;comments&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>パラメータを指定していないときは、現在の URI をもとにどのキャッシュ
@@ -562,7 +562,7 @@ URIの最初の2セグメントと同じ名前のサブフォルダ
 <div class="section" id="this-db-cache-delete-all">
 <h2>$this-&gt;db-&gt;cache_delete_all()<a class="headerlink" href="#this-db-cache-delete-all" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>すべてのキャッシュファイルを削除します。例:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">cache_delete_all</span><span class="p">();</span>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">cache_delete_all</span><span class="p">();</span>
 </pre></div>
 </div>
 </div>
@@ -587,7 +587,7 @@ URIの最初の2セグメントと同じ名前のサブフォルダ
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2016, British Columbia Institute of Technology.
-      最終更新: Feb 24, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>
+      最終更新: Mar 21, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>
     </p>
   </div>
 

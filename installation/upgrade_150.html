@@ -143,7 +143,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../libraries/pagination.html">ページネーションクラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/parser.html">テンプレートパーサクラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/security.html">セキュリティクラス</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../libraries/sessions.html">セッションドライバ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/sessions.html">セッションライブラリ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/table.html">HTML テーブルクラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/trackback.html">トラックバッククラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/typography.html">タイポグラフィークラス</a></li>
@@ -326,7 +326,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../libraries/pagination.html">ページネーションクラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/parser.html">テンプレートパーサクラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/security.html">セキュリティクラス</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../libraries/sessions.html">セッションドライバ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/sessions.html">セッションライブラリ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/table.html">HTML テーブルクラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/trackback.html">トラックバッククラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/typography.html">タイポグラフィークラス</a></li>
@@ -452,7 +452,7 @@ make copies of them first.</p>
 <div class="section" id="step-2-update-your-database-php-file">
 <h2>Step 2: Update your database.php file<a class="headerlink" href="#step-2-update-your-database-php-file" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>Open your application/config/database.php file and add these new items:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$db</span><span class="p">[</span><span class="s1">&#39;default&#39;</span><span class="p">][</span><span class="s1">&#39;cache_on&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="k">FALSE</span><span class="p">;</span>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$db</span><span class="p">[</span><span class="s1">&#39;default&#39;</span><span class="p">][</span><span class="s1">&#39;cache_on&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="k">FALSE</span><span class="p">;</span>
 <span class="nv">$db</span><span class="p">[</span><span class="s1">&#39;default&#39;</span><span class="p">][</span><span class="s1">&#39;cachedir&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="p">;</span>
 </pre></div>
 </div>
@@ -460,7 +460,7 @@ make copies of them first.</p>
 <div class="section" id="step-3-update-your-config-php-file">
 <h2>Step 3: Update your config.php file<a class="headerlink" href="#step-3-update-your-config-php-file" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>Open your application/config/config.php file and ADD these new items:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="cm">/*</span>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="cm">/*</span>
 <span class="cm">|--------------------------------------------------------------------------</span>
 <span class="cm">| Class Extension Prefix</span>
 <span class="cm">|--------------------------------------------------------------------------</span>
@@ -488,7 +488,7 @@ make copies of them first.</p>
 </pre></div>
 </div>
 <p>In that same file REMOVE this item:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="cm">/*</span>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="cm">/*</span>
 <span class="cm">|--------------------------------------------------------------------------</span>
 <span class="cm">| Enable/Disable Error Logging</span>
 <span class="cm">|--------------------------------------------------------------------------</span>
@@ -536,7 +536,7 @@ version.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2016, British Columbia Institute of Technology.
-      最終更新: Feb 24, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>
+      最終更新: Mar 21, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>
     </p>
   </div>
 

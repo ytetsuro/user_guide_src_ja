@@ -143,7 +143,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../libraries/pagination.html">ページネーションクラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/parser.html">テンプレートパーサクラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/security.html">セキュリティクラス</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../libraries/sessions.html">セッションドライバ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/sessions.html">セッションライブラリ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/table.html">HTML テーブルクラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/trackback.html">トラックバッククラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/typography.html">タイポグラフィークラス</a></li>
@@ -326,7 +326,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../libraries/pagination.html">ページネーションクラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/parser.html">テンプレートパーサクラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/security.html">セキュリティクラス</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../libraries/sessions.html">セッションドライバ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/sessions.html">セッションライブラリ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/table.html">HTML テーブルクラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/trackback.html">トラックバッククラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/typography.html">タイポグラフィークラス</a></li>
@@ -424,7 +424,7 @@
 設計されています。動的システムの代名詞といえる一般的な&#8221;クエリ文字列&#8221;アプローチ
 を採用する代わりに、CodeIgniter では次のような <strong>セグメントベースアプローチ</strong>
 を採用しています:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="nx">example</span><span class="o">.</span><span class="nx">com</span><span class="o">/</span><span class="nx">news</span><span class="o">/</span><span class="nx">article</span><span class="o">/</span><span class="nx">my_article</span>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nx">example</span><span class="o">.</span><span class="nx">com</span><span class="o">/</span><span class="nx">news</span><span class="o">/</span><span class="nx">article</span><span class="o">/</span><span class="nx">my_article</span>
 </pre></div>
 </div>
 <div class="admonition note">
@@ -436,7 +436,7 @@
 <h2>URI セグメント<a class="headerlink" href="#uri" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>Model-View-Controller アプローチに従うと、URL
 の中では、セグメントは大抵次のように表現されます:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="nx">example</span><span class="o">.</span><span class="nx">com</span><span class="o">/</span><span class="nx">class</span><span class="o">/</span><span class="nx">function</span><span class="o">/</span><span class="nx">ID</span>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nx">example</span><span class="o">.</span><span class="nx">com</span><span class="o">/</span><span class="nx">class</span><span class="o">/</span><span class="nx">function</span><span class="o">/</span><span class="nx">ID</span>
 </pre></div>
 </div>
 <ol class="arabic">
@@ -460,14 +460,14 @@
 <div class="section" id="index-php">
 <h2>index.php ファイルを除去する<a class="headerlink" href="#index-php" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>初期状態では、index.php ファイルが URL の中に含まれる格好になっています:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="nx">example</span><span class="o">.</span><span class="nx">com</span><span class="o">/</span><span class="nx">index</span><span class="o">.</span><span class="nx">php</span><span class="o">/</span><span class="nx">news</span><span class="o">/</span><span class="nx">article</span><span class="o">/</span><span class="nx">my_article</span>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nx">example</span><span class="o">.</span><span class="nx">com</span><span class="o">/</span><span class="nx">index</span><span class="o">.</span><span class="nx">php</span><span class="o">/</span><span class="nx">news</span><span class="o">/</span><span class="nx">article</span><span class="o">/</span><span class="nx">my_article</span>
 </pre></div>
 </div>
 <p>If your Apache server has <em>mod_rewrite</em> enabled, you can easily remove this
 file by using a .htaccess file with some simple rules. Here is an example
 of such a file, using the &#8220;negative&#8221; method in which everything is redirected
 except the specified items:</p>
-<div class="highlight-ci"><div class="highlight"><pre>RewriteEngine On
+<div class="highlight-ci"><div class="highlight"><pre><span></span>RewriteEngine On
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^(.*)$ index.php/$1 [L]
@@ -490,25 +490,25 @@ might need to be accessible from the outside world.</p>
 <p>In your <strong>config/config.php</strong> file you can specify a suffix that will be
 added to all URLs generated by CodeIgniter. For example, if a URL is
 this:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="nx">example</span><span class="o">.</span><span class="nx">com</span><span class="o">/</span><span class="nx">index</span><span class="o">.</span><span class="nx">php</span><span class="o">/</span><span class="nx">products</span><span class="o">/</span><span class="nx">view</span><span class="o">/</span><span class="nx">shoes</span>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nx">example</span><span class="o">.</span><span class="nx">com</span><span class="o">/</span><span class="nx">index</span><span class="o">.</span><span class="nx">php</span><span class="o">/</span><span class="nx">products</span><span class="o">/</span><span class="nx">view</span><span class="o">/</span><span class="nx">shoes</span>
 </pre></div>
 </div>
 <p>You can optionally add a suffix, like <strong>.html,</strong> making the page appear to
 be of a certain type:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="nx">example</span><span class="o">.</span><span class="nx">com</span><span class="o">/</span><span class="nx">index</span><span class="o">.</span><span class="nx">php</span><span class="o">/</span><span class="nx">products</span><span class="o">/</span><span class="nx">view</span><span class="o">/</span><span class="nx">shoes</span><span class="o">.</span><span class="nx">html</span>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nx">example</span><span class="o">.</span><span class="nx">com</span><span class="o">/</span><span class="nx">index</span><span class="o">.</span><span class="nx">php</span><span class="o">/</span><span class="nx">products</span><span class="o">/</span><span class="nx">view</span><span class="o">/</span><span class="nx">shoes</span><span class="o">.</span><span class="nx">html</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="enabling-query-strings">
 <h2>Enabling Query Strings<a class="headerlink" href="#enabling-query-strings" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>In some cases you might prefer to use query strings URLs:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="nx">index</span><span class="o">.</span><span class="nx">php</span><span class="o">?</span><span class="nx">c</span><span class="o">=</span><span class="nx">products</span><span class="o">&amp;</span><span class="nx">m</span><span class="o">=</span><span class="nx">view</span><span class="o">&amp;</span><span class="nx">id</span><span class="o">=</span><span class="mi">345</span>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nx">index</span><span class="o">.</span><span class="nx">php</span><span class="o">?</span><span class="nx">c</span><span class="o">=</span><span class="nx">products</span><span class="o">&amp;</span><span class="nx">m</span><span class="o">=</span><span class="nx">view</span><span class="o">&amp;</span><span class="nx">id</span><span class="o">=</span><span class="mi">345</span>
 </pre></div>
 </div>
 <p>CodeIgniter optionally supports this capability, which can be enabled in
 your <strong>application/config.php</strong> file. If you open your config file you&#8217;ll
 see these items:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$config</span><span class="p">[</span><span class="s1">&#39;enable_query_strings&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="k">FALSE</span><span class="p">;</span>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$config</span><span class="p">[</span><span class="s1">&#39;enable_query_strings&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="k">FALSE</span><span class="p">;</span>
 <span class="nv">$config</span><span class="p">[</span><span class="s1">&#39;controller_trigger&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;c&#39;</span><span class="p">;</span>
 <span class="nv">$config</span><span class="p">[</span><span class="s1">&#39;function_trigger&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;m&#39;</span><span class="p">;</span>
 </pre></div>
@@ -516,7 +516,7 @@ see these items:</p>
 <p>If you change &#8220;enable_query_strings&#8221; to TRUE this feature will become
 active. Your controllers and functions will then be accessible using the
 &#8220;trigger&#8221; words you&#8217;ve set to invoke your controllers and methods:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="nx">index</span><span class="o">.</span><span class="nx">php</span><span class="o">?</span><span class="nx">c</span><span class="o">=</span><span class="nx">controller</span><span class="o">&amp;</span><span class="nx">m</span><span class="o">=</span><span class="nx">method</span>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nx">index</span><span class="o">.</span><span class="nx">php</span><span class="o">?</span><span class="nx">c</span><span class="o">=</span><span class="nx">controller</span><span class="o">&amp;</span><span class="nx">m</span><span class="o">=</span><span class="nx">method</span>
 </pre></div>
 </div>
 <div class="admonition note">
@@ -548,7 +548,7 @@ designed to work with segment based URLs.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2016, British Columbia Institute of Technology.
-      最終更新: Feb 24, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>
+      最終更新: Mar 21, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>
     </p>
   </div>
 

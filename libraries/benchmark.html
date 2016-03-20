@@ -143,7 +143,7 @@
 <li class="toctree-l2"><a class="reference internal" href="pagination.html">ページネーションクラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="parser.html">テンプレートパーサクラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="security.html">セキュリティクラス</a></li>
-<li class="toctree-l2"><a class="reference internal" href="sessions.html">セッションドライバ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sessions.html">セッションライブラリ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="table.html">HTML テーブルクラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="trackback.html">トラックバッククラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="typography.html">タイポグラフィークラス</a></li>
@@ -326,7 +326,7 @@
 <li class="toctree-l2"><a class="reference internal" href="pagination.html">ページネーションクラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="parser.html">テンプレートパーサクラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="security.html">セキュリティクラス</a></li>
-<li class="toctree-l2"><a class="reference internal" href="sessions.html">セッションドライバ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sessions.html">セッションライブラリ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="table.html">HTML テーブルクラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="trackback.html">トラックバッククラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="typography.html">タイポグラフィークラス</a></li>
@@ -454,7 +454,7 @@
 <li>結果を見るため「経過時間(&#8220;elapsed time&#8221;)」メソッドを実行します。</li>
 </ol>
 <p>実際のコードでの使用例です:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">benchmark</span><span class="o">-&gt;</span><span class="na">mark</span><span class="p">(</span><span class="s1">&#39;code_start&#39;</span><span class="p">);</span>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">benchmark</span><span class="o">-&gt;</span><span class="na">mark</span><span class="p">(</span><span class="s1">&#39;code_start&#39;</span><span class="p">);</span>
 
 <span class="c1">// ここに何かのコードを記述</span>
 
@@ -511,7 +511,7 @@ CodeIgniterでは、引数が省略されたとき、最終出力がブラウ
 続されます。</p>
 <p>PHP をそのまま使用したくないときは、ビューのファイル内で次の
 擬似変数を用いれば、総計経過時間を見る代替手段になります:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="p">{</span><span class="nx">elapsed_time</span><span class="p">}</span>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="p">{</span><span class="nx">elapsed_time</span><span class="p">}</span>
 </pre></div>
 </div>
 <div class="admonition note">
@@ -525,7 +525,7 @@ CodeIgniterでは、引数が省略されたとき、最終出力がブラウ
 <p>PHP の設定が &#8211;enable-memory-limit になっている場合、ビューのファイル内
 に次のコードを配置することで、 システム全体のメモリの使用量を表示させる
 ことができます:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="o">&lt;?</span><span class="nx">php</span> <span class="k">echo</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">benchmark</span><span class="o">-&gt;</span><span class="na">memory_usage</span><span class="p">();</span><span class="cp">?&gt;</span>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span> <span class="k">echo</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">benchmark</span><span class="o">-&gt;</span><span class="na">memory_usage</span><span class="p">();</span><span class="cp">?&gt;</span>
 </pre></div>
 </div>
 <div class="admonition note">
@@ -535,7 +535,7 @@ CodeIgniterでは、引数が省略されたとき、最終出力がブラウ
 <p>アプリケーション全体で使っているメモリの使用量です。</p>
 <p>PHP をそのまま使用したくないときは、ビューのファイル内で次の擬似変数を用いれば、
 メモリ消費量を見る代替手段になります::</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="p">{</span><span class="nx">memory_usage</span><span class="p">}</span>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="p">{</span><span class="nx">memory_usage</span><span class="p">}</span>
 </pre></div>
 </div>
 </div>
@@ -634,7 +634,7 @@ CodeIgniterでは、引数が省略されたとき、最終出力がブラウ
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2016, British Columbia Institute of Technology.
-      最終更新: Feb 24, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>
+      最終更新: Mar 21, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>
     </p>
   </div>
 

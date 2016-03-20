@@ -143,7 +143,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../libraries/pagination.html">ページネーションクラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/parser.html">テンプレートパーサクラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/security.html">セキュリティクラス</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../libraries/sessions.html">セッションドライバ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/sessions.html">セッションライブラリ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/table.html">HTML テーブルクラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/trackback.html">トラックバッククラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/typography.html">タイポグラフィークラス</a></li>
@@ -326,7 +326,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../libraries/pagination.html">ページネーションクラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/parser.html">テンプレートパーサクラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/security.html">セキュリティクラス</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../libraries/sessions.html">セッションドライバ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/sessions.html">セッションライブラリ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/table.html">HTML テーブルクラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/trackback.html">トラックバッククラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/typography.html">タイポグラフィークラス</a></li>
@@ -445,11 +445,11 @@ will not be accurately shown. Instead, all errors will be shown as
 <div class="section" id="echo">
 <h2>echo による出力の代替<a class="headerlink" href="#echo" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>Normally to echo, or print out a variable you would do this:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="o">&lt;?</span><span class="nx">php</span> <span class="k">echo</span> <span class="nv">$variable</span><span class="p">;</span> <span class="cp">?&gt;</span>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span> <span class="k">echo</span> <span class="nv">$variable</span><span class="p">;</span> <span class="cp">?&gt;</span>
 </pre></div>
 </div>
 <p>With the alternative syntax you can instead do it this way:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="o">&lt;?=</span><span class="nv">$variable</span><span class="cp">?&gt;</span>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="o">&lt;?=</span><span class="nv">$variable</span><span class="cp">?&gt;</span>
 </pre></div>
 </div>
 </div>
@@ -457,7 +457,7 @@ will not be accurately shown. Instead, all errors will be shown as
 <h2>制御構造の代替<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>Controls structures, like if, for, foreach, and while can be written in
 a simplified format as well. Here is an example using <tt class="docutils literal"><span class="pre">foreach</span></tt>:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="o">&lt;</span><span class="nx">ul</span><span class="o">&gt;</span>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="nx">ul</span><span class="o">&gt;</span>
 
 <span class="o">&lt;?</span><span class="nx">php</span> <span class="k">foreach</span> <span class="p">(</span><span class="nv">$todo</span> <span class="k">as</span> <span class="nv">$item</span><span class="p">)</span><span class="o">:</span> <span class="cp">?&gt;</span>
 
@@ -474,7 +474,7 @@ closing syntax: <tt class="docutils literal"><span class="pre">endif</span></tt>
 <p>Also notice that instead of using a semicolon after each structure
 (except the last one), there is a colon. This is important!</p>
 <p>Here is another example, using <tt class="docutils literal"><span class="pre">if</span></tt>/<tt class="docutils literal"><span class="pre">elseif</span></tt>/<tt class="docutils literal"><span class="pre">else</span></tt>. Notice the colons:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="o">&lt;?</span><span class="nx">php</span> <span class="k">if</span> <span class="p">(</span><span class="nv">$username</span> <span class="o">===</span> <span class="s1">&#39;sally&#39;</span><span class="p">)</span><span class="o">:</span> <span class="cp">?&gt;</span>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span> <span class="k">if</span> <span class="p">(</span><span class="nv">$username</span> <span class="o">===</span> <span class="s1">&#39;sally&#39;</span><span class="p">)</span><span class="o">:</span> <span class="cp">?&gt;</span>
 
         <span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span>Hi Sally<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
 
@@ -511,7 +511,7 @@ closing syntax: <tt class="docutils literal"><span class="pre">endif</span></tt>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2016, British Columbia Institute of Technology.
-      最終更新: Feb 24, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>
+      最終更新: Mar 21, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>
     </p>
   </div>
 

@@ -143,7 +143,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../libraries/pagination.html">ページネーションクラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/parser.html">テンプレートパーサクラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/security.html">セキュリティクラス</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../libraries/sessions.html">セッションドライバ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/sessions.html">セッションライブラリ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/table.html">HTML テーブルクラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/trackback.html">トラックバッククラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/typography.html">タイポグラフィークラス</a></li>
@@ -326,7 +326,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../libraries/pagination.html">ページネーションクラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/parser.html">テンプレートパーサクラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/security.html">セキュリティクラス</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../libraries/sessions.html">セッションドライバ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/sessions.html">セッションライブラリ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/table.html">HTML テーブルクラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/trackback.html">トラックバッククラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/typography.html">タイポグラフィークラス</a></li>
@@ -448,7 +448,7 @@ index.phpファイルを静的ページに置き換えて、オフラインに�
 <div class="section" id="step-2-config-php">
 <h2>Step 2: config.php ファイルのアップグレード<a class="headerlink" href="#step-2-config-php" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>application/config/config.php ファイルを開き、下記要素を追加してください。:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="cm">/*</span>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="cm">/*</span>
 <span class="cm">|--------------------------------------------------------------------------</span>
 <span class="cm">| Output Compression</span>
 <span class="cm">|--------------------------------------------------------------------------</span>
@@ -473,11 +473,11 @@ index.phpファイルを静的ページに置き換えて、オフラインに�
 <h2>Step 3: Autoload 項目の名前変更<a class="headerlink" href="#step-3-autoload" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>次のファイルを開いてください: application/config/autoload.php</p>
 <p>以下の配列要素を探します:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$autoload</span><span class="p">[</span><span class="s1">&#39;core&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="k">array</span><span class="p">();</span>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$autoload</span><span class="p">[</span><span class="s1">&#39;core&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="k">array</span><span class="p">();</span>
 </pre></div>
 </div>
 <p>上記を以下のように変更します:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$autoload</span><span class="p">[</span><span class="s1">&#39;libraries&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="k">array</span><span class="p">();</span>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$autoload</span><span class="p">[</span><span class="s1">&#39;libraries&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="k">array</span><span class="p">();</span>
 </pre></div>
 </div>
 <p>この変更は、ユーザ独自のライブラリを
@@ -509,7 +509,7 @@ index.phpファイルを静的ページに置き換えて、オフラインに�
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2016, British Columbia Institute of Technology.
-      最終更新: Feb 24, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>
+      最終更新: Mar 21, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>
     </p>
   </div>
 

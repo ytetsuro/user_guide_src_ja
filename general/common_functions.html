@@ -143,7 +143,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../libraries/pagination.html">ページネーションクラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/parser.html">テンプレートパーサクラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/security.html">セキュリティクラス</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../libraries/sessions.html">セッションドライバ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/sessions.html">セッションライブラリ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/table.html">HTML テーブルクラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/trackback.html">トラックバッククラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/typography.html">タイポグラフィークラス</a></li>
@@ -326,7 +326,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../libraries/pagination.html">ページネーションクラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/parser.html">テンプレートパーサクラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/security.html">セキュリティクラス</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../libraries/sessions.html">セッションドライバ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/sessions.html">セッションライブラリ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/table.html">HTML テーブルクラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/trackback.html">トラックバッククラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/typography.html">タイポグラフィークラス</a></li>
@@ -446,7 +446,7 @@ loading any libraries or helpers.</p>
 <p>Determines if the PHP version being used is greater than the
 supplied version number.</p>
 <p>Example:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="k">if</span> <span class="p">(</span><span class="nx">is_php</span><span class="p">(</span><span class="s1">&#39;5.3&#39;</span><span class="p">))</span>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="nx">is_php</span><span class="p">(</span><span class="s1">&#39;5.3&#39;</span><span class="p">))</span>
 <span class="p">{</span>
         <span class="nv">$str</span> <span class="o">=</span> <span class="nb">quoted_printable_encode</span><span class="p">(</span><span class="nv">$str</span><span class="p">);</span>
 <span class="p">}</span>
@@ -484,7 +484,7 @@ read-only attribute is marked.</p>
 to write to it first. Generally only recommended on platforms where
 this information may be unreliable.</p>
 <p>Example:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="k">if</span> <span class="p">(</span><span class="nx">is_really_writable</span><span class="p">(</span><span class="s1">&#39;file.txt&#39;</span><span class="p">))</span>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="nx">is_really_writable</span><span class="p">(</span><span class="s1">&#39;file.txt&#39;</span><span class="p">))</span>
 <span class="p">{</span>
         <span class="k">echo</span> <span class="s2">&quot;I could write to this if I wanted to&quot;</span><span class="p">;</span>
 <span class="p">}</span>
@@ -545,7 +545,7 @@ documentation for more information.</p>
 </tbody>
 </table>
 <p>Permits you to manually set a server status header. Example:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="nx">set_status_header</span><span class="p">(</span><span class="mi">401</span><span class="p">);</span>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nx">set_status_header</span><span class="p">(</span><span class="mi">401</span><span class="p">);</span>
 <span class="c1">// Sets the header as:  Unauthorized</span>
 </pre></div>
 </div>
@@ -577,7 +577,7 @@ a full list of headers.</p>
 <p>This function prevents inserting NULL characters between ASCII
 characters, like Java\0script.</p>
 <p>Example:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="nx">remove_invisible_characters</span><span class="p">(</span><span class="s1">&#39;Java\\0script&#39;</span><span class="p">);</span>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nx">remove_invisible_characters</span><span class="p">(</span><span class="s1">&#39;Java\\0script&#39;</span><span class="p">);</span>
 <span class="c1">// Returns: &#39;Javascript&#39;</span>
 </pre></div>
 </div>
@@ -721,7 +721,7 @@ unfortunately not released yet.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2016, British Columbia Institute of Technology.
-      最終更新: Feb 24, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>
+      最終更新: Mar 21, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>
     </p>
   </div>
 

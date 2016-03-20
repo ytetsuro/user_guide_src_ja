@@ -143,7 +143,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../libraries/pagination.html">ページネーションクラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/parser.html">テンプレートパーサクラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/security.html">セキュリティクラス</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../libraries/sessions.html">セッションドライバ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/sessions.html">セッションライブラリ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/table.html">HTML テーブルクラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/trackback.html">トラックバッククラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/typography.html">タイポグラフィークラス</a></li>
@@ -326,7 +326,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../libraries/pagination.html">ページネーションクラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/parser.html">テンプレートパーサクラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/security.html">セキュリティクラス</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../libraries/sessions.html">セッションドライバ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/sessions.html">セッションライブラリ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/table.html">HTML テーブルクラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/trackback.html">トラックバッククラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/typography.html">タイポグラフィークラス</a></li>
@@ -459,12 +459,12 @@ changes sooner rather than later.</p>
 <div class="section" id="step-5-remove-apppath-third-party-from-autoload-php">
 <h2>Step 5: Remove APPPATH.&#8217;third_party&#8217; from autoload.php<a class="headerlink" href="#step-5-remove-apppath-third-party-from-autoload-php" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>Open application/config/autoload.php, and look for the following:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$autoload</span><span class="p">[</span><span class="s1">&#39;packages&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span><span class="nx">APPPATH</span><span class="o">.</span><span class="s1">&#39;third_party&#39;</span><span class="p">);</span>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$autoload</span><span class="p">[</span><span class="s1">&#39;packages&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span><span class="nx">APPPATH</span><span class="o">.</span><span class="s1">&#39;third_party&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>If you have not chosen to load any additional packages, that line can be
 changed to:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$autoload</span><span class="p">[</span><span class="s1">&#39;packages&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="k">array</span><span class="p">();</span>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$autoload</span><span class="p">[</span><span class="s1">&#39;packages&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="k">array</span><span class="p">();</span>
 </pre></div>
 </div>
 <p>Which should provide for nominal performance gains if not autoloading
@@ -474,7 +474,7 @@ packages.</p>
 <h2>Update Sessions Database Tables<a class="headerlink" href="#update-sessions-database-tables" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>If you are using database sessions with the CI Session Library, please
 update your ci_sessions database table as follows:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="nx">CREATE</span> <span class="nx">INDEX</span> <span class="nx">last_activity_idx</span> <span class="nx">ON</span> <span class="nx">ci_sessions</span><span class="p">(</span><span class="nx">last_activity</span><span class="p">);</span>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nx">CREATE</span> <span class="nx">INDEX</span> <span class="nx">last_activity_idx</span> <span class="nx">ON</span> <span class="nx">ci_sessions</span><span class="p">(</span><span class="nx">last_activity</span><span class="p">);</span>
 <span class="nx">ALTER</span> <span class="nx">TABLE</span> <span class="nx">ci_sessions</span> <span class="nx">MODIFY</span> <span class="nx">user_agent</span> <span class="nx">VARCHAR</span><span class="p">(</span><span class="mi">120</span><span class="p">);</span>
 </pre></div>
 </div>
@@ -500,7 +500,7 @@ update your ci_sessions database table as follows:</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2016, British Columbia Institute of Technology.
-      最終更新: Feb 24, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>
+      最終更新: Mar 21, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>
     </p>
   </div>
 
