@@ -255,8 +255,6 @@ To use it, you need `Redis server and phpredis PHP extension <https://github.com
 redisサーバーに接続する構成オプションは、application/config/redis.phpファイルに格納されなければなりません。
 利用できるオプション::
 	
-	$config['socket_type'] = 'tcp'; //`tcp` または `unix`
-	$config['socket'] = '/var/run/redis.sock'; // `unix`ソケットタイプの場合
 	$config['host'] = '127.0.0.1';
 	$config['password'] = NULL;
 	$config['port'] = 6379;

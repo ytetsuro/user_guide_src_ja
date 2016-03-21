@@ -19,12 +19,12 @@ Zip 圧縮クラスを使用する
 クラスの初期化
 ======================
 
-CodeIgniterの大部分のクラスと同様に、Zip クラスはコントローラ
+CodeIgniter の大部分のクラスと同様に、Zip クラスはコントローラ
 の中で $this->load->library メソッドを使って初期化できます:
 
 	$this->load->library('zip');
 
-いったん読み込まれれば、Zipライブラリのオブジェクトは次のようにして利用できます:
+いったん読み込まれれば、Zip ライブラリのオブジェクトは次のようにして利用できます::
 
 	$this->zip
 
@@ -41,7 +41,7 @@ CodeIgniterの大部分のクラスと同様に、Zip クラスはコントロ�
 
 	$this->zip->add_data($name, $data);
 
-	// Zipファイルをサーバのフォルダに書き込みます。"my_backup.zip" という名前にします。
+	// Zip ファイルをサーバのフォルダに書き込みます。"my_backup.zip" という名前にします。
 	$this->zip->archive('/path/to/directory/my_backup.zip');
 
 	// "my_backup.zip" という名前で、デスクトップにファイルをダウンロードします。
@@ -57,7 +57,7 @@ CodeIgniterの大部分のクラスと同様に、Zip クラスはコントロ�
 
 		圧縮レベルを使用します。
 
-		効果的に圧縮を抑制している0から最も高圧縮な9までの範囲あります。::
+		効果的に圧縮を抑制している 0 から最も高圧縮な 9 までの範囲あります::
 
 			$this->zip->compression_level = 0;
 
@@ -80,8 +80,8 @@ CodeIgniterの大部分のクラスと同様に、Zip クラスはコントロ�
 			$data = 'Another Data String!';
 			$this->zip->add_data($name, $data);
 
-		複数のファイルを加えるとき、最初のパラメータは　ファイル名=>内容　の配列で渡します。
-		第2のパラメータは無視されます::
+		複数のファイルを加えるとき、最初のパラメータは　ファイル名 => 内容　の配列で渡します。
+		第 2 引数は無視されます::
 
 			$data = array(
 				'mydata1.txt' => 'A Data String!',
@@ -197,8 +197,8 @@ CodeIgniterの大部分のクラスと同様に、Zip クラスはコントロ�
 		:パラメータ	string	$filename: アーカイブ　ファイル名
 		:返り値型:	void
 
-		サーバから Zipファイルをダウンロードさせます。このメソッドは、
-		Zipファイルにつけたい名前を指定する必要があります。 例:
+		サーバから Zip ファイルをダウンロードさせます。このメソッドは、
+		Zip ファイルにつけたい名前を指定する必要があります。 例::
 
 			$this->zip->download('latest_stuff.zip'); //"latest_stuff.zip" という名前になります。
 
@@ -223,7 +223,7 @@ CodeIgniterの大部分のクラスと同様に、Zip クラスはコントロ�
 
 	.. php:method:: clear_data()
 
-		:返り値型:	void
+		:返り値型: void
 
 		Zip クラスは、上のメソッドを使うたびにZipアーカイブを再圧縮しなくて済むように、Zipデータを
 		キャッシュします。 しかし、それぞれ異なるデータの複数のZipを作成する場合、それらのメソッド

@@ -65,7 +65,7 @@ Step 3: config/mimes.php を置き換える
 **************************************
 
 より多くの MIME タイプを含むように更新されています。
-これを **application/config/mimes.php** にコピーしてください.
+これを *application/config/mimes.php* にコピーしてください.
 
 **************************************************************
 Step 4: config/autoload.php から $autoload['core'] を削除する
@@ -206,13 +206,13 @@ Step 8: エラーテンプレートを置き換える
 **************************************
 
 CodeIgniter 3.0 ではエラーテンプレートもビューとして扱われ、
-**application/views/errors** ディレクトリに移動されました。
+*application/views/errors* ディレクトリに移動されました。
 
 また、CLI 向けにプレインテキストのエラーテンプレートを
 サポートするようになりました。これも新たに分ける必要があります。
 
-これまでのテンプレートは **application/errors** から **application/views/errors/html** にそのまま移動して構いませんが、
-新しい **application/views/errors/cli** ディレクトリは CodeIgniter のアーカイブからコピーしてください。
+これまでのテンプレートは *application/errors* から *application/views/errors/html* にそのまま移動して構いませんが、
+新しい *application/views/errors/cli* ディレクトリは CodeIgniter のアーカイブからコピーしてください。
 
 ********************************************
 Step 9: config/routes.php ファイルを更新する

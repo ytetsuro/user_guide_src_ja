@@ -97,6 +97,7 @@ INT、VARCHAR、TEXT などです。多くのデータタイプ (たとえば VA
 -  auto_increment/true : フィールドのフラグとして、auto_increment を立
    てます。フィールドタイプは整数の様なタイプをサポートするものでないとい
    けません。
+-  unique/true : to generate a unique key for the field definition.
 
 ::
 
@@ -110,6 +111,7 @@ INT、VARCHAR、TEXT などです。多くのデータタイプ (たとえば VA
 		'blog_title' => array(
 			'type' => 'VARCHAR',
 			'constraint' => '100',
+			'unique' => TRUE,
 		),
 		'blog_author' => array(
 			'type' =>'VARCHAR',
@@ -175,14 +177,14 @@ TRUE を指定すると主キーになります。 add_key() の後に create_ta
 
 	$this->dbforge->add_key('blog_id', TRUE);
 	// PRIMARY KEY は `blog_id`(`blog_id`) になります。
-	
+
 	$this->dbforge->add_key('blog_id', TRUE);
 	$this->dbforge->add_key('site_id', TRUE);
 	// PRIMARY KEY は `blog_id_site_id` (`blog_id`, `site_id`) になります。
-	
+
 	$this->dbforge->add_key('blog_name');
 	// KEY は `blog_name` (`blog_name`) になります。
-	
+
 	$this->dbforge->add_key(array('blog_name', 'blog_label'));
 	// KEY は `blog_name_blog_label` (`blog_name`, `blog_label`) になります。
 
@@ -261,7 +263,7 @@ TABLE rename を実行します。
 	$fields = array(
 		'preferences' => array('type' => 'TEXT')
 	);
-	$this->dbforge->add_column('table_name', $fields); 
+	$this->dbforge->add_column('table_name', $fields);
 	// ALTER TABLE table_name ADD preferences TEXT となります
 
 MySQL か CUBIRD をお使いの場合、 AFTER と FIRST 文を活用してカラム位置を

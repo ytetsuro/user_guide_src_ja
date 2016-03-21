@@ -54,8 +54,8 @@ CodeIgniter は、URLに動的システムの代名詞ともいえる一般的�
 
 	example.com/news/article/345
 
-注: 初期設定では URL に index.php ファイルが入りますが、簡単な
-.htaccess ファイルで削除できます。
+.. note:: 初期設定では URL に　*index.php* ファイルが含まれますが、簡単な
+	*.htaccess* ファイルを使うことで削除できます。
 
 CodeIgniter は強力です
 =========================
