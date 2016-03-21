@@ -4,7 +4,7 @@
 
 翻訳作業の参加者を広く募集しています。お気軽に Pull Request してください。
 
-翻訳は、[ユーザガイド日本語版執筆基準](https://github.com/codeigniter-jp/ci-ja/wiki/%E3%83%A6%E3%83%BC%E3%82%B6%E3%82%AC%E3%82%A4%E3%83%89%E6%97%A5%E6%9C%AC%E8%AA%9E%E7%89%88%E5%9F%B7%E7%AD%86%E5%9F%BA%E6%BA%96) に準拠するようにお願いします。
+翻訳は、[ユーザガイド日本語版執筆基準](TRANSLATION_STANDARDS.md) に準拠するようにお願いします。
 
 Pull Request がマージされたら、[CREDITS.md](CREDITS.md) にご自分の名前を追加してください。
 
