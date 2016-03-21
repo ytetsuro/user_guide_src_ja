@@ -436,13 +436,14 @@ Archives can be downloaded to your desktop or saved to a directory.</p>
 <h2><a class="toc-backref" href="#id5">Zip 圧縮クラスを使用する</a><a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <div class="section" id="id2">
 <h3><a class="toc-backref" href="#id6">クラスの初期化</a><a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h3>
-<p>CodeIgniterの大部分のクラスと同様に、Zip クラスはコントローラ
+<p>CodeIgniter の大部分のクラスと同様に、Zip クラスはコントローラ
 の中で $this-&gt;load-&gt;library メソッドを使って初期化できます:</p>
 <blockquote>
 <div>$this-&gt;load-&gt;library(&#8216;zip&#8217;);</div></blockquote>
-<p>いったん読み込まれれば、Zipライブラリのオブジェクトは次のようにして利用できます:</p>
-<blockquote>
-<div>$this-&gt;zip</div></blockquote>
+<p>いったん読み込まれれば、Zip ライブラリのオブジェクトは次のようにして利用できます:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">zip</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="id3">
 <h3><a class="toc-backref" href="#id7">使用例</a><a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h3>
@@ -453,7 +454,7 @@ Archives can be downloaded to your desktop or saved to a directory.</p>
 
 <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">zip</span><span class="o">-&gt;</span><span class="na">add_data</span><span class="p">(</span><span class="nv">$name</span><span class="p">,</span> <span class="nv">$data</span><span class="p">);</span>
 
-<span class="c1">// Zipファイルをサーバのフォルダに書き込みます。&quot;my_backup.zip&quot; という名前にします。</span>
+<span class="c1">// Zip ファイルをサーバのフォルダに書き込みます。&quot;my_backup.zip&quot; という名前にします。</span>
 <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">zip</span><span class="o">-&gt;</span><span class="na">archive</span><span class="p">(</span><span class="s1">&#39;/path/to/directory/my_backup.zip&#39;</span><span class="p">);</span>
 
 <span class="c1">// &quot;my_backup.zip&quot; という名前で、デスクトップにファイルをダウンロードします。</span>
@@ -471,7 +472,7 @@ Archives can be downloaded to your desktop or saved to a directory.</p>
 <dt>
 <tt class="descname">$compression_level = 2</tt></dt>
 <dd><p>圧縮レベルを使用します。</p>
-<p>効果的に圧縮を抑制している0から最も高圧縮な9までの範囲あります。:</p>
+<p>効果的に圧縮を抑制している 0 から最も高圧縮な 9 までの範囲あります:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">zip</span><span class="o">-&gt;</span><span class="na">compression_level</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
 </pre></div>
 </div>
@@ -506,8 +507,8 @@ Archives can be downloaded to your desktop or saved to a directory.</p>
 <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">zip</span><span class="o">-&gt;</span><span class="na">add_data</span><span class="p">(</span><span class="nv">$name</span><span class="p">,</span> <span class="nv">$data</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>複数のファイルを加えるとき、最初のパラメータは　ファイル名=&gt;内容　の配列で渡します。
-第2のパラメータは無視されます:</p>
+<p>複数のファイルを加えるとき、最初のパラメータは　ファイル名 =&gt; 内容　の配列で渡します。
+第 2 引数は無視されます:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$data</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
         <span class="s1">&#39;mydata1.txt&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;A Data String!&#39;</span><span class="p">,</span>
         <span class="s1">&#39;mydata2.txt&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Another Data String!&#39;</span>
@@ -674,10 +675,11 @@ $this-&gt;zip-&gt;download(&#8216;my_backup.zip&#8217;);</p>
 </tr>
 </tbody>
 </table>
-<p>サーバから Zipファイルをダウンロードさせます。このメソッドは、
-Zipファイルにつけたい名前を指定する必要があります。 例:</p>
-<blockquote>
-<div>$this-&gt;zip-&gt;download(&#8216;latest_stuff.zip&#8217;); //&#8221;latest_stuff.zip&#8221; という名前になります。</div></blockquote>
+<p>サーバから Zip ファイルをダウンロードさせます。このメソッドは、
+Zip ファイルにつけたい名前を指定する必要があります。 例:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">zip</span><span class="o">-&gt;</span><span class="na">download</span><span class="p">(</span><span class="s1">&#39;latest_stuff.zip&#39;</span><span class="p">);</span> <span class="c1">//&quot;latest_stuff.zip&quot; という名前になります。</span>
+</pre></div>
+</div>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
 <p class="last">このメソッドを使用するときは、ダウンロードさせ、バイナリとして

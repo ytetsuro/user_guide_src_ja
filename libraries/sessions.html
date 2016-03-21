@@ -436,44 +436,44 @@
 です。</p>
 <div class="contents local topic" id="contents">
 <ul class="simple">
-<li><a class="reference internal" href="#id2" id="id8">セッションクラスの使い方</a><ul>
-<li><a class="reference internal" href="#id3" id="id9">セッションの初期化</a></li>
-<li><a class="reference internal" href="#id4" id="id10">セッションはどのように動作しますか？</a><ul>
-<li><a class="reference internal" href="#id5" id="id11">並行性に関する注意</a></li>
+<li><a class="reference internal" href="#id2" id="id12">セッションクラスの使い方</a><ul>
+<li><a class="reference internal" href="#id3" id="id13">セッションの初期化</a></li>
+<li><a class="reference internal" href="#id4" id="id14">セッションはどのように動作しますか？</a><ul>
+<li><a class="reference internal" href="#id5" id="id15">並行性に関する注意</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#what-is-session-data" id="id12">What is Session Data?</a></li>
-<li><a class="reference internal" href="#retrieving-session-data" id="id13">Retrieving Session Data</a></li>
-<li><a class="reference internal" href="#adding-session-data" id="id14">Adding Session Data</a></li>
-<li><a class="reference internal" href="#removing-session-data" id="id15">Removing Session Data</a></li>
-<li><a class="reference internal" href="#flashdata" id="id16">Flashdata</a></li>
-<li><a class="reference internal" href="#tempdata" id="id17">Tempdata</a></li>
-<li><a class="reference internal" href="#destroying-a-session" id="id18">Destroying a Session</a></li>
-<li><a class="reference internal" href="#accessing-session-metadata" id="id19">Accessing session metadata</a></li>
-<li><a class="reference internal" href="#session-preferences" id="id20">Session Preferences</a></li>
-<li><a class="reference internal" href="#session-drivers" id="id21">Session Drivers</a><ul>
-<li><a class="reference internal" href="#files-driver" id="id22">Files Driver</a><ul>
-<li><a class="reference internal" href="#bonus-tip" id="id23">Bonus Tip</a></li>
+<li><a class="reference internal" href="#id6" id="id16">セッションデータとは何か？</a></li>
+<li><a class="reference internal" href="#id7" id="id17">セッションデータの取得</a></li>
+<li><a class="reference internal" href="#id8" id="id18">セッションデータを追加する</a></li>
+<li><a class="reference internal" href="#id9" id="id19">セッションデータを削除する</a></li>
+<li><a class="reference internal" href="#flashdata" id="id20">Flashdata</a></li>
+<li><a class="reference internal" href="#tempdata" id="id21">Tempdata</a></li>
+<li><a class="reference internal" href="#destroying-a-session" id="id22">Destroying a Session</a></li>
+<li><a class="reference internal" href="#accessing-session-metadata" id="id23">Accessing session metadata</a></li>
+<li><a class="reference internal" href="#session-preferences" id="id24">Session Preferences</a></li>
+<li><a class="reference internal" href="#session-drivers" id="id25">Session Drivers</a><ul>
+<li><a class="reference internal" href="#files-driver" id="id26">Files Driver</a><ul>
+<li><a class="reference internal" href="#bonus-tip" id="id27">Bonus Tip</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#database-driver" id="id24">Database Driver</a></li>
-<li><a class="reference internal" href="#redis-driver" id="id25">Redis Driver</a></li>
-<li><a class="reference internal" href="#memcached-driver" id="id26">Memcached Driver</a><ul>
-<li><a class="reference internal" href="#id6" id="id27">Bonus Tip</a></li>
+<li><a class="reference internal" href="#database-driver" id="id28">Database Driver</a></li>
+<li><a class="reference internal" href="#redis-driver" id="id29">Redis Driver</a></li>
+<li><a class="reference internal" href="#memcached-driver" id="id30">Memcached Driver</a><ul>
+<li><a class="reference internal" href="#id10" id="id31">Bonus Tip</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#custom-drivers" id="id28">Custom Drivers</a></li>
+<li><a class="reference internal" href="#custom-drivers" id="id32">Custom Drivers</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a class="reference internal" href="#class-reference" id="id29">Class Reference</a></li>
+<li><a class="reference internal" href="#class-reference" id="id33">Class Reference</a></li>
 </ul>
 </div>
 <div class="custom-index container"></div><div class="section" id="id2">
-<h2><a class="toc-backref" href="#id8">セッションクラスの使い方</a><a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2><a class="toc-backref" href="#id12">セッションクラスの使い方</a><a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <div class="section" id="id3">
-<h3><a class="toc-backref" href="#id9">セッションの初期化</a><a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<h3><a class="toc-backref" href="#id13">セッションの初期化</a><a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p>セッションは通常、各ページをまたいでグローバルに実行されます。
 そのため、セッションクラスは次のどちらかによって初期化されるべきです、
 <a class="reference internal" href="../general/controllers.html"><em>コントローラ</em></a> のコンストラクタ、
@@ -499,7 +499,7 @@
 </div>
 </div>
 <div class="section" id="id4">
-<h3><a class="toc-backref" href="#id10">セッションはどのように動作しますか？</a><a class="headerlink" href="#id4" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<h3><a class="toc-backref" href="#id14">セッションはどのように動作しますか？</a><a class="headerlink" href="#id4" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p>ページが読み込まれると、セッションクラスは有効なセッションクッキーが
 ユーザのブラウザから送信されたかどうかをチェックします。
 セッションクッキーが存在 <strong>しない</strong> 場合 (またはサーバに保存されているものと一致しないか、
@@ -508,7 +508,7 @@
 更新するごとにセッション ID を再生成されるように設定することもできます。</p>
 <p>いちど初期化されたら、セッションクラスは自動的に実行されるということを
 理解することは重要なことです。上記の動作をさせるためにあなたが何かをする
-必要はありません。次に書かれているように、セッションデータを使いながら
+必要はありません。以降に書かれているように、セッションデータを使いながら
 あなたのやりたい処理を書くことができますが、セッションの読み込み、書き込み、
 更新のプロセスは自動的に行われます。</p>
 <div class="admonition note">
@@ -517,14 +517,14 @@
 セッションはもっぱら HTTP プロトコルにもとづく概念だからです。</p>
 </div>
 <div class="section" id="id5">
-<h4><a class="toc-backref" href="#id11">並行性に関する注意</a><a class="headerlink" href="#id5" title="このヘッドラインへのパーマリンク">¶</a></h4>
-<p>ものすごく AJAX を利用しているウェブサイトを開発しているわけではないかぎり、
+<h4><a class="toc-backref" href="#id15">並行性に関する注意</a><a class="headerlink" href="#id5" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<p>AJAX を多用しているウェブサイトを開発しているわけではないかぎり、
 このセクションはスキップしてもよいです。しかしながらそうでない場合、さらには
 パフォーマンスの問題が発生している場合、この注意はまさにあなたが探しているものでしょう。</p>
 <p>CodeIgniter の以前のバージョンのセッションはロックを実装していませんでした。
 すなわち、同一のセッションを利用するふたつの HTTP リクエストはまったく同時に
 実行できていました。より適切な専門用語で言うならば、
-リクエストは non-blocking でした</p>
+リクエストは non-blocking でした。</p>
 <p>しかしながら、セッションを使う状況においての non-blocking なリクエストは安全ではないと
 いうことも意味しました。なぜなら片方のリクエストにおけるセッションデータの更新 (または
 セッション ID の再生成) はもう片方の、同時実行しているリクエストの妨げになりえるからです。
@@ -543,87 +543,87 @@
 呼び出してください。</p>
 </div>
 </div>
-<div class="section" id="what-is-session-data">
-<h3><a class="toc-backref" href="#id12">What is Session Data?</a><a class="headerlink" href="#what-is-session-data" title="このヘッドラインへのパーマリンク">¶</a></h3>
-<p>Session data is simply an array associated with a particular session ID
-(cookie).</p>
-<p>If you&#8217;ve used sessions in PHP before, you should be familiar with PHP&#8217;s
-<a class="reference external" href="http://php.net/manual/en/reserved.variables.session.php">$_SESSION superglobal</a>
-(if not, please read the content on that link).</p>
-<p>CodeIgniter gives access to its session data through the same means, as it
-uses the session handlers&#8217; mechanism provided by PHP. Using session data is
-as simple as manipulating (read, set and unset values) the <tt class="docutils literal"><span class="pre">$_SESSION</span></tt>
-array.</p>
-<p>In addition, CodeIgniter also provides 2 special types of session data
-that are further explained below: flashdata and tempdata.</p>
+<div class="section" id="id6">
+<h3><a class="toc-backref" href="#id16">セッションデータとは何か？</a><a class="headerlink" href="#id6" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>セッションデータは、特定のセッション ID (クッキー) に結びつけられた
+単なる配列です。</p>
+<p>もし以前から PHP でセッションを利用しているなら、
+PHP の <a class="reference external" href="http://php.net/manual/ja/reserved.variables.session.php">$_SESSION スーパーグローバル変数</a> に精通している
+ことでしょう (そうでない場合は、そのリンクのコンテンツをお読みください) 。</p>
+<p>CodeIgniter はセッションデータへのアクセス方法をそれと同じ手段で提供します。
+つまり、 PHP のセッションハンドラの仕組みを使っています。
+セッションデータの使い方は $ _SESSION 配列を操作 (読み込み、設定および削除) するのと同じくらい
+簡単です。</p>
+<p>くわえて、CodeIgniterでは以下に説明されているさらに 2 種類の
+セッションデータを提供します: flashdata と tempdata です。</p>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
-<p class="last">In previous versions, regular session data in CodeIgniter was
-referred to as &#8216;userdata&#8217;. Have this in mind if that term is used
-elsewhere in the manual. Most of it is written to explain how
-the custom &#8216;userdata&#8217; methods work.</p>
+<p class="last">以前のバージョンでは、CodeIgniter の標準的なセッションデータは
+「 userdata 」と呼ばれていました。その用語がマニュアルの他の場所で使用されている場合は、
+このことを気に留めておいてくださいそのほとんどがカスタム「 userdata 」メソッドが
+どのように動作するかを説明するために書かれています。</p>
 </div>
 </div>
-<div class="section" id="retrieving-session-data">
-<h3><a class="toc-backref" href="#id13">Retrieving Session Data</a><a class="headerlink" href="#retrieving-session-data" title="このヘッドラインへのパーマリンク">¶</a></h3>
-<p>Any piece of information from the session array is available through the
-<tt class="docutils literal"><span class="pre">$_SESSION</span></tt> superglobal:</p>
+<div class="section" id="id7">
+<h3><a class="toc-backref" href="#id17">セッションデータの取得</a><a class="headerlink" href="#id7" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>セッション配列のどんな情報でも、 <tt class="docutils literal"><span class="pre">$</span> <span class="pre">_SESSION</span></tt> スーパーグローバル変数を通して
+利用できます:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">&#39;item&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
-<p>Or through the magic getter:</p>
+<p>もしくはマジックメソッドを通して:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">session</span><span class="o">-&gt;</span><span class="na">item</span>
 </pre></div>
 </div>
-<p>And for backwards compatibility, through the <tt class="docutils literal"><span class="pre">userdata()</span></tt> method:</p>
+<p>そして後方互換性のために、 <tt class="docutils literal"><span class="pre">userdata()</span></tt> メソッドを通して:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">session</span><span class="o">-&gt;</span><span class="na">userdata</span><span class="p">(</span><span class="s1">&#39;item&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>Where item is the array key corresponding to the item you wish to fetch.
-For example, to assign a previously stored &#8216;name&#8217; item to the <tt class="docutils literal"><span class="pre">$name</span></tt>
-variable, you will do this:</p>
+<p>item は、取得したい項目に対応する配列のキーです。
+たとえば <tt class="docutils literal"><span class="pre">$name</span></tt> 変数に以前に格納した「 name 」の項目を割り当てるには、
+こうします:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$name</span> <span class="o">=</span> <span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">];</span>
 
-<span class="c1">// or:</span>
+<span class="c1">// または:</span>
 
 <span class="nv">$name</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">session</span><span class="o">-&gt;</span><span class="na">name</span>
 
-<span class="c1">// or:</span>
+<span class="c1">// または:</span>
 
 <span class="nv">$name</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">session</span><span class="o">-&gt;</span><span class="na">userdata</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
-<p class="last">The <tt class="docutils literal"><span class="pre">userdata()</span></tt> method returns NULL if the item you are trying
-to access does not exist.</p>
+<p class="last">あなたがアクセスしようとしている項目が存在しない場合、 <tt class="docutils literal"><span class="pre">userdata()</span></tt> メソッドは NULL を
+返します。</p>
 </div>
-<p>If you want to retrieve all of the existing userdata, you can simply
-omit the item key (magic getter only works for properties):</p>
+<p>存在するすべてのユーザーデータを取得したい場合は、
+単にキーを省略してください (マジックメソッドはプロパティとしてのみ動きます)</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$_SESSION</span>
 
-<span class="c1">// or:</span>
+<span class="c1">// または:</span>
 
 <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">session</span><span class="o">-&gt;</span><span class="na">userdata</span><span class="p">();</span>
 </pre></div>
 </div>
 </div>
-<div class="section" id="adding-session-data">
-<h3><a class="toc-backref" href="#id14">Adding Session Data</a><a class="headerlink" href="#adding-session-data" title="このヘッドラインへのパーマリンク">¶</a></h3>
-<p>Let&#8217;s say a particular user logs into your site. Once authenticated, you
-could add their username and e-mail address to the session, making that
-data globally available to you without having to run a database query when
-you need it.</p>
-<p>You can simply assign data to the <tt class="docutils literal"><span class="pre">$_SESSION</span></tt> array, as with any other
-variable. Or as a property of <tt class="docutils literal"><span class="pre">$this-&gt;session</span></tt>.</p>
-<p>Alternatively, the old method of assigning it as &#8220;userdata&#8221; is also
-available. That however passing an array containing your new data to the
-<tt class="docutils literal"><span class="pre">set_userdata()</span></tt> method:</p>
+<div class="section" id="id8">
+<h3><a class="toc-backref" href="#id18">セッションデータを追加する</a><a class="headerlink" href="#id8" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>それでは、あなたのサイトにあるユーザがログインしたとしましょう。
+認証されると、セッションにユーザー名とメールアドレスを追加することができます。
+あなたがそれを必要とするときに、どこでも、データベースクエリを実行することなく
+取得できるようにするためです。</p>
+<p>シンプルに <tt class="docutils literal"><span class="pre">$</span> <span class="pre">_SESSION</span></tt> 配列にデータを割り当てることができます、ほかの変数と同じようにです。
+もしくは <tt class="docutils literal"><span class="pre">$this-&gt;session</span></tt> プロパティとして割り当てられます。</p>
+<p>あるいは、古い方法である「 userdata 」も使えます。
+とはいえそれは <tt class="docutils literal"><span class="pre">set_userdata()</span></tt> メソッドに新しいデータを含む配列を
+渡すだけです:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">session</span><span class="o">-&gt;</span><span class="na">set_userdata</span><span class="p">(</span><span class="nv">$array</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>Where <tt class="docutils literal"><span class="pre">$array</span></tt> is an associative array containing your new data. Here&#8217;s
-an example:</p>
+<p><tt class="docutils literal"><span class="pre">$array</span></tt> はあなたの新しいデータを含む連想配列です。
+次に例を示します:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$newdata</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
         <span class="s1">&#39;username&#39;</span>  <span class="o">=&gt;</span> <span class="s1">&#39;johndoe&#39;</span><span class="p">,</span>
         <span class="s1">&#39;email&#39;</span>     <span class="o">=&gt;</span> <span class="s1">&#39;johndoe@some-site.com&#39;</span><span class="p">,</span>
@@ -633,30 +633,30 @@ an example:</p>
 <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">session</span><span class="o">-&gt;</span><span class="na">set_userdata</span><span class="p">(</span><span class="nv">$newdata</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>If you want to add userdata one value at a time, <tt class="docutils literal"><span class="pre">set_userdata()</span></tt> also
-supports this syntax:</p>
+<p>ユーザデータにひとつひとつ値を追加したい場合、 <tt class="docutils literal"><span class="pre">set_userdata()</span></tt> は
+次の構文もサポートしています:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">session</span><span class="o">-&gt;</span><span class="na">set_userdata</span><span class="p">(</span><span class="s1">&#39;some_name&#39;</span><span class="p">,</span> <span class="s1">&#39;some_value&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>If you want to verify that a session value exists, simply check with
-<tt class="docutils literal"><span class="pre">isset()</span></tt>:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="c1">// returns FALSE if the &#39;some_name&#39; item doesn&#39;t exist or is NULL,</span>
-<span class="c1">// TRUE otherwise:</span>
+<p>セッション値が存在することを確認したい場合は、単に <tt class="docutils literal"><span class="pre">isset()</span></tt> で
+確認してください:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="c1">// &#39;some_name&#39; の値が存在しない場合またはNULLである場合は FALSE を、</span>
+<span class="c1">// それ以外の場合は TRUE を返します:</span>
 <span class="nb">isset</span><span class="p">(</span><span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">&#39;some_name&#39;</span><span class="p">])</span>
 </pre></div>
 </div>
-<p>Or you can call <tt class="docutils literal"><span class="pre">has_userdata()</span></tt>:</p>
+<p>もしくは <tt class="docutils literal"><span class="pre">has_userdata()</span></tt> を呼び出します:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">session</span><span class="o">-&gt;</span><span class="na">has_userdata</span><span class="p">(</span><span class="s1">&#39;some_name&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
-<div class="section" id="removing-session-data">
-<h3><a class="toc-backref" href="#id15">Removing Session Data</a><a class="headerlink" href="#removing-session-data" title="このヘッドラインへのパーマリンク">¶</a></h3>
-<p>Just as with any other variable, unsetting a value in <tt class="docutils literal"><span class="pre">$_SESSION</span></tt> can be
-done through <tt class="docutils literal"><span class="pre">unset()</span></tt>:</p>
+<div class="section" id="id9">
+<h3><a class="toc-backref" href="#id19">セッションデータを削除する</a><a class="headerlink" href="#id9" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>他の変数とまったく同じように、 <tt class="docutils literal"><span class="pre">$_SESSION</span></tt> の値を
+削除するには <tt class="docutils literal"><span class="pre">unset()</span></tt> を使えます:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nb">unset</span><span class="p">(</span><span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">&#39;some_name&#39;</span><span class="p">]);</span>
 
-<span class="c1">// or multiple values:</span>
+<span class="c1">// 複数の値を削除したい場合:</span>
 
 <span class="nb">unset</span><span class="p">(</span>
         <span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">&#39;some_name&#39;</span><span class="p">],</span>
@@ -664,14 +664,14 @@ done through <tt class="docutils literal"><span class="pre">unset()</span></tt>:
 <span class="p">);</span>
 </pre></div>
 </div>
-<p>Also, just as <tt class="docutils literal"><span class="pre">set_userdata()</span></tt> can be used to add information to a
-session, <tt class="docutils literal"><span class="pre">unset_userdata()</span></tt> can be used to remove it, by passing the
-session key. For example, if you wanted to remove &#8216;some_name&#8217; from your
-session data array:</p>
+<p>また、セッションに情報を追加するために <tt class="docutils literal"><span class="pre">set_userdata()</span></tt> が
+使えるように、 <tt class="docutils literal"><span class="pre">unset_userdata()</span></tt> にキーを渡すことで削除することができます。
+例として、セッションデータ配列から「 some_name 」を
+削除したい場合は:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">session</span><span class="o">-&gt;</span><span class="na">unset_userdata</span><span class="p">(</span><span class="s1">&#39;some_name&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>This method also accepts an array of item keys to unset:</p>
+<p>このメソッドは削除したい項目のキーの配列を受けつけます:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$array_items</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span><span class="s1">&#39;username&#39;</span><span class="p">,</span> <span class="s1">&#39;email&#39;</span><span class="p">);</span>
 
 <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">session</span><span class="o">-&gt;</span><span class="na">unset_userdata</span><span class="p">(</span><span class="nv">$array_items</span><span class="p">);</span>
@@ -679,13 +679,13 @@ session data array:</p>
 </div>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
-<p class="last">In previous versions, the <tt class="docutils literal"><span class="pre">unset_userdata()</span></tt> method used
-to accept an associative array of <tt class="docutils literal"><span class="pre">key</span> <span class="pre">=&gt;</span> <span class="pre">'dummy</span> <span class="pre">value'</span></tt>
-pairs. This is no longer supported.</p>
+<p class="last">以前のバージョンでは <tt class="docutils literal"><span class="pre">unset_userdata()</span></tt> メソッド
+は <tt class="docutils literal"><span class="pre">key</span> <span class="pre">=&gt;</span> <span class="pre">'dummy</span> <span class="pre">value'</span></tt> の連想配列を受けつけていました。
+これはもうサポートされなくなりました。</p>
 </div>
 </div>
 <div class="section" id="flashdata">
-<h3><a class="toc-backref" href="#id16">Flashdata</a><a class="headerlink" href="#flashdata" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<h3><a class="toc-backref" href="#id20">Flashdata</a><a class="headerlink" href="#flashdata" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p>CodeIgniter supports &#8220;flashdata&#8221;, or session data that will only be
 available for the next request, and is then automatically cleared.</p>
 <p>This can be very useful, especially for one-time informational, error or
@@ -745,7 +745,7 @@ You can either pass a single item or an array of flashdata items to keep.</p>
 </div>
 </div>
 <div class="section" id="tempdata">
-<h3><a class="toc-backref" href="#id17">Tempdata</a><a class="headerlink" href="#tempdata" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<h3><a class="toc-backref" href="#id21">Tempdata</a><a class="headerlink" href="#tempdata" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p>CodeIgniter also supports &#8220;tempdata&#8221;, or session data with a specific
 expiration time. After the value expires, or the session expires or is
 deleted, the value is automatically removed.</p>
@@ -828,7 +828,7 @@ intend to reuse that same key in the same request, you&#8217;d want to use
 </div>
 </div>
 <div class="section" id="destroying-a-session">
-<h3><a class="toc-backref" href="#id18">Destroying a Session</a><a class="headerlink" href="#destroying-a-session" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<h3><a class="toc-backref" href="#id22">Destroying a Session</a><a class="headerlink" href="#destroying-a-session" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p>To clear the current session (for example, during a logout), you may
 simply use either PHP&#8217;s <a class="reference external" href="http://php.net/session_destroy">session_destroy()</a>
 function, or the <tt class="docutils literal"><span class="pre">sess_destroy()</span></tt> method. Both will work in exactly the
@@ -849,7 +849,7 @@ unusable during the same request after you destroy the session.</p>
 </div>
 </div>
 <div class="section" id="accessing-session-metadata">
-<h3><a class="toc-backref" href="#id19">Accessing session metadata</a><a class="headerlink" href="#accessing-session-metadata" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<h3><a class="toc-backref" href="#id23">Accessing session metadata</a><a class="headerlink" href="#accessing-session-metadata" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p>In previous CodeIgniter versions, the session data array included 4 items
 by default: &#8216;session_id&#8217;, &#8216;ip_address&#8217;, &#8216;user_agent&#8217;, &#8216;last_activity&#8217;.</p>
 <p>This was due to the specifics of how sessions worked, but is now no longer
@@ -866,7 +866,7 @@ accessing them:</p>
 </div></blockquote>
 </div>
 <div class="section" id="session-preferences">
-<h3><a class="toc-backref" href="#id20">Session Preferences</a><a class="headerlink" href="#session-preferences" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<h3><a class="toc-backref" href="#id24">Session Preferences</a><a class="headerlink" href="#session-preferences" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p>CodeIgniter will usually make everything work out of the box. However,
 Sessions are a very sensitive component of any application, so some
 careful configuration must be done. Please take your time to consider
@@ -978,7 +978,7 @@ ignored.</p>
 </div>
 </div>
 <div class="section" id="session-drivers">
-<h3><a class="toc-backref" href="#id21">Session Drivers</a><a class="headerlink" href="#session-drivers" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<h3><a class="toc-backref" href="#id25">Session Drivers</a><a class="headerlink" href="#session-drivers" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p>As already mentioned, the Session library comes with 4 drivers, or storage
 engines, that you can use:</p>
 <blockquote>
@@ -1008,7 +1008,7 @@ community, we want to warn you that it was dropped because it is
 custom driver.</p>
 </div>
 <div class="section" id="files-driver">
-<h4><a class="toc-backref" href="#id22">Files Driver</a><a class="headerlink" href="#files-driver" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<h4><a class="toc-backref" href="#id26">Files Driver</a><a class="headerlink" href="#files-driver" title="このヘッドラインへのパーマリンク">¶</a></h4>
 <p>The &#8216;files&#8217; driver uses your file system for storing session data.</p>
 <p>It can safely be said that it works exactly like PHP&#8217;s own default session
 implementation, but in case this is an important detail for you, have it
@@ -1037,7 +1037,7 @@ permissions will probable break your application.</p>
 </pre></div>
 </div>
 <div class="section" id="bonus-tip">
-<h5><a class="toc-backref" href="#id23">Bonus Tip</a><a class="headerlink" href="#bonus-tip" title="このヘッドラインへのパーマリンク">¶</a></h5>
+<h5><a class="toc-backref" href="#id27">Bonus Tip</a><a class="headerlink" href="#bonus-tip" title="このヘッドラインへのパーマリンク">¶</a></h5>
 <p>Some of you will probably opt to choose another session driver because
 file storage is usually slower. This is only half true.</p>
 <p>A very basic test will probably trick you into believing that an SQL
@@ -1051,7 +1051,7 @@ into using <a class="reference external" href="http://eddmann.com/posts/storing-
 </div>
 </div>
 <div class="section" id="database-driver">
-<h4><a class="toc-backref" href="#id24">Database Driver</a><a class="headerlink" href="#database-driver" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<h4><a class="toc-backref" href="#id28">Database Driver</a><a class="headerlink" href="#database-driver" title="このヘッドラインへのパーマリンク">¶</a></h4>
 <p>The &#8216;database&#8217; driver uses a relational database such as MySQL or
 PostgreSQL to store sessions. This is a popular choice among many users,
 because it allows the developer easy access to the session data within
@@ -1130,7 +1130,7 @@ issues.</p>
 </div>
 </div>
 <div class="section" id="redis-driver">
-<h4><a class="toc-backref" href="#id25">Redis Driver</a><a class="headerlink" href="#redis-driver" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<h4><a class="toc-backref" href="#id29">Redis Driver</a><a class="headerlink" href="#redis-driver" title="このヘッドラインへのパーマリンク">¶</a></h4>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
 <p class="last">Since Redis doesn&#8217;t have a locking mechanism exposed, locks for
@@ -1168,7 +1168,7 @@ sufficient:</p>
 </div>
 </div>
 <div class="section" id="memcached-driver">
-<h4><a class="toc-backref" href="#id26">Memcached Driver</a><a class="headerlink" href="#memcached-driver" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<h4><a class="toc-backref" href="#id30">Memcached Driver</a><a class="headerlink" href="#memcached-driver" title="このヘッドラインへのパーマリンク">¶</a></h4>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
 <p class="last">Since Memcache doesn&#8217;t have a locking mechanism exposed, locks
@@ -1192,8 +1192,8 @@ being just a <tt class="docutils literal"><span class="pre">host:port</span></tt
 <span class="nv">$config</span><span class="p">[</span><span class="s1">&#39;sess_save_path&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;localhost:11211&#39;</span><span class="p">;</span>
 </pre></div>
 </div>
-<div class="section" id="id6">
-<h5><a class="toc-backref" href="#id27">Bonus Tip</a><a class="headerlink" href="#id6" title="このヘッドラインへのパーマリンク">¶</a></h5>
+<div class="section" id="id10">
+<h5><a class="toc-backref" href="#id31">Bonus Tip</a><a class="headerlink" href="#id10" title="このヘッドラインへのパーマリンク">¶</a></h5>
 <p>Multi-server configuration with an optional <em>weight</em> parameter as the
 third colon-separated (<tt class="docutils literal"><span class="pre">:weight</span></tt>) value is also supported, but we have
 to note that we haven&#8217;t tested if that is reliable.</p>
@@ -1207,7 +1207,7 @@ separate the multiple server paths with commas:</p>
 </div>
 </div>
 <div class="section" id="custom-drivers">
-<h4><a class="toc-backref" href="#id28">Custom Drivers</a><a class="headerlink" href="#custom-drivers" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<h4><a class="toc-backref" href="#id32">Custom Drivers</a><a class="headerlink" href="#custom-drivers" title="このヘッドラインへのパーマリンク">¶</a></h4>
 <p>You may also create your own, custom session drivers. However, have it in
 mind that this is typically not an easy task, as it takes a lot of
 knowledge to do it properly.</p>
@@ -1305,7 +1305,7 @@ configuration value to &#8216;dummy&#8217; and use your own driver. Congratulati
 </div>
 </div>
 <div class="section" id="class-reference">
-<h2><a class="toc-backref" href="#id29">Class Reference</a><a class="headerlink" href="#class-reference" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2><a class="toc-backref" href="#id33">Class Reference</a><a class="headerlink" href="#class-reference" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <dl class="class">
 <dt id="CI_Session">
 <em class="property">class </em><tt class="descname">CI_Session</tt><a class="headerlink" href="#CI_Session" title="この定義へのパーマリンク">¶</a></dt>

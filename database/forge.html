@@ -527,6 +527,7 @@ INT、VARCHAR、TEXT などです。多くのデータタイプ (たとえば VA
 <li>auto_increment/true : フィールドのフラグとして、auto_increment を立
 てます。フィールドタイプは整数の様なタイプをサポートするものでないとい
 けません。</li>
+<li>unique/true : to generate a unique key for the field definition.</li>
 </ul>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$fields</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
         <span class="s1">&#39;blog_id&#39;</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
@@ -538,6 +539,7 @@ INT、VARCHAR、TEXT などです。多くのデータタイプ (たとえば VA
         <span class="s1">&#39;blog_title&#39;</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
                 <span class="s1">&#39;type&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;VARCHAR&#39;</span><span class="p">,</span>
                 <span class="s1">&#39;constraint&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;100&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;unique&#39;</span> <span class="o">=&gt;</span> <span class="k">TRUE</span><span class="p">,</span>
         <span class="p">),</span>
         <span class="s1">&#39;blog_author&#39;</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
                 <span class="s1">&#39;type&#39;</span> <span class="o">=&gt;</span><span class="s1">&#39;VARCHAR&#39;</span><span class="p">,</span>

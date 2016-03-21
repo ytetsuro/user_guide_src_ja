@@ -32,7 +32,7 @@
   
     <link rel="top" title="CodeIgniter 3.1.0-dev ドキュメント" href="../index.html"/>
         <link rel="up" title="以前のバージョンからのアップグレード" href="upgrading.html"/>
-        <link rel="next" title="Upgrading from 3.0.4 to 3.0.5" href="upgrade_305.html"/>
+        <link rel="next" title="Upgrading from 3.0.5 to 3.0.6" href="upgrade_306.html"/>
         <link rel="prev" title="以前のバージョンからのアップグレード" href="upgrading.html"/> 
 
   
@@ -474,8 +474,41 @@ don&#8217;t support it at all.
 Thus, <tt class="docutils literal"><span class="pre">db_set_charset()</span></tt> is no longer necessary and is removed.</p>
 </div>
 </div>
-<div class="section" id="step-3-check-usage-of-doctype-html-helper">
-<h2>Step 3: Check usage of doctype() HTML helper<a class="headerlink" href="#step-3-check-usage-of-doctype-html-helper" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="section" id="step-3-check-logic-related-to-uri-parsing-of-cli-requests">
+<h2>Step 3: Check logic related to URI parsing of CLI requests<a class="headerlink" href="#step-3-check-logic-related-to-uri-parsing-of-cli-requests" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>When running a CodeIgniter application from the CLI, the
+<a class="reference internal" href="../libraries/uri.html"><em>URI Library</em></a> will now ignore the
+<tt class="docutils literal"><span class="pre">$config['url_suffix']</span></tt> and <tt class="docutils literal"><span class="pre">$config['permitted_uri_chars']</span></tt>
+configuration settings.</p>
+<p>These two options don&#8217;t make sense under the command line (which is why
+this change was made) and therefore you shouldn&#8217;t be affected by this, but
+if you&#8217;ve relied on them for some reason, you&#8217;d probably have to make some
+changes to your code.</p>
+</div>
+<div class="section" id="step-4-check-cache-library-configurations-for-redis-memcache-d">
+<h2>Step 4: Check Cache Library configurations for Redis, Memcache(d)<a class="headerlink" href="#step-4-check-cache-library-configurations-for-redis-memcache-d" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>The new improvements for the &#8216;redis&#8217; and &#8216;memcached&#8217; drivers of the
+<a class="reference internal" href="../libraries/caching.html"><em>Cache Library</em></a> may require some small
+adjustments to your configuration values ...</p>
+<div class="section" id="redis">
+<h3>Redis<a class="headerlink" href="#redis" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>If you&#8217;re using the &#8216;redis&#8217; driver with a UNIX socket connection, you&#8217;ll
+have to move the socket path from <tt class="docutils literal"><span class="pre">$config['socket']</span></tt> to
+<tt class="docutils literal"><span class="pre">$config['host']</span></tt> instead.</p>
+<p>The <tt class="docutils literal"><span class="pre">$config['socket_type']</span></tt> option is also removed, although that won&#8217;t
+affect your application - it will be ignored and the connection type will
+be determined by the format used for <tt class="docutils literal"><span class="pre">$config['host']</span></tt> instead.</p>
+</div>
+<div class="section" id="memcache-d">
+<h3>Memcache(d)<a class="headerlink" href="#memcache-d" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>The &#8216;memcached&#8217; will now ignore configurations that don&#8217;t specify a <tt class="docutils literal"><span class="pre">host</span></tt>
+value (previously, it just set the host to the default &#8216;127.0.0.1&#8217;).</p>
+<p>Therefore, if you&#8217;ve added a configuration that only sets e.g. a <tt class="docutils literal"><span class="pre">port</span></tt>,
+you will now have to explicitly set the <tt class="docutils literal"><span class="pre">host</span></tt> to &#8216;127.0.0.1&#8217; as well.</p>
+</div>
+</div>
+<div class="section" id="step-5-check-usage-of-doctype-html-helper">
+<h2>Step 5: Check usage of doctype() HTML helper<a class="headerlink" href="#step-5-check-usage-of-doctype-html-helper" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>The <a class="reference internal" href="../helpers/html_helper.html"><em>HTML Helper</em></a> function
 <a class="reference internal" href="../helpers/html_helper.html#doctype" title="doctype"><tt class="xref php php-func docutils literal"><span class="pre">doctype()</span></tt></a> used to default to &#8216;xhtml1-strict&#8217; (XHTML 1.0 Strict)
 when no document type was specified. That default value is now changed to
@@ -493,7 +526,7 @@ HTML 5 formatting.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="upgrade_305.html" class="btn btn-neutral float-right" title="Upgrading from 3.0.4 to 3.0.5">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="upgrade_306.html" class="btn btn-neutral float-right" title="Upgrading from 3.0.5 to 3.0.6">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="upgrading.html" class="btn btn-neutral" title="以前のバージョンからのアップグレード"><span class="fa fa-arrow-circle-left"></span> Previous</a>

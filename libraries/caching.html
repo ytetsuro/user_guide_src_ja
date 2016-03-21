@@ -777,9 +777,7 @@ on which adapter is being used.</p>
 To use it, you need <a class="reference external" href="https://github.com/phpredis/phpredis">Redis server and phpredis PHP extension</a>.</p>
 <p>redisサーバーに接続する構成オプションは、application/config/redis.phpファイルに格納されなければなりません。
 利用できるオプション:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$config</span><span class="p">[</span><span class="s1">&#39;socket_type&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;tcp&#39;</span><span class="p">;</span> <span class="c1">//`tcp` または `unix`</span>
-<span class="nv">$config</span><span class="p">[</span><span class="s1">&#39;socket&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;/var/run/redis.sock&#39;</span><span class="p">;</span> <span class="c1">// `unix`ソケットタイプの場合</span>
-<span class="nv">$config</span><span class="p">[</span><span class="s1">&#39;host&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;127.0.0.1&#39;</span><span class="p">;</span>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$config</span><span class="p">[</span><span class="s1">&#39;host&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;127.0.0.1&#39;</span><span class="p">;</span>
 <span class="nv">$config</span><span class="p">[</span><span class="s1">&#39;password&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="k">NULL</span><span class="p">;</span>
 <span class="nv">$config</span><span class="p">[</span><span class="s1">&#39;port&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">6379</span><span class="p">;</span>
 <span class="nv">$config</span><span class="p">[</span><span class="s1">&#39;timeout&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>

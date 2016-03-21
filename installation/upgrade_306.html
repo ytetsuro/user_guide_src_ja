@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>クエリ &mdash; CodeIgniter 3.1.0-dev ドキュメント</title>
+  <title>Upgrading from 3.0.5 to 3.0.6 &mdash; CodeIgniter 3.1.0-dev ドキュメント</title>
   
 
   
@@ -31,9 +31,9 @@
 
   
     <link rel="top" title="CodeIgniter 3.1.0-dev ドキュメント" href="../index.html"/>
-        <link rel="up" title="データベースリファレンス" href="index.html"/>
-        <link rel="next" title="Generating Query Results" href="results.html"/>
-        <link rel="prev" title="データベースへの接続" href="connecting.html"/> 
+        <link rel="up" title="以前のバージョンからのアップグレード" href="upgrading.html"/>
+        <link rel="next" title="Upgrading from 3.0.4 to 3.0.5" href="upgrade_305.html"/>
+        <link rel="prev" title="Upgrading from 3.0.x to 3.1.x" href="upgrade_310.html"/> 
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -53,12 +53,12 @@
 </ul>
 </li>
 </ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../installation/index.html">インストール方法</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../installation/downloads.html">CodeIgniter のダウンロード</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../installation/index.html">インストール方法</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../installation/upgrading.html">以前のバージョンからのアップグレード</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../installation/troubleshooting.html">トラブルシューティング</a></li>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">インストール方法</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="downloads.html">CodeIgniter のダウンロード</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html">インストール方法</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="upgrading.html">以前のバージョンからのアップグレード</a></li>
+<li class="toctree-l2"><a class="reference internal" href="troubleshooting.html">トラブルシューティング</a></li>
 </ul>
 </li>
 </ul>
@@ -155,19 +155,19 @@
 </ul>
 </li>
 </ul>
-<ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="index.html">データベースリファレンス</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="examples.html">Quick Start: 使用例</a></li>
-<li class="toctree-l2"><a class="reference internal" href="configuration.html">データベース設定</a></li>
-<li class="toctree-l2"><a class="reference internal" href="connecting.html">データベースへの接続</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="">クエリの実行</a></li>
-<li class="toctree-l2"><a class="reference internal" href="results.html">クエリ結果の生成</a></li>
-<li class="toctree-l2"><a class="reference internal" href="helpers.html">クエリヘルパーメソッド</a></li>
-<li class="toctree-l2"><a class="reference internal" href="transactions.html">トランザクション</a></li>
-<li class="toctree-l2"><a class="reference internal" href="call_function.html">カスタム関数の呼び出し</a></li>
-<li class="toctree-l2"><a class="reference internal" href="caching.html">クエリのキャッシュ</a></li>
-<li class="toctree-l2"><a class="reference internal" href="forge.html">データベースフォージによるデータベースの操作</a></li>
-<li class="toctree-l2"><a class="reference internal" href="utilities.html">データベースユーティリティクラス</a></li>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../database/index.html">データベースリファレンス</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../database/examples.html">Quick Start: 使用例</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/configuration.html">データベース設定</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/connecting.html">データベースへの接続</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/queries.html">クエリの実行</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/results.html">クエリ結果の生成</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/helpers.html">クエリヘルパーメソッド</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/transactions.html">トランザクション</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/call_function.html">カスタム関数の呼び出し</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/caching.html">クエリのキャッシュ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/forge.html">データベースフォージによるデータベースの操作</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/utilities.html">データベースユーティリティクラス</a></li>
 </ul>
 </li>
 </ul>
@@ -236,12 +236,12 @@
 </ul>
 </li>
 </ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../installation/index.html">インストール方法</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../installation/downloads.html">CodeIgniter のダウンロード</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../installation/index.html">インストール方法</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../installation/upgrading.html">以前のバージョンからのアップグレード</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../installation/troubleshooting.html">トラブルシューティング</a></li>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">インストール方法</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="downloads.html">CodeIgniter のダウンロード</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html">インストール方法</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="upgrading.html">以前のバージョンからのアップグレード</a></li>
+<li class="toctree-l2"><a class="reference internal" href="troubleshooting.html">トラブルシューティング</a></li>
 </ul>
 </li>
 </ul>
@@ -338,19 +338,19 @@
 </ul>
 </li>
 </ul>
-<ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="index.html">データベースリファレンス</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="examples.html">Quick Start: 使用例</a></li>
-<li class="toctree-l2"><a class="reference internal" href="configuration.html">データベース設定</a></li>
-<li class="toctree-l2"><a class="reference internal" href="connecting.html">データベースへの接続</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="">クエリの実行</a></li>
-<li class="toctree-l2"><a class="reference internal" href="results.html">クエリ結果の生成</a></li>
-<li class="toctree-l2"><a class="reference internal" href="helpers.html">クエリヘルパーメソッド</a></li>
-<li class="toctree-l2"><a class="reference internal" href="transactions.html">トランザクション</a></li>
-<li class="toctree-l2"><a class="reference internal" href="call_function.html">カスタム関数の呼び出し</a></li>
-<li class="toctree-l2"><a class="reference internal" href="caching.html">クエリのキャッシュ</a></li>
-<li class="toctree-l2"><a class="reference internal" href="forge.html">データベースフォージによるデータベースの操作</a></li>
-<li class="toctree-l2"><a class="reference internal" href="utilities.html">データベースユーティリティクラス</a></li>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../database/index.html">データベースリファレンス</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../database/examples.html">Quick Start: 使用例</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/configuration.html">データベース設定</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/connecting.html">データベースへの接続</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/queries.html">クエリの実行</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/results.html">クエリ結果の生成</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/helpers.html">クエリヘルパーメソッド</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/transactions.html">トランザクション</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/call_function.html">カスタム関数の呼び出し</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/caching.html">クエリのキャッシュ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/forge.html">データベースフォージによるデータベースの操作</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/utilities.html">データベースユーティリティクラス</a></li>
 </ul>
 </li>
 </ul>
@@ -403,9 +403,11 @@
   <ul class="wy-breadcrumbs">
     <li><a href="../index.html">Docs</a> &raquo;</li>
       
-        <li><a href="index.html">データベースリファレンス</a> &raquo;</li>
+        <li><a href="index.html">インストール方法</a> &raquo;</li>
       
-    <li>クエリ</li>
+        <li><a href="upgrading.html">以前のバージョンからのアップグレード</a> &raquo;</li>
+      
+    <li>Upgrading from 3.0.5 to 3.0.6</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -413,173 +415,22 @@
       <img title="Classic Layout" alt="classic layout" src="data:image/gif;base64,R0lGODlhFAAUAJEAAAAAADMzM////wAAACH5BAUUAAIALAAAAAAUABQAAAImlI+py+0PU5gRBRDM3DxbWoXis42X13USOLauUIqnlsaH/eY6UwAAOw==" />
     </div>
   </ul>
-<div style="float:right;margin-left:5px;">[ <a href="https://github.com/codeigniter-jp/ci-ja/blob/develop/user_guide_ja_src/source/database/queries.rst">旧版翻訳途中</a> | <a href="https://github.com/bcit-ci/CodeIgniter/commits/develop/user_guide_src/source/database/queries.rst">原文履歴</a> | <a href="https://github.com/codeigniter-jp/user_guide_src_ja/commits/develop_japanese/source/database/queries.rst">翻訳履歴</a> | <a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/source/database/queries.rst">GitHubで修正</a> ]</div><br /><div style="float:right;margin-left:5px;">[ <b class="highlighted">翻訳者募集中</b> → <a href="https://docs.google.com/spreadsheets/d/1ZWD5XqwH-Uo9X7MR644jbL6O8p5LxIngLT8M547H8wc/edit?pref=2&pli=1#gid=0">翻訳状況</a> ]</div>
+<div style="float:right;margin-left:5px;">[ <a href="https://github.com/codeigniter-jp/ci-ja/blob/develop/user_guide_ja_src/source/installation/upgrade_306.rst">旧版翻訳途中</a> | <a href="https://github.com/bcit-ci/CodeIgniter/commits/develop/user_guide_src/source/installation/upgrade_306.rst">原文履歴</a> | <a href="https://github.com/codeigniter-jp/user_guide_src_ja/commits/develop_japanese/source/installation/upgrade_306.rst">翻訳履歴</a> | <a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/source/installation/upgrade_306.rst">GitHubで修正</a> ]</div><br /><div style="float:right;margin-left:5px;">[ <b class="highlighted">翻訳者募集中</b> → <a href="https://docs.google.com/spreadsheets/d/1ZWD5XqwH-Uo9X7MR644jbL6O8p5LxIngLT8M547H8wc/edit?pref=2&pli=1#gid=0">翻訳状況</a> ]</div>
   <hr/>
 </div>
           <div role="main" class="document">
             
-  <div class="section" id="id1">
-<h1>クエリ<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
-<div class="section" id="id2">
-<h2>クエリの基本<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<div class="section" id="id3">
-<h3>標準的なクエリ<a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h3>
-<p>クエリを実行するには、<strong>query</strong> メソッドを使います:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">query</span><span class="p">(</span><span class="s1">&#39;ここにクエリを記述&#39;</span><span class="p">);</span>
-</pre></div>
-</div>
-<p>query() メソッドは、「読み取り」タイプのクエリが実行されたときには、
-<a class="reference internal" href="results.html"><em>結果を表示する</em></a> ために使用するデータベースの結果
-<strong>オブジェクト</strong> を返します。 「書き込み」タイプの問い合わせを実行したとき
-には、単純にクエリが成功したかどうかによって TRUE か FALSE
-が返ります。データを取得するときには、通常は query
-メソッドの結果を受け取る変数を次のように用意
-します::</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">query</span><span class="p">(</span><span class="s1">&#39;YOUR QUERY HERE&#39;</span><span class="p">);</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="id4">
-<h3>単純化されたクエリ<a class="headerlink" href="#id4" title="このヘッドラインへのパーマリンク">¶</a></h3>
-<p><strong>simple_query</strong> は、 $this-&gt;db-&gt;query() メソッドが単純化されたものです。
-成功か失敗かを TRUE/FALSE で返します。結果セットは「返しません」。クエリ
-時間の計測や、データのバインディングをコンパイルしたり、デバッグ用にクエリ
-を保存することもありません。 これを使うと、クエリの単純な送信ができます。
-ほとんどのユーザは、このメソッドをまれにしか使用しないでしょう。</p>
-<p>データベースドライバの &#8220;execute&#8221; 関数の実行結果を返します。
-大抵は、 INSERT, DELETE, UPDATE などの書き込みクエリに関しては
-成功時か失敗時に TRUE/FALSE （本来はこれらのために使われるべきです）、
-フェッチ結果があるクエリに関してはリソースかオブジェクトです。</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">simple_query</span><span class="p">(</span><span class="s1">&#39;YOUR QUERY&#39;</span><span class="p">))</span>
-<span class="p">{</span>
-        <span class="k">echo</span> <span class="s2">&quot;Success!&quot;</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="k">else</span>
-<span class="p">{</span>
-        <span class="k">echo</span> <span class="s2">&quot;Query failed!&quot;</span><span class="p">;</span>
-<span class="p">}</span>
-</pre></div>
-</div>
+  <div class="section" id="upgrading-from-3-0-5-to-3-0-6">
+<h1>Upgrading from 3.0.5 to 3.0.6<a class="headerlink" href="#upgrading-from-3-0-5-to-3-0-6" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>Before performing an update you should take your site offline by
+replacing the index.php file with a static one.</p>
+<div class="section" id="step-1-update-your-codeigniter-files">
+<h2>Step 1: Update your CodeIgniter files<a class="headerlink" href="#step-1-update-your-codeigniter-files" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>Replace all files and directories in your <em>system/</em> directory.</p>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
-<p class="last">たとえば PostreSQL の <tt class="docutils literal"><span class="pre">pg_exec()</span></tt> は書き込みクエリでも
-必ず成功時にリソースを返します。 boolean 値を期待している場合は
-それを考慮してください。</p>
-</div>
-</div>
-</div>
-<div class="section" id="id5">
-<h2>データベースプリフィックス(接頭辞)を手動で扱う<a class="headerlink" href="#id5" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>データベースプリフィックス(接頭辞)が設定済みの場合で、ネイティブな SQL
-文の使用でテーブル名にプリフィックスを追加したいときは、以下のようにし
-ます:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">dbprefix</span><span class="p">(</span><span class="s1">&#39;tablename&#39;</span><span class="p">);</span> <span class="c1">// outputs prefix_tablename</span>
-</pre></div>
-</div>
-<p>何らかの理由で、新しく接続することなしにプログラムでプリフィックスを変
-更したい場合は、以下のメソッドを使います:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">set_dbprefix</span><span class="p">(</span><span class="s1">&#39;newprefix&#39;</span><span class="p">);</span>
-<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">dbprefix</span><span class="p">(</span><span class="s1">&#39;tablename&#39;</span><span class="p">);</span> <span class="c1">// outputs newprefix_tablename</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="id6">
-<h2>識別子の保護<a class="headerlink" href="#id6" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>多くのデータベースでは、テーブル名やフィールド名を保護すること - たとえば
-MySQL では、バッククォート(バックチック)を使います - が推奨されます。
-<strong>Query Builder のクエリは自動的に保護されます</strong> が、
-識別子を手動で保護する必要がある場合は、次を利用できます:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">protect_identifiers</span><span class="p">(</span><span class="s1">&#39;table_name&#39;</span><span class="p">);</span>
-</pre></div>
-</div>
-<div class="admonition important">
-<p class="first admonition-title">重要</p>
-<p class="last">Query Builder は入力されたテーブル名やフィールド名に対して
-適切にクオートを付与するため最大限努めますが、恣意的なユーザ入力に
-対して動作するように設計されていないことを考慮してください。
-サニタイズされていないユーザデータを入力しないでください。</p>
-</div>
-<p>このメソッドは、データベース設定ファイルで指定したデータベースプリフィ
-ックス(接頭辞)をテーブル名に追加できます。これを利用するには、第2引数
-に TRUE (ブール値)を指定します:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">protect_identifiers</span><span class="p">(</span><span class="s1">&#39;table_name&#39;</span><span class="p">,</span> <span class="k">TRUE</span><span class="p">);</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="id7">
-<h2>クエリのエスケープ処理<a class="headerlink" href="#id7" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>データベースにデータを送信する前にデータをエスケープ処理するのは、大変
-優れたセキュリティ上のプラクティスです。 CodeIgniter
-には、これを支援するメソッドが3つあります:</p>
-<ol class="arabic">
-<li><p class="first"><strong>$this-&gt;db-&gt;escape()</strong> このメソッドは、データの型を決定し、 文字列デー
-タだけをエスケープ処理します。また、自分でやらなくて済むように
-自動でデータをシングルクォーテーションで囲んでくれます:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$sql</span> <span class="o">=</span> <span class="s2">&quot;INSERT INTO table (title) VALUES(&quot;</span><span class="o">.</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">escape</span><span class="p">(</span><span class="nv">$title</span><span class="p">)</span><span class="o">.</span><span class="s2">&quot;)&quot;</span><span class="p">;</span>
-</pre></div>
-</div>
-</li>
-<li><p class="first"><strong>$this-&gt;db-&gt;escape_str()</strong> このメソッドは、型を無視して渡されたデータを
-エスケープします。 ほとんどの場合はこれを使わず、上のメソッドを利用することに
-なると思います。このメソッドは、次のように使用します:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$sql</span> <span class="o">=</span> <span class="s2">&quot;INSERT INTO table (title) VALUES(&#39;&quot;</span><span class="o">.</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">escape_str</span><span class="p">(</span><span class="nv">$title</span><span class="p">)</span><span class="o">.</span><span class="s2">&quot;&#39;)&quot;</span><span class="p">;</span>
-</pre></div>
-</div>
-</li>
-<li><p class="first"><strong>$this-&gt;db-&gt;escape_like_str()</strong> 文字列の中の LIKE 句で使用される
-ワイルドカード(&#8216;%&#8217;, &#8216;_&#8217;)についても適切にエスケープされるように、
-文字列が LIKE条件で使用されるときには、このメソッドを使用するべきです。</p>
-</li>
-</ol>
-<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$search</span> <span class="o">=</span> <span class="s1">&#39;20% raise&#39;</span><span class="p">;</span>
-<span class="nv">$sql</span> <span class="o">=</span> <span class="s2">&quot;SELECT id FROM table WHERE column LIKE &#39;%&quot;</span> <span class="o">.</span>
-    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">escape_like_str</span><span class="p">(</span><span class="nv">$search</span><span class="p">)</span><span class="o">.</span><span class="s2">&quot;%&#39; ESCAPE &#39;!&#39;&quot;</span><span class="p">;</span>
-</pre></div>
-</div>
-<div class="admonition important">
-<p class="first admonition-title">重要</p>
-<p class="last">The <tt class="docutils literal"><span class="pre">escape_like_str()</span></tt> method uses &#8216;!&#8217; (exclamation mark)
-to escape special characters for <em>LIKE</em> conditions. Because this
-method escapes partial strings that you would wrap in quotes
-yourself, it cannot automatically add the <tt class="docutils literal"><span class="pre">ESCAPE</span> <span class="pre">'!'</span></tt>
-condition for you, and so you&#8217;ll have to manually do that.</p>
-</div>
-</div>
-<div class="section" id="id8">
-<h2>クエリのバインディング<a class="headerlink" href="#id8" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>バインディングを使うと、システムにクエリを組み立てさせることで、クエリ
-の構文を単純化することができます。次のような例があげられます:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$sql</span> <span class="o">=</span> <span class="s2">&quot;SELECT * FROM some_table WHERE id = ? AND status = ? AND author = ?&quot;</span><span class="p">;</span>
-<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">query</span><span class="p">(</span><span class="nv">$sql</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;live&#39;</span><span class="p">,</span> <span class="s1">&#39;Rick&#39;</span><span class="p">));</span>
-</pre></div>
-</div>
-<p>クエリの中のクエスチョンマークは、query
-メソッドの第2引数で指定した配列のデータに自動的に置き換わります。</p>
-<p>バインディングは配列でも使用できます。この場合は IN セットに変換されます:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$sql</span> <span class="o">=</span> <span class="s2">&quot;SELECT * FROM some_table WHERE id IN ? AND status = ? AND author = ?&quot;</span><span class="p">;</span>
-<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">query</span><span class="p">(</span><span class="nv">$sql</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span><span class="k">array</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span> <span class="s1">&#39;live&#39;</span><span class="p">,</span> <span class="s1">&#39;Rick&#39;</span><span class="p">));</span>
-</pre></div>
-</div>
-<p>結果のクエリはこのようになります:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nx">SELECT</span> <span class="o">*</span> <span class="nx">FROM</span> <span class="nx">some_table</span> <span class="nx">WHERE</span> <span class="nx">id</span> <span class="nx">IN</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">6</span><span class="p">)</span> <span class="k">AND</span> <span class="nx">status</span> <span class="o">=</span> <span class="s1">&#39;live&#39;</span> <span class="k">AND</span> <span class="nx">author</span> <span class="o">=</span> <span class="s1">&#39;Rick&#39;</span>
-</pre></div>
-</div>
-<p>バインディングを利用する第2の利点は、値が自動的にエスケープされ、安全
-なクエリが生成されるということです。手動をデータをエスケープするのを気
-に留める必要がなく、あなたに代わってエンジンが自動でそれを行ってくれま
-す。</p>
-</div>
-<div class="section" id="id9">
-<h2>エラーハンドリング<a class="headerlink" href="#id9" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p><strong>$this-&gt;db-&gt;error();</strong></p>
-<p>最後に発生したエラーを取得した場合、error() メソッドが code と message
-を含んだ配列を返してくれます。こちらが簡単な例
-です:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span> <span class="o">!</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">simple_query</span><span class="p">(</span><span class="s1">&#39;SELECT `example_field` FROM `example_table`&#39;</span><span class="p">))</span>
-<span class="p">{</span>
-        <span class="nv">$error</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">error</span><span class="p">();</span> <span class="c1">// Has keys &#39;code&#39; and &#39;message&#39;</span>
-<span class="p">}</span>
-</pre></div>
+<p class="last">If you have any custom developed files in these directories,
+please make copies of them first.</p>
 </div>
 </div>
 </div>
@@ -590,10 +441,10 @@ condition for you, and so you&#8217;ll have to manually do that.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="results.html" class="btn btn-neutral float-right" title="Generating Query Results">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="upgrade_305.html" class="btn btn-neutral float-right" title="Upgrading from 3.0.4 to 3.0.5">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="connecting.html" class="btn btn-neutral" title="データベースへの接続"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="upgrade_310.html" class="btn btn-neutral" title="Upgrading from 3.0.x to 3.1.x"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

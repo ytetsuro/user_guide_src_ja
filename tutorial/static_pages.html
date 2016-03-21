@@ -437,7 +437,7 @@ MVC では非常に頻繁にこのような URL のパターンが見られま�
 <div><a class="reference external" href="http://example.com">http://example.com</a>/[コントローラクラス]/[コントローラメソッド]/[引数]</div></blockquote>
 <p>URL スキームが複雑化するにつれてこのパターンは変化するかもしれません。
 しかし、一旦はこれを知っていれば十分です。</p>
-<p>application/controllers/Pages.php に、下記のコードを記述したファイルを作成
+<p><em>application/controllers/Pages.php</em> に、下記のコードを記述したファイルを作成
 してください。</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
 <span class="k">class</span> <span class="nc">Pages</span> <span class="k">extends</span> <span class="nx">CI_Controller</span> <span class="p">{</span>
@@ -495,7 +495,7 @@ CodeIgniter の非常に専門的な議論において、これは <em>スーパ
 チェックしなければなりません：</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">public</span> <span class="k">function</span> <span class="nf">view</span><span class="p">(</span><span class="nv">$page</span> <span class="o">=</span> <span class="s1">&#39;home&#39;</span><span class="p">)</span>
 <span class="p">{</span>
-        <span class="k">if</span> <span class="p">(</span> <span class="o">!</span> <span class="nb">file_exists</span><span class="p">(</span><span class="nx">APPPATH</span><span class="o">.</span><span class="s1">&#39;/views/pages/&#39;</span><span class="o">.</span><span class="nv">$page</span><span class="o">.</span><span class="s1">&#39;.php&#39;</span><span class="p">))</span>
+        <span class="k">if</span> <span class="p">(</span> <span class="o">!</span> <span class="nb">file_exists</span><span class="p">(</span><span class="nx">APPPATH</span><span class="o">.</span><span class="s1">&#39;views/pages/&#39;</span><span class="o">.</span><span class="nv">$page</span><span class="o">.</span><span class="s1">&#39;.php&#39;</span><span class="p">))</span>
         <span class="p">{</span>
                 <span class="c1">// おっと、そのページはありません!</span>
                 <span class="nx">show_404</span><span class="p">();</span>

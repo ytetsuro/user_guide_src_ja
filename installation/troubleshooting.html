@@ -423,15 +423,15 @@
 <p>トップページの読み込みだけは問題なく、他のページがうまく表示されない場合は、
 検索エンジンに最適な URL を生成するのに必要な REQUEST_URI 環境変数が
 サーバでサポートされていない可能性があります。
-まず <strong>application/config/config.php</strong> ファイルを開き、URI Protocol の情報が
+まず <em>application/config/config.php</em> ファイルを開き、URI Protocol の情報が
 書いてある部分を探します。他の設定を試します。
-それでもまだ動かない場合は、 application/config/config ファイルを開き、
+それでもまだ動かない場合は、 <em>application/config/config</em> ファイルを開き、
 CodeIgniterのURLにクエスチョンマークを強制的に
-付加する必要があります。:</p>
+付加する必要があります:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$config</span><span class="p">[</span><span class="s1">&#39;index_page&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;index.php&quot;</span><span class="p">;</span>
 </pre></div>
 </div>
-<p>上記の部分を次のように変更します。:</p>
+<p>上記の部分を次のように変更します:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$config</span><span class="p">[</span><span class="s1">&#39;index_page&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;index.php?&quot;</span><span class="p">;</span>
 </pre></div>
 </div>
