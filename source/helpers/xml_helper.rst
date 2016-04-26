@@ -2,8 +2,7 @@
 XML Helper
 ##########
 
-The XML Helper file contains functions that assist in working with XML
-data.
+XML ヘルパーファイルは、XML データを処理するのに役立つ関数で構成されています。
 
 .. contents::
   :local:
@@ -12,10 +11,10 @@ data.
 
   <div class="custom-index container"></div>
 
-Loading this Helper
+ヘルパーのロード
 ===================
 
-This helper is loaded using the following code
+このヘルパーをロードするには次のコードを使用します:
 
 ::
 
@@ -24,25 +23,23 @@ This helper is loaded using the following code
 利用できる機能
 ===================
 
-The following functions are available:
+次の関数が利用できます:
 
 .. php:function:: xml_convert($str[, $protect_all = FALSE])
 
-	:param string $str: the text string to convert
-	:param bool $protect_all: Whether to protect all content that looks like a potential entity instead of just numbered entities, e.g. &foo;
-	:returns: XML-converted string
-	:rtype:	string
+	:パラメータ string $str: 変換する文字列
+	:パラメータ bool $protect_all: 数値文字エンティティ(例: &foo;)のようなエンティティのように見える可能性のあるコンテンツを全てそのまま出力するかどうか
+	:返り値: XML 変換文字列
+	:返り値型:	string
 
-	Takes a string as input and converts the following reserved XML
-	characters to entities:
+	文字列を入力とし、次の XML の予約文字を XML エンティティに変換します:
 
-	  - Ampersands: &
-	  - Less than and greater than characters: < >
-	  - Single and double quotes: ' "
-	  - Dashes: -
+	  - アンパサンド: &
+	  - 不等号: < >
+	  - シングルクォーテーションとダブルクォーテーション: ' "
+	  - ダッシュ(ハイフン): -
 
-	This function ignores ampersands if they are part of existing numbered
-	character entities, e.g. &#123;. Example::
+	数値文字エンティティを一部含む場合、アンパサンドを無視します。例: &#123; 例::
 
 		$string = '<p>Here is a paragraph & an entity (&#123;).</p>';
 		$string = xml_convert($string);
