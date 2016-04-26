@@ -1,6 +1,6 @@
 # CodeIgniter User Guide の日本語化
 
-ここでは、CodeIgniter の公式ドキュメント (CodeIgniter User Guide) を日本語化しています。
+ここでは、CodeIgniter の公式ドキュメント ([CodeIgniter User Guide](http://www.codeigniter.com/user_guide/)) を日本語化しています。
 
 翻訳作業の参加者を広く募集しています。お気軽に Pull Request してください。
 
