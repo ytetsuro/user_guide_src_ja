@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Views &mdash; CodeIgniter 3.1.0-dev ドキュメント</title>
+  <title>ビュー &mdash; CodeIgniter 3.1.0-dev ドキュメント</title>
   
 
   
@@ -94,7 +94,7 @@
 <li class="toctree-l2"><a class="reference internal" href="urls.html">CodeIgniter の URL</a></li>
 <li class="toctree-l2"><a class="reference internal" href="controllers.html">コントローラ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="reserved_names.html">予約語</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="">Views</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">ビュー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="models.html">モデル</a></li>
 <li class="toctree-l2"><a class="reference internal" href="helpers.html">Helpers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="libraries.html">CodeIgniter のライブラリの利用</a></li>
@@ -280,7 +280,7 @@
 <li class="toctree-l2"><a class="reference internal" href="urls.html">CodeIgniter の URL</a></li>
 <li class="toctree-l2"><a class="reference internal" href="controllers.html">コントローラ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="reserved_names.html">予約語</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="">Views</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">ビュー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="models.html">モデル</a></li>
 <li class="toctree-l2"><a class="reference internal" href="helpers.html">Helpers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="libraries.html">CodeIgniter のライブラリの利用</a></li>
@@ -411,7 +411,7 @@
       
         <li><a href="index.html">一般的なトピック</a> &raquo;</li>
       
-    <li>Views</li>
+    <li>ビュー</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -424,49 +424,49 @@
 </div>
           <div role="main" class="document">
             
-  <div class="section" id="views">
-<h1>Views<a class="headerlink" href="#views" title="このヘッドラインへのパーマリンク">¶</a></h1>
-<p>A view is simply a web page, or a page fragment, like a header, footer,
-sidebar, etc. In fact, views can flexibly be embedded within other views
-(within other views, etc., etc.) if you need this type of hierarchy.</p>
-<p>Views are never called directly, they must be loaded by a
-<a class="reference internal" href="controllers.html"><em>controller</em></a>. Remember that in an MVC framework, the
-Controller acts as the traffic cop, so it is responsible for fetching a
-particular view. If you have not read the
-<a class="reference internal" href="controllers.html"><em>Controllers</em></a> page you should do so before
-continuing.</p>
-<p>Using the example controller you created in the
-<a class="reference internal" href="controllers.html"><em>controller</em></a> page, let&#8217;s add a view to it.</p>
-<div class="section" id="creating-a-view">
-<h2>Creating a View<a class="headerlink" href="#creating-a-view" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>Using your text editor, create a file called blogview.php, and put this
-in it:</p>
+  <div class="section" id="id1">
+<h1>ビュー<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>ビューは簡単にウェブページ、またはヘッダー、フッター、
+サイドバーなどのようなページフラグメントです。実際、ビューは柔軟にほかのビューの中に埋め込むことができます
+(さらにそのビューもほかの中に、中に、中に……) そのような階層が必要なら、です。</p>
+<p>ビューは直接呼び出されることはなく、 <a class="reference internal" href="controllers.html"><em>コントローラ</em></a> によってロードされる必要があります。
+MVC フレームワークを使っていることを忘れないでください、
+コントローラは交通整理役として振る舞うので、
+特定のビューを取得する責任があるのです。
+<a class="reference internal" href="controllers.html"><em>コントローラ</em></a> ページを読んでいない場合、
+先にそちらを読んでください。</p>
+<p>:doc:` &lt;controllers&gt;` コントローラページで作成したコントローラの例を使って、
+ビューを追加してみましょう。</p>
+<div class="section" id="id2">
+<h2>ビューの作成<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>テキストエディタを使って blogview.php というファイルを作り、
+それに次の内容を書きます:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="nx">html</span><span class="o">&gt;</span>
 <span class="o">&lt;</span><span class="nx">head</span><span class="o">&gt;</span>
-        <span class="o">&lt;</span><span class="nx">title</span><span class="o">&gt;</span><span class="nx">My</span> <span class="nx">Blog</span><span class="o">&lt;/</span><span class="nx">title</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nx">title</span><span class="o">&gt;</span><span class="nx">わたしのブログ</span><span class="o">&lt;/</span><span class="nx">title</span><span class="o">&gt;</span>
 <span class="o">&lt;/</span><span class="nx">head</span><span class="o">&gt;</span>
 <span class="o">&lt;</span><span class="nx">body</span><span class="o">&gt;</span>
-        <span class="o">&lt;</span><span class="nx">h1</span><span class="o">&gt;</span><span class="nx">Welcome</span> <span class="nx">to</span> <span class="nx">my</span> <span class="nx">Blog</span><span class="o">!&lt;/</span><span class="nx">h1</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nx">h1</span><span class="o">&gt;</span><span class="nx">わたしのブログにようこそ！</span><span class="o">&lt;/</span><span class="nx">h1</span><span class="o">&gt;</span>
 <span class="o">&lt;/</span><span class="nx">body</span><span class="o">&gt;</span>
 <span class="o">&lt;/</span><span class="nx">html</span><span class="o">&gt;</span>
 </pre></div>
 </div>
-<p>Then save the file in your <em>application/views/</em> directory.</p>
+<p>このファイルは <em>application/views/</em> ディレクトリに保存します。</p>
 </div>
-<div class="section" id="loading-a-view">
-<h2>Loading a View<a class="headerlink" href="#loading-a-view" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>To load a particular view file you will use the following method:</p>
+<div class="section" id="id3">
+<h2>ビューの読み込み<a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>特定のビューファイルをロードするには、次のメソッドを使用します:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">view</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>Where name is the name of your view file.</p>
+<p>name の箇所は、ビューファイルの名前です。</p>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
-<p class="last">The .php file extension does not need to be specified
-unless you use something other than .php.</p>
+<p class="last">.php の以外のものを使用しない限り、
+.php ファイル拡張子を指定する必要はありません。</p>
 </div>
-<p>Now, open the controller file you made earlier called Blog.php, and
-replace the echo statement with the view loading method:</p>
+<p>さて、前章で作ったコントローラ Blog.php を開き、
+echo 文をビュー読み込みメソッドで置き換えます:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
 <span class="k">class</span> <span class="nc">Blog</span> <span class="k">extends</span> <span class="nx">CI_Controller</span> <span class="p">{</span>
 
@@ -477,26 +477,26 @@ replace the echo statement with the view loading method:</p>
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>If you visit your site using the URL you did earlier you should see your
-new view. The URL was similar to this:</p>
+<p>前章で使った URL を使用してサイトを開けば、新しいビューが表示されるはずです。
+URL は次のようなものです:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nx">example</span><span class="o">.</span><span class="nx">com</span><span class="o">/</span><span class="nx">index</span><span class="o">.</span><span class="nx">php</span><span class="o">/</span><span class="nx">blog</span><span class="o">/</span>
 </pre></div>
 </div>
 </div>
-<div class="section" id="loading-multiple-views">
-<h2>Loading multiple views<a class="headerlink" href="#loading-multiple-views" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>CodeIgniter will intelligently handle multiple calls to
-<tt class="docutils literal"><span class="pre">$this-&gt;load-&gt;view()</span></tt> from within a controller. If more than one call
-happens they will be appended together. For example, you may wish to
-have a header view, a menu view, a content view, and a footer view. That
-might look something like this:</p>
+<div class="section" id="id4">
+<h2>複数のビューを読み込む<a class="headerlink" href="#id4" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>CodeIgniter はコントローラでの
+<tt class="docutils literal"><span class="pre">$this-&gt;load-&gt;view()</span></tt> の複数回呼び出しをうまく処理します。複数回の呼び出しがあった場合、
+それらはまとめて追加されます。たとえば、
+ヘッダビュー、メニュービュー、内容ビュー、およびフッタビューを使いたいとします。
+次のようになります:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
 
 <span class="k">class</span> <span class="nc">Page</span> <span class="k">extends</span> <span class="nx">CI_Controller</span> <span class="p">{</span>
 
         <span class="k">public</span> <span class="k">function</span> <span class="nf">index</span><span class="p">()</span>
         <span class="p">{</span>
-                <span class="nv">$data</span><span class="p">[</span><span class="s1">&#39;page_title&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Your title&#39;</span><span class="p">;</span>
+                <span class="nv">$data</span><span class="p">[</span><span class="s1">&#39;page_title&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;あなたのタイトル&#39;</span><span class="p">;</span>
                 <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">view</span><span class="p">(</span><span class="s1">&#39;header&#39;</span><span class="p">);</span>
                 <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">view</span><span class="p">(</span><span class="s1">&#39;menu&#39;</span><span class="p">);</span>
                 <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">view</span><span class="p">(</span><span class="s1">&#39;content&#39;</span><span class="p">,</span> <span class="nv">$data</span><span class="p">);</span>
@@ -506,43 +506,44 @@ might look something like this:</p>
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>In the example above, we are using &#8220;dynamically added data&#8221;, which you
-will see below.</p>
+<p>上記の例では、後述の「動的データをビューに追加する」
+を使用しています。</p>
 </div>
-<div class="section" id="storing-views-within-sub-directories">
-<h2>Storing Views within Sub-directories<a class="headerlink" href="#storing-views-within-sub-directories" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>Your view files can also be stored within sub-directories if you prefer
-that type of organization. When doing so you will need to include the
-directory name loading the view. Example:</p>
+<div class="section" id="id5">
+<h2>サブディレクトリにビューを保存する<a class="headerlink" href="#id5" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>お好みに応じて、ビューファイルはサブディレクトリ内に格納することができます。
+その場合、ビューをロードする際にディレクトリ名を含める必要があります。
+例:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">view</span><span class="p">(</span><span class="s1">&#39;directory_name/file_name&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
-<div class="section" id="adding-dynamic-data-to-the-view">
-<h2>Adding Dynamic Data to the View<a class="headerlink" href="#adding-dynamic-data-to-the-view" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>Data is passed from the controller to the view by way of an <strong>array</strong> or
-an <strong>object</strong> in the second parameter of the view loading method. Here
-is an example using an array:</p>
+<div class="section" id="id6">
+<h2>動的データをビューに追加する<a class="headerlink" href="#id6" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>データは、ビュー読み込みメソッドの第 2 引数に <strong>配列</strong> や
+<strong>オブジェクト</strong> として、コントローラからビューに渡されます。
+つぎのものは配列を使用した例です:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$data</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
-        <span class="s1">&#39;title&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;My Title&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;heading&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;My Heading&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;message&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;My Message&#39;</span>
+        <span class="s1">&#39;title&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;わたしのタイトル&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;heading&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;わたしのヘッダ&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;message&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;わたしのメッセージ&#39;</span>
 <span class="p">);</span>
 
 <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">view</span><span class="p">(</span><span class="s1">&#39;blogview&#39;</span><span class="p">,</span> <span class="nv">$data</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>And here&#8217;s an example using an object:</p>
+<p>そして、つぎはオブジェクトを使用した例です:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$data</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Someclass</span><span class="p">();</span>
 <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">view</span><span class="p">(</span><span class="s1">&#39;blogview&#39;</span><span class="p">,</span> <span class="nv">$data</span><span class="p">);</span>
 </pre></div>
 </div>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
-<p class="last">If you use an object, the class variables will be turned
-into array elements.</p>
+<p class="last">オブジェクトを使用する場合、
+クラス変数は配列に型変換されます。</p>
 </div>
-<p>Let&#8217;s try it with your controller file. Open it add this code:</p>
+<p>それでは、コントローラファイルで試してみましょう。
+ファイルを開いてこのコードを追加します:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
 <span class="k">class</span> <span class="nc">Blog</span> <span class="k">extends</span> <span class="nx">CI_Controller</span> <span class="p">{</span>
 
@@ -556,8 +557,8 @@ into array elements.</p>
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>Now open your view file and change the text to variables that correspond
-to the array keys in your data:</p>
+<p>さて、ビューファイルを開いて、
+配列のキーに対応する変数にテキストを変更します:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="nx">html</span><span class="o">&gt;</span>
 <span class="o">&lt;</span><span class="nx">head</span><span class="o">&gt;</span>
         <span class="o">&lt;</span><span class="nx">title</span><span class="o">&gt;&lt;?</span><span class="nx">php</span> <span class="k">echo</span> <span class="nv">$title</span><span class="p">;</span><span class="cp">?&gt;</span><span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
@@ -568,32 +569,32 @@ to the array keys in your data:</p>
 <span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
 </pre></div>
 </div>
-<p>Then load the page at the URL you&#8217;ve been using and you should see the
-variables replaced.</p>
+<p>これで、いままでの URL のページを読み込めば、
+置き換えた変数が表示されることでしょう。</p>
 </div>
-<div class="section" id="creating-loops">
-<h2>Creating Loops<a class="headerlink" href="#creating-loops" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>The data array you pass to your view files is not limited to simple
-variables. You can pass multi dimensional arrays, which can be looped to
-generate multiple rows. For example, if you pull data from your database
-it will typically be in the form of a multi-dimensional array.</p>
-<p>Here&#8217;s a simple example. Add this to your controller:</p>
+<div class="section" id="id7">
+<h2>繰り返し処理を作成する<a class="headerlink" href="#id7" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>ビューファイルに渡すデータ配列は、単純な変数に限定されるものではありません。
+複数行を繰り返し生成するために、多次元配列を渡すことができます。
+たとえば、データベースからデータを取り出す場合、
+たいてい多次元配列の形を取るでしょう。</p>
+<p>つぎのものは簡単な例です。コントローラにこれを追加します:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
 <span class="k">class</span> <span class="nc">Blog</span> <span class="k">extends</span> <span class="nx">CI_Controller</span> <span class="p">{</span>
 
         <span class="k">public</span> <span class="k">function</span> <span class="nf">index</span><span class="p">()</span>
         <span class="p">{</span>
-                <span class="nv">$data</span><span class="p">[</span><span class="s1">&#39;todo_list&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span><span class="s1">&#39;Clean House&#39;</span><span class="p">,</span> <span class="s1">&#39;Call Mom&#39;</span><span class="p">,</span> <span class="s1">&#39;Run Errands&#39;</span><span class="p">);</span>
+                <span class="nv">$data</span><span class="p">[</span><span class="s1">&#39;todo_list&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span><span class="s1">&#39;掃除する&#39;</span><span class="p">,</span> <span class="s1">&#39;ママに電話&#39;</span><span class="p">,</span> <span class="s1">&#39;お使いに行く&#39;</span><span class="p">);</span>
 
-                <span class="nv">$data</span><span class="p">[</span><span class="s1">&#39;title&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;My Real Title&quot;</span><span class="p">;</span>
-                <span class="nv">$data</span><span class="p">[</span><span class="s1">&#39;heading&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;My Real Heading&quot;</span><span class="p">;</span>
+                <span class="nv">$data</span><span class="p">[</span><span class="s1">&#39;title&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;わたしの本当のタイトル&quot;</span><span class="p">;</span>
+                <span class="nv">$data</span><span class="p">[</span><span class="s1">&#39;heading&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;わたしの本当のヘッダ&quot;</span><span class="p">;</span>
 
                 <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">view</span><span class="p">(</span><span class="s1">&#39;blogview&#39;</span><span class="p">,</span> <span class="nv">$data</span><span class="p">);</span>
         <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>Now open your view file and create a loop:</p>
+<p>では、ビューを開き、ループを作成します:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="nx">html</span><span class="o">&gt;</span>
 <span class="o">&lt;</span><span class="nx">head</span><span class="o">&gt;</span>
         <span class="o">&lt;</span><span class="nx">title</span><span class="o">&gt;&lt;?</span><span class="nx">php</span> <span class="k">echo</span> <span class="nv">$title</span><span class="p">;</span><span class="cp">?&gt;</span><span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
@@ -601,7 +602,7 @@ it will typically be in the form of a multi-dimensional array.</p>
 <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
         <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span><span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nv">$heading</span><span class="p">;</span><span class="cp">?&gt;</span><span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
 
-        <span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span>My Todo List<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span>わたしのTodoリスト<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
 
         <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
         <span class="cp">&lt;?php</span> <span class="k">foreach</span> <span class="p">(</span><span class="nv">$todo_list</span> <span class="k">as</span> <span class="nv">$item</span><span class="p">)</span><span class="o">:</span><span class="cp">?&gt;</span>
@@ -617,19 +618,19 @@ it will typically be in the form of a multi-dimensional array.</p>
 </div>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
-<p class="last">You&#8217;ll notice that in the example above we are using PHP&#8217;s
-alternative syntax. If you are not familiar with it you can read about
-it <a class="reference internal" href="alternative_php.html"><em>here</em></a>.</p>
+<p class="last">上記の例では、 PHP の別の構文を使用していることに気がついたでしょう。
+詳しくないのであれば、
+<a class="reference internal" href="alternative_php.html"><em>これ</em></a> を読むと良いです。</p>
 </div>
 </div>
-<div class="section" id="returning-views-as-data">
-<h2>Returning views as data<a class="headerlink" href="#returning-views-as-data" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>There is a third <strong>optional</strong> parameter lets you change the behavior of
-the method so that it returns data as a string rather than sending it
-to your browser. This can be useful if you want to process the data in
-some way. If you set the parameter to TRUE (boolean) it will return
-data. The default behavior is false, which sends it to your browser.
-Remember to assign it to a variable if you want the data returned:</p>
+<div class="section" id="id8">
+<h2>データとしてビューを返す<a class="headerlink" href="#id8" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p><strong>省略可能な</strong> 第 3 引数はメソッドの動作を変更することができます、
+ブラウザに送信するのではなく、文字列としてデータを返すようにです。
+これは、なにがしかデータを処理したい場合に便利です。
+このパラメータを TRUE (真偽値) に設定すると、データが返されます。
+デフォルトの動作は false で、これはブラウザにデータを送信します。
+データを返すようにしたときは変数に代入するのを忘れないでください:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$string</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">view</span><span class="p">(</span><span class="s1">&#39;myfile&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="k">TRUE</span><span class="p">);</span>
 </pre></div>
 </div>
