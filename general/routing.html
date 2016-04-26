@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>URI Routing &mdash; CodeIgniter 3.1.0-dev ドキュメント</title>
+  <title>URIルーティング &mdash; CodeIgniter 3.1.0-dev ドキュメント</title>
   
 
   
@@ -95,22 +95,22 @@
 <li class="toctree-l2"><a class="reference internal" href="controllers.html">コントローラ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="reserved_names.html">予約語</a></li>
 <li class="toctree-l2"><a class="reference internal" href="views.html">ビュー</a></li>
-<li class="toctree-l2"><a class="reference internal" href="models.html">Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="models.html">モデル</a></li>
 <li class="toctree-l2"><a class="reference internal" href="helpers.html">Helpers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="libraries.html">CodeIgniter のライブラリの利用</a></li>
 <li class="toctree-l2"><a class="reference internal" href="creating_libraries.html">Creating Libraries</a></li>
 <li class="toctree-l2"><a class="reference internal" href="drivers.html">CodeIgniter のドライバの使用</a></li>
-<li class="toctree-l2"><a class="reference internal" href="creating_drivers.html">Creating Drivers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="core_classes.html">Creating Core System Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="creating_drivers.html">ドライバの作成</a></li>
+<li class="toctree-l2"><a class="reference internal" href="core_classes.html">コアシステムクラスの作成</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ancillary_classes.html">補助的なクラス作成</a></li>
-<li class="toctree-l2"><a class="reference internal" href="hooks.html">Hooks - Extending the Framework Core</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hooks.html">フック――フレームワークコアの拡張</a></li>
 <li class="toctree-l2"><a class="reference internal" href="autoloader.html">リソースの自動読み込み</a></li>
 <li class="toctree-l2"><a class="reference internal" href="common_functions.html">共通機能</a></li>
 <li class="toctree-l2"><a class="reference internal" href="compatibility_functions.html">Compatibility Functions</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="">URI Routing</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">URIルーティング</a></li>
 <li class="toctree-l2"><a class="reference internal" href="errors.html">エラー処理</a></li>
 <li class="toctree-l2"><a class="reference internal" href="caching.html">Caching</a></li>
-<li class="toctree-l2"><a class="reference internal" href="profiling.html">Profiling Your Application</a></li>
+<li class="toctree-l2"><a class="reference internal" href="profiling.html">アプリケーションのプロファイリング</a></li>
 <li class="toctree-l2"><a class="reference internal" href="cli.html">CLI からの実行</a></li>
 <li class="toctree-l2"><a class="reference internal" href="managing_apps.html">アプリケーションの管理</a></li>
 <li class="toctree-l2"><a class="reference internal" href="environments.html">複数環境への対応</a></li>
@@ -157,17 +157,20 @@
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../database/index.html">データベースリファレンス</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../database/examples.html">Quick Start: 使用例</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/examples.html">クイックスタート: 使用例</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../database/configuration.html">データベース設定</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../database/connecting.html">データベースへの接続</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../database/queries.html">クエリの実行</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../database/results.html">クエリ結果の生成</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../database/helpers.html">クエリヘルパーメソッド</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/helpers.html">クエリヘルパー関数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/query_builder.html">クエリビルダクラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../database/transactions.html">トランザクション</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../database/call_function.html">カスタム関数の呼び出し</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../database/caching.html">クエリのキャッシュ</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../database/forge.html">データベースフォージによるデータベースの操作</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/metadata.html">メタデータの取得</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/call_function.html">カスタム関数呼び出し</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/caching.html">クエリキャッシュ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/forge.html">データベースフォージを使用したデータベース操作</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../database/utilities.html">データベースユーティリティクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/db_driver_reference.html">データベースドライバリファレンス</a></li>
 </ul>
 </li>
 </ul>
@@ -278,22 +281,22 @@
 <li class="toctree-l2"><a class="reference internal" href="controllers.html">コントローラ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="reserved_names.html">予約語</a></li>
 <li class="toctree-l2"><a class="reference internal" href="views.html">ビュー</a></li>
-<li class="toctree-l2"><a class="reference internal" href="models.html">Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="models.html">モデル</a></li>
 <li class="toctree-l2"><a class="reference internal" href="helpers.html">Helpers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="libraries.html">CodeIgniter のライブラリの利用</a></li>
 <li class="toctree-l2"><a class="reference internal" href="creating_libraries.html">Creating Libraries</a></li>
 <li class="toctree-l2"><a class="reference internal" href="drivers.html">CodeIgniter のドライバの使用</a></li>
-<li class="toctree-l2"><a class="reference internal" href="creating_drivers.html">Creating Drivers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="core_classes.html">Creating Core System Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="creating_drivers.html">ドライバの作成</a></li>
+<li class="toctree-l2"><a class="reference internal" href="core_classes.html">コアシステムクラスの作成</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ancillary_classes.html">補助的なクラス作成</a></li>
-<li class="toctree-l2"><a class="reference internal" href="hooks.html">Hooks - Extending the Framework Core</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hooks.html">フック――フレームワークコアの拡張</a></li>
 <li class="toctree-l2"><a class="reference internal" href="autoloader.html">リソースの自動読み込み</a></li>
 <li class="toctree-l2"><a class="reference internal" href="common_functions.html">共通機能</a></li>
 <li class="toctree-l2"><a class="reference internal" href="compatibility_functions.html">Compatibility Functions</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="">URI Routing</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">URIルーティング</a></li>
 <li class="toctree-l2"><a class="reference internal" href="errors.html">エラー処理</a></li>
 <li class="toctree-l2"><a class="reference internal" href="caching.html">Caching</a></li>
-<li class="toctree-l2"><a class="reference internal" href="profiling.html">Profiling Your Application</a></li>
+<li class="toctree-l2"><a class="reference internal" href="profiling.html">アプリケーションのプロファイリング</a></li>
 <li class="toctree-l2"><a class="reference internal" href="cli.html">CLI からの実行</a></li>
 <li class="toctree-l2"><a class="reference internal" href="managing_apps.html">アプリケーションの管理</a></li>
 <li class="toctree-l2"><a class="reference internal" href="environments.html">複数環境への対応</a></li>
@@ -340,17 +343,20 @@
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../database/index.html">データベースリファレンス</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../database/examples.html">Quick Start: 使用例</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/examples.html">クイックスタート: 使用例</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../database/configuration.html">データベース設定</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../database/connecting.html">データベースへの接続</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../database/queries.html">クエリの実行</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../database/results.html">クエリ結果の生成</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../database/helpers.html">クエリヘルパーメソッド</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/helpers.html">クエリヘルパー関数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/query_builder.html">クエリビルダクラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../database/transactions.html">トランザクション</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../database/call_function.html">カスタム関数の呼び出し</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../database/caching.html">クエリのキャッシュ</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../database/forge.html">データベースフォージによるデータベースの操作</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/metadata.html">メタデータの取得</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/call_function.html">カスタム関数呼び出し</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/caching.html">クエリキャッシュ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/forge.html">データベースフォージを使用したデータベース操作</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../database/utilities.html">データベースユーティリティクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/db_driver_reference.html">データベースドライバリファレンス</a></li>
 </ul>
 </li>
 </ul>
@@ -405,7 +411,7 @@
       
         <li><a href="index.html">一般的なトピック</a> &raquo;</li>
       
-    <li>URI Routing</li>
+    <li>URIルーティング</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -418,204 +424,204 @@
 </div>
           <div role="main" class="document">
             
-  <div class="section" id="uri-routing">
-<h1>URI Routing<a class="headerlink" href="#uri-routing" title="このヘッドラインへのパーマリンク">¶</a></h1>
-<p>Typically there is a one-to-one relationship between a URL string and
-its corresponding controller class/method. The segments in a URI
-normally follow this pattern:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="nx">example</span><span class="o">.</span><span class="nx">com</span><span class="o">/</span><span class="nx">class</span><span class="o">/</span><span class="nx">function</span><span class="o">/</span><span class="nx">id</span><span class="o">/</span>
+  <div class="section" id="uri">
+<h1>URIルーティング<a class="headerlink" href="#uri" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>一般的に、 URL 文字列とそれに対応する
+コントローラクラス/メソッドは 1 対 1 の関係にあります。URI
+のセグメントは通常、つぎのパターンに従います:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nx">example</span><span class="o">.</span><span class="nx">com</span><span class="o">/</span><span class="nx">class</span><span class="o">/</span><span class="nx">function</span><span class="o">/</span><span class="nx">id</span><span class="o">/</span>
 </pre></div>
 </div>
-<p>In some instances, however, you may want to remap this relationship so
-that a different class/method can be called instead of the one
-corresponding to the URL.</p>
-<p>For example, let&#8217;s say you want your URLs to have this prototype:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="nx">example</span><span class="o">.</span><span class="nx">com</span><span class="o">/</span><span class="nx">product</span><span class="o">/</span><span class="mi">1</span><span class="o">/</span>
+<p>しかしながらいくつかのケースでは、この関係を再マッピングしてたいことでしょう、
+そのため
+URL に対応するものではなく別のクラス/メソッドが呼び出されるようにすることができます。</p>
+<p>たとえば、 URL がつぎのプロトタイプを持つようにしたいとしましょう:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nx">example</span><span class="o">.</span><span class="nx">com</span><span class="o">/</span><span class="nx">product</span><span class="o">/</span><span class="mi">1</span><span class="o">/</span>
 <span class="nx">example</span><span class="o">.</span><span class="nx">com</span><span class="o">/</span><span class="nx">product</span><span class="o">/</span><span class="mi">2</span><span class="o">/</span>
 <span class="nx">example</span><span class="o">.</span><span class="nx">com</span><span class="o">/</span><span class="nx">product</span><span class="o">/</span><span class="mi">3</span><span class="o">/</span>
 <span class="nx">example</span><span class="o">.</span><span class="nx">com</span><span class="o">/</span><span class="nx">product</span><span class="o">/</span><span class="mi">4</span><span class="o">/</span>
 </pre></div>
 </div>
-<p>Normally the second segment of the URL is reserved for the method
-name, but in the example above it instead has a product ID. To
-overcome this, CodeIgniter allows you to remap the URI handler.</p>
-<div class="section" id="setting-your-own-routing-rules">
-<h2>Setting your own routing rules<a class="headerlink" href="#setting-your-own-routing-rules" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>Routing rules are defined in your <em>application/config/routes.php</em> file.
-In it you&#8217;ll see an array called <tt class="docutils literal"><span class="pre">$route</span></tt> that permits you to specify
-your own routing criteria. Routes can either be specified using wildcards
-or Regular Expressions.</p>
+<p>通常、 URL の第 2 セグメントはメソッド名となっていますが、
+上記の例では代わりにプロダクト ID を持っています。
+これをクリアするために、 CodeIgniter は URI ハンドラを再マップすることができます。</p>
+<div class="section" id="id1">
+<h2>独自のルーティングルールを設定する<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>ルーティングルールは <em>application/config/routes.php</em> ファイルで定義されています。
+その中で、独自のルーティング基準を指定することを可能にする <tt class="docutils literal"><span class="pre">$route</span></tt> という配列があります。
+ルートはワイルドカードや正規表現を使用して
+指定することができます。</p>
 </div>
-<div class="section" id="wildcards">
-<h2>Wildcards<a class="headerlink" href="#wildcards" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>A typical wildcard route might look something like this:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$route</span><span class="p">[</span><span class="s1">&#39;product/:num&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;catalog/product_lookup&#39;</span><span class="p">;</span>
+<div class="section" id="id2">
+<h2>ワイルドカード<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>典型的なワイルドカードのルートは次のようになります:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$route</span><span class="p">[</span><span class="s1">&#39;product/:num&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;catalog/product_lookup&#39;</span><span class="p">;</span>
 </pre></div>
 </div>
-<p>In a route, the array key contains the URI to be matched, while the
-array value contains the destination it should be re-routed to. In the
-above example, if the literal word &#8220;product&#8221; is found in the first
-segment of the URL, and a number is found in the second segment, the
-&#8220;catalog&#8221; class and the &#8220;product_lookup&#8221; method are instead used.</p>
-<p>You can match literal values or you can use two wildcard types:</p>
-<p><strong>(:num)</strong> will match a segment containing only numbers.
-<strong>(:any)</strong> will match a segment containing any character (except for &#8216;/&#8217;, which is the segment delimiter).</p>
+<p>ルートには、配列のキーには URI が一致するもの、
+配列の値は再ルーティングすべき先が含まれています。
+上記の例では、リテラル文字「 product 」が URL の最初のセグメントにあり、
+第 2 セグメントに数値がある場合、
+「 catalog 」クラスと「 product_lookup 」メソッドが代わりに使用されます。</p>
+<p>リテラル値の一致または 2 つのワイルドカードの種類を使用することができます:</p>
+<p><strong>(:num)</strong> は数字のみを含むセグメントと一致します。
+<strong>(:any)</strong> は任意の文字を含むセグメントと一致します (セグメント区切り文字である「 / 」を除く) 。</p>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
-<p class="last">Wildcards are actually aliases for regular expressions, with
-<strong>:any</strong> being translated to <strong>[^/]+</strong> and <strong>:num</strong> to <strong>[0-9]+</strong>,
-respectively.</p>
-</div>
-<div class="admonition note">
-<p class="first admonition-title">注釈</p>
-<p class="last">Routes will run in the order they are defined. Higher routes
-will always take precedence over lower ones.</p>
+<p class="last">ワイルドカードは実際には正規表現の別名です、
+それぞれ <strong>:any</strong> は <strong>[^/]+</strong> に、 <strong>:num</strong> は <strong>[0-9]+</strong>
+に変換されます。</p>
 </div>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
-<p class="last">Route rules are not filters! Setting a rule of e.g.
-&#8216;foo/bar/(:num)&#8217; will not prevent controller <em>Foo</em> and method
-<em>bar</em> to be called with a non-numeric value if that is a valid
-route.</p>
+<p class="last">ルートは、それらの定義順で実行されます。
+上のルートは常に下のものよりも優先されます。</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last">ルートルールはフィルターではありません！　例えばルール
+「 foo/bar/(:num) 」はそれが正しいルートである場合、コントローラ <em>Foo</em> とメソッド
+<em>bar</em> が数値以外の値とともに呼ばれるのを防ぐことは
+できません。</p>
 </div>
 </div>
-<div class="section" id="examples">
-<h2>Examples<a class="headerlink" href="#examples" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>Here are a few routing examples:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$route</span><span class="p">[</span><span class="s1">&#39;journals&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;blogs&#39;</span><span class="p">;</span>
+<div class="section" id="id3">
+<h2>例<a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>ここではいくつかのルーティング例を示します:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$route</span><span class="p">[</span><span class="s1">&#39;journals&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;blogs&#39;</span><span class="p">;</span>
 </pre></div>
 </div>
-<p>A URL containing the word &#8220;journals&#8221; in the first segment will be
-remapped to the &#8220;blogs&#8221; class.</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$route</span><span class="p">[</span><span class="s1">&#39;blog/joe&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;blogs/users/34&#39;</span><span class="p">;</span>
+<p>最初のセグメントで単語「 journals 」を含む URL は
+「 blogs 」クラスに再マッピングされます。</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$route</span><span class="p">[</span><span class="s1">&#39;blog/joe&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;blogs/users/34&#39;</span><span class="p">;</span>
 </pre></div>
 </div>
-<p>A URL containing the segments blog/joe will be remapped to the &#8220;blogs&#8221;
-class and the &#8220;users&#8221; method. The ID will be set to &#8220;34&#8221;.</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$route</span><span class="p">[</span><span class="s1">&#39;product/(:any)&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;catalog/product_lookup&#39;</span><span class="p">;</span>
+<p>blog/joe セグメントを含むURLは、「 blogs 」
+クラスと「 users 」メソッドに再マッピングされます。 ID は「 34 」に設定されます。</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$route</span><span class="p">[</span><span class="s1">&#39;product/(:any)&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;catalog/product_lookup&#39;</span><span class="p">;</span>
 </pre></div>
 </div>
-<p>A URL with &#8220;product&#8221; as the first segment, and anything in the second
-will be remapped to the &#8220;catalog&#8221; class and the &#8220;product_lookup&#8221;
-method.</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$route</span><span class="p">[</span><span class="s1">&#39;product/(:num)&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;catalog/product_lookup_by_id/$1&#39;</span><span class="p">;</span>
+<p>最初のセグメントに「 product 」と第 2 セグメントに何かがある URL は、
+「 catalog 」クラスと「 product_lookup 」メソッドに
+再マッピングされます。</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$route</span><span class="p">[</span><span class="s1">&#39;product/(:num)&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;catalog/product_lookup_by_id/$1&#39;</span><span class="p">;</span>
 </pre></div>
 </div>
-<p>A URL with &#8220;product&#8221; as the first segment, and a number in the second
-will be remapped to the &#8220;catalog&#8221; class and the
-&#8220;product_lookup_by_id&#8221; method passing in the match as a variable to
-the method.</p>
+<p>最初のセグメントに「 product 」と第 2 セグメントに数字がある URL は
+「 catalog 」クラスと
+「 product_lookup_by_id 」メソッドに再マッピングされ
+変数が渡されます。</p>
 <div class="admonition important">
 <p class="first admonition-title">重要</p>
-<p class="last">Do not use leading/trailing slashes.</p>
+<p class="last">最初と最後のスラッシュは付けないでください。</p>
 </div>
 </div>
-<div class="section" id="regular-expressions">
-<h2>Regular Expressions<a class="headerlink" href="#regular-expressions" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>If you prefer you can use regular expressions to define your routing
-rules. Any valid regular expression is allowed, as are back-references.</p>
+<div class="section" id="id4">
+<h2>正規表現<a class="headerlink" href="#id4" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>ご希望の場合、自分のルーティングルールを定義するために正規表現を使用することができます。
+任意の正しい正規表現と後方参照が許可されています。</p>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
-<p class="last">If you use back-references you must use the dollar syntax
-rather than the double backslash syntax.</p>
+<p class="last">後方参照を使用する場合は、二重バックスラッシュの構文ではなく
+ドルの構文を使用する必要があります。</p>
 </div>
-<p>A typical RegEx route might look something like this:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$route</span><span class="p">[</span><span class="s1">&#39;products/([a-z]+)/(\d+)&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;$1/id_$2&#39;</span><span class="p">;</span>
+<p>典型的なルートの正規表現は次のようになります:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$route</span><span class="p">[</span><span class="s1">&#39;products/([a-z]+)/(\d+)&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;$1/id_$2&#39;</span><span class="p">;</span>
 </pre></div>
 </div>
-<p>In the above example, a URI similar to products/shirts/123 would instead
-call the &#8220;shirts&#8221; controller class and the &#8220;id_123&#8221; method.</p>
-<p>With regular expressions, you can also catch multiple segments at once.
-For example, if a user accesses a password protected area of your web
-application and you wish to be able to redirect them back to the same
-page after they log in, you may find this example useful:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$route</span><span class="p">[</span><span class="s1">&#39;login/(.+)&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;auth/login/$1&#39;</span><span class="p">;</span>
+<p>上記の例では、 product/shirts/123 の URI は
+「 shirts 」コントローラクラスと「 id_123 」メソッドを代わりに呼び出します。</p>
+<p>正規表現を使用すると、複数のセグメントをひとつとしてキャッチすることができます。
+たとえば、ユーザがウェブアプリケーションのパスワード保護された領域にアクセスし、
+彼らがログインした後に同じページに戻るようリダイレクトしたい場合、
+この例が役に立つでしょう:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$route</span><span class="p">[</span><span class="s1">&#39;login/(.+)&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;auth/login/$1&#39;</span><span class="p">;</span>
 </pre></div>
 </div>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
-<p class="last">In the above example, if the <tt class="docutils literal"><span class="pre">$1</span></tt> placeholder contains a
-slash, it will still be split into multiple parameters when
-passed to <tt class="docutils literal"><span class="pre">Auth::login()</span></tt>.</p>
+<p class="last">上記の例では、 <tt class="docutils literal"><span class="pre">$1</span></tt> プレースホルダに
+スラッシュが含まれている場合、
+<tt class="docutils literal"><span class="pre">Auth::login()</span></tt> に渡される際にまた複数のパラメータに分割されます。</p>
 </div>
-<p>For those of you who don&#8217;t know regular expressions and want to learn
-more about them, <a class="reference external" href="http://www.regular-expressions.info/">regular-expressions.info</a>
-might be a good starting point.</p>
+<p>正規表現を知らず詳細を学びたい人には、
+<a class="reference external" href="http://www.regular-expressions.info/">regular-expressions.info</a>
+は良い手掛かりになるでしょう。</p>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
-<p class="last">You can also mix and match wildcards with regular expressions.</p>
+<p class="last">正規表現とワイルドカードは混ぜて使うことができます。</p>
 </div>
 </div>
-<div class="section" id="callbacks">
-<h2>Callbacks<a class="headerlink" href="#callbacks" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>If you are using PHP &gt;= 5.3 you can use callbacks in place of the normal
-routing rules to process the back-references. Example:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$route</span><span class="p">[</span><span class="s1">&#39;products/([a-zA-Z]+)/edit/(\d+)&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="k">function</span> <span class="p">(</span><span class="nv">$product_type</span><span class="p">,</span> <span class="nv">$id</span><span class="p">)</span>
+<div class="section" id="id5">
+<h2>コールバック<a class="headerlink" href="#id5" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>PHP 5.3 以上を使用している場合、後方参照を処理するために、
+通常のルーティングルールの代わりにコールバックを使用することができます。例:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$route</span><span class="p">[</span><span class="s1">&#39;products/([a-zA-Z]+)/edit/(\d+)&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="k">function</span> <span class="p">(</span><span class="nv">$product_type</span><span class="p">,</span> <span class="nv">$id</span><span class="p">)</span>
 <span class="p">{</span>
         <span class="k">return</span> <span class="s1">&#39;catalog/product_edit/&#39;</span> <span class="o">.</span> <span class="nb">strtolower</span><span class="p">(</span><span class="nv">$product_type</span><span class="p">)</span> <span class="o">.</span> <span class="s1">&#39;/&#39;</span> <span class="o">.</span> <span class="nv">$id</span><span class="p">;</span>
 <span class="p">};</span>
 </pre></div>
 </div>
 </div>
-<div class="section" id="using-http-verbs-in-routes">
-<h2>Using HTTP verbs in routes<a class="headerlink" href="#using-http-verbs-in-routes" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>It is possible to use HTTP verbs (request method) to define your routing rules.
-This is particularly useful when building RESTful applications. You can use standard HTTP
-verbs (GET, PUT, POST, DELETE, PATCH) or a custom one such (e.g. PURGE). HTTP verb rules
-are case-insensitive. All you need to do is to add the verb as an array key to your route.
-Example:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$route</span><span class="p">[</span><span class="s1">&#39;products&#39;</span><span class="p">][</span><span class="s1">&#39;put&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;product/insert&#39;</span><span class="p">;</span>
+<div class="section" id="http">
+<h2>ルートでの HTTP 動詞の利用<a class="headerlink" href="#http" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>HTTP 動詞 (リクエストメソッド) をルーティングルール定義に使用することができます。
+RESTful なアプリケーションを構築する際に特に便利です。標準の HTTP
+動詞 ( GET 、 PUT 、 POST 、 DELETE 、 PATCH ) またはカスタムしたもの (例えば PURGE )を使用することができます。 HTTP 動詞のルールは
+大文字小文字を区別しません。必要なことは、ルート配列のキーとして動詞を追加することです。
+例:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$route</span><span class="p">[</span><span class="s1">&#39;products&#39;</span><span class="p">][</span><span class="s1">&#39;put&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;product/insert&#39;</span><span class="p">;</span>
 </pre></div>
 </div>
-<p>In the above example, a PUT request to URI &#8220;products&#8221; would call the <tt class="docutils literal"><span class="pre">Product::insert()</span></tt>
-controller method.</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$route</span><span class="p">[</span><span class="s1">&#39;products/(:num)&#39;</span><span class="p">][</span><span class="s1">&#39;DELETE&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;product/delete/$1&#39;</span><span class="p">;</span>
+<p>上記の例では、 URI 「 products 」への PUT リクエストは <tt class="docutils literal"><span class="pre">Product::insert()</span></tt>
+コントローラメソッドを呼び出します。</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$route</span><span class="p">[</span><span class="s1">&#39;products/(:num)&#39;</span><span class="p">][</span><span class="s1">&#39;DELETE&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;product/delete/$1&#39;</span><span class="p">;</span>
 </pre></div>
 </div>
-<p>A DELETE request to URL with &#8220;products&#8221; as first the segment and a number in the second will be
-mapped to the <tt class="docutils literal"><span class="pre">Product::delete()</span></tt> method, passing the numeric value as the first parameter.</p>
-<p>Using HTTP verbs is of course, optional.</p>
+<p>最初のセグメントとして「 product 」と第 2 セグメントに数値を持つ URL への DELETE リクエストは
+<tt class="docutils literal"><span class="pre">Product::delete()</span></tt> にマッピングされ、数値は第 1 引数として渡されます。</p>
+<p>HTTP動詞の利用はもちろん、任意です。</p>
 </div>
-<div class="section" id="reserved-routes">
-<h2>Reserved Routes<a class="headerlink" href="#reserved-routes" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>There are three reserved routes:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$route</span><span class="p">[</span><span class="s1">&#39;default_controller&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;welcome&#39;</span><span class="p">;</span>
+<div class="section" id="id6">
+<h2>予約済みルート<a class="headerlink" href="#id6" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>予約済みのルートが 3 つあります:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$route</span><span class="p">[</span><span class="s1">&#39;default_controller&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;welcome&#39;</span><span class="p">;</span>
 </pre></div>
 </div>
-<p>This route points to the action that should be executed if the URI contains
-no data, which will be the case when people load your root URL.
-The setting accepts a <strong>controller/method</strong> value and <tt class="docutils literal"><span class="pre">index()</span></tt> would be
-the default method if you don&#8217;t specify one. In the above example, it is
-<tt class="docutils literal"><span class="pre">Welcome::index()</span></tt> that would be called.</p>
+<p>このルートポイントは URI になにもデータがない場合に呼び出されるべきアクションです、
+これはルート URL を読み込んだ時のケースになります。
+この設定は <strong>controller/method</strong> の値を指定できますが、指定しない場合は <tt class="docutils literal"><span class="pre">index()</span></tt>
+がデフォルトになります。上記の例では
+<tt class="docutils literal"><span class="pre">Welcome::index()</span></tt> が呼び出されることになります。</p>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
-<p class="last">You can NOT use a directory as a part of this setting!</p>
+<p class="last">この設定の一部としてディレクトリを使用することはできません！</p>
 </div>
-<p>You are encouraged to always have a default route as otherwise a 404 page
-will appear by default.</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$route</span><span class="p">[</span><span class="s1">&#39;404_override&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="p">;</span>
+<p>常にデフォルトルートを持つことが推奨されます、さもなくば 404
+ページがデフォルトになります。</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$route</span><span class="p">[</span><span class="s1">&#39;404_override&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="p">;</span>
 </pre></div>
 </div>
-<p>This route indicates which controller class should be loaded if the
-requested controller is not found. It will override the default 404
-error page. Same per-directory rules as with &#8216;default_controller&#8217;
-apply here as well.</p>
-<p>It won&#8217;t affect to the <tt class="docutils literal"><span class="pre">show_404()</span></tt> function, which will
-continue loading the default <em>error_404.php</em> file at
-<em>application/views/errors/error_404.php</em>.</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$route</span><span class="p">[</span><span class="s1">&#39;translate_uri_dashes&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="k">FALSE</span><span class="p">;</span>
+<p>このルートには、要求されたコントローラが見つからない場合にロードされるべき
+コントローラクラスを指定します。これはデフォルトの 404 エラーページを
+オーバーライドします。「 default_controller 」と同じディレクトリごとのルールは
+ここにも適用されます。</p>
+<p>これは <tt class="docutils literal"><span class="pre">show_404()</span></tt> 関数には影響しません。
+それは引き続き <em>application/views/errors/error_404.php</em> にあるデフォルトの <em>error_404.php</em>
+ファイルをロードします。</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$route</span><span class="p">[</span><span class="s1">&#39;translate_uri_dashes&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="k">FALSE</span><span class="p">;</span>
 </pre></div>
 </div>
-<p>As evident by the boolean value, this is not exactly a route. This
-option enables you to automatically replace dashes (&#8216;-&#8216;) with
-underscores in the controller and method URI segments, thus saving you
-additional route entries if you need to do that.
-This is required, because the dash isn&#8217;t a valid class or method name
-character and would cause a fatal error if you try to use it.</p>
+<p>真偽値なので明らかですが、これは正確にルートではありません。
+このオプションはコントローラとメソッドの URI セグメントにおいて自動的にダッシュ「 - 」を
+アンダースコアに置換するもので、
+そうすることが必要な時にルートに設定追加する必要をなくすものです。
+これは必要なものです。なぜならダッシュはクラスやメソッド名の文字としては有効ではなく、
+それを使用しようとした場合に fatal error の原因となるからです。</p>
 <div class="admonition important">
 <p class="first admonition-title">重要</p>
-<p class="last">The reserved routes must come before any wildcard or
-regular expression routes.</p>
+<p class="last">予約済みのルートは、あらゆるワイルドカードや正規表現のルートの
+前に来なければなりません。</p>
 </div>
 </div>
 </div>
@@ -639,7 +645,7 @@ regular expression routes.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2016, British Columbia Institute of Technology.
-      最終更新: Apr 23, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>
+      最終更新: Apr 26, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>
     </p>
   </div>
 

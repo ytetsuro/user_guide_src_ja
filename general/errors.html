@@ -33,7 +33,7 @@
     <link rel="top" title="CodeIgniter 3.1.0-dev ドキュメント" href="../index.html"/>
         <link rel="up" title="一般的なトピック" href="index.html"/>
         <link rel="next" title="Webページのキャッシュ" href="caching.html"/>
-        <link rel="prev" title="URI Routing" href="routing.html"/> 
+        <link rel="prev" title="URIルーティング" href="routing.html"/> 
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -95,22 +95,22 @@
 <li class="toctree-l2"><a class="reference internal" href="controllers.html">コントローラ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="reserved_names.html">予約語</a></li>
 <li class="toctree-l2"><a class="reference internal" href="views.html">ビュー</a></li>
-<li class="toctree-l2"><a class="reference internal" href="models.html">Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="models.html">モデル</a></li>
 <li class="toctree-l2"><a class="reference internal" href="helpers.html">Helpers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="libraries.html">CodeIgniter のライブラリの利用</a></li>
 <li class="toctree-l2"><a class="reference internal" href="creating_libraries.html">Creating Libraries</a></li>
 <li class="toctree-l2"><a class="reference internal" href="drivers.html">CodeIgniter のドライバの使用</a></li>
-<li class="toctree-l2"><a class="reference internal" href="creating_drivers.html">Creating Drivers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="core_classes.html">Creating Core System Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="creating_drivers.html">ドライバの作成</a></li>
+<li class="toctree-l2"><a class="reference internal" href="core_classes.html">コアシステムクラスの作成</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ancillary_classes.html">補助的なクラス作成</a></li>
-<li class="toctree-l2"><a class="reference internal" href="hooks.html">Hooks - Extending the Framework Core</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hooks.html">フック――フレームワークコアの拡張</a></li>
 <li class="toctree-l2"><a class="reference internal" href="autoloader.html">リソースの自動読み込み</a></li>
 <li class="toctree-l2"><a class="reference internal" href="common_functions.html">共通機能</a></li>
 <li class="toctree-l2"><a class="reference internal" href="compatibility_functions.html">Compatibility Functions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="routing.html">URI Routing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="routing.html">URIルーティング</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="">エラー処理</a></li>
 <li class="toctree-l2"><a class="reference internal" href="caching.html">Caching</a></li>
-<li class="toctree-l2"><a class="reference internal" href="profiling.html">Profiling Your Application</a></li>
+<li class="toctree-l2"><a class="reference internal" href="profiling.html">アプリケーションのプロファイリング</a></li>
 <li class="toctree-l2"><a class="reference internal" href="cli.html">CLI からの実行</a></li>
 <li class="toctree-l2"><a class="reference internal" href="managing_apps.html">アプリケーションの管理</a></li>
 <li class="toctree-l2"><a class="reference internal" href="environments.html">複数環境への対応</a></li>
@@ -157,17 +157,20 @@
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../database/index.html">データベースリファレンス</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../database/examples.html">Quick Start: 使用例</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/examples.html">クイックスタート: 使用例</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../database/configuration.html">データベース設定</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../database/connecting.html">データベースへの接続</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../database/queries.html">クエリの実行</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../database/results.html">クエリ結果の生成</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../database/helpers.html">クエリヘルパーメソッド</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/helpers.html">クエリヘルパー関数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/query_builder.html">クエリビルダクラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../database/transactions.html">トランザクション</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../database/call_function.html">カスタム関数の呼び出し</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../database/caching.html">クエリのキャッシュ</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../database/forge.html">データベースフォージによるデータベースの操作</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/metadata.html">メタデータの取得</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/call_function.html">カスタム関数呼び出し</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/caching.html">クエリキャッシュ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/forge.html">データベースフォージを使用したデータベース操作</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../database/utilities.html">データベースユーティリティクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/db_driver_reference.html">データベースドライバリファレンス</a></li>
 </ul>
 </li>
 </ul>
@@ -278,22 +281,22 @@
 <li class="toctree-l2"><a class="reference internal" href="controllers.html">コントローラ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="reserved_names.html">予約語</a></li>
 <li class="toctree-l2"><a class="reference internal" href="views.html">ビュー</a></li>
-<li class="toctree-l2"><a class="reference internal" href="models.html">Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="models.html">モデル</a></li>
 <li class="toctree-l2"><a class="reference internal" href="helpers.html">Helpers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="libraries.html">CodeIgniter のライブラリの利用</a></li>
 <li class="toctree-l2"><a class="reference internal" href="creating_libraries.html">Creating Libraries</a></li>
 <li class="toctree-l2"><a class="reference internal" href="drivers.html">CodeIgniter のドライバの使用</a></li>
-<li class="toctree-l2"><a class="reference internal" href="creating_drivers.html">Creating Drivers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="core_classes.html">Creating Core System Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="creating_drivers.html">ドライバの作成</a></li>
+<li class="toctree-l2"><a class="reference internal" href="core_classes.html">コアシステムクラスの作成</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ancillary_classes.html">補助的なクラス作成</a></li>
-<li class="toctree-l2"><a class="reference internal" href="hooks.html">Hooks - Extending the Framework Core</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hooks.html">フック――フレームワークコアの拡張</a></li>
 <li class="toctree-l2"><a class="reference internal" href="autoloader.html">リソースの自動読み込み</a></li>
 <li class="toctree-l2"><a class="reference internal" href="common_functions.html">共通機能</a></li>
 <li class="toctree-l2"><a class="reference internal" href="compatibility_functions.html">Compatibility Functions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="routing.html">URI Routing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="routing.html">URIルーティング</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="">エラー処理</a></li>
 <li class="toctree-l2"><a class="reference internal" href="caching.html">Caching</a></li>
-<li class="toctree-l2"><a class="reference internal" href="profiling.html">Profiling Your Application</a></li>
+<li class="toctree-l2"><a class="reference internal" href="profiling.html">アプリケーションのプロファイリング</a></li>
 <li class="toctree-l2"><a class="reference internal" href="cli.html">CLI からの実行</a></li>
 <li class="toctree-l2"><a class="reference internal" href="managing_apps.html">アプリケーションの管理</a></li>
 <li class="toctree-l2"><a class="reference internal" href="environments.html">複数環境への対応</a></li>
@@ -340,17 +343,20 @@
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../database/index.html">データベースリファレンス</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../database/examples.html">Quick Start: 使用例</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/examples.html">クイックスタート: 使用例</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../database/configuration.html">データベース設定</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../database/connecting.html">データベースへの接続</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../database/queries.html">クエリの実行</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../database/results.html">クエリ結果の生成</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../database/helpers.html">クエリヘルパーメソッド</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/helpers.html">クエリヘルパー関数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/query_builder.html">クエリビルダクラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../database/transactions.html">トランザクション</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../database/call_function.html">カスタム関数の呼び出し</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../database/caching.html">クエリのキャッシュ</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../database/forge.html">データベースフォージによるデータベースの操作</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/metadata.html">メタデータの取得</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/call_function.html">カスタム関数呼び出し</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/caching.html">クエリキャッシュ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/forge.html">データベースフォージを使用したデータベース操作</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../database/utilities.html">データベースユーティリティクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/db_driver_reference.html">データベースドライバリファレンス</a></li>
 </ul>
 </li>
 </ul>
@@ -466,7 +472,7 @@ error_reporting() 関数を
 </table>
 <p>この関数は渡されたエラーメッセージを表示しますが、
 実行状態に合わせたエラーテンプレートを使用します:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="nx">application</span><span class="o">/</span><span class="nx">views</span><span class="o">/</span><span class="nx">errors</span><span class="o">/</span><span class="nx">html</span><span class="o">/</span><span class="nx">error_general</span><span class="o">.</span><span class="nx">php</span>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nx">application</span><span class="o">/</span><span class="nx">views</span><span class="o">/</span><span class="nx">errors</span><span class="o">/</span><span class="nx">html</span><span class="o">/</span><span class="nx">error_general</span><span class="o">.</span><span class="nx">php</span>
 </pre></div>
 </div>
 <p>または:</p>
@@ -502,7 +508,7 @@ error_reporting() 関数を
 </table>
 <p>この関数は 404 エラーメッセージを表示しますが、
 実行状態に合わせたエラーテンプレートを使用します:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="nx">application</span><span class="o">/</span><span class="nx">views</span><span class="o">/</span><span class="nx">errors</span><span class="o">/</span><span class="nx">html</span><span class="o">/</span><span class="nx">error_404</span><span class="o">.</span><span class="nx">php</span>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nx">application</span><span class="o">/</span><span class="nx">views</span><span class="o">/</span><span class="nx">errors</span><span class="o">/</span><span class="nx">html</span><span class="o">/</span><span class="nx">error_404</span><span class="o">.</span><span class="nx">php</span>
 </pre></div>
 </div>
 <p>または:</p>
@@ -541,7 +547,7 @@ CodeIgniter は自動的に 404
 どの種類のメッセージか (デバッグ、エラー、情報) を示すためです。
 第 2 引数はメッセージそのものです。</p>
 <p>例:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="k">if</span> <span class="p">(</span><span class="nv">$some_var</span> <span class="o">==</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="nv">$some_var</span> <span class="o">==</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
 <span class="p">{</span>
         <span class="nx">log_message</span><span class="p">(</span><span class="s1">&#39;error&#39;</span><span class="p">,</span> <span class="s1">&#39;何々の変数に値がありません。&#39;</span><span class="p">);</span>
 <span class="p">}</span>
@@ -585,7 +591,7 @@ CodeIgniter は自動的に 404
         <a href="caching.html" class="btn btn-neutral float-right" title="Webページのキャッシュ">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="routing.html" class="btn btn-neutral" title="URI Routing"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="routing.html" class="btn btn-neutral" title="URIルーティング"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -595,7 +601,7 @@ CodeIgniter は自動的に 404
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2016, British Columbia Institute of Technology.
-      最終更新: Apr 23, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>
+      最終更新: Apr 26, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>
     </p>
   </div>
 

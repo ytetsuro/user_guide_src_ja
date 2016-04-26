@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Hooks - Extending the Framework Core &mdash; CodeIgniter 3.1.0-dev ドキュメント</title>
+  <title>フック――フレームワークコアの拡張 &mdash; CodeIgniter 3.1.0-dev ドキュメント</title>
   
 
   
@@ -95,22 +95,22 @@
 <li class="toctree-l2"><a class="reference internal" href="controllers.html">コントローラ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="reserved_names.html">予約語</a></li>
 <li class="toctree-l2"><a class="reference internal" href="views.html">ビュー</a></li>
-<li class="toctree-l2"><a class="reference internal" href="models.html">Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="models.html">モデル</a></li>
 <li class="toctree-l2"><a class="reference internal" href="helpers.html">Helpers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="libraries.html">CodeIgniter のライブラリの利用</a></li>
 <li class="toctree-l2"><a class="reference internal" href="creating_libraries.html">Creating Libraries</a></li>
 <li class="toctree-l2"><a class="reference internal" href="drivers.html">CodeIgniter のドライバの使用</a></li>
-<li class="toctree-l2"><a class="reference internal" href="creating_drivers.html">Creating Drivers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="core_classes.html">Creating Core System Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="creating_drivers.html">ドライバの作成</a></li>
+<li class="toctree-l2"><a class="reference internal" href="core_classes.html">コアシステムクラスの作成</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ancillary_classes.html">補助的なクラス作成</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="">Hooks - Extending the Framework Core</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">フック――フレームワークコアの拡張</a></li>
 <li class="toctree-l2"><a class="reference internal" href="autoloader.html">リソースの自動読み込み</a></li>
 <li class="toctree-l2"><a class="reference internal" href="common_functions.html">共通機能</a></li>
 <li class="toctree-l2"><a class="reference internal" href="compatibility_functions.html">Compatibility Functions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="routing.html">URI Routing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="routing.html">URIルーティング</a></li>
 <li class="toctree-l2"><a class="reference internal" href="errors.html">エラー処理</a></li>
 <li class="toctree-l2"><a class="reference internal" href="caching.html">Caching</a></li>
-<li class="toctree-l2"><a class="reference internal" href="profiling.html">Profiling Your Application</a></li>
+<li class="toctree-l2"><a class="reference internal" href="profiling.html">アプリケーションのプロファイリング</a></li>
 <li class="toctree-l2"><a class="reference internal" href="cli.html">CLI からの実行</a></li>
 <li class="toctree-l2"><a class="reference internal" href="managing_apps.html">アプリケーションの管理</a></li>
 <li class="toctree-l2"><a class="reference internal" href="environments.html">複数環境への対応</a></li>
@@ -157,17 +157,20 @@
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../database/index.html">データベースリファレンス</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../database/examples.html">Quick Start: 使用例</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/examples.html">クイックスタート: 使用例</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../database/configuration.html">データベース設定</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../database/connecting.html">データベースへの接続</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../database/queries.html">クエリの実行</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../database/results.html">クエリ結果の生成</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../database/helpers.html">クエリヘルパーメソッド</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/helpers.html">クエリヘルパー関数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/query_builder.html">クエリビルダクラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../database/transactions.html">トランザクション</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../database/call_function.html">カスタム関数の呼び出し</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../database/caching.html">クエリのキャッシュ</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../database/forge.html">データベースフォージによるデータベースの操作</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/metadata.html">メタデータの取得</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/call_function.html">カスタム関数呼び出し</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/caching.html">クエリキャッシュ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/forge.html">データベースフォージを使用したデータベース操作</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../database/utilities.html">データベースユーティリティクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/db_driver_reference.html">データベースドライバリファレンス</a></li>
 </ul>
 </li>
 </ul>
@@ -278,22 +281,22 @@
 <li class="toctree-l2"><a class="reference internal" href="controllers.html">コントローラ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="reserved_names.html">予約語</a></li>
 <li class="toctree-l2"><a class="reference internal" href="views.html">ビュー</a></li>
-<li class="toctree-l2"><a class="reference internal" href="models.html">Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="models.html">モデル</a></li>
 <li class="toctree-l2"><a class="reference internal" href="helpers.html">Helpers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="libraries.html">CodeIgniter のライブラリの利用</a></li>
 <li class="toctree-l2"><a class="reference internal" href="creating_libraries.html">Creating Libraries</a></li>
 <li class="toctree-l2"><a class="reference internal" href="drivers.html">CodeIgniter のドライバの使用</a></li>
-<li class="toctree-l2"><a class="reference internal" href="creating_drivers.html">Creating Drivers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="core_classes.html">Creating Core System Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="creating_drivers.html">ドライバの作成</a></li>
+<li class="toctree-l2"><a class="reference internal" href="core_classes.html">コアシステムクラスの作成</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ancillary_classes.html">補助的なクラス作成</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="">Hooks - Extending the Framework Core</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">フック――フレームワークコアの拡張</a></li>
 <li class="toctree-l2"><a class="reference internal" href="autoloader.html">リソースの自動読み込み</a></li>
 <li class="toctree-l2"><a class="reference internal" href="common_functions.html">共通機能</a></li>
 <li class="toctree-l2"><a class="reference internal" href="compatibility_functions.html">Compatibility Functions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="routing.html">URI Routing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="routing.html">URIルーティング</a></li>
 <li class="toctree-l2"><a class="reference internal" href="errors.html">エラー処理</a></li>
 <li class="toctree-l2"><a class="reference internal" href="caching.html">Caching</a></li>
-<li class="toctree-l2"><a class="reference internal" href="profiling.html">Profiling Your Application</a></li>
+<li class="toctree-l2"><a class="reference internal" href="profiling.html">アプリケーションのプロファイリング</a></li>
 <li class="toctree-l2"><a class="reference internal" href="cli.html">CLI からの実行</a></li>
 <li class="toctree-l2"><a class="reference internal" href="managing_apps.html">アプリケーションの管理</a></li>
 <li class="toctree-l2"><a class="reference internal" href="environments.html">複数環境への対応</a></li>
@@ -340,17 +343,20 @@
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../database/index.html">データベースリファレンス</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../database/examples.html">Quick Start: 使用例</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/examples.html">クイックスタート: 使用例</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../database/configuration.html">データベース設定</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../database/connecting.html">データベースへの接続</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../database/queries.html">クエリの実行</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../database/results.html">クエリ結果の生成</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../database/helpers.html">クエリヘルパーメソッド</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/helpers.html">クエリヘルパー関数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/query_builder.html">クエリビルダクラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../database/transactions.html">トランザクション</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../database/call_function.html">カスタム関数の呼び出し</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../database/caching.html">クエリのキャッシュ</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../database/forge.html">データベースフォージによるデータベースの操作</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/metadata.html">メタデータの取得</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/call_function.html">カスタム関数呼び出し</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/caching.html">クエリキャッシュ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/forge.html">データベースフォージを使用したデータベース操作</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../database/utilities.html">データベースユーティリティクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/db_driver_reference.html">データベースドライバリファレンス</a></li>
 </ul>
 </li>
 </ul>
@@ -405,7 +411,7 @@
       
         <li><a href="index.html">一般的なトピック</a> &raquo;</li>
       
-    <li>Hooks - Extending the Framework Core</li>
+    <li>フック――フレームワークコアの拡張</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -418,30 +424,30 @@
 </div>
           <div role="main" class="document">
             
-  <div class="section" id="hooks-extending-the-framework-core">
-<h1>Hooks - Extending the Framework Core<a class="headerlink" href="#hooks-extending-the-framework-core" title="このヘッドラインへのパーマリンク">¶</a></h1>
-<p>CodeIgniter&#8217;s Hooks feature provides a means to tap into and modify the
-inner workings of the framework without hacking the core files. When
-CodeIgniter runs it follows a specific execution process, diagramed in
-the <a class="reference internal" href="../overview/appflow.html"><em>Application Flow</em></a> page. There may be
-instances, however, where you&#8217;d like to cause some action to take place
-at a particular stage in the execution process. For example, you might
-want to run a script right before your controllers get loaded, or right
-after, or you might want to trigger one of your own scripts in some
-other location.</p>
-<div class="section" id="enabling-hooks">
-<h2>Enabling Hooks<a class="headerlink" href="#enabling-hooks" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>The hooks feature can be globally enabled/disabled by setting the
-following item in the <strong>application/config/config.php</strong> file:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$config</span><span class="p">[</span><span class="s1">&#39;enable_hooks&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="k">TRUE</span><span class="p">;</span>
+  <div class="section" id="id1">
+<h1>フック――フレームワークコアの拡張<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>CodeIgniter のフック機能は、コアファイルをハッキングすることなく、
+フレームワークの内部に入り込んで動作を変更するための手段を提供します。
+CodeIgniter が実行するとき、つぎの
+<a class="reference internal" href="../overview/appflow.html"><em>アプリケーションフロー</em></a> ページに図解される特定の実行プロセスに従います。
+手元にはインスタンスがあるかもしれませんが、
+実行プロセスの特定の段階でいくつかのアクションを起こしたいかもしれません。たとえば、
+コントローラがロードされ得る直前、
+または直後にスクリプトを実行させたくはないでしょうか、
+つまり、他の場所に置いてある独自スクリプトのいずれかを実行したくないでしょうか。</p>
+<div class="section" id="id2">
+<h2>フックの有効化<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>フック機能は
+** application/config/config.php** ファイルのつぎの項目を設定することでグローバルに有効/無効にできます:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$config</span><span class="p">[</span><span class="s1">&#39;enable_hooks&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="k">TRUE</span><span class="p">;</span>
 </pre></div>
 </div>
 </div>
-<div class="section" id="defining-a-hook">
-<h2>Defining a Hook<a class="headerlink" href="#defining-a-hook" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>Hooks are defined in the <strong>application/config/hooks.php</strong> file.
-Each hook is specified as an array with this prototype:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$hook</span><span class="p">[</span><span class="s1">&#39;pre_controller&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+<div class="section" id="id3">
+<h2>フックの定義<a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>フックは <strong>application/config/hooks.php</strong> ファイルで定義されています。
+各フックはつぎのプロトタイプを持つ配列として指定されます:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$hook</span><span class="p">[</span><span class="s1">&#39;pre_controller&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
         <span class="s1">&#39;class&#39;</span>    <span class="o">=&gt;</span> <span class="s1">&#39;MyClass&#39;</span><span class="p">,</span>
         <span class="s1">&#39;function&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Myfunction&#39;</span><span class="p">,</span>
         <span class="s1">&#39;filename&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Myclass.php&#39;</span><span class="p">,</span>
@@ -451,40 +457,40 @@ Each hook is specified as an array with this prototype:</p>
 </pre></div>
 </div>
 <p><strong>Notes:</strong></p>
-<p>The array index correlates to the name of the particular hook point you
-want to use. In the above example the hook point is pre_controller. A
-list of hook points is found below. The following items should be
-defined in your associative hook array:</p>
+<p>配列のインデックスは、使用する特定のフックポイントの名前に関連します。
+上記の例では、フックポイントは pre_controller です。
+フックポイントのリストは後述のとおりです。
+つぎの項目は、フックの連想配列で定義する必要があります:</p>
 <ul class="simple">
-<li><strong>class</strong> The name of the class you wish to invoke. If you prefer to
-use a procedural function instead of a class, leave this item blank.</li>
-<li><strong>function</strong> The function (or method) name you wish to call.</li>
-<li><strong>filename</strong> The file name containing your class/function.</li>
-<li><strong>filepath</strong> The name of the directory containing your script.
+<li><strong>class</strong> 呼び出したいクラスの名前です。
+クラスの代わりに手続き型の機能を使用する場合は、この項目は空欄のままにします。</li>
+<li><strong>function</strong> 呼び出したい関数 (またはメソッド) の名前です。</li>
+<li><strong>filename</strong> クラス/関数を含むファイル名です。</li>
+<li><strong>filepath</strong> スクリプトを含むディレクトリの名前です。
 Note:
-Your script must be located in a directory INSIDE your <em>application/</em>
-directory, so the file path is relative to that directory. For example,
-if your script is located in <em>application/hooks/</em>, you will simply use
-&#8216;hooks&#8217; as your filepath. If your script is located in
-<em>application/hooks/utilities/</em> you will use &#8216;hooks/utilities&#8217; as your
-filepath. No trailing slash.</li>
-<li><strong>params</strong> Any parameters you wish to pass to your script. This item
-is optional.</li>
+スクリプトは application/ ディレクトリの　な　か　の　ディレクトリに配置するべきで、
+そのためファイルパスはそのディレクトリへの相対パスです。たとえば、
+スクリプトが <em>application/hooks/</em> に配置されている場合、
+filepath として単に「 hooks 」を使用します。スクリプトが
+<em>application/hooks/utilities/</em> にある場合は、「 hooks/utilities 」を
+filepath として使用します。末尾にスラッシュは不要です。</li>
+<li><strong>params</strong> スクリプトに渡したい任意のパラメータです。
+この項目はオプションです。</li>
 </ul>
-<p>If you&#8217;re running PHP 5.3+, you can also use lambda/anoymous functions
-(or closures) as hooks, with a simpler syntax:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$hook</span><span class="p">[</span><span class="s1">&#39;post_controller&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="k">function</span><span class="p">()</span>
+<p>PHP 5.3以上で実行している場合は、ラムダ/無名関数
+(またはクロージャ) を使用することができます。簡単な構文です:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$hook</span><span class="p">[</span><span class="s1">&#39;post_controller&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="k">function</span><span class="p">()</span>
 <span class="p">{</span>
-        <span class="cm">/* do something here */</span>
+        <span class="cm">/* ここで何かします */</span>
 <span class="p">};</span>
 </pre></div>
 </div>
 </div>
-<div class="section" id="multiple-calls-to-the-same-hook">
-<h2>Multiple Calls to the Same Hook<a class="headerlink" href="#multiple-calls-to-the-same-hook" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>If want to use the same hook point with more than one script, simply
-make your array declaration multi-dimensional, like this:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$hook</span><span class="p">[</span><span class="s1">&#39;pre_controller&#39;</span><span class="p">][]</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+<div class="section" id="id4">
+<h2>同じフックでの複数の呼び出し<a class="headerlink" href="#id4" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>複数のスクリプトを同じフックポイントで使用したい場合、
+単に多次元配列として宣言します、このように:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$hook</span><span class="p">[</span><span class="s1">&#39;pre_controller&#39;</span><span class="p">][]</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
         <span class="s1">&#39;class&#39;</span>    <span class="o">=&gt;</span> <span class="s1">&#39;MyClass&#39;</span><span class="p">,</span>
         <span class="s1">&#39;function&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;MyMethod&#39;</span><span class="p">,</span>
         <span class="s1">&#39;filename&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Myclass.php&#39;</span><span class="p">,</span>
@@ -501,44 +507,44 @@ make your array declaration multi-dimensional, like this:</p>
 <span class="p">);</span>
 </pre></div>
 </div>
-<p>Notice the brackets after each array index:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$hook</span><span class="p">[</span><span class="s1">&#39;pre_controller&#39;</span><span class="p">][]</span>
+<p>各配列インデックスの後の括弧に注意してください:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$hook</span><span class="p">[</span><span class="s1">&#39;pre_controller&#39;</span><span class="p">][]</span>
 </pre></div>
 </div>
-<p>This permits you to have the same hook point with multiple scripts. The
-order you define your array will be the execution order.</p>
+<p>これにより複数のスクリプトで同じフックポイントを持つことができます。
+配列の定義順が実行順序になります。</p>
 </div>
-<div class="section" id="hook-points">
-<h2>Hook Points<a class="headerlink" href="#hook-points" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>The following is a list of available hook points.</p>
+<div class="section" id="id5">
+<h2>フックポイント<a class="headerlink" href="#id5" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>以下は利用可能なフックポイントのリストです。</p>
 <ul class="simple">
 <li><strong>pre_system</strong>
-Called very early during system execution. Only the benchmark and
-hooks class have been loaded at this point. No routing or other
-processes have happened.</li>
+システム実行中の非常に早い段階で呼び出されます。ベンチマーククラスと
+フッククラスだけがこの時点でロードされています。ルーティングや
+他のプロセスは実行されていません。</li>
 <li><strong>pre_controller</strong>
-Called immediately prior to any of your controllers being called.
-All base classes, routing, and security checks have been done.</li>
+いずれかのコントローラが呼び出される直前に呼び出されます。
+すべての基本クラス、ルーティング、およびセキュリティチェックは実行済みです。</li>
 <li><strong>post_controller_constructor</strong>
-Called immediately after your controller is instantiated, but prior
-to any method calls happening.</li>
+コントローラがインスタンス化された直後に、
+しかしメソッド呼び出しをする前に呼び出されます。</li>
 <li><strong>post_controller</strong>
-Called immediately after your controller is fully executed.</li>
+コントローラの実行が完全に終わった直後に呼び出されます。</li>
 <li><strong>display_override</strong>
-Overrides the <tt class="docutils literal"><span class="pre">_display()</span></tt> method, used to send the finalized page
-to the web browser at the end of system execution. This permits you
-to use your own display methodology. Note that you will need to
-reference the CI superobject with <tt class="docutils literal"><span class="pre">$this-&gt;CI</span> <span class="pre">=&amp;</span> <span class="pre">get_instance()</span></tt> and
-then the finalized data will be available by calling
-<tt class="docutils literal"><span class="pre">$this-&gt;CI-&gt;output-&gt;get_output()</span></tt>.</li>
+<tt class="docutils literal"><span class="pre">_display()</span></tt> メソッドをオーバーライドします。システム実行の最後で
+ウェブブラウザに確定ページを送信するために使用されるものです。これにより
+独自の方法による表示が可能になります。
+CI スーパーオブジェクトへの参照が <tt class="docutils literal"><span class="pre">$this-&gt;CI</span> <span class="pre">=&amp;</span> <span class="pre">get_instance()</span></tt> により必要となること、
+そして確定データは
+<tt class="docutils literal"><span class="pre">$this-&gt;CI-&gt;output-&gt;get_output()</span></tt> を呼び出すことによって利用できるようになることを覚えておいてください。</li>
 <li><strong>cache_override</strong>
-Enables you to call your own method instead of the <tt class="docutils literal"><span class="pre">_display_cache()</span></tt>
-method in the <a class="reference internal" href="../libraries/output.html"><em>Output Library</em></a>. This permits
-you to use your own cache display mechanism.</li>
+<a class="reference internal" href="../libraries/output.html"><em>出力ライブラリ</em></a> の <tt class="docutils literal"><span class="pre">_display_cache()</span></tt>
+メソッドのかわりに独自のメソッドを呼び出すことができます。これにより、
+独自のキャッシュ表示機構を使用できるようになります。</li>
 <li><strong>post_system</strong>
-Called after the final rendered page is sent to the browser, at the
-end of system execution after the finalized data is sent to the
-browser.</li>
+最終的にレンダリングされるページがブラウザに送られた後、
+つまりブラウザに確定データが送信されシステム実行が終了する時に
+呼び出されます。</li>
 </ul>
 </div>
 </div>
@@ -562,7 +568,7 @@ browser.</li>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2016, British Columbia Institute of Technology.
-      最終更新: Apr 23, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>
+      最終更新: Apr 26, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>
     </p>
   </div>
 

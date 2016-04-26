@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Profiling Your Application &mdash; CodeIgniter 3.1.0-dev ドキュメント</title>
+  <title>アプリケーションのプロファイリング &mdash; CodeIgniter 3.1.0-dev ドキュメント</title>
   
 
   
@@ -95,22 +95,22 @@
 <li class="toctree-l2"><a class="reference internal" href="controllers.html">コントローラ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="reserved_names.html">予約語</a></li>
 <li class="toctree-l2"><a class="reference internal" href="views.html">ビュー</a></li>
-<li class="toctree-l2"><a class="reference internal" href="models.html">Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="models.html">モデル</a></li>
 <li class="toctree-l2"><a class="reference internal" href="helpers.html">Helpers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="libraries.html">CodeIgniter のライブラリの利用</a></li>
 <li class="toctree-l2"><a class="reference internal" href="creating_libraries.html">Creating Libraries</a></li>
 <li class="toctree-l2"><a class="reference internal" href="drivers.html">CodeIgniter のドライバの使用</a></li>
-<li class="toctree-l2"><a class="reference internal" href="creating_drivers.html">Creating Drivers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="core_classes.html">Creating Core System Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="creating_drivers.html">ドライバの作成</a></li>
+<li class="toctree-l2"><a class="reference internal" href="core_classes.html">コアシステムクラスの作成</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ancillary_classes.html">補助的なクラス作成</a></li>
-<li class="toctree-l2"><a class="reference internal" href="hooks.html">Hooks - Extending the Framework Core</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hooks.html">フック――フレームワークコアの拡張</a></li>
 <li class="toctree-l2"><a class="reference internal" href="autoloader.html">リソースの自動読み込み</a></li>
 <li class="toctree-l2"><a class="reference internal" href="common_functions.html">共通機能</a></li>
 <li class="toctree-l2"><a class="reference internal" href="compatibility_functions.html">Compatibility Functions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="routing.html">URI Routing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="routing.html">URIルーティング</a></li>
 <li class="toctree-l2"><a class="reference internal" href="errors.html">エラー処理</a></li>
 <li class="toctree-l2"><a class="reference internal" href="caching.html">Caching</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="">Profiling Your Application</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">アプリケーションのプロファイリング</a></li>
 <li class="toctree-l2"><a class="reference internal" href="cli.html">CLI からの実行</a></li>
 <li class="toctree-l2"><a class="reference internal" href="managing_apps.html">アプリケーションの管理</a></li>
 <li class="toctree-l2"><a class="reference internal" href="environments.html">複数環境への対応</a></li>
@@ -157,17 +157,20 @@
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../database/index.html">データベースリファレンス</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../database/examples.html">Quick Start: 使用例</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/examples.html">クイックスタート: 使用例</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../database/configuration.html">データベース設定</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../database/connecting.html">データベースへの接続</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../database/queries.html">クエリの実行</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../database/results.html">クエリ結果の生成</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../database/helpers.html">クエリヘルパーメソッド</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/helpers.html">クエリヘルパー関数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/query_builder.html">クエリビルダクラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../database/transactions.html">トランザクション</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../database/call_function.html">カスタム関数の呼び出し</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../database/caching.html">クエリのキャッシュ</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../database/forge.html">データベースフォージによるデータベースの操作</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/metadata.html">メタデータの取得</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/call_function.html">カスタム関数呼び出し</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/caching.html">クエリキャッシュ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/forge.html">データベースフォージを使用したデータベース操作</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../database/utilities.html">データベースユーティリティクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/db_driver_reference.html">データベースドライバリファレンス</a></li>
 </ul>
 </li>
 </ul>
@@ -278,22 +281,22 @@
 <li class="toctree-l2"><a class="reference internal" href="controllers.html">コントローラ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="reserved_names.html">予約語</a></li>
 <li class="toctree-l2"><a class="reference internal" href="views.html">ビュー</a></li>
-<li class="toctree-l2"><a class="reference internal" href="models.html">Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="models.html">モデル</a></li>
 <li class="toctree-l2"><a class="reference internal" href="helpers.html">Helpers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="libraries.html">CodeIgniter のライブラリの利用</a></li>
 <li class="toctree-l2"><a class="reference internal" href="creating_libraries.html">Creating Libraries</a></li>
 <li class="toctree-l2"><a class="reference internal" href="drivers.html">CodeIgniter のドライバの使用</a></li>
-<li class="toctree-l2"><a class="reference internal" href="creating_drivers.html">Creating Drivers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="core_classes.html">Creating Core System Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="creating_drivers.html">ドライバの作成</a></li>
+<li class="toctree-l2"><a class="reference internal" href="core_classes.html">コアシステムクラスの作成</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ancillary_classes.html">補助的なクラス作成</a></li>
-<li class="toctree-l2"><a class="reference internal" href="hooks.html">Hooks - Extending the Framework Core</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hooks.html">フック――フレームワークコアの拡張</a></li>
 <li class="toctree-l2"><a class="reference internal" href="autoloader.html">リソースの自動読み込み</a></li>
 <li class="toctree-l2"><a class="reference internal" href="common_functions.html">共通機能</a></li>
 <li class="toctree-l2"><a class="reference internal" href="compatibility_functions.html">Compatibility Functions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="routing.html">URI Routing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="routing.html">URIルーティング</a></li>
 <li class="toctree-l2"><a class="reference internal" href="errors.html">エラー処理</a></li>
 <li class="toctree-l2"><a class="reference internal" href="caching.html">Caching</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="">Profiling Your Application</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">アプリケーションのプロファイリング</a></li>
 <li class="toctree-l2"><a class="reference internal" href="cli.html">CLI からの実行</a></li>
 <li class="toctree-l2"><a class="reference internal" href="managing_apps.html">アプリケーションの管理</a></li>
 <li class="toctree-l2"><a class="reference internal" href="environments.html">複数環境への対応</a></li>
@@ -340,17 +343,20 @@
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../database/index.html">データベースリファレンス</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../database/examples.html">Quick Start: 使用例</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/examples.html">クイックスタート: 使用例</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../database/configuration.html">データベース設定</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../database/connecting.html">データベースへの接続</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../database/queries.html">クエリの実行</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../database/results.html">クエリ結果の生成</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../database/helpers.html">クエリヘルパーメソッド</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/helpers.html">クエリヘルパー関数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/query_builder.html">クエリビルダクラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../database/transactions.html">トランザクション</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../database/call_function.html">カスタム関数の呼び出し</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../database/caching.html">クエリのキャッシュ</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../database/forge.html">データベースフォージによるデータベースの操作</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/metadata.html">メタデータの取得</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/call_function.html">カスタム関数呼び出し</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/caching.html">クエリキャッシュ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/forge.html">データベースフォージを使用したデータベース操作</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../database/utilities.html">データベースユーティリティクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/db_driver_reference.html">データベースドライバリファレンス</a></li>
 </ul>
 </li>
 </ul>
@@ -405,7 +411,7 @@
       
         <li><a href="index.html">一般的なトピック</a> &raquo;</li>
       
-    <li>Profiling Your Application</li>
+    <li>アプリケーションのプロファイリング</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -418,57 +424,57 @@
 </div>
           <div role="main" class="document">
             
-  <div class="section" id="profiling-your-application">
-<h1>Profiling Your Application<a class="headerlink" href="#profiling-your-application" title="このヘッドラインへのパーマリンク">¶</a></h1>
-<p>The Profiler Class will display benchmark results, queries you have run,
-and <tt class="docutils literal"><span class="pre">$_POST</span></tt> data at the bottom of your pages. This information can be
-useful during development in order to help with debugging and
-optimization.</p>
-<div class="section" id="initializing-the-class">
-<h2>Initializing the Class<a class="headerlink" href="#initializing-the-class" title="このヘッドラインへのパーマリンク">¶</a></h2>
+  <div class="section" id="id1">
+<h1>アプリケーションのプロファイリング<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>プロファイラクラスはベンチマーク結果を表示します、実行したクエリと
+<tt class="docutils literal"><span class="pre">$_POST</span></tt> データを、ページの下部に。
+この情報は開発時にデバッグや最適化を支援するために
+役立ちます。</p>
+<div class="section" id="id2">
+<h2>クラスの初期化<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <div class="admonition important">
 <p class="first admonition-title">重要</p>
-<p class="last">This class does NOT need to be initialized. It is loaded
-automatically by the <a class="reference internal" href="../libraries/output.html"><em>Output Library</em></a>
-if profiling is enabled as shown below.</p>
+<p class="last">このクラスは初期化する必要は　あ　り　ま　せ　ん　。
+以下の説明のようにプロファイリングが有効になっている場合に、 <a class="reference internal" href="../libraries/output.html"><em>出力ライブラリ</em></a>
+により自動的にロードされます。</p>
 </div>
 </div>
-<div class="section" id="enabling-the-profiler">
-<h2>Enabling the Profiler<a class="headerlink" href="#enabling-the-profiler" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>To enable the profiler place the following line anywhere within your
-<a class="reference internal" href="controllers.html"><em>Controller</em></a> methods:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">output</span><span class="o">-&gt;</span><span class="na">enable_profiler</span><span class="p">(</span><span class="k">TRUE</span><span class="p">);</span>
+<div class="section" id="id3">
+<h2>プロファイラを有効にする<a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>プロファイラを有効にするには、
+<a class="reference internal" href="controllers.html"><em>コントローラ</em></a> メソッド内の任意の場所につぎの行を追加します:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">output</span><span class="o">-&gt;</span><span class="na">enable_profiler</span><span class="p">(</span><span class="k">TRUE</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>When enabled a report will be generated and inserted at the bottom of
-your pages.</p>
-<p>To disable the profiler you will use:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">output</span><span class="o">-&gt;</span><span class="na">enable_profiler</span><span class="p">(</span><span class="k">FALSE</span><span class="p">);</span>
+<p>有効にするとレポートが生成され、
+ページの下部に挿入されます。</p>
+<p>プロファイラを無効にするには:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">output</span><span class="o">-&gt;</span><span class="na">enable_profiler</span><span class="p">(</span><span class="k">FALSE</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
-<div class="section" id="setting-benchmark-points">
-<h2>Setting Benchmark Points<a class="headerlink" href="#setting-benchmark-points" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>In order for the Profiler to compile and display your benchmark data you
-must name your mark points using specific syntax.</p>
-<p>Please read the information on setting Benchmark points in the
-<a class="reference internal" href="../libraries/benchmark.html"><em>Benchmark Library</em></a> page.</p>
+<div class="section" id="id4">
+<h2>ベンチマークポイントを設定する<a class="headerlink" href="#id4" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>プロファイラでベンチマークデータを処理し表示させるするためには、
+特定の構文を使用して測定点をマークする必要があります。</p>
+<p>ベンチマークポイントの設定については
+<a class="reference internal" href="../libraries/benchmark.html"><em>ベンチマークライブラリ</em></a> ページをお読みください。</p>
 </div>
-<div class="section" id="enabling-and-disabling-profiler-sections">
-<h2>Enabling and Disabling Profiler Sections<a class="headerlink" href="#enabling-and-disabling-profiler-sections" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>Each section of Profiler data can be enabled or disabled by setting a
-corresponding config variable to TRUE or FALSE. This can be done one of
-two ways. First, you can set application wide defaults with the
-<em>application/config/profiler.php</em> config file.</p>
-<p>Example:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$config</span><span class="p">[</span><span class="s1">&#39;config&#39;</span><span class="p">]</span>          <span class="o">=</span> <span class="k">FALSE</span><span class="p">;</span>
+<div class="section" id="id5">
+<h2>プロファイラセクションの有効化と無効化<a class="headerlink" href="#id5" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>プロファイラデータの各セクションは、対応するコンフィギュレーション変数を
+TRUE または FALSE に設定することで有効または無効にすることができます。
+これは、 2 つの方法のいずれかで行うことができます。まず、アプリケーション全体のデフォルトを
+<em>application/config/profiler.php</em> ファイルで設定することができます。</p>
+<p>例:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$config</span><span class="p">[</span><span class="s1">&#39;config&#39;</span><span class="p">]</span>          <span class="o">=</span> <span class="k">FALSE</span><span class="p">;</span>
 <span class="nv">$config</span><span class="p">[</span><span class="s1">&#39;queries&#39;</span><span class="p">]</span>         <span class="o">=</span> <span class="k">FALSE</span><span class="p">;</span>
 </pre></div>
 </div>
-<p>In your controllers, you can override the defaults and config file
-values by calling the <tt class="docutils literal"><span class="pre">set_profiler_sections()</span></tt> method of the
-<a class="reference internal" href="../libraries/output.html"><em>Output Library</em></a>:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$sections</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+<p>コントローラではデフォルトと
+設定ファイル値を上書きすることができます、
+<a class="reference internal" href="../libraries/output.html"><em>出力ライブラリ</em></a> の <tt class="docutils literal"><span class="pre">set_profiler_sections()</span></tt> メソッドの呼び出しです:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$sections</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
         <span class="s1">&#39;config&#39;</span>  <span class="o">=&gt;</span> <span class="k">TRUE</span><span class="p">,</span>
         <span class="s1">&#39;queries&#39;</span> <span class="o">=&gt;</span> <span class="k">TRUE</span>
 <span class="p">);</span>
@@ -476,76 +482,76 @@ values by calling the <tt class="docutils literal"><span class="pre">set_profile
 <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">output</span><span class="o">-&gt;</span><span class="na">set_profiler_sections</span><span class="p">(</span><span class="nv">$sections</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>Available sections and the array key used to access them are described
-in the table below.</p>
+<p>使用可能なセクションと、それらにアクセスするために使用される配列のキーは、
+つぎの表に記載されています。</p>
 <table border="1" class="docutils">
 <colgroup>
-<col width="23%" />
-<col width="68%" />
-<col width="8%" />
+<col width="24%" />
+<col width="65%" />
+<col width="11%" />
 </colgroup>
 <thead valign="bottom">
-<tr class="row-odd"><th class="head">Key</th>
-<th class="head">Description</th>
-<th class="head">Default</th>
+<tr class="row-odd"><th class="head">キー</th>
+<th class="head">説明</th>
+<th class="head">デフォルト</th>
 </tr>
 </thead>
 <tbody valign="top">
 <tr class="row-even"><td><strong>benchmarks</strong></td>
-<td>Elapsed time of Benchmark points and total execution time</td>
+<td>ベンチマークのポイントの経過時間と合計実行時間</td>
 <td>TRUE</td>
 </tr>
 <tr class="row-odd"><td><strong>config</strong></td>
-<td>CodeIgniter Config variables</td>
+<td>CodeIgniter の設定変数</td>
 <td>TRUE</td>
 </tr>
 <tr class="row-even"><td><strong>controller_info</strong></td>
-<td>The Controller class and method requested</td>
+<td>リクエストされたコントローラクラスとメソッド</td>
 <td>TRUE</td>
 </tr>
 <tr class="row-odd"><td><strong>get</strong></td>
-<td>Any GET data passed in the request</td>
+<td>リクエストで渡された GET データ</td>
 <td>TRUE</td>
 </tr>
 <tr class="row-even"><td><strong>http_headers</strong></td>
-<td>The HTTP headers for the current request</td>
+<td>現在のリクエストの HTTP ヘッダ</td>
 <td>TRUE</td>
 </tr>
 <tr class="row-odd"><td><strong>memory_usage</strong></td>
-<td>Amount of memory consumed by the current request, in bytes</td>
+<td>現在のリクエストによって消費されるメモリの量 (byteで)</td>
 <td>TRUE</td>
 </tr>
 <tr class="row-even"><td><strong>post</strong></td>
-<td>Any POST data passed in the request</td>
+<td>リクエストで渡されたあらゆる POST データ</td>
 <td>TRUE</td>
 </tr>
 <tr class="row-odd"><td><strong>queries</strong></td>
-<td>Listing of all database queries executed, including execution time</td>
+<td>実行されたすべてのデータベースクエリのリスト、実行時間を含む</td>
 <td>TRUE</td>
 </tr>
 <tr class="row-even"><td><strong>uri_string</strong></td>
-<td>The URI of the current request</td>
+<td>現在のリクエストの URI</td>
 <td>TRUE</td>
 </tr>
 <tr class="row-odd"><td><strong>session_data</strong></td>
-<td>Data stored in the current session</td>
+<td>現在のセッションに保存されたデータ</td>
 <td>TRUE</td>
 </tr>
 <tr class="row-even"><td><strong>query_toggle_count</strong></td>
-<td>The number of queries after which the query block will default to
-hidden.</td>
+<td>クエリブロックでデフォルトで非表示にされはじめる
+クエリの数</td>
 <td>25</td>
 </tr>
 </tbody>
 </table>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
-<p class="last">Disabling the <a class="reference internal" href="../database/configuration.html"><em>save_queries</em></a> setting in
-your database configuration will also effectively disable profiling for
-database queries and render the &#8216;queries&#8217; setting above useless. You can
-optionally override this setting with <tt class="docutils literal"><span class="pre">$this-&gt;db-&gt;save_queries</span> <span class="pre">=</span> <span class="pre">TRUE;</span></tt>.
-Without this setting you won&#8217;t be able to view the queries or the
-<cite>last_query &lt;database/helpers&gt;</cite>.</p>
+<p class="last">データベース設定での <a class="reference internal" href="../database/configuration.html"><em>save_queries</em></a>
+設定の無効化はデータベースクエリのプロファイリングにも影響し、
+上記の「 queries 」設定も使えなくします。
+必要に応じて、<tt class="docutils literal"><span class="pre">$this-&gt;db-&gt;save_queries</span> <span class="pre">=</span> <span class="pre">TRUE:</span></tt> でこの設定を上書きすることができます。
+この設定抜きにしてはクエリまたは
+<cite>last_query &lt;database/helpers&gt;</cite> を表示することはできません。</p>
 </div>
 </div>
 </div>
@@ -569,7 +575,7 @@ Without this setting you won&#8217;t be able to view the queries or the
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2016, British Columbia Institute of Technology.
-      最終更新: Apr 23, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>
+      最終更新: Apr 26, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>
     </p>
   </div>
 

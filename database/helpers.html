@@ -32,7 +32,7 @@
   
     <link rel="top" title="CodeIgniter 3.1.0-dev ドキュメント" href="../index.html"/>
         <link rel="up" title="データベースリファレンス" href="index.html"/>
-        <link rel="next" title="トランザクション" href="transactions.html"/>
+        <link rel="next" title="Query Builder Class" href="query_builder.html"/>
         <link rel="prev" title="Generating Query Results" href="results.html"/> 
 
   
@@ -95,22 +95,22 @@
 <li class="toctree-l2"><a class="reference internal" href="../general/controllers.html">コントローラ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../general/reserved_names.html">予約語</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../general/views.html">ビュー</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../general/models.html">Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/models.html">モデル</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../general/helpers.html">Helpers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../general/libraries.html">CodeIgniter のライブラリの利用</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../general/creating_libraries.html">Creating Libraries</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../general/drivers.html">CodeIgniter のドライバの使用</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../general/creating_drivers.html">Creating Drivers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../general/core_classes.html">Creating Core System Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/creating_drivers.html">ドライバの作成</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/core_classes.html">コアシステムクラスの作成</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../general/ancillary_classes.html">補助的なクラス作成</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../general/hooks.html">Hooks - Extending the Framework Core</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/hooks.html">フック――フレームワークコアの拡張</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../general/autoloader.html">リソースの自動読み込み</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../general/common_functions.html">共通機能</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../general/compatibility_functions.html">Compatibility Functions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../general/routing.html">URI Routing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/routing.html">URIルーティング</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../general/errors.html">エラー処理</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../general/caching.html">Caching</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../general/profiling.html">Profiling Your Application</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/profiling.html">アプリケーションのプロファイリング</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../general/cli.html">CLI からの実行</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../general/managing_apps.html">アプリケーションの管理</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../general/environments.html">複数環境への対応</a></li>
@@ -157,17 +157,20 @@
 </ul>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">データベースリファレンス</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="examples.html">Quick Start: 使用例</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples.html">クイックスタート: 使用例</a></li>
 <li class="toctree-l2"><a class="reference internal" href="configuration.html">データベース設定</a></li>
 <li class="toctree-l2"><a class="reference internal" href="connecting.html">データベースへの接続</a></li>
 <li class="toctree-l2"><a class="reference internal" href="queries.html">クエリの実行</a></li>
 <li class="toctree-l2"><a class="reference internal" href="results.html">クエリ結果の生成</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="">クエリヘルパーメソッド</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">クエリヘルパー関数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="query_builder.html">クエリビルダクラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="transactions.html">トランザクション</a></li>
-<li class="toctree-l2"><a class="reference internal" href="call_function.html">カスタム関数の呼び出し</a></li>
-<li class="toctree-l2"><a class="reference internal" href="caching.html">クエリのキャッシュ</a></li>
-<li class="toctree-l2"><a class="reference internal" href="forge.html">データベースフォージによるデータベースの操作</a></li>
+<li class="toctree-l2"><a class="reference internal" href="metadata.html">メタデータの取得</a></li>
+<li class="toctree-l2"><a class="reference internal" href="call_function.html">カスタム関数呼び出し</a></li>
+<li class="toctree-l2"><a class="reference internal" href="caching.html">クエリキャッシュ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="forge.html">データベースフォージを使用したデータベース操作</a></li>
 <li class="toctree-l2"><a class="reference internal" href="utilities.html">データベースユーティリティクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="db_driver_reference.html">データベースドライバリファレンス</a></li>
 </ul>
 </li>
 </ul>
@@ -278,22 +281,22 @@
 <li class="toctree-l2"><a class="reference internal" href="../general/controllers.html">コントローラ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../general/reserved_names.html">予約語</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../general/views.html">ビュー</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../general/models.html">Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/models.html">モデル</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../general/helpers.html">Helpers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../general/libraries.html">CodeIgniter のライブラリの利用</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../general/creating_libraries.html">Creating Libraries</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../general/drivers.html">CodeIgniter のドライバの使用</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../general/creating_drivers.html">Creating Drivers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../general/core_classes.html">Creating Core System Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/creating_drivers.html">ドライバの作成</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/core_classes.html">コアシステムクラスの作成</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../general/ancillary_classes.html">補助的なクラス作成</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../general/hooks.html">Hooks - Extending the Framework Core</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/hooks.html">フック――フレームワークコアの拡張</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../general/autoloader.html">リソースの自動読み込み</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../general/common_functions.html">共通機能</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../general/compatibility_functions.html">Compatibility Functions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../general/routing.html">URI Routing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/routing.html">URIルーティング</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../general/errors.html">エラー処理</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../general/caching.html">Caching</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../general/profiling.html">Profiling Your Application</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/profiling.html">アプリケーションのプロファイリング</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../general/cli.html">CLI からの実行</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../general/managing_apps.html">アプリケーションの管理</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../general/environments.html">複数環境への対応</a></li>
@@ -340,17 +343,20 @@
 </ul>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">データベースリファレンス</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="examples.html">Quick Start: 使用例</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples.html">クイックスタート: 使用例</a></li>
 <li class="toctree-l2"><a class="reference internal" href="configuration.html">データベース設定</a></li>
 <li class="toctree-l2"><a class="reference internal" href="connecting.html">データベースへの接続</a></li>
 <li class="toctree-l2"><a class="reference internal" href="queries.html">クエリの実行</a></li>
 <li class="toctree-l2"><a class="reference internal" href="results.html">クエリ結果の生成</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="">クエリヘルパーメソッド</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">クエリヘルパー関数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="query_builder.html">クエリビルダクラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="transactions.html">トランザクション</a></li>
-<li class="toctree-l2"><a class="reference internal" href="call_function.html">カスタム関数の呼び出し</a></li>
-<li class="toctree-l2"><a class="reference internal" href="caching.html">クエリのキャッシュ</a></li>
-<li class="toctree-l2"><a class="reference internal" href="forge.html">データベースフォージによるデータベースの操作</a></li>
+<li class="toctree-l2"><a class="reference internal" href="metadata.html">メタデータの取得</a></li>
+<li class="toctree-l2"><a class="reference internal" href="call_function.html">カスタム関数呼び出し</a></li>
+<li class="toctree-l2"><a class="reference internal" href="caching.html">クエリキャッシュ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="forge.html">データベースフォージを使用したデータベース操作</a></li>
 <li class="toctree-l2"><a class="reference internal" href="utilities.html">データベースユーティリティクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="db_driver_reference.html">データベースドライバリファレンス</a></li>
 </ul>
 </li>
 </ul>
@@ -443,7 +449,7 @@
 <p><strong>$this-&gt;db-&gt;last_query()</strong></p>
 <p>最後に実行されたクエリを返します
 (クエリの文字列で、結果ではありません)。例:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$str</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">last_query</span><span class="p">();</span>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$str</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">last_query</span><span class="p">();</span>
 
 <span class="c1">// 次のように生成されます:  SELECT * FROM sometable....</span>
 </pre></div>
@@ -459,7 +465,7 @@
 <p><strong>$this-&gt;db-&gt;count_all()</strong></p>
 <p>特定のテーブルの行数を数えられます。テーブル名を第1引数で渡します。
 例:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="k">echo</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">count_all</span><span class="p">(</span><span class="s1">&#39;my_table&#39;</span><span class="p">);</span>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">echo</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">count_all</span><span class="p">(</span><span class="s1">&#39;my_table&#39;</span><span class="p">);</span>
 
 <span class="c1">// 25のような整数が返ります</span>
 </pre></div>
@@ -467,12 +473,12 @@
 <p><strong>$this-&gt;db-&gt;platform()</strong></p>
 <p>実行しているデータベースプラットフォーム(MySQL、MS SQL、Postgres
 など…)を出力します:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="k">echo</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">platform</span><span class="p">();</span>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">echo</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">platform</span><span class="p">();</span>
 </pre></div>
 </div>
 <p><strong>$this-&gt;db-&gt;version()</strong></p>
 <p>実行しているデータベースのバージョンを出力します:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="k">echo</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">version</span><span class="p">();</span>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">echo</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">version</span><span class="p">();</span>
 </pre></div>
 </div>
 </div>
@@ -481,14 +487,14 @@
 <p><strong>$this-&gt;db-&gt;insert_string()</strong></p>
 <p>このメソッドは、データベースにデータを新規追加するのを単純化します。
 これは、SQL の INSERT ステートメントを正しくフォーマットして返します。例:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$data</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span><span class="s1">&#39;name&#39;</span> <span class="o">=&gt;</span> <span class="nv">$name</span><span class="p">,</span> <span class="s1">&#39;email&#39;</span> <span class="o">=&gt;</span> <span class="nv">$email</span><span class="p">,</span> <span class="s1">&#39;url&#39;</span> <span class="o">=&gt;</span> <span class="nv">$url</span><span class="p">);</span>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$data</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span><span class="s1">&#39;name&#39;</span> <span class="o">=&gt;</span> <span class="nv">$name</span><span class="p">,</span> <span class="s1">&#39;email&#39;</span> <span class="o">=&gt;</span> <span class="nv">$email</span><span class="p">,</span> <span class="s1">&#39;url&#39;</span> <span class="o">=&gt;</span> <span class="nv">$url</span><span class="p">);</span>
 
 <span class="nv">$str</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">insert_string</span><span class="p">(</span><span class="s1">&#39;table_name&#39;</span><span class="p">,</span> <span class="nv">$data</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>第1引数はテーブル名で、第2引数は挿入するデータの連想配列です。上の例で
 は、次のような文を生成します:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="nx">INSERT</span> <span class="nx">INTO</span> <span class="nx">table_name</span> <span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">email</span><span class="p">,</span> <span class="nx">url</span><span class="p">)</span> <span class="nx">VALUES</span> <span class="p">(</span><span class="s1">&#39;Rick&#39;</span><span class="p">,</span> <span class="s1">&#39;rick@example.com&#39;</span><span class="p">,</span> <span class="s1">&#39;example.com&#39;</span><span class="p">)</span>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nx">INSERT</span> <span class="nx">INTO</span> <span class="nx">table_name</span> <span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">email</span><span class="p">,</span> <span class="nx">url</span><span class="p">)</span> <span class="nx">VALUES</span> <span class="p">(</span><span class="s1">&#39;Rick&#39;</span><span class="p">,</span> <span class="s1">&#39;rick@example.com&#39;</span><span class="p">,</span> <span class="s1">&#39;example.com&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 <div class="admonition note">
@@ -498,7 +504,7 @@
 <p><strong>$this-&gt;db-&gt;update_string()</strong></p>
 <p>このメソッドは、データベースに更新書き込みをするのを単純化します。
 これは、SQL の UPDATE ステートメントの文字列を正しくフォーマットして返します。例:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$data</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span><span class="s1">&#39;name&#39;</span> <span class="o">=&gt;</span> <span class="nv">$name</span><span class="p">,</span> <span class="s1">&#39;email&#39;</span> <span class="o">=&gt;</span> <span class="nv">$email</span><span class="p">,</span> <span class="s1">&#39;url&#39;</span> <span class="o">=&gt;</span> <span class="nv">$url</span><span class="p">);</span>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$data</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span><span class="s1">&#39;name&#39;</span> <span class="o">=&gt;</span> <span class="nv">$name</span><span class="p">,</span> <span class="s1">&#39;email&#39;</span> <span class="o">=&gt;</span> <span class="nv">$email</span><span class="p">,</span> <span class="s1">&#39;url&#39;</span> <span class="o">=&gt;</span> <span class="nv">$url</span><span class="p">);</span>
 
 <span class="nv">$where</span> <span class="o">=</span> <span class="s2">&quot;author_id = 1 AND status = &#39;active&#39;&quot;</span><span class="p">;</span>
 
@@ -508,7 +514,7 @@
 <p>第1引数はテーブル名で、第2引数は更新するデータの連想配列で、
 第3引数は &#8220;WHERE&#8221; 句になります。上の例は次のような文を生成
 します:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="nx">UPDATE</span> <span class="nx">table_name</span> <span class="nx">SET</span> <span class="nx">name</span> <span class="o">=</span> <span class="s1">&#39;Rick&#39;</span><span class="p">,</span> <span class="nx">email</span> <span class="o">=</span> <span class="s1">&#39;rick@example.com&#39;</span><span class="p">,</span> <span class="nx">url</span> <span class="o">=</span> <span class="s1">&#39;example.com&#39;</span> <span class="nx">WHERE</span> <span class="nx">author_id</span> <span class="o">=</span> <span class="mi">1</span> <span class="k">AND</span> <span class="nx">status</span> <span class="o">=</span> <span class="s1">&#39;active&#39;</span>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nx">UPDATE</span> <span class="nx">table_name</span> <span class="nx">SET</span> <span class="nx">name</span> <span class="o">=</span> <span class="s1">&#39;Rick&#39;</span><span class="p">,</span> <span class="nx">email</span> <span class="o">=</span> <span class="s1">&#39;rick@example.com&#39;</span><span class="p">,</span> <span class="nx">url</span> <span class="o">=</span> <span class="s1">&#39;example.com&#39;</span> <span class="nx">WHERE</span> <span class="nx">author_id</span> <span class="o">=</span> <span class="mi">1</span> <span class="k">AND</span> <span class="nx">status</span> <span class="o">=</span> <span class="s1">&#39;active&#39;</span>
 </pre></div>
 </div>
 <div class="admonition note">
@@ -524,7 +530,7 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="transactions.html" class="btn btn-neutral float-right" title="トランザクション">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="query_builder.html" class="btn btn-neutral float-right" title="Query Builder Class">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="results.html" class="btn btn-neutral" title="Generating Query Results"><span class="fa fa-arrow-circle-left"></span> Previous</a>
@@ -537,7 +543,7 @@
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2016, British Columbia Institute of Technology.
-      最終更新: Apr 23, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>
+      最終更新: Apr 26, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>
     </p>
   </div>
 

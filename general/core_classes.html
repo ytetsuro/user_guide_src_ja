@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Creating Core System Classes &mdash; CodeIgniter 3.1.0-dev ドキュメント</title>
+  <title>コアシステムクラスの作成 &mdash; CodeIgniter 3.1.0-dev ドキュメント</title>
   
 
   
@@ -33,7 +33,7 @@
     <link rel="top" title="CodeIgniter 3.1.0-dev ドキュメント" href="../index.html"/>
         <link rel="up" title="一般的なトピック" href="index.html"/>
         <link rel="next" title="補助的なクラス作成" href="ancillary_classes.html"/>
-        <link rel="prev" title="Creating Drivers" href="creating_drivers.html"/> 
+        <link rel="prev" title="ドライバの作成" href="creating_drivers.html"/> 
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -95,22 +95,22 @@
 <li class="toctree-l2"><a class="reference internal" href="controllers.html">コントローラ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="reserved_names.html">予約語</a></li>
 <li class="toctree-l2"><a class="reference internal" href="views.html">ビュー</a></li>
-<li class="toctree-l2"><a class="reference internal" href="models.html">Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="models.html">モデル</a></li>
 <li class="toctree-l2"><a class="reference internal" href="helpers.html">Helpers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="libraries.html">CodeIgniter のライブラリの利用</a></li>
 <li class="toctree-l2"><a class="reference internal" href="creating_libraries.html">Creating Libraries</a></li>
 <li class="toctree-l2"><a class="reference internal" href="drivers.html">CodeIgniter のドライバの使用</a></li>
-<li class="toctree-l2"><a class="reference internal" href="creating_drivers.html">Creating Drivers</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="">Creating Core System Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="creating_drivers.html">ドライバの作成</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">コアシステムクラスの作成</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ancillary_classes.html">補助的なクラス作成</a></li>
-<li class="toctree-l2"><a class="reference internal" href="hooks.html">Hooks - Extending the Framework Core</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hooks.html">フック――フレームワークコアの拡張</a></li>
 <li class="toctree-l2"><a class="reference internal" href="autoloader.html">リソースの自動読み込み</a></li>
 <li class="toctree-l2"><a class="reference internal" href="common_functions.html">共通機能</a></li>
 <li class="toctree-l2"><a class="reference internal" href="compatibility_functions.html">Compatibility Functions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="routing.html">URI Routing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="routing.html">URIルーティング</a></li>
 <li class="toctree-l2"><a class="reference internal" href="errors.html">エラー処理</a></li>
 <li class="toctree-l2"><a class="reference internal" href="caching.html">Caching</a></li>
-<li class="toctree-l2"><a class="reference internal" href="profiling.html">Profiling Your Application</a></li>
+<li class="toctree-l2"><a class="reference internal" href="profiling.html">アプリケーションのプロファイリング</a></li>
 <li class="toctree-l2"><a class="reference internal" href="cli.html">CLI からの実行</a></li>
 <li class="toctree-l2"><a class="reference internal" href="managing_apps.html">アプリケーションの管理</a></li>
 <li class="toctree-l2"><a class="reference internal" href="environments.html">複数環境への対応</a></li>
@@ -157,17 +157,20 @@
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../database/index.html">データベースリファレンス</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../database/examples.html">Quick Start: 使用例</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/examples.html">クイックスタート: 使用例</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../database/configuration.html">データベース設定</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../database/connecting.html">データベースへの接続</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../database/queries.html">クエリの実行</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../database/results.html">クエリ結果の生成</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../database/helpers.html">クエリヘルパーメソッド</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/helpers.html">クエリヘルパー関数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/query_builder.html">クエリビルダクラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../database/transactions.html">トランザクション</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../database/call_function.html">カスタム関数の呼び出し</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../database/caching.html">クエリのキャッシュ</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../database/forge.html">データベースフォージによるデータベースの操作</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/metadata.html">メタデータの取得</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/call_function.html">カスタム関数呼び出し</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/caching.html">クエリキャッシュ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/forge.html">データベースフォージを使用したデータベース操作</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../database/utilities.html">データベースユーティリティクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/db_driver_reference.html">データベースドライバリファレンス</a></li>
 </ul>
 </li>
 </ul>
@@ -278,22 +281,22 @@
 <li class="toctree-l2"><a class="reference internal" href="controllers.html">コントローラ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="reserved_names.html">予約語</a></li>
 <li class="toctree-l2"><a class="reference internal" href="views.html">ビュー</a></li>
-<li class="toctree-l2"><a class="reference internal" href="models.html">Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="models.html">モデル</a></li>
 <li class="toctree-l2"><a class="reference internal" href="helpers.html">Helpers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="libraries.html">CodeIgniter のライブラリの利用</a></li>
 <li class="toctree-l2"><a class="reference internal" href="creating_libraries.html">Creating Libraries</a></li>
 <li class="toctree-l2"><a class="reference internal" href="drivers.html">CodeIgniter のドライバの使用</a></li>
-<li class="toctree-l2"><a class="reference internal" href="creating_drivers.html">Creating Drivers</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="">Creating Core System Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="creating_drivers.html">ドライバの作成</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">コアシステムクラスの作成</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ancillary_classes.html">補助的なクラス作成</a></li>
-<li class="toctree-l2"><a class="reference internal" href="hooks.html">Hooks - Extending the Framework Core</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hooks.html">フック――フレームワークコアの拡張</a></li>
 <li class="toctree-l2"><a class="reference internal" href="autoloader.html">リソースの自動読み込み</a></li>
 <li class="toctree-l2"><a class="reference internal" href="common_functions.html">共通機能</a></li>
 <li class="toctree-l2"><a class="reference internal" href="compatibility_functions.html">Compatibility Functions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="routing.html">URI Routing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="routing.html">URIルーティング</a></li>
 <li class="toctree-l2"><a class="reference internal" href="errors.html">エラー処理</a></li>
 <li class="toctree-l2"><a class="reference internal" href="caching.html">Caching</a></li>
-<li class="toctree-l2"><a class="reference internal" href="profiling.html">Profiling Your Application</a></li>
+<li class="toctree-l2"><a class="reference internal" href="profiling.html">アプリケーションのプロファイリング</a></li>
 <li class="toctree-l2"><a class="reference internal" href="cli.html">CLI からの実行</a></li>
 <li class="toctree-l2"><a class="reference internal" href="managing_apps.html">アプリケーションの管理</a></li>
 <li class="toctree-l2"><a class="reference internal" href="environments.html">複数環境への対応</a></li>
@@ -340,17 +343,20 @@
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../database/index.html">データベースリファレンス</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../database/examples.html">Quick Start: 使用例</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/examples.html">クイックスタート: 使用例</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../database/configuration.html">データベース設定</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../database/connecting.html">データベースへの接続</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../database/queries.html">クエリの実行</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../database/results.html">クエリ結果の生成</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../database/helpers.html">クエリヘルパーメソッド</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/helpers.html">クエリヘルパー関数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/query_builder.html">クエリビルダクラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../database/transactions.html">トランザクション</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../database/call_function.html">カスタム関数の呼び出し</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../database/caching.html">クエリのキャッシュ</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../database/forge.html">データベースフォージによるデータベースの操作</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/metadata.html">メタデータの取得</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/call_function.html">カスタム関数呼び出し</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/caching.html">クエリキャッシュ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/forge.html">データベースフォージを使用したデータベース操作</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../database/utilities.html">データベースユーティリティクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/db_driver_reference.html">データベースドライバリファレンス</a></li>
 </ul>
 </li>
 </ul>
@@ -405,7 +411,7 @@
       
         <li><a href="index.html">一般的なトピック</a> &raquo;</li>
       
-    <li>Creating Core System Classes</li>
+    <li>コアシステムクラスの作成</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -418,83 +424,83 @@
 </div>
           <div role="main" class="document">
             
-  <div class="section" id="creating-core-system-classes">
-<h1>Creating Core System Classes<a class="headerlink" href="#creating-core-system-classes" title="このヘッドラインへのパーマリンク">¶</a></h1>
-<p>Every time CodeIgniter runs there are several base classes that are
-initialized automatically as part of the core framework. It is possible,
-however, to swap any of the core system classes with your own versions
-or even extend the core versions.</p>
-<p><strong>Most users will never have any need to do this, but the option to
-replace or extend them does exist for those who would like to
-significantly alter the CodeIgniter core.</strong></p>
+  <div class="section" id="id1">
+<h1>コアシステムクラスの作成<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>CodeIgniter の実行のたび、いくつかの基本クラスは
+フレームワークのコアの一部として自動的に初期化されます。
+しかしながら、コアシステムクラスをあなた自身のバージョンのものに差し替え、
+または継承することが可能です。</p>
+<p><strong>ほとんどのユーザはそのようなことをする必要性はありませんが、
+交換または拡張するための選択肢として、
+CodeIgniter のコアを大幅に変更したい人のために存在します。</strong></p>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
-<p class="last">Messing with a core system class has a lot of implications, so
-make sure you know what you are doing before attempting it.</p>
+<p class="last">コアシステムクラスをいじると影響範囲が大きいので、
+そうする前に、何をしようとしているかを十分に理解してください。</p>
 </div>
-<div class="section" id="system-class-list">
-<h2>System Class List<a class="headerlink" href="#system-class-list" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>The following is a list of the core system files that are invoked every
-time CodeIgniter runs:</p>
-<ul class="simple">
-<li>Benchmark</li>
-<li>Config</li>
-<li>Controller</li>
-<li>Exceptions</li>
-<li>Hooks</li>
-<li>Input</li>
-<li>Language</li>
-<li>Loader</li>
-<li>Log</li>
-<li>Output</li>
-<li>Router</li>
-<li>Security</li>
-<li>URI</li>
-<li>Utf8</li>
-</ul>
-</div>
-<div class="section" id="replacing-core-classes">
-<h2>Replacing Core Classes<a class="headerlink" href="#replacing-core-classes" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>To use one of your own system classes instead of a default one simply
-place your version inside your local <em>application/core/</em> directory:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="nx">application</span><span class="o">/</span><span class="nx">core</span><span class="o">/</span><span class="nx">some_class</span><span class="o">.</span><span class="nx">php</span>
+<div class="section" id="id2">
+<h2>システムクラス一覧<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>以下は
+CodeIgniter が実行されるたびに呼び出されるコアシステムファイルのリストです:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="o">-</span>  <span class="nx">Benchmark</span>
+<span class="o">-</span>  <span class="nx">Config</span>
+<span class="o">-</span>  <span class="nx">Controller</span>
+<span class="o">-</span>  <span class="nx">Exceptions</span>
+<span class="o">-</span>  <span class="nx">Hooks</span>
+<span class="o">-</span>  <span class="nx">Input</span>
+<span class="o">-</span>  <span class="nx">Language</span>
+<span class="o">-</span>  <span class="nx">Loader</span>
+<span class="o">-</span>  <span class="nx">Log</span>
+<span class="o">-</span>  <span class="nx">Output</span>
+<span class="o">-</span>  <span class="nx">Router</span>
+<span class="o">-</span>  <span class="nx">Security</span>
+<span class="o">-</span>  <span class="nx">URI</span>
+<span class="o">-</span>  <span class="nx">Utf8</span>
 </pre></div>
 </div>
-<p>If this directory does not exist you can create it.</p>
-<p>Any file named identically to one from the list above will be used
-instead of the one normally used.</p>
-<p>Please note that your class must use CI as a prefix. For example, if
-your file is named Input.php the class will be named:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="k">class</span> <span class="nc">CI_Input</span> <span class="p">{</span>
+</div>
+<div class="section" id="id3">
+<h2>コアクラスの置き換え<a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>デフォルトのかわりに独自システムクラスを使うには、
+シンプルに手元の <em>application/core/</em> ディレクトリ内にそれを置いてください:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nx">application</span><span class="o">/</span><span class="nx">core</span><span class="o">/</span><span class="nx">some_class</span><span class="o">.</span><span class="nx">php</span>
+</pre></div>
+</div>
+<p>このディレクトリが存在しない場合は、作ってください。</p>
+<p>上記のリストにあるいずれのファイルも、
+通常使用されるものの代わりに使用されます。</p>
+<p>クラスがプレフィックスとして CI を使用しなければならないことに注意してください。
+たとえば、ファイル Input.php のクラスはつぎのように名付けられます:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">CI_Input</span> <span class="p">{</span>
 
 <span class="p">}</span>
 </pre></div>
 </div>
 </div>
-<div class="section" id="extending-core-class">
-<h2>Extending Core Class<a class="headerlink" href="#extending-core-class" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>If all you need to do is add some functionality to an existing library -
-perhaps add a method or two - then it&#8217;s overkill to replace the entire
-library with your version. In this case it&#8217;s better to simply extend the
-class. Extending a class is nearly identical to replacing a class with a
-couple exceptions:</p>
+<div class="section" id="id4">
+<h2>コアクラスの継承<a class="headerlink" href="#id4" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>やりたいことがいくらかの機能を既存のライブラリに加えたいだけ
+――ひょっとするとメソッドをひとつふたつ追加する場合――、ライブラリ全体をあなたのバージョンに置き換えるのはやりすぎです。
+この場合、シンプルにクラスを継承するのが良いでしょう。
+クラスを継承するのは 2 つの例外を除いて、
+クラスを置き換えるとほぼ同じです:</p>
 <ul class="simple">
-<li>The class declaration must extend the parent class.</li>
-<li>Your new class name and filename must be prefixed with MY_ (this
-item is configurable. See below.).</li>
+<li>クラスは、親クラスを継承する必要があります。</li>
+<li>新しいクラス名とファイル名は、プレフィックスに MY_ を付ける必要があります
+(これは設定で変更可能です。後述します) 。</li>
 </ul>
-<p>For example, to extend the native Input class you&#8217;ll create a file named
-application/core/MY_Input.php, and declare your class with:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="k">class</span> <span class="nc">MY_Input</span> <span class="k">extends</span> <span class="nx">CI_Input</span> <span class="p">{</span>
+<p>たとえば、標準の入力クラスを継承するためには、
+application/core/MY_Input.php という名前のファイルを作成し、つぎのようにクラスを宣言します:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">MY_Input</span> <span class="k">extends</span> <span class="nx">CI_Input</span> <span class="p">{</span>
 
 <span class="p">}</span>
 </pre></div>
 </div>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
-<p>If you need to use a constructor in your class make sure you
-extend the parent constructor:</p>
-<div class="last highlight-ci"><div class="highlight"><pre><span class="k">class</span> <span class="nc">MY_Input</span> <span class="k">extends</span> <span class="nx">CI_Input</span> <span class="p">{</span>
+<p>クラスのコンストラクタを使用する必要がある場合、
+親クラスのコンストラクタを呼び出していることを確認してください:</p>
+<div class="last highlight-ci"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">MY_Input</span> <span class="k">extends</span> <span class="nx">CI_Input</span> <span class="p">{</span>
 
         <span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">()</span>
         <span class="p">{</span>
@@ -504,13 +510,13 @@ extend the parent constructor:</p>
 </pre></div>
 </div>
 </div>
-<p><strong>Tip:</strong> Any functions in your class that are named identically to the
-methods in the parent class will be used instead of the native ones
-(this is known as &#8220;method overriding&#8221;). This allows you to substantially
-alter the CodeIgniter core.</p>
-<p>If you are extending the Controller core class, then be sure to extend
-your new class in your application controller&#8217;s constructors.</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="k">class</span> <span class="nc">Welcome</span> <span class="k">extends</span> <span class="nx">MY_Controller</span> <span class="p">{</span>
+<p><strong>ヒント:</strong> 親クラスのメソッドとまったく同じ名前が付けられたあらゆる関数は、
+親クラスのそれの代わりとして使われます
+(これは「メソッドのオーバーライド」として知られています) 。
+これにより、実質的に CodeIgniter のコアを変更することができます。</p>
+<p>コントローラのコアクラスを継承している場合、
+アプリケーションのコントローラのコンストラクタが使われていることを確かめてください。</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Welcome</span> <span class="k">extends</span> <span class="nx">MY_Controller</span> <span class="p">{</span>
 
         <span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">()</span>
         <span class="p">{</span>
@@ -524,15 +530,15 @@ your new class in your application controller&#8217;s constructors.</p>
 <span class="p">}</span>
 </pre></div>
 </div>
-<div class="section" id="setting-your-own-prefix">
-<h3>Setting Your Own Prefix<a class="headerlink" href="#setting-your-own-prefix" title="このヘッドラインへのパーマリンク">¶</a></h3>
-<p>To set your own sub-class prefix, open your
-<em>application/config/config.php</em> file and look for this item:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$config</span><span class="p">[</span><span class="s1">&#39;subclass_prefix&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;MY_&#39;</span><span class="p">;</span>
+<div class="section" id="id5">
+<h3>独自のプレフィックスを設定する<a class="headerlink" href="#id5" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>独自のプレフィックスを設定するには
+<em>application/config/config.php</em> ファイルを開いて、つぎの項目を探してください:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$config</span><span class="p">[</span><span class="s1">&#39;subclass_prefix&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;MY_&#39;</span><span class="p">;</span>
 </pre></div>
 </div>
-<p>Please note that all native CodeIgniter libraries are prefixed
-with CI_ so DO NOT use that as your prefix.</p>
+<p>すべての標準の CodeIgniter のライブラリはプレフィックスに
+CI_ がついていますので、これは　使　わ　な　い　よ　う　ご注意ください。</p>
 </div>
 </div>
 </div>
@@ -546,7 +552,7 @@ with CI_ so DO NOT use that as your prefix.</p>
         <a href="ancillary_classes.html" class="btn btn-neutral float-right" title="補助的なクラス作成">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="creating_drivers.html" class="btn btn-neutral" title="Creating Drivers"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="creating_drivers.html" class="btn btn-neutral" title="ドライバの作成"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -556,7 +562,7 @@ with CI_ so DO NOT use that as your prefix.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2016, British Columbia Institute of Technology.
-      最終更新: Apr 23, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>
+      最終更新: Apr 26, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>
     </p>
   </div>
 
