@@ -426,24 +426,24 @@
             
   <div class="section" id="xml-helper">
 <h1>XML Helper<a class="headerlink" href="#xml-helper" title="このヘッドラインへのパーマリンク">¶</a></h1>
-<p>The XML Helper file contains functions that assist in working with XML
-data.</p>
+<p>XML ヘルパーファイルは、 XML データを処理するのに役立つ関数で
+構成されています。</p>
 <div class="contents local topic" id="contents">
 <ul class="simple">
-<li><a class="reference internal" href="#loading-this-helper" id="id2">Loading this Helper</a></li>
-<li><a class="reference internal" href="#id1" id="id3">利用できる機能</a></li>
+<li><a class="reference internal" href="#id1" id="id3">ヘルパーのロード</a></li>
+<li><a class="reference internal" href="#id2" id="id4">利用できる機能</a></li>
 </ul>
 </div>
-<div class="custom-index container"></div><div class="section" id="loading-this-helper">
-<h2><a class="toc-backref" href="#id2">Loading this Helper</a><a class="headerlink" href="#loading-this-helper" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>This helper is loaded using the following code</p>
+<div class="custom-index container"></div><div class="section" id="id1">
+<h2><a class="toc-backref" href="#id3">ヘルパーのロード</a><a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>このヘルパーをロードするには次のコードを使用します:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">helper</span><span class="p">(</span><span class="s1">&#39;xml&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
-<div class="section" id="id1">
-<h2><a class="toc-backref" href="#id3">利用できる機能</a><a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>The following functions are available:</p>
+<div class="section" id="id2">
+<h2><a class="toc-backref" href="#id4">利用できる機能</a><a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>次の関数が利用できます:</p>
 <dl class="function">
 <dt id="xml_convert">
 <tt class="descname">xml_convert</tt><big>(</big><em>$str</em><span class="optional">[</span>, <em>$protect_all = FALSE</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#xml_convert" title="この定義へのパーマリンク">¶</a></dt>
@@ -451,32 +451,30 @@ data.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">パラメタ:</th><td class="field-body"><ul class="first simple">
-<li><strong>$str</strong> (<em>string</em>) &#8211; the text string to convert</li>
-<li><strong>$protect_all</strong> (<em>bool</em>) &#8211; Whether to protect all content that looks like a potential entity instead of just numbered entities, e.g. &amp;foo;</li>
-</ul>
-</td>
+<tr class="field-odd field"><th class="field-name" colspan="2">パラメータ string $str:</th></tr>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">変換する文字列</td>
 </tr>
-<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body"><p class="first">XML-converted string</p>
-</td>
+<tr class="field-even field"><th class="field-name" colspan="2">パラメータ bool $protect_all:</th></tr>
+<tr class="field-even field"><td>&nbsp;</td><td class="field-body">数値文字エンティティ(例: &amp;foo;)のようなエンティティのように見える可能性のあるコンテンツを全てそのまま出力するかどうか</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">戻り値の型:</th><td class="field-body"><p class="first last">string</p>
-</td>
+<tr class="field-odd field"><th class="field-name">返り値:</th><td class="field-body">XML 変換文字列</td>
+</tr>
+<tr class="field-even field"><th class="field-name">返り値型:</th><td class="field-body">string</td>
 </tr>
 </tbody>
 </table>
-<p>Takes a string as input and converts the following reserved XML
-characters to entities:</p>
+<p>文字列を入力とし、次の XML の予約文字を XML
+エンティティに変換します:</p>
 <blockquote>
 <div><ul class="simple">
-<li>Ampersands: &amp;</li>
-<li>Less than and greater than characters: &lt; &gt;</li>
-<li>Single and double quotes: &#8216; &#8220;</li>
-<li>Dashes: -</li>
+<li>アンパサンド: &amp;</li>
+<li>不等号: &lt; &gt;</li>
+<li>シングルクォーテーションとダブルクォーテーション: &#8216; &#8220;</li>
+<li>ダッシュ(ハイフン): -</li>
 </ul>
 </div></blockquote>
-<p>This function ignores ampersands if they are part of existing numbered
-character entities, e.g. &amp;#123;. Example:</p>
+<p>数値文字エンティティを一部含む場合、アンパサンドを無視します。
+例: &amp;#123; 例:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$string</span> <span class="o">=</span> <span class="s1">&#39;&lt;p&gt;Here is a paragraph &amp; an entity (&amp;#123;).&lt;/p&gt;&#39;</span><span class="p">;</span>
 <span class="nv">$string</span> <span class="o">=</span> <span class="nx">xml_convert</span><span class="p">(</span><span class="nv">$string</span><span class="p">);</span>
 <span class="k">echo</span> <span class="nv">$string</span><span class="p">;</span>
@@ -510,7 +508,7 @@ character entities, e.g. &amp;#123;. Example:</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2016, British Columbia Institute of Technology.
-      最終更新: Apr 26, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>
+      最終更新: Apr 28, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>
     </p>
   </div>
 
