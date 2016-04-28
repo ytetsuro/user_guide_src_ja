@@ -7,6 +7,7 @@ CodeIgniter Users Group in Japan, Japanese Translation Team
   * Kenji Suzuki <kenji@codeigniter.jp>
   * ashiina
   * Akishige Takekoshi <akishige@takekoshi.net>
+  * rochefort
 
 ## Version 2.1.0
   * Kenji Suzuki <kenji@codeigniter.jp>
