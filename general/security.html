@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Security &mdash; CodeIgniter 3.1.0-dev ドキュメント</title>
+  <title>セキュリティ &mdash; CodeIgniter 3.1.0-dev ドキュメント</title>
   
 
   
@@ -115,7 +115,7 @@
 <li class="toctree-l2"><a class="reference internal" href="managing_apps.html">アプリケーションの管理</a></li>
 <li class="toctree-l2"><a class="reference internal" href="environments.html">複数環境への対応</a></li>
 <li class="toctree-l2"><a class="reference internal" href="alternative_php.html">ビューファイル向けの代替の PHP 構文</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="">Security</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">セキュリティ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="styleguide.html">PHP Style Guide</a></li>
 </ul>
 </li>
@@ -301,7 +301,7 @@
 <li class="toctree-l2"><a class="reference internal" href="managing_apps.html">アプリケーションの管理</a></li>
 <li class="toctree-l2"><a class="reference internal" href="environments.html">複数環境への対応</a></li>
 <li class="toctree-l2"><a class="reference internal" href="alternative_php.html">ビューファイル向けの代替の PHP 構文</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="">Security</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">セキュリティ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="styleguide.html">PHP Style Guide</a></li>
 </ul>
 </li>
@@ -411,7 +411,7 @@
       
         <li><a href="index.html">一般的なトピック</a> &raquo;</li>
       
-    <li>Security</li>
+    <li>セキュリティ</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -424,178 +424,178 @@
 </div>
           <div role="main" class="document">
             
-  <div class="section" id="security">
-<h1>Security<a class="headerlink" href="#security" title="このヘッドラインへのパーマリンク">¶</a></h1>
-<p>This page describes some &#8220;best practices&#8221; regarding web security, and
-details CodeIgniter&#8217;s internal security features.</p>
+  <div class="section" id="id1">
+<h1>セキュリティ<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>このページでは、ウェブセキュリティに関するいくつかの「ベストプラクティス」と、
+CodeIgniter の内部のセキュリティ機能の詳細について説明します。</p>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
-<p class="last">If you came here looking for a security contact, please refer to
-our <cite>Contribution Guide &lt;../contributing/index&gt;</cite>.</p>
+<p class="last">セキュリティ上の問い合わせ先を探してここに来た場合は、
+<cite>Contribution Guide &lt;../contributing/index&gt;</cite> をご参照ください。</p>
 </div>
-<div class="section" id="uri-security">
-<h2>URI Security<a class="headerlink" href="#uri-security" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>CodeIgniter is fairly restrictive regarding which characters it allows
-in your URI strings in order to help minimize the possibility that
-malicious data can be passed to your application. URIs may only contain
-the following:</p>
+<div class="section" id="uri">
+<h2>URI セキュリティ<a class="headerlink" href="#uri" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>CodeIgniter では悪意のあるデータがアプリケーションに渡る可能性を最小限にするために、
+URI 文字列に使用できる文字に関してかなり限定しています。
+URI は以下のもののみ
+含むことができます:</p>
 <ul class="simple">
-<li>Alpha-numeric text (latin characters only)</li>
-<li>Tilde: ~</li>
-<li>Percent sign: %</li>
-<li>Period: .</li>
-<li>Colon: :</li>
-<li>Underscore: _</li>
-<li>Dash: -</li>
-<li>Space</li>
+<li>英数字テキスト (ラテン文字のみ)</li>
+<li>チルダ: ~</li>
+<li>パーセント記号: %</li>
+<li>ピリオド: .</li>
+<li>コロン: :</li>
+<li>アンダースコア: _</li>
+<li>ダッシュ: -</li>
+<li>スペース</li>
 </ul>
 </div>
 <div class="section" id="register-globals">
-<h2>Register_globals<a class="headerlink" href="#register-globals" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>During system initialization all global variables that are found to exist
-in the <tt class="docutils literal"><span class="pre">$_GET</span></tt>, <tt class="docutils literal"><span class="pre">$_POST</span></tt>, <tt class="docutils literal"><span class="pre">$_REQUEST</span></tt> and <tt class="docutils literal"><span class="pre">$_COOKIE</span></tt> are unset.</p>
-<p>The unsetting routine is effectively the same as <em>register_globals = off</em>.</p>
+<h2>register_globals<a class="headerlink" href="#register-globals" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>システムの初期化時、
+<tt class="docutils literal"><span class="pre">$_GET</span></tt> 、 <tt class="docutils literal"><span class="pre">$_POST</span></tt> 、 <tt class="docutils literal"><span class="pre">$_REQUEST</span></tt> と <tt class="docutils literal"><span class="pre">$</span> <span class="pre">_COOKIE</span></tt> 内に見つけられる変数でグローバル変数のものはすべて unset されます。</p>
+<p>この unset ルーチンは <em>register_globals = off</em> と同じ効果です。</p>
 </div>
 <div class="section" id="display-errors">
 <h2>display_errors<a class="headerlink" href="#display-errors" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>In production environments, it is typically desirable to &#8220;disable&#8221; PHP&#8217;s
-error reporting by setting the internal <em>display_errors</em> flag to a value
-of 0. This disables native PHP errors from being rendered as output,
-which may potentially contain sensitive information.</p>
-<p>Setting CodeIgniter&#8217;s <strong>ENVIRONMENT</strong> constant in index.php to a value of
-<strong>&#8216;production&#8217;</strong> will turn off these errors. In development mode, it is
-recommended that a value of &#8216;development&#8217; is used. More information
-about differentiating between environments can be found on the
-<a class="reference internal" href="environments.html"><em>Handling Environments</em></a> page.</p>
+<p>本番環境では一般的に PHP のエラー報告を「無効」にすることが望ましいです、
+内部の <em>display_errors</em> フラグを 0 に設定することにより行われます。
+これは素の PHP エラーを出力として書き出されることを無効にします。
+機密情報が潜在的に含まれているかもしれないからです。</p>
+<p>CodeIgniter の <strong>ENVIRONMENT</strong> 定数をindex.php で
+「 <strong>production</strong> 」の値に設定すると、これらのエラーをオフにします。
+開発モードでは「 development 」の値を使用することをおすすめします。
+環境の区別についての詳しい情報は
+<a class="reference internal" href="environments.html"><em>複数環境への対応</em></a> ページにあります。</p>
 </div>
 <div class="section" id="magic-quotes-runtime">
 <h2>magic_quotes_runtime<a class="headerlink" href="#magic-quotes-runtime" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>The <em>magic_quotes_runtime</em> directive is turned off during system
-initialization so that you don&#8217;t have to remove slashes when retrieving
-data from your database.</p>
-<div class="section" id="best-practices">
-<h3>Best Practices<a class="headerlink" href="#best-practices" title="このヘッドラインへのパーマリンク">¶</a></h3>
-<p>Before accepting any data into your application, whether it be POST data
-from a form submission, COOKIE data, URI data, XML-RPC data, or even
-data from the SERVER array, you are encouraged to practice this three
-step approach:</p>
+<p><em>magic_quotes_runtime</em> ディレクティブはシステムの初期化中にオフにされます。
+そのため、データベースからデータを取得するときに
+スラッシュを除去する必要はありません。</p>
+<div class="section" id="id2">
+<h3>ベストプラクティス<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>あらゆるデータについてアプリケーションに受け入れる前に、それがフォーム送信からの POST データであれ、
+COOKIE データであれ、 URI データであれ、 XML-RPC データであれ、
+または SERVER 配列でさえも、つぎの 3 段階のアプローチを
+実践することが推奨されます:</p>
 <ol class="arabic simple">
-<li>Validate the data to ensure it conforms to the correct type, length,
-size, etc.</li>
-<li>Filter the data as if it were tainted.</li>
-<li>Escape the data before submitting it into your database or outputting
-it to a browser.</li>
+<li>正しい型、長さ、大きさ等に一致していることを確認するために、
+データを検証する</li>
+<li>それが汚染されているかのように、データをフィルタリングする</li>
+<li>データベースにそれをサブミットするか、
+それをブラウザに出力する前にデータをエスケープする</li>
 </ol>
-<p>CodeIgniter provides the following functions and tips to assist you
-in this process:</p>
+<p>CodeIgniter はこのプロセスを支援する以下の機能とヒントを
+提供します:</p>
 </div>
 </div>
-<div class="section" id="xss-filtering">
-<h2>XSS Filtering<a class="headerlink" href="#xss-filtering" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>CodeIgniter comes with a Cross Site Scripting filter. This filter
-looks for commonly used techniques to embed malicious JavaScript into
-your data, or other types of code that attempt to hijack cookies or
-do other malicious things. The XSS Filter is described
-<a class="reference internal" href="../libraries/security.html"><em>here</em></a>.</p>
+<div class="section" id="xss">
+<h2>XSS フィルタリング<a class="headerlink" href="#xss" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>CodeIgniter にはクロスサイトスクリプティングフィルターが付属しています。
+このフィルタは、データに悪意のある JavaScript を埋め込むために一般的に使用される技術、
+またはクッキーをハイジャックしようとするなど、
+悪さしようとするコードを探し出します。 XSS フィルターは
+<a class="reference internal" href="../libraries/security.html"><em>ここ</em></a> で説明されています。</p>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
-<p class="last">XSS filtering should <em>only be performed on output</em>. Filtering
-input data may modify the data in undesirable ways, including
-stripping special characters from passwords, which reduces
-security instead of improving it.</p>
+<p class="last">XSS フィルタリングは <em>出力でのみ実行</em> するべきです。
+入力データをフィルタリングすると望ましくない方法でデータを変更することになるかもしれません。
+パスワードから特殊文字を取り除いてしまったりなど、
+セキュリティを向上させるどころか低下させます。</p>
 </div>
 </div>
-<div class="section" id="csrf-protection">
-<h2>CSRF protection<a class="headerlink" href="#csrf-protection" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>CSRF stands for Cross-Site Request Forgery, which is the process of an
-attacker tricking their victim into unknowingly submitting a request.</p>
-<p>CodeIgniter provides CSRF protection out of the box, which will get
-automatically triggered for every non-GET HTTP request, but also needs
-you to create your submit forms in a certain way. This is explained in
-the <a class="reference internal" href="../libraries/security.html"><em>Security Library</em></a> documentation.</p>
+<div class="section" id="csrf">
+<h2>CSRF 保護<a class="headerlink" href="#csrf" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>CSRF は クロスサイトリクエストフォージェリの略で、
+無意識のうちに犠牲者にリクエストを送信させる攻撃方法です。</p>
+<p>CodeIgniter では CSRF の保護をすぐにお使いいただけます、
+自動的にすべての非 GET HTTP リクエストをトリガーとしますが、
+サブミットフォームを正しい方法で作成することが必要になります。
+これは <a class="reference internal" href="../libraries/security.html"><em>セキュリティライブラリ</em></a> ドキュメントで説明されています。</p>
 </div>
-<div class="section" id="password-handling">
-<h2>Password handling<a class="headerlink" href="#password-handling" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>It is <em>critical</em> that you handle passwords in your application properly.</p>
-<p>Unfortunately, many developers don&#8217;t know how to do that, and the web is
-full of outdated or otherwise wrongful advices, which doesn&#8217;t help.</p>
-<p>We would like to give you a list of combined do&#8217;s and don&#8217;ts to help you
-with that. Please read below.</p>
+<div class="section" id="id3">
+<h2>パスワードの取り扱い<a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>アプリケーションで適切にパスワードを扱うことは <em>重要事項</em> です。</p>
+<p>残念ながら、多くの開発者はどう取り扱えばよいかを知らず、
+そしてウェブは賞味期限切れないし間違ったアドバイスであふれており、助けになりません。</p>
+<p>私たちはあなたの助けとするため、やるべきこと、避けるべきことを合わせたリストを提供したいと思います。
+どうぞ下記をお読みください。</p>
 <ul>
-<li><p class="first">DO NOT store passwords in plain-text format.</p>
-<p>Always <strong>hash</strong> your passwords.</p>
+<li><p class="first">プレーンテキスト形式でパスワードを保存　し　な　い　で　ください。</p>
+<p>必ずパスワードを <strong>ハッシュ</strong> してください。</p>
 </li>
-<li><p class="first">DO NOT use Base64 or similar encoding for storing passwords.</p>
-<p>This is as good as storing them in plain-text. Really. Do <strong>hashing</strong>,
-not <em>encoding</em>.</p>
-<p>Encoding, and encryption too, are two-way processes. Passwords are
-secrets that must only be known to their owner, and thus must work
-only in one direction. Hashing does that - there&#8217;s <em>no</em> un-hashing or
-de-hashing, but there is decoding and decryption.</p>
+<li><p class="first">パスワードを格納するためにBase64または類似のエンコーディングを使用　し　な　い　で　ください。</p>
+<p>これはプレーンテキストとして保存すると同程度のものです。本当に。
+<em>エンコーディング</em> ではなく <strong>ハッシュ</strong> してください。</p>
+<p>符号化と、そして暗号化も、双方向の処理です。
+パスワードはその所有者だけが知るべき秘密であり、
+そのため処理は一方向にだけ行われるものでなければなりません。ハッシュがそれです――
+未ハッシュまたは逆ハッシュというものは <em>存在せず</em> 、しかし復号化や暗号解除は存在します。</p>
 </li>
-<li><p class="first">DO NOT use weak or broken hashing algorithms like MD5 or SHA1.</p>
-<p>These algorithms are old, proven to be flawed, and not designed for
-password hashing in the first place.</p>
-<p>Also, DON&#8217;T invent your own algorithms.</p>
-<p>Only use strong password hashing algorithms like BCrypt, which is used
-in PHP&#8217;s own <a class="reference external" href="http://php.net/password">Password Hashing</a> functions.</p>
-<p>Please use them, even if you&#8217;re not running PHP 5.5+, CodeIgniter
-provides them for you as long as you&#8217;re running at least PHP version
-5.3.7 (and if you don&#8217;t meet that requirement - please, upgrade).</p>
-<p>If you&#8217;re one of the really unlucky people who can&#8217;t even upgrade to a
-more recent PHP version, use <cite>hash_pbkdf() &lt;http://php.net/hash_pbkdf2&gt;</cite>,
-which we also provide in our compatibility layer.</p>
+<li><p class="first">MD5またはSHA1のような、弱いまたは壊れたハッシュアルゴリズムを使用　し　な　い　で　ください。</p>
+<p>これらのアルゴリズムは古く、欠陥があることが証明され、
+そもそもがパスワードハッシュのためには設計されていません。</p>
+<p>また、独自のアルゴリズムを考案　し　な　い　で　ください。</p>
+<p>BCrypt のような強力なパスワードハッシュアルゴリズムのみを使用してください、
+これは PHP の <a class="reference external" href="http://php.net/password">パスワードハッシュ</a> 関数で使用されています。</p>
+<p>PHP 5.5 以降でない場合でもこれらを使ってください、
+CodeIgniter は PHP 5.3.7 以上でそれらの関数を提供しています
+(その要件を満たしていない場合は――どうかアップグレードしてください) 。</p>
+<p>もしあなたが本当に不運な人たちの一人で PHP のバージョンを十分新しいものにできないなら、
+<cite>hash_pbkdf() &lt;http://php.net/hash_pbkdf2&gt;</cite> を使用してください、
+これは互換性レイヤで提供しています。</p>
 </li>
-<li><p class="first">DO NOT ever display or send a password in plain-text format!</p>
-<p>Even to the password&#8217;s owner, if you need a &#8220;Forgotten password&#8221;
-feature, just randomly generate a new, one-time (this is also important)
-password and send that instead.</p>
+<li><p class="first">プレーンテキスト形式でのパスワード表示、送信は絶対に　し　な　い　で　ください！</p>
+<p>パスワードの所有者に対してでも、たとえ「パスワードを忘れたとき」機能を必要とする場合であっても、
+かわりにランダムな新しい、ワンタイム (これも重要です) パスワードを生成し、
+それを送信するだけにしてください。</p>
 </li>
-<li><p class="first">DO NOT put unnecessary limits on your users&#8217; passwords.</p>
-<p>If you&#8217;re using a hashing algorithm other than BCrypt (which has a limit
-of 72 characters), you should set a relatively high limit on password
-lengths in order to mitigate DoS attacks - say, 1024 characters.</p>
-<p>Other than that however, there&#8217;s no point in forcing a rule that a
-password can only be up to a number of characters, or that it can&#8217;t
-contain a certain set of special characters.</p>
-<p>Not only does this <strong>reduce</strong> security instead of improving it, but
-there&#8217;s literally no reason to do it. No technical limitations and
-no (practical) storage constraints apply once you&#8217;ve hashed them, none!</p>
+<li><p class="first">ユーザのパスワードに不必要な制限を設定　し　な　い　で　ください。</p>
+<p>BCrypt (72 文字の制限があります) の以外のハッシュアルゴリズムを使用している場合、
+DoS 攻撃を軽減するため、パスワードの長さに比較的高めの上限を設定する必要があります
+――1024文字、としましょう。</p>
+<p>それ以外ではなんであれ、
+パスワードにルールを強制するのは的を外しています。
+文字数の下限や、または特殊文字セットを含むことができないようにするものです。</p>
+<p>これはセキュリティが改善するのではなく <strong>低下</strong> するばかりか、
+それを行う理由が文字通りありません。ハッシュするのに技術的な制限や
+(実際的な) ストレージの制約はなにもありません、なにも！</p>
 </li>
 </ul>
 </div>
-<div class="section" id="validate-input-data">
-<h2>Validate input data<a class="headerlink" href="#validate-input-data" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>CodeIgniter has a <a class="reference internal" href="../libraries/form_validation.html"><em>Form Validation Library</em></a> that assists you in
-validating, filtering, and prepping your data.</p>
-<p>Even if that doesn&#8217;t work for your use case however, be sure to always
-validate and sanitize all input data. For example, if you expect a numeric
-string for an input variable, you can check for that with <tt class="docutils literal"><span class="pre">is_numeric()</span></tt>
-or <tt class="docutils literal"><span class="pre">ctype_digit()</span></tt>. Always try to narrow down your checks to a certain
-pattern.</p>
-<p>Have it in mind that this includes not only <tt class="docutils literal"><span class="pre">$_POST</span></tt> and <tt class="docutils literal"><span class="pre">$_GET</span></tt>
-variables, but also cookies, the user-agent string and basically
-<em>all data that is not created directly by your own code</em>.</p>
+<div class="section" id="id5">
+<h2>入力データを検証する<a class="headerlink" href="#id5" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>CodeIgniter には <a class="reference internal" href="../libraries/form_validation.html"><em>フォームバリデーションライブラリ</em></a> があり、
+検証、フィルタリング、およびデータの準備を支援します。</p>
+<p>しかしそれがあなたのユースケースでは機能しない場合でも、
+常にすべての入力データを検証し、サニタイズしてください。
+たとえば、数値文字列を入力として期待する場合、 <tt class="docutils literal"><span class="pre">is_numeric()</span></tt>
+または <tt class="docutils literal"><span class="pre">ctype_digit()</span></tt> を使ってチェックすることができます。
+常にチェックを一定のパターンに絞り込むよう取り組んでください。</p>
+<p>心得ておいてください、 <tt class="docutils literal"><span class="pre">$_POST</span></tt> や <tt class="docutils literal"><span class="pre">$_GET</span></tt> 変数に限らず、
+クッキー、ユーザーエージェント文字列および基本的に
+<em>みずからのコードで直接作成されていないすべてのデータ</em> が対象であることを。</p>
 </div>
-<div class="section" id="escape-all-data-before-database-insertion">
-<h2>Escape all data before database insertion<a class="headerlink" href="#escape-all-data-before-database-insertion" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>Never insert information into your database without escaping it.
-Please see the section that discusses <a class="reference internal" href="../database/queries.html"><em>database queries</em></a> for more information.</p>
+<div class="section" id="id6">
+<h2>データベースへの挿入前にすべてのデータをエスケープする<a class="headerlink" href="#id6" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>エスケープなしにデータベースに情報を挿入しないでください。
+詳細については <a class="reference internal" href="../database/queries.html"><em>データベースクエリ</em></a> で説明されているセクションを参照してください。</p>
 </div>
-<div class="section" id="hide-your-files">
-<h2>Hide your files<a class="headerlink" href="#hide-your-files" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>Another good security practice is to only leave your <em>index.php</em>
-and &#8220;assets&#8221; (e.g. .js, css and image files) under your server&#8217;s
-<em>webroot</em> directory (most commonly named &#8220;htdocs/&#8221;). These are
-the only files that you would need to be accessible from the web.</p>
-<p>Allowing your visitors to see anything else would potentially
-allow them to access sensitive data, execute scripts, etc.</p>
-<p>If you&#8217;re not allowed to do that, you can try using a .htaccess
-file to restrict access to those resources.</p>
-<p>CodeIgniter will have an index.html file in all of its
-directories in an attempt to hide some of this data, but have
-it in mind that this is not enough to prevent a serious
-attacker.</p>
+<div class="section" id="id7">
+<h2>ファイルを隠す<a class="headerlink" href="#id7" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>もう一つの良いセキュリティプラクティスは、 <em>index.php</em>
+とサーバーの「 assets 」 (例えば .js ファイル、CSSと画像ファイル)
+だけをサーバの <em>ウェブルート</em> ディレクトリ (最も一般的には「 htdocs/ 」という名前)
+の下に置くことです。ウェブからアクセスできるようにする必要があるファイルはこれらだけです。</p>
+<p>それら以外の何かを訪問者から見えるようにすると、
+スクリプトを実行するなど、潜在的に機密データにアクセスできるようになることを許すことになります。</p>
+<p>その設定が許可されていない場合、それらのリソースへのアクセスを制限する .htaccess
+ファイルの利用を試みてください。</p>
+<p>CodeIgniter ではディレクトリのすべてに index.html
+ファイルを置くことでこれらのデータを保護しようとしていますが、
+これは本気の攻撃者に対しては不十分であることを
+気に留めておいてください。</p>
 </div>
 </div>
 
