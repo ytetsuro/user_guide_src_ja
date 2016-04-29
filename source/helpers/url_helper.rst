@@ -45,7 +45,7 @@ URL ヘルパーファイルは、URL を処理するのに役立つ関数で構
 		echo site_url('news/local/123');
 
 	上の例では、次のようなものが返されます:
-	http://example.com/index.php/news/local/123
+	*http://example.com/index.php/news/local/123*
 
 	Here is an example of segments passed as an array::
 
