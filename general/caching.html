@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Webページのキャッシュ &mdash; CodeIgniter 3.1.0-dev ドキュメント</title>
+  <title>ウェブページのキャッシュ &mdash; CodeIgniter 3.1.0-dev ドキュメント</title>
   
 
   
@@ -411,7 +411,7 @@
       
         <li><a href="index.html">一般的なトピック</a> &raquo;</li>
       
-    <li>Webページのキャッシュ</li>
+    <li>ウェブページのキャッシュ</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -424,71 +424,71 @@
 </div>
           <div role="main" class="document">
             
-  <div class="section" id="web">
-<h1>Webページのキャッシュ<a class="headerlink" href="#web" title="このヘッドラインへのパーマリンク">¶</a></h1>
-<p>CodeIgniter lets you cache your pages in order to achieve maximum
-performance.</p>
-<p>Although CodeIgniter is quite fast, the amount of dynamic information
-you display in your pages will correlate directly to the server
-resources, memory, and processing cycles utilized, which affect your
-page load speeds. By caching your pages, since they are saved in their
-fully rendered state, you can achieve performance that nears that of
-static web pages.</p>
-<div class="section" id="id1">
-<h2>キャッシュはどのように動作しますか？<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>Caching can be enabled on a per-page basis, and you can set the length
-of time that a page should remain cached before being refreshed. When a
-page is loaded for the first time, the cache file will be written to
-your application/cache folder. On subsequent page loads the cache file
-will be retrieved and sent to the requesting user&#8217;s browser. If it has
-expired, it will be deleted and refreshed before being sent to the
-browser.</p>
-</div>
+  <div class="section" id="id1">
+<h1>ウェブページのキャッシュ<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>CodeIgniterではパフォーマンスを最大化するために、
+ページをキャッシュさせることができます。</p>
+<p>CodeIgniterは非常に高速ですが、動的な情報の表示回数はサーバリソース、
+メモリ、およびCPU利用率に直接的に連動し
+、ページ読み込み速度に影響します。
+ページをキャッシュすることで、
+それらは完全にレンダリングされた状態で保存されているので、
+性能を静的なウェブページのそれに近づけることができます。</p>
 <div class="section" id="id2">
-<h2>キャッシュを有効にする<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>To enable caching, put the following tag in any of your controller
-methods:</p>
+<h2>キャッシュはどのように動作しますか？<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>キャッシュはページごとに有効にすることができ、
+ページのキャッシュがリフレッシュされるまでの時間を設定することができます。
+最初にページがロードされると、キャッシュファイルは
+application/cache フォルダに書き込まれます。
+後続処理において、ページ読み込みはキャッシュファイルから行われます。
+キャッシュファイルは検索されて要求元ユーザのブラウザに送信されるためのものです。
+有効期限が切れている場合、それは削除され、ブラウザに送信される前に更新されます。</p>
+</div>
+<div class="section" id="id3">
+<h2>キャッシュを有効にする<a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>キャッシュを有効にするには、コントローラメソッドのどこかに
+次のタグを書きます:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">output</span><span class="o">-&gt;</span><span class="na">cache</span><span class="p">(</span><span class="nv">$n</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>Where <tt class="docutils literal"><span class="pre">$n</span></tt> is the number of <strong>minutes</strong> you wish the page to remain
-cached between refreshes.</p>
-<p>The above tag can go anywhere within a method. It is not affected by
-the order that it appears, so place it wherever it seems most logical to
-you. Once the tag is in place, your pages will begin being cached.</p>
+<p><tt class="docutils literal"><span class="pre">$n</span></tt> の箇所は 、リフレッシュされる間隔、ページのキャッシュを残したい <strong>分</strong> 数
+です。</p>
+<p>上記のタグはメソッド内のどこにでも置くことができます。
+どんな順番で書くかによる影響を受けませんので、あなたにとって最も理にかなっていると思う場所に配置してください。
+一度コードが配置されれば、ページはキャッシュされ始めます。</p>
 <div class="admonition important">
 <p class="first admonition-title">重要</p>
-<p class="last">Because of the way CodeIgniter stores content for output,
-caching will only work if you are generating display for your
-controller with a <a class="reference internal" href="views.html"><em>view</em></a>.</p>
+<p class="last">CodeIgniter の出力用コンテンツの保存方法のため、
+キャッシュは
+<a class="reference internal" href="views.html"><em>ビュー</em></a> で出力した場合のみ動作します。</p>
 </div>
 <div class="admonition important">
 <p class="first admonition-title">重要</p>
-<p class="last">If you change configuration options that might affect
-your output, you have to manually delete your cache files.</p>
+<p class="last">出力に影響を与える可能性のある設定オプションを変更する場合は、
+手動でキャッシュファイルを削除する必要があります。</p>
 </div>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
-<p class="last">Before the cache files can be written you must set the file
-permissions on your <em>application/cache/</em> directory such that
-it is writable.</p>
+<p class="last">キャッシュファイルを書き込めるようにする前に、
+<em>application/cache/</em> ディレクトリのパーミッションを
+書き込み可に設定する必要があります。</p>
 </div>
 </div>
-<div class="section" id="id3">
-<h2>キャッシュの削除<a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>If you no longer wish to cache a file you can remove the caching tag and
-it will no longer be refreshed when it expires.</p>
+<div class="section" id="id4">
+<h2>キャッシュの削除<a class="headerlink" href="#id4" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>ファイルをキャッシュしたくなくなった場合は、
+キャッシュのタグを削除すれば期限切れになったときにリフレッシュされなくなります。</p>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
-<p class="last">Removing the tag will not delete the cache immediately. It will
-have to expire normally.</p>
+<p class="last">タグを削除しても、すぐにはキャッシュは削除されません。
+通常のように期限切れを待つ必要があります。</p>
 </div>
-<p>If you need to manually delete the cache, you can use the <tt class="docutils literal"><span class="pre">delete_cache()</span></tt>
-method:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="c1">// Deletes cache for the currently requested URI</span>
+<p>手動でキャッシュを削除する必要がある場合、 <tt class="docutils literal"><span class="pre">delete_cache()</span></tt>
+メソッドを使用することができます:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="c1">// 現在リクエストされている URI のキャッシュを削除する</span>
 <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">output</span><span class="o">-&gt;</span><span class="na">delete_cache</span><span class="p">();</span>
 
-<span class="c1">// Deletes cache for /foo/bar</span>
+<span class="c1">// /foo/bar のキャッシュを削除する</span>
 <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">output</span><span class="o">-&gt;</span><span class="na">delete_cache</span><span class="p">(</span><span class="s1">&#39;/foo/bar&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
@@ -514,7 +514,7 @@ method:</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2016, British Columbia Institute of Technology.
-      最終更新: Apr 28, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>
+      最終更新: Apr 29, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>
     </p>
   </div>
 

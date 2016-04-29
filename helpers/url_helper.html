@@ -426,23 +426,23 @@
             
   <div class="section" id="url-helper">
 <h1>URL Helper<a class="headerlink" href="#url-helper" title="このヘッドラインへのパーマリンク">¶</a></h1>
-<p>The URL Helper file contains functions that assist in working with URLs.</p>
+<p>URL ヘルパーファイルは、URL を処理するのに役立つ関数で構成されています。</p>
 <div class="contents local topic" id="contents">
 <ul class="simple">
-<li><a class="reference internal" href="#loading-this-helper" id="id2">Loading this Helper</a></li>
-<li><a class="reference internal" href="#id1" id="id3">利用できる機能</a></li>
+<li><a class="reference internal" href="#id1" id="id3">ヘルパーのロード</a></li>
+<li><a class="reference internal" href="#id2" id="id4">利用できる機能</a></li>
 </ul>
 </div>
-<div class="custom-index container"></div><div class="section" id="loading-this-helper">
-<h2><a class="toc-backref" href="#id2">Loading this Helper</a><a class="headerlink" href="#loading-this-helper" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>This helper is loaded using the following code:</p>
+<div class="custom-index container"></div><div class="section" id="id1">
+<h2><a class="toc-backref" href="#id3">ヘルパーのロード</a><a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>このヘルパーは次のコードを使ってロードします:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">helper</span><span class="p">(</span><span class="s1">&#39;url&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>The following functions are available:</p>
+<p>次の関数が利用できます:</p>
 </div>
-<div class="section" id="id1">
-<h2><a class="toc-backref" href="#id3">利用できる機能</a><a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="section" id="id2">
+<h2><a class="toc-backref" href="#id4">利用できる機能</a><a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <dl class="function">
 <dt id="site_url">
 <tt class="descname">site_url</tt><big>(</big><span class="optional">[</span><em>$uri = ''</em><span class="optional">[</span>, <em>$protocol = NULL</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#site_url" title="この定義へのパーマリンク">¶</a></dt>
@@ -450,41 +450,39 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">パラメタ:</th><td class="field-body"><ul class="first simple">
-<li><strong>$uri</strong> (<em>string</em>) &#8211; URI string</li>
-<li><strong>$protocol</strong> (<em>string</em>) &#8211; Protocol, e.g. &#8216;http&#8217; or &#8216;https&#8217;</li>
-</ul>
-</td>
+<tr class="field-odd field"><th class="field-name" colspan="2">パラメータ string $uri:</th></tr>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">URI 文字列</td>
 </tr>
-<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body"><p class="first">Site URL</p>
-</td>
+<tr class="field-even field"><th class="field-name" colspan="2">パラメータ string  $protocol:</th></tr>
+<tr class="field-even field"><td>&nbsp;</td><td class="field-body">プロトロコル, 例: &#8216;http&#8217; or &#8216;https&#8217;</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">戻り値の型:</th><td class="field-body"><p class="first last">string</p>
-</td>
+<tr class="field-odd field"><th class="field-name">返り値:</th><td class="field-body">サイトの URL</td>
+</tr>
+<tr class="field-even field"><th class="field-name">返り値型:</th><td class="field-body">string</td>
 </tr>
 </tbody>
 </table>
-<p>Returns your site URL, as specified in your config file. The index.php
-file (or whatever you have set as your site <strong>index_page</strong> in your config
-file) will be added to the URL, as will any URI segments you pass to the
-function, plus the <strong>url_suffix</strong> as set in your config file.</p>
-<p>You are encouraged to use this function any time you need to generate a
-local URL so that your pages become more portable in the event your URL
-changes.</p>
-<p>Segments can be optionally passed to the function as a string or an
-array. Here is a string example:</p>
+<p>設定ファイルで指定されているサイトの URL を返します。 index.php
+ファイル (または、設定ファイルで設定しているユーザサイトの <strong>index_page</strong>
+) が URL に追加され、この関数に渡された URI
+セグメントと設定ファイルで指定された <strong>url_suffix</strong> が追加されます。</p>
+<p>ローカルの(サイト内の) URL を生成する必要がある時は、
+いつもこの関数を使うようおすすめします。
+この関数を使うと、URL が変更になった時でも、移植性が高まります。</p>
+<p>オプションで、セグメントを文字列または配列としてこの関数に渡すことがで
+きます。下記は文字列での例です:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">echo</span> <span class="nx">site_url</span><span class="p">(</span><span class="s1">&#39;news/local/123&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>The above example would return something like:
+<p>上の例では、次のようなものが返されます:
 <em>http://example.com/index.php/news/local/123</em></p>
 <p>Here is an example of segments passed as an array:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$segments</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span><span class="s1">&#39;news&#39;</span><span class="p">,</span> <span class="s1">&#39;local&#39;</span><span class="p">,</span> <span class="s1">&#39;123&#39;</span><span class="p">);</span>
 <span class="k">echo</span> <span class="nx">site_url</span><span class="p">(</span><span class="nv">$segments</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>This function is an alias for <tt class="docutils literal"><span class="pre">CI_Config::site_url()</span></tt>. For more info,
-please see the <a class="reference internal" href="../libraries/config.html"><em>Config Library</em></a> documentation.</p>
+<p>この関数は <tt class="docutils literal"><span class="pre">CI_Config::site_url()</span></tt> のエイリアスです。より多くの情報を
+得るには、<a class="reference internal" href="../libraries/config.html"><em>設定 Library</em></a> を見てください。</p>
 </dd></dl>
 
 <dl class="function">
@@ -494,42 +492,40 @@ please see the <a class="reference internal" href="../libraries/config.html"><em
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">パラメタ:</th><td class="field-body"><ul class="first simple">
-<li><strong>$uri</strong> (<em>string</em>) &#8211; URI string</li>
-<li><strong>$protocol</strong> (<em>string</em>) &#8211; Protocol, e.g. &#8216;http&#8217; or &#8216;https&#8217;</li>
-</ul>
-</td>
+<tr class="field-odd field"><th class="field-name" colspan="2">パラメータ string  $uri:</th></tr>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">URI 文字列</td>
 </tr>
-<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body"><p class="first">Base URL</p>
-</td>
+<tr class="field-even field"><th class="field-name" colspan="2">パラメータ string  $protocol:</th></tr>
+<tr class="field-even field"><td>&nbsp;</td><td class="field-body">プロトロコル, 例: &#8216;http&#8217; or &#8216;https&#8217;</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">戻り値の型:</th><td class="field-body"><p class="first last">string</p>
-</td>
+<tr class="field-odd field"><th class="field-name">返り値:</th><td class="field-body">ベース URL</td>
+</tr>
+<tr class="field-even field"><th class="field-name">返り値型:</th><td class="field-body">string</td>
 </tr>
 </tbody>
 </table>
-<p>Returns your site base URL, as specified in your config file. Example:</p>
+<p>設定ファイルで指定されているサイトのベース URL を返します。例:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">echo</span> <span class="nx">base_url</span><span class="p">();</span>
 </pre></div>
 </div>
-<p>This function returns the same thing as <a class="reference internal" href="#site_url" title="site_url"><tt class="xref php php-func docutils literal"><span class="pre">site_url()</span></tt></a>, without
-the <em>index_page</em> or <em>url_suffix</em> being appended.</p>
-<p>Also like <a class="reference internal" href="#site_url" title="site_url"><tt class="xref php php-func docutils literal"><span class="pre">site_url()</span></tt></a>, you can supply segments as a string or
-an array. Here is a string example:</p>
+<p>この関数は <em>index_page</em> がないことと、また、 <em>url_suffix</em>
+が追加されること以外は <a class="reference internal" href="#site_url" title="site_url"><tt class="xref php php-func docutils literal"><span class="pre">site_url()</span></tt></a> と同じ結果を返します。</p>
+<p>また <a class="reference internal" href="#site_url" title="site_url"><tt class="xref php php-func docutils literal"><span class="pre">site_url()</span></tt></a> のように、セグメントを文字列または配列として、
+この関数に渡すことができます。下記は文字列での例です:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">echo</span> <span class="nx">base_url</span><span class="p">(</span><span class="s2">&quot;blog/post/123&quot;</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>The above example would return something like:
+<p>上の例では、次のようなものが返されます:
 <em>http://example.com/blog/post/123</em></p>
-<p>This is useful because unlike <a class="reference internal" href="#site_url" title="site_url"><tt class="xref php php-func docutils literal"><span class="pre">site_url()</span></tt></a>, you can supply a
-string to a file, such as an image or stylesheet. For example:</p>
+<p>この関数は <a class="reference internal" href="#site_url" title="site_url"><tt class="xref php php-func docutils literal"><span class="pre">site_url()</span></tt></a> とは違い、画像やスタイルシートなどの
+ファイルへの文字列を渡すことができるのが便利です。例:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">echo</span> <span class="nx">base_url</span><span class="p">(</span><span class="s2">&quot;images/icons/edit.png&quot;</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>This would give you something like:
+<p>上の例では、次のようなものが返されます:
 <em>http://example.com/images/icons/edit.png</em></p>
-<p>This function is an alias for <tt class="docutils literal"><span class="pre">CI_Config::base_url()</span></tt>. For more info,
-please see the <a class="reference internal" href="../libraries/config.html"><em>Config Library</em></a> documentation.</p>
+<p>この関数は <tt class="docutils literal"><span class="pre">CI_Config::base_url()</span></tt> のエイリアスです。より多くの情報を
+得るには、<a class="reference internal" href="../libraries/config.html"><em>Config Library</em></a> を見てください。</p>
 </dd></dl>
 
 <dl class="function">
@@ -539,17 +535,17 @@ please see the <a class="reference internal" href="../libraries/config.html"><em
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">戻り値:</th><td class="field-body">The current URL</td>
+<tr class="field-odd field"><th class="field-name">返り値:</th><td class="field-body">現在の URL</td>
 </tr>
-<tr class="field-even field"><th class="field-name">戻り値の型:</th><td class="field-body">string</td>
+<tr class="field-even field"><th class="field-name">返り値型:</th><td class="field-body">string</td>
 </tr>
 </tbody>
 </table>
-<p>Returns the full URL (including segments) of the page being currently
-viewed.</p>
+<p>現在表示されているページの完全な URL (セグメントを含む) を
+返します。</p>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
-<p class="last">Calling this function is the same as doing this:
+<p class="last">この関数の呼び出しは次のようなものと同じ意味になります。:
 |
 | site_url(uri_string());</p>
 </div>
@@ -562,23 +558,23 @@ viewed.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">戻り値:</th><td class="field-body">An URI string</td>
+<tr class="field-odd field"><th class="field-name">返り値:</th><td class="field-body">An URI string</td>
 </tr>
-<tr class="field-even field"><th class="field-name">戻り値の型:</th><td class="field-body">string</td>
+<tr class="field-even field"><th class="field-name">返り値型:</th><td class="field-body">string</td>
 </tr>
 </tbody>
 </table>
-<p>Returns the URI segments of any page that contains this function.
-For example, if your URL was this:</p>
+<p>この関数が呼び出されたページの URI セグメントを返します。たとえば、URL
+が以下のようなものであれば:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nx">http</span><span class="o">://</span><span class="nx">some</span><span class="o">-</span><span class="nx">site</span><span class="o">.</span><span class="nx">com</span><span class="o">/</span><span class="nx">blog</span><span class="o">/</span><span class="nx">comments</span><span class="o">/</span><span class="mi">123</span>
 </pre></div>
 </div>
-<p>The function would return:</p>
+<p>この関数は次のような値を返します:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nx">blog</span><span class="o">/</span><span class="nx">comments</span><span class="o">/</span><span class="mi">123</span>
 </pre></div>
 </div>
-<p>This function is an alias for <tt class="docutils literal"><span class="pre">CI_Config::uri_string()</span></tt>. For more info,
-please see the <a class="reference internal" href="../libraries/config.html"><em>Config Library</em></a> documentation.</p>
+<p>この関数は <tt class="docutils literal"><span class="pre">CI_Config::uri_string()</span></tt> のエイリアスです。より多くの情報を
+得るには、<a class="reference internal" href="../libraries/config.html"><em>Config Library</em></a> を見てください。</p>
 </dd></dl>
 
 <dl class="function">
@@ -588,14 +584,14 @@ please see the <a class="reference internal" href="../libraries/config.html"><em
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">戻り値:</th><td class="field-body">&#8216;index_page&#8217; value</td>
+<tr class="field-odd field"><th class="field-name">返り値:</th><td class="field-body">&#8216;index_page&#8217; value</td>
 </tr>
-<tr class="field-even field"><th class="field-name">戻り値の型:</th><td class="field-body">mixed</td>
+<tr class="field-even field"><th class="field-name">返り値型:</th><td class="field-body">mixed</td>
 </tr>
 </tbody>
 </table>
-<p>Returns your site <strong>index_page</strong>, as specified in your config file.
-Example:</p>
+<p>設定ファイルで指定されているサイトの <strong>index_page</strong> ページを返します。
+例:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">echo</span> <span class="nx">index_page</span><span class="p">();</span>
 </pre></div>
 </div>
@@ -608,38 +604,38 @@ Example:</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">パラメタ:</th><td class="field-body"><ul class="first simple">
-<li><strong>$uri</strong> (<em>string</em>) &#8211; URI string</li>
-<li><strong>$title</strong> (<em>string</em>) &#8211; Anchor title</li>
-<li><strong>$attributes</strong> (<em>mixed</em>) &#8211; HTML attributes</li>
-</ul>
-</td>
+<tr class="field-odd field"><th class="field-name" colspan="2">パラメータ string  $uri:</th></tr>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">URI 文字列</td>
 </tr>
-<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body"><p class="first">HTML hyperlink (anchor tag)</p>
-</td>
+<tr class="field-even field"><th class="field-name" colspan="2">パラメータ string  $title:</th></tr>
+<tr class="field-even field"><td>&nbsp;</td><td class="field-body">アンカータイトル</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">戻り値の型:</th><td class="field-body"><p class="first last">string</p>
-</td>
+<tr class="field-odd field"><th class="field-name" colspan="2">パラメータ mixed   $attributes:</th></tr>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">HTML 属性</td>
+</tr>
+<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body">HTML ハイパーリンク (アンカータグ)</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返り値型:</th><td class="field-body">string</td>
 </tr>
 </tbody>
 </table>
-<p>Creates a standard HTML anchor link based on your local site URL.</p>
-<p>The first parameter can contain any segments you wish appended to the
-URL. As with the <a class="reference internal" href="#site_url" title="site_url"><tt class="xref php php-func docutils literal"><span class="pre">site_url()</span></tt></a> function above, segments can
-be a string or an array.</p>
+<p>サイトの URL にもとづいて、標準の HTML アンカーリンクを生成します。</p>
+<p>第1引数は、URL に追加したいセグメントを指定します。
+上の <a class="reference internal" href="#site_url" title="site_url"><tt class="xref php php-func docutils literal"><span class="pre">site_url()</span></tt></a> 関数のように、文字列または、
+配列でセグメントを指定します。</p>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
-<p class="last">If you are building links that are internal to your application
-do not include the base URL (http&amp;#58;//...). This will be added
-automatically from the information specified in your config file.
-Include only the URI segments you wish appended to the URL.</p>
+<p class="last">アプリケーション内部のリンクを生成するときは、ベースURL(http&amp;#58;//...) を含まないようにしてください。
+設定ファイルで指定されている情報から、ベース URL
+は自動的に追加されます。URL に追加したい URI
+セグメントだけを含めるようにしてください。</p>
 </div>
-<p>The second segment is the text you would like the link to say. If you
-leave it blank, the URL will be used.</p>
-<p>The third parameter can contain a list of attributes you would like
-added to the link. The attributes can be a simple string or an
-associative array.</p>
-<p>Here are some examples:</p>
+<p>第2引数は、リンクに指定したいテキストになります。空のままにしておくと
+、URL が使用されます。</p>
+<p>第3引数はリンクタグに追加したい属性のリストを指定できます。
+属性は、文字列または、
+連想配列で指定します。</p>
+<p>いくつか例を挙げます:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">echo</span> <span class="nx">anchor</span><span class="p">(</span><span class="s1">&#39;news/local/123&#39;</span><span class="p">,</span> <span class="s1">&#39;My News&#39;</span><span class="p">,</span> <span class="s1">&#39;title=&quot;News title&quot;&#39;</span><span class="p">);</span>
 <span class="c1">// Prints: &lt;a href=&quot;http://example.com/index.php/news/local/123&quot; title=&quot;News title&quot;&gt;My News&lt;/a&gt;</span>
 
@@ -659,27 +655,27 @@ associative array.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">パラメタ:</th><td class="field-body"><ul class="first simple">
-<li><strong>$uri</strong> (<em>string</em>) &#8211; URI string</li>
-<li><strong>$title</strong> (<em>string</em>) &#8211; Anchor title</li>
-<li><strong>$attributes</strong> (<em>mixed</em>) &#8211; HTML attributes</li>
-</ul>
-</td>
+<tr class="field-odd field"><th class="field-name" colspan="2">パラメータ string  $uri:</th></tr>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">URI 文字列</td>
 </tr>
-<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body"><p class="first">Pop-up hyperlink</p>
-</td>
+<tr class="field-even field"><th class="field-name" colspan="2">パラメータ string  $title:</th></tr>
+<tr class="field-even field"><td>&nbsp;</td><td class="field-body">アンカータイトル</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">戻り値の型:</th><td class="field-body"><p class="first last">string</p>
-</td>
+<tr class="field-odd field"><th class="field-name" colspan="2">パラメータ mixed   $attributes:</th></tr>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">HTML 属性</td>
+</tr>
+<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body">ポップアップ ハイパーリンク</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返り値型:</th><td class="field-body">string</td>
 </tr>
 </tbody>
 </table>
-<p>Nearly identical to the <a class="reference internal" href="#anchor" title="anchor"><tt class="xref php php-func docutils literal"><span class="pre">anchor()</span></tt></a> function except that it
-opens the URL in a new window. You can specify JavaScript window
-attributes in the third parameter to control how the window is opened.
-If the third parameter is not set it will simply open a new window with
-your own browser settings.</p>
-<p>Here is an example with attributes:</p>
+<p>新しいウィンドで URL を開くこと以外は、 <a class="reference internal" href="#anchor" title="anchor"><tt class="xref php php-func docutils literal"><span class="pre">anchor()</span></tt></a> 関数とほとんど同じです。
+ウィンドウの開き方をコントロールするために、JavaScript の window
+オブジェクトの属性(プロパティ)を第3引数で指定できます。 第3引数が設定
+されていない場合は、ユーザのブラウザの設定により新しいウィンドウを開き
+ます。</p>
+<p>下記は、属性を指定する場合の例です:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$atts</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
         <span class="s1">&#39;width&#39;</span>       <span class="o">=&gt;</span> <span class="mi">800</span><span class="p">,</span>
         <span class="s1">&#39;height&#39;</span>      <span class="o">=&gt;</span> <span class="mi">600</span><span class="p">,</span>
@@ -696,23 +692,23 @@ your own browser settings.</p>
 </div>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
-<p class="last">The above attributes are the function defaults so you only need to
-set the ones that are different from what you need. If you want the
-function to use all of its defaults simply pass an empty array in the
-third parameter:
+<p class="last">上の属性は、この関数の初期値になりますので、
+これと異なる値にしたい箇所を設定するだけで構いません。
+すべての属性に初期値を使用する場合は、
+単に第3引数に空の配列を渡してください:
 |
 | echo anchor_popup(&#8216;news/local/123&#8217;, &#8216;Click Me!&#8217;, array());</p>
 </div>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
-<p class="last">The <strong>window_name</strong> is not really an attribute, but an argument to
-the JavaScript <cite>window.open() &lt;http://www.w3schools.com/jsref/met_win_open.asp&gt;</cite>
-method, which accepts either a window name or a window target.</p>
+<p class="last"><strong>window_name</strong> は実際の属性ではありませんが、
+window name または window target のどちらかを受け入れる JavaScriptの <cite>window.open() &lt;http://www.w3schools.com/jsref/met_win_open.asp&gt;</cite>
+メソッドへの引数です。</p>
 </div>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
-<p class="last">Any other attribute than the listed above will be parsed as an
-HTML attribute to the anchor tag.</p>
+<p class="last">上の属性にないどのような属性も HTML 属性として
+アンカータグへパースされます。</p>
 </div>
 </dd></dl>
 
@@ -723,27 +719,27 @@ HTML attribute to the anchor tag.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">パラメタ:</th><td class="field-body"><ul class="first simple">
-<li><strong>$email</strong> (<em>string</em>) &#8211; E-mail address</li>
-<li><strong>$title</strong> (<em>string</em>) &#8211; Anchor title</li>
-<li><strong>$attributes</strong> (<em>mixed</em>) &#8211; HTML attributes</li>
-</ul>
-</td>
+<tr class="field-odd field"><th class="field-name" colspan="2">パラメータ string  $email:</th></tr>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">メールアドレス</td>
 </tr>
-<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body"><p class="first">A &#8220;mail to&#8221; hyperlink</p>
-</td>
+<tr class="field-even field"><th class="field-name" colspan="2">パラメータ string  $title:</th></tr>
+<tr class="field-even field"><td>&nbsp;</td><td class="field-body">アンカータイトル</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">戻り値の型:</th><td class="field-body"><p class="first last">string</p>
-</td>
+<tr class="field-odd field"><th class="field-name" colspan="2">パラメータ mixed   $attributes:</th></tr>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">HTML 属性</td>
+</tr>
+<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body">&#8220;mail to&#8221; ハイパーリンク</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返り値型:</th><td class="field-body">string</td>
 </tr>
 </tbody>
 </table>
-<p>Creates a standard HTML e-mail link. Usage example:</p>
+<p>標準の HTML メールリンクを作成します。使用例:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">echo</span> <span class="nx">mailto</span><span class="p">(</span><span class="s1">&#39;me@my-site.com&#39;</span><span class="p">,</span> <span class="s1">&#39;Click Here to Contact Me&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>As with the <a class="reference internal" href="#anchor" title="anchor"><tt class="xref php php-func docutils literal"><span class="pre">anchor()</span></tt></a> tab above, you can set attributes using the
-third parameter:</p>
+<p>上の <a class="reference internal" href="#anchor" title="anchor"><tt class="xref php php-func docutils literal"><span class="pre">anchor()</span></tt></a> 関数のように、第3引数で
+属性を指定できます。:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$attributes</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span><span class="s1">&#39;title&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Mail me&#39;</span><span class="p">);</span>
 <span class="k">echo</span> <span class="nx">mailto</span><span class="p">(</span><span class="s1">&#39;me@my-site.com&#39;</span><span class="p">,</span> <span class="s1">&#39;Contact Me&#39;</span><span class="p">,</span> <span class="nv">$attributes</span><span class="p">);</span>
 </pre></div>
@@ -757,24 +753,24 @@ third parameter:</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">パラメタ:</th><td class="field-body"><ul class="first simple">
-<li><strong>$email</strong> (<em>string</em>) &#8211; E-mail address</li>
-<li><strong>$title</strong> (<em>string</em>) &#8211; Anchor title</li>
-<li><strong>$attributes</strong> (<em>mixed</em>) &#8211; HTML attributes</li>
-</ul>
-</td>
+<tr class="field-odd field"><th class="field-name" colspan="2">パラメータ string  $email:</th></tr>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">メールアドレス</td>
 </tr>
-<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body"><p class="first">A spam-safe &#8220;mail to&#8221; hyperlink</p>
-</td>
+<tr class="field-even field"><th class="field-name" colspan="2">パラメータ string  $title:</th></tr>
+<tr class="field-even field"><td>&nbsp;</td><td class="field-body">アンカータイトル</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">戻り値の型:</th><td class="field-body"><p class="first last">string</p>
-</td>
+<tr class="field-odd field"><th class="field-name" colspan="2">パラメータ mixed   $attributes:</th></tr>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">HTML 属性</td>
+</tr>
+<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body">スパムセーフな &#8220;mail to&#8221; ハイパーリンク</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返り値型:</th><td class="field-body">string</td>
 </tr>
 </tbody>
 </table>
-<p>Identical to the <a class="reference internal" href="#mailto" title="mailto"><tt class="xref php php-func docutils literal"><span class="pre">mailto()</span></tt></a> function except it writes an obfuscated
-version of the <em>mailto</em> tag using ordinal numbers written with JavaScript to
-help prevent the e-mail address from being harvested by spam bots.</p>
+<p>この関数は、スパムロボットにメールアドレスが収集されてしまうのを防ぐため、
+メールアドレスのリンクを JavaScript で書き出すために、
+序数を使った難読化バージョンの <em>mailto</em> タグを書き出します。この点を除いて、<a class="reference internal" href="#mailto" title="mailto"><tt class="xref php php-func docutils literal"><span class="pre">mailto()</span></tt></a> 関数と同じです。</p>
 </dd></dl>
 
 <dl class="function">
@@ -784,40 +780,40 @@ help prevent the e-mail address from being harvested by spam bots.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">パラメタ:</th><td class="field-body"><ul class="first simple">
-<li><strong>$str</strong> (<em>string</em>) &#8211; Input string</li>
-<li><strong>$type</strong> (<em>string</em>) &#8211; Link type (&#8216;email&#8217;, &#8216;url&#8217; or &#8216;both&#8217;)</li>
-<li><strong>$popup</strong> (<em>bool</em>) &#8211; Whether to create popup links</li>
-</ul>
-</td>
+<tr class="field-odd field"><th class="field-name" colspan="2">パラメータ string  $str:</th></tr>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">入力文字</td>
 </tr>
-<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body"><p class="first">Linkified string</p>
-</td>
+<tr class="field-even field"><th class="field-name" colspan="2">パラメータ string  $type:</th></tr>
+<tr class="field-even field"><td>&nbsp;</td><td class="field-body">リンクタイプ (&#8216;email&#8217;, &#8216;url&#8217; or &#8216;both&#8217;)</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">戻り値の型:</th><td class="field-body"><p class="first last">string</p>
-</td>
+<tr class="field-odd field"><th class="field-name" colspan="2">パラメータ bool    $popup:</th></tr>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">ポップアップリンクを生成するかどうか</td>
+</tr>
+<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body">リンク可能な文字列</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返り値型:</th><td class="field-body">string</td>
 </tr>
 </tbody>
 </table>
-<p>Automatically turns URLs and e-mail addresses contained in a string into
-links. Example:</p>
+<p>自動で、文字列に含まれる URL とメールアドレスをリンクに変換します。
+例:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$string</span> <span class="o">=</span> <span class="nx">auto_link</span><span class="p">(</span><span class="nv">$string</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>The second parameter determines whether URLs and e-mails are converted or
-just one or the other. Default behavior is both if the parameter is not
-specified. E-mail links are encoded as <a class="reference internal" href="#safe_mailto" title="safe_mailto"><tt class="xref php php-func docutils literal"><span class="pre">safe_mailto()</span></tt></a> as shown
-above.</p>
-<p>Converts only URLs:</p>
+<p>第2引数は、URL とメールアドレスのどちらを変換するか、あるいは両方を変換するか
+を指定します。指定しない場合、デフォルトでは両方を変換するようになっています。
+Email リンクは上にあるように <a class="reference internal" href="#safe_mailto" title="safe_mailto"><tt class="xref php php-func docutils literal"><span class="pre">safe_mailto()</span></tt></a> を使って
+エンコードされます。</p>
+<p>URL のみを変換する場合:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$string</span> <span class="o">=</span> <span class="nx">auto_link</span><span class="p">(</span><span class="nv">$string</span><span class="p">,</span> <span class="s1">&#39;url&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>Converts only e-mail addresses:</p>
+<p>メールアドレスのみを変換する場合:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$string</span> <span class="o">=</span> <span class="nx">auto_link</span><span class="p">(</span><span class="nv">$string</span><span class="p">,</span> <span class="s1">&#39;email&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>The third parameter determines whether links are shown in a new window.
-The value can be TRUE or FALSE (boolean):</p>
+<p>第3引数は、リンクを新しいウィンドウで開くかどうかを指定します。
+値は、TRUE または FALSE (ブール値) になります:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$string</span> <span class="o">=</span> <span class="nx">auto_link</span><span class="p">(</span><span class="nv">$string</span><span class="p">,</span> <span class="s1">&#39;both&#39;</span><span class="p">,</span> <span class="k">TRUE</span><span class="p">);</span>
 </pre></div>
 </div>
@@ -830,32 +826,32 @@ The value can be TRUE or FALSE (boolean):</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">パラメタ:</th><td class="field-body"><ul class="first simple">
-<li><strong>$str</strong> (<em>string</em>) &#8211; Input string</li>
-<li><strong>$separator</strong> (<em>string</em>) &#8211; Word separator</li>
-<li><strong>$lowercase</strong> (<em>string</em>) &#8211; Whether to transform the output string to lower-case</li>
-</ul>
-</td>
+<tr class="field-odd field"><th class="field-name" colspan="2">パラメータ string  $str:</th></tr>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">入力文字</td>
 </tr>
-<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body"><p class="first">URL-formatted string</p>
-</td>
+<tr class="field-even field"><th class="field-name" colspan="2">パラメータ string  $separator:</th></tr>
+<tr class="field-even field"><td>&nbsp;</td><td class="field-body">単語区切り</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">戻り値の型:</th><td class="field-body"><p class="first last">string</p>
-</td>
+<tr class="field-odd field"><th class="field-name" colspan="2">パラメータ string  $lowercase:</th></tr>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">小文字に変換して出力するかどうか</td>
+</tr>
+<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body">URL フォーマットの文字列</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返り値型:</th><td class="field-body">string</td>
 </tr>
 </tbody>
 </table>
-<p>Takes a string as input and creates a human-friendly URL string. This is
-useful if, for example, you have a blog in which you&#8217;d like to use the
-title of your entries in the URL. Example:</p>
+<p>入力として文字列をとり、人間にわかりやすい URL 文字列を生成します。
+これはたとえば、ブログを作成していたとして、その中で記事のタイトルを
+URL に使いたいときなどに役立ちます。例:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$title</span> <span class="o">=</span> <span class="s2">&quot;What&#39;s wrong with CSS?&quot;</span><span class="p">;</span>
 <span class="nv">$url_title</span> <span class="o">=</span> <span class="nx">url_title</span><span class="p">(</span><span class="nv">$title</span><span class="p">);</span>
 <span class="c1">// Produces: Whats-wrong-with-CSS</span>
 </pre></div>
 </div>
-<p>The second parameter determines the word delimiter. By default dashes
-are used. Preferred options are: <strong>-</strong> (dash) or <strong>_</strong> (underscore)</p>
-<p>Example:</p>
+<p>第2引数で、単語の区切りを決めます。初期状態では、ダッシュ ( &#8220;-&#8221; )
+が使用されます。次のオプションが選べます: <strong>-**( dash ) または **_</strong> ( underscore )</p>
+<p>例:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$title</span> <span class="o">=</span> <span class="s2">&quot;What&#39;s wrong with CSS?&quot;</span><span class="p">;</span>
 <span class="nv">$url_title</span> <span class="o">=</span> <span class="nx">url_title</span><span class="p">(</span><span class="nv">$title</span><span class="p">,</span> <span class="s1">&#39;underscore&#39;</span><span class="p">);</span>
 <span class="c1">// Produces: Whats_wrong_with_CSS</span>
@@ -863,12 +859,12 @@ are used. Preferred options are: <strong>-</strong> (dash) or <strong>_</strong>
 </div>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
-<p class="last">Old usage of &#8216;dash&#8217; and &#8216;underscore&#8217; as the second parameter
-is DEPRECATED.</p>
+<p class="last">第2引数として&#8217;dash&#8217; や &#8216;underscore&#8217; という古い使用法は
+非推奨になっています。</p>
 </div>
-<p>The third parameter determines whether or not lowercase characters are
-forced. By default they are not. Options are boolean TRUE/FALSE.</p>
-<p>Example:</p>
+<p>第3引数で、文字列を強制的に小文字に変換するかどうかを決めます。
+デフォルトでは変換されません。次のオプション (ブール値) が選べます: TRUE / FALSE :</p>
+<p>例:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$title</span> <span class="o">=</span> <span class="s2">&quot;What&#39;s wrong with CSS?&quot;</span><span class="p">;</span>
 <span class="nv">$url_title</span> <span class="o">=</span> <span class="nx">url_title</span><span class="p">(</span><span class="nv">$title</span><span class="p">,</span> <span class="s1">&#39;underscore&#39;</span><span class="p">,</span> <span class="k">TRUE</span><span class="p">);</span>
 <span class="c1">// Produces: whats_wrong_with_css</span>
@@ -883,25 +879,20 @@ forced. By default they are not. Options are boolean TRUE/FALSE.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">パラメタ:</th><td class="field-body"><ul class="first simple">
-<li><strong>$str</strong> (<em>string</em>) &#8211; URL string</li>
-</ul>
-</td>
+<tr class="field-odd field"><th class="field-name" colspan="2">パラメータ string  $str:</th></tr>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">URL 文字列</td>
 </tr>
-<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body"><p class="first">Protocol-prefixed URL string</p>
-</td>
+<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body">プロトコル接頭辞を付与した URL 文字列</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">戻り値の型:</th><td class="field-body"><p class="first last">string</p>
-</td>
+<tr class="field-odd field"><th class="field-name">返り値型:</th><td class="field-body">string</td>
 </tr>
 </tbody>
 </table>
-<p>This function will add http&amp;#58;// in the event that a protocol prefix
-is missing from a URL.</p>
-<p>Pass the URL string to the function like this:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$url</span> <span class="o">=</span> <span class="nx">prep_url</span><span class="p">(</span><span class="s1">&#39;example.com&#39;</span><span class="p">);</span>
-</pre></div>
-</div>
+<p>この関数は、与えられた URL の文字列にプロトロルがない場合に http&amp;#58;//
+を追加します。</p>
+<p>次のように URL の文字列を渡します:</p>
+<blockquote>
+<div>$url = prep_url(&#8216;example.com&#8217;);</div></blockquote>
 </dd></dl>
 
 <dl class="function">
@@ -911,31 +902,32 @@ is missing from a URL.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">パラメタ:</th><td class="field-body"><ul class="first simple">
-<li><strong>$uri</strong> (<em>string</em>) &#8211; URI string</li>
-<li><strong>$method</strong> (<em>string</em>) &#8211; Redirect method (&#8216;auto&#8217;, &#8216;location&#8217; or &#8216;refresh&#8217;)</li>
-<li><strong>$code</strong> (<em>string</em>) &#8211; HTTP Response code (usually 302 or 303)</li>
-</ul>
-</td>
+<tr class="field-odd field"><th class="field-name" colspan="2">パラメータ string  $uri:</th></tr>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">URI 文字列</td>
 </tr>
-<tr class="field-even field"><th class="field-name">戻り値の型:</th><td class="field-body"><p class="first last">void</p>
-</td>
+<tr class="field-even field"><th class="field-name" colspan="2">パラメータ string  $method:</th></tr>
+<tr class="field-even field"><td>&nbsp;</td><td class="field-body">リダイレクトメソッド (&#8216;auto&#8217;, &#8216;location&#8217; or &#8216;refresh&#8217;)</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">パラメータ string  $code:</th></tr>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">HTTP Response Code (通常 302 or 303)</td>
+</tr>
+<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body">void</td>
 </tr>
 </tbody>
 </table>
-<p>Does a &#8220;header redirect&#8221; to the URI specified. If you specify the full
-site URL that link will be built, but for local links simply providing
-the URI segments to the controller you want to direct to will create the
-link. The function will build the URL based on your config file values.</p>
-<p>The optional second parameter allows you to force a particular redirection
-method. The available methods are <strong>auto</strong>, <strong>location</strong> and <strong>refresh</strong>,
-with location being faster but less reliable on IIS servers.
-The default is <strong>auto</strong>, which will attempt to intelligently choose the
-method based on the server environment.</p>
-<p>The optional third parameter allows you to send a specific HTTP Response
-Code - this could be used for example to create 301 redirects for search
-engine purposes. The default Response Code is 302. The third parameter is
-<em>only</em> available with <strong>location</strong> redirects, and not <em>refresh</em>. Examples:</p>
+<p>指定した URI に対して &#8220;ヘッダ リダイレクト&#8221; します。完全な URL
+(<a class="reference external" href="http://">http://</a>...) を指定しても生成されますが、
+ローカルのリンクなら単にコントローラのセグメントから指定します。URL
+は設定ファイルの値を元に生成されます。</p>
+<p>オプションの第2引数は、特定のリダイレクトメソッドを強制させること
+許可します。利用可能なメソッドは <strong>auto</strong>, <strong>location</strong> と <strong>refresh</strong> です。
+Location は高速ですが、 IIS サーバでは信頼性は低下します。
+初期状態は <strong>auto</strong> で、サーバー環境に基づいたメソッドを知的に選択しようと
+試みます。</p>
+<p>任意の第3引数は特定の HTTP Response Code を設定することを許可します。
+- 例えばこれは検索エンジンのために301リダイレクトを生成するために利用できます。
+デフォルトの Response Code は302です。第3引数は <strong>location</strong> <em>だけで*使え、
+*refresh</em> では使えません。例:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="nv">$logged_in</span> <span class="o">==</span> <span class="k">FALSE</span><span class="p">)</span>
 <span class="p">{</span>
         <span class="nx">redirect</span><span class="p">(</span><span class="s1">&#39;/login/form/&#39;</span><span class="p">);</span>
@@ -947,29 +939,29 @@ engine purposes. The default Response Code is 302. The third parameter is
 </div>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
-<p class="last">In order for this function to work it must be used before anything
-is outputted to the browser since it utilizes server headers.</p>
+<p class="last">この関数はサーバのヘッダを利用するので、
+動作させるにはブラウザに何かを出力する前に、この関数を使う必要があります。</p>
 </div>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
-<p class="last">For very fine grained control over headers, you should use the
-<cite>Output Library &lt;/libraries/output&gt;</cite> <tt class="docutils literal"><span class="pre">set_header()</span></tt> method.</p>
+<p class="last">とても細かいヘッダのコントロールを行う場合は、<a class="reference internal" href="../libraries/output.html"><em>出力クラス</em></a> の
+<tt class="docutils literal"><span class="pre">set_header()</span></tt> メソッドを使うべきです。</p>
 </div>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
-<p class="last">To IIS users: if you hide the <cite>Server</cite> HTTP header, the <em>auto</em>
-method won&#8217;t detect IIS, in that case it is advised you explicitly
-use the <strong>refresh</strong> method.</p>
+<p class="last">IIS ユーザへ: もし <cite>Server</cite> HTTP ヘッダを隠している場合、 <em>auto</em>
+メソッドは IIS であることを検知しません。その場合、明示的に
+<strong>refresh</strong> メソッドを使用することを推奨します。</p>
 </div>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
-<p class="last">When the <strong>location</strong> method is used, an HTTP status code of 303
-will <em>automatically</em> be selected when the page is currently accessed
-via POST and HTTP/1.1 is used.</p>
+<p class="last"><strong>location</strong> メソッドを利用する際、
+表示しているページが現在 POST 経由でアクセスされており HTTP/1.1 が
+利用されている場合、 <em>自動的に</em> 303 HTTP ステータスコードが選択されます。</p>
 </div>
 <div class="admonition important">
 <p class="first admonition-title">重要</p>
-<p class="last">This function will terminate script execution.</p>
+<p class="last">この関数はスクリプトの実行を終了させます。</p>
 </div>
 </dd></dl>
 
@@ -995,7 +987,7 @@ via POST and HTTP/1.1 is used.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2016, British Columbia Institute of Technology.
-      最終更新: Apr 28, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>
+      最終更新: Apr 29, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>
     </p>
   </div>
 
