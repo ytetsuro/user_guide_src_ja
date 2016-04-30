@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>CodeIgniter のドライバの使用 &mdash; CodeIgniter 3.1.0-dev ドキュメント</title>
+  <title>CodeIgniter のドライバを使う &mdash; CodeIgniter 3.1.0-dev ドキュメント</title>
   
 
   
@@ -99,7 +99,7 @@
 <li class="toctree-l2"><a class="reference internal" href="helpers.html">Helpers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="libraries.html">CodeIgniter のライブラリの利用</a></li>
 <li class="toctree-l2"><a class="reference internal" href="creating_libraries.html">ライブラリの作成</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="">CodeIgniter のドライバの使用</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">CodeIgniter のドライバを使う</a></li>
 <li class="toctree-l2"><a class="reference internal" href="creating_drivers.html">ドライバの作成</a></li>
 <li class="toctree-l2"><a class="reference internal" href="core_classes.html">コアシステムクラスの作成</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ancillary_classes.html">補助的なクラス作成</a></li>
@@ -285,7 +285,7 @@
 <li class="toctree-l2"><a class="reference internal" href="helpers.html">Helpers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="libraries.html">CodeIgniter のライブラリの利用</a></li>
 <li class="toctree-l2"><a class="reference internal" href="creating_libraries.html">ライブラリの作成</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="">CodeIgniter のドライバの使用</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">CodeIgniter のドライバを使う</a></li>
 <li class="toctree-l2"><a class="reference internal" href="creating_drivers.html">ドライバの作成</a></li>
 <li class="toctree-l2"><a class="reference internal" href="core_classes.html">コアシステムクラスの作成</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ancillary_classes.html">補助的なクラス作成</a></li>
@@ -411,7 +411,7 @@
       
         <li><a href="index.html">一般的なトピック</a> &raquo;</li>
       
-    <li>CodeIgniter のドライバの使用</li>
+    <li>CodeIgniter のドライバを使う</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -425,40 +425,39 @@
           <div role="main" class="document">
             
   <div class="section" id="codeigniter">
-<h1>CodeIgniter のドライバの使用<a class="headerlink" href="#codeigniter" title="このヘッドラインへのパーマリンク">¶</a></h1>
-<p>Drivers are a special type of Library that has a parent class and any
-number of potential child classes. Child classes have access to the
-parent class, but not their siblings. Drivers provide an elegant syntax
-in your <a class="reference internal" href="controllers.html"><em>controllers</em></a> for libraries that benefit
-from or require being broken down into discrete classes.</p>
-<p>Drivers are found in the <em>system/libraries/</em> directory, in their own
-sub-directory which is identically named to the parent library class.
-Also inside that directory is a subdirectory named drivers, which
-contains all of the possible child class files.</p>
-<p>To use a driver you will initialize it within a controller using the
-following initialization method:</p>
+<h1>CodeIgniter のドライバを使う<a class="headerlink" href="#codeigniter" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>ドライバは特殊なタイプのライブラリで、親クラスと、
+潜在的にいくつもの子クラスを持ちます。子クラスは親クラスへのアクセスを持ちますが、
+自分の兄弟へはアクセスできません。ドライバは、
+<a class="reference internal" href="controllers.html"><em>コントローラ</em></a> においてエレガントな構文をライブラリに提供します。
+そのライブラリは別々にクラス分けするメリットがある、または分ける必要があるものです。</p>
+<p>ドライバは <em>system/libraries/</em> ディレクトリの中にあり、
+親ライブラリクラス名と同一名称のサブディレクトリ内にあります。
+また、そのサブディレクトリ内には driver という名前のディレクトリがあり、
+利用可能なすべての子クラスファイルを含みます。</p>
+<p>ドライバを使用するためには、コントローラの中で初期化しますが、
+つぎの初期化メソッドを使用します:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">driver</span><span class="p">(</span><span class="s1">&#39;class_name&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>Where class name is the name of the driver class you want to invoke. For
-example, to load a driver named &#8220;Some_parent&#8221; you would do this:</p>
+<p>「 class_name 」の箇所が呼び出したいドライバの名前です。
+たとえば、「 Some_parent 」という名前のドライバをロードするためにはこうします:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">driver</span><span class="p">(</span><span class="s1">&#39;some_parent&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>Methods of that class can then be invoked with:</p>
+<p>そのクラスのメソッドは、こう呼び出すことができます:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">some_parent</span><span class="o">-&gt;</span><span class="na">some_method</span><span class="p">();</span>
 </pre></div>
 </div>
-<p>The child classes, the drivers themselves, can then be called directly
-through the parent class, without initializing them:</p>
+<p>子クラス、つまりドライバそれ自体は、
+初期化することなしに親クラスを通じて直接呼び出すことができます:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">some_parent</span><span class="o">-&gt;</span><span class="na">child_one</span><span class="o">-&gt;</span><span class="na">some_method</span><span class="p">();</span>
 <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">some_parent</span><span class="o">-&gt;</span><span class="na">child_two</span><span class="o">-&gt;</span><span class="na">another_method</span><span class="p">();</span>
 </pre></div>
 </div>
 <div class="section" id="id1">
-<h2>独自のドライバの作成<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>Please read the section of the user guide that discusses how to <a class="reference internal" href="creating_drivers.html"><em>create
-your own drivers</em></a>.</p>
+<h2>独自のドライバを作成する<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>どうぞユーザーガイドの該当セクションをお読みください、<a class="reference internal" href="creating_drivers.html"><em>独自ライブラリの作成方法</em></a> が論じられています。</p>
 </div>
 </div>
 
