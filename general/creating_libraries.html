@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Creating Libraries &mdash; CodeIgniter 3.1.0-dev ドキュメント</title>
+  <title>ライブラリの作成 &mdash; CodeIgniter 3.1.0-dev ドキュメント</title>
   
 
   
@@ -98,7 +98,7 @@
 <li class="toctree-l2"><a class="reference internal" href="models.html">モデル</a></li>
 <li class="toctree-l2"><a class="reference internal" href="helpers.html">Helpers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="libraries.html">CodeIgniter のライブラリの利用</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="">Creating Libraries</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">ライブラリの作成</a></li>
 <li class="toctree-l2"><a class="reference internal" href="drivers.html">CodeIgniter のドライバの使用</a></li>
 <li class="toctree-l2"><a class="reference internal" href="creating_drivers.html">ドライバの作成</a></li>
 <li class="toctree-l2"><a class="reference internal" href="core_classes.html">コアシステムクラスの作成</a></li>
@@ -284,7 +284,7 @@
 <li class="toctree-l2"><a class="reference internal" href="models.html">モデル</a></li>
 <li class="toctree-l2"><a class="reference internal" href="helpers.html">Helpers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="libraries.html">CodeIgniter のライブラリの利用</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="">Creating Libraries</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">ライブラリの作成</a></li>
 <li class="toctree-l2"><a class="reference internal" href="drivers.html">CodeIgniter のドライバの使用</a></li>
 <li class="toctree-l2"><a class="reference internal" href="creating_drivers.html">ドライバの作成</a></li>
 <li class="toctree-l2"><a class="reference internal" href="core_classes.html">コアシステムクラスの作成</a></li>
@@ -411,7 +411,7 @@
       
         <li><a href="index.html">一般的なトピック</a> &raquo;</li>
       
-    <li>Creating Libraries</li>
+    <li>ライブラリの作成</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -424,47 +424,47 @@
 </div>
           <div role="main" class="document">
             
-  <div class="section" id="creating-libraries">
-<h1>Creating Libraries<a class="headerlink" href="#creating-libraries" title="このヘッドラインへのパーマリンク">¶</a></h1>
-<p>When we use the term &#8220;Libraries&#8221; we are normally referring to the
-classes that are located in the libraries directory and described in the
-Class Reference of this user guide. In this case, however, we will
-instead describe how you can create your own libraries within your
-application/libraries directory in order to maintain separation between
-your local resources and the global framework resources.</p>
-<p>As an added bonus, CodeIgniter permits your libraries to extend native
-classes if you simply need to add some functionality to an existing
-library. Or you can even replace native libraries just by placing
-identically named versions in your <em>application/libraries</em> directory.</p>
-<p>In summary:</p>
+  <div class="section" id="id1">
+<h1>ライブラリの作成<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>私たちが用語「ライブラリ」を使用するとき、
+基本的にライブラリディレクトリにあるクラス、
+このユーザガイドのクラスリファレンスで説明されているクラスを指しています。
+しかしながらここにおいてはそれではなく、
+application/libraries ディレクトリ内に独自のライブラリを作成する方法について説明します。
+ローカルリソースとグローバルなフレームワークリソースを分離、維持するためにの方法です。</p>
+<p>おまけとして、 CodeIgniter はあなたのライブラリでネイティブクラスを継承することを可能にします。
+既存のライブラリに単純にいくつかの機能を追加する必要がある場合です。
+さらには
+<em>application/libraries</em> に同じ名前の独自バージョンを置くことによって、ネイティブライブラリを置き換えることさえできます。</p>
+<p>要約すれば:</p>
 <ul class="simple">
-<li>You can create entirely new libraries.</li>
-<li>You can extend native libraries.</li>
-<li>You can replace native libraries.</li>
+<li>あなたは完全に新しいライブラリを作成することができます。</li>
+<li>あなたはネイティブライブラリを継承することができます。</li>
+<li>あなたはネイティブライブラリを置き換えることができます。</li>
 </ul>
-<p>The page below explains these three concepts in detail.</p>
+<p>このページでは、以下にこれら 3 つの概念について詳細に説明します。</p>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
-<p class="last">The Database classes can not be extended or replaced with your
-own classes. All other classes are able to be replaced/extended.</p>
+<p class="last">データベースクラスを継承したり、独自のクラスに置き換えることはできません。
+他のすべてのクラスは継承/交換することができます。</p>
 </div>
-<div class="section" id="storage">
-<h2>Storage<a class="headerlink" href="#storage" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>Your library classes should be placed within your <em>application/libraries</em>
-directory, as this is where CodeIgniter will look for them when they are
-initialized.</p>
+<div class="section" id="id2">
+<h2>保存場所<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>あなたのライブラリクラスは <em>application/libraries</em>
+ディレクトリ内に配置する必要があります、 それらが初期化されるときに CodeIgniter
+が検索する場所だからです。</p>
 </div>
-<div class="section" id="naming-conventions">
-<h2>Naming Conventions<a class="headerlink" href="#naming-conventions" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="section" id="id3">
+<h2>命名規則<a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <ul class="simple">
-<li>File names must be capitalized. For example: Myclass.php</li>
-<li>Class declarations must be capitalized. For example: class Myclass</li>
-<li>Class names and file names must match.</li>
+<li>ファイル名の 1 文字目は大文字でなければなりません。たとえば: Myclass.php</li>
+<li>クラス宣言の 1 文字目は大文字でなければなりません。たとえば: class Myclass</li>
+<li>クラス名とファイル名が一致している必要があります。</li>
 </ul>
 </div>
-<div class="section" id="the-class-file">
-<h2>The Class File<a class="headerlink" href="#the-class-file" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>Classes should have this basic prototype:</p>
+<div class="section" id="id4">
+<h2>クラスファイル<a class="headerlink" href="#id4" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>クラスにはこの基本的なプロトタイプが必要です:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
 <span class="nb">defined</span><span class="p">(</span><span class="s1">&#39;BASEPATH&#39;</span><span class="p">)</span> <span class="k">OR</span> <span class="k">exit</span><span class="p">(</span><span class="s1">&#39;No direct script access allowed&#39;</span><span class="p">);</span>
 
@@ -478,106 +478,106 @@ initialized.</p>
 </div>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
-<p class="last">We are using the name Someclass purely as an example.</p>
+<p class="last">ここでは純粋に例として Someclass という名前を使用しています。</p>
 </div>
 </div>
-<div class="section" id="using-your-class">
-<h2>Using Your Class<a class="headerlink" href="#using-your-class" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>From within any of your <a class="reference internal" href="controllers.html"><em>Controller</em></a> methods you
-can initialize your class using the standard:</p>
+<div class="section" id="id5">
+<h2>あなたのクラスの利用<a class="headerlink" href="#id5" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p><a class="reference internal" href="controllers.html"><em>コントローラ</em></a> メソッドのどこででも、
+標準の方法を使用してクラスを初期化することができます:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">library</span><span class="p">(</span><span class="s1">&#39;someclass&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>Where <em>someclass</em> is the file name, without the &#8221;.php&#8221; file extension.
-You can submit the file name capitalized or lower case. CodeIgniter
-doesn&#8217;t care.</p>
-<p>Once loaded you can access your class using the lower case version:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">someclass</span><span class="o">-&gt;</span><span class="na">some_method</span><span class="p">();</span><span class="nx"> </span> <span class="c1">// Object instances will always be lower case</span>
+<p><em>someclass</em> の箇所はファイル名で、「 .php 」のファイル拡張子は不要です。
+ファイル名の 1 文字目は大文字でも小文字でも使えます。CodeIgniter
+は気にしません。</p>
+<p>一度ロードすれば、1文字目を小文字にしたものであなたのクラスにアクセスすることができます:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">someclass</span><span class="o">-&gt;</span><span class="na">some_method</span><span class="p">();</span><span class="nx"> </span> <span class="c1">// Object インスタンスは常に小文字になります</span>
 </pre></div>
 </div>
 </div>
-<div class="section" id="passing-parameters-when-initializing-your-class">
-<h2>Passing Parameters When Initializing Your Class<a class="headerlink" href="#passing-parameters-when-initializing-your-class" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>In the library loading method you can dynamically pass data as an
-array via the second parameter and it will be passed to your class
-constructor:</p>
+<div class="section" id="id6">
+<h2>クラスの初期化時にパラメータを渡す<a class="headerlink" href="#id6" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>ライブラリのロードメソッドでは動的にデータを配列として
+第 2 引数で渡すことができ、
+それはクラスのコンストラクタで渡されます:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$params</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span><span class="s1">&#39;type&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;large&#39;</span><span class="p">,</span> <span class="s1">&#39;color&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;red&#39;</span><span class="p">);</span>
 
 <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">library</span><span class="p">(</span><span class="s1">&#39;someclass&#39;</span><span class="p">,</span> <span class="nv">$params</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>If you use this feature you must set up your class constructor to expect
-data:</p>
+<p>この機能を使用する場合は、クラスのコンストラクタでデータを要求するよう
+セットアップする必要があります:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span> <span class="nb">defined</span><span class="p">(</span><span class="s1">&#39;BASEPATH&#39;</span><span class="p">)</span> <span class="k">OR</span> <span class="k">exit</span><span class="p">(</span><span class="s1">&#39;No direct script access allowed&#39;</span><span class="p">);</span>
 
 <span class="k">class</span> <span class="nc">Someclass</span> <span class="p">{</span>
 
         <span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">(</span><span class="nv">$params</span><span class="p">)</span>
         <span class="p">{</span>
-                <span class="c1">// Do something with $params</span>
+                <span class="c1">// $params で何かをする</span>
         <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>You can also pass parameters stored in a config file. Simply create a
-config file named identically to the class file name and store it in
-your <em>application/config/</em> directory. Note that if you dynamically pass
-parameters as described above, the config file option will not be
-available.</p>
+<p>また、設定ファイルに保存されたパラメータを渡すこともできます。
+単純にクラスファイル名と同じ名前の設定ファイルを作成し、
+<em>application/config/</em> ディレクトリに保存します。
+前述の方法で動的にパラメータを渡す場合、
+設定ファイルのオプションは使用できませんので注意してください。</p>
 </div>
-<div class="section" id="utilizing-codeigniter-resources-within-your-library">
-<h2>Utilizing CodeIgniter Resources within Your Library<a class="headerlink" href="#utilizing-codeigniter-resources-within-your-library" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>To access CodeIgniter&#8217;s native resources within your library use the
-<tt class="docutils literal"><span class="pre">get_instance()</span></tt> method. This method returns the CodeIgniter super
-object.</p>
-<p>Normally from within your controller methods you will call any of the
-available CodeIgniter methods using the <tt class="docutils literal"><span class="pre">$this</span></tt> construct:</p>
+<div class="section" id="codeigniter">
+<h2>ライブラリ内で CodeIgniter のリソースを利用する<a class="headerlink" href="#codeigniter" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>あなたのライブラリ内で CodeIgniter のネイティブリソースにアクセスするには
+<tt class="docutils literal"><span class="pre">get_instance()</span></tt> メソッドを使用します。このメソッドは CodeIgniter
+のスーパーオブジェクトを返します。</p>
+<p>通常、コントローラメソッド内では
+<tt class="docutils literal"><span class="pre">$this</span></tt> 構造を使用して、 CodeIgniter メソッドの利用可能なうちのいずれかを呼び出しています:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">helper</span><span class="p">(</span><span class="s1">&#39;url&#39;</span><span class="p">);</span>
 <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">library</span><span class="p">(</span><span class="s1">&#39;session&#39;</span><span class="p">);</span>
 <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">config</span><span class="o">-&gt;</span><span class="na">item</span><span class="p">(</span><span class="s1">&#39;base_url&#39;</span><span class="p">);</span>
-<span class="c1">// etc.</span>
+<span class="c1">// など。</span>
 </pre></div>
 </div>
-<p><tt class="docutils literal"><span class="pre">$this</span></tt>, however, only works directly within your controllers, your
-models, or your views. If you would like to use CodeIgniter&#8217;s classes
-from within your own custom classes you can do so as follows:</p>
-<p>First, assign the CodeIgniter object to a variable:</p>
+<p>しかしながら <tt class="docutils literal"><span class="pre">$this</span></tt> はこれはコントローラ内、
+モデル内、ビュー内で直接使用する場合にだけ動作します。独自のカスタムクラス内から CodeIgniter
+のクラスを使用したい場合は、以下のようにできます:</p>
+<p>まず、変数に CodeIgniter のオブジェクトを割り当てます:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$CI</span> <span class="o">=&amp;</span> <span class="nx">get_instance</span><span class="p">();</span>
 </pre></div>
 </div>
-<p>Once you&#8217;ve assigned the object to a variable, you&#8217;ll use that variable
-<em>instead</em> of <tt class="docutils literal"><span class="pre">$this</span></tt>:</p>
+<p>オブジェクトを変数に割り当てたなら、
+<tt class="docutils literal"><span class="pre">$this</span></tt> の <em>かわりに</em> その変数を使用します:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$CI</span> <span class="o">=&amp;</span> <span class="nx">get_instance</span><span class="p">();</span>
 
 <span class="nv">$CI</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">helper</span><span class="p">(</span><span class="s1">&#39;url&#39;</span><span class="p">);</span>
 <span class="nv">$CI</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">library</span><span class="p">(</span><span class="s1">&#39;session&#39;</span><span class="p">);</span>
 <span class="nv">$CI</span><span class="o">-&gt;</span><span class="na">config</span><span class="o">-&gt;</span><span class="na">item</span><span class="p">(</span><span class="s1">&#39;base_url&#39;</span><span class="p">);</span>
-<span class="c1">// etc.</span>
+<span class="c1">// など。</span>
 </pre></div>
 </div>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
-<p>You&#8217;ll notice that the above <tt class="docutils literal"><span class="pre">get_instance()</span></tt> function is being
-passed by reference:</p>
+<p>上記 <tt class="docutils literal"><span class="pre">get_instance()</span></tt> 関数は、
+参照によって渡されていることがわかるでしょう:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$CI</span> <span class="o">=&amp;</span> <span class="nx">get_instance</span><span class="p">();</span>
 </pre></div>
 </div>
-<p class="last">This is very important. Assigning by reference allows you to use the
-original CodeIgniter object rather than creating a copy of it.</p>
+<p class="last">これは非常に重要です。参照による割り当てにより、そのコピーを作成するのではなく、
+オリジナルの CodeIgniter オブジェクトを使用することができます。</p>
 </div>
-<p>However, since a library is a class, it would be better if you
-take full advantage of the OOP principles. So, in order to
-be able to use the CodeIgniter super-object in all of the class
-methods, you&#8217;re encouraged to assign it to a property instead:</p>
+<p>しかしながら、ライブラリはクラスであるので、 OOP の原則を十分に活用したいなら、
+そうするのが良いでしょう。つまり、クラスメソッドのすべてで
+CodeIgniter のスーパーオブジェクトを使用できるようにするために、
+上記例のかわりにプロパティに割り当てることをおすすめします:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Example_library</span> <span class="p">{</span>
 
         <span class="k">protected</span> <span class="nv">$CI</span><span class="p">;</span>
 
-        <span class="c1">// We&#39;ll use a constructor, as you can&#39;t directly call a function</span>
-        <span class="c1">// from a property definition.</span>
+<span class="c1">// コンストラクタを使いましょう、プロパティの定義部では</span>
+<span class="c1">// 直接関数を呼ぶことはできませんので。</span>
         <span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">()</span>
         <span class="p">{</span>
-                <span class="c1">// Assign the CodeIgniter super-object</span>
+                <span class="c1">// CodeIgniter のスーパーオブジェクトを割り当てる</span>
                 <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">CI</span> <span class="o">=&amp;</span> <span class="nx">get_instance</span><span class="p">();</span>
         <span class="p">}</span>
 
@@ -596,51 +596,51 @@ methods, you&#8217;re encouraged to assign it to a property instead:</p>
 </pre></div>
 </div>
 </div>
-<div class="section" id="replacing-native-libraries-with-your-versions">
-<h2>Replacing Native Libraries with Your Versions<a class="headerlink" href="#replacing-native-libraries-with-your-versions" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>Simply by naming your class files identically to a native library will
-cause CodeIgniter to use it instead of the native one. To use this
-feature you must name the file and the class declaration exactly the
-same as the native library. For example, to replace the native Email
-library you&#8217;ll create a file named <em>application/libraries/Email.php</em>,
-and declare your class with:</p>
+<div class="section" id="id7">
+<h2>独自バージョンでネイティブライブラリを置き換える<a class="headerlink" href="#id7" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>単純に、ネイティブライブラリと同一のクラスファイル名をつけることにより、
+CodeIgniter はネイティブライブラリのかわりにそれを使用するようになります。
+この機能を使用するには、ファイル名とクラス名を
+ネイティブライブラリのものと正確に同じにする必要があります。たとえば、ネイティブのメール Email
+ライブラリを置き換えるためには、 <em>application/libraries/Email.php</em> という名前のファイルを作成し、
+つぎのようにクラスを宣言します:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">CI_Email</span> <span class="p">{</span>
 
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>Note that most native classes are prefixed with CI_.</p>
-<p>To load your library you&#8217;ll see the standard loading method:</p>
+<p>ほとんどのネイティブクラスはプレフィックス CI_ がついていることに注意してください。</p>
+<p>独自のライブラリをロードするには、標準の読み込み方法でできます:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">library</span><span class="p">(</span><span class="s1">&#39;email&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
-<p class="last">At this time the Database classes can not be replaced with
-your own versions.</p>
+<p class="last">この方法では、データベースクラスは
+独自のバージョンに置き換えることはできません。</p>
 </div>
 </div>
-<div class="section" id="extending-native-libraries">
-<h2>Extending Native Libraries<a class="headerlink" href="#extending-native-libraries" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>If all you need to do is add some functionality to an existing library -
-perhaps add a method or two - then it&#8217;s overkill to replace the entire
-library with your version. In this case it&#8217;s better to simply extend the
-class. Extending a class is nearly identical to replacing a class with a
-couple exceptions:</p>
+<div class="section" id="id8">
+<h2>ネイティブライブラリを継承する<a class="headerlink" href="#id8" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>やりたいことがいくらかの機能を既存のライブラリに加えたいだけ――
+ひょっとするとメソッドをひとつふたつ追加する場合――、ライブラリ全体を
+あなたのバージョンに置き換えるのはやりすぎです。この場合、
+シンプルにクラスを継承するのが良いでしょう。クラスを継承するのは 2 つの例外を除いて、
+クラスを置き換えるとほぼ同じです:</p>
 <ul class="simple">
-<li>The class declaration must extend the parent class.</li>
-<li>Your new class name and filename must be prefixed with MY_ (this
-item is configurable. See below.).</li>
+<li>クラスは、親クラスを継承する必要があります。</li>
+<li>新しいクラス名とファイル名は、プレフィックスに MY_ を付ける必要があります (これは
+設定で変更可能です。後述します) 。</li>
 </ul>
-<p>For example, to extend the native Email class you&#8217;ll create a file named
-<em>application/libraries/MY_Email.php</em>, and declare your class with:</p>
+<p>たとえば、ネイティブのEmailクラスを拡張するためには、
+<em>application/libraries/MY_Email.php</em> という名前のファイルを作成し、つぎのようにクラスを宣言します:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">MY_Email</span> <span class="k">extends</span> <span class="nx">CI_Email</span> <span class="p">{</span>
 
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>If you need to use a constructor in your class make sure you
-extend the parent constructor:</p>
+<p>クラスのコンストラクタを使用する必要がある場合、
+親クラスのコンストラクタを呼び出していることを確認してください:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">MY_Email</span> <span class="k">extends</span> <span class="nx">CI_Email</span> <span class="p">{</span>
 
         <span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">(</span><span class="nv">$config</span> <span class="o">=</span> <span class="k">array</span><span class="p">())</span>
@@ -653,34 +653,34 @@ extend the parent constructor:</p>
 </div>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
-<p class="last">Not all of the libraries have the same (or any) parameters
-in their constructor. Take a look at the library that you&#8217;re
-extending first to see how it should be implemented.</p>
+<p class="last">すべてのライブラリでコンストラクタが同じ (または任意の) パラメータが
+あるわけではありません。それを実装する方法を確認するため、
+まずは継承するライブラリを見てみてください。</p>
 </div>
-<div class="section" id="loading-your-sub-class">
-<h3>Loading Your Sub-class<a class="headerlink" href="#loading-your-sub-class" title="このヘッドラインへのパーマリンク">¶</a></h3>
-<p>To load your sub-class you&#8217;ll use the standard syntax normally used. DO
-NOT include your prefix. For example, to load the example above, which
-extends the Email class, you will use:</p>
+<div class="section" id="id9">
+<h3>サブクラスをロードする<a class="headerlink" href="#id9" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>サブクラスをロードするには、通常使用されている標準的な構文を使用します。
+プレフィックスを　つ　け　な　い　で　ください。たとえば、上記の例、
+Email クラスを拡張継承したものをロードするには次のようにします:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">library</span><span class="p">(</span><span class="s1">&#39;email&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>Once loaded you will use the class variable as you normally would for
-the class you are extending. In the case of the email class all calls
-will use:</p>
+<p>一度ロードすれば、継承元クラスを普通に使う場合と同じように、
+クラス変数を使用します。Emailクラスの場合、
+すべての呼び出しが次のようになります:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">email</span><span class="o">-&gt;</span><span class="na">some_method</span><span class="p">();</span>
 </pre></div>
 </div>
 </div>
-<div class="section" id="setting-your-own-prefix">
-<h3>Setting Your Own Prefix<a class="headerlink" href="#setting-your-own-prefix" title="このヘッドラインへのパーマリンク">¶</a></h3>
-<p>To set your own sub-class prefix, open your
-<em>application/config/config.php</em> file and look for this item:</p>
+<div class="section" id="id10">
+<h3>独自のプレフィックスを設定する<a class="headerlink" href="#id10" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>サブクラスに独自のプレフィックスを設定するには
+<em>application/config/config.php</em> ファイルを開いて、次の項目を探してください:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$config</span><span class="p">[</span><span class="s1">&#39;subclass_prefix&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;MY_&#39;</span><span class="p">;</span>
 </pre></div>
 </div>
-<p>Please note that all native CodeIgniter libraries are prefixed with CI_
-so DO NOT use that as your prefix.</p>
+<p>すべての標準の CodeIgniter のライブラリはプレフィックスに CI_
+がついていますので、これは　使　わ　な　い　よ　う　ご注意ください。</p>
 </div>
 </div>
 </div>
@@ -704,7 +704,7 @@ so DO NOT use that as your prefix.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2016, British Columbia Institute of Technology.
-      最終更新: Apr 29, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>
+      最終更新: Apr 30, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>
     </p>
   </div>
 
