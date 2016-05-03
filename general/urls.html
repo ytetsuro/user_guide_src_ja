@@ -426,111 +426,105 @@
             
   <div class="section" id="codeigniter-url">
 <h1>CodeIgniter の URL<a class="headerlink" href="#codeigniter-url" title="このヘッドラインへのパーマリンク">¶</a></h1>
-<p>CodeIgniter のデフォルトの URL は、検索エンジンにも人間にもわかりやすいように
-設計されています。動的システムの代名詞といえる一般的な&#8221;クエリ文字列&#8221;アプローチ
-を採用する代わりに、CodeIgniter では次のような <strong>セグメントベースアプローチ</strong>
-を採用しています:</p>
+<p>デフォルトで、 CodeIgniter の URL は検索エンジンと人間にわかりやすく設計されています。
+URL には、動的システムの代名詞である標準的な「クエリ文字列」アプローチではなく、
+CodeIgniter は
+<strong>セグメントベース</strong> のアプローチを使用しています:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nx">example</span><span class="o">.</span><span class="nx">com</span><span class="o">/</span><span class="nx">news</span><span class="o">/</span><span class="nx">article</span><span class="o">/</span><span class="nx">my_article</span>
 </pre></div>
 </div>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
-<p class="last">後述するように、クエリ文字列をURLで使用することも
-できます。</p>
+<p class="last">クエリ文字列のURLは必要に応じて有効にすることができます。
+後述します。</p>
 </div>
 <div class="section" id="uri">
 <h2>URI セグメント<a class="headerlink" href="#uri" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>Model-View-Controller アプローチに従うと、URL
-の中では、セグメントは大抵次のように表現されます:</p>
+<p>URL セグメントは Model-View-Controller アプローチに従い、
+通常次のような特徴を持ちます:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nx">example</span><span class="o">.</span><span class="nx">com</span><span class="o">/</span><span class="nx">class</span><span class="o">/</span><span class="nx">function</span><span class="o">/</span><span class="nx">ID</span>
 </pre></div>
 </div>
-<ol class="arabic">
-<li><dl class="first docutils">
-<dt>最初のセグメントは呼び出すべきコントローラ <strong>クラス</strong> を</dt>
-<dd><p class="first last">あらわします。</p>
-</dd>
-</dl>
-</li>
-<li><p class="first">2番目のセグメントは、クラスの呼び出されるべき <strong>関数</strong>
-またはメソッドをあらわします。</p>
-</li>
-<li><p class="first">3番目以降のセグメントは、コントローラに渡される ID
-などの値をあらわします。</p>
-</li>
+<ol class="arabic simple">
+<li>最初のセグメントが呼び出されるコントローラ <strong>クラス</strong>
+を表します。</li>
+<li>第 2 のセグメントが呼び出されるクラスの <strong>関数</strong> 、
+またはメソッドを表します。</li>
+<li>第 3 のセグメントは任意に追加可能で、
+コントローラに渡されるIDおよび何らかの変数を表します。</li>
 </ol>
-<p><a class="reference internal" href="../libraries/uri.html"><em>URI クラス</em></a> と <a class="reference internal" href="../helpers/url_helper.html"><em>URL ヘルパー</em></a> には URI データを簡単に扱うためのメソッドが用意
-されています。 さらに、
-<a class="reference internal" href="routing.html"><em>URI ルーティング</em></a> 機能を用いれば、より柔軟に URLを再マッピングすることができます。</p>
+<p><a class="reference internal" href="../libraries/uri.html"><em>URIライブラリ</em></a>  と <a class="reference internal" href="../helpers/url_helper.html"><em>URLヘルパー</em></a> は、 URI データを操作することを簡単にする
+機能が含まれています。また、
+<a class="reference internal" href="routing.html"><em>URI ルーティング</em></a> 機能により柔軟に URL を再マッピングすることができます。</p>
 </div>
 <div class="section" id="index-php">
-<h2>index.php ファイルを除去する<a class="headerlink" href="#index-php" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>初期状態では、index.php ファイルが URL の中に含まれる格好になっています:</p>
+<h2>index.phpファイルを外す<a class="headerlink" href="#index-php" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>デフォルトでは <strong>index.php</strong> ファイルは URL に含まれます:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nx">example</span><span class="o">.</span><span class="nx">com</span><span class="o">/</span><span class="nx">index</span><span class="o">.</span><span class="nx">php</span><span class="o">/</span><span class="nx">news</span><span class="o">/</span><span class="nx">article</span><span class="o">/</span><span class="nx">my_article</span>
 </pre></div>
 </div>
-<p>If your Apache server has <em>mod_rewrite</em> enabled, you can easily remove this
-file by using a .htaccess file with some simple rules. Here is an example
-of such a file, using the &#8220;negative&#8221; method in which everything is redirected
-except the specified items:</p>
+<p>Apache サーバで <em>mod_rewrite</em> を有効にしている場合、
+.htaccessファイルでいくつかの簡単なルールを使用することでこのファイルを簡単に外すことができます。
+つぎのものはそのようなファイルの例です。「ネガティブ」メソッドを利用して
+特定のアイテム以外はすべてリダイレクトされるようにしています:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span>RewriteEngine On
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^(.*)$ index.php/$1 [L]
 </pre></div>
 </div>
-<p>上の例では、既存のディレクトリおよびファイル以外へのあらゆる HTTP
-リクエストは、 index.php ファイルへのリクエストとして取り扱われます。</p>
+<p>上記の例では、存在するディレクトリやファイル以外のあらゆるHTTPリクエストは
+index.php ファイルの要求として扱われます。</p>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
-<p class="last">These specific rules might not work for all server configurations.</p>
+<p class="last">これらの具体的なルールはすべてのサーバー構成で動くわけではありません。</p>
 </div>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
-<p class="last">Make sure to also exclude from the above rule any assets that you
-might need to be accessible from the outside world.</p>
+<p class="last">また、上記のルールは外からアクセスできるようにする必要があるあらゆる
+assets が対象外となっていることを確認してください。</p>
 </div>
 </div>
 <div class="section" id="url">
-<h2>URL サフィックス(接尾辞)の追加<a class="headerlink" href="#url" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>In your <strong>config/config.php</strong> file you can specify a suffix that will be
-added to all URLs generated by CodeIgniter. For example, if a URL is
-this:</p>
+<h2>URL サフィックスを追加する<a class="headerlink" href="#url" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p><strong>config/config.php</strong> ファイルでは CodeIgniter で生成されるすべての
+URL に追加されるサフィックスを指定することができます。たとえば、
+URL はつぎのものであれば:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nx">example</span><span class="o">.</span><span class="nx">com</span><span class="o">/</span><span class="nx">index</span><span class="o">.</span><span class="nx">php</span><span class="o">/</span><span class="nx">products</span><span class="o">/</span><span class="nx">view</span><span class="o">/</span><span class="nx">shoes</span>
 </pre></div>
 </div>
-<p>You can optionally add a suffix, like <strong>.html,</strong> making the page appear to
-be of a certain type:</p>
+<p>必要に応じて <strong>.html</strong> のように、ページを特定のタイプのように見える
+サフィックスを追加することができます:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nx">example</span><span class="o">.</span><span class="nx">com</span><span class="o">/</span><span class="nx">index</span><span class="o">.</span><span class="nx">php</span><span class="o">/</span><span class="nx">products</span><span class="o">/</span><span class="nx">view</span><span class="o">/</span><span class="nx">shoes</span><span class="o">.</span><span class="nx">html</span>
 </pre></div>
 </div>
 </div>
-<div class="section" id="enabling-query-strings">
-<h2>Enabling Query Strings<a class="headerlink" href="#enabling-query-strings" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>In some cases you might prefer to use query strings URLs:</p>
+<div class="section" id="id1">
+<h2>クエリ文字列を有効にする<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>いくつかのケースでは、クエリ文字列のURLを使用するほうがふさわしいかもしれません:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nx">index</span><span class="o">.</span><span class="nx">php</span><span class="o">?</span><span class="nx">c</span><span class="o">=</span><span class="nx">products</span><span class="o">&amp;</span><span class="nx">m</span><span class="o">=</span><span class="nx">view</span><span class="o">&amp;</span><span class="nx">id</span><span class="o">=</span><span class="mi">345</span>
 </pre></div>
 </div>
-<p>CodeIgniter optionally supports this capability, which can be enabled in
-your <strong>application/config.php</strong> file. If you open your config file you&#8217;ll
-see these items:</p>
+<p>CodeIgniter ではこの機能をサポートしており、必要に応じて
+<strong>application/config.php</strong> ファイルで有効にすることができます。設定ファイルを開くと、
+次の項目が見つかるでしょう:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$config</span><span class="p">[</span><span class="s1">&#39;enable_query_strings&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="k">FALSE</span><span class="p">;</span>
 <span class="nv">$config</span><span class="p">[</span><span class="s1">&#39;controller_trigger&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;c&#39;</span><span class="p">;</span>
 <span class="nv">$config</span><span class="p">[</span><span class="s1">&#39;function_trigger&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;m&#39;</span><span class="p">;</span>
 </pre></div>
 </div>
-<p>If you change &#8220;enable_query_strings&#8221; to TRUE this feature will become
-active. Your controllers and functions will then be accessible using the
-&#8220;trigger&#8221; words you&#8217;ve set to invoke your controllers and methods:</p>
+<p>「enable_query_strings」を TRUE に変更した場合、この機能が有効になります。
+コントローラおよび機能は、コントローラとメソッドを呼び出すために設定した
+「トリガー」の文字を使用してアクセスできるようになります:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nx">index</span><span class="o">.</span><span class="nx">php</span><span class="o">?</span><span class="nx">c</span><span class="o">=</span><span class="nx">controller</span><span class="o">&amp;</span><span class="nx">m</span><span class="o">=</span><span class="nx">method</span>
 </pre></div>
 </div>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
-<p class="last">If you are using query strings you will have to build your own
-URLs, rather than utilizing the URL helpers (and other helpers
-that generate URLs, like some of the form helpers) as these are
-designed to work with segment based URLs.</p>
+<p class="last">クエリ文字列を使用している場合、セグメントベースの
+URL で動作するように設計されている URL ヘルパーを利用するのではなく、
+独自の URL を構築する必要があります (フォームヘルパーのような、
+URL を生成する他のヘルパーもです) 。</p>
 </div>
 </div>
 </div>
@@ -554,7 +548,7 @@ designed to work with segment based URLs.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2016, British Columbia Institute of Technology.
-      最終更新: Apr 30, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>
+      最終更新: May 03, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>
     </p>
   </div>
 
