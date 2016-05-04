@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>リソースの自動読み込み &mdash; CodeIgniter 3.1.0-dev ドキュメント</title>
+  <title>リソースのオートロード &mdash; CodeIgniter 3.1.0-dev ドキュメント</title>
   
 
   
@@ -104,14 +104,14 @@
 <li class="toctree-l2"><a class="reference internal" href="core_classes.html">コアシステムクラスの作成</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ancillary_classes.html">補助的なクラス作成</a></li>
 <li class="toctree-l2"><a class="reference internal" href="hooks.html">フック――フレームワークコアの拡張</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="">リソースの自動読み込み</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">リソースのオートロード</a></li>
 <li class="toctree-l2"><a class="reference internal" href="common_functions.html">共通機能</a></li>
 <li class="toctree-l2"><a class="reference internal" href="compatibility_functions.html">Compatibility Functions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="routing.html">URIルーティング</a></li>
 <li class="toctree-l2"><a class="reference internal" href="errors.html">エラー処理</a></li>
 <li class="toctree-l2"><a class="reference internal" href="caching.html">キャッシュ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="profiling.html">アプリケーションのプロファイリング</a></li>
-<li class="toctree-l2"><a class="reference internal" href="cli.html">CLI からの実行</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli.html">CLI で実行する</a></li>
 <li class="toctree-l2"><a class="reference internal" href="managing_apps.html">アプリケーションの管理</a></li>
 <li class="toctree-l2"><a class="reference internal" href="environments.html">複数環境への対応</a></li>
 <li class="toctree-l2"><a class="reference internal" href="alternative_php.html">ビューファイル向けの代替の PHP 構文</a></li>
@@ -290,14 +290,14 @@
 <li class="toctree-l2"><a class="reference internal" href="core_classes.html">コアシステムクラスの作成</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ancillary_classes.html">補助的なクラス作成</a></li>
 <li class="toctree-l2"><a class="reference internal" href="hooks.html">フック――フレームワークコアの拡張</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="">リソースの自動読み込み</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">リソースのオートロード</a></li>
 <li class="toctree-l2"><a class="reference internal" href="common_functions.html">共通機能</a></li>
 <li class="toctree-l2"><a class="reference internal" href="compatibility_functions.html">Compatibility Functions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="routing.html">URIルーティング</a></li>
 <li class="toctree-l2"><a class="reference internal" href="errors.html">エラー処理</a></li>
 <li class="toctree-l2"><a class="reference internal" href="caching.html">キャッシュ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="profiling.html">アプリケーションのプロファイリング</a></li>
-<li class="toctree-l2"><a class="reference internal" href="cli.html">CLI からの実行</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli.html">CLI で実行する</a></li>
 <li class="toctree-l2"><a class="reference internal" href="managing_apps.html">アプリケーションの管理</a></li>
 <li class="toctree-l2"><a class="reference internal" href="environments.html">複数環境への対応</a></li>
 <li class="toctree-l2"><a class="reference internal" href="alternative_php.html">ビューファイル向けの代替の PHP 構文</a></li>
@@ -411,7 +411,7 @@
       
         <li><a href="index.html">一般的なトピック</a> &raquo;</li>
       
-    <li>リソースの自動読み込み</li>
+    <li>リソースのオートロード</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -425,30 +425,30 @@
           <div role="main" class="document">
             
   <div class="section" id="id1">
-<h1>リソースの自動読み込み<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
-<p>CodeIgniter comes with an &#8220;Auto-load&#8221; feature that permits libraries,
-helpers, and models to be initialized automatically every time the
-system runs. If you need certain resources globally throughout your
-application you should consider auto-loading them for convenience.</p>
-<p>The following items can be loaded automatically:</p>
+<h1>リソースのオートロード<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>CodeIgniter には「オートロード」機能が付属しており、システムが実行されるたびにライブラリー、
+ヘルパー、およびモデルを自動的に初期化することを可能にします。
+特定のリソースがアプリケーション全体でグローバルに必要な場合、
+利便性のためにそれらを自動ロードするかどうか検討すると良いでしょう。</p>
+<p>以下の項目をオートロードすることができます:</p>
 <ul class="simple">
-<li>Classes found in the <em>libraries/</em> directory</li>
-<li>Helper files found in the <em>helpers/</em> directory</li>
-<li>Custom config files found in the <em>config/</em> directory</li>
-<li>Language files found in the <em>system/language/</em> directory</li>
-<li>Models found in the <em>models/</em> folder</li>
+<li><em>libraries/</em> ディレクトリにある class</li>
+<li><em>helpers/</em> ディレクトリにあるヘルパーファイル</li>
+<li><em>config/</em> ディレクトリにある設定ファイル</li>
+<li><em>system/language/</em> ディレクトリにある言語ファイル</li>
+<li><em>models/</em> フォルダにあるモデル</li>
 </ul>
-<p>To autoload resources, open the <strong>application/config/autoload.php</strong>
-file and add the item you want loaded to the autoload array. You&#8217;ll
-find instructions in that file corresponding to each type of item.</p>
+<p>リソースをオートロードするためには <strong>application/config/autoload.php</strong>
+ファイルを開き、オートロード配列にロードされるアイテムを追加します。
+ファイル内を見れば、項目の各タイプに対応した指示が書いてあります。</p>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
-<p class="last">Do not include the file extension (.php) when adding items to
-the autoload array.</p>
+<p class="last">オートロード配列に項目を追加するとき、ファイル拡張子 (.php)
+を含めないでください。</p>
 </div>
-<p>Additionally, if you want CodeIgniter to use a <a class="reference external" href="https://getcomposer.org/">Composer</a>
-auto-loader, just set <tt class="docutils literal"><span class="pre">$config['composer_autoload']</span></tt> to <tt class="docutils literal"><span class="pre">TRUE</span></tt> or
-a custom path in <strong>application/config/config.php</strong>.</p>
+<p>さらに、 CodeIgniter に <a class="reference external" href="https://getcomposer.org/">Composer</a>
+のオートローダを使わせたいなら、 <strong>application/config/config.php</strong> 中の <tt class="docutils literal"><span class="pre">$config['composer_autoload']</span></tt> に
+<tt class="docutils literal"><span class="pre">TRUE</span></tt> またはカスタムパスを設定するだけです。</p>
 </div>
 
 
@@ -470,7 +470,7 @@ a custom path in <strong>application/config/config.php</strong>.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2016, British Columbia Institute of Technology.
-      最終更新: May 03, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>
+      最終更新: May 04, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>
     </p>
   </div>
 
