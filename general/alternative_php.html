@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>ビューファイル向けの代替の PHP 構文 &mdash; CodeIgniter 3.1.0-dev ドキュメント</title>
+  <title>ビューファイルでのPHPの別の構文 &mdash; CodeIgniter 3.1.0-dev ドキュメント</title>
   
 
   
@@ -114,7 +114,7 @@
 <li class="toctree-l2"><a class="reference internal" href="cli.html">CLI で実行する</a></li>
 <li class="toctree-l2"><a class="reference internal" href="managing_apps.html">アプリケーションの管理</a></li>
 <li class="toctree-l2"><a class="reference internal" href="environments.html">複数環境への対応</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="">ビューファイル向けの代替の PHP 構文</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">ビューファイルでのPHPの別の構文</a></li>
 <li class="toctree-l2"><a class="reference internal" href="security.html">セキュリティ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="styleguide.html">PHP スタイルガイド</a></li>
 </ul>
@@ -300,7 +300,7 @@
 <li class="toctree-l2"><a class="reference internal" href="cli.html">CLI で実行する</a></li>
 <li class="toctree-l2"><a class="reference internal" href="managing_apps.html">アプリケーションの管理</a></li>
 <li class="toctree-l2"><a class="reference internal" href="environments.html">複数環境への対応</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="">ビューファイル向けの代替の PHP 構文</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">ビューファイルでのPHPの別の構文</a></li>
 <li class="toctree-l2"><a class="reference internal" href="security.html">セキュリティ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="styleguide.html">PHP スタイルガイド</a></li>
 </ul>
@@ -411,7 +411,7 @@
       
         <li><a href="index.html">一般的なトピック</a> &raquo;</li>
       
-    <li>ビューファイル向けの代替の PHP 構文</li>
+    <li>ビューファイルでのPHPの別の構文</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -425,44 +425,43 @@
           <div role="main" class="document">
             
   <div class="section" id="php">
-<h1>ビューファイル向けの代替の PHP 構文<a class="headerlink" href="#php" title="このヘッドラインへのパーマリンク">¶</a></h1>
-<p>If you do not utilize CodeIgniter&#8217;s <a class="reference internal" href="../libraries/parser.html"><em>template
-engine</em></a>, you&#8217;ll be using pure PHP in your
-View files. To minimize the PHP code in these files, and to make it
-easier to identify the code blocks it is recommended that you use PHPs
-alternative syntax for control structures and short tag echo statements.
-If you are not familiar with this syntax, it allows you to eliminate the
-braces from your code, and eliminate &#8220;echo&#8221; statements.</p>
+<h1>ビューファイルでのPHPの別の構文<a class="headerlink" href="#php" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>CodeIgniterの <a class="reference internal" href="../libraries/parser.html"><em>テンプレートエンジン</em></a> を利用しない場合、ビューファイルでは純粋な PHP を使うことになります。
+これらのファイルの PHP コードを最小限にするために、
+そしてより簡単にコードブロックを識別できるように、 PHP の制御構造に関する別の構文と
+echoの短縮構文を使用することをおすすめします。
+この構文に精通していないなら、それはあなたのコードから中括弧を排除し、
+「 echo 」の文を排除することができます。</p>
 <div class="section" id="id1">
-<h2>自動でのショートタグサポート<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2>自動ショートタグのサポート<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
-<p class="last">If you find that the syntax described in this page does not
-work on your server it might be that &#8220;short tags&#8221; are disabled in your
-PHP ini file. CodeIgniter will optionally rewrite short tags on-the-fly,
-allowing you to use that syntax even if your server doesn&#8217;t support it.
-This feature can be enabled in your <em>config/config.php</em> file.</p>
+<p class="last">このページで説明されている構文がサーバで動作しないことがわかった場合、
+おそらく PHP の ini ファイルで「ショートタグ」が無効になっています。
+CodeIgniter では必要に応じて、オンザフライでショートタグを書き換えます。
+あなたのサーバがサポートしていない場合でも、その構文を使用することができるようにするためです。
+この機能は <em>config/config.php</em> ファイルで有効にすることができます。</p>
 </div>
-<p>Please note that if you do use this feature, if PHP errors are
-encountered in your <strong>view files</strong>, the error message and line number
-will not be accurately shown. Instead, all errors will be shown as
-<tt class="docutils literal"><span class="pre">eval()</span></tt> errors.</p>
+<p>この機能を使用する場合、 PHP のエラーがビューファイルで発生した場合、
+エラーメッセージや行番号には正確なものは表示されませんのでご注意ください。
+かわりに、すべてのエラーは
+<tt class="docutils literal"><span class="pre">eval()</span></tt> のエラーとして表示されます。</p>
 </div>
 <div class="section" id="echo">
-<h2>echo による出力の代替<a class="headerlink" href="#echo" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>Normally to echo, or print out a variable you would do this:</p>
+<h2>echoのかわりとなるもの<a class="headerlink" href="#echo" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>通常、変数をエコーもしくはプリントアウトする場合、この操作を行います:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span> <span class="k">echo</span> <span class="nv">$variable</span><span class="p">;</span> <span class="cp">?&gt;</span>
 </pre></div>
 </div>
-<p>With the alternative syntax you can instead do it this way:</p>
+<p>別の構文を使用すると、このように行うことができます:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="o">&lt;?=</span><span class="nv">$variable</span><span class="cp">?&gt;</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="id2">
-<h2>制御構造の代替<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>Controls structures, like if, for, foreach, and while can be written in
-a simplified format as well. Here is an example using <tt class="docutils literal"><span class="pre">foreach</span></tt>:</p>
+<h2>別の制御構造<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>if 、 for 、 foreach と while といった制御構造について簡略化した形式で記述することができます。
+これは <tt class="docutils literal"><span class="pre">foreach</span></tt> を使用した場合の例です:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="nx">ul</span><span class="o">&gt;</span>
 
 <span class="o">&lt;?</span><span class="nx">php</span> <span class="k">foreach</span> <span class="p">(</span><span class="nv">$todo</span> <span class="k">as</span> <span class="nv">$item</span><span class="p">)</span><span class="o">:</span> <span class="cp">?&gt;</span>
@@ -474,23 +473,23 @@ a simplified format as well. Here is an example using <tt class="docutils litera
 <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
 </pre></div>
 </div>
-<p>Notice that there are no braces. Instead, the end brace is replaced with
-<tt class="docutils literal"><span class="pre">endforeach</span></tt>. Each of the control structures listed above has a similar
-closing syntax: <tt class="docutils literal"><span class="pre">endif</span></tt>, <tt class="docutils literal"><span class="pre">endfor</span></tt>, <tt class="docutils literal"><span class="pre">endforeach</span></tt>, and <tt class="docutils literal"><span class="pre">endwhile</span></tt></p>
-<p>Also notice that instead of using a semicolon after each structure
-(except the last one), there is a colon. This is important!</p>
-<p>Here is another example, using <tt class="docutils literal"><span class="pre">if</span></tt>/<tt class="docutils literal"><span class="pre">elseif</span></tt>/<tt class="docutils literal"><span class="pre">else</span></tt>. Notice the colons:</p>
+<p>中括弧がないことに注意してください。そのかわりに、中括弧は
+<tt class="docutils literal"><span class="pre">endforeach</span></tt> に置き換えられています。上に列挙した制御構造にはそれぞれ、
+同様の閉じ構文があります: <tt class="docutils literal"><span class="pre">endif</span></tt> 、 <tt class="docutils literal"><span class="pre">endfor</span></tt> 、 <tt class="docutils literal"><span class="pre">endforeach</span></tt> 、および <tt class="docutils literal"><span class="pre">endwhile</span></tt></p>
+<p>また、各構造のうしろにはセミコロンを使用するのではなく、かわりにコロンがあることに注意してください
+(ただし最後のものを除く) 。これは重要です！</p>
+<p><tt class="docutils literal"><span class="pre">if</span></tt>/<tt class="docutils literal"><span class="pre">elseif</span></tt>/<tt class="docutils literal"><span class="pre">else</span></tt> を使用した別の例です。コロンに注意してください:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span> <span class="k">if</span> <span class="p">(</span><span class="nv">$username</span> <span class="o">===</span> <span class="s1">&#39;sally&#39;</span><span class="p">)</span><span class="o">:</span> <span class="cp">?&gt;</span>
 
-        <span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span>Hi Sally<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span>こんにちはサリー<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
 
 <span class="cp">&lt;?php</span> <span class="k">elseif</span> <span class="p">(</span><span class="nv">$username</span> <span class="o">===</span> <span class="s1">&#39;joe&#39;</span><span class="p">)</span><span class="o">:</span> <span class="cp">?&gt;</span>
 
-        <span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span>Hi Joe<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span>こんにちはジョー<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
 
 <span class="cp">&lt;?php</span> <span class="k">else</span><span class="o">:</span> <span class="cp">?&gt;</span>
 
-        <span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span>Hi unknown user<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span>こんにちは知らない人<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
 
 <span class="cp">&lt;?php</span> <span class="k">endif</span><span class="p">;</span> <span class="cp">?&gt;</span>
 </pre></div>
