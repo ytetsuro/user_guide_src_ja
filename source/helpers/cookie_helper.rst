@@ -2,8 +2,8 @@
 Cookie ヘルパー
 #############
 
-The Cookie Helper file contains functions that assist in working with
-cookies.
+クッキーヘルパーのファイルは、クッキーを処理するのに役立つ関数で構成さ
+れています。
 
 .. contents::
   :local:
@@ -15,14 +15,14 @@ cookies.
 ヘルパーをロードする
 ===================
 
-This helper is loaded using the following code::
+このヘルパーは次のコードを使ってロードします::
 
 	$this->load->helper('cookie');
 
 利用できる機能
 ===================
 
-The following functions are available:
+次の関数が利用できます:
 
 
 .. php:function:: set_cookie($name[, $value = ''[, $expire = ''[, $domain = ''[, $path = '/'[, $prefix = ''[, $secure = FALSE[, $httponly = FALSE]]]]]]])
@@ -70,10 +70,9 @@ The following functions are available:
 
 		delete_cookie('name');
 
-	This function is otherwise identical to ``set_cookie()``, except that it
-	does not have the value and expiration parameters. You can submit an
-	array of values in the first parameter or you can set discrete
-	parameters.
+	この関数は、値や有効期限のパラメータがない以外は、 ``set_cookie()`` と同じ
+	ものです。第1引数に配列で渡すか、個別パラメータで値を渡すことができま
+	す。
 	::
 
 		delete_cookie($name, $domain, $path, $prefix);
