@@ -179,10 +179,10 @@
 <li class="toctree-l2"><a class="reference internal" href="array_helper.html">配列ヘルパー</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="">キャプチャ ヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="cookie_helper.html">Cookie ヘルパー</a></li>
-<li class="toctree-l2"><a class="reference internal" href="date_helper.html">Date Helper</a></li>
-<li class="toctree-l2"><a class="reference internal" href="directory_helper.html">Directory Helper</a></li>
-<li class="toctree-l2"><a class="reference internal" href="download_helper.html">Download Helper</a></li>
-<li class="toctree-l2"><a class="reference internal" href="email_helper.html">Email Helper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="date_helper.html">日付ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="directory_helper.html">ディレクトリヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="download_helper.html">ダウンロードヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="email_helper.html">Email ヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="file_helper.html">File Helper</a></li>
 <li class="toctree-l2"><a class="reference internal" href="form_helper.html">Form Helper</a></li>
 <li class="toctree-l2"><a class="reference internal" href="html_helper.html">HTML Helper</a></li>
@@ -365,10 +365,10 @@
 <li class="toctree-l2"><a class="reference internal" href="array_helper.html">配列ヘルパー</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="">キャプチャ ヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="cookie_helper.html">Cookie ヘルパー</a></li>
-<li class="toctree-l2"><a class="reference internal" href="date_helper.html">Date Helper</a></li>
-<li class="toctree-l2"><a class="reference internal" href="directory_helper.html">Directory Helper</a></li>
-<li class="toctree-l2"><a class="reference internal" href="download_helper.html">Download Helper</a></li>
-<li class="toctree-l2"><a class="reference internal" href="email_helper.html">Email Helper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="date_helper.html">日付ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="directory_helper.html">ディレクトリヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="download_helper.html">ダウンロードヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="email_helper.html">Email ヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="file_helper.html">File Helper</a></li>
 <li class="toctree-l2"><a class="reference internal" href="form_helper.html">Form Helper</a></li>
 <li class="toctree-l2"><a class="reference internal" href="html_helper.html">HTML Helper</a></li>
@@ -426,28 +426,28 @@
             
   <div class="section" id="id1">
 <h1>キャプチャ ヘルパー<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
-<p>The CAPTCHA Helper file contains functions that assist in creating
-CAPTCHA images.</p>
+<p>CAPTCHA ヘルパーのファイルは、CAPTCHA
+画像を作成するのに役立つ関数で構成されています。</p>
 <div class="contents local topic" id="contents">
 <ul class="simple">
-<li><a class="reference internal" href="#id2" id="id5">このヘルパーをロードする</a></li>
-<li><a class="reference internal" href="#id3" id="id6">キャプチャ ヘルパーを使う</a><ul>
-<li><a class="reference internal" href="#adding-a-database" id="id7">Adding a Database</a></li>
+<li><a class="reference internal" href="#id2" id="id6">このヘルパーをロードする</a></li>
+<li><a class="reference internal" href="#id3" id="id7">キャプチャ ヘルパーを使う</a><ul>
+<li><a class="reference internal" href="#id4" id="id8">データベースの追加</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#id4" id="id8">利用できる機能</a></li>
+<li><a class="reference internal" href="#id5" id="id9">利用できる機能</a></li>
 </ul>
 </div>
 <div class="custom-index container"></div><div class="section" id="id2">
-<h2><a class="toc-backref" href="#id5">このヘルパーをロードする</a><a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>This helper is loaded using the following code:</p>
+<h2><a class="toc-backref" href="#id6">このヘルパーをロードする</a><a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>このヘルパーは次のコードを使ってロードします:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">helper</span><span class="p">(</span><span class="s1">&#39;captcha&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="id3">
-<h2><a class="toc-backref" href="#id6">キャプチャ ヘルパーを使う</a><a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>Once loaded you can generate a CAPTCHA like this:</p>
+<h2><a class="toc-backref" href="#id7">キャプチャ ヘルパーを使う</a><a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>一旦ロードすれば、このようなキャプチャを生成できます:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$vals</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
         <span class="s1">&#39;word&#39;</span>          <span class="o">=&gt;</span> <span class="s1">&#39;Random word&#39;</span><span class="p">,</span>
         <span class="s1">&#39;img_path&#39;</span>      <span class="o">=&gt;</span> <span class="s1">&#39;./captcha/&#39;</span><span class="p">,</span>
@@ -475,30 +475,28 @@ CAPTCHA images.</p>
 </pre></div>
 </div>
 <ul class="simple">
-<li>The captcha function requires the GD image library.</li>
-<li>Only the <strong>img_path</strong> and <strong>img_url</strong> are required.</li>
-<li>If a <strong>word</strong> is not supplied, the function will generate a random
-ASCII string. You might put together your own word library that you
-can draw randomly from.</li>
-<li>If you do not specify a path to a TRUE TYPE font, the native ugly GD
-font will be used.</li>
-<li>The &#8220;captcha&#8221; directory must be writable</li>
-<li>The <strong>expiration</strong> (in seconds) signifies how long an image will remain
-in the captcha folder before it will be deleted. The default is two
-hours.</li>
+<li>captcha 関数は GD 画像ライブラリを必要とします。</li>
+<li><strong>img_path</strong> と <strong>img_url</strong> は必須です。</li>
+<li><strong>word</strong> が指定されない場合、ランダムな ASCII 文字列が生成されます。
+自前の辞書を使用しても良いでしょう。</li>
+<li>TRUE TYPE フォントのパスが指定されない場合、標準の見苦しい GD
+フォントが使用されます。</li>
+<li>&#8220;captcha&#8221; ディレクトリは書込可能でなければなりません。</li>
+<li><strong>expiration</strong> (単位: 秒) は有効期限で、 captcha
+ディレクトリから削除されるまでの時間です。 デフォルトでは2時間です。</li>
 <li><strong>word_length</strong> defaults to 8, <strong>pool</strong> defaults to &#8216;0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ&#8217;</li>
 <li><strong>font_size</strong> defaults to 16, the native GD font has a size limit. Specify a &#8220;true type&#8221; font for bigger sizes.</li>
 <li>The <strong>img_id</strong> will be set as the &#8220;id&#8221; of the captcha image.</li>
 <li>If any of the <strong>colors</strong> values is missing, it will be replaced by the default.</li>
 </ul>
-<div class="section" id="adding-a-database">
-<h3><a class="toc-backref" href="#id7">Adding a Database</a><a class="headerlink" href="#adding-a-database" title="このヘッドラインへのパーマリンク">¶</a></h3>
-<p>In order for the captcha function to prevent someone from submitting,
-you will need to add the information returned from <tt class="docutils literal"><span class="pre">create_captcha()</span></tt>
-to your database. Then, when the data from the form is submitted by
-the user you will need to verify that the data exists in the database
-and has not expired.</p>
-<p>Here is a table prototype:</p>
+<div class="section" id="id4">
+<h3><a class="toc-backref" href="#id8">データベースの追加</a><a class="headerlink" href="#id4" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>第三者に送信されるのを防ぐために、 <tt class="docutils literal"><span class="pre">create_captcha()</span></tt>
+関数が返す情報をデータベースに格納します。
+そして、利用者によりフォームからデータが送信されると、
+データが存在することと、 期限が切れていないことを検証します。</p>
+<blockquote>
+<div><p>テーブルの定義:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nx">CREATE</span> <span class="nx">TABLE</span> <span class="nx">captcha</span> <span class="p">(</span>
         <span class="nx">captcha_id</span> <span class="nx">bigint</span><span class="p">(</span><span class="mi">13</span><span class="p">)</span> <span class="nx">unsigned</span> <span class="k">NOT</span> <span class="k">NULL</span> <span class="nx">auto_increment</span><span class="p">,</span>
         <span class="nx">captcha_time</span> <span class="nx">int</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="nx">unsigned</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
@@ -509,8 +507,8 @@ and has not expired.</p>
 <span class="p">);</span>
 </pre></div>
 </div>
-<p>Here is an example of usage with a database. On the page where the
-CAPTCHA will be shown you&#8217;ll have something like this:</p>
+</div></blockquote>
+<p>データベースと組み合わせた際の例です。キャプチャを表示するページの例:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">helper</span><span class="p">(</span><span class="s1">&#39;captcha&#39;</span><span class="p">);</span>
 <span class="nv">$vals</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
         <span class="s1">&#39;img_path&#39;</span>      <span class="o">=&gt;</span> <span class="s1">&#39;./captcha/&#39;</span><span class="p">,</span>
@@ -532,14 +530,13 @@ CAPTCHA will be shown you&#8217;ll have something like this:</p>
 <span class="k">echo</span> <span class="s1">&#39;&lt;input type=&quot;text&quot; name=&quot;captcha&quot; value=&quot;&quot; /&gt;&#39;</span><span class="p">;</span>
 </pre></div>
 </div>
-<p>Then, on the page that accepts the submission you&#8217;ll have something like
-this:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="c1">// First, delete old captchas</span>
+<p>送信を受け付けるページの例:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="c1">// 期限切れのキャプチャを削除</span>
 <span class="nv">$expiration</span> <span class="o">=</span> <span class="nb">time</span><span class="p">()</span> <span class="o">-</span> <span class="mi">7200</span><span class="p">;</span> <span class="c1">// Two hour limit</span>
 <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">where</span><span class="p">(</span><span class="s1">&#39;captcha_time &lt; &#39;</span><span class="p">,</span> <span class="nv">$expiration</span><span class="p">)</span>
         <span class="o">-&gt;</span><span class="na">delete</span><span class="p">(</span><span class="s1">&#39;captcha&#39;</span><span class="p">);</span>
 
-<span class="c1">// Then see if a captcha exists:</span>
+<span class="c1">// キャプチャが存在するか確認:</span>
 <span class="nv">$sql</span> <span class="o">=</span> <span class="s1">&#39;SELECT COUNT(*) AS count FROM captcha WHERE word = ? AND ip_address = ? AND captcha_time &gt; ?&#39;</span><span class="p">;</span>
 <span class="nv">$binds</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">[</span><span class="s1">&#39;captcha&#39;</span><span class="p">],</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">input</span><span class="o">-&gt;</span><span class="na">ip_address</span><span class="p">(),</span> <span class="nv">$expiration</span><span class="p">);</span>
 <span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">query</span><span class="p">(</span><span class="nv">$sql</span><span class="p">,</span> <span class="nv">$binds</span><span class="p">);</span>
@@ -553,9 +550,9 @@ this:</p>
 </div>
 </div>
 </div>
-<div class="section" id="id4">
-<h2><a class="toc-backref" href="#id8">利用できる機能</a><a class="headerlink" href="#id4" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>The following functions are available:</p>
+<div class="section" id="id5">
+<h2><a class="toc-backref" href="#id9">利用できる機能</a><a class="headerlink" href="#id5" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>次の関数が利用できます:</p>
 <dl class="function">
 <dt id="create_captcha">
 <tt class="descname">create_captcha</tt><big>(</big><span class="optional">[</span><em>$data = ''</em><span class="optional">[</span>, <em>$img_path = ''</em><span class="optional">[</span>, <em>$img_url = ''</em><span class="optional">[</span>, <em>$font_path = ''</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#create_captcha" title="この定義へのパーマリンク">¶</a></dt>
@@ -579,24 +576,23 @@ this:</p>
 </tr>
 </tbody>
 </table>
-<p>Takes an array of information to generate the CAPTCHA as input and
-creates the image to your specifications, returning an array of
-associative data about the image.</p>
+<p>入力として引数に CAPTCHA 生成のための情報を配列で受け取り、指定された
+画像を生成し、生成された画像に関するデータの連想配列を返します。</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">array</span><span class="p">(</span>
         <span class="s1">&#39;image&#39;</span> <span class="o">=&gt;</span> <span class="nx">IMAGE</span> <span class="nx">TAG</span>
-        <span class="s1">&#39;time&#39;</span>  <span class="o">=&gt;</span> <span class="nx">TIMESTAMP</span> <span class="p">(</span><span class="nx">in</span> <span class="nb">microtime</span><span class="p">)</span>
+        <span class="s1">&#39;time&#39;</span>  <span class="o">=&gt;</span> <span class="nx">TIMESTAMP</span> <span class="p">(</span><span class="nx">マイクロ秒まで含む</span><span class="p">)</span>
         <span class="s1">&#39;word&#39;</span>  <span class="o">=&gt;</span> <span class="nx">CAPTCHA</span> <span class="nx">WORD</span>
 <span class="p">)</span>
 </pre></div>
 </div>
-<p>The <strong>image</strong> is the actual image tag:</p>
+<p><strong>image</strong> は実際の image タグです:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="nx">img</span> <span class="nx">src</span><span class="o">=</span><span class="s2">&quot;http://example.com/captcha/12345.jpg&quot;</span> <span class="nx">width</span><span class="o">=</span><span class="s2">&quot;140&quot;</span> <span class="nx">height</span><span class="o">=</span><span class="s2">&quot;50&quot;</span> <span class="o">/&gt;</span>
 </pre></div>
 </div>
-<p>The <strong>time</strong> is the micro timestamp used as the image name without the
-file extension. It will be a number like this: 1139612155.3422</p>
-<p>The <strong>word</strong> is the word that appears in the captcha image, which if not
-supplied to the function, will be a random string.</p>
+<p><strong>time</strong> はマイクロ秒でのタイプスタンプで、拡張子を除いた部分の画像のフ
+ァイル名として使われます。 このような数字になります: 1139612155.3422</p>
+<p><strong>word</strong> はキャプチャ画像に表示される単語で、指定されない場合は
+ランダムな文字列になります。</p>
 </dd></dl>
 
 </div>
@@ -621,7 +617,7 @@ supplied to the function, will be a random string.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2016, British Columbia Institute of Technology.
-      最終更新: May 05, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>
+      最終更新: May 08, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>
     </p>
   </div>
 

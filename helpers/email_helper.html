@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Email Helper &mdash; CodeIgniter 3.1.0-dev ドキュメント</title>
+  <title>Email ヘルパー &mdash; CodeIgniter 3.1.0-dev ドキュメント</title>
   
 
   
@@ -33,7 +33,7 @@
     <link rel="top" title="CodeIgniter 3.1.0-dev ドキュメント" href="../index.html"/>
         <link rel="up" title="ヘルパー" href="index.html"/>
         <link rel="next" title="File Helper" href="file_helper.html"/>
-        <link rel="prev" title="Download Helper" href="download_helper.html"/> 
+        <link rel="prev" title="ダウンロードヘルパー" href="download_helper.html"/> 
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -179,10 +179,10 @@
 <li class="toctree-l2"><a class="reference internal" href="array_helper.html">配列ヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="captcha_helper.html">キャプチャ ヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="cookie_helper.html">Cookie ヘルパー</a></li>
-<li class="toctree-l2"><a class="reference internal" href="date_helper.html">Date Helper</a></li>
-<li class="toctree-l2"><a class="reference internal" href="directory_helper.html">Directory Helper</a></li>
-<li class="toctree-l2"><a class="reference internal" href="download_helper.html">Download Helper</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="">Email Helper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="date_helper.html">日付ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="directory_helper.html">ディレクトリヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="download_helper.html">ダウンロードヘルパー</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Email ヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="file_helper.html">File Helper</a></li>
 <li class="toctree-l2"><a class="reference internal" href="form_helper.html">Form Helper</a></li>
 <li class="toctree-l2"><a class="reference internal" href="html_helper.html">HTML Helper</a></li>
@@ -365,10 +365,10 @@
 <li class="toctree-l2"><a class="reference internal" href="array_helper.html">配列ヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="captcha_helper.html">キャプチャ ヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="cookie_helper.html">Cookie ヘルパー</a></li>
-<li class="toctree-l2"><a class="reference internal" href="date_helper.html">Date Helper</a></li>
-<li class="toctree-l2"><a class="reference internal" href="directory_helper.html">Directory Helper</a></li>
-<li class="toctree-l2"><a class="reference internal" href="download_helper.html">Download Helper</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="">Email Helper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="date_helper.html">日付ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="directory_helper.html">ディレクトリヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="download_helper.html">ダウンロードヘルパー</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Email ヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="file_helper.html">File Helper</a></li>
 <li class="toctree-l2"><a class="reference internal" href="form_helper.html">Form Helper</a></li>
 <li class="toctree-l2"><a class="reference internal" href="html_helper.html">HTML Helper</a></li>
@@ -411,7 +411,7 @@
       
         <li><a href="index.html">ヘルパー</a> &raquo;</li>
       
-    <li>Email Helper</li>
+    <li>Email ヘルパー</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -424,11 +424,10 @@
 </div>
           <div role="main" class="document">
             
-  <div class="section" id="email-helper">
-<h1>Email Helper<a class="headerlink" href="#email-helper" title="このヘッドラインへのパーマリンク">¶</a></h1>
-<p>The Email Helper provides some assistive functions for working with
-Email. For a more robust email solution, see CodeIgniter&#8217;s <a class="reference internal" href="../libraries/email.html"><em>Email
-Class</em></a>.</p>
+  <div class="section" id="email">
+<h1>Email ヘルパー<a class="headerlink" href="#email" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>Email ヘルパーは Email 処理を支援する関数を提供します。より堅牢な
+Email の処理方法については CodeIgniter の <a class="reference internal" href="../libraries/email.html"><em>Email クラス</em></a> を参照してください。</p>
 <div class="admonition important">
 <p class="first admonition-title">重要</p>
 <p class="last">The Email helper is DEPRECATED and is currently
@@ -436,20 +435,20 @@ only kept for backwards compatibility.</p>
 </div>
 <div class="contents local topic" id="contents">
 <ul class="simple">
-<li><a class="reference internal" href="#loading-this-helper" id="id2">Loading this Helper</a></li>
-<li><a class="reference internal" href="#id1" id="id3">利用できる機能</a></li>
+<li><a class="reference internal" href="#id1" id="id3">ヘルパーのロード</a></li>
+<li><a class="reference internal" href="#id2" id="id4">利用できる機能</a></li>
 </ul>
 </div>
-<div class="custom-index container"></div><div class="section" id="loading-this-helper">
-<h2><a class="toc-backref" href="#id2">Loading this Helper</a><a class="headerlink" href="#loading-this-helper" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>This helper is loaded using the following code:</p>
+<div class="custom-index container"></div><div class="section" id="id1">
+<h2><a class="toc-backref" href="#id3">ヘルパーのロード</a><a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>このヘルパーは次のコードを使ってロードします:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">helper</span><span class="p">(</span><span class="s1">&#39;email&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
-<div class="section" id="id1">
-<h2><a class="toc-backref" href="#id3">利用できる機能</a><a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>The following functions are available:</p>
+<div class="section" id="id2">
+<h2><a class="toc-backref" href="#id4">利用できる機能</a><a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>次の関数が利用できます:</p>
 <dl class="function">
 <dt id="valid_email">
 <tt class="descname">valid_email</tt><big>(</big><em>$email</em><big>)</big><a class="headerlink" href="#valid_email" title="この定義へのパーマリンク">¶</a></dt>
@@ -515,8 +514,8 @@ simply that it is a validly formed address.</p>
 </tr>
 </tbody>
 </table>
-<p>Sends an email using PHP&#8217;s native <a class="reference external" href="http://php.net/function.mail">mail()</a>
-function.</p>
+<p>PHP の <a class="reference external" href="http://www.php.net/function.mail">mail()</a>
+関数を使ってメールを送信します。</p>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
 <p>All that this function does is to use PHP&#8217;s native <tt class="docutils literal"><span class="pre">mail</span></tt></p>
@@ -524,7 +523,8 @@ function.</p>
 </pre></div>
 </div>
 </div>
-<p>For a more robust email solution, see CodeIgniter&#8217;s <a class="reference internal" href="../libraries/email.html"><em>Email Library</em></a>.</p>
+<p>より堅牢なメールの処理方法については、CodeIgniter の <a class="reference internal" href="../libraries/email.html"><em>Email
+クラス</em></a> を参照してください。</p>
 </dd></dl>
 
 </div>
@@ -539,7 +539,7 @@ function.</p>
         <a href="file_helper.html" class="btn btn-neutral float-right" title="File Helper">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="download_helper.html" class="btn btn-neutral" title="Download Helper"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="download_helper.html" class="btn btn-neutral" title="ダウンロードヘルパー"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -549,7 +549,7 @@ function.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2016, British Columbia Institute of Technology.
-      最終更新: May 05, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>
+      最終更新: May 08, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>
     </p>
   </div>
 
