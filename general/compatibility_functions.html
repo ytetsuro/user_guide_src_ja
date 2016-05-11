@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Compatibility Functions &mdash; CodeIgniter 3.1.0-dev ドキュメント</title>
+  <title>互換関数 &mdash; CodeIgniter 3.1.0-dev ドキュメント</title>
   
 
   
@@ -106,7 +106,7 @@
 <li class="toctree-l2"><a class="reference internal" href="hooks.html">フック――フレームワークコアの拡張</a></li>
 <li class="toctree-l2"><a class="reference internal" href="autoloader.html">リソースのオートロード</a></li>
 <li class="toctree-l2"><a class="reference internal" href="common_functions.html">共通関数</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="">Compatibility Functions</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">互換関数</a></li>
 <li class="toctree-l2"><a class="reference internal" href="routing.html">URI ルーティング</a></li>
 <li class="toctree-l2"><a class="reference internal" href="errors.html">エラー処理</a></li>
 <li class="toctree-l2"><a class="reference internal" href="caching.html">キャッシュ</a></li>
@@ -292,7 +292,7 @@
 <li class="toctree-l2"><a class="reference internal" href="hooks.html">フック――フレームワークコアの拡張</a></li>
 <li class="toctree-l2"><a class="reference internal" href="autoloader.html">リソースのオートロード</a></li>
 <li class="toctree-l2"><a class="reference internal" href="common_functions.html">共通関数</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="">Compatibility Functions</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">互換関数</a></li>
 <li class="toctree-l2"><a class="reference internal" href="routing.html">URI ルーティング</a></li>
 <li class="toctree-l2"><a class="reference internal" href="errors.html">エラー処理</a></li>
 <li class="toctree-l2"><a class="reference internal" href="caching.html">キャッシュ</a></li>
@@ -411,7 +411,7 @@
       
         <li><a href="index.html">一般的なトピック</a> &raquo;</li>
       
-    <li>Compatibility Functions</li>
+    <li>互換関数</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -424,66 +424,66 @@
 </div>
           <div role="main" class="document">
             
-  <div class="section" id="compatibility-functions">
-<h1>Compatibility Functions<a class="headerlink" href="#compatibility-functions" title="このヘッドラインへのパーマリンク">¶</a></h1>
-<p>CodeIgniter provides a set of compatibility functions that enable
-you to use functions what are otherwise natively available in PHP,
-but only in higher versions or depending on a certain extension.</p>
-<p>Being custom implementations, these functions will also have some
-set of dependencies on their own, but are still useful if your
-PHP setup doesn&#8217;t offer them natively.</p>
+  <div class="section" id="id1">
+<h1>互換関数<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>CodeIgniter では互換関数のセットを提供します。
+PHP でネイティブに提供しているものの、より新しいバージョンでのみで対応であったり、
+特定のエクステンションに依存するような関数を使えるようにするものです。</p>
+<p>独自実装しているため、
+これらの関数自身もほかのものに依存する場合もありますが、
+それでもまだ PHP そのものをセットアップするよりは便利でしょう。</p>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
-<p class="last">Much like the <cite>common functions &lt;common_functions&gt;</cite>, the
-compatibility functions are always available, as long as
-their dependencies are met.</p>
+<p class="last">まるで <cite>共通機能 &lt;common_functions&gt;</cite> のように、
+それらの依存関係が満たされているかぎり
+互換関数は常に利用可能です。</p>
 </div>
 <div class="contents local topic" id="contents">
 <ul class="simple">
-<li><a class="reference internal" href="#password-hashing" id="id7">Password Hashing</a><ul>
-<li><a class="reference internal" href="#dependencies" id="id8">Dependencies</a></li>
-<li><a class="reference internal" href="#constants" id="id9">Constants</a></li>
-<li><a class="reference internal" href="#function-reference" id="id10">Function reference</a></li>
+<li><a class="reference internal" href="#id2" id="id17">パスワードハッシュ</a><ul>
+<li><a class="reference internal" href="#id4" id="id18">依存関係</a></li>
+<li><a class="reference internal" href="#id5" id="id19">定数</a></li>
+<li><a class="reference internal" href="#id6" id="id20">関数リファレンス</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#hash-message-digest" id="id11">Hash (Message Digest)</a><ul>
-<li><a class="reference internal" href="#id1" id="id12">Dependencies</a></li>
-<li><a class="reference internal" href="#id2" id="id13">Function reference</a></li>
+<li><a class="reference internal" href="#id7" id="id21">ハッシュ (メッセージダイジェスト)</a><ul>
+<li><a class="reference internal" href="#id8" id="id22">依存関係</a></li>
+<li><a class="reference internal" href="#id9" id="id23">関数リファレンス</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#multibyte-string" id="id14">Multibyte String</a><ul>
-<li><a class="reference internal" href="#id3" id="id15">Dependencies</a></li>
-<li><a class="reference internal" href="#id4" id="id16">Function reference</a></li>
+<li><a class="reference internal" href="#id10" id="id24">マルチバイト文字列</a><ul>
+<li><a class="reference internal" href="#id12" id="id25">依存関係</a></li>
+<li><a class="reference internal" href="#id13" id="id26">関数リファレンス</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#standard-functions" id="id17">Standard Functions</a><ul>
-<li><a class="reference internal" href="#id5" id="id18">Dependencies</a></li>
-<li><a class="reference internal" href="#id6" id="id19">Function reference</a></li>
+<li><a class="reference internal" href="#id14" id="id27">標準関数</a><ul>
+<li><a class="reference internal" href="#id15" id="id28">依存関係</a></li>
+<li><a class="reference internal" href="#id16" id="id29">関数リファレンス</a></li>
 </ul>
 </li>
 </ul>
 </div>
-<div class="custom-index container"></div><div class="section" id="password-hashing">
-<h2><a class="toc-backref" href="#id7">Password Hashing</a><a class="headerlink" href="#password-hashing" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>This set of compatibility functions offers a &#8220;backport&#8221; of PHP&#8217;s
-standard <a class="reference external" href="http://php.net/password">Password Hashing extension</a>
-that is otherwise available only since PHP 5.5.</p>
-<div class="section" id="dependencies">
-<h3><a class="toc-backref" href="#id8">Dependencies</a><a class="headerlink" href="#dependencies" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<div class="custom-index container"></div><div class="section" id="id2">
+<h2><a class="toc-backref" href="#id17">パスワードハッシュ</a><a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>この互換関数のセットは PHP 標準の
+<a class="reference external" href="http://php.net/password">パスワードハッシュ拡張</a> の「バックポート」を提供しています。
+本来は PHP 5.5 以降で利用可能なものです。</p>
+<div class="section" id="id4">
+<h3><a class="toc-backref" href="#id18">依存関係</a><a class="headerlink" href="#id4" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <ul class="simple">
 <li>PHP 5.3.7</li>
-<li><tt class="docutils literal"><span class="pre">CRYPT_BLOWFISH</span></tt> support for <tt class="docutils literal"><span class="pre">crypt()</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">crypt()</span></tt> の <tt class="docutils literal"><span class="pre">CRYPT_BLOWFISH</span></tt> サポート</li>
 </ul>
 </div>
-<div class="section" id="constants">
-<h3><a class="toc-backref" href="#id9">Constants</a><a class="headerlink" href="#constants" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<div class="section" id="id5">
+<h3><a class="toc-backref" href="#id19">定数</a><a class="headerlink" href="#id5" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <ul class="simple">
 <li><tt class="docutils literal"><span class="pre">PASSWORD_BCRYPT</span></tt></li>
 <li><tt class="docutils literal"><span class="pre">PASSWORD_DEFAULT</span></tt></li>
 </ul>
 </div>
-<div class="section" id="function-reference">
-<h3><a class="toc-backref" href="#id10">Function reference</a><a class="headerlink" href="#function-reference" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<div class="section" id="id6">
+<h3><a class="toc-backref" href="#id20">関数リファレンス</a><a class="headerlink" href="#id6" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <dl class="function">
 <dt id="password_get_info">
 <tt class="descname">password_get_info</tt><big>(</big><em>$hash</em><big>)</big><a class="headerlink" href="#password_get_info" title="この定義へのパーマリンク">¶</a></dt>
@@ -492,11 +492,11 @@ that is otherwise available only since PHP 5.5.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">パラメタ:</th><td class="field-body"><ul class="first simple">
-<li><strong>$hash</strong> (<em>string</em>) &#8211; Password hash</li>
+<li><strong>$hash</strong> (<em>string</em>) &#8211; パスワードのハッシュ</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body"><p class="first">Information about the hashed password</p>
+<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body"><p class="first">ハッシュされたパスワードの情報</p>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name">戻り値の型:</th><td class="field-body"><p class="first last">array</p>
@@ -504,8 +504,8 @@ that is otherwise available only since PHP 5.5.</p>
 </tr>
 </tbody>
 </table>
-<p>For more information, please refer to the <a class="reference external" href="http://php.net/password_get_info">PHP manual for
-password_get_info()</a>.</p>
+<p>詳しくは
+<a class="reference external" href="http://php.net/password_get_info">password_get_info() の PHP マニュアル</a> を参照してください。</p>
 </dd></dl>
 
 <dl class="function">
@@ -516,13 +516,13 @@ password_get_info()</a>.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">パラメタ:</th><td class="field-body"><ul class="first simple">
-<li><strong>$password</strong> (<em>string</em>) &#8211; Plain-text password</li>
-<li><strong>$algo</strong> (<em>int</em>) &#8211; Hashing algorithm</li>
-<li><strong>$options</strong> (<em>array</em>) &#8211; Hashing options</li>
+<li><strong>$password</strong> (<em>string</em>) &#8211; 平文のパスワード</li>
+<li><strong>$algo</strong> (<em>int</em>) &#8211; ハッシュアルゴリズム</li>
+<li><strong>$options</strong> (<em>array</em>) &#8211; ハッシュオプション</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body"><p class="first">Hashed password or FALSE on failure</p>
+<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body"><p class="first">ハッシュされたパスワード、失敗した場合には FALSE</p>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name">戻り値の型:</th><td class="field-body"><p class="first last">string</p>
@@ -530,14 +530,14 @@ password_get_info()</a>.</p>
 </tr>
 </tbody>
 </table>
-<p>For more information, please refer to the <a class="reference external" href="http://php.net/password_hash">PHP manual for
-password_hash()</a>.</p>
+<p>詳しくは
+<a class="reference external" href="http://php.net/password_hash">password_hash() の PHP マニュアル</a> を参照してください。</p>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
-<p class="last">Unless you provide your own (and valid) salt, this function
-has a further dependency on an available CSPRNG source. Each
-of the following would satisfy that:
-- <tt class="docutils literal"><span class="pre">mcrypt_create_iv()</span></tt> with <tt class="docutils literal"><span class="pre">MCRYPT_DEV_URANDOM</span></tt>
+<p class="last">指定の (有効な) saltを提供しない限り、
+この機能はさらに CSPRNG ソースにも依存します。
+下記のいずれかがそれを満たします:
+- <tt class="docutils literal"><span class="pre">mcrypt_create_iv()</span></tt> と <tt class="docutils literal"><span class="pre">MCRYPT_DEV_URANDOM</span></tt>
 - <tt class="docutils literal"><span class="pre">openssl_random_pseudo_bytes()</span></tt>
 - /dev/arandom
 - /dev/urandom</p>
@@ -552,13 +552,13 @@ of the following would satisfy that:
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">パラメタ:</th><td class="field-body"><ul class="first simple">
-<li><strong>$hash</strong> (<em>string</em>) &#8211; Password hash</li>
-<li><strong>$algo</strong> (<em>int</em>) &#8211; Hashing algorithm</li>
-<li><strong>$options</strong> (<em>array</em>) &#8211; Hashing options</li>
+<li><strong>$hash</strong> (<em>string</em>) &#8211; パスワードのハッシュ</li>
+<li><strong>$algo</strong> (<em>int</em>) &#8211; ハッシュアルゴリズム</li>
+<li><strong>$options</strong> (<em>array</em>) &#8211; ハッシュオプション</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body"><p class="first">TRUE if the hash should be rehashed to match the given algorithm and options, FALSE otherwise</p>
+<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body"><p class="first">ハッシュが与えられたアルゴリズムとオプションにマッチするよう再ハッシュする必要がある場合は TRUE 、それ以外の場合はFALSE</p>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name">戻り値の型:</th><td class="field-body"><p class="first last">bool</p>
@@ -566,8 +566,8 @@ of the following would satisfy that:
 </tr>
 </tbody>
 </table>
-<p>For more information, please refer to the <a class="reference external" href="http://php.net/password_needs_rehash">PHP manual for
-password_needs_rehash()</a>.</p>
+<p>詳しくは
+<a class="reference external" href="http://php.net/password_needs_rehash">password_needs_rehash() の PHP マニュアル</a> を参照してください。</p>
 </dd></dl>
 
 <dl class="function">
@@ -578,12 +578,12 @@ password_needs_rehash()</a>.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">パラメタ:</th><td class="field-body"><ul class="first simple">
-<li><strong>$password</strong> (<em>string</em>) &#8211; Plain-text password</li>
-<li><strong>$hash</strong> (<em>string</em>) &#8211; Password hash</li>
+<li><strong>$password</strong> (<em>string</em>) &#8211; 平文のパスワード</li>
+<li><strong>$hash</strong> (<em>string</em>) &#8211; パスワードのハッシュ</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body"><p class="first">TRUE if the password matches the hash, FALSE if not</p>
+<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body"><p class="first">パスワードがハッシュと一致した場合は TRUE 、そうでない場合は FALSE</p>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name">戻り値の型:</th><td class="field-body"><p class="first last">bool</p>
@@ -591,25 +591,25 @@ password_needs_rehash()</a>.</p>
 </tr>
 </tbody>
 </table>
-<p>For more information, please refer to the <a class="reference external" href="http://php.net/password_verify">PHP manual for
-password_verify()</a>.</p>
+<p>詳しくは
+<a class="reference external" href="http://php.net/password_verify">password_verify() の PHP マニュアル</a> を参照してください。</p>
 </dd></dl>
 
 </div>
 </div>
-<div class="section" id="hash-message-digest">
-<h2><a class="toc-backref" href="#id11">Hash (Message Digest)</a><a class="headerlink" href="#hash-message-digest" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>This compatibility layer contains backports for the <tt class="docutils literal"><span class="pre">hash_equals()</span></tt>
-and <tt class="docutils literal"><span class="pre">hash_pbkdf2()</span></tt> functions, which otherwise require PHP 5.6 and/or
-PHP 5.5 respectively.</p>
-<div class="section" id="id1">
-<h3><a class="toc-backref" href="#id12">Dependencies</a><a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<div class="section" id="id7">
+<h2><a class="toc-backref" href="#id21">ハッシュ (メッセージダイジェスト)</a><a class="headerlink" href="#id7" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>この互換レイヤには <tt class="docutils literal"><span class="pre">hash_equals()</span></tt> 関数と
+<tt class="docutils literal"><span class="pre">hash_pbkdf2()</span></tt> 関数のバックポートが含まれています。本来おのおの PHP 5.6 およびまたは
+PHP 5.5 を必要とするものです。</p>
+<div class="section" id="id8">
+<h3><a class="toc-backref" href="#id22">依存関係</a><a class="headerlink" href="#id8" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <ul class="simple">
-<li>None</li>
+<li>なし</li>
 </ul>
 </div>
-<div class="section" id="id2">
-<h3><a class="toc-backref" href="#id13">Function reference</a><a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<div class="section" id="id9">
+<h3><a class="toc-backref" href="#id23">関数リファレンス</a><a class="headerlink" href="#id9" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <dl class="function">
 <dt id="hash_equals">
 <tt class="descname">hash_equals</tt><big>(</big><em>$known_string</em>, <em>$user_string</em><big>)</big><a class="headerlink" href="#hash_equals" title="この定義へのパーマリンク">¶</a></dt>
@@ -618,12 +618,12 @@ PHP 5.5 respectively.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">パラメタ:</th><td class="field-body"><ul class="first simple">
-<li><strong>$known_string</strong> (<em>string</em>) &#8211; Known string</li>
-<li><strong>$user_string</strong> (<em>string</em>) &#8211; User-supplied string</li>
+<li><strong>$known_string</strong> (<em>string</em>) &#8211; 既知の文字列</li>
+<li><strong>$user_string</strong> (<em>string</em>) &#8211; ユーザ指定の文字列</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body"><p class="first">TRUE if the strings match, FALSE otherwise</p>
+<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body"><p class="first">文字列が一致する場合 TRUE 、それ以外の場合は FALSE</p>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name">戻り値の型:</th><td class="field-body"><p class="first last">string</p>
@@ -631,8 +631,8 @@ PHP 5.5 respectively.</p>
 </tr>
 </tbody>
 </table>
-<p>For more information, please refer to the <a class="reference external" href="http://php.net/hash_equals">PHP manual for
-hash_equals()</a>.</p>
+<p>詳しくは
+<a class="reference external" href="http://php.net/hash_equals">hash_equals() の PHP マニュアル</a> を参照してください。</p>
 </dd></dl>
 
 <dl class="function">
@@ -643,16 +643,16 @@ hash_equals()</a>.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">パラメタ:</th><td class="field-body"><ul class="first simple">
-<li><strong>$algo</strong> (<em>string</em>) &#8211; Hashing algorithm</li>
-<li><strong>$password</strong> (<em>string</em>) &#8211; Password</li>
-<li><strong>$salt</strong> (<em>string</em>) &#8211; Hash salt</li>
-<li><strong>$iterations</strong> (<em>int</em>) &#8211; Number of iterations to perform during derivation</li>
-<li><strong>$length</strong> (<em>int</em>) &#8211; Output string length</li>
-<li><strong>$raw_output</strong> (<em>bool</em>) &#8211; Whether to return raw binary data</li>
+<li><strong>$algo</strong> (<em>string</em>) &#8211; ハッシュアルゴリズム</li>
+<li><strong>$password</strong> (<em>string</em>) &#8211; パスワード</li>
+<li><strong>$salt</strong> (<em>string</em>) &#8211; ハッシュの salt</li>
+<li><strong>$iterations</strong> (<em>int</em>) &#8211; 導出の際に実行する反復回数</li>
+<li><strong>$length</strong> (<em>int</em>) &#8211; 出力文字列の長さ</li>
+<li><strong>$raw_output</strong> (<em>bool</em>) &#8211; -生のバイナリデータを返すかどうか</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body"><p class="first">Password-derived key or FALSE on failure</p>
+<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body"><p class="first">パスワード派生キー、または失敗した場合に FALSE</p>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name">戻り値の型:</th><td class="field-body"><p class="first last">string</p>
@@ -660,46 +660,46 @@ hash_equals()</a>.</p>
 </tr>
 </tbody>
 </table>
-<p>For more information, please refer to the <a class="reference external" href="http://php.net/hash_pbkdf2">PHP manual for
-hash_pbkdf2()</a>.</p>
+<p>詳しくは
+<a class="reference external" href="http://php.net/hash_pbkdf2">hash_pbkdf2() の PHP マニュアル</a> を参照してください。</p>
 </dd></dl>
 
 </div>
 </div>
-<div class="section" id="multibyte-string">
-<h2><a class="toc-backref" href="#id14">Multibyte String</a><a class="headerlink" href="#multibyte-string" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>This set of compatibility functions offers limited support for PHP&#8217;s
-<a class="reference external" href="http://php.net/mbstring">Multibyte String extension</a>. Because of
-the limited alternative solutions, only a few functions are available.</p>
+<div class="section" id="id10">
+<h2><a class="toc-backref" href="#id24">マルチバイト文字列</a><a class="headerlink" href="#id10" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>この互換関数のセットは PHP
+の <a class="reference external" href="http://php.net/mbstring">マルチバイト文字列拡張</a> を限定的にサポートします。
+代替手段が限られているため、わずかな関数だけが用意されています。</p>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
-<p class="last">When a character set parameter is ommited,
-<tt class="docutils literal"><span class="pre">$config['charset']</span></tt> will be used.</p>
+<p class="last">文字セットパラメータが省略されている場合、
+<tt class="docutils literal"><span class="pre">$config['charset']</span></tt> が使用されます。</p>
 </div>
-<div class="section" id="id3">
-<h3><a class="toc-backref" href="#id15">Dependencies</a><a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<div class="section" id="id12">
+<h3><a class="toc-backref" href="#id25">依存関係</a><a class="headerlink" href="#id12" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <ul class="simple">
-<li><a class="reference external" href="http://php.net/iconv">iconv</a> extension</li>
+<li><a class="reference external" href="http://php.net/iconv">iconv</a> 拡張</li>
 </ul>
 <div class="admonition important">
 <p class="first admonition-title">重要</p>
-<p class="last">This dependency is optional and these functions will
-always be declared. If iconv is not available, they WILL
-fall-back to their non-mbstring versions.</p>
+<p class="last">この依存関係は省略可能ですが、これらの関数は常に宣言されます。
+iconv が利用できない場合、対応する非 mbstring
+バージョンにフォールバック　し　ま　す　。</p>
 </div>
 <div class="admonition important">
 <p class="first admonition-title">重要</p>
-<p class="last">Where a character set is supplied, it must be
-supported by iconv and in a format that it recognizes.</p>
+<p class="last">文字セットが供給されている場合、
+それは iconv によりサポートされ、 iconv の認識できる形式でなければなりません。</p>
 </div>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
-<p class="last">For you own dependency check on the actual mbstring
-extension, use the <tt class="docutils literal"><span class="pre">MB_ENABLED</span></tt> constant.</p>
+<p class="last">本来の mbstring 拡張モジュールへの依存がありそれをチェックしたい場合、
+<tt class="docutils literal"><span class="pre">MB_ENABLED</span></tt> 定数を使用します。</p>
 </div>
 </div>
-<div class="section" id="id4">
-<h3><a class="toc-backref" href="#id16">Function reference</a><a class="headerlink" href="#id4" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<div class="section" id="id13">
+<h3><a class="toc-backref" href="#id26">関数リファレンス</a><a class="headerlink" href="#id13" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <dl class="function">
 <dt id="mb_strlen">
 <tt class="descname">mb_strlen</tt><big>(</big><em>$str</em><span class="optional">[</span>, <em>$encoding = NULL</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#mb_strlen" title="この定義へのパーマリンク">¶</a></dt>
@@ -708,12 +708,12 @@ extension, use the <tt class="docutils literal"><span class="pre">MB_ENABLED</sp
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">パラメタ:</th><td class="field-body"><ul class="first simple">
-<li><strong>$str</strong> (<em>string</em>) &#8211; Input string</li>
-<li><strong>$encoding</strong> (<em>string</em>) &#8211; Character set</li>
+<li><strong>$str</strong> (<em>string</em>) &#8211; 入力文字列</li>
+<li><strong>$encoding</strong> (<em>string</em>) &#8211; 文字セット</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body"><p class="first">Number of characters in the input string or FALSE on failure</p>
+<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body"><p class="first">入力文字列の文字数、失敗した場合には FALSE</p>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name">戻り値の型:</th><td class="field-body"><p class="first last">string</p>
@@ -721,8 +721,8 @@ extension, use the <tt class="docutils literal"><span class="pre">MB_ENABLED</sp
 </tr>
 </tbody>
 </table>
-<p>For more information, please refer to the <a class="reference external" href="http://php.net/mb_strlen">PHP manual for
-mb_strlen()</a>.</p>
+<p>詳しくは
+<a class="reference external" href="http://php.net/mb_strlen">mb_strlen() の PHP マニュアル</a> を参照してください。</p>
 </dd></dl>
 
 <dl class="function">
@@ -733,14 +733,14 @@ mb_strlen()</a>.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">パラメタ:</th><td class="field-body"><ul class="first simple">
-<li><strong>$haystack</strong> (<em>string</em>) &#8211; String to search in</li>
-<li><strong>$needle</strong> (<em>string</em>) &#8211; Part of string to search for</li>
-<li><strong>$offset</strong> (<em>int</em>) &#8211; Search offset</li>
-<li><strong>$encoding</strong> (<em>string</em>) &#8211; Character set</li>
+<li><strong>$haystack</strong> (<em>string</em>) &#8211; 調べたい文字列</li>
+<li><strong>$needle</strong> (<em>string</em>) &#8211; haystack の中から探す文字列</li>
+<li><strong>$offset</strong> (<em>int</em>) &#8211; 検索オフセット</li>
+<li><strong>$encoding</strong> (<em>string</em>) &#8211; 文字セット</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body"><p class="first">Numeric character position of where $needle was found or FALSE if not found</p>
+<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body"><p class="first">$needle の見つかった位置、見つからない場合は FALSE</p>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name">戻り値の型:</th><td class="field-body"><p class="first last">mixed</p>
@@ -748,8 +748,8 @@ mb_strlen()</a>.</p>
 </tr>
 </tbody>
 </table>
-<p>For more information, please refer to the <a class="reference external" href="http://php.net/mb_strpos">PHP manual for
-mb_strpos()</a>.</p>
+<p>詳しくは
+mb_strpos() の PHP マニュアル &lt;<a class="reference external" href="http://php.net/mb_strpos">http://php.net/mb_strpos</a>&gt;`_ を参照してください。</p>
 </dd></dl>
 
 <dl class="function">
@@ -760,14 +760,14 @@ mb_strpos()</a>.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">パラメタ:</th><td class="field-body"><ul class="first simple">
-<li><strong>$str</strong> (<em>string</em>) &#8211; Input string</li>
-<li><strong>$start</strong> (<em>int</em>) &#8211; Position of first character</li>
-<li><strong>$length</strong> (<em>int</em>) &#8211; Maximum number of characters</li>
-<li><strong>$encoding</strong> (<em>string</em>) &#8211; Character set</li>
+<li><strong>$str</strong> (<em>string</em>) &#8211; 入力文字列</li>
+<li><strong>$start</strong> (<em>int</em>) &#8211; 最初の文字の位置</li>
+<li><strong>$length</strong> (<em>int</em>) &#8211; 最大文字数</li>
+<li><strong>$encoding</strong> (<em>string</em>) &#8211; 文字セット</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body"><p class="first">Portion of $str specified by $start and $length or FALSE on failure</p>
+<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body"><p class="first">$start と $length で指定された $str の部分文字列、失敗した場合は FALSE</p>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name">戻り値の型:</th><td class="field-body"><p class="first last">string</p>
@@ -775,24 +775,24 @@ mb_strpos()</a>.</p>
 </tr>
 </tbody>
 </table>
-<p>For more information, please refer to the <a class="reference external" href="http://php.net/mb_substr">PHP manual for
-mb_substr()</a>.</p>
+<p>詳しくは
+<a class="reference external" href="http://php.net/mb_substr">mb_substr() の PHP マニュアル</a> を参照してください。</p>
 </dd></dl>
 
 </div>
 </div>
-<div class="section" id="standard-functions">
-<h2><a class="toc-backref" href="#id17">Standard Functions</a><a class="headerlink" href="#standard-functions" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>This set of compatibility functions offers support for a few
-standard functions in PHP that otherwise require a newer PHP version.</p>
-<div class="section" id="id5">
-<h3><a class="toc-backref" href="#id18">Dependencies</a><a class="headerlink" href="#id5" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<div class="section" id="id14">
+<h2><a class="toc-backref" href="#id27">標準関数</a><a class="headerlink" href="#id14" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>この互換関数のセットは、本来新しい
+PHP バージョンを必要とする PHP 標準関数のいくらかをサポートします。</p>
+<div class="section" id="id15">
+<h3><a class="toc-backref" href="#id28">依存関係</a><a class="headerlink" href="#id15" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <ul class="simple">
-<li>None</li>
+<li>なし</li>
 </ul>
 </div>
-<div class="section" id="id6">
-<h3><a class="toc-backref" href="#id19">Function reference</a><a class="headerlink" href="#id6" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<div class="section" id="id16">
+<h3><a class="toc-backref" href="#id29">関数リファレンス</a><a class="headerlink" href="#id16" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <dl class="function">
 <dt id="array_column">
 <tt class="descname">array_column</tt><big>(</big><em>array $array</em>, <em>$column_key</em><span class="optional">[</span>, <em>$index_key = NULL</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#array_column" title="この定義へのパーマリンク">¶</a></dt>
@@ -801,13 +801,13 @@ standard functions in PHP that otherwise require a newer PHP version.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">パラメタ:</th><td class="field-body"><ul class="first simple">
-<li><strong>$array</strong> (<em>array</em>) &#8211; Array to fetch results from</li>
-<li><strong>$column_key</strong> (<em>mixed</em>) &#8211; Key of the column to return values from</li>
-<li><strong>$index_key</strong> (<em>mixed</em>) &#8211; Key to use for the returned values</li>
+<li><strong>$array</strong> (<em>array</em>) &#8211; 値を取り出したい配列</li>
+<li><strong>$column_key</strong> (<em>mixed</em>) &#8211; 返したいカラムのキー</li>
+<li><strong>$index_key</strong> (<em>mixed</em>) &#8211; 返す配列のキーに使うカラム</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body"><p class="first">An array of values representing a single column from the input array</p>
+<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body"><p class="first">入力配列から抽出した単独のカラムの配列</p>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name">戻り値の型:</th><td class="field-body"><p class="first last">array</p>
@@ -815,8 +815,8 @@ standard functions in PHP that otherwise require a newer PHP version.</p>
 </tr>
 </tbody>
 </table>
-<p>For more information, please refer to the <a class="reference external" href="http://php.net/array_column">PHP manual for
-array_column()</a>.</p>
+<p>詳しくは
+<a class="reference external" href="http://php.net/array_column">array_column() の PHP マニュアル</a> を参照してください。</p>
 </dd></dl>
 
 <dl class="function">
@@ -827,12 +827,12 @@ array_column()</a>.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">パラメタ:</th><td class="field-body"><ul class="first simple">
-<li><strong>$array1</strong> (<em>array</em>) &#8211; Array in which to replace elements</li>
-<li><strong>...</strong> (<em>array</em>) &#8211; Array (or multiple ones) from which to extract elements</li>
+<li><strong>$array1</strong> (<em>array</em>) &#8211; 要素を置き換えたい配列</li>
+<li><strong>...</strong> (<em>array</em>) &#8211; 置き換える配列 (または複数のそれ)</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body"><p class="first">Modified array</p>
+<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body"><p class="first">編集された配列</p>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name">戻り値の型:</th><td class="field-body"><p class="first last">array</p>
@@ -840,8 +840,8 @@ array_column()</a>.</p>
 </tr>
 </tbody>
 </table>
-<p>For more information, please refer to the <a class="reference external" href="http://php.net/array_replace">PHP manual for
-array_replace()</a>.</p>
+<p>詳しくは
+<a class="reference external" href="http://php.net/array_replace">array_replace() の PHP マニュアル</a> を参照してください。</p>
 </dd></dl>
 
 <dl class="function">
@@ -852,12 +852,12 @@ array_replace()</a>.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">パラメタ:</th><td class="field-body"><ul class="first simple">
-<li><strong>$array1</strong> (<em>array</em>) &#8211; Array in which to replace elements</li>
-<li><strong>...</strong> (<em>array</em>) &#8211; Array (or multiple ones) from which to extract elements</li>
+<li><strong>$array1</strong> (<em>array</em>) &#8211; 要素を置き換えたい配列</li>
+<li><strong>...</strong> (<em>array</em>) &#8211; 引き抜きたい要素を持つ配列 (または複数のそれ)</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body"><p class="first">Modified array</p>
+<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body"><p class="first">編集された配列</p>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name">戻り値の型:</th><td class="field-body"><p class="first last">array</p>
@@ -865,12 +865,12 @@ array_replace()</a>.</p>
 </tr>
 </tbody>
 </table>
-<p>For more information, please refer to the <a class="reference external" href="http://php.net/array_replace_recursive">PHP manual for
-array_replace_recursive()</a>.</p>
+<p>詳しくは
+<a class="reference external" href="http://php.net/array_replace_recursive">array_replace_recursive() の PHP マニュアル</a> を参照してください。</p>
 <div class="admonition important">
 <p class="first admonition-title">重要</p>
-<p class="last">Only PHP&#8217;s native function can detect endless recursion.
-Unless you are running PHP 5.3+, be careful with references!</p>
+<p class="last">PHP のネイティブ関数だけが無限再帰を検出することができます。
+PHP 5.3 以上でないならば、参照に注意してください！</p>
 </div>
 </dd></dl>
 
@@ -882,11 +882,11 @@ Unless you are running PHP 5.3+, be careful with references!</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">パラメタ:</th><td class="field-body"><ul class="first simple">
-<li><strong>$data</strong> (<em>array</em>) &#8211; Hexadecimal representation of data</li>
+<li><strong>$data</strong> (<em>array</em>) &#8211; 十六進表現のデータ</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body"><p class="first">Binary representation of the given data</p>
+<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body"><p class="first">バイナリ表現にしたデータ</p>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name">戻り値の型:</th><td class="field-body"><p class="first last">string</p>
@@ -894,7 +894,7 @@ Unless you are running PHP 5.3+, be careful with references!</p>
 </tr>
 </tbody>
 </table>
-<p>For more information, please refer to the <a class="reference external" href="http://php.net/hex2bin">PHP manual for hex2bin()</a>.</p>
+<p>詳しくは <a class="reference external" href="http://php.net/hex2bin">hex2bin() の PHP マニュアル</a> を参照してください。</p>
 </dd></dl>
 
 <dl class="function">
@@ -905,11 +905,11 @@ Unless you are running PHP 5.3+, be careful with references!</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">パラメタ:</th><td class="field-body"><ul class="first simple">
-<li><strong>$str</strong> (<em>string</em>) &#8211; Input string</li>
+<li><strong>$str</strong> (<em>string</em>) &#8211; 入力文字列</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body"><p class="first">8bit-encoded string</p>
+<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body"><p class="first">8 ビットエンコードされた文字列</p>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name">戻り値の型:</th><td class="field-body"><p class="first last">string</p>
@@ -917,8 +917,8 @@ Unless you are running PHP 5.3+, be careful with references!</p>
 </tr>
 </tbody>
 </table>
-<p>For more information, please refer to the <a class="reference external" href="http://php.net/quoted_printable_encode">PHP manual for
-quoted_printable_encode()</a>.</p>
+<p>詳しくは
+<a class="reference external" href="http://php.net/quoted_printable_encode">quoted_printable_encode() の PHP マニュアル</a> を参照してください。</p>
 </dd></dl>
 
 </div>
