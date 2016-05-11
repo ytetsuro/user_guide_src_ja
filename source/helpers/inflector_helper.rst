@@ -51,8 +51,8 @@
 	:returns:	Camelized string
 	:rtype:	string
 
-	スペースまたはアンダースコアで区切られた語句をキャメル記法に変換します
-	。例::
+	スペースまたはアンダースコアで区切られた語句をキャメル記法に変換します。
+	例::
 
 		echo camelize('my_dog_spot'); // 'myDogSpot' を返します
 
@@ -62,8 +62,8 @@
 	:returns:	String containing underscores instead of spaces
 	:rtype:	string
 
-	スペースで区切られた複数の単語を取り出して、アンダースコアでつなぎます
-	。例::
+	スペースで区切られた複数の単語を取り出して、アンダースコアでつなぎます。
+	例::
 
 		echo underscore('my dog spot'); // 'my_dog_spot' を返します
 
@@ -74,8 +74,8 @@
 	:returns:	Humanized string
 	:rtype:	string
 
-	アンダースコアで区切られた複数の単語を取り出して、スペースでつなぎます
-	。各単語は大文字ではじめられます。
+	アンダースコアで区切られた複数の単語を取り出して、スペースでつなぎます。
+	各単語は大文字ではじめられます。
 
 	例::
 

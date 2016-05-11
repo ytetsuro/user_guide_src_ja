@@ -1,6 +1,6 @@
-###########
+#############
 ファイルヘルパー
-###########
+#############
 
 ファイルヘルパーのファイルは、ファイルを処理するのに役立つ関数で構成さ
 れます。
@@ -47,8 +47,8 @@
 	.. note:: This function is DEPRECATED. Use the native ``file_get_contents()``
 		instead.
 
-	.. important:: サーバで **open_basedir** の制限が有効になっている場合、 呼び出したスクリ
-		プトより上の階層にあるファイルにアクセスしようとするとき、このメソッド
+	.. important:: サーバで **open_basedir** の制限が有効になっている場合、 呼び出したスクリプト
+		より上の階層にあるファイルにアクセスしようとするとき、このメソッド
 		は動作しないかもしれません。
 
 .. php:function:: write_file($path, $data[, $mode = 'wb'])
@@ -59,8 +59,8 @@
 	:returns:	TRUE if the write was successful, FALSE in case of an error
 	:rtype:	bool
 
-	パスで指定されたファイルにデータを書き込みます。 ファイルが存在しない場
-	合には、このメソッドによってファイルが作成されます。
+	パスで指定されたファイルにデータを書き込みます。 ファイルが存在しない場合には、
+	このメソッドによってファイルが作成されます。
 
 	例::
 
@@ -121,9 +121,9 @@
 	:returns:	An array of file names
 	:rtype:	array
 
-	サーバパスを入力として、そのパスに含まれる全ファイル名の配列を返します
-	。 オプションで、第2引数を TRUE
-	に設定すると、ファイルのパスがファイル名に付加されます。
+	サーバパスを入力として、そのパスに含まれる全ファイル名の配列を返します。
+	オプションで、第2引数を TRUE に設定すると、
+	ファイルのパスがファイル名に付加されます。
 
 	例::
 
@@ -136,8 +136,8 @@
 	:returns:	An array containing info on the supplied directory's contents
 	:rtype:	array
 
-	指定されたディレクトリを読み、ファイル名、ファイルサイズ、日付、パーミ
-	ッションから成る配列を作ります。 指定ファイル以下のサブフォルダは、第2引数を FALSE
+	指定されたディレクトリを読み、ファイル名、ファイルサイズ、日付、パーミッション
+	から成る配列を作ります。 指定ファイル以下のサブフォルダは、第2引数を FALSE
 	に指定した場合のみすべて同様に読まれます。
 
 	例::
@@ -164,18 +164,18 @@
 	:returns:	MIME type string or FALSE on failure
 	:rtype:	string
 
-	*config/mimes.php* にある設定を元にファイル拡張子を  MIME
-	タイプに変換します。タイプが分からないときや MIME
-	設定ファイルが開けなかったときは FALSE を返します。
+	*config/mimes.php* にある設定を元にファイル拡張子を  MIMEタイプ
+	に変換します。タイプが分からないときや MIME 設定ファイルが
+	開けなかったときは FALSE を返します。
 
 	::
 
 		$file = 'somefile.png';
 		echo $file.' には以下のmimeタイプがついています '.get_mime_by_extension($file);
 
-	.. note:: この方法は正確にファイルの MIME タイプを判別するものではなく, あく
-		まで簡単に取得するためだけのものです。セキュリティ用には使わないでくだ
-		さい。
+	.. note:: この方法は正確にファイルの MIME タイプを判別するものではなく, 
+		あくまで簡単に取得するためだけのものです。セキュリティ用には
+		使わないでください。
 
 .. php:function:: symbolic_permissions($perms)
 
@@ -183,8 +183,8 @@
 	:returns:	Symbolic permissions string
 	:rtype:	string
 
-	( ``fileperms()`` で返ってくるような) 数字のパーミッションを引数として渡す
-	と、文字列のファイルパーミッションを返します。
+	( ``fileperms()`` で返ってくるような) 数字のパーミッションを引数として渡すと、
+	文字列のファイルパーミッションを返します。
 
 	::
 
@@ -196,8 +196,8 @@
 	:returns:	Octal permissions string
 	:rtype:	string
 
-	( ``fileperms()`` で返ってくるような) 数字のパーミッションを引数として渡す
-	と、8進数3文字のファイルパーミッションを返します。
+	( ``fileperms()`` で返ってくるような) 数字のパーミッションを引数として渡すと、
+	8進数3文字のファイルパーミッションを返します。
 
 	::
 
