@@ -1,6 +1,6 @@
-##########
-URL Helper
-##########
+############
+URL ヘルパー
+############
 
 URL ヘルパーファイルは、URL を処理するのに役立つ関数で構成されています。
 
@@ -12,16 +12,17 @@ URL ヘルパーファイルは、URL を処理するのに役立つ関数で構
   <div class="custom-index container"></div>
 
 ヘルパーのロード
-===================
+================
 
 このヘルパーは次のコードを使ってロードします::
 
 	$this->load->helper('url');
 
-次の関数が利用できます:
 
 利用できる機能
-===================
+==============
+
+次の関数が利用できます:
 
 .. php:function:: site_url([$uri = ''[, $protocol = NULL]])
 
@@ -53,7 +54,7 @@ URL ヘルパーファイルは、URL を処理するのに役立つ関数で構
 		echo site_url($segments);
 
 	この関数は ``CI_Config::site_url()`` のエイリアスです。より多くの情報を
-	得るには、:doc:`設定 Library <../libraries/config>` を見てください。
+	得るには、:doc:`設定クラス <../libraries/config>` を見てください。
 
 .. php:function:: base_url($uri = '', $protocol = NULL)
 
@@ -86,7 +87,7 @@ URL ヘルパーファイルは、URL を処理するのに役立つ関数で構
 	*http://example.com/images/icons/edit.png*
 
 	この関数は ``CI_Config::base_url()`` のエイリアスです。より多くの情報を
-	得るには、:doc:`Config Library <../libraries/config>` を見てください。
+	得るには、:doc:`設定クラス<../libraries/config>` を見てください。
 
 .. php:function:: current_url()
 
@@ -116,7 +117,7 @@ URL ヘルパーファイルは、URL を処理するのに役立つ関数で構
 		blog/comments/123
 
 	この関数は ``CI_Config::uri_string()`` のエイリアスです。より多くの情報を
-	得るには、:doc:`Config Library <../libraries/config>` を見てください。
+	得るには、:doc:`設定クラス<../libraries/config>` を見てください。
 
 
 .. php:function:: index_page()
@@ -243,7 +244,7 @@ URL ヘルパーファイルは、URL を処理するのに役立つ関数で構
 
 .. php:function:: auto_link($str, $type = 'both', $popup = FALSE)
 
-	:パラメータ	string	$str: 入力文字
+	:パラメータ	string	$str: 入力文字列
 	:パラメータ	string	$type: リンクタイプ ('email', 'url' or 'both')
 	:パラメータ	bool	$popup: ポップアップリンクを生成するかどうか
 	:返り値:	リンク可能な文字列
@@ -275,9 +276,9 @@ URL ヘルパーファイルは、URL を処理するのに役立つ関数で構
 
 .. php:function:: url_title($str, $separator = '-', $lowercase = FALSE)
 
-	:パラメータ	string	$str: 入力文字
+	:パラメータ	string	$str: 入力文字列
 	:パラメータ	string	$separator: 単語区切り
-	:パラメータ	string	$lowercase: 小文字に変換して出力するかどうか
+	:パラメータ	bool	$lowercase: 小文字に変換して出力するかどうか
 	:返り値:	URL フォーマットの文字列
 	:返り値型:	string
 
