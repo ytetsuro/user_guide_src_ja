@@ -1,6 +1,6 @@
-##############
+##################
 キャプチャ ヘルパー
-##############
+##################
 
 CAPTCHA ヘルパーのファイルは、CAPTCHA
 画像を作成するのに役立つ関数で構成されています。
@@ -51,13 +51,15 @@ CAPTCHA ヘルパーのファイルは、CAPTCHA
 
 -  captcha 関数は GD 画像ライブラリを必要とします。
 -  **img_path** と **img_url** は必須です。
--  **word** が指定されない場合、ランダムな ASCII 文字列が生成されます。
+-  **word** が指定されない場合、
+   ランダムな ASCII 文字列が生成されます。
    自前の辞書を使用しても良いでしょう。
 -  TRUE TYPE フォントのパスが指定されない場合、標準の見苦しい GD
    フォントが使用されます。
 -  "captcha" ディレクトリは書込可能でなければなりません。
 -  **expiration** (単位: 秒) は有効期限で、 captcha
-   ディレクトリから削除されるまでの時間です。 デフォルトでは2時間です。
+   ディレクトリから削除されるまでの時間です。
+   デフォルトでは2時間です。
 -  **word_length** defaults to 8, **pool** defaults to '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
 -  **font_size** defaults to 16, the native GD font has a size limit. Specify a "true type" font for bigger sizes.
 -  The **img_id** will be set as the "id" of the captcha image.
@@ -69,7 +71,8 @@ CAPTCHA ヘルパーのファイルは、CAPTCHA
 第三者に送信されるのを防ぐために、 ``create_captcha()``
 関数が返す情報をデータベースに格納します。
 そして、利用者によりフォームからデータが送信されると、
-データが存在することと、 期限が切れていないことを検証します。
+データが存在することと、 
+期限が切れていないことを検証します。
 
  テーブルの定義::
 
@@ -82,7 +85,8 @@ CAPTCHA ヘルパーのファイルは、CAPTCHA
 		KEY `word` (`word`)
 	);
 
-データベースと組み合わせた際の例です。キャプチャを表示するページの例::
+データベースと組み合わせた際の例です。
+キャプチャを表示するページの例::
 
 	$this->load->helper('captcha');
 	$vals = array(     
@@ -136,8 +140,9 @@ CAPTCHA ヘルパーのファイルは、CAPTCHA
 	:returns:	array('word' => $word, 'time' => $now, 'image' => $img)
 	:rtype:	array
 
-	入力として引数に CAPTCHA 生成のための情報を配列で受け取り、指定された
-	画像を生成し、生成された画像に関するデータの連想配列を返します。
+	入力として引数に CAPTCHA 生成のための情報を配列で受け取り、
+	指定された画像を生成し、生成された画像に関するデータの
+	連想配列を返します。
 
 	::
 
@@ -151,8 +156,8 @@ CAPTCHA ヘルパーのファイルは、CAPTCHA
 
 		<img src="http://example.com/captcha/12345.jpg" width="140" height="50" />
 
-	**time** はマイクロ秒でのタイプスタンプで、拡張子を除いた部分の画像のフ
-	ァイル名として使われます。 このような数字になります: 1139612155.3422
+	**time** はマイクロ秒でのタイプスタンプで、拡張子を除いた部分の画像の
+	ファイル名として使われます。 このような数字になります: 1139612155.3422
 
 	**word** はキャプチャ画像に表示される単語で、指定されない場合は
 	ランダムな文字列になります。
