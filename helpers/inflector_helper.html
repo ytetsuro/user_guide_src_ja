@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Inflector Helper &mdash; CodeIgniter 3.1.0-dev ドキュメント</title>
+  <title>語形変換ヘルパー &mdash; CodeIgniter 3.1.0-dev ドキュメント</title>
   
 
   
@@ -183,10 +183,10 @@
 <li class="toctree-l2"><a class="reference internal" href="directory_helper.html">ディレクトリヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="download_helper.html">ダウンロードヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="email_helper.html">Email ヘルパー</a></li>
-<li class="toctree-l2"><a class="reference internal" href="file_helper.html">File Helper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_helper.html">ファイルヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="form_helper.html">Form Helper</a></li>
 <li class="toctree-l2"><a class="reference internal" href="html_helper.html">HTML Helper</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="">Inflector Helper</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">語形変換ヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="language_helper.html">Language Helper</a></li>
 <li class="toctree-l2"><a class="reference internal" href="number_helper.html">Number Helper</a></li>
 <li class="toctree-l2"><a class="reference internal" href="path_helper.html">Path Helper</a></li>
@@ -195,8 +195,8 @@
 <li class="toctree-l2"><a class="reference internal" href="string_helper.html">String Helper</a></li>
 <li class="toctree-l2"><a class="reference internal" href="text_helper.html">Text Helper</a></li>
 <li class="toctree-l2"><a class="reference internal" href="typography_helper.html">タイポグラフィーヘルパー</a></li>
-<li class="toctree-l2"><a class="reference internal" href="url_helper.html">URL Helper</a></li>
-<li class="toctree-l2"><a class="reference internal" href="xml_helper.html">XML Helper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="url_helper.html">URL ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="xml_helper.html">XML ヘルパー</a></li>
 </ul>
 </li>
 </ul>
@@ -369,10 +369,10 @@
 <li class="toctree-l2"><a class="reference internal" href="directory_helper.html">ディレクトリヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="download_helper.html">ダウンロードヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="email_helper.html">Email ヘルパー</a></li>
-<li class="toctree-l2"><a class="reference internal" href="file_helper.html">File Helper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_helper.html">ファイルヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="form_helper.html">Form Helper</a></li>
 <li class="toctree-l2"><a class="reference internal" href="html_helper.html">HTML Helper</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="">Inflector Helper</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">語形変換ヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="language_helper.html">Language Helper</a></li>
 <li class="toctree-l2"><a class="reference internal" href="number_helper.html">Number Helper</a></li>
 <li class="toctree-l2"><a class="reference internal" href="path_helper.html">Path Helper</a></li>
@@ -381,8 +381,8 @@
 <li class="toctree-l2"><a class="reference internal" href="string_helper.html">String Helper</a></li>
 <li class="toctree-l2"><a class="reference internal" href="text_helper.html">Text Helper</a></li>
 <li class="toctree-l2"><a class="reference internal" href="typography_helper.html">タイポグラフィーヘルパー</a></li>
-<li class="toctree-l2"><a class="reference internal" href="url_helper.html">URL Helper</a></li>
-<li class="toctree-l2"><a class="reference internal" href="xml_helper.html">XML Helper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="url_helper.html">URL ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="xml_helper.html">XML ヘルパー</a></li>
 </ul>
 </li>
 </ul>
@@ -411,7 +411,7 @@
       
         <li><a href="index.html">ヘルパー</a> &raquo;</li>
       
-    <li>Inflector Helper</li>
+    <li>語形変換ヘルパー</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -424,26 +424,26 @@
 </div>
           <div role="main" class="document">
             
-  <div class="section" id="inflector-helper">
-<h1>Inflector Helper<a class="headerlink" href="#inflector-helper" title="このヘッドラインへのパーマリンク">¶</a></h1>
-<p>The Inflector Helper file contains functions that permits you to change
-words to plural, singular, camel case, etc.</p>
+  <div class="section" id="id1">
+<h1>語形変換ヘルパー<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>語形変換ヘルパーのファイルには、語句を複数形、単数形、キャメル記法など
+に変換できる関数が含まれます。</p>
 <div class="contents local topic" id="contents">
 <ul class="simple">
-<li><a class="reference internal" href="#loading-this-helper" id="id2">Loading this Helper</a></li>
-<li><a class="reference internal" href="#id1" id="id3">利用できる機能</a></li>
+<li><a class="reference internal" href="#id2" id="id4">ヘルパーのロード</a></li>
+<li><a class="reference internal" href="#id3" id="id5">利用できる機能</a></li>
 </ul>
 </div>
-<div class="custom-index container"></div><div class="section" id="loading-this-helper">
-<h2><a class="toc-backref" href="#id2">Loading this Helper</a><a class="headerlink" href="#loading-this-helper" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>This helper is loaded using the following code:</p>
+<div class="custom-index container"></div><div class="section" id="id2">
+<h2><a class="toc-backref" href="#id4">ヘルパーのロード</a><a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>このヘルパーは次のコードを使ってロードします:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">helper</span><span class="p">(</span><span class="s1">&#39;inflector&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
-<div class="section" id="id1">
-<h2><a class="toc-backref" href="#id3">利用できる機能</a><a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>The following functions are available:</p>
+<div class="section" id="id3">
+<h2><a class="toc-backref" href="#id5">利用できる機能</a><a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>次の関数が利用できます:</p>
 <dl class="function">
 <dt id="singular">
 <tt class="descname">singular</tt><big>(</big><em>$str</em><big>)</big><a class="headerlink" href="#singular" title="この定義へのパーマリンク">¶</a></dt>
@@ -464,8 +464,8 @@ words to plural, singular, camel case, etc.</p>
 </tr>
 </tbody>
 </table>
-<p>Changes a plural word to singular. Example:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">echo</span> <span class="nx">singular</span><span class="p">(</span><span class="s1">&#39;dogs&#39;</span><span class="p">);</span> <span class="c1">// Prints &#39;dog&#39;</span>
+<p>複数形の単語を単数形に変換します。例:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">echo</span> <span class="nx">singular</span><span class="p">(</span><span class="s1">&#39;dogs&#39;</span><span class="p">);</span> <span class="c1">// &#39;dog&#39; を返します</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -490,8 +490,8 @@ words to plural, singular, camel case, etc.</p>
 </tr>
 </tbody>
 </table>
-<p>Changes a singular word to plural. Example:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">echo</span> <span class="nx">plural</span><span class="p">(</span><span class="s1">&#39;dog&#39;</span><span class="p">);</span> <span class="c1">// Prints &#39;dogs&#39;</span>
+<p>単数形の単語を複数形に変換します。例:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">echo</span> <span class="nx">plural</span><span class="p">(</span><span class="s1">&#39;dog&#39;</span><span class="p">);</span> <span class="c1">// &#39;dogs&#39; を返します</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -516,9 +516,9 @@ words to plural, singular, camel case, etc.</p>
 </tr>
 </tbody>
 </table>
-<p>Changes a string of words separated by spaces or underscores to camel
-case. Example:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">echo</span> <span class="nx">camelize</span><span class="p">(</span><span class="s1">&#39;my_dog_spot&#39;</span><span class="p">);</span> <span class="c1">// Prints &#39;myDogSpot&#39;</span>
+<p>スペースまたはアンダースコアで区切られた語句をキャメル記法に変換します。
+例:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">echo</span> <span class="nx">camelize</span><span class="p">(</span><span class="s1">&#39;my_dog_spot&#39;</span><span class="p">);</span> <span class="c1">// &#39;myDogSpot&#39; を返します</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -543,9 +543,9 @@ case. Example:</p>
 </tr>
 </tbody>
 </table>
-<p>Takes multiple words separated by spaces and underscores them.
-Example:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">echo</span> <span class="nx">underscore</span><span class="p">(</span><span class="s1">&#39;my dog spot&#39;</span><span class="p">);</span> <span class="c1">// Prints &#39;my_dog_spot&#39;</span>
+<p>スペースで区切られた複数の単語を取り出して、アンダースコアでつなぎます。
+例:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">echo</span> <span class="nx">underscore</span><span class="p">(</span><span class="s1">&#39;my dog spot&#39;</span><span class="p">);</span> <span class="c1">// &#39;my_dog_spot&#39; を返します</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -571,10 +571,10 @@ Example:</p>
 </tr>
 </tbody>
 </table>
-<p>Takes multiple words separated by underscores and adds spaces between
-them. Each word is capitalized.</p>
-<p>Example:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">echo</span> <span class="nx">humanize</span><span class="p">(</span><span class="s1">&#39;my_dog_spot&#39;</span><span class="p">);</span> <span class="c1">// Prints &#39;My Dog Spot&#39;</span>
+<p>アンダースコアで区切られた複数の単語を取り出して、スペースでつなぎます。
+各単語は大文字ではじめられます。</p>
+<p>例:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">echo</span> <span class="nx">humanize</span><span class="p">(</span><span class="s1">&#39;my_dog_spot&#39;</span><span class="p">);</span> <span class="c1">// &#39;My Dog Spot&#39;を返します</span>
 </pre></div>
 </div>
 <p>To use dashes instead of underscores:</p>
@@ -631,7 +631,7 @@ them. Each word is capitalized.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2016, British Columbia Institute of Technology.
-      最終更新: May 11, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>
+      最終更新: May 12, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>
     </p>
   </div>
 
