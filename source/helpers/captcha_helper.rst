@@ -108,7 +108,8 @@ CAPTCHA ヘルパーのファイルは、CAPTCHA
 	echo $cap['image'];
 	echo '<input type="text" name="captcha" value="" />';
 
-送信を受け付けるページの例::
+送信を受け付けるページの
+例::
 
 	// 期限切れのキャプチャを削除
 	$expiration = time() - 7200; // Two hour limit
