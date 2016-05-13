@@ -501,8 +501,8 @@ this function over PHP&#8217;s <tt class="docutils literal"><span class="pre">ti
 <p>この関数は、%Y %m %d のように各コードの前に % がついている MySQL
 スタイルの日付コードを利用可能なこと以外は、 PHP の <a class="reference external" href="http://www.php.net/date">date()</a> 関数と同じです。</p>
 <p>日付をこの方法で扱う利点は、date()
-関数を使った時には通常しなければならない、 日付コードでない文字列のエ
-スケープ処理について考慮する必要がないという点です。</p>
+関数を使った時には通常しなければならない、 日付コードでない文字列の
+エスケープ処理について考慮する必要がないという点です。</p>
 <p>例:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$datestring</span> <span class="o">=</span> <span class="s1">&#39;Year: %Y Month: %m Day: %d - %h:%i %a&#39;</span><span class="p">;</span>
 <span class="nv">$time</span> <span class="o">=</span> <span class="nb">time</span><span class="p">();</span>
@@ -657,9 +657,9 @@ instead:</p>
 </tr>
 </tbody>
 </table>
-<p>UNIX タイムスタンプ (グリニッジ標準時を指します) を入力として、 渡され
-たタイムゾーンとサマータイム適用区分にもとづいて、その地域の時刻に変換
-します。</p>
+<p>UNIX タイムスタンプ (グリニッジ標準時を指します) を入力として、
+渡されたタイムゾーンとサマータイム適用区分にもとづいて、その地域の時刻に
+変換します。</p>
 <p>例:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$timestamp</span> <span class="o">=</span> <span class="mi">1140153693</span><span class="p">;</span>
 <span class="nv">$timezone</span>  <span class="o">=</span> <span class="s1">&#39;UM8&#39;</span><span class="p">;</span>
@@ -722,16 +722,16 @@ instead:</p>
 </tr>
 </tbody>
 </table>
-<p>UNIXタイムスタンプを入力として、次の例のように、人間が読める形式で返し
-ます:</p>
+<p>UNIXタイムスタンプを入力として、次の例のように、人間が読める形式で
+返します:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nx">YYYY</span><span class="o">-</span><span class="nx">MM</span><span class="o">-</span><span class="nx">DD</span> <span class="nx">HH</span><span class="o">:</span><span class="nx">MM</span><span class="o">:</span><span class="nx">SS</span> <span class="nx">AM</span><span class="o">/</span><span class="nx">PM</span>
 </pre></div>
 </div>
-<p>これは、フォームの送信のために、フォームフィールドに表示したい場合に役
-立ちます。</p>
-<p>時間は、秒の部分をつける形式とつけない形式にフォーマットでき、ヨーロッ
-パ形式またはアメリカ形式にセットできます。 タイムスタンプだけが渡され
-た時は、秒の部分がない形式で、アメリカ形式にフォーマットされます。</p>
+<p>これは、フォームの送信のために、フォームフィールドに表示したい場合に
+役立ちます。</p>
+<p>時間は、秒の部分をつける形式とつけない形式にフォーマットでき、
+ヨーロッパ形式またはアメリカ形式にセットできます。 タイムスタンプだけが
+渡された時は、秒の部分がない形式で、アメリカ形式にフォーマットされます。</p>
 <p>例:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$now</span> <span class="o">=</span> <span class="nb">time</span><span class="p">();</span>
 <span class="k">echo</span> <span class="nx">unix_to_human</span><span class="p">(</span><span class="nv">$now</span><span class="p">);</span> <span class="c1">// 秒なしのアメリカ形式</span>
@@ -796,9 +796,9 @@ date string passed to it is not formatted as indicated above.</p>
 </table>
 <p>この関数は不完全な日付フォーマットの数字を引数に取り、有用な形式に変換
 します。正しい日付フォーマットを引数に取ることもできます。</p>
-<p>デフォルトでは UNIX タイムスタンプを返します。オプションとして、第2引
-数にフォーマット文字列( PHP の date
-関数が引き受けるものと同じ)を渡すことができます。</p>
+<p>デフォルトでは UNIX タイムスタンプを返します。オプションとして、
+第2引数にフォーマット文字列( PHP の date 関数が引き受けるものと同じ)
+を渡すことができます。</p>
 <p>例:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$bad_date</span> <span class="o">=</span> <span class="s1">&#39;199605&#39;</span><span class="p">;</span>
 <span class="c1">// 次の日付を生成: 1996-05-01</span>
@@ -1027,8 +1027,8 @@ it is available.</p>
         </select>
 </form><p>このメニューは、ユーザごとのローカル時間ををセットできる会員制サイトの
 場合に使えます。</p>
-<p>第1引数で、メニューの &#8220;選択(selected)&#8221; 状態 を指定します。たとえば、太
-平洋標準時をデフォルト値にセットしたい場合は、次のようにします:</p>
+<p>第1引数で、メニューの &#8220;選択(selected)&#8221; 状態 を指定します。たとえば、
+太平洋標準時をデフォルト値にセットしたい場合は、次のようにします:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">echo</span> <span class="nx">timezone_menu</span><span class="p">(</span><span class="s1">&#39;UM8&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
@@ -1202,7 +1202,7 @@ language/&lt;あなたの言語&gt;/date_lang.php</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2016, British Columbia Institute of Technology.
-      最終更新: May 12, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>
+      最終更新: May 13, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>
     </p>
   </div>
 

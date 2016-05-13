@@ -477,13 +477,15 @@
 <ul class="simple">
 <li>captcha 関数は GD 画像ライブラリを必要とします。</li>
 <li><strong>img_path</strong> と <strong>img_url</strong> は必須です。</li>
-<li><strong>word</strong> が指定されない場合、ランダムな ASCII 文字列が生成されます。
+<li><strong>word</strong> が指定されない場合、
+ランダムな ASCII 文字列が生成されます。
 自前の辞書を使用しても良いでしょう。</li>
 <li>TRUE TYPE フォントのパスが指定されない場合、標準の見苦しい GD
 フォントが使用されます。</li>
 <li>&#8220;captcha&#8221; ディレクトリは書込可能でなければなりません。</li>
 <li><strong>expiration</strong> (単位: 秒) は有効期限で、 captcha
-ディレクトリから削除されるまでの時間です。 デフォルトでは2時間です。</li>
+ディレクトリから削除されるまでの時間です。
+デフォルトでは2時間です。</li>
 <li><strong>word_length</strong> defaults to 8, <strong>pool</strong> defaults to &#8216;0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ&#8217;</li>
 <li><strong>font_size</strong> defaults to 16, the native GD font has a size limit. Specify a &#8220;true type&#8221; font for bigger sizes.</li>
 <li>The <strong>img_id</strong> will be set as the &#8220;id&#8221; of the captcha image.</li>
@@ -494,7 +496,8 @@
 <p>第三者に送信されるのを防ぐために、 <tt class="docutils literal"><span class="pre">create_captcha()</span></tt>
 関数が返す情報をデータベースに格納します。
 そして、利用者によりフォームからデータが送信されると、
-データが存在することと、 期限が切れていないことを検証します。</p>
+データが存在することと、
+期限が切れていないことを検証します。</p>
 <blockquote>
 <div><p>テーブルの定義:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nx">CREATE</span> <span class="nx">TABLE</span> <span class="nx">captcha</span> <span class="p">(</span>
@@ -508,7 +511,8 @@
 </pre></div>
 </div>
 </div></blockquote>
-<p>データベースと組み合わせた際の例です。キャプチャを表示するページの例:</p>
+<p>データベースと組み合わせた際の例です。
+キャプチャを表示するページの例:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">helper</span><span class="p">(</span><span class="s1">&#39;captcha&#39;</span><span class="p">);</span>
 <span class="nv">$vals</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
         <span class="s1">&#39;img_path&#39;</span>      <span class="o">=&gt;</span> <span class="s1">&#39;./captcha/&#39;</span><span class="p">,</span>
@@ -530,7 +534,8 @@
 <span class="k">echo</span> <span class="s1">&#39;&lt;input type=&quot;text&quot; name=&quot;captcha&quot; value=&quot;&quot; /&gt;&#39;</span><span class="p">;</span>
 </pre></div>
 </div>
-<p>送信を受け付けるページの例:</p>
+<p>送信を受け付けるページの
+例:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="c1">// 期限切れのキャプチャを削除</span>
 <span class="nv">$expiration</span> <span class="o">=</span> <span class="nb">time</span><span class="p">()</span> <span class="o">-</span> <span class="mi">7200</span><span class="p">;</span> <span class="c1">// Two hour limit</span>
 <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">where</span><span class="p">(</span><span class="s1">&#39;captcha_time &lt; &#39;</span><span class="p">,</span> <span class="nv">$expiration</span><span class="p">)</span>
@@ -576,8 +581,9 @@
 </tr>
 </tbody>
 </table>
-<p>入力として引数に CAPTCHA 生成のための情報を配列で受け取り、指定された
-画像を生成し、生成された画像に関するデータの連想配列を返します。</p>
+<p>入力として引数に CAPTCHA 生成のための情報を配列で受け取り、
+指定された画像を生成し、生成された画像に関するデータの
+連想配列を返します。</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">array</span><span class="p">(</span>
         <span class="s1">&#39;image&#39;</span> <span class="o">=&gt;</span> <span class="nx">IMAGE</span> <span class="nx">TAG</span>
         <span class="s1">&#39;time&#39;</span>  <span class="o">=&gt;</span> <span class="nx">TIMESTAMP</span> <span class="p">(</span><span class="nx">マイクロ秒まで含む</span><span class="p">)</span>
@@ -589,8 +595,8 @@
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="nx">img</span> <span class="nx">src</span><span class="o">=</span><span class="s2">&quot;http://example.com/captcha/12345.jpg&quot;</span> <span class="nx">width</span><span class="o">=</span><span class="s2">&quot;140&quot;</span> <span class="nx">height</span><span class="o">=</span><span class="s2">&quot;50&quot;</span> <span class="o">/&gt;</span>
 </pre></div>
 </div>
-<p><strong>time</strong> はマイクロ秒でのタイプスタンプで、拡張子を除いた部分の画像のフ
-ァイル名として使われます。 このような数字になります: 1139612155.3422</p>
+<p><strong>time</strong> はマイクロ秒でのタイプスタンプで、拡張子を除いた部分の画像の
+ファイル名として使われます。 このような数字になります: 1139612155.3422</p>
 <p><strong>word</strong> はキャプチャ画像に表示される単語で、指定されない場合は
 ランダムな文字列になります。</p>
 </dd></dl>
@@ -617,7 +623,7 @@
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2016, British Columbia Institute of Technology.
-      最終更新: May 12, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>
+      最終更新: May 13, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>
     </p>
   </div>
 
