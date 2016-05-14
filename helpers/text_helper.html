@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Text Helper &mdash; CodeIgniter 3.1.0-dev ドキュメント</title>
+  <title>テキストヘルパー &mdash; CodeIgniter 3.1.0-dev ドキュメント</title>
   
 
   
@@ -193,7 +193,7 @@
 <li class="toctree-l2"><a class="reference internal" href="security_helper.html">Security Helper</a></li>
 <li class="toctree-l2"><a class="reference internal" href="smiley_helper.html">Smiley Helper</a></li>
 <li class="toctree-l2"><a class="reference internal" href="string_helper.html">String Helper</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="">Text Helper</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">テキストヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="typography_helper.html">タイポグラフィーヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="url_helper.html">URL ヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="xml_helper.html">XML ヘルパー</a></li>
@@ -379,7 +379,7 @@
 <li class="toctree-l2"><a class="reference internal" href="security_helper.html">Security Helper</a></li>
 <li class="toctree-l2"><a class="reference internal" href="smiley_helper.html">Smiley Helper</a></li>
 <li class="toctree-l2"><a class="reference internal" href="string_helper.html">String Helper</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="">Text Helper</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">テキストヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="typography_helper.html">タイポグラフィーヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="url_helper.html">URL ヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="xml_helper.html">XML ヘルパー</a></li>
@@ -411,7 +411,7 @@
       
         <li><a href="index.html">ヘルパー</a> &raquo;</li>
       
-    <li>Text Helper</li>
+    <li>テキストヘルパー</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -424,26 +424,26 @@
 </div>
           <div role="main" class="document">
             
-  <div class="section" id="text-helper">
-<h1>Text Helper<a class="headerlink" href="#text-helper" title="このヘッドラインへのパーマリンク">¶</a></h1>
-<p>The Text Helper file contains functions that assist in working with
-text.</p>
+  <div class="section" id="id1">
+<h1>テキストヘルパー<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>テキストヘルパーのファイルは、テキストを処理するのに役立つ関数で構成さ
+れています。</p>
 <div class="contents local topic" id="contents">
 <ul class="simple">
-<li><a class="reference internal" href="#loading-this-helper" id="id2">Loading this Helper</a></li>
-<li><a class="reference internal" href="#id1" id="id3">利用できる機能</a></li>
+<li><a class="reference internal" href="#id2" id="id4">ヘルパーのロード</a></li>
+<li><a class="reference internal" href="#id3" id="id5">利用できる機能</a></li>
 </ul>
 </div>
-<div class="custom-index container"></div><div class="section" id="loading-this-helper">
-<h2><a class="toc-backref" href="#id2">Loading this Helper</a><a class="headerlink" href="#loading-this-helper" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>This helper is loaded using the following code:</p>
+<div class="custom-index container"></div><div class="section" id="id2">
+<h2><a class="toc-backref" href="#id4">ヘルパーのロード</a><a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>このヘルパーは次のコードを使ってロードします:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">helper</span><span class="p">(</span><span class="s1">&#39;text&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
-<div class="section" id="id1">
-<h2><a class="toc-backref" href="#id3">利用できる機能</a><a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>The following functions are available:</p>
+<div class="section" id="id3">
+<h2><a class="toc-backref" href="#id5">利用できる機能</a><a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>次の関数が利用できます:</p>
 <dl class="function">
 <dt id="word_limiter">
 <tt class="descname">word_limiter</tt><big>(</big><em>$str</em><span class="optional">[</span>, <em>$limit = 100</em><span class="optional">[</span>, <em>$end_char = '&amp;#8230;'</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#word_limiter" title="この定義へのパーマリンク">¶</a></dt>
@@ -452,28 +452,26 @@ text.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">パラメタ:</th><td class="field-body"><ul class="first simple">
-<li><strong>$str</strong> (<em>string</em>) &#8211; Input string</li>
-<li><strong>$limit</strong> (<em>int</em>) &#8211; Limit</li>
-<li><strong>$end_char</strong> (<em>string</em>) &#8211; End character (usually an ellipsis)</li>
+<li><strong>$str</strong> (<em>string</em>) &#8211; 入力文字列</li>
+<li><strong>$limit</strong> (<em>int</em>) &#8211; 表示する単語の上限数</li>
+<li><strong>$end_char</strong> (<em>string</em>) &#8211; 終端文字 (通常省略記号(…) )</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body"><p class="first">Word-limited string</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">戻り値の型:</th><td class="field-body"><p class="first last">string</p>
+<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body"><p class="first last">単語数で制限された文字列
+string</p>
 </td>
 </tr>
 </tbody>
 </table>
-<p>Truncates a string to the number of <em>words</em> specified. Example:</p>
+<p>指定した <em>単語</em> 数で、文字列を切り詰めます。[ 訳注: 英語のように単語の間がスペースで区切られている言語でだけ有効です。日本語では通常、正常に動作しません ]。例:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$string</span> <span class="o">=</span> <span class="s2">&quot;Here is a nice text string consisting of eleven words.&quot;</span><span class="p">;</span>
 <span class="nv">$string</span> <span class="o">=</span> <span class="nx">word_limiter</span><span class="p">(</span><span class="nv">$string</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span>
 <span class="c1">// Returns:  Here is a nice</span>
 </pre></div>
 </div>
-<p>The third parameter is an optional suffix added to the string. By
-default it adds an ellipsis.</p>
+<p>第3引数はオプションで、文字列に付加するサフィックスを指定します。
+デフォルトでは、省略記号(...) が付加されます。</p>
 </dd></dl>
 
 <dl class="function">
@@ -484,35 +482,33 @@ default it adds an ellipsis.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">パラメタ:</th><td class="field-body"><ul class="first simple">
-<li><strong>$str</strong> (<em>string</em>) &#8211; Input string</li>
-<li><strong>$n</strong> (<em>int</em>) &#8211; Number of characters</li>
-<li><strong>$end_char</strong> (<em>string</em>) &#8211; End character (usually an ellipsis)</li>
+<li><strong>$str</strong> (<em>string</em>) &#8211; 入力文字列</li>
+<li><strong>$n</strong> (<em>int</em>) &#8211; 文字数</li>
+<li><strong>$end_char</strong> (<em>string</em>) &#8211; 終端文字 (通常省略記号(…) )</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body"><p class="first">Character-limited string</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">戻り値の型:</th><td class="field-body"><p class="first last">string</p>
+<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body"><p class="first last">文字数で制限された文字列
+string</p>
 </td>
 </tr>
 </tbody>
 </table>
-<p>Truncates a string to the number of <em>characters</em> specified. It
-maintains the integrity of words so the character count may be slightly
-more or less than what you specify.</p>
-<p>Example:</p>
+<p>指定した <em>文字</em> 数の位置で文字列を切り詰めます。単語の途中で切り詰められないようになっていますので、
+文字数は指定したもより少し増えたり減ったりします [ 訳注: 英語のように単語の間がスペースで区切られている言語で
+だけ有効です。日本語では通常、正常に動作しません ]。</p>
+<p>例:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$string</span> <span class="o">=</span> <span class="s2">&quot;Here is a nice text string consisting of eleven words.&quot;</span><span class="p">;</span>
 <span class="nv">$string</span> <span class="o">=</span> <span class="nx">character_limiter</span><span class="p">(</span><span class="nv">$string</span><span class="p">,</span> <span class="mi">20</span><span class="p">);</span>
 <span class="c1">// Returns:  Here is a nice text string</span>
 </pre></div>
 </div>
-<p>The third parameter is an optional suffix added to the string, if
-undeclared this helper uses an ellipsis.</p>
+<p>第3引数はオプションで、文字列に付加するサフィックスを指定します。
+デフォルトでは、省略記号(...) が付加されます。</p>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
-<p class="last">If you need to truncate to an exact number of characters please
-see the <a class="reference internal" href="#ellipsize" title="ellipsize"><tt class="xref php php-func docutils literal"><span class="pre">ellipsize()</span></tt></a> function below.</p>
+<p class="last">正確な文字数で切り詰めたいのであれば、
+以下の <a class="reference internal" href="#ellipsize" title="ellipsize"><tt class="xref php php-func docutils literal"><span class="pre">ellipsize()</span></tt></a>  を見てください。</p>
 </div>
 </dd></dl>
 
@@ -524,26 +520,24 @@ see the <a class="reference internal" href="#ellipsize" title="ellipsize"><tt cl
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">パラメタ:</th><td class="field-body"><ul class="first simple">
-<li><strong>$str</strong> (<em>string</em>) &#8211; Input string</li>
+<li><strong>$str</strong> (<em>string</em>) &#8211; 入力文字列</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body"><p class="first">A string with ASCII values converted to entities</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">戻り値の型:</th><td class="field-body"><p class="first last">string</p>
+<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body"><p class="first last">ASCII 文字コードを HTML エンティティに変換した文字列
+string</p>
 </td>
 </tr>
 </tbody>
 </table>
-<p>Converts ASCII values to character entities, including high ASCII and MS
-Word characters that can cause problems when used in a web page, so that
-they can be shown consistently regardless of browser settings or stored
-reliably in a database. There is some dependence on your server&#8217;s
-supported character sets, so it may not be 100% reliable in all cases,
-but for the most part it should correctly identify characters outside
-the normal range (like accented characters).</p>
-<p>Example:</p>
+<p>Web ページで使用されると問題を起こす拡張 ASCII 文字コードや MS
+ワードの文字を含む、ASCII の値を HTML の文字列エンティティに変換します。
+こうすることで、ブラウザ設定にかかわらずいつも表示させることができ、
+あるいは、データベースに確かな状態で [値を変更して元の情報を失ってしまうことなく] 保存することができます。
+サーバでサポートされる文字セットにいくらか依存しているので、すべてのケースで
+100%の信頼性はありません。 しかし、多くは、通常の範囲の外にある
+文字(たとえばアクセント記号)も正しく認識できます。</p>
+<p>例:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$string</span> <span class="o">=</span> <span class="nx">ascii_to_entities</span><span class="p">(</span><span class="nv">$string</span><span class="p">);</span>
 </pre></div>
 </div>
@@ -557,30 +551,27 @@ the normal range (like accented characters).</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">パラメタ:</th><td class="field-body"><ul class="first simple">
-<li><strong>$str</strong> (<em>string</em>) &#8211; Input string</li>
+<li><strong>$str</strong> (<em>string</em>) &#8211; 入力文字列</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body"><p class="first">A string with accented characters converted</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">戻り値の型:</th><td class="field-body"><p class="first last">string</p>
+<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body"><p class="first last">A string with accented characters converted
+string</p>
 </td>
 </tr>
 </tbody>
 </table>
-<p>Transliterates high ASCII characters to low ASCII equivalents. Useful
-when non-English characters need to be used where only standard ASCII
-characters are safely used, for instance, in URLs.</p>
-<p>Example:</p>
+<p>アクセント記号のついた ASCII 文字列を同等の ASCII 文字列に変換します。
+スタンダードな ASCII 文字列を使用しなければならないところ (例: URL) で英語以外の文字列が使われていた場合に役立ちます。</p>
+<p>例:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$string</span> <span class="o">=</span> <span class="nx">convert_accented_characters</span><span class="p">(</span><span class="nv">$string</span><span class="p">);</span>
 </pre></div>
 </div>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
-<p class="last">This function uses a companion config file
-<cite>application/config/foreign_chars.php</cite> to define the to and
-from array for transliteration.</p>
+<p class="last">このメソッドは変換の際に、設定ファイル
+<cite>application/config/foreign_chars.php</cite> で定義されている
+配列を使用します。</p>
 </div>
 </dd></dl>
 
@@ -592,26 +583,24 @@ from array for transliteration.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">パラメタ:</th><td class="field-body"><ul class="first simple">
-<li><strong>$str</strong> (<em>string</em>) &#8211; Input string</li>
-<li><strong>$censored</strong> (<em>array</em>) &#8211; List of bad words to censor</li>
-<li><strong>$replacement</strong> (<em>string</em>) &#8211; What to replace bad words with</li>
+<li><strong>$str</strong> (<em>string</em>) &#8211; 入力文字列</li>
+<li><strong>$censored</strong> (<em>array</em>) &#8211; 禁止したい単語の配列</li>
+<li><strong>$replacement</strong> (<em>string</em>) &#8211; 禁止したい単語を置き換える文字列</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body"><p class="first">Censored string</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">戻り値の型:</th><td class="field-body"><p class="first last">string</p>
+<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body"><p class="first last">検閲後の文字列
+string</p>
 </td>
 </tr>
 </tbody>
 </table>
-<p>Enables you to censor words within a text string. The first parameter
-will contain the original string. The second will contain an array of
-words which you disallow. The third (optional) parameter can contain
-a replacement value for the words. If not specified they are replaced
-with pound signs: ####.</p>
-<p>Example:</p>
+<p>テキストの文字を検閲できます。第1引数は、元の文字列になります。
+第2引数は、許可しない単語の配列を指定します。第3引数(オプション)は、
+単語を置き換える文字列を指定します。
+指定されない場合は、許可されない文字は、
+ナンバーサインで置き換えられます: ####。</p>
+<p>例:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$disallowed</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span><span class="s1">&#39;darn&#39;</span><span class="p">,</span> <span class="s1">&#39;shucks&#39;</span><span class="p">,</span> <span class="s1">&#39;golly&#39;</span><span class="p">,</span> <span class="s1">&#39;phooey&#39;</span><span class="p">);</span>
 <span class="nv">$string</span> <span class="o">=</span> <span class="nx">word_censor</span><span class="p">(</span><span class="nv">$string</span><span class="p">,</span> <span class="nv">$disallowed</span><span class="p">,</span> <span class="s1">&#39;Beep!&#39;</span><span class="p">);</span>
 </pre></div>
@@ -626,24 +615,22 @@ with pound signs: ####.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">パラメタ:</th><td class="field-body"><ul class="first simple">
-<li><strong>$str</strong> (<em>string</em>) &#8211; Input string</li>
+<li><strong>$str</strong> (<em>string</em>) &#8211; 入力文字列</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body"><p class="first">String with code highlighted via HTML</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">戻り値の型:</th><td class="field-body"><p class="first last">string</p>
+<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body"><p class="first last">HTML をハイライトしたコードを含む文字列
+string</p>
 </td>
 </tr>
 </tbody>
 </table>
-<p>Colorizes a string of code (PHP, HTML, etc.). Example:</p>
+<p>コード ( PHP 、 HTML など)の文字列を色分けします。例:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$string</span> <span class="o">=</span> <span class="nx">highlight_code</span><span class="p">(</span><span class="nv">$string</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>The function uses PHP&#8217;s <tt class="docutils literal"><span class="pre">highlight_string()</span></tt> function, so the
-colors used are the ones specified in your php.ini file.</p>
+<p>この関数は、PHP の <tt class="docutils literal"><span class="pre">highlight_string()</span></tt> 関数を使いますので、php.ini
+ファイルで指定されている色が使用されます。</p>
 </dd></dl>
 
 <dl class="function">
@@ -654,40 +641,37 @@ colors used are the ones specified in your php.ini file.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">パラメタ:</th><td class="field-body"><ul class="first simple">
-<li><strong>$str</strong> (<em>string</em>) &#8211; Input string</li>
-<li><strong>$phrase</strong> (<em>string</em>) &#8211; Phrase to highlight</li>
-<li><strong>$tag_open</strong> (<em>string</em>) &#8211; Opening tag used for the highlight</li>
-<li><strong>$tag_close</strong> (<em>string</em>) &#8211; Closing tag for the highlight</li>
+<li><strong>$str</strong> (<em>string</em>) &#8211; 入力文字列</li>
+<li><strong>$phrase</strong> (<em>string</em>) &#8211; ハイライトしたいフレーズ</li>
+<li><strong>$tag_open</strong> (<em>string</em>) &#8211; ハイライトのための開始タグ</li>
+<li><strong>$tag_close</strong> (<em>string</em>) &#8211; ハイライトのための終了タグ</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body"><p class="first">String with a phrase highlighted via HTML</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">戻り値の型:</th><td class="field-body"><p class="first last">string</p>
+<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body"><p class="first last">HTML をハイライトしたフレーズを含む文字列
+string</p>
 </td>
 </tr>
 </tbody>
 </table>
-<p>Will highlight a phrase within a text string. The first parameter will
-contain the original string, the second will contain the phrase you wish
-to highlight. The third and fourth parameters will contain the
-opening/closing HTML tags you would like the phrase wrapped in.</p>
-<p>Example:</p>
+<p>テキスト中のフレーズをハイライトします。 第1引数は元の文字列で、
+第2引数にハイライトしたいフレーズを指定します。
+第3、第4引数は、フレーズを囲みたい開始/終了タグを指定します。</p>
+<p>例:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$string</span> <span class="o">=</span> <span class="s2">&quot;Here is a nice text string about nothing in particular.&quot;</span><span class="p">;</span>
 <span class="k">echo</span> <span class="nx">highlight_phrase</span><span class="p">(</span><span class="nv">$string</span><span class="p">,</span> <span class="s2">&quot;nice text&quot;</span><span class="p">,</span> <span class="s1">&#39;&lt;span style=&quot;color:#990000;&quot;&gt;&#39;</span><span class="p">,</span> <span class="s1">&#39;&lt;/span&gt;&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>The above code prints:</p>
+<p>上のテキストは下記のように出力されます:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nx">Here</span> <span class="nx">is</span> <span class="nx">a</span> <span class="o">&lt;</span><span class="nx">span</span> <span class="nx">style</span><span class="o">=</span><span class="s2">&quot;color:#990000;&quot;</span><span class="o">&gt;</span><span class="nx">nice</span> <span class="nx">text</span><span class="o">&lt;/</span><span class="nx">span</span><span class="o">&gt;</span> <span class="nx">string</span> <span class="nx">about</span> <span class="nx">nothing</span> <span class="nx">in</span> <span class="nx">particular</span><span class="o">.</span>
 </pre></div>
 </div>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
-<p>This function used to use the <tt class="docutils literal"><span class="pre">&lt;strong&gt;</span></tt> tag by default. Older browsers
-might not support the new HTML5 mark tag, so it is recommended that you
-insert the following CSS code into your stylesheet if you need to support
-such browsers:</p>
+<p>この関数はデフォルトで <tt class="docutils literal"><span class="pre">&lt;strong&gt;</span></tt> タグを使います。古いブラウザは
+新しい HTML5 の新しい mark タグをサポートしていない可能性があります。
+もしそのようなブラウザをサポートしたいのであれば、 スタイルシートの中に
+以下の CSS コードを書き加えることを推奨します。:</p>
 <div class="last highlight-ci"><div class="highlight"><pre><span></span><span class="nx">mark</span> <span class="p">{</span>
         <span class="nx">background</span><span class="o">:</span> <span class="c1">#ff0;</span>
         <span class="nx">color</span><span class="o">:</span> <span class="c1">#000;</span>
@@ -705,22 +689,23 @@ such browsers:</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">パラメタ:</th><td class="field-body"><ul class="first simple">
-<li><strong>$str</strong> (<em>string</em>) &#8211; Input string</li>
-<li><strong>$charlim</strong> (<em>int</em>) &#8211; Character limit</li>
+<li><strong>$str</strong> (<em>string</em>) &#8211; 入力文字列</li>
+<li><strong>$charlim</strong> (<em>int</em>) &#8211; [ 改行の目安となる ] 文字の上限数</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body"><p class="first">Word-wrapped string</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">戻り値の型:</th><td class="field-body"><p class="first last">string</p>
+<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body"><p class="first last">ワードラップされた文字列
+string</p>
 </td>
 </tr>
 </tbody>
 </table>
-<p>Wraps text at the specified <em>character</em> count while maintaining
-complete words.</p>
-<p>Example:</p>
+<p>指定した <em>文字</em> 数の位置で、テキストを折り返します。単語の途中で折り返されません [ 訳注:</p>
+</dd></dl>
+
+<p>英語のように単語の間がスペースで区切られている言語でだけ有効です。日本語では通常、正常に動作しません ]。</p>
+<blockquote>
+<div><p>例:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$string</span> <span class="o">=</span> <span class="s2">&quot;Here is a simple string of text that will help us demonstrate this function.&quot;</span><span class="p">;</span>
 <span class="k">echo</span> <span class="nx">word_wrap</span><span class="p">(</span><span class="nv">$string</span><span class="p">,</span> <span class="mi">25</span><span class="p">);</span>
 
@@ -731,8 +716,7 @@ complete words.</p>
 <span class="c1">// function.</span>
 </pre></div>
 </div>
-</dd></dl>
-
+</div></blockquote>
 <dl class="function">
 <dt id="ellipsize">
 <tt class="descname">ellipsize</tt><big>(</big><em>$str</em>, <em>$max_length</em><span class="optional">[</span>, <em>$position = 1</em><span class="optional">[</span>, <em>$ellipsis = '&amp;hellip;'</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#ellipsize" title="この定義へのパーマリンク">¶</a></dt>
@@ -741,31 +725,29 @@ complete words.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">パラメタ:</th><td class="field-body"><ul class="first simple">
-<li><strong>$str</strong> (<em>string</em>) &#8211; Input string</li>
-<li><strong>$max_length</strong> (<em>int</em>) &#8211; String length limit</li>
-<li><strong>$position</strong> (<em>mixed</em>) &#8211; Position to split at (int or float)</li>
-<li><strong>$ellipsis</strong> (<em>string</em>) &#8211; What to use as the ellipsis character</li>
+<li><strong>$str</strong> (<em>string</em>) &#8211; 入力文字列</li>
+<li><strong>$max_length</strong> (<em>int</em>) &#8211; 文字列の上限数</li>
+<li><strong>$position</strong> (<em>mixed</em>) &#8211; [ 省略記号との ]分割位置 (整数または小数)</li>
+<li><strong>$ellipsis</strong> (<em>string</em>) &#8211; 省略記号(…)</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body"><p class="first">Ellipsized string</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">戻り値の型:</th><td class="field-body"><p class="first last">string</p>
+<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body"><p class="first last">省略された文字列
+string</p>
 </td>
 </tr>
 </tbody>
 </table>
-<p>This function will strip tags from a string, split it at a defined
-maximum length, and insert an ellipsis.</p>
-<p>The first parameter is the string to ellipsize, the second is the number
-of characters in the final string. The third parameter is where in the
-string the ellipsis should appear from 0 - 1, left to right. For
-example. a value of 1 will place the ellipsis at the right of the
-string, .5 in the middle, and 0 at the left.</p>
-<p>An optional forth parameter is the kind of ellipsis. By default,
-&amp;hellip; will be inserted.</p>
-<p>Example:</p>
+<p>この関数は文字列からタグを取り除き、指定された最大長に分割して省略記号
+を挿入します。</p>
+<p>第1引数は省略する文字列、第2引数は最終的な文字列の長さ、
+第3引数は後半の文字列の開始位置を指定します。
+第3引数は、省略記号が現れる位置を0(左端)から1(右端)までの数値で指定します。
+たとえば、1を指定すると省略記号は文字列の右端、
+.5なら真ん中、0なら左端になります。</p>
+<p>オプションの第4引数では、省略記号を指定できます。デフォルトでは
+&amp;hellip; が使用されます。</p>
+<p>例:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$str</span> <span class="o">=</span> <span class="s1">&#39;this_string_is_entirely_too_long_and_might_break_my_design.jpg&#39;</span><span class="p">;</span>
 <span class="k">echo</span> <span class="nx">ellipsize</span><span class="p">(</span><span class="nv">$str</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="o">.</span><span class="mi">5</span><span class="p">);</span>
 </pre></div>

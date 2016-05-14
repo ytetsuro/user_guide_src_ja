@@ -193,7 +193,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../helpers/security_helper.html">Security Helper</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../helpers/smiley_helper.html">Smiley Helper</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../helpers/string_helper.html">String Helper</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../helpers/text_helper.html">Text Helper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/text_helper.html">テキストヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../helpers/typography_helper.html">タイポグラフィーヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../helpers/url_helper.html">URL ヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../helpers/xml_helper.html">XML ヘルパー</a></li>
@@ -379,7 +379,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../helpers/security_helper.html">Security Helper</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../helpers/smiley_helper.html">Smiley Helper</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../helpers/string_helper.html">String Helper</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../helpers/text_helper.html">Text Helper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/text_helper.html">テキストヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../helpers/typography_helper.html">タイポグラフィーヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../helpers/url_helper.html">URL ヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../helpers/xml_helper.html">XML ヘルパー</a></li>
@@ -544,18 +544,18 @@ $this-&gt;email-&gt;initialize() メソッドを使う必要は「ありませ�
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">パラメータ string  $from:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">&#8220;From&#8221; メールアドレス</td>
+<tr class="field-odd field"><th class="field-name">パラメタ:</th><td class="field-body"><ul class="first simple">
+<li><strong>$from</strong> (<em>string</em>) &#8211; &#8220;From&#8221; メールアドレス</li>
+<li><strong>$name</strong> (<em>string</em>) &#8211; &#8220;From&#8221; 表示名</li>
+<li><strong>$return_path</strong> (<em>string</em>) &#8211; 未配達の電子メールをリダイレクトするオプションのメールアドレス</li>
+</ul>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name" colspan="2">パラメータ string  $name:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body">&#8220;From&#8221; 表示名</td>
+<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body"><p class="first">CI_Email インスタンス (メソッドチエーン)</p>
+</td>
 </tr>
-<tr class="field-odd field"><th class="field-name" colspan="2">パラメータ string  $return_path:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">未配達の電子メールをリダイレクトするオプションのメールアドレス</td>
-</tr>
-<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body">CI_Email インスタンス (メソッドチエーン)</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">返り値型:</th><td class="field-body">CI_Email</td>
+<tr class="field-odd field"><th class="field-name">戻り値の型:</th><td class="field-body"><p class="first last">CI_Email</p>
+</td>
 </tr>
 </tbody>
 </table>
@@ -581,15 +581,17 @@ $this-&gt;email-&gt;initialize() メソッドを使う必要は「ありませ�
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">パラメータ string  $replyto:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">返信の電子メール・アドレス</td>
+<tr class="field-odd field"><th class="field-name">パラメタ:</th><td class="field-body"><ul class="first simple">
+<li><strong>$replyto</strong> (<em>string</em>) &#8211; 返信の電子メール・アドレス</li>
+<li><strong>$name</strong> (<em>string</em>) &#8211; 返信の電子メールアドレス名を示します</li>
+</ul>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name" colspan="2">パラメータ string  $name:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body">返信の電子メールアドレス名を示します</td>
+<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body"><p class="first">CI_Email インスタンス (メソッドチェイン)</p>
+</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">返り値:</th><td class="field-body">CI_Email インスタンス (メソッドチェイン)</td>
-</tr>
-<tr class="field-even field"><th class="field-name">返り値型:</th><td class="field-body">CI_Email</td>
+<tr class="field-odd field"><th class="field-name">戻り値の型:</th><td class="field-body"><p class="first last">CI_Email</p>
+</td>
 </tr>
 </tbody>
 </table>
@@ -606,12 +608,16 @@ $this-&gt;email-&gt;initialize() メソッドを使う必要は「ありませ�
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">パラメータ mixed   $to:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">メールアドレス　カンマで区切られた列または配列</td>
+<tr class="field-odd field"><th class="field-name">パラメタ:</th><td class="field-body"><ul class="first simple">
+<li><strong>$to</strong> (<em>mixed</em>) &#8211; メールアドレス　カンマで区切られた列または配列</li>
+</ul>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body">CI_Email インスタンス (メソッドチェイン)</td>
+<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body"><p class="first">CI_Email インスタンス (メソッドチェイン)</p>
+</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">返り値型:</th><td class="field-body">CI_Email</td>
+<tr class="field-odd field"><th class="field-name">戻り値の型:</th><td class="field-body"><p class="first last">CI_Email</p>
+</td>
 </tr>
 </tbody>
 </table>
@@ -636,12 +642,16 @@ $this-&gt;email-&gt;initialize() メソッドを使う必要は「ありませ�
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">パラメータ mixed   $cc:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">メールアドレス　カンマで区切られた列または配列</td>
+<tr class="field-odd field"><th class="field-name">パラメタ:</th><td class="field-body"><ul class="first simple">
+<li><strong>$cc</strong> (<em>mixed</em>) &#8211; メールアドレス　カンマで区切られた列または配列</li>
+</ul>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body">CI_Email インスタンス (メソッドチェイン)</td>
+<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body"><p class="first">CI_Email インスタンス (メソッドチェイン)</p>
+</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">返り値型:</th><td class="field-body">CI_Email</td>
+<tr class="field-odd field"><th class="field-name">戻り値の型:</th><td class="field-body"><p class="first last">CI_Email</p>
+</td>
 </tr>
 </tbody>
 </table>
@@ -656,15 +666,17 @@ $this-&gt;email-&gt;initialize() メソッドを使う必要は「ありませ�
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">パラメータ mixed   $bcc:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">メールアドレス　カンマで区切られた列または配列</td>
+<tr class="field-odd field"><th class="field-name">パラメタ:</th><td class="field-body"><ul class="first simple">
+<li><strong>$bcc</strong> (<em>mixed</em>) &#8211; メールアドレス　カンマで区切られた列または配列</li>
+<li><strong>$limit</strong> (<em>int</em>) &#8211; バッチ送信する電子メールの最大数</li>
+</ul>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name" colspan="2">パラメータ int     $limit:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body">バッチ送信する電子メールの最大数</td>
+<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body"><p class="first">CI_Email インスタンス (メソッドチェイン)</p>
+</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">返り値:</th><td class="field-body">CI_Email インスタンス (メソッドチェイン)</td>
-</tr>
-<tr class="field-even field"><th class="field-name">返り値型:</th><td class="field-body">CI_Email</td>
+<tr class="field-odd field"><th class="field-name">戻り値の型:</th><td class="field-body"><p class="first last">CI_Email</p>
+</td>
 </tr>
 </tbody>
 </table>
@@ -682,12 +694,16 @@ $this-&gt;email-&gt;initialize() メソッドを使う必要は「ありませ�
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">パラメータ string  $subject:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">電子メールの件名</td>
+<tr class="field-odd field"><th class="field-name">パラメタ:</th><td class="field-body"><ul class="first simple">
+<li><strong>$subject</strong> (<em>string</em>) &#8211; 電子メールの件名</li>
+</ul>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body">CI_Email インスタンス (メソッドチェイン)</td>
+<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body"><p class="first">CI_Email インスタンス (メソッドチェイン)</p>
+</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">返り値型:</th><td class="field-body">CI_Email</td>
+<tr class="field-odd field"><th class="field-name">戻り値の型:</th><td class="field-body"><p class="first last">CI_Email</p>
+</td>
 </tr>
 </tbody>
 </table>
@@ -704,12 +720,16 @@ $this-&gt;email-&gt;initialize() メソッドを使う必要は「ありませ�
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">パラメータ string  $body:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">電子メール本文</td>
+<tr class="field-odd field"><th class="field-name">パラメタ:</th><td class="field-body"><ul class="first simple">
+<li><strong>$body</strong> (<em>string</em>) &#8211; 電子メール本文</li>
+</ul>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body">CI_Email インスタンス (メソッドチェイン)</td>
+<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body"><p class="first">CI_Email インスタンス (メソッドチェイン)</p>
+</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">返り値型:</th><td class="field-body">CI_Email</td>
+<tr class="field-odd field"><th class="field-name">戻り値の型:</th><td class="field-body"><p class="first last">CI_Email</p>
+</td>
 </tr>
 </tbody>
 </table>
@@ -726,12 +746,16 @@ $this-&gt;email-&gt;initialize() メソッドを使う必要は「ありませ�
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">パラメータ string  $str:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">代替のメール本文:</td>
+<tr class="field-odd field"><th class="field-name">パラメタ:</th><td class="field-body"><ul class="first simple">
+<li><strong>$str</strong> (<em>string</em>) &#8211; 代替のメール本文:</li>
+</ul>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body">CI_Email インスタンス (メソッドチェイン)</td>
+<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body"><p class="first">CI_Email インスタンス (メソッドチェイン)</p>
+</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">返り値型:</th><td class="field-body">CI_Email</td>
+<tr class="field-odd field"><th class="field-name">戻り値の型:</th><td class="field-body"><p class="first last">CI_Email</p>
+</td>
 </tr>
 </tbody>
 </table>
@@ -754,15 +778,17 @@ $this-&gt;email-&gt;initialize() メソッドを使う必要は「ありませ�
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">パラメータ string  $header:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">ヘッダ名</td>
+<tr class="field-odd field"><th class="field-name">パラメタ:</th><td class="field-body"><ul class="first simple">
+<li><strong>$header</strong> (<em>string</em>) &#8211; ヘッダ名</li>
+<li><strong>$value</strong> (<em>string</em>) &#8211; ヘッダ内容</li>
+</ul>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name" colspan="2">パラメータ string  $value:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body">ヘッダ内容</td>
+<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body"><p class="first">CI_Email インスタンス (メソッドチェイン)</p>
+</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">返り値:</th><td class="field-body">CI_Email インスタンス (メソッドチェイン)</td>
-</tr>
-<tr class="field-even field"><th class="field-name">返り値型:</th><td class="field-body">CI_Email</td>
+<tr class="field-odd field"><th class="field-name">戻り値の型:</th><td class="field-body"><p class="first last">CI_Email</p>
+</td>
 </tr>
 </tbody>
 </table>
@@ -780,12 +806,16 @@ $this-&gt;email-&gt;initialize() メソッドを使う必要は「ありませ�
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">パラメータ bool    $clear_attachments:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">添付ファイルをクリアするかどうか</td>
+<tr class="field-odd field"><th class="field-name">パラメタ:</th><td class="field-body"><ul class="first simple">
+<li><strong>$clear_attachments</strong> (<em>bool</em>) &#8211; 添付ファイルをクリアするかどうか</li>
+</ul>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body">CI_Email インスタンス (メソッドチェイン)</td>
+<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body"><p class="first">CI_Email インスタンス (メソッドチェイン)</p>
+</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">返り値型:</th><td class="field-body">CI_Email</td>
+<tr class="field-odd field"><th class="field-name">戻り値の型:</th><td class="field-body"><p class="first last">CI_Email</p>
+</td>
 </tr>
 </tbody>
 </table>
@@ -818,12 +848,16 @@ $this-&gt;email-&gt;initialize() メソッドを使う必要は「ありませ�
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">パラメータ bool    $auto_clear:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">自動的にメッセージデータをクリアするかどうか</td>
+<tr class="field-odd field"><th class="field-name">パラメタ:</th><td class="field-body"><ul class="first simple">
+<li><strong>$auto_clear</strong> (<em>bool</em>) &#8211; 自動的にメッセージデータをクリアするかどうか</li>
+</ul>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body">成功時TRUE、失敗した場合FALSE</td>
+<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body"><p class="first">成功時TRUE、失敗した場合FALSE</p>
+</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">返り値型:</th><td class="field-body">bool</td>
+<tr class="field-odd field"><th class="field-name">戻り値の型:</th><td class="field-body"><p class="first last">bool</p>
+</td>
 </tr>
 </tbody>
 </table>
@@ -858,20 +892,20 @@ $this-&gt;email-&gt;initialize() メソッドを使う必要は「ありませ�
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">パラメータ string  $filename:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">ファイル名</td>
-</tr>
-<tr class="field-even field"><th class="field-name" colspan="2">パラメータ string  $disposition:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body">添付ファイルを「配置」します。ほとんどの電子メールクライアント</td>
+<tr class="field-odd field"><th class="field-name">パラメタ:</th><td class="field-body"><ul class="first last simple">
+<li><strong>$filename</strong> (<em>string</em>) &#8211; ファイル名</li>
+<li><strong>$disposition</strong> (<em>string</em>) &#8211; 添付ファイルを「配置」します。ほとんどの電子メールクライアント</li>
+</ul>
+</td>
 </tr>
 </tbody>
 </table>
 <p>にかかわらず、ここで使用されるMIME仕様の独自の判断を下します。
 <a class="reference external" href="https://www.iana.org/assignments/cont-disp/cont-disp.xhtml">https://www.iana.org/assignments/cont-disp/cont-disp.xhtml</a>
-:パラメータ  string  $newname: 電子メールで使用するカスタムファイル名
-:パラメータ  string  $mime: MIMEタイプを使用する (バッファリングされたデータに利用)
-:返り値:   CI_Email インスタンス (メソッドチェイン)
-:返り値型:  CI_Email</p>
+:param  string  $newname: 電子メールで使用するカスタムファイル名
+:param  string  $mime: MIMEタイプを使用する (バッファリングされたデータに利用)
+:returns:       CI_Email インスタンス (メソッドチェイン)
+:rtype: CI_Email</p>
 <p>添付ファイルを送信できます。第1引数にファイルのパスとファイル名を指定してください。
 複数ファイルを添付する場合は、複数回メソッドを呼んでください。例えば以下のように
 します:</p>
@@ -908,12 +942,16 @@ $this-&gt;email-&gt;initialize() メソッドを使う必要は「ありませ�
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">パラメータ string  $filename:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">既存の添付ファイル名</td>
+<tr class="field-odd field"><th class="field-name">パラメタ:</th><td class="field-body"><ul class="first simple">
+<li><strong>$filename</strong> (<em>string</em>) &#8211; 既存の添付ファイル名</li>
+</ul>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body">添付ファイルのContent-ID、見つからない場合はFALSE</td>
+<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body"><p class="first">添付ファイルのContent-ID、見つからない場合はFALSE</p>
+</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">返り値型:</th><td class="field-body">string</td>
+<tr class="field-odd field"><th class="field-name">戻り値の型:</th><td class="field-body"><p class="first last">string</p>
+</td>
 </tr>
 </tbody>
 </table>
@@ -943,12 +981,16 @@ $this-&gt;email-&gt;initialize() メソッドを使う必要は「ありませ�
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">パラメータ array   $include:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">メッセージのどの部分を印刷するか</td>
+<tr class="field-odd field"><th class="field-name">パラメタ:</th><td class="field-body"><ul class="first simple">
+<li><strong>$include</strong> (<em>array</em>) &#8211; メッセージのどの部分を印刷するか</li>
+</ul>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body">フォーマットされたデバッグデータ</td>
+<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body"><p class="first">フォーマットされたデバッグデータ</p>
+</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">返り値型:</th><td class="field-body">string</td>
+<tr class="field-odd field"><th class="field-name">戻り値の型:</th><td class="field-body"><p class="first last">string</p>
+</td>
 </tr>
 </tbody>
 </table>

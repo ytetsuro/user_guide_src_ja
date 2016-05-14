@@ -193,7 +193,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../helpers/security_helper.html">Security Helper</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../helpers/smiley_helper.html">Smiley Helper</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../helpers/string_helper.html">String Helper</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../helpers/text_helper.html">Text Helper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/text_helper.html">テキストヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../helpers/typography_helper.html">タイポグラフィーヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../helpers/url_helper.html">URL ヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../helpers/xml_helper.html">XML ヘルパー</a></li>
@@ -379,7 +379,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../helpers/security_helper.html">Security Helper</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../helpers/smiley_helper.html">Smiley Helper</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../helpers/string_helper.html">String Helper</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../helpers/text_helper.html">Text Helper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/text_helper.html">テキストヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../helpers/typography_helper.html">タイポグラフィーヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../helpers/url_helper.html">URL ヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../helpers/xml_helper.html">XML ヘルパー</a></li>
@@ -1586,18 +1586,18 @@ etc.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">パラメータ string  $field:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">Field name</td>
+<tr class="field-odd field"><th class="field-name">パラメタ:</th><td class="field-body"><ul class="first simple">
+<li><strong>$field</strong> (<em>string</em>) &#8211; Field name</li>
+<li><strong>$label</strong> (<em>string</em>) &#8211; Field label</li>
+<li><strong>$rules</strong> (<em>mixed</em>) &#8211; Validation rules, as a string list separated by a pipe &#8220;|&#8221;, or as an array or rules</li>
+</ul>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name" colspan="2">パラメータ string  $label:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body">Field label</td>
+<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body"><p class="first">CI_Form_validation instance (method chaining)</p>
+</td>
 </tr>
-<tr class="field-odd field"><th class="field-name" colspan="2">パラメータ mixed   $rules:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">Validation rules, as a string list separated by a pipe &#8220;|&#8221;, or as an array or rules</td>
-</tr>
-<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body">CI_Form_validation instance (method chaining)</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">返り値型:</th><td class="field-body">CI_Form_validation</td>
+<tr class="field-odd field"><th class="field-name">戻り値の型:</th><td class="field-body"><p class="first last">CI_Form_validation</p>
+</td>
 </tr>
 </tbody>
 </table>
@@ -1616,12 +1616,16 @@ sections above:</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">パラメータ string  $group:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">The name of the validation group to run</td>
+<tr class="field-odd field"><th class="field-name">パラメタ:</th><td class="field-body"><ul class="first simple">
+<li><strong>$group</strong> (<em>string</em>) &#8211; The name of the validation group to run</li>
+</ul>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body">TRUE on success, FALSE if validation failed</td>
+<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body"><p class="first">TRUE on success, FALSE if validation failed</p>
+</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">返り値型:</th><td class="field-body">bool</td>
+<tr class="field-odd field"><th class="field-name">戻り値の型:</th><td class="field-body"><p class="first last">bool</p>
+</td>
 </tr>
 </tbody>
 </table>
@@ -1637,15 +1641,17 @@ the method, as described in: <a class="reference internal" href="#saving-groups"
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">パラメータ string  $lang:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">The rule the message is for</td>
+<tr class="field-odd field"><th class="field-name">パラメタ:</th><td class="field-body"><ul class="first simple">
+<li><strong>$lang</strong> (<em>string</em>) &#8211; The rule the message is for</li>
+<li><strong>$val</strong> (<em>string</em>) &#8211; The message</li>
+</ul>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name" colspan="2">パラメータ string  $val:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body">The message</td>
+<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body"><p class="first">CI_Form_validation instance (method chaining)</p>
+</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">返り値:</th><td class="field-body">CI_Form_validation instance (method chaining)</td>
-</tr>
-<tr class="field-even field"><th class="field-name">返り値型:</th><td class="field-body">CI_Form_validation</td>
+<tr class="field-odd field"><th class="field-name">戻り値の型:</th><td class="field-body"><p class="first last">CI_Form_validation</p>
+</td>
 </tr>
 </tbody>
 </table>
@@ -1659,15 +1665,17 @@ the method, as described in: <a class="reference internal" href="#saving-groups"
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">パラメータ string  $prefix:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">Error message prefix</td>
+<tr class="field-odd field"><th class="field-name">パラメタ:</th><td class="field-body"><ul class="first simple">
+<li><strong>$prefix</strong> (<em>string</em>) &#8211; Error message prefix</li>
+<li><strong>$suffix</strong> (<em>string</em>) &#8211; Error message suffix</li>
+</ul>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name" colspan="2">パラメータ string  $suffix:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body">Error message suffix</td>
+<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body"><p class="first">CI_Form_validation instance (method chaining)</p>
+</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">返り値:</th><td class="field-body">CI_Form_validation instance (method chaining)</td>
-</tr>
-<tr class="field-even field"><th class="field-name">返り値型:</th><td class="field-body">CI_Form_validation</td>
+<tr class="field-odd field"><th class="field-name">戻り値の型:</th><td class="field-body"><p class="first last">CI_Form_validation</p>
+</td>
 </tr>
 </tbody>
 </table>
@@ -1681,12 +1689,16 @@ the method, as described in: <a class="reference internal" href="#saving-groups"
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">パラメータ array   $data:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">Array of data validate</td>
+<tr class="field-odd field"><th class="field-name">パラメタ:</th><td class="field-body"><ul class="first simple">
+<li><strong>$data</strong> (<em>array</em>) &#8211; Array of data validate</li>
+</ul>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body">CI_Form_validation instance (method chaining)</td>
+<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body"><p class="first">CI_Form_validation instance (method chaining)</p>
+</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">返り値型:</th><td class="field-body">CI_Form_validation</td>
+<tr class="field-odd field"><th class="field-name">戻り値の型:</th><td class="field-body"><p class="first last">CI_Form_validation</p>
+</td>
 </tr>
 </tbody>
 </table>
@@ -1701,9 +1713,9 @@ the method, as described in: <a class="reference internal" href="#saving-groups"
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">返り値:</th><td class="field-body">CI_Form_validation instance (method chaining)</td>
+<tr class="field-odd field"><th class="field-name">戻り値:</th><td class="field-body">CI_Form_validation instance (method chaining)</td>
 </tr>
-<tr class="field-even field"><th class="field-name">返り値型:</th><td class="field-body">CI_Form_validation</td>
+<tr class="field-even field"><th class="field-name">戻り値の型:</th><td class="field-body">CI_Form_validation</td>
 </tr>
 </tbody>
 </table>
@@ -1718,9 +1730,9 @@ This method should be called before validating each new array.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">返り値:</th><td class="field-body">Array of error messages</td>
+<tr class="field-odd field"><th class="field-name">戻り値:</th><td class="field-body">Array of error messages</td>
 </tr>
-<tr class="field-even field"><th class="field-name">返り値型:</th><td class="field-body">array</td>
+<tr class="field-even field"><th class="field-name">戻り値の型:</th><td class="field-body">array</td>
 </tr>
 </tbody>
 </table>
@@ -1734,15 +1746,17 @@ This method should be called before validating each new array.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">パラメータ string  $prefix:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">Error message prefix</td>
+<tr class="field-odd field"><th class="field-name">パラメタ:</th><td class="field-body"><ul class="first simple">
+<li><strong>$prefix</strong> (<em>string</em>) &#8211; Error message prefix</li>
+<li><strong>$suffix</strong> (<em>string</em>) &#8211; Error message suffix</li>
+</ul>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name" colspan="2">パラメータ string  $suffix:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body">Error message suffix</td>
+<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body"><p class="first">Error messages as a string</p>
+</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">返り値:</th><td class="field-body">Error messages as a string</td>
-</tr>
-<tr class="field-even field"><th class="field-name">返り値型:</th><td class="field-body">string</td>
+<tr class="field-odd field"><th class="field-name">戻り値の型:</th><td class="field-body"><p class="first last">string</p>
+</td>
 </tr>
 </tbody>
 </table>
@@ -1757,18 +1771,18 @@ string and separated by a newline character.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">パラメータ string $field:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">Field name</td>
+<tr class="field-odd field"><th class="field-name">パラメタ:</th><td class="field-body"><ul class="first simple">
+<li><strong>$field</strong> (<em>string</em>) &#8211; Field name</li>
+<li><strong>$prefix</strong> (<em>string</em>) &#8211; Optional prefix</li>
+<li><strong>$suffix</strong> (<em>string</em>) &#8211; Optional suffix</li>
+</ul>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name" colspan="2">パラメータ string $prefix:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body">Optional prefix</td>
+<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body"><p class="first">Error message string</p>
+</td>
 </tr>
-<tr class="field-odd field"><th class="field-name" colspan="2">パラメータ string $suffix:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">Optional suffix</td>
-</tr>
-<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body">Error message string</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">返り値型:</th><td class="field-body">string</td>
+<tr class="field-odd field"><th class="field-name">戻り値の型:</th><td class="field-body"><p class="first last">string</p>
+</td>
 </tr>
 </tbody>
 </table>
@@ -1783,12 +1797,16 @@ prefix and/or suffix to it (usually HTML tags).</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">パラメータ string  $field:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">Field name</td>
+<tr class="field-odd field"><th class="field-name">パラメタ:</th><td class="field-body"><ul class="first simple">
+<li><strong>$field</strong> (<em>string</em>) &#8211; Field name</li>
+</ul>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body">TRUE if the field has rules set, FALSE if not</td>
+<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body"><p class="first">TRUE if the field has rules set, FALSE if not</p>
+</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">返り値型:</th><td class="field-body">bool</td>
+<tr class="field-odd field"><th class="field-name">戻り値の型:</th><td class="field-body"><p class="first last">bool</p>
+</td>
 </tr>
 </tbody>
 </table>

@@ -193,7 +193,7 @@
 <li class="toctree-l2"><a class="reference internal" href="security_helper.html">Security Helper</a></li>
 <li class="toctree-l2"><a class="reference internal" href="smiley_helper.html">Smiley Helper</a></li>
 <li class="toctree-l2"><a class="reference internal" href="string_helper.html">String Helper</a></li>
-<li class="toctree-l2"><a class="reference internal" href="text_helper.html">Text Helper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="text_helper.html">テキストヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="typography_helper.html">タイポグラフィーヘルパー</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="">URL ヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="xml_helper.html">XML ヘルパー</a></li>
@@ -379,7 +379,7 @@
 <li class="toctree-l2"><a class="reference internal" href="security_helper.html">Security Helper</a></li>
 <li class="toctree-l2"><a class="reference internal" href="smiley_helper.html">Smiley Helper</a></li>
 <li class="toctree-l2"><a class="reference internal" href="string_helper.html">String Helper</a></li>
-<li class="toctree-l2"><a class="reference internal" href="text_helper.html">Text Helper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="text_helper.html">テキストヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="typography_helper.html">タイポグラフィーヘルパー</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="">URL ヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="xml_helper.html">XML ヘルパー</a></li>
@@ -450,15 +450,17 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">パラメータ string $uri:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">URI 文字列</td>
+<tr class="field-odd field"><th class="field-name">パラメタ:</th><td class="field-body"><ul class="first simple">
+<li><strong>$uri</strong> (<em>string</em>) &#8211; URI 文字列</li>
+<li><strong>$protocol</strong> (<em>string</em>) &#8211; プロトロコル, 例: &#8216;http&#8217; or &#8216;https&#8217;</li>
+</ul>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name" colspan="2">パラメータ string  $protocol:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body">プロトロコル, 例: &#8216;http&#8217; or &#8216;https&#8217;</td>
+<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body"><p class="first">サイトの URL</p>
+</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">返り値:</th><td class="field-body">サイトの URL</td>
-</tr>
-<tr class="field-even field"><th class="field-name">返り値型:</th><td class="field-body">string</td>
+<tr class="field-odd field"><th class="field-name">戻り値の型:</th><td class="field-body"><p class="first last">string</p>
+</td>
 </tr>
 </tbody>
 </table>
@@ -492,15 +494,17 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">パラメータ string  $uri:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">URI 文字列</td>
+<tr class="field-odd field"><th class="field-name">パラメタ:</th><td class="field-body"><ul class="first simple">
+<li><strong>$uri</strong> (<em>string</em>) &#8211; URI 文字列</li>
+<li><strong>$protocol</strong> (<em>string</em>) &#8211; プロトロコル, 例: &#8216;http&#8217; or &#8216;https&#8217;</li>
+</ul>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name" colspan="2">パラメータ string  $protocol:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body">プロトロコル, 例: &#8216;http&#8217; or &#8216;https&#8217;</td>
+<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body"><p class="first">ベース URL</p>
+</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">返り値:</th><td class="field-body">ベース URL</td>
-</tr>
-<tr class="field-even field"><th class="field-name">返り値型:</th><td class="field-body">string</td>
+<tr class="field-odd field"><th class="field-name">戻り値の型:</th><td class="field-body"><p class="first last">string</p>
+</td>
 </tr>
 </tbody>
 </table>
@@ -535,9 +539,9 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">返り値:</th><td class="field-body">現在の URL</td>
+<tr class="field-odd field"><th class="field-name">戻り値:</th><td class="field-body">現在の URL</td>
 </tr>
-<tr class="field-even field"><th class="field-name">返り値型:</th><td class="field-body">string</td>
+<tr class="field-even field"><th class="field-name">戻り値の型:</th><td class="field-body">string</td>
 </tr>
 </tbody>
 </table>
@@ -558,9 +562,9 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">返り値:</th><td class="field-body">An URI string</td>
+<tr class="field-odd field"><th class="field-name">戻り値:</th><td class="field-body">An URI string</td>
 </tr>
-<tr class="field-even field"><th class="field-name">返り値型:</th><td class="field-body">string</td>
+<tr class="field-even field"><th class="field-name">戻り値の型:</th><td class="field-body">string</td>
 </tr>
 </tbody>
 </table>
@@ -584,9 +588,9 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">返り値:</th><td class="field-body">&#8216;index_page&#8217; value</td>
+<tr class="field-odd field"><th class="field-name">戻り値:</th><td class="field-body">&#8216;index_page&#8217; value</td>
 </tr>
-<tr class="field-even field"><th class="field-name">返り値型:</th><td class="field-body">mixed</td>
+<tr class="field-even field"><th class="field-name">戻り値の型:</th><td class="field-body">mixed</td>
 </tr>
 </tbody>
 </table>
@@ -604,18 +608,18 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">パラメータ string  $uri:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">URI 文字列</td>
+<tr class="field-odd field"><th class="field-name">パラメタ:</th><td class="field-body"><ul class="first simple">
+<li><strong>$uri</strong> (<em>string</em>) &#8211; URI 文字列</li>
+<li><strong>$title</strong> (<em>string</em>) &#8211; アンカータイトル</li>
+<li><strong>$attributes</strong> (<em>mixed</em>) &#8211; HTML 属性</li>
+</ul>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name" colspan="2">パラメータ string  $title:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body">アンカータイトル</td>
+<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body"><p class="first">HTML ハイパーリンク (アンカータグ)</p>
+</td>
 </tr>
-<tr class="field-odd field"><th class="field-name" colspan="2">パラメータ mixed   $attributes:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">HTML 属性</td>
-</tr>
-<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body">HTML ハイパーリンク (アンカータグ)</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">返り値型:</th><td class="field-body">string</td>
+<tr class="field-odd field"><th class="field-name">戻り値の型:</th><td class="field-body"><p class="first last">string</p>
+</td>
 </tr>
 </tbody>
 </table>
@@ -655,18 +659,18 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">パラメータ string  $uri:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">URI 文字列</td>
+<tr class="field-odd field"><th class="field-name">パラメタ:</th><td class="field-body"><ul class="first simple">
+<li><strong>$uri</strong> (<em>string</em>) &#8211; URI 文字列</li>
+<li><strong>$title</strong> (<em>string</em>) &#8211; アンカータイトル</li>
+<li><strong>$attributes</strong> (<em>mixed</em>) &#8211; HTML 属性</li>
+</ul>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name" colspan="2">パラメータ string  $title:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body">アンカータイトル</td>
+<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body"><p class="first">ポップアップ ハイパーリンク</p>
+</td>
 </tr>
-<tr class="field-odd field"><th class="field-name" colspan="2">パラメータ mixed   $attributes:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">HTML 属性</td>
-</tr>
-<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body">ポップアップ ハイパーリンク</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">返り値型:</th><td class="field-body">string</td>
+<tr class="field-odd field"><th class="field-name">戻り値の型:</th><td class="field-body"><p class="first last">string</p>
+</td>
 </tr>
 </tbody>
 </table>
@@ -719,18 +723,18 @@ window name または window target のどちらかを受け入れる JavaScript
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">パラメータ string  $email:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">メールアドレス</td>
+<tr class="field-odd field"><th class="field-name">パラメタ:</th><td class="field-body"><ul class="first simple">
+<li><strong>$email</strong> (<em>string</em>) &#8211; メールアドレス</li>
+<li><strong>$title</strong> (<em>string</em>) &#8211; アンカータイトル</li>
+<li><strong>$attributes</strong> (<em>mixed</em>) &#8211; HTML 属性</li>
+</ul>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name" colspan="2">パラメータ string  $title:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body">アンカータイトル</td>
+<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body"><p class="first">&#8220;mail to&#8221; ハイパーリンク</p>
+</td>
 </tr>
-<tr class="field-odd field"><th class="field-name" colspan="2">パラメータ mixed   $attributes:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">HTML 属性</td>
-</tr>
-<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body">&#8220;mail to&#8221; ハイパーリンク</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">返り値型:</th><td class="field-body">string</td>
+<tr class="field-odd field"><th class="field-name">戻り値の型:</th><td class="field-body"><p class="first last">string</p>
+</td>
 </tr>
 </tbody>
 </table>
@@ -753,18 +757,18 @@ window name または window target のどちらかを受け入れる JavaScript
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">パラメータ string  $email:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">メールアドレス</td>
+<tr class="field-odd field"><th class="field-name">パラメタ:</th><td class="field-body"><ul class="first simple">
+<li><strong>$email</strong> (<em>string</em>) &#8211; メールアドレス</li>
+<li><strong>$title</strong> (<em>string</em>) &#8211; アンカータイトル</li>
+<li><strong>$attributes</strong> (<em>mixed</em>) &#8211; HTML 属性</li>
+</ul>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name" colspan="2">パラメータ string  $title:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body">アンカータイトル</td>
+<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body"><p class="first">スパムセーフな &#8220;mail to&#8221; ハイパーリンク</p>
+</td>
 </tr>
-<tr class="field-odd field"><th class="field-name" colspan="2">パラメータ mixed   $attributes:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">HTML 属性</td>
-</tr>
-<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body">スパムセーフな &#8220;mail to&#8221; ハイパーリンク</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">返り値型:</th><td class="field-body">string</td>
+<tr class="field-odd field"><th class="field-name">戻り値の型:</th><td class="field-body"><p class="first last">string</p>
+</td>
 </tr>
 </tbody>
 </table>
@@ -780,18 +784,18 @@ window name または window target のどちらかを受け入れる JavaScript
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">パラメータ string  $str:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">入力文字列</td>
+<tr class="field-odd field"><th class="field-name">パラメタ:</th><td class="field-body"><ul class="first simple">
+<li><strong>$str</strong> (<em>string</em>) &#8211; 入力文字列</li>
+<li><strong>$type</strong> (<em>string</em>) &#8211; リンクタイプ (&#8216;email&#8217;, &#8216;url&#8217; or &#8216;both&#8217;)</li>
+<li><strong>$popup</strong> (<em>bool</em>) &#8211; ポップアップリンクを生成するかどうか</li>
+</ul>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name" colspan="2">パラメータ string  $type:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body">リンクタイプ (&#8216;email&#8217;, &#8216;url&#8217; or &#8216;both&#8217;)</td>
+<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body"><p class="first">リンク可能な文字列</p>
+</td>
 </tr>
-<tr class="field-odd field"><th class="field-name" colspan="2">パラメータ bool    $popup:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">ポップアップリンクを生成するかどうか</td>
-</tr>
-<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body">リンク可能な文字列</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">返り値型:</th><td class="field-body">string</td>
+<tr class="field-odd field"><th class="field-name">戻り値の型:</th><td class="field-body"><p class="first last">string</p>
+</td>
 </tr>
 </tbody>
 </table>
@@ -826,18 +830,18 @@ Email リンクは上にあるように <a class="reference internal" href="#saf
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">パラメータ string  $str:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">入力文字列</td>
+<tr class="field-odd field"><th class="field-name">パラメタ:</th><td class="field-body"><ul class="first simple">
+<li><strong>$str</strong> (<em>string</em>) &#8211; 入力文字列</li>
+<li><strong>$separator</strong> (<em>string</em>) &#8211; 単語区切り</li>
+<li><strong>$lowercase</strong> (<em>bool</em>) &#8211; 小文字に変換して出力するかどうか</li>
+</ul>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name" colspan="2">パラメータ string  $separator:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body">単語区切り</td>
+<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body"><p class="first">URL フォーマットの文字列</p>
+</td>
 </tr>
-<tr class="field-odd field"><th class="field-name" colspan="2">パラメータ bool    $lowercase:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">小文字に変換して出力するかどうか</td>
-</tr>
-<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body">URL フォーマットの文字列</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">返り値型:</th><td class="field-body">string</td>
+<tr class="field-odd field"><th class="field-name">戻り値の型:</th><td class="field-body"><p class="first last">string</p>
+</td>
 </tr>
 </tbody>
 </table>
@@ -879,12 +883,16 @@ URL に使いたいときなどに役立ちます。例:</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">パラメータ string  $str:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">URL 文字列</td>
+<tr class="field-odd field"><th class="field-name">パラメタ:</th><td class="field-body"><ul class="first simple">
+<li><strong>$str</strong> (<em>string</em>) &#8211; URL 文字列</li>
+</ul>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body">プロトコル接頭辞を付与した URL 文字列</td>
+<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body"><p class="first">プロトコル接頭辞を付与した URL 文字列</p>
+</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">返り値型:</th><td class="field-body">string</td>
+<tr class="field-odd field"><th class="field-name">戻り値の型:</th><td class="field-body"><p class="first last">string</p>
+</td>
 </tr>
 </tbody>
 </table>
@@ -902,16 +910,15 @@ URL に使いたいときなどに役立ちます。例:</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">パラメータ string  $uri:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">URI 文字列</td>
+<tr class="field-odd field"><th class="field-name">パラメタ:</th><td class="field-body"><ul class="first simple">
+<li><strong>$uri</strong> (<em>string</em>) &#8211; URI 文字列</li>
+<li><strong>$method</strong> (<em>string</em>) &#8211; リダイレクトメソッド (&#8216;auto&#8217;, &#8216;location&#8217; or &#8216;refresh&#8217;)</li>
+<li><strong>$code</strong> (<em>string</em>) &#8211; HTTP Response Code (通常 302 or 303)</li>
+</ul>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name" colspan="2">パラメータ string  $method:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body">リダイレクトメソッド (&#8216;auto&#8217;, &#8216;location&#8217; or &#8216;refresh&#8217;)</td>
-</tr>
-<tr class="field-odd field"><th class="field-name" colspan="2">パラメータ string  $code:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">HTTP Response Code (通常 302 or 303)</td>
-</tr>
-<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body">void</td>
+<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body"><p class="first last">void</p>
+</td>
 </tr>
 </tbody>
 </table>

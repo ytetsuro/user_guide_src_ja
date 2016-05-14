@@ -193,7 +193,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../helpers/security_helper.html">Security Helper</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../helpers/smiley_helper.html">Smiley Helper</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../helpers/string_helper.html">String Helper</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../helpers/text_helper.html">Text Helper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/text_helper.html">テキストヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../helpers/typography_helper.html">タイポグラフィーヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../helpers/url_helper.html">URL ヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../helpers/xml_helper.html">XML ヘルパー</a></li>
@@ -379,7 +379,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../helpers/security_helper.html">Security Helper</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../helpers/smiley_helper.html">Smiley Helper</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../helpers/string_helper.html">String Helper</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../helpers/text_helper.html">Text Helper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/text_helper.html">テキストヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../helpers/typography_helper.html">タイポグラフィーヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../helpers/url_helper.html">URL ヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../helpers/xml_helper.html">XML ヘルパー</a></li>
@@ -694,12 +694,16 @@ URI セグメントに出現するものを指定します
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">パラメータ array   $config:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">構成パラメータ</td>
+<tr class="field-odd field"><th class="field-name">パラメタ:</th><td class="field-body"><ul class="first simple">
+<li><strong>$config</strong> (<em>array</em>) &#8211; 構成パラメータ</li>
+</ul>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body">CI_Calendar インスタンス (メソッドチェーン)</td>
+<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body"><p class="first">CI_Calendar インスタンス (メソッドチェーン)</p>
+</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">返り値型:</th><td class="field-body">CI_Calendar</td>
+<tr class="field-odd field"><th class="field-name">戻り値の型:</th><td class="field-body"><p class="first last">CI_Calendar</p>
+</td>
 </tr>
 </tbody>
 </table>
@@ -713,18 +717,18 @@ URI セグメントに出現するものを指定します
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">パラメータ int     $year:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">年</td>
+<tr class="field-odd field"><th class="field-name">パラメタ:</th><td class="field-body"><ul class="first simple">
+<li><strong>$year</strong> (<em>int</em>) &#8211; 年</li>
+<li><strong>$month</strong> (<em>int</em>) &#8211; 月</li>
+<li><strong>$data</strong> (<em>array</em>) &#8211; カレンダーセルにデータを表示</li>
+</ul>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name" colspan="2">パラメータ int     $month:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body">月</td>
+<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body"><p class="first">HTMLフォーマット カレンダー</p>
+</td>
 </tr>
-<tr class="field-odd field"><th class="field-name" colspan="2">パラメータ array   $data:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">カレンダーセルにデータを表示</td>
-</tr>
-<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body">HTMLフォーマット カレンダー</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">返り値型:</th><td class="field-body">string</td>
+<tr class="field-odd field"><th class="field-name">戻り値の型:</th><td class="field-body"><p class="first last">string</p>
+</td>
 </tr>
 </tbody>
 </table>
@@ -738,12 +742,16 @@ URI セグメントに出現するものを指定します
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">パラメータ int     $month:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">月</td>
+<tr class="field-odd field"><th class="field-name">パラメタ:</th><td class="field-body"><ul class="first simple">
+<li><strong>$month</strong> (<em>int</em>) &#8211; 月</li>
+</ul>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body">月名</td>
+<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body"><p class="first">月名</p>
+</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">返り値型:</th><td class="field-body">string</td>
+<tr class="field-odd field"><th class="field-name">戻り値の型:</th><td class="field-body"><p class="first last">string</p>
+</td>
 </tr>
 </tbody>
 </table>
@@ -757,12 +765,16 @@ URI セグメントに出現するものを指定します
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">パラメータ string  $day_type:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">&#8216;long&#8217;, &#8216;short&#8217;, or &#8216;abr&#8217;</td>
+<tr class="field-odd field"><th class="field-name">パラメタ:</th><td class="field-body"><ul class="first simple">
+<li><strong>$day_type</strong> (<em>string</em>) &#8211; &#8216;long&#8217;, &#8216;short&#8217;, or &#8216;abr&#8217;</li>
+</ul>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body">Array of day names</td>
+<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body"><p class="first">Array of day names</p>
+</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">返り値型:</th><td class="field-body">array</td>
+<tr class="field-odd field"><th class="field-name">戻り値の型:</th><td class="field-body"><p class="first last">array</p>
+</td>
 </tr>
 </tbody>
 </table>
@@ -779,15 +791,17 @@ URI セグメントに出現するものを指定します
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">パラメータ int     $month:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">月</td>
+<tr class="field-odd field"><th class="field-name">パラメタ:</th><td class="field-body"><ul class="first simple">
+<li><strong>$month</strong> (<em>int</em>) &#8211; 月</li>
+<li><strong>$year</strong> (<em>int</em>) &#8211; 年</li>
+</ul>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name" colspan="2">パラメータ int     $year:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body">年</td>
+<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body"><p class="first">月と年を含む連想配列</p>
+</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">返り値:</th><td class="field-body">月と年を含む連想配列</td>
-</tr>
-<tr class="field-even field"><th class="field-name">返り値型:</th><td class="field-body">array</td>
+<tr class="field-odd field"><th class="field-name">戻り値の型:</th><td class="field-body"><p class="first last">array</p>
+</td>
 </tr>
 </tbody>
 </table>
@@ -814,15 +828,17 @@ URI セグメントに出現するものを指定します
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">パラメータ int     $month:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">月</td>
+<tr class="field-odd field"><th class="field-name">パラメタ:</th><td class="field-body"><ul class="first simple">
+<li><strong>$month</strong> (<em>int</em>) &#8211; 月</li>
+<li><strong>$year</strong> (<em>int</em>) &#8211; 年</li>
+</ul>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name" colspan="2">パラメータ int     $year:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body">年</td>
+<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body"><p class="first">指定された月の日数カウント</p>
+</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">返り値:</th><td class="field-body">指定された月の日数カウント</td>
-</tr>
-<tr class="field-even field"><th class="field-name">返り値型:</th><td class="field-body">int</td>
+<tr class="field-odd field"><th class="field-name">戻り値の型:</th><td class="field-body"><p class="first last">int</p>
+</td>
 </tr>
 </tbody>
 </table>
@@ -844,9 +860,9 @@ URI セグメントに出現するものを指定します
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">返り値:</th><td class="field-body">テンプレート値の配列</td>
+<tr class="field-odd field"><th class="field-name">戻り値:</th><td class="field-body">テンプレート値の配列</td>
 </tr>
-<tr class="field-even field"><th class="field-name">返り値型:</th><td class="field-body">array</td>
+<tr class="field-even field"><th class="field-name">戻り値の型:</th><td class="field-body">array</td>
 </tr>
 </tbody>
 </table>
@@ -861,9 +877,9 @@ URI セグメントに出現するものを指定します
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">返り値:</th><td class="field-body">CI_Calendar インスタンス (メソッドチェーン)</td>
+<tr class="field-odd field"><th class="field-name">戻り値:</th><td class="field-body">CI_Calendar インスタンス (メソッドチェーン)</td>
 </tr>
-<tr class="field-even field"><th class="field-name">返り値型:</th><td class="field-body">CI_Calendar</td>
+<tr class="field-even field"><th class="field-name">戻り値の型:</th><td class="field-body">CI_Calendar</td>
 </tr>
 </tbody>
 </table>

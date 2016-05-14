@@ -193,7 +193,7 @@
 <li class="toctree-l2"><a class="reference internal" href="security_helper.html">Security Helper</a></li>
 <li class="toctree-l2"><a class="reference internal" href="smiley_helper.html">Smiley Helper</a></li>
 <li class="toctree-l2"><a class="reference internal" href="string_helper.html">String Helper</a></li>
-<li class="toctree-l2"><a class="reference internal" href="text_helper.html">Text Helper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="text_helper.html">テキストヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="typography_helper.html">タイポグラフィーヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="url_helper.html">URL ヘルパー</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="">XML ヘルパー</a></li>
@@ -379,7 +379,7 @@
 <li class="toctree-l2"><a class="reference internal" href="security_helper.html">Security Helper</a></li>
 <li class="toctree-l2"><a class="reference internal" href="smiley_helper.html">Smiley Helper</a></li>
 <li class="toctree-l2"><a class="reference internal" href="string_helper.html">String Helper</a></li>
-<li class="toctree-l2"><a class="reference internal" href="text_helper.html">Text Helper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="text_helper.html">テキストヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="typography_helper.html">タイポグラフィーヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="url_helper.html">URL ヘルパー</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="">XML ヘルパー</a></li>
@@ -451,15 +451,17 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">パラメータ string $str:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">変換する文字列</td>
+<tr class="field-odd field"><th class="field-name">パラメタ:</th><td class="field-body"><ul class="first simple">
+<li><strong>$str</strong> (<em>string</em>) &#8211; 変換する文字列</li>
+<li><strong>$protect_all</strong> (<em>bool</em>) &#8211; 数値文字エンティティ(例: &amp;foo;)のようなエンティティのように見える可能性のあるコンテンツを全てそのまま出力するかどうか</li>
+</ul>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name" colspan="2">パラメータ bool $protect_all:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body">数値文字エンティティ(例: &amp;foo;)のようなエンティティのように見える可能性のあるコンテンツを全てそのまま出力するかどうか</td>
+<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body"><p class="first">XML 変換文字列</p>
+</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">返り値:</th><td class="field-body">XML 変換文字列</td>
-</tr>
-<tr class="field-even field"><th class="field-name">返り値型:</th><td class="field-body">string</td>
+<tr class="field-odd field"><th class="field-name">戻り値の型:</th><td class="field-body"><p class="first last">string</p>
+</td>
 </tr>
 </tbody>
 </table>

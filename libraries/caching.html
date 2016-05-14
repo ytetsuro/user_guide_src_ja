@@ -193,7 +193,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../helpers/security_helper.html">Security Helper</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../helpers/smiley_helper.html">Smiley Helper</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../helpers/string_helper.html">String Helper</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../helpers/text_helper.html">Text Helper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/text_helper.html">テキストヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../helpers/typography_helper.html">タイポグラフィーヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../helpers/url_helper.html">URL ヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../helpers/xml_helper.html">XML ヘルパー</a></li>
@@ -379,7 +379,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../helpers/security_helper.html">Security Helper</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../helpers/smiley_helper.html">Smiley Helper</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../helpers/string_helper.html">String Helper</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../helpers/text_helper.html">Text Helper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/text_helper.html">テキストヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../helpers/typography_helper.html">タイポグラフィーヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../helpers/url_helper.html">URL ヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../helpers/xml_helper.html">XML ヘルパー</a></li>
@@ -486,12 +486,16 @@ available in the hosting environment.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">パラメータ string  $driver:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">キャッシング・ドライバの名前</td>
+<tr class="field-odd field"><th class="field-name">パラメタ:</th><td class="field-body"><ul class="first simple">
+<li><strong>$driver</strong> (<em>string</em>) &#8211; キャッシング・ドライバの名前</li>
+</ul>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body">対応できればTRUE、そうでなければFALSEを返します。</td>
+<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body"><p class="first">対応できればTRUE、そうでなければFALSEを返します。</p>
+</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">返り値型:</th><td class="field-body">bool</td>
+<tr class="field-odd field"><th class="field-name">戻り値の型:</th><td class="field-body"><p class="first last">bool</p>
+</td>
 </tr>
 </tbody>
 </table>
@@ -517,12 +521,16 @@ available in the hosting environment.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">パラメータ string  $id:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">キャッシュ・アイテム名</td>
+<tr class="field-odd field"><th class="field-name">パラメタ:</th><td class="field-body"><ul class="first simple">
+<li><strong>$id</strong> (<em>string</em>) &#8211; キャッシュ・アイテム名</li>
+</ul>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body">アイテムが存在しない場合、FALSE を返します。</td>
+<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body"><p class="first">アイテムが存在しない場合、FALSE を返します。</p>
+</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">返り値型:</th><td class="field-body">mixed</td>
+<tr class="field-odd field"><th class="field-name">戻り値の型:</th><td class="field-body"><p class="first last">mixed</p>
+</td>
 </tr>
 </tbody>
 </table>
@@ -540,21 +548,19 @@ available in the hosting environment.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">パラメータ string  $id:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">キャッシュ・アイテム名</td>
+<tr class="field-odd field"><th class="field-name">パラメタ:</th><td class="field-body"><ul class="first simple">
+<li><strong>$id</strong> (<em>string</em>) &#8211; キャッシュ・アイテム名</li>
+<li><strong>$data</strong> (<em>mixed</em>) &#8211; 保存するデータ</li>
+<li><strong>$ttl</strong> (<em>int</em>) &#8211; Time To Live のデフォルトは 60 秒です。</li>
+<li><strong>$raw</strong> (<em>bool</em>) &#8211; 元の値を保存するべきかどうか</li>
+</ul>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name" colspan="2">パラメータ mixed   $data:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body">保存するデータ</td>
+<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body"><p class="first">成功時　TRUE、 失敗時　FALSE</p>
+</td>
 </tr>
-<tr class="field-odd field"><th class="field-name" colspan="2">パラメータ int     $ttl:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">Time To Live のデフォルトは 60 秒です。</td>
-</tr>
-<tr class="field-even field"><th class="field-name" colspan="2">パラメータ bool    $raw:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body">元の値を保存するべきかどうか</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">返り値:</th><td class="field-body">成功時　TRUE、 失敗時　FALSE</td>
-</tr>
-<tr class="field-even field"><th class="field-name">返り値型:</th><td class="field-body">string</td>
+<tr class="field-odd field"><th class="field-name">戻り値の型:</th><td class="field-body"><p class="first last">string</p>
+</td>
 </tr>
 </tbody>
 </table>
@@ -577,12 +583,16 @@ available in the hosting environment.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">パラメータ string  $id:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">キャッシュされたアイテムの名前</td>
+<tr class="field-odd field"><th class="field-name">パラメタ:</th><td class="field-body"><ul class="first simple">
+<li><strong>$id</strong> (<em>string</em>) &#8211; キャッシュされたアイテムの名前</li>
+</ul>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body">成功時 TRUE、失敗時 FALSE</td>
+<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body"><p class="first">成功時 TRUE、失敗時 FALSE</p>
+</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">返り値型:</th><td class="field-body">bool</td>
+<tr class="field-odd field"><th class="field-name">戻り値の型:</th><td class="field-body"><p class="first last">bool</p>
+</td>
 </tr>
 </tbody>
 </table>
@@ -600,15 +610,17 @@ available in the hosting environment.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">パラメータ string  $id:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">キャッシュID</td>
+<tr class="field-odd field"><th class="field-name">パラメタ:</th><td class="field-body"><ul class="first simple">
+<li><strong>$id</strong> (<em>string</em>) &#8211; キャッシュID</li>
+<li><strong>$offset</strong> (<em>int</em>) &#8211; 値に進行上の数値を追加する</li>
+</ul>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name" colspan="2">パラメータ int     $offset:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body">値に進行上の数値を追加する</td>
+<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body"><p class="first">新しい値が保存されたら成功、失敗時　FALSE</p>
+</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">返り値:</th><td class="field-body">新しい値が保存されたら成功、失敗時　FALSE</td>
-</tr>
-<tr class="field-even field"><th class="field-name">返り値型:</th><td class="field-body">mixed</td>
+<tr class="field-odd field"><th class="field-name">戻り値の型:</th><td class="field-body"><p class="first last">mixed</p>
+</td>
 </tr>
 </tbody>
 </table>
@@ -629,15 +641,17 @@ available in the hosting environment.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">パラメータ string  $id:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">キャッシュID</td>
+<tr class="field-odd field"><th class="field-name">パラメタ:</th><td class="field-body"><ul class="first simple">
+<li><strong>$id</strong> (<em>string</em>) &#8211; キャッシュID</li>
+<li><strong>$offset</strong> (<em>int</em>) &#8211; S値に進行上の数値を減算する</li>
+</ul>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name" colspan="2">パラメータ int     $offset:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body">S値に進行上の数値を減算する</td>
+<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body"><p class="first">新しい値が保存されたら成功、失敗時　FALSE</p>
+</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">返り値:</th><td class="field-body">新しい値が保存されたら成功、失敗時　FALSE</td>
-</tr>
-<tr class="field-even field"><th class="field-name">返り値型:</th><td class="field-body">mixed</td>
+<tr class="field-odd field"><th class="field-name">戻り値の型:</th><td class="field-body"><p class="first last">mixed</p>
+</td>
 </tr>
 </tbody>
 </table>
@@ -658,9 +672,9 @@ available in the hosting environment.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">返り値:</th><td class="field-body">成功時　TRUE、失敗時　FALSE</td>
+<tr class="field-odd field"><th class="field-name">戻り値:</th><td class="field-body">成功時　TRUE、失敗時　FALSE</td>
 </tr>
-<tr class="field-even field"><th class="field-name">返り値型:</th><td class="field-body">bool</td>
+<tr class="field-even field"><th class="field-name">戻り値の型:</th><td class="field-body">bool</td>
 </tr>
 </tbody>
 </table>
@@ -678,9 +692,9 @@ available in the hosting environment.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">返り値:</th><td class="field-body">全キャッシュ・データベースの情報</td>
+<tr class="field-odd field"><th class="field-name">戻り値:</th><td class="field-body">全キャッシュ・データベースの情報</td>
 </tr>
-<tr class="field-even field"><th class="field-name">返り値型:</th><td class="field-body">mixed</td>
+<tr class="field-even field"><th class="field-name">戻り値の型:</th><td class="field-body">mixed</td>
 </tr>
 </tbody>
 </table>
@@ -702,12 +716,16 @@ on which adapter is being used.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">パラメータ string  $id:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">キャッシュ・アイテム名</td>
+<tr class="field-odd field"><th class="field-name">パラメタ:</th><td class="field-body"><ul class="first simple">
+<li><strong>$id</strong> (<em>string</em>) &#8211; キャッシュ・アイテム名</li>
+</ul>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body">キャッシュアイテムのメタデータ</td>
+<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body"><p class="first">キャッシュアイテムのメタデータ</p>
+</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">返り値型:</th><td class="field-body">mixed</td>
+<tr class="field-odd field"><th class="field-name">戻り値の型:</th><td class="field-body"><p class="first last">mixed</p>
+</td>
 </tr>
 </tbody>
 </table>
