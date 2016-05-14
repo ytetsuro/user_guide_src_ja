@@ -27,10 +27,10 @@
 
 .. php:function:: auto_typography($str[, $reduce_linebreaks = FALSE])
 
-	:パラメータ	string	$str: 入力文字
-	:パラメータ	bool	$reduce_linebreaks: 複数の重複した改行を2つにするかどうか
-	:返り値:	HTML フォーマットされた体裁が整った文字列
-	:返り値型: string
+	:param	string	$str: 入力文字
+	:param	bool	$reduce_linebreaks: 複数の重複した改行を2つにするかどうか
+	:returns:	HTML フォーマットされた体裁が整った文字列
+	:rtype: string
 
 	意味論的にも文の体裁を整える面でも正しい HTML
 	にテキストをフォーマットします。
@@ -51,9 +51,9 @@
 
 .. php:function:: nl2br_except_pre($str)
 
-	:パラメータ	string	$str: 入力文字列
-	:返り値:	HTML フォーマットされた改行を含む文字列
-	:返り値型:	string
+	:param	string	$str: 入力文字列
+	:returns:	HTML フォーマットされた改行を含む文字列
+	:rtype:	string
 
 	<pre>タグの中でない改行を<br />タグに変換します。
 	この関数は<pre>タグを無視しないという点を除いて、
@@ -65,10 +65,10 @@
 
 .. php:function:: entity_decode($str, $charset = NULL)
 
-	:パラメータ	string	$str: 入力文字列
-	:パラメータ	string	$charset: 入力文字列の文字セット
-	:返り値:	エンティティデコードされた文字列
-	:返り値型:	string
+	:param	string	$str: 入力文字列
+	:param	string	$charset: 入力文字列の文字セット
+	:returns:	エンティティデコードされた文字列
+	:rtype:	string
 
 	この関数は ``CI_Security::entity_decode()`` のエイリアスです。
 	より多くの情報を得るには、:doc:`セキュリティクラス<../libraries/security>`

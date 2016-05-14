@@ -321,16 +321,16 @@ of watermarking.
 
 	.. php:method:: initialize([$props = array()])
 
-		:パラメータ	array	$props: Image processing preferences
-		:返り値:	TRUE on success, FALSE in case of invalid settings
-		:返り値型:	bool
+		:param	array	$props: Image processing preferences
+		:returns:	TRUE on success, FALSE in case of invalid settings
+		:rtype:	bool
 
 		Initializes the class for processing an image.
 
 	.. php:method:: resize()
 
-		:返り値:	TRUE on success, FALSE on failure
-		:返り値型:	bool
+		:returns:	TRUE on success, FALSE on failure
+		:rtype:	bool
 
 		The image resizing method lets you resize the original image, create a
 		copy (with or without resizing), or create a thumbnail image.
@@ -376,8 +376,8 @@ of watermarking.
 
 	.. php:method:: crop()
 
-		:返り値:	TRUE on success, FALSE on failure
-		:返り値型:	bool
+		:returns:	TRUE on success, FALSE on failure
+		:rtype:	bool
 
 		The cropping method works nearly identically to the resizing function
 		except it requires that you set preferences for the X and Y axis (in
@@ -412,8 +412,8 @@ of watermarking.
 
 	.. php:method:: rotate()
 
-		:返り値:	TRUE on success, FALSE on failure
-		:返り値型:	bool
+		:returns:	TRUE on success, FALSE on failure
+		:rtype:	bool
 
 		The image rotation method requires that the angle of rotation be set
 		via its preference::
@@ -444,15 +444,15 @@ of watermarking.
 
 	.. php:method:: watermark()
 
-		:返り値:	TRUE on success, FALSE on failure
-		:返り値型:	bool
+		:returns:	TRUE on success, FALSE on failure
+		:rtype:	bool
 
 		Creates a watermark over an image, please refer to the :ref:`watermarking`
 		section for more info.		
 
 	.. php:method:: clear()
 
-		:返り値:	void
+		:returns:	void
 
 		The clear method resets all of the values used when processing an
 		image. You will want to call this if you are processing images in a
@@ -464,10 +464,10 @@ of watermarking.
 
 	.. php:method:: display_errors([$open = '<p>[, $close = '</p>']])
 
-		:パラメータ	string	$open: Error message opening tag
-		:パラメータ	string	$close: Error message closing tag
-		:返り値:	Error messages
-		:返り値型:	string
+		:param	string	$open: Error message opening tag
+		:param	string	$close: Error message closing tag
+		:returns:	Error messages
+		:rtype:	string
 
 		Returns all detected errors formatted as a string.
 		::

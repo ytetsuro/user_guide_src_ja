@@ -1030,11 +1030,11 @@ to use:
 
 	.. php:method:: set_rules($field[, $label = ''[, $rules = '']])
 
-		:パラメータ	string	$field: Field name
-		:パラメータ	string	$label: Field label
-		:パラメータ	mixed	$rules: Validation rules, as a string list separated by a pipe "|", or as an array or rules
-		:返り値:	CI_Form_validation instance (method chaining)
-		:返り値型:	CI_Form_validation
+		:param	string	$field: Field name
+		:param	string	$label: Field label
+		:param	mixed	$rules: Validation rules, as a string list separated by a pipe "|", or as an array or rules
+		:returns:	CI_Form_validation instance (method chaining)
+		:rtype:	CI_Form_validation
 
 		Permits you to set validation rules, as described in the tutorial
 		sections above:
@@ -1044,9 +1044,9 @@ to use:
 
 	.. php:method:: run([$group = ''])
 
-		:パラメータ	string	$group: The name of the validation group to run
-		:返り値:	    TRUE on success, FALSE if validation failed
-		:返り値型:	bool
+		:param	string	$group: The name of the validation group to run
+		:returns:	    TRUE on success, FALSE if validation failed
+		:rtype:	bool
 
 		Runs the validation routines. Returns boolean TRUE on success and FALSE
 		on failure. You can optionally pass the name of the validation group via
@@ -1054,72 +1054,72 @@ to use:
 
 	.. php:method:: set_message($lang[, $val = ''])
 
-		:パラメータ	string	$lang: The rule the message is for
-		:パラメータ	string	$val: The message
-		:返り値:	CI_Form_validation instance (method chaining)
-		:返り値型:	CI_Form_validation
+		:param	string	$lang: The rule the message is for
+		:param	string	$val: The message
+		:returns:	CI_Form_validation instance (method chaining)
+		:rtype:	CI_Form_validation
 
 		Permits you to set custom error messages. See :ref:`setting-error-messages`
 
 	.. php:method:: set_error_delimiters([$prefix = '<p>'[, $suffix = '</p>']])
 
-		:パラメータ	string	$prefix: Error message prefix
-		:パラメータ	string	$suffix: Error message suffix
-		:返り値:	CI_Form_validation instance (method chaining)
-		:返り値型:	CI_Form_validation
+		:param	string	$prefix: Error message prefix
+		:param	string	$suffix: Error message suffix
+		:returns:	CI_Form_validation instance (method chaining)
+		:rtype:	CI_Form_validation
 
 		Sets the default prefix and suffix for error messages.
 
 	.. php:method:: set_data($data)
 
-		:パラメータ	array	$data: Array of data validate
-		:返り値:  	CI_Form_validation instance (method chaining)
-		:返り値型:	CI_Form_validation
+		:param	array	$data: Array of data validate
+		:returns:  	CI_Form_validation instance (method chaining)
+		:rtype:	CI_Form_validation
 
 		Permits you to set an array for validation, instead of using the default
 		``$_POST`` array.
 
 	.. php:method:: reset_validation()
 
-		:返り値:	CI_Form_validation instance (method chaining)
-		:返り値型:	CI_Form_validation
+		:returns:	CI_Form_validation instance (method chaining)
+		:rtype:	CI_Form_validation
 
 		Permits you to reset the validation when you validate more than one array.
 		This method should be called before validating each new array.
 
 	.. php:method:: error_array()
 
-		:返り値:	Array of error messages
-		:返り値型:	array
+		:returns:	Array of error messages
+		:rtype:	array
 
 		Returns the error messages as an array.
 
 	.. php:method:: error_string([$prefix = ''[, $suffix = '']])
 
-		:パラメータ	string	$prefix: Error message prefix
-		:パラメータ	string	$suffix: Error message suffix
-		:返り値:	Error messages as a string
-		:返り値型:	string
+		:param	string	$prefix: Error message prefix
+		:param	string	$suffix: Error message suffix
+		:returns:	Error messages as a string
+		:rtype:	string
 
 		Returns all error messages (as returned from error_array()) formatted as a
 		string and separated by a newline character.
 
 	.. php:method:: error($field[, $prefix = ''[, $suffix = '']])
 
-		:パラメータ	string $field: Field name
-		:パラメータ	string $prefix: Optional prefix
-		:パラメータ	string $suffix: Optional suffix
-		:返り値:	Error message string
-		:返り値型:	string
+		:param	string $field: Field name
+		:param	string $prefix: Optional prefix
+		:param	string $suffix: Optional suffix
+		:returns:	Error message string
+		:rtype:	string
 
 		Returns the error message for a specific field, optionally adding a
 		prefix and/or suffix to it (usually HTML tags).
 
 	.. php:method:: has_rule($field)
 
-		:パラメータ	string	$field: Field name
-		:返り値:	TRUE if the field has rules set, FALSE if not
-		:返り値型:	bool
+		:param	string	$field: Field name
+		:returns:	TRUE if the field has rules set, FALSE if not
+		:rtype:	bool
 
 		Checks to see if there is a rule set for the specified field.
 

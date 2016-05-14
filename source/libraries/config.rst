@@ -184,44 +184,44 @@ NULLを返します。
 
 	.. php:method:: item($item[, $index=''])
 
-		:パラメータ	string	$item: Configの項目名
-		:パラメータ	string	$index: インデックス名
-		:返り値:	    Configの項目値、見つからない場合はNULL
-		:返り値型:	mixed
+		:param	string	$item: Configの項目名
+		:param	string	$index: インデックス名
+		:returns:	    Configの項目値、見つからない場合はNULL
+		:rtype:	mixed
 
 		設定ファイルの項目を取得します。
 
 	.. php:method:: set_item($item, $value)
 
-		:パラメータ	string	$item: Configの項目名
-		:パラメータ	string	$value: Configの項目値
-		:返り値型:	void
+		:param	string	$item: Configの項目名
+		:param	string	$value: Configの項目値
+		:rtype:	void
 
 		指定された値に設定ファイルの項目を設定します。
 
 	.. php:method:: slash_item($item)
 
-		:パラメータ	string	$item: Configの項目名
-		:返り値:	Configの項目フォワード末尾の値スラッシュ見つからない場合はnull
-		:返り値型:	mixed
+		:param	string	$item: Configの項目名
+		:returns:	Configの項目フォワード末尾の値スラッシュ見つからない場合はnull
+		:rtype:	mixed
 
 		この方法は、``item()``と同じです,  設定項目の末尾に
 		スラッシュを加えます。
 
 	.. php:method:: load([$file = ''[, $use_sections = FALSE[, $fail_gracefully = FALSE]]])
 
-		:パラメータ	string	$file: 構成ファイル名
-		:パラメータ	bool	$use_sections: 設定値　独自のセクションにロードする必要があるかどうか(主な構成配列のインデックス)
-		:パラメータ	bool	$fail_gracefully: falseを返す、またはエラーメッセージを表示するかどうか
-		:返り値:	    成功時　TRUE 失敗時　FALSE
-		:返り値型:	bool
+		:param	string	$file: 構成ファイル名
+		:param	bool	$use_sections: 設定値　独自のセクションにロードする必要があるかどうか(主な構成配列のインデックス)
+		:param	bool	$fail_gracefully: falseを返す、またはエラーメッセージを表示するかどうか
+		:returns:	    成功時　TRUE 失敗時　FALSE
+		:rtype:	bool
 
 		設定ファイルをロードします。
 
 	.. php:method:: site_url()
 
-		:返り値:	サイトURL
-		:返り値型:	string
+		:returns:	サイトURL
+		:rtype:	string
 
 		このメソッドは、設定ファイルで、"index" の値に指定した、
 		サイトへの URL を取得します。
@@ -231,8 +231,8 @@ NULLを返します。
 
 	.. php:method:: base_url()
 
-		:返り値:	    ベース URL
-		:返り値型:	string
+		:returns:	    ベース URL
+		:rtype:	string
 
 		このメソッドは、サイトの URL、プラス、オプションの
 		スタイルシートや画像などへのパスを取得します。
@@ -242,8 +242,8 @@ NULLを返します。
 
 	.. php:method:: system_url()
 
-		:返り値:	CI system/ フォルダの指しているURL
-		:返り値型:	string
+		:returns:	CI system/ フォルダの指しているURL
+		:rtype:	string
 
 		このメソッドを使うと system フォルダ の URL を取得できます。
 

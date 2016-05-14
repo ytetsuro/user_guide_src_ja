@@ -304,9 +304,9 @@ row ID は、商品がカートに追加される際に、カートのコード
 
 	.. php:method:: insert([$items = array()])
 
-		:パラメータ	array	$items: カートに挿入する項目
-		:返り値:	    成功時　TRUE  失敗時　FALSE
-		:返り値型:	bool
+		:param	array	$items: カートに挿入する項目
+		:returns:	    成功時　TRUE  失敗時　FALSE
+		:rtype:	bool
 
 		カートに項目を挿入しセッションテーブルに保存します。
 		成功時TRUE、失敗した場合FALSEを返します
@@ -314,9 +314,9 @@ row ID は、商品がカートに追加される際に、カートのコード
 
 	.. php:method:: update([$items = array()])
 
-		:パラメータ	array	$items: カートのアイテムを更新する
-		:返り値:	    成功時　TRUE、失敗時　FALSE
-		:返り値型:	bool
+		:param	array	$items: カートのアイテムを更新する
+		:returns:	    成功時　TRUE、失敗時　FALSE
+		:rtype:	bool
 
 		このメソッドは、指定された項目のプロパティを変更することが可能です。
 		数量の変更を加える場合、通常チェックアウトの前に「カートを見る」ページ
@@ -325,34 +325,34 @@ row ID は、商品がカートに追加される際に、カートのコード
 
 	.. php:method:: remove($rowid)
 
-		:パラメータ	int	$rowid: アイテムのIDをショッピングカートから削除する
-		:返り値:	成功時　TRUE、失敗時　FALSE
-		:返り値型:	bool
+		:param	int	$rowid: アイテムのIDをショッピングカートから削除する
+		:returns:	成功時　TRUE、失敗時　FALSE
+		:rtype:	bool
 
 		`` $rowid``を渡すことでショッピングカートからアイテムを削除すること
 		ができます。
 
 	.. php:method:: total()
 
-		:返り値:	合計金額
-		:返り値型:	int
+		:returns:	合計金額
+		:rtype:	int
 
 		カート内の合計金額が表示されます。
 
 
 	.. php:method:: total_items()
 
-		:返り値:	カート内のアイテムの合計額
-		:返り値型:	int
+		:returns:	カート内のアイテムの合計額
+		:rtype:	int
 
 		カート内のアイテムの合計数を表示します。
 
 
 	.. php:method:: contents([$newest_first = FALSE])
 
-		:パラメータ	bool	$newest_first: Whether to order the array with newest items first
-		:返り値:	    An array of cart contents
-		:返り値型:	array
+		:param	bool	$newest_first: Whether to order the array with newest items first
+		:returns:	    An array of cart contents
+		:rtype:	array
 
 		カート内のすべてのものを含む配列を返します。
 		あなたは返された配列、新から旧へまたは
@@ -361,18 +361,18 @@ row ID は、商品がカートに追加される際に、カートのコード
 
 	.. php:method:: get_item($row_id)
 
-		:パラメータ	int	$row_id: Row ID の所得
-		:返り値:	アイテムデータの配列
-		:返り値型:	array
+		:param	int	$row_id: Row ID の所得
+		:returns:	アイテムデータの配列
+		:rtype:	array
 
 		指定された行のIDと一致する項目の配列を含むデータを返し、
 		またはそのような項目が存在しない場合はFALSEを返します。
 
 	.. php:method:: has_options($row_id = '')
 
-		:パラメータ	int	$row_id: Row ID の検査
-		:返り値:	オプションが存在する場合TRUE、それ以外の場合はFALSE
-		:返り値型:	bool
+		:param	int	$row_id: Row ID の検査
+		:returns:	オプションが存在する場合TRUE、それ以外の場合はFALSE
+		:rtype:	bool
 
 		カート内の特定の行がオプションが含まれている場合はTRUE（ブール値）を返します。
 		このメソッドは、rowid を渡す必要があるので、カートを表示する の例
@@ -381,9 +381,9 @@ row ID は、商品がカートに追加される際に、カートのコード
 
 	.. php:method:: product_options([$row_id = ''])
 
-		:パラメータ	int	$row_id: Row ID
-		:返り値:	    製品のオプションの配列
-		:返り値型:	array
+		:param	int	$row_id: Row ID
+		:returns:	    製品のオプションの配列
+		:rtype:	array
 
 		特定の商品のオプションの配列を返します。このメソッドは、r
 		owid を渡す必要があるので、カートを表示する の例で示すよう
@@ -392,7 +392,7 @@ row ID は、商品がカートに追加される際に、カートのコード
 
 	.. php:method:: destroy()
 
-		:返り値型: void
+		:rtype: void
 
 		カートを破棄します。
 		このメソッドは、顧客の注文が完了した際などに呼ばれます。
