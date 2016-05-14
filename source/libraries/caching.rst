@@ -56,9 +56,9 @@ available in the hosting environment.
 
 	.. php:method:: is_supported($driver)
 
-		:パラメータ	string	$driver: キャッシング・ドライバの名前
-		:返り値:	対応できればTRUE、そうでなければFALSEを返します。
-		:返り値型:	bool
+		:param	string	$driver: キャッシング・ドライバの名前
+		:returns:	対応できればTRUE、そうでなければFALSEを返します。
+		:rtype:	bool
 
 		このメソッドは、``$this->cache->get()`` 経由でドライバにアクセスする際に、
 		自動的に呼び出されます。しかしながら、もし、個別のドライバを使用する
@@ -76,9 +76,9 @@ available in the hosting environment.
 
 	.. php:method:: get($id)
 
-		:パラメータ	string	$id: キャッシュ・アイテム名
-		:返り値:	アイテムが存在しない場合、FALSE を返します。
-		:返り値型:	mixed
+		:param	string	$id: キャッシュ・アイテム名
+		:returns:	アイテムが存在しない場合、FALSE を返します。
+		:rtype:	mixed
 
 		このメソッドはキャッシュから1つのアイテムを取得することを試みます。
 		もしそのアイテムが存在しない場合、このメソッドは FALSE を返します。
@@ -88,12 +88,12 @@ available in the hosting environment.
 
 	.. php:method:: save($id, $data[, $ttl = 60[, $raw = FALSE]])
 
-		:パラメータ	string	$id: キャッシュ・アイテム名
-		:パラメータ	mixed	$data: 保存するデータ
-		:パラメータ	int	$ttl: Time To Live のデフォルトは 60 秒です。
-		:パラメータ	bool	$raw: 元の値を保存するべきかどうか
-		:返り値:	成功時　TRUE、 失敗時　FALSE
-		:返り値型:	string
+		:param	string	$id: キャッシュ・アイテム名
+		:param	mixed	$data: 保存するデータ
+		:param	int	$ttl: Time To Live のデフォルトは 60 秒です。
+		:param	bool	$raw: 元の値を保存するべきかどうか
+		:returns:	成功時　TRUE、 失敗時　FALSE
+		:rtype:	string
 
 		このメソッドはキャッシュに1つのアイテムを保存します。
 		もし、保存に失敗した場合、このメソッドは FALSE を返します。
@@ -106,9 +106,9 @@ available in the hosting environment.
 
 	.. php:method:: delete($id)
 
-		:パラメータ	string	$id: キャッシュされたアイテムの名前
-		:返り値:	成功時 TRUE、失敗時 FALSE
-		:返り値型:	bool
+		:param	string	$id: キャッシュされたアイテムの名前
+		:returns:	成功時 TRUE、失敗時 FALSE
+		:rtype:	bool
 
 		このメソッドは特定の1つのアイテムをキャッシュから削除します。
 		もし、削除に失敗した場合、このメソッドは FALSE を返します。
@@ -118,10 +118,10 @@ available in the hosting environment.
 
 	.. php:method:: increment($id[, $offset = 1])
 
-		:パラメータ	string	$id: キャッシュID
-		:パラメータ	int	$offset: 値に進行上の数値を追加する
-		:返り値:	新しい値が保存されたら成功、失敗時　FALSE 
-		:返り値型:	mixed
+		:param	string	$id: キャッシュID
+		:param	int	$offset: 値に進行上の数値を追加する
+		:returns:	新しい値が保存されたら成功、失敗時　FALSE 
+		:rtype:	mixed
 
 		元の保存された値に極小の増加を実行します。
 		::
@@ -134,10 +134,10 @@ available in the hosting environment.
 
 	.. php:method:: decrement($id[, $offset = 1])
 
-		:パラメータ	string	$id: キャッシュID
-		:パラメータ	int	$offset: S値に進行上の数値を減算する
-		:返り値:	新しい値が保存されたら成功、失敗時　FALSE
-		:返り値型:	mixed
+		:param	string	$id: キャッシュID
+		:param	int	$offset: S値に進行上の数値を減算する
+		:returns:	新しい値が保存されたら成功、失敗時　FALSE
+		:rtype:	mixed
 
 		元の保存された値に極小の減算を実行します。
 		::
@@ -150,8 +150,8 @@ available in the hosting environment.
 
 	.. php:method:: clean()
 
-		:返り値:	成功時　TRUE、失敗時　FALSE
-		:返り値型:	bool
+		:returns:	成功時　TRUE、失敗時　FALSE
+		:rtype:	bool
 
 		このメソッドはキャッシュ全体をクリアします。もしキャッシュファイルの
 		削除に失敗した場合、このメソッドは FALSE を返します。
@@ -161,8 +161,8 @@ available in the hosting environment.
 
 	.. php:method:: cache_info()
 
-		:返り値:	全キャッシュ・データベースの情報
-		:返り値型:	mixed
+		:returns:	全キャッシュ・データベースの情報
+		:rtype:	mixed
 
 		このメソッドはキャッシュ全体の情報を返します。
 		::
@@ -174,9 +174,9 @@ available in the hosting environment.
 
 	.. php:method:: get_metadata($id)
 
-		:パラメータ	string	$id: キャッシュ・アイテム名
-		:返り値:	キャッシュアイテムのメタデータ
-		:返り値型:	mixed
+		:param	string	$id: キャッシュ・アイテム名
+		:returns:	キャッシュアイテムのメタデータ
+		:rtype:	mixed
 
 		このメソッドは、キャッシュの中の特定の1つのアイテムに
 		関する詳細な情報を返します。

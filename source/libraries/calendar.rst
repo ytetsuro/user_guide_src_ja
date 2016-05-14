@@ -217,36 +217,36 @@ URL を指すリンクになります。
 
 	.. php:method:: initialize([$config = array()])
 
-		:パラメータ	array	$config: 構成パラメータ
-		:返り値:	    CI_Calendar インスタンス (メソッドチェーン)
-		:返り値型:	CI_Calendar
+		:param	array	$config: 構成パラメータ
+		:returns:	    CI_Calendar インスタンス (メソッドチェーン)
+		:rtype:	CI_Calendar
 
 		カレンダーの環境設定を初期化します。表示設定を含む入力として連想配列を受け入れます。
 
 	.. php:method:: generate([$year = ''[, $month = ''[, $data = array()]]])
 
-		:パラメータ	int	$year: 年
-		:パラメータ	int	$month: 月
-		:パラメータ	array	$data: カレンダーセルにデータを表示
-		:返り値:	    HTMLフォーマット カレンダー
-		:返り値型:	string
+		:param	int	$year: 年
+		:param	int	$month: 月
+		:param	array	$data: カレンダーセルにデータを表示
+		:returns:	    HTMLフォーマット カレンダー
+		:rtype:	string
 
 		カレンダーを生成
 
 
 	.. php:method:: get_month_name($month)
 
-		:パラメータ	int	$month: 月
-		:返り値:	    月名
-		:返り値型:	string
+		:param	int	$month: 月
+		:returns:	    月名
+		:rtype:	string
 
 		月の数値に基づいての月名を生成します。
 
 	.. php:method:: get_day_names($day_type = '')
 
-		:パラメータ	string	$day_type: 'long', 'short', or 'abr'
-		:返り値:	    Array of day names
-		:返り値型:	array
+		:param	string	$day_type: 'long', 'short', or 'abr'
+		:returns:	    Array of day names
+		:rtype:	array
 
 		型に基づき、曜日名（日曜日、月曜日、など）の配列を返します。
 		オプション：long, short, abr または なし ``$day_type``が提供
@@ -255,10 +255,10 @@ URL を指すリンクになります。
 
 	.. php:method:: adjust_date($month, $year)
 
-		:パラメータ	int	$month: 月
-		:パラメータ	int	$year: 年
-		:返り値:	    月と年を含む連想配列
-		:返り値型:	array
+		:param	int	$month: 月
+		:param	int	$year: 年
+		:returns:	    月と年を含む連想配列
+		:rtype:	array
 
 		この方法では、有効な月/年保持していることを確認します。
 		例えば月に13を提出した場合、年が増加すると月が1月
@@ -276,10 +276,10 @@ URL を指すリンクになります。
 
 	.. php:method:: get_total_days($month, $year)
 
-		:パラメータ	int	$month: 月
-		:パラメータ	int	$year: 年
-		:返り値:	    指定された月の日数カウント
-		:返り値型:	int
+		:param	int	$month: 月
+		:param	int	$year: 年
+		:returns:	    指定された月の日数カウント
+		:rtype:	int
 
 		指定された月の総日数::
 
@@ -291,8 +291,8 @@ URL を指すリンクになります。
 
 	.. php:method:: default_template()
 
-		:返り値:	    テンプレート値の配列
-		:返り値型:	array
+		:returns:	    テンプレート値の配列
+		:rtype:	array
 
 		デフォルトのテンプレートを設定します。このメソッドはあなたが作成していない
 		ときに使用される独自のテンプレートを返します。
@@ -300,8 +300,8 @@ URL を指すリンクになります。
 
 	.. php:method:: parse_template()
 
-		:返り値:	CI_Calendar インスタンス (メソッドチェーン)
-		:返り値型:	CI_Calendar
+		:returns:	CI_Calendar インスタンス (メソッドチェーン)
+		:rtype:	CI_Calendar
 
 		テンプレート内のデータを収集
 		``{疑似変数}``カレンダーを表示するために使用されます。

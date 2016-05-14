@@ -26,10 +26,10 @@ URL ヘルパーファイルは、URL を処理するのに役立つ関数で構
 
 .. php:function:: site_url([$uri = ''[, $protocol = NULL]])
 
-	:パラメータ	string $uri: URI 文字列
-	:パラメータ	string	$protocol: プロトロコル, 例: 'http' or 'https'
-	:返り値:	サイトの URL
-	:返り値型:	string
+	:param	string $uri: URI 文字列
+	:param	string	$protocol: プロトロコル, 例: 'http' or 'https'
+	:returns:	サイトの URL
+	:rtype:	string
 
 	設定ファイルで指定されているサイトの URL を返します。 index.php
 	ファイル (または、設定ファイルで設定しているユーザサイトの **index_page**
@@ -58,10 +58,10 @@ URL ヘルパーファイルは、URL を処理するのに役立つ関数で構
 
 .. php:function:: base_url($uri = '', $protocol = NULL)
 
-	:パラメータ	string	$uri: URI 文字列
-	:パラメータ	string	$protocol: プロトロコル, 例: 'http' or 'https'
-	:返り値:	ベース URL
-	:返り値型:	string
+	:param	string	$uri: URI 文字列
+	:param	string	$protocol: プロトロコル, 例: 'http' or 'https'
+	:returns:	ベース URL
+	:rtype:	string
 
 	設定ファイルで指定されているサイトのベース URL を返します。例::
 
@@ -91,8 +91,8 @@ URL ヘルパーファイルは、URL を処理するのに役立つ関数で構
 
 .. php:function:: current_url()
 
-	:返り値:	現在の URL
-	:返り値型:	string
+	:returns:	現在の URL
+	:rtype:	string
 
 	現在表示されているページの完全な URL (セグメントを含む) を
 	返します。
@@ -104,8 +104,8 @@ URL ヘルパーファイルは、URL を処理するのに役立つ関数で構
 
 .. php:function:: uri_string()
 
-	:返り値:	An URI string
-	:返り値型:	string
+	:returns:	An URI string
+	:rtype:	string
 
 	この関数が呼び出されたページの URI セグメントを返します。たとえば、URL
 	が以下のようなものであれば::
@@ -122,8 +122,8 @@ URL ヘルパーファイルは、URL を処理するのに役立つ関数で構
 
 .. php:function:: index_page()
 
-	:返り値:	'index_page' value
-	:返り値型:	mixed
+	:returns:	'index_page' value
+	:rtype:	mixed
 
 	設定ファイルで指定されているサイトの **index_page** ページを返します。
 	例::
@@ -132,11 +132,11 @@ URL ヘルパーファイルは、URL を処理するのに役立つ関数で構
 
 .. php:function:: anchor($uri = '', $title = '', $attributes = '')
 
-	:パラメータ	string	$uri: URI 文字列
-	:パラメータ	string	$title: アンカータイトル
-	:パラメータ	mixed	$attributes: HTML 属性
-	:返り値:	HTML ハイパーリンク (アンカータグ)
-	:返り値型:	string
+	:param	string	$uri: URI 文字列
+	:param	string	$title: アンカータイトル
+	:param	mixed	$attributes: HTML 属性
+	:returns:	HTML ハイパーリンク (アンカータグ)
+	:rtype:	string
 
 	サイトの URL にもとづいて、標準の HTML アンカーリンクを生成します。
 
@@ -170,11 +170,11 @@ URL ヘルパーファイルは、URL を処理するのに役立つ関数で構
 
 .. php:function:: anchor_popup($uri = '', $title = '', $attributes = FALSE)
 
-	:パラメータ	string	$uri: URI 文字列
-	:パラメータ	string	$title: アンカータイトル
-	:パラメータ	mixed	$attributes: HTML 属性
-	:返り値:	ポップアップ ハイパーリンク
-	:返り値型:	string
+	:param	string	$uri: URI 文字列
+	:param	string	$title: アンカータイトル
+	:param	mixed	$attributes: HTML 属性
+	:returns:	ポップアップ ハイパーリンク
+	:rtype:	string
 
 	新しいウィンドで URL を開くこと以外は、 :php:func:`anchor()` 関数とほとんど同じです。
 	ウィンドウの開き方をコントロールするために、JavaScript の window
@@ -214,11 +214,11 @@ URL ヘルパーファイルは、URL を処理するのに役立つ関数で構
 
 .. php:function:: mailto($email, $title = '', $attributes = '')
 
-	:パラメータ	string	$email: メールアドレス
-	:パラメータ	string	$title: アンカータイトル
-	:パラメータ	mixed	$attributes: HTML 属性
-	:返り値:	"mail to" ハイパーリンク
-	:返り値型:	string
+	:param	string	$email: メールアドレス
+	:param	string	$title: アンカータイトル
+	:param	mixed	$attributes: HTML 属性
+	:returns:	"mail to" ハイパーリンク
+	:rtype:	string
 
 	標準の HTML メールリンクを作成します。使用例::
 
@@ -232,11 +232,11 @@ URL ヘルパーファイルは、URL を処理するのに役立つ関数で構
 
 .. php:function:: safe_mailto($email, $title = '', $attributes = '')
 
-	:パラメータ	string	$email: メールアドレス
-	:パラメータ	string	$title: アンカータイトル
-	:パラメータ	mixed	$attributes: HTML 属性
-	:返り値:	スパムセーフな "mail to" ハイパーリンク
-	:返り値型:	string
+	:param	string	$email: メールアドレス
+	:param	string	$title: アンカータイトル
+	:param	mixed	$attributes: HTML 属性
+	:returns:	スパムセーフな "mail to" ハイパーリンク
+	:rtype:	string
 
 	この関数は、スパムロボットにメールアドレスが収集されてしまうのを防ぐため、
 	メールアドレスのリンクを JavaScript で書き出すために、
@@ -244,11 +244,11 @@ URL ヘルパーファイルは、URL を処理するのに役立つ関数で構
 
 .. php:function:: auto_link($str, $type = 'both', $popup = FALSE)
 
-	:パラメータ	string	$str: 入力文字列
-	:パラメータ	string	$type: リンクタイプ ('email', 'url' or 'both')
-	:パラメータ	bool	$popup: ポップアップリンクを生成するかどうか
-	:返り値:	リンク可能な文字列
-	:返り値型:	string
+	:param	string	$str: 入力文字列
+	:param	string	$type: リンクタイプ ('email', 'url' or 'both')
+	:param	bool	$popup: ポップアップリンクを生成するかどうか
+	:returns:	リンク可能な文字列
+	:rtype:	string
 
 	自動で、文字列に含まれる URL とメールアドレスをリンクに変換します。
 	例::
@@ -276,11 +276,11 @@ URL ヘルパーファイルは、URL を処理するのに役立つ関数で構
 
 .. php:function:: url_title($str, $separator = '-', $lowercase = FALSE)
 
-	:パラメータ	string	$str: 入力文字列
-	:パラメータ	string	$separator: 単語区切り
-	:パラメータ	bool	$lowercase: 小文字に変換して出力するかどうか
-	:返り値:	URL フォーマットの文字列
-	:返り値型:	string
+	:param	string	$str: 入力文字列
+	:param	string	$separator: 単語区切り
+	:param	bool	$lowercase: 小文字に変換して出力するかどうか
+	:returns:	URL フォーマットの文字列
+	:rtype:	string
 
 	入力として文字列をとり、人間にわかりやすい URL 文字列を生成します。
 	これはたとえば、ブログを作成していたとして、その中で記事のタイトルを
@@ -314,9 +314,9 @@ URL ヘルパーファイルは、URL を処理するのに役立つ関数で構
 
 .. php:function:: prep_url($str = '')
 
-	:パラメータ	string	$str: URL 文字列
-	:返り値:	プロトコル接頭辞を付与した URL 文字列
-	:返り値型:	string
+	:param	string	$str: URL 文字列
+	:returns:	プロトコル接頭辞を付与した URL 文字列
+	:rtype:	string
 
 	この関数は、与えられた URL の文字列にプロトロルがない場合に http&#58;//
 	を追加します。
@@ -328,10 +328,10 @@ URL ヘルパーファイルは、URL を処理するのに役立つ関数で構
 
 .. php:function:: redirect($uri = '', $method = 'auto', $code = NULL)
 
-	:パラメータ	string	$uri: URI 文字列
-	:パラメータ	string	$method: リダイレクトメソッド ('auto', 'location' or 'refresh')
-	:パラメータ	string	$code: HTTP Response Code (通常 302 or 303)
-	:返り値:	void
+	:param	string	$uri: URI 文字列
+	:param	string	$method: リダイレクトメソッド ('auto', 'location' or 'refresh')
+	:param	string	$code: HTTP Response Code (通常 302 or 303)
+	:returns:	void
 
 	指定した URI に対して "ヘッダ リダイレクト" します。完全な URL
 	(http://...) を指定しても生成されますが、

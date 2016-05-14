@@ -135,18 +135,18 @@ PHP をそのまま使用したくないときは、ビューのファイル内�
 
 	.. php:method:: mark($name)
 
-		:パラメータ	string	$name: マーカーにつけたい名前
-		:返り値型:	void
+		:param	string	$name: マーカーにつけたい名前
+		:rtype:	void
 
 		ベンチマークマーカーをセットします。
 
 	.. php:method:: elapsed_time([$point1 = ''[, $point2 = ''[, $decimals = 4]]])
 
-		:パラメータ	string	$point1: 特定のマークされた点
-		:パラメータ	string	$point2: a particular marked point
-		:パラメータ	int	$decimals: 小数点以下の桁数
-		:返り値:	経過時間
-		:返り値型:	string
+		:param	string	$point1: 特定のマークされた点
+		:param	string	$point2: a particular marked point
+		:param	int	$decimals: 小数点以下の桁数
+		:returns:	経過時間
+		:rtype:	string
 
 		2つのマークされた点の時差を計算して、返します。
 
@@ -158,8 +158,8 @@ PHP をそのまま使用したくないときは、ビューのファイル内�
 
 	.. php:method:: memory_usage()
 
-		:返り値:	Memory usage info
-		:返り値型:	string
+		:returns:	Memory usage info
+		:rtype:	string
 
 		単に``{memory_usage}``マーカーを返します。
 
