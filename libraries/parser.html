@@ -431,39 +431,32 @@
 単一の擬似変数と擬似変数のペアを解析できます。</p>
 <p>テンプレートエンジンを一度も使ったことがないでしょうか？
 擬似変数とは次のようなものです:</p>
-<blockquote>
-<div><dl class="docutils">
-<dt>&lt;html&gt;</dt>
-<dd><dl class="first docutils">
-<dt>&lt;head&gt;</dt>
-<dd>&lt;title&gt;{blog_title}&lt;/title&gt;</dd>
-</dl>
-<p>&lt;/head&gt;
-&lt;body&gt;</p>
-<blockquote>
-<div>&lt;h3&gt;{blog_heading}&lt;/h3&gt;</div></blockquote>
-<dl class="docutils">
-<dt>{blog_entries}</dt>
-<dd>&lt;h5&gt;{title}&lt;/h5&gt;
-&lt;p&gt;{body}&lt;/p&gt;</dd>
-</dl>
-<p>{/blog_entries}</p>
-<p class="last">&lt;/body&gt;</p>
-</dd>
-</dl>
-<p>&lt;/html&gt;</p>
-</div></blockquote>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="nx">html</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nx">head</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="nx">title</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">blog_title</span><span class="p">}</span><span class="o">&lt;/</span><span class="nx">title</span><span class="o">&gt;</span>
+        <span class="o">&lt;/</span><span class="nx">head</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nx">body</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="nx">h3</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">blog_heading</span><span class="p">}</span><span class="o">&lt;/</span><span class="nx">h3</span><span class="o">&gt;</span>
+
+        <span class="p">{</span><span class="nx">blog_entries</span><span class="p">}</span>
+                <span class="o">&lt;</span><span class="nx">h5</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">title</span><span class="p">}</span><span class="o">&lt;/</span><span class="nx">h5</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">body</span><span class="p">}</span><span class="o">&lt;/</span><span class="nx">p</span><span class="o">&gt;</span>
+        <span class="p">{</span><span class="o">/</span><span class="nx">blog_entries</span><span class="p">}</span>
+
+        <span class="o">&lt;/</span><span class="nx">body</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="nx">html</span><span class="o">&gt;</span>
+</pre></div>
+</div>
 <p>これらの疑似変数は、本当の PHP 変数ではなく、
 テンプレート (ビューファイル)からPHPを取り除くための、
 普通のテキストです。</p>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
-<p>ビューページで純粋なPHPを使う方が少し早いので、CodeIgniterでは、
-このクラスを必ずしも 必要としません。</p>
-<blockquote class="last">
-<div>しかし、PHPのコードで混乱してしまうデザイナーと一緒に仕事をして
+<p class="last">ビューページで純粋なPHPを使う方が少し早いので、CodeIgniterでは、
+このクラスを必ずしも 必要としません。
+しかし、PHPのコードで混乱してしまうデザイナーと一緒に仕事をして
 いる場合、開発者の中には、テンプレートエンジンを使用したい人も
-いると思います。</div></blockquote>
+いると思います。</p>
 </div>
 <div class="admonition important">
 <p class="first admonition-title">重要</p>

@@ -432,22 +432,22 @@
 プレートをもとに整形されます。</p>
 <div class="contents local topic" id="contents">
 <ul class="simple">
-<li><a class="reference internal" href="#id2" id="id18">カレンダークラスを使う</a><ul>
-<li><a class="reference internal" href="#id3" id="id19">クラスの初期化</a></li>
-<li><a class="reference internal" href="#id4" id="id20">カレンダーの表示</a></li>
-<li><a class="reference internal" href="#id5" id="id21">カレンダーのセルへのデータ引き渡し</a></li>
-<li><a class="reference internal" href="#id6" id="id22">表示設定の変更</a></li>
-<li><a class="reference internal" href="#id7" id="id23">次の月 / 前の月 リンクの表示</a></li>
-<li><a class="reference internal" href="#id10" id="id24">カレンダーテンプレートの作成</a></li>
+<li><a class="reference internal" href="#id2" id="id10">カレンダークラスを使う</a><ul>
+<li><a class="reference internal" href="#id3" id="id11">クラスの初期化</a></li>
+<li><a class="reference internal" href="#id4" id="id12">カレンダーの表示</a></li>
+<li><a class="reference internal" href="#id5" id="id13">カレンダーのセルへのデータ引き渡し</a></li>
+<li><a class="reference internal" href="#id6" id="id14">表示設定の変更</a></li>
+<li><a class="reference internal" href="#id7" id="id15">次の月 / 前の月 リンクの表示</a></li>
+<li><a class="reference internal" href="#id8" id="id16">カレンダーテンプレートの作成</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#id13" id="id25">クラスリファレンス</a></li>
+<li><a class="reference internal" href="#id9" id="id17">クラスリファレンス</a></li>
 </ul>
 </div>
 <div class="custom-index container"></div><div class="section" id="id2">
-<h2><a class="toc-backref" href="#id18">カレンダークラスを使う</a><a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2><a class="toc-backref" href="#id10">カレンダークラスを使う</a><a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <div class="section" id="id3">
-<h3><a class="toc-backref" href="#id19">クラスの初期化</a><a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<h3><a class="toc-backref" href="#id11">クラスの初期化</a><a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p>CodeIgniter の大半のクラスと同様に、カレンダークラスはコントローラの中で、
 $this-&gt;load-&gt;library メソッドを使って初期化します:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">library</span><span class="p">(</span><span class="s1">&#39;calendar&#39;</span><span class="p">);</span>
@@ -459,7 +459,7 @@ $this-&gt;load-&gt;library メソッドを使って初期化します:</p>
 </div>
 </div>
 <div class="section" id="id4">
-<h3><a class="toc-backref" href="#id20">カレンダーの表示</a><a class="headerlink" href="#id4" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<h3><a class="toc-backref" href="#id12">カレンダーの表示</a><a class="headerlink" href="#id4" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p>カレンダーの表示方法の非常に簡単な例です:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">library</span><span class="p">(</span><span class="s1">&#39;calendar&#39;</span><span class="p">);</span>
 <span class="k">echo</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">calendar</span><span class="o">-&gt;</span><span class="na">generate</span><span class="p">();</span>
@@ -477,7 +477,7 @@ $this-&gt;load-&gt;library メソッドを使って初期化します:</p>
 引数は月を指定します。</p>
 </div>
 <div class="section" id="id5">
-<h3><a class="toc-backref" href="#id21">カレンダーのセルへのデータ引き渡し</a><a class="headerlink" href="#id5" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<h3><a class="toc-backref" href="#id13">カレンダーのセルへのデータ引き渡し</a><a class="headerlink" href="#id5" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p>カレンダーのセルにデータを追加するには、埋め込みたい日をキーにし、
 それに対応する値に埋め込むデータを入れた連想配列を作成します。
 作成した配列は、カレンダー生成関数の第3引数に渡します。
@@ -505,7 +505,7 @@ URL を指すリンクになります。</p>
 </div>
 </div>
 <div class="section" id="id6">
-<h3><a class="toc-backref" href="#id22">表示設定の変更</a><a class="headerlink" href="#id6" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<h3><a class="toc-backref" href="#id14">表示設定の変更</a><a class="headerlink" href="#id6" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p>7つの設定項目でカレンダーの様々な面をコントロールできます。
 設定項目は呼び出し関数の第2引数に配列として渡して設定します。
 例です:</p>
@@ -590,7 +590,7 @@ long = Sunday, short = Sun, abr = Su.</td>
 </table>
 </div>
 <div class="section" id="id7">
-<h3><a class="toc-backref" href="#id23">次の月 / 前の月 リンクの表示</a><a class="headerlink" href="#id7" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<h3><a class="toc-backref" href="#id15">次の月 / 前の月 リンクの表示</a><a class="headerlink" href="#id7" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p>次へ / 前へ のリンクを経由してカレンダーを動的に進める / 戻る
 ようにするには、次の例のようなコードをカレンダーのコードに設定
 する必要があります:</p>
@@ -609,15 +609,15 @@ long = Sunday, short = Sun, abr = Su.</td>
 <li>&#8220;show_next_prev&#8221; を TRUE にする必要があります。</li>
 <li>&#8220;next_prev_url&#8221; の設定項目でカレンダーが設置されている
 コントローラへの URL を指定しなければなりません。
-指定しなければ、<a href="#id8"><span class="problematic" id="id9">*</span></a>controller/method*にセットされます。</li>
+指定しなければ、 <em>controller/method</em> にセットされます。</li>
 <li>カレンダー生成関数に指定する「年」と「月」には、
 URI セグメントに出現するものを指定します
 (Note: カレンダークラスは基準の URL に対して
 年と月を自動的に追加します)</li>
 </ul>
 </div>
-<div class="section" id="id10">
-<h3><a class="toc-backref" href="#id24">カレンダーテンプレートの作成</a><a class="headerlink" href="#id10" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<div class="section" id="id8">
+<h3><a class="toc-backref" href="#id16">カレンダーテンプレートの作成</a><a class="headerlink" href="#id8" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p>カレンダーテンプレートを作成することで、カレンダーのデザイン
 を100%コントロールできます。 カレンダーの各部品は次に示す
 擬似変数のペアの間に配置されます:</p>
@@ -665,7 +665,7 @@ URI セグメントに出現するものを指定します
 <span class="k">echo</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">calendar</span><span class="o">-&gt;</span><span class="na">generate</span><span class="p">();</span>
 </pre></div>
 </div>
-<p>配列を使用して、<a href="#id11"><span class="problematic" id="id12">`</span></a>key=&gt;value`ペアを渡すことで多くの
+<p>配列を使用して、 <cite>key=&gt;value</cite> ペアを渡すことで多くの
 望む値を渡すことができます。省略するとCalendarクラス
 で継承されたデフォルト値を使用します</p>
 <p>使用例:</p>
@@ -682,8 +682,8 @@ URI セグメントに出現するものを指定します
 </div>
 </div>
 </div>
-<div class="section" id="id13">
-<h2><a class="toc-backref" href="#id25">クラスリファレンス</a><a class="headerlink" href="#id13" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="section" id="id9">
+<h2><a class="toc-backref" href="#id17">クラスリファレンス</a><a class="headerlink" href="#id9" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <dl class="class">
 <dt id="CI_Calendar">
 <em class="property">class </em><tt class="descname">CI_Calendar</tt><a class="headerlink" href="#CI_Calendar" title="この定義へのパーマリンク">¶</a></dt>
@@ -779,7 +779,7 @@ URI セグメントに出現するものを指定します
 </tbody>
 </table>
 <p>型に基づき、曜日名（日曜日、月曜日、など）の配列を返します。
-オプション：long, short, abr または なし <a href="#id14"><span class="problematic" id="id15">``</span></a>$day_type``が提供
+オプション：long, short, abr または なし <tt class="docutils literal"><span class="pre">$day_type</span></tt> が提供
 されていない場合（または無効な型が提供されている場合）
 「省略」を返します</p>
 </dd></dl>
@@ -884,7 +884,7 @@ URI セグメントに出現するものを指定します
 </tbody>
 </table>
 <p>テンプレート内のデータを収集
-<a href="#id16"><span class="problematic" id="id17">``</span></a>{疑似変数}``カレンダーを表示するために使用されます。</p>
+<tt class="docutils literal"><span class="pre">{疑似変数}</span></tt> カレンダーを表示するために使用されます。</p>
 </dd></dl>
 
 </dd></dl>

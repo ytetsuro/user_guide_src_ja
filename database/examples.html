@@ -503,9 +503,8 @@ $row[&#8216;name&#8217;]</p>
 </div>
 <div class="section" id="query-builder">
 <h2>Query Builder クエリ<a class="headerlink" href="#query-builder" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<blockquote>
-<div><a class="reference internal" href="query_builder.html"><em>Query Builder パターン</em></a> を使うと、</div></blockquote>
-<p>簡単にデータ取得が行えます:</p>
+<p><a class="reference internal" href="query_builder.html"><em>Query Builder パターン</em></a> を使うと、
+簡単にデータ取得が行えます:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;table_name&#39;</span><span class="p">);</span>
 
 <span class="k">foreach</span> <span class="p">(</span><span class="nv">$query</span><span class="o">-&gt;</span><span class="na">result</span><span class="p">()</span> <span class="k">as</span> <span class="nv">$row</span><span class="p">)</span>

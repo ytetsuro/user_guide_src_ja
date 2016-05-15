@@ -497,9 +497,9 @@ BCC バッチに分割します。</li>
 </div>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
-<p class="last">ほとんどの設定項目には、設定しなかった場合に使われる</p>
+<p class="last">ほとんどの設定項目には、設定しなかった場合に使われる
+初期値があります。</p>
 </div>
-<p>初期値があります。</p>
 <div class="section" id="id4">
 <h4><a class="toc-backref" href="#id11">設定ファイルでEmailの設定を行う</a><a class="headerlink" href="#id4" title="このヘッドラインへのパーマリンク">¶</a></h4>
 <p>設定をするのに、上で述べた方法を使いたくない場合は、代わりに設定
@@ -514,6 +514,131 @@ $this-&gt;email-&gt;initialize() メソッドを使う必要は「ありませ�
 <h3><a class="toc-backref" href="#id12">Email クラスの設定項目</a><a class="headerlink" href="#id5" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p>次のリストは、メールを送信する際にセットできる
 設定項目の全リストです。</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="14%" />
+<col width="16%" />
+<col width="20%" />
+<col width="51%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">設定項目</th>
+<th class="head">初期値</th>
+<th class="head">選択肢</th>
+<th class="head">説明</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>useragent</strong></td>
+<td>CodeIgniter</td>
+<td>なし</td>
+<td>ユーザエージェント</td>
+</tr>
+<tr class="row-odd"><td><strong>protocol</strong></td>
+<td>mail</td>
+<td>mail, sendmail, または smtp</td>
+<td>メールを送信するプロトコル</td>
+</tr>
+<tr class="row-even"><td><strong>mailpath</strong></td>
+<td>/usr/sbin/sendmail</td>
+<td>なし</td>
+<td>Sendmail へのパス</td>
+</tr>
+<tr class="row-odd"><td><strong>smtp_host</strong></td>
+<td>初期値なし</td>
+<td>なし</td>
+<td>SMTP サーバのアドレス</td>
+</tr>
+<tr class="row-even"><td><strong>smtp_user</strong></td>
+<td>初期値なし</td>
+<td>なし</td>
+<td>SMTP のユーザ名</td>
+</tr>
+<tr class="row-odd"><td><strong>smtp_pass</strong></td>
+<td>初期値なし</td>
+<td>なし</td>
+<td>SMTP のパスワード</td>
+</tr>
+<tr class="row-even"><td><strong>smtp_port</strong></td>
+<td>25</td>
+<td>なし</td>
+<td>SMTP のポート番号</td>
+</tr>
+<tr class="row-odd"><td><strong>smtp_timeout</strong></td>
+<td>5</td>
+<td>なし</td>
+<td>SMTP のタイムアウト (秒単位)</td>
+</tr>
+<tr class="row-even"><td><strong>smtp_keepalive</strong></td>
+<td>FALSE</td>
+<td>TRUE または FALSE(boolean)</td>
+<td>持続的SMTP接続の有効化</td>
+</tr>
+<tr class="row-odd"><td><strong>smtp_crypto</strong></td>
+<td>初期値なし</td>
+<td>tls または ssl</td>
+<td>SMTP暗号化</td>
+</tr>
+<tr class="row-even"><td><strong>wordwrap</strong></td>
+<td>TRUE</td>
+<td>TRUE または FALSE (boolean)</td>
+<td>ワードラップの有効化設定</td>
+</tr>
+<tr class="row-odd"><td><strong>wrapchars</strong></td>
+<td>76</td>
+<td>&nbsp;</td>
+<td>何番目の文字で折り返すか</td>
+</tr>
+<tr class="row-even"><td><strong>mailtype</strong></td>
+<td>text</td>
+<td>text または html</td>
+<td><p class="first">メールのタイプ。HTML メールを送信すると、メールは完全な Web
+ページとして送信されます。このとき、相対リンクや画像への相対</p>
+<p class="last">パスがないか確かめてください。それらは動作しません。</p>
+</td>
+</tr>
+<tr class="row-odd"><td><strong>charset</strong></td>
+<td><tt class="docutils literal"><span class="pre">$config['charset']</span></tt></td>
+<td>&nbsp;</td>
+<td>文字セット (utf-8、iso-8859-1、など)</td>
+</tr>
+<tr class="row-even"><td><strong>validate</strong></td>
+<td>FALSE</td>
+<td>TRUE または FALSE(boolean)</td>
+<td>メールアドレスを検証するかどうか</td>
+</tr>
+<tr class="row-odd"><td><strong>priority</strong></td>
+<td>3</td>
+<td>1, 2, 3, 4, 5</td>
+<td>メールの優先度。 1 = 最高 5 = 最低 3 = 通常</td>
+</tr>
+<tr class="row-even"><td><strong>crlf</strong></td>
+<td>\n</td>
+<td>&#8220;\r\n&#8221; or &#8220;\n&#8221; or &#8220;\r&#8221;</td>
+<td>CRLF (&#8220;\r\n&#8221; RFC 822に応じて使用).</td>
+</tr>
+<tr class="row-odd"><td><strong>newline</strong></td>
+<td>\n</td>
+<td>&#8220;\r\n&#8221; or &#8220;\n&#8221; or &#8220;\r&#8221;</td>
+<td>改行文字 (&#8220;\r\n&#8221; RFC 822に応じて使用).</td>
+</tr>
+<tr class="row-even"><td><strong>bcc_batch_mode</strong></td>
+<td>FALSE</td>
+<td>TRUE またはFALSE(boolean)</td>
+<td>BCC バッチモードを有効にするかどうか</td>
+</tr>
+<tr class="row-odd"><td><strong>bcc_batch_size</strong></td>
+<td>200</td>
+<td>なし</td>
+<td>各 BCC バッチで送るメール件数。</td>
+</tr>
+<tr class="row-even"><td><strong>dsn</strong></td>
+<td>FALSE</td>
+<td>TRUE または FALSE (boolean)</td>
+<td>サーバーからのメッセージ通知を有効にする</td>
+</tr>
+</tbody>
+</table>
 </div>
 <div class="section" id="id6">
 <h3><a class="toc-backref" href="#id13">ワードラップ設定の上書き</a><a class="headerlink" href="#id6" title="このヘッドラインへのパーマリンク">¶</a></h3>
@@ -569,9 +694,9 @@ $this-&gt;email-&gt;initialize() メソッドを使う必要は「ありませ�
 </div>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
-<p class="last">プロトコルとして「SMTP」を設定した場合、</p>
+<p class="last">プロトコルとして「SMTP」を設定した場合、
+リターンパスは使用できません。</p>
 </div>
-<p>リターンパスは使用できません。</p>
 </dd></dl>
 
 <dl class="method">
@@ -870,19 +995,18 @@ $this-&gt;email-&gt;initialize() メソッドを使う必要は「ありませ�
 </pre></div>
 </div>
 <p>要求が成功した場合、このメソッドは自動的にすべてのパラメータをクリアします。
-この動作を停止するにはFALSEを渡します。</p>
-<blockquote>
-<div><p>if ($this-&gt;email-&gt;send(FALSE))
-{</p>
-<blockquote>
-<div>// パラメータはクリアされません</div></blockquote>
-<p>}</p>
-</div></blockquote>
+この動作を停止するにはFALSEを渡します:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">email</span><span class="o">-&gt;</span><span class="na">send</span><span class="p">(</span><span class="k">FALSE</span><span class="p">))</span>
+<span class="p">{</span>
+        <span class="c1">// パラメータはクリアされません</span>
+<span class="p">}</span>
+</pre></div>
+</div>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
-<p class="last">「print_debugger」を使用するためには、電子メールのパラメータ</p>
+<p class="last">「print_debugger」を使用するためには、電子メールのパラメータ
+をクリアしないようにする必要があります。</p>
 </div>
-<p>をクリアしないようにする必要があります。</p>
 </dd></dl>
 
 <dl class="method">
@@ -892,20 +1016,24 @@ $this-&gt;email-&gt;initialize() メソッドを使う必要は「ありませ�
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">パラメタ:</th><td class="field-body"><ul class="first last simple">
+<tr class="field-odd field"><th class="field-name">パラメタ:</th><td class="field-body"><ul class="first simple">
 <li><strong>$filename</strong> (<em>string</em>) &#8211; ファイル名</li>
-<li><strong>$disposition</strong> (<em>string</em>) &#8211; 添付ファイルを「配置」します。ほとんどの電子メールクライアント</li>
+<li><strong>$disposition</strong> (<em>string</em>) &#8211; 添付ファイルを「配置」します。ほとんどの電子メールクライアント
+にかかわらず、ここで使用されるMIME仕様の独自の判断を下します。
+<a class="reference external" href="https://www.iana.org/assignments/cont-disp/cont-disp.xhtml">https://www.iana.org/assignments/cont-disp/cont-disp.xhtml</a></li>
+<li><strong>$newname</strong> (<em>string</em>) &#8211; 電子メールで使用するカスタムファイル名</li>
+<li><strong>$mime</strong> (<em>string</em>) &#8211; MIMEタイプを使用する (バッファリングされたデータに利用)</li>
 </ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body"><p class="first">CI_Email インスタンス (メソッドチェイン)</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">戻り値の型:</th><td class="field-body"><p class="first last">CI_Email</p>
 </td>
 </tr>
 </tbody>
 </table>
-<p>にかかわらず、ここで使用されるMIME仕様の独自の判断を下します。
-<a class="reference external" href="https://www.iana.org/assignments/cont-disp/cont-disp.xhtml">https://www.iana.org/assignments/cont-disp/cont-disp.xhtml</a>
-:param  string  $newname: 電子メールで使用するカスタムファイル名
-:param  string  $mime: MIMEタイプを使用する (バッファリングされたデータに利用)
-:returns:       CI_Email インスタンス (メソッドチェイン)
-:rtype: CI_Email</p>
 <p>添付ファイルを送信できます。第1引数にファイルのパスとファイル名を指定してください。
 複数ファイルを添付する場合は、複数回メソッドを呼んでください。例えば以下のように
 します:</p>
@@ -963,7 +1091,7 @@ $this-&gt;email-&gt;initialize() メソッドを使う必要は「ありませ�
 <span class="p">{</span>
         <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">email</span><span class="o">-&gt;</span><span class="na">to</span><span class="p">(</span><span class="nv">$address</span><span class="p">);</span>
         <span class="nv">$cid</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">email</span><span class="o">-&gt;</span><span class="na">attachment_cid</span><span class="p">(</span><span class="nv">$filename</span><span class="p">);</span>
-        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">email</span><span class="o">-&gt;</span><span class="na">message</span><span class="p">(</span><span class="s1">&#39;&lt;img src=&#39;</span><span class="nx">cid</span><span class="o">:</span><span class="s2">&quot;. </span><span class="si">$cid</span><span class="s2"> .&quot;</span><span class="s1">&#39; alt=&quot;photo1&quot; /&gt;&#39;</span><span class="p">);</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">email</span><span class="o">-&gt;</span><span class="na">message</span><span class="p">(</span><span class="s1">&#39;&lt;img src=&quot;cid:&#39;</span><span class="o">.</span> <span class="nv">$cid</span> <span class="o">.</span><span class="s1">&#39;&quot; alt=&quot;photo1&quot; /&gt;&#39;</span><span class="p">);</span>
         <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">email</span><span class="o">-&gt;</span><span class="na">send</span><span class="p">();</span>
 <span class="p">}</span>
 </pre></div>

@@ -812,7 +812,7 @@ Unix の改行でファイルを保存するように設定されていること
 <div class="section" id="id17">
 <h2><a class="toc-backref" href="#id45">コードのインデント</a><a class="headerlink" href="#id17" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>オールマンスタイルのインデントを使用してください。
-クラス宣言を除き中括弧は常にそれ用の行に配置され、
+クラス宣言を除き波括弧は常にそれ用の行に配置され、
 それらを「所有」する制御文と同じレベルにインデントされます。</p>
 <p><strong>誤</strong>:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">function</span> <span class="nf">foo</span><span class="p">(</span><span class="nv">$bar</span><span class="p">)</span> <span class="p">{</span>
@@ -1010,12 +1010,12 @@ fatal error がある場合には何の意味もありません。</p>
 <h2><a class="toc-backref" href="#id52">文字列</a><a class="headerlink" href="#id24" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>変数を展開する必要がない限り、常にシングルクォートを使用してください。
 もし変数を展開する必要があっても、トークンを過剰に解釈しすぎないように
-中括弧を使用してください。
+波括弧を使用してください。
 また、文字列にシングルクォートが含まれている場合はダブルクォート文字列を使ってもよく、
 エスケープ文字を使用する必要はありません。</p>
 <p><strong>誤</strong>:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="s2">&quot;My String&quot;</span>                                     <span class="c1">// 変数展開はありませんので、ダブルクォートは使わないでください</span>
-<span class="s2">&quot;My string </span><span class="si">$foo</span><span class="s2">&quot;</span>                                <span class="c1">// 中括弧が必要です</span>
+<span class="s2">&quot;My string </span><span class="si">$foo</span><span class="s2">&quot;</span>                                <span class="c1">// 波括弧が必要です</span>
 <span class="s1">&#39;SELECT foo FROM bar WHERE baz = \&#39;bag\&#39;&#39;</span>       <span class="c1">// 読みにくいです</span>
 </pre></div>
 </div>

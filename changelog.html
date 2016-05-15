@@ -461,12 +461,17 @@
 </ul>
 </div>
 </div>
+<div class="section" id="version-3-0-7">
+<h2>Version 3.0.7<a class="headerlink" href="#version-3-0-7" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>リリース日: 未リリース</p>
+</div>
 <div class="section" id="version-3-0-6">
 <h2>Version 3.0.6<a class="headerlink" href="#version-3-0-6" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>リリース日: 未リリース</p>
+<p>Release Date: March 21, 2016</p>
 <ul class="simple">
 <li>General Changes<ul>
 <li>Added a destructor to <a class="reference internal" href="libraries/caching.html"><em>Cache Library</em></a> &#8216;memcached&#8217; driver to ensure that Memcache(d) connections are properly closed.</li>
+<li>Deprecated <a class="reference internal" href="libraries/form_validation.html"><em>Form Validation Library</em></a> method <tt class="docutils literal"><span class="pre">prep_for_form()</span></tt>.</li>
 </ul>
 </li>
 </ul>
@@ -474,6 +479,10 @@
 <h3>Bug fixes for 3.0.6<a class="headerlink" href="#bug-fixes-for-3-0-6" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <ul class="simple">
 <li>Fixed a bug (#4516) - <a class="reference internal" href="libraries/form_validation.html"><em>Form Validation Library</em></a> always accepted empty array inputs.</li>
+<li>Fixed a bug where <a class="reference internal" href="libraries/sessions.html"><em>Session Library</em></a> allowed accessing <tt class="docutils literal"><span class="pre">$_SESSION</span></tt> values as class properties but <tt class="docutils literal"><span class="pre">isset()</span></tt> didn&#8217;t work on them.</li>
+<li>Fixed a bug where <a class="reference internal" href="libraries/form_validation.html"><em>Form Validation Library</em></a> modified the <tt class="docutils literal"><span class="pre">$_POST</span></tt> array when the data being validated was actually provided via <tt class="docutils literal"><span class="pre">set_data()</span></tt>.</li>
+<li>Fixed a bug (#4539) - <a class="reference internal" href="libraries/migration.html"><em>Migration Library</em></a> applied migrations before validating that all migrations within the requested version range are valid.</li>
+<li>Fixed a bug (#4539) - <a class="reference internal" href="libraries/migration.html"><em>Migration Library</em></a> triggered failures for migrations that are out of the requested version range.</li>
 </ul>
 </div>
 </div>
@@ -751,12 +760,12 @@
 <li>ルーマニア語、ギリシャ語、ベトナム語、キリル文字を <em>application/config/foreign_characters.php</em> でサポート</li>
 <li>ファイル生成時に設定されるファイルの所有者が変更されました。</li>
 <li>非推奨だったSHA1 Libraryが削除されました。</li>
-<li>非推奨だった``$autoload[&#8216;core&#8217;]``（ <em>application/config/autoload.php</em> ）が削除されました。
-現在、<a href="#id2"><span class="problematic" id="id3">``</span></a>$autoload[&#8216;libraries&#8217;]``だけが自動ロードされます。</li>
+<li>非推奨だった <tt class="docutils literal"><span class="pre">$autoload['core']</span></tt> （ <em>application/config/autoload.php</em> ）が削除されました。
+現在、 <tt class="docutils literal"><span class="pre">$autoload['libraries']</span></tt> だけが自動ロードされます。</li>
 <li>非推奨だったEXT定数が削除されました。</li>
-<li>全てのクラスが可読性の高いPHP5形式で書き直され、プロパティにおいて``var``は使われなくなりました。</li>
+<li>全てのクラスが可読性の高いPHP5形式で書き直され、プロパティにおいて <tt class="docutils literal"><span class="pre">var</span></tt> は使われなくなりました。</li>
 <li>例外ハンドラを追加しました。</li>
-<li>エラーテンプレートを <em>application/views/errors/</em> へと移動し、<a href="#id4"><span class="problematic" id="id5">``</span></a>$config[&#8216;error_views_path&#8217;]`でパスを指定できるようになりました。</li>
+<li>エラーテンプレートを <em>application/views/errors/</em> へと移動し、 <tt class="docutils literal"><span class="pre">$config['error_views_path']</span></tt> でパスを指定できるようになりました。</li>
 <li>コマンドラインインタフェースアプリ向けのnon-HTMLエラーテンプレートに対応しました。</li>
 <li>ログクラスを <em>application/core/</em> へと変更しました。</li>
 <li>グローバル設定ファイルは最初にロードされ、その後環境設定ファイルをロードします。環境設定ファイルは、変更するキーのみグローバル設定ファイルを上書きします。</li>
@@ -766,7 +775,7 @@
 <li><em>development</em> と <em>testing</em> と <em>production</em> の中で、<em>development</em> のみがPHP上での全てのエラーを表示します。</li>
 <li>IPv6 address に対応するために、 <em>ip_address</em> のデータベースを16から45に変更。<a class="reference internal" href="libraries/trackback.html"><em>Trackback Library</em></a> と <a class="reference internal" href="helpers/captcha_helper.html"><em>Captcha Helper</em></a> にドキュメントがあります。</li>
 <li>ドキュメンテーションから、 <em>cheatsheets</em> と <em>quick_reference</em> の記述を削除。</li>
-<li>PHPの危険な関数である <tt class="docutils literal"><span class="pre">eval()</span></tt> と <a href="#id6"><span class="problematic" id="id7">``</span></a>exec()`　は可用性をチェックする機能として取り扱われます。</li>
+<li>PHPの危険な関数である <tt class="docutils literal"><span class="pre">eval()</span></tt> と <tt class="docutils literal"><span class="pre">exec()</span></tt> は可用性をチェックする機能として取り扱われます。</li>
 <li>ログファイルの拡張子を <tt class="docutils literal"><span class="pre">$config['log_file_extension']</span></tt> を用いて変更できるようになりました。</li>
 <li>Added support for turning newline standardization on/off via <tt class="docutils literal"><span class="pre">$config['standardize_newlines']</span></tt> and set it to FALSE by default.</li>
 <li>Added configuration setting <tt class="docutils literal"><span class="pre">$config['composer_autoload']</span></tt> to enable loading of a <a class="reference external" href="https://getcomposer.org">Composer</a> auto-loader.</li>

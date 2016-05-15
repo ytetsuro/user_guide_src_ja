@@ -555,17 +555,15 @@ XML-RPC Server クラスの「両方」を読み込む必要があります。</
 <p>文字列でないデータ型のデータや何種類かの異なるデータ型のデータを
 指定するときは、 各パラメータを配列にし、その配列の2番目でデータ
 型を指定します:</p>
-<blockquote>
-<div><dl class="docutils">
-<dt>$request = array(</dt>
-<dd>array(&#8216;John&#8217;, &#8216;string&#8217;),
-array(&#8216;Doe&#8217;, &#8216;string&#8217;),
-array(FALSE, &#8216;boolean&#8217;),
-array(12345, &#8216;int&#8217;)</dd>
-</dl>
-<p>);
-$this-&gt;xmlrpc-&gt;request($request);</p>
-</div></blockquote>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$request</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+        <span class="k">array</span><span class="p">(</span><span class="s1">&#39;John&#39;</span><span class="p">,</span> <span class="s1">&#39;string&#39;</span><span class="p">),</span>
+        <span class="k">array</span><span class="p">(</span><span class="s1">&#39;Doe&#39;</span><span class="p">,</span> <span class="s1">&#39;string&#39;</span><span class="p">),</span>
+        <span class="k">array</span><span class="p">(</span><span class="k">FALSE</span><span class="p">,</span> <span class="s1">&#39;boolean&#39;</span><span class="p">),</span>
+        <span class="k">array</span><span class="p">(</span><span class="mi">12345</span><span class="p">,</span> <span class="s1">&#39;int&#39;</span><span class="p">)</span>
+<span class="p">);</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">xmlrpc</span><span class="o">-&gt;</span><span class="na">request</span><span class="p">(</span><span class="nv">$request</span><span class="p">);</span>
+</pre></div>
+</div>
 <p>下の`データ型 &lt;#datatypes&gt;`_ のセクションにデータ型の
 全リストがあります。</p>
 </div>

@@ -432,21 +432,21 @@
 れます。</p>
 <div class="contents local topic" id="contents">
 <ul class="simple">
-<li><a class="reference internal" href="#id2" id="id9">使用例</a></li>
-<li><a class="reference internal" href="#id5" id="id10">クラスリファレンス</a></li>
-<li><a class="reference internal" href="#id6" id="id11">ドライバ</a><ul>
-<li><a class="reference internal" href="#alternative-php-cache-apc" id="id12">Alternative PHP Cache (APC) キャッシング</a></li>
-<li><a class="reference internal" href="#id7" id="id13">ファイルベースキャッシュ</a></li>
-<li><a class="reference internal" href="#memcached" id="id14">Memcached キャッシュ</a></li>
-<li><a class="reference internal" href="#wincache" id="id15">WinCache キャッシュ</a></li>
-<li><a class="reference internal" href="#redis" id="id16">Redis キャッシュ</a></li>
-<li><a class="reference internal" href="#id8" id="id17">ダミー キャッシュ</a></li>
+<li><a class="reference internal" href="#id2" id="id7">使用例</a></li>
+<li><a class="reference internal" href="#id3" id="id8">クラスリファレンス</a></li>
+<li><a class="reference internal" href="#id4" id="id9">ドライバ</a><ul>
+<li><a class="reference internal" href="#alternative-php-cache-apc" id="id10">Alternative PHP Cache (APC) キャッシング</a></li>
+<li><a class="reference internal" href="#id5" id="id11">ファイルベースキャッシュ</a></li>
+<li><a class="reference internal" href="#memcached" id="id12">Memcached キャッシュ</a></li>
+<li><a class="reference internal" href="#wincache" id="id13">WinCache キャッシュ</a></li>
+<li><a class="reference internal" href="#redis" id="id14">Redis キャッシュ</a></li>
+<li><a class="reference internal" href="#id6" id="id15">ダミー キャッシュ</a></li>
 </ul>
 </li>
 </ul>
 </div>
 <div class="custom-index container"></div><div class="section" id="id2">
-<h2><a class="toc-backref" href="#id9">使用例</a><a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2><a class="toc-backref" href="#id7">使用例</a><a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>The following example will load the cache driver, specify <a class="reference external" href="#alternative-php-cache-apc-caching">APC</a>
 as the driver to use, and fall back to file-based caching if APC is not
 available in the hosting environment.</p>
@@ -464,7 +464,7 @@ available in the hosting environment.</p>
 <span class="k">echo</span> <span class="nv">$foo</span><span class="p">;</span>
 </pre></div>
 </div>
-<p><a href="#id3"><span class="problematic" id="id4">**</span></a>key_prefix**セッティングを通してキャッシュ・アイテム名に接頭辞を付けることもできます。
+<p><strong>key_prefix</strong> セッティングを通してキャッシュ・アイテム名に接頭辞を付けることもできます。
 複数のアプリケーションを同じ環境で実行しているとき、名前の衝突を避けることに役立ちます。</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">driver</span><span class="p">(</span><span class="s1">&#39;cache&#39;</span><span class="p">,</span>
         <span class="k">array</span><span class="p">(</span><span class="s1">&#39;adapter&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;apc&#39;</span><span class="p">,</span> <span class="s1">&#39;backup&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;file&#39;</span><span class="p">,</span> <span class="s1">&#39;key_prefix&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;my_&#39;</span><span class="p">)</span>
@@ -474,8 +474,8 @@ available in the hosting environment.</p>
 </pre></div>
 </div>
 </div>
-<div class="section" id="id5">
-<h2><a class="toc-backref" href="#id10">クラスリファレンス</a><a class="headerlink" href="#id5" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="section" id="id3">
+<h2><a class="toc-backref" href="#id8">クラスリファレンス</a><a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <dl class="class">
 <dt id="CI_Cache">
 <em class="property">class </em><tt class="descname">CI_Cache</tt><a class="headerlink" href="#CI_Cache" title="この定義へのパーマリンク">¶</a></dt>
@@ -736,18 +736,18 @@ on which adapter is being used.</p>
 </div>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
-<p class="last">情報はデータの構造がどのアダプターが使われているか</p>
+<p class="last">情報はデータの構造がどのアダプターが使われているか
+依存した上で返ります。</p>
 </div>
-<p>依存した上で返ります。</p>
 </dd></dl>
 
 </dd></dl>
 
 </div>
-<div class="section" id="id6">
-<h2><a class="toc-backref" href="#id11">ドライバ</a><a class="headerlink" href="#id6" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="section" id="id4">
+<h2><a class="toc-backref" href="#id9">ドライバ</a><a class="headerlink" href="#id4" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <div class="section" id="alternative-php-cache-apc">
-<h3><a class="toc-backref" href="#id12">Alternative PHP Cache (APC) キャッシング</a><a class="headerlink" href="#alternative-php-cache-apc" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<h3><a class="toc-backref" href="#id10">Alternative PHP Cache (APC) キャッシング</a><a class="headerlink" href="#alternative-php-cache-apc" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p>上記で記載されたすべてのメソッドは、以下のように特定のアダプタを
 ドライバのローダーに渡すことなくアクセスできます:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">driver</span><span class="p">(</span><span class="s1">&#39;cache&#39;</span><span class="p">);</span>
@@ -757,8 +757,8 @@ on which adapter is being used.</p>
 <p>APC に関するさらなる情報は、<a class="reference external" href="http://php.net/apc">http://php.net/apc</a>
 を参照してください。</p>
 </div>
-<div class="section" id="id7">
-<h3><a class="toc-backref" href="#id13">ファイルベースキャッシュ</a><a class="headerlink" href="#id7" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<div class="section" id="id5">
+<h3><a class="toc-backref" href="#id11">ファイルベースキャッシュ</a><a class="headerlink" href="#id5" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p>出力クラスのキャッシングとは異なり、ファイルベースのキャッシングドライバ
 は、ビューファイルの一部分をキャッシュできます。アプリケーションをベンチ
 マークしながら、キャッシングによる効果をディスク I/O が打ち消してしまう
@@ -771,7 +771,7 @@ on which adapter is being used.</p>
 </div>
 </div>
 <div class="section" id="memcached">
-<h3><a class="toc-backref" href="#id14">Memcached キャッシュ</a><a class="headerlink" href="#memcached" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<h3><a class="toc-backref" href="#id12">Memcached キャッシュ</a><a class="headerlink" href="#memcached" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p>複数の Memcached サーバは、application/config/ ディレクトリに
 置いた memcached.php 設定ファイルで指定することができます。</p>
 <p>上記で記載されたすべてのメソッドは、以下のように特定のアダプタ
@@ -784,7 +784,7 @@ on which adapter is being used.</p>
 を参照してください。</p>
 </div>
 <div class="section" id="wincache">
-<h3><a class="toc-backref" href="#id15">WinCache キャッシュ</a><a class="headerlink" href="#wincache" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<h3><a class="toc-backref" href="#id13">WinCache キャッシュ</a><a class="headerlink" href="#wincache" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p>Windowsの下で、WinCacheドライバを利用することもできます。</p>
 <p>上記で記載されたすべてのメソッドは、以下のように特定のアダプタ
 をドライバのローダーに渡すことなくアクセスできます:</p>
@@ -796,7 +796,7 @@ on which adapter is being used.</p>
 を参照してください。</p>
 </div>
 <div class="section" id="redis">
-<h3><a class="toc-backref" href="#id16">Redis キャッシュ</a><a class="headerlink" href="#redis" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<h3><a class="toc-backref" href="#id14">Redis キャッシュ</a><a class="headerlink" href="#redis" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p>Redis is an in-memory key-value store which can operate in LRU cache mode.
 To use it, you need <a class="reference external" href="https://github.com/phpredis/phpredis">Redis server and phpredis PHP extension</a>.</p>
 <p>redisサーバーに接続する構成オプションは、application/config/redis.phpファイルに格納されなければなりません。
@@ -816,8 +816,8 @@ To use it, you need <a class="reference external" href="https://github.com/phpre
 <p>に関するさらなる情報は、<a class="reference external" href="http://redis.io">http://redis.io</a>.
 を参照してください。</p>
 </div>
-<div class="section" id="id8">
-<h3><a class="toc-backref" href="#id17">ダミー キャッシュ</a><a class="headerlink" href="#id8" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<div class="section" id="id6">
+<h3><a class="toc-backref" href="#id15">ダミー キャッシュ</a><a class="headerlink" href="#id6" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p>これは絶えず &#8216;miss&#8217; するキャッシングバックエンドです。データをストアし
 ませんが、指定したキャッシュをサポートしない環境で、キャッシュを使用す
 るコードをそのままにできます。</p>

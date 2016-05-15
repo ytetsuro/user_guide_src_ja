@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>ファイルヘルパー &mdash; CodeIgniter 3.1.0-dev ドキュメント</title>
+  <title>Upgrading from 3.0.6 to 3.0.7 &mdash; CodeIgniter 3.1.0-dev ドキュメント</title>
   
 
   
@@ -31,9 +31,9 @@
 
   
     <link rel="top" title="CodeIgniter 3.1.0-dev ドキュメント" href="../index.html"/>
-        <link rel="up" title="ヘルパー" href="index.html"/>
-        <link rel="next" title="Form Helper" href="form_helper.html"/>
-        <link rel="prev" title="Email ヘルパー" href="email_helper.html"/> 
+        <link rel="up" title="以前のバージョンからのアップグレード" href="upgrading.html"/>
+        <link rel="next" title="Upgrading from 3.0.5 to 3.0.6" href="upgrade_306.html"/>
+        <link rel="prev" title="Upgrading from 3.0.x to 3.1.x" href="upgrade_310.html"/> 
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -53,12 +53,12 @@
 </ul>
 </li>
 </ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../installation/index.html">インストール方法</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../installation/downloads.html">CodeIgniter のダウンロード</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../installation/index.html">インストール方法</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../installation/upgrading.html">以前のバージョンからのアップグレード</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../installation/troubleshooting.html">トラブルシューティング</a></li>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">インストール方法</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="downloads.html">CodeIgniter のダウンロード</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html">インストール方法</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="upgrading.html">以前のバージョンからのアップグレード</a></li>
+<li class="toctree-l2"><a class="reference internal" href="troubleshooting.html">トラブルシューティング</a></li>
 </ul>
 </li>
 </ul>
@@ -174,29 +174,29 @@
 </ul>
 </li>
 </ul>
-<ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="index.html">ヘルパー</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="array_helper.html">配列ヘルパー</a></li>
-<li class="toctree-l2"><a class="reference internal" href="captcha_helper.html">キャプチャ ヘルパー</a></li>
-<li class="toctree-l2"><a class="reference internal" href="cookie_helper.html">Cookie ヘルパー</a></li>
-<li class="toctree-l2"><a class="reference internal" href="date_helper.html">日付ヘルパー</a></li>
-<li class="toctree-l2"><a class="reference internal" href="directory_helper.html">ディレクトリヘルパー</a></li>
-<li class="toctree-l2"><a class="reference internal" href="download_helper.html">ダウンロードヘルパー</a></li>
-<li class="toctree-l2"><a class="reference internal" href="email_helper.html">Email ヘルパー</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="">ファイルヘルパー</a></li>
-<li class="toctree-l2"><a class="reference internal" href="form_helper.html">Form Helper</a></li>
-<li class="toctree-l2"><a class="reference internal" href="html_helper.html">HTML Helper</a></li>
-<li class="toctree-l2"><a class="reference internal" href="inflector_helper.html">語形変換ヘルパー</a></li>
-<li class="toctree-l2"><a class="reference internal" href="language_helper.html">Language Helper</a></li>
-<li class="toctree-l2"><a class="reference internal" href="number_helper.html">Number Helper</a></li>
-<li class="toctree-l2"><a class="reference internal" href="path_helper.html">Path Helper</a></li>
-<li class="toctree-l2"><a class="reference internal" href="security_helper.html">Security Helper</a></li>
-<li class="toctree-l2"><a class="reference internal" href="smiley_helper.html">Smiley Helper</a></li>
-<li class="toctree-l2"><a class="reference internal" href="string_helper.html">String Helper</a></li>
-<li class="toctree-l2"><a class="reference internal" href="text_helper.html">テキストヘルパー</a></li>
-<li class="toctree-l2"><a class="reference internal" href="typography_helper.html">タイポグラフィーヘルパー</a></li>
-<li class="toctree-l2"><a class="reference internal" href="url_helper.html">URL ヘルパー</a></li>
-<li class="toctree-l2"><a class="reference internal" href="xml_helper.html">XML ヘルパー</a></li>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../helpers/index.html">ヘルパー</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/array_helper.html">配列ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/captcha_helper.html">キャプチャ ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/cookie_helper.html">Cookie ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/date_helper.html">日付ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/directory_helper.html">ディレクトリヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/download_helper.html">ダウンロードヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/email_helper.html">Email ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/file_helper.html">ファイルヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/form_helper.html">Form Helper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/html_helper.html">HTML Helper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/inflector_helper.html">語形変換ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/language_helper.html">Language Helper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/number_helper.html">Number Helper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/path_helper.html">Path Helper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/security_helper.html">Security Helper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/smiley_helper.html">Smiley Helper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/string_helper.html">String Helper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/text_helper.html">テキストヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/typography_helper.html">タイポグラフィーヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/url_helper.html">URL ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/xml_helper.html">XML ヘルパー</a></li>
 </ul>
 </li>
 </ul>
@@ -239,12 +239,12 @@
 </ul>
 </li>
 </ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../installation/index.html">インストール方法</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../installation/downloads.html">CodeIgniter のダウンロード</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../installation/index.html">インストール方法</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../installation/upgrading.html">以前のバージョンからのアップグレード</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../installation/troubleshooting.html">トラブルシューティング</a></li>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">インストール方法</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="downloads.html">CodeIgniter のダウンロード</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html">インストール方法</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="upgrading.html">以前のバージョンからのアップグレード</a></li>
+<li class="toctree-l2"><a class="reference internal" href="troubleshooting.html">トラブルシューティング</a></li>
 </ul>
 </li>
 </ul>
@@ -360,29 +360,29 @@
 </ul>
 </li>
 </ul>
-<ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="index.html">ヘルパー</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="array_helper.html">配列ヘルパー</a></li>
-<li class="toctree-l2"><a class="reference internal" href="captcha_helper.html">キャプチャ ヘルパー</a></li>
-<li class="toctree-l2"><a class="reference internal" href="cookie_helper.html">Cookie ヘルパー</a></li>
-<li class="toctree-l2"><a class="reference internal" href="date_helper.html">日付ヘルパー</a></li>
-<li class="toctree-l2"><a class="reference internal" href="directory_helper.html">ディレクトリヘルパー</a></li>
-<li class="toctree-l2"><a class="reference internal" href="download_helper.html">ダウンロードヘルパー</a></li>
-<li class="toctree-l2"><a class="reference internal" href="email_helper.html">Email ヘルパー</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="">ファイルヘルパー</a></li>
-<li class="toctree-l2"><a class="reference internal" href="form_helper.html">Form Helper</a></li>
-<li class="toctree-l2"><a class="reference internal" href="html_helper.html">HTML Helper</a></li>
-<li class="toctree-l2"><a class="reference internal" href="inflector_helper.html">語形変換ヘルパー</a></li>
-<li class="toctree-l2"><a class="reference internal" href="language_helper.html">Language Helper</a></li>
-<li class="toctree-l2"><a class="reference internal" href="number_helper.html">Number Helper</a></li>
-<li class="toctree-l2"><a class="reference internal" href="path_helper.html">Path Helper</a></li>
-<li class="toctree-l2"><a class="reference internal" href="security_helper.html">Security Helper</a></li>
-<li class="toctree-l2"><a class="reference internal" href="smiley_helper.html">Smiley Helper</a></li>
-<li class="toctree-l2"><a class="reference internal" href="string_helper.html">String Helper</a></li>
-<li class="toctree-l2"><a class="reference internal" href="text_helper.html">テキストヘルパー</a></li>
-<li class="toctree-l2"><a class="reference internal" href="typography_helper.html">タイポグラフィーヘルパー</a></li>
-<li class="toctree-l2"><a class="reference internal" href="url_helper.html">URL ヘルパー</a></li>
-<li class="toctree-l2"><a class="reference internal" href="xml_helper.html">XML ヘルパー</a></li>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../helpers/index.html">ヘルパー</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/array_helper.html">配列ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/captcha_helper.html">キャプチャ ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/cookie_helper.html">Cookie ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/date_helper.html">日付ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/directory_helper.html">ディレクトリヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/download_helper.html">ダウンロードヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/email_helper.html">Email ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/file_helper.html">ファイルヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/form_helper.html">Form Helper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/html_helper.html">HTML Helper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/inflector_helper.html">語形変換ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/language_helper.html">Language Helper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/number_helper.html">Number Helper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/path_helper.html">Path Helper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/security_helper.html">Security Helper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/smiley_helper.html">Smiley Helper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/string_helper.html">String Helper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/text_helper.html">テキストヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/typography_helper.html">タイポグラフィーヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/url_helper.html">URL ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/xml_helper.html">XML ヘルパー</a></li>
 </ul>
 </li>
 </ul>
@@ -409,9 +409,11 @@
   <ul class="wy-breadcrumbs">
     <li><a href="../index.html">Docs</a> &raquo;</li>
       
-        <li><a href="index.html">ヘルパー</a> &raquo;</li>
+        <li><a href="index.html">インストール方法</a> &raquo;</li>
       
-    <li>ファイルヘルパー</li>
+        <li><a href="upgrading.html">以前のバージョンからのアップグレード</a> &raquo;</li>
+      
+    <li>Upgrading from 3.0.6 to 3.0.7</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -419,345 +421,23 @@
       <img title="Classic Layout" alt="classic layout" src="data:image/gif;base64,R0lGODlhFAAUAJEAAAAAADMzM////wAAACH5BAUUAAIALAAAAAAUABQAAAImlI+py+0PU5gRBRDM3DxbWoXis42X13USOLauUIqnlsaH/eY6UwAAOw==" />
     </div>
   </ul>
-<div style="float:right;margin-left:5px;">[ <a href="https://github.com/codeigniter-jp/ci-ja/blob/develop/user_guide_ja_src/source/helpers/file_helper.rst">旧版翻訳途中</a> | <a href="https://github.com/bcit-ci/CodeIgniter/commits/develop/user_guide_src/source/helpers/file_helper.rst">原文履歴</a> | <a href="https://github.com/codeigniter-jp/user_guide_src_ja/commits/develop_japanese/source/helpers/file_helper.rst">翻訳履歴</a> | <a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/source/helpers/file_helper.rst">GitHubで修正</a> ]</div><br /><div style="float:right;margin-left:5px;">[ <b class="highlighted">翻訳者募集中</b> → <a href="https://docs.google.com/spreadsheets/d/1ZWD5XqwH-Uo9X7MR644jbL6O8p5LxIngLT8M547H8wc/edit?pref=2&pli=1#gid=0">翻訳状況</a> ]</div>
+<div style="float:right;margin-left:5px;">[ <a href="https://github.com/codeigniter-jp/ci-ja/blob/develop/user_guide_ja_src/source/installation/upgrade_307.rst">旧版翻訳途中</a> | <a href="https://github.com/bcit-ci/CodeIgniter/commits/develop/user_guide_src/source/installation/upgrade_307.rst">原文履歴</a> | <a href="https://github.com/codeigniter-jp/user_guide_src_ja/commits/develop_japanese/source/installation/upgrade_307.rst">翻訳履歴</a> | <a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/source/installation/upgrade_307.rst">GitHubで修正</a> ]</div><br /><div style="float:right;margin-left:5px;">[ <b class="highlighted">翻訳者募集中</b> → <a href="https://docs.google.com/spreadsheets/d/1ZWD5XqwH-Uo9X7MR644jbL6O8p5LxIngLT8M547H8wc/edit?pref=2&pli=1#gid=0">翻訳状況</a> ]</div>
   <hr/>
 </div>
           <div role="main" class="document">
             
-  <div class="section" id="id1">
-<h1>ファイルヘルパー<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
-<p>ファイルヘルパーのファイルは、ファイルを処理するのに役立つ関数で構成されます。</p>
-<div class="contents local topic" id="contents">
-<ul class="simple">
-<li><a class="reference internal" href="#id2" id="id4">ヘルパーのロード</a></li>
-<li><a class="reference internal" href="#id3" id="id5">利用できる機能</a></li>
-</ul>
-</div>
-<div class="custom-index container"></div><div class="section" id="id2">
-<h2><a class="toc-backref" href="#id4">ヘルパーのロード</a><a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>このヘルパーは次のコードを使ってロードします:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">helper</span><span class="p">(</span><span class="s1">&#39;file&#39;</span><span class="p">);</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="id3">
-<h2><a class="toc-backref" href="#id5">利用できる機能</a><a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>次の関数が利用できます:</p>
-<dl class="function">
-<dt id="read_file">
-<tt class="descname">read_file</tt><big>(</big><em>$file</em><big>)</big><a class="headerlink" href="#read_file" title="この定義へのパーマリンク">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">パラメタ:</th><td class="field-body"><ul class="first simple">
-<li><strong>$file</strong> (<em>string</em>) &#8211; File path</li>
-</ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body"><p class="first">File contents or FALSE on failure</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">戻り値の型:</th><td class="field-body"><p class="first last">string</p>
-</td>
-</tr>
-</tbody>
-</table>
-<p>パスで特定されたファイルのデータを返します。</p>
-<p>例:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$string</span> <span class="o">=</span> <span class="nx">read_file</span><span class="p">(</span><span class="s1">&#39;./path/to/file.php&#39;</span><span class="p">);</span>
-</pre></div>
-</div>
-<p>パスは、サーバの相対パスかフルパスで指定します。読み込みに失敗した場合は FALSE (ブール値) を返します。</p>
+  <div class="section" id="upgrading-from-3-0-6-to-3-0-7">
+<h1>Upgrading from 3.0.6 to 3.0.7<a class="headerlink" href="#upgrading-from-3-0-6-to-3-0-7" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>Before performing an update you should take your site offline by
+replacing the index.php file with a static one.</p>
+<div class="section" id="step-1-update-your-codeigniter-files">
+<h2>Step 1: Update your CodeIgniter files<a class="headerlink" href="#step-1-update-your-codeigniter-files" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>Replace all files and directories in your <em>system/</em> directory.</p>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
-<p class="last">パスは、メインの index.php ファイルからの相対パスで, コントローラファイルやビューファイルからの相対パスではありません。 CodeIgniter
-はフロントコントローラを使用するので、常にサイトのインデックスからの
-相対パスになります。</p>
+<p class="last">If you have any custom developed files in these directories,
+please make copies of them first.</p>
 </div>
-<div class="admonition note">
-<p class="first admonition-title">注釈</p>
-<p class="last">This function is DEPRECATED. Use the native <tt class="docutils literal"><span class="pre">file_get_contents()</span></tt>
-instead.</p>
-</div>
-<div class="admonition important">
-<p class="first admonition-title">重要</p>
-<p class="last">サーバで <strong>open_basedir</strong> の制限が有効になっている場合、 呼び出したスクリプト
-より上の階層にあるファイルにアクセスしようとするとき、このメソッド
-は動作しないかもしれません。</p>
-</div>
-</dd></dl>
-
-<dl class="function">
-<dt id="write_file">
-<tt class="descname">write_file</tt><big>(</big><em>$path</em>, <em>$data</em><span class="optional">[</span>, <em>$mode = 'wb'</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#write_file" title="この定義へのパーマリンク">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">パラメタ:</th><td class="field-body"><ul class="first simple">
-<li><strong>$path</strong> (<em>string</em>) &#8211; File path</li>
-<li><strong>$data</strong> (<em>string</em>) &#8211; Data to write to file</li>
-<li><strong>$mode</strong> (<em>string</em>) &#8211; <tt class="docutils literal"><span class="pre">fopen()</span></tt> mode</li>
-</ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body"><p class="first">TRUE if the write was successful, FALSE in case of an error</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">戻り値の型:</th><td class="field-body"><p class="first last">bool</p>
-</td>
-</tr>
-</tbody>
-</table>
-<p>パスで指定されたファイルにデータを書き込みます。 ファイルが存在しない場合には、
-このメソッドによってファイルが作成されます。</p>
-<p>例:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$data</span> <span class="o">=</span> <span class="s1">&#39;Some file data&#39;</span><span class="p">;</span>
-<span class="k">if</span> <span class="p">(</span> <span class="o">!</span> <span class="nx">write_file</span><span class="p">(</span><span class="s1">&#39;./path/to/file.php&#39;</span><span class="p">,</span> <span class="nv">$data</span><span class="p">))</span>
-<span class="p">{</span>
-        <span class="k">echo</span> <span class="s1">&#39;ファイルに書き込めません&#39;</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="k">else</span>
-<span class="p">{</span>
-        <span class="k">echo</span> <span class="s1">&#39;ファイルが書き込まれました!&#39;</span><span class="p">;</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-<p>第3引数に書き込みモードをオプションで指定できます:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nx">write_file</span><span class="p">(</span><span class="s1">&#39;./path/to/file.php&#39;</span><span class="p">,</span> <span class="nv">$data</span><span class="p">,</span> <span class="s1">&#39;r+&#39;</span><span class="p">);</span>
-</pre></div>
-</div>
-<p>デフォルトのモードは、 wb です。指定できるモードについては、 <a class="reference external" href="http://www.php.net/manual/ja/function.fopen.php">PHP
-ユーザガイド</a> をご覧ください。</p>
-<div class="admonition note">
-<p class="first admonition-title">注釈</p>
-<p class="last">パスは、メインの index.php ファイルからの相対パスで、コントローラファイルやビューファイルからの相対パスではありません。 CodeIgniter
-はフロントコントローラを使用するので、常にサイトのインデックスからの
-相対パスになります。</p>
-</div>
-<div class="admonition note">
-<p class="first admonition-title">注釈</p>
-<p class="last">This function acquires an exclusive lock on the file while writing to it.</p>
-</div>
-</dd></dl>
-
-<dl class="function">
-<dt id="delete_files">
-<tt class="descname">delete_files</tt><big>(</big><em>$path</em><span class="optional">[</span>, <em>$del_dir = FALSE</em><span class="optional">[</span>, <em>$htdocs = FALSE</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#delete_files" title="この定義へのパーマリンク">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">パラメタ:</th><td class="field-body"><ul class="first simple">
-<li><strong>$path</strong> (<em>string</em>) &#8211; Directory path</li>
-<li><strong>$del_dir</strong> (<em>bool</em>) &#8211; Whether to also delete directories</li>
-<li><strong>$htdocs</strong> (<em>bool</em>) &#8211; Whether to skip deleting .htaccess and index page files</li>
-</ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body"><p class="first">TRUE on success, FALSE in case of an error</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">戻り値の型:</th><td class="field-body"><p class="first last">bool</p>
-</td>
-</tr>
-</tbody>
-</table>
-<p>パスに含まれるすべてのファイルを削除します。</p>
-<p>例:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nx">delete_files</span><span class="p">(</span><span class="s1">&#39;./path/to/directory/&#39;</span><span class="p">);</span>
-</pre></div>
-</div>
-<p>第2引数を true にセットすると、指定したパスに含まれるいずれの
-ディレクトリも削除されます。</p>
-<p>例:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nx">delete_files</span><span class="p">(</span><span class="s1">&#39;./path/to/directory/&#39;</span><span class="p">,</span> <span class="k">TRUE</span><span class="p">);</span>
-</pre></div>
-</div>
-<div class="admonition note">
-<p class="first admonition-title">注釈</p>
-<p class="last">削除するには、ファイルを書き込み可能にするか、所有者をシステムにしてください。</p>
-</div>
-</dd></dl>
-
-<dl class="function">
-<dt id="get_filenames">
-<tt class="descname">get_filenames</tt><big>(</big><em>$source_dir</em><span class="optional">[</span>, <em>$include_path = FALSE</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#get_filenames" title="この定義へのパーマリンク">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">パラメタ:</th><td class="field-body"><ul class="first simple">
-<li><strong>$source_dir</strong> (<em>string</em>) &#8211; Directory path</li>
-<li><strong>$include_path</strong> (<em>bool</em>) &#8211; Whether to include the path as part of the filenames</li>
-</ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body"><p class="first">An array of file names</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">戻り値の型:</th><td class="field-body"><p class="first last">array</p>
-</td>
-</tr>
-</tbody>
-</table>
-<p>サーバパスを入力として、そのパスに含まれる全ファイル名の配列を返します。
-オプションで、第2引数を TRUE に設定すると、
-ファイルのパスがファイル名に付加されます。</p>
-<p>例:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$controllers</span> <span class="o">=</span> <span class="nx">get_filenames</span><span class="p">(</span><span class="nx">APPPATH</span><span class="o">.</span><span class="s1">&#39;controllers/&#39;</span><span class="p">);</span>
-</pre></div>
-</div>
-</dd></dl>
-
-<dl class="function">
-<dt id="get_dir_file_info">
-<tt class="descname">get_dir_file_info</tt><big>(</big><em>$source_dir</em>, <em>$top_level_only</em><big>)</big><a class="headerlink" href="#get_dir_file_info" title="この定義へのパーマリンク">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">パラメタ:</th><td class="field-body"><ul class="first simple">
-<li><strong>$source_dir</strong> (<em>string</em>) &#8211; Directory path</li>
-<li><strong>$top_level_only</strong> (<em>bool</em>) &#8211; Whether to look only at the specified directory (excluding sub-directories)</li>
-</ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body"><p class="first">An array containing info on the supplied directory&#8217;s contents</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">戻り値の型:</th><td class="field-body"><p class="first last">array</p>
-</td>
-</tr>
-</tbody>
-</table>
-<p>指定されたディレクトリを読み、ファイル名、ファイルサイズ、
-日付、パーミッションから成る配列を作ります。指定ファイル以下のサブフォルダは、第 2 引数を FALSE
-に指定した場合のみすべて同様に
-読まれます。</p>
-<p>例:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$models_info</span> <span class="o">=</span> <span class="nx">get_dir_file_info</span><span class="p">(</span><span class="nx">APPPATH</span><span class="o">.</span><span class="s1">&#39;models/&#39;</span><span class="p">);</span>
-</pre></div>
-</div>
-</dd></dl>
-
-<dl class="function">
-<dt id="get_file_info">
-<tt class="descname">get_file_info</tt><big>(</big><em>$file</em><span class="optional">[</span>, <em>$returned_values = array('name'</em>, <em>'server_path'</em>, <em>'size'</em>, <em>'date')</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#get_file_info" title="この定義へのパーマリンク">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">パラメタ:</th><td class="field-body"><ul class="first simple">
-<li><strong>$file</strong> (<em>string</em>) &#8211; File path</li>
-<li><strong>$returned_values</strong> (<em>array</em>) &#8211; What type of info to return</li>
-</ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body"><p class="first">An array containing info on the specified file or FALSE on failure</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">戻り値の型:</th><td class="field-body"><p class="first last">array</p>
-</td>
-</tr>
-</tbody>
-</table>
-<p>Given a file and path, returns (optionally) the <em>name</em>, <em>path</em>, <em>size</em> and <em>date modified</em>
-information attributes for a file. Second parameter allows you to explicitly declare what
-information you want returned.</p>
-<p>Valid <tt class="docutils literal"><span class="pre">$returned_values</span></tt> options are: <cite>name</cite>, <cite>size</cite>, <cite>date</cite>, <cite>readable</cite>, <cite>writeable</cite>,
-<cite>executable</cite> and <cite>fileperms</cite>.</p>
-</dd></dl>
-
-<dl class="function">
-<dt id="get_mime_by_extension">
-<tt class="descname">get_mime_by_extension</tt><big>(</big><em>$filename</em><big>)</big><a class="headerlink" href="#get_mime_by_extension" title="この定義へのパーマリンク">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">パラメタ:</th><td class="field-body"><ul class="first simple">
-<li><strong>$filename</strong> (<em>string</em>) &#8211; File name</li>
-</ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body"><p class="first">MIME type string or FALSE on failure</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">戻り値の型:</th><td class="field-body"><p class="first last">string</p>
-</td>
-</tr>
-</tbody>
-</table>
-<p><em>config/mimes.php</em> にある設定を元にファイル拡張子を  MIMEタイプに変換します。
-タイプが分からないときや MIME 設定ファイルが開けなかったときは FALSE を返します。</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$file</span> <span class="o">=</span> <span class="s1">&#39;somefile.png&#39;</span><span class="p">;</span>
-<span class="k">echo</span> <span class="nv">$file</span><span class="o">.</span><span class="s1">&#39; には以下のmimeタイプがついています &#39;</span><span class="o">.</span><span class="nx">get_mime_by_extension</span><span class="p">(</span><span class="nv">$file</span><span class="p">);</span>
-</pre></div>
-</div>
-<div class="admonition note">
-<p class="first admonition-title">注釈</p>
-<p class="last">この方法は正確にファイルの MIME タイプを判別するものではなく、
-あくまで簡単に取得するためだけのものです。セキュリティ用には
-使わないでください。</p>
-</div>
-</dd></dl>
-
-<dl class="function">
-<dt id="symbolic_permissions">
-<tt class="descname">symbolic_permissions</tt><big>(</big><em>$perms</em><big>)</big><a class="headerlink" href="#symbolic_permissions" title="この定義へのパーマリンク">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">パラメタ:</th><td class="field-body"><ul class="first simple">
-<li><strong>$perms</strong> (<em>int</em>) &#8211; Permissions</li>
-</ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body"><p class="first">Symbolic permissions string</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">戻り値の型:</th><td class="field-body"><p class="first last">string</p>
-</td>
-</tr>
-</tbody>
-</table>
-<p>( <tt class="docutils literal"><span class="pre">fileperms()</span></tt> で返ってくるような) 数字のパーミッションを引数として渡すと、
-文字列のファイルパーミッションを返します。</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">echo</span> <span class="nx">symbolic_permissions</span><span class="p">(</span><span class="nb">fileperms</span><span class="p">(</span><span class="s1">&#39;./index.php&#39;</span><span class="p">));</span>  <span class="c1">// -rw-r--r--</span>
-</pre></div>
-</div>
-</dd></dl>
-
-<dl class="function">
-<dt id="octal_permissions">
-<tt class="descname">octal_permissions</tt><big>(</big><em>$perms</em><big>)</big><a class="headerlink" href="#octal_permissions" title="この定義へのパーマリンク">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">パラメタ:</th><td class="field-body"><ul class="first simple">
-<li><strong>$perms</strong> (<em>int</em>) &#8211; Permissions</li>
-</ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body"><p class="first">Octal permissions string</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">戻り値の型:</th><td class="field-body"><p class="first last">string</p>
-</td>
-</tr>
-</tbody>
-</table>
-<p>( <tt class="docutils literal"><span class="pre">fileperms()</span></tt> で返ってくるような) 数字のパーミッションを引数として渡すと、
-8進数3文字のファイルパーミッションを返します。</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">echo</span> <span class="nx">octal_permissions</span><span class="p">(</span><span class="nb">fileperms</span><span class="p">(</span><span class="s1">&#39;./index.php&#39;</span><span class="p">));</span> <span class="c1">// 644</span>
-</pre></div>
-</div>
-</dd></dl>
-
 </div>
 </div>
 
@@ -767,10 +447,10 @@ information you want returned.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="form_helper.html" class="btn btn-neutral float-right" title="Form Helper">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="upgrade_306.html" class="btn btn-neutral float-right" title="Upgrading from 3.0.5 to 3.0.6">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="email_helper.html" class="btn btn-neutral" title="Email ヘルパー"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="upgrade_310.html" class="btn btn-neutral" title="Upgrading from 3.0.x to 3.1.x"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

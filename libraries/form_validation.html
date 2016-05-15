@@ -1129,6 +1129,7 @@ must supply it as an array to the function. Example:</p>
 </div>
 <div class="section" id="post">
 <h3><a class="toc-backref" href="#id49">配列 ($_POST 以外の) のバリデーション</a><a class="headerlink" href="#post" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>&gt;&gt;&gt;&gt;&gt;&gt;&gt; 675d07c... Sphinxの文法エラーをまとめて修正</p>
 <p>Sometimes you may want to validate an array that does not originate from <tt class="docutils literal"><span class="pre">$_POST</span></tt> data.</p>
 <p>In this case, you can specify the array to be validated:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$data</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
@@ -1567,6 +1568,37 @@ the field data).</p>
 <h2><a class="toc-backref" href="#id57">整形処理のリファレンス</a><a class="headerlink" href="#id27" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>The following is a list of all the prepping methods that are available
 to use:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="15%" />
+<col width="8%" />
+<col width="77%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">名前</th>
+<th class="head">パラメータ</th>
+<th class="head">説明</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>prep_for_form</strong></td>
+<td>No</td>
+<td>Converts special characters so that HTML data can be shown in a form field without breaking it.</td>
+</tr>
+<tr class="row-odd"><td><strong>prep_url</strong></td>
+<td>No</td>
+<td>Adds &#8220;http://&#8221; to URLs if missing.</td>
+</tr>
+<tr class="row-even"><td><strong>strip_image_tags</strong></td>
+<td>No</td>
+<td>Strips the HTML from image tags leaving the raw URL.</td>
+</tr>
+<tr class="row-odd"><td><strong>encode_php_tags</strong></td>
+<td>No</td>
+<td>Converts PHP tags to entities.</td>
+</tr>
+</tbody>
+</table>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
 <p class="last">You can also use any native PHP functions that permits one

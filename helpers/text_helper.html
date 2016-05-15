@@ -458,8 +458,10 @@
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body"><p class="first last">単語数で制限された文字列
-string</p>
+<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body"><p class="first">単語数で制限された文字列</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">戻り値の型:</th><td class="field-body"><p class="first last">string</p>
 </td>
 </tr>
 </tbody>
@@ -488,8 +490,10 @@ string</p>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body"><p class="first last">文字数で制限された文字列
-string</p>
+<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body"><p class="first">文字数で制限された文字列</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">戻り値の型:</th><td class="field-body"><p class="first last">string</p>
 </td>
 </tr>
 </tbody>
@@ -619,8 +623,10 @@ string</p>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body"><p class="first last">HTML をハイライトしたコードを含む文字列
-string</p>
+<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body"><p class="first">HTML をハイライトしたコードを含む文字列</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">戻り値の型:</th><td class="field-body"><p class="first last">string</p>
 </td>
 </tr>
 </tbody>
@@ -648,15 +654,18 @@ string</p>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body"><p class="first last">HTML をハイライトしたフレーズを含む文字列
-string</p>
+<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body"><p class="first">HTML をハイライトしたフレーズを含む文字列</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">戻り値の型:</th><td class="field-body"><p class="first last">string</p>
 </td>
 </tr>
 </tbody>
 </table>
 <p>テキスト中のフレーズをハイライトします。 第1引数は元の文字列で、
 第2引数にハイライトしたいフレーズを指定します。
-第3、第4引数は、フレーズを囲みたい開始/終了タグを指定します。</p>
+第3、第4引数は、フレーズを囲みたい開始/終了タグを
+指定します。</p>
 <p>例:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$string</span> <span class="o">=</span> <span class="s2">&quot;Here is a nice text string about nothing in particular.&quot;</span><span class="p">;</span>
 <span class="k">echo</span> <span class="nx">highlight_phrase</span><span class="p">(</span><span class="nv">$string</span><span class="p">,</span> <span class="s2">&quot;nice text&quot;</span><span class="p">,</span> <span class="s1">&#39;&lt;span style=&quot;color:#990000;&quot;&gt;&#39;</span><span class="p">,</span> <span class="s1">&#39;&lt;/span&gt;&#39;</span><span class="p">);</span>
@@ -694,18 +703,17 @@ string</p>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body"><p class="first last">ワードラップされた文字列
-string</p>
+<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body"><p class="first">ワードラップされた文字列</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">戻り値の型:</th><td class="field-body"><p class="first last">string</p>
 </td>
 </tr>
 </tbody>
 </table>
-<p>指定した <em>文字</em> 数の位置で、テキストを折り返します。単語の途中で折り返されません [ 訳注:</p>
-</dd></dl>
-
-<p>英語のように単語の間がスペースで区切られている言語でだけ有効です。日本語では通常、正常に動作しません ]。</p>
-<blockquote>
-<div><p>例:</p>
+<p>指定した <em>文字</em> 数の位置で、テキストを折り返します。
+単語の途中で折り返されません [ 訳注: 英語のように単語の間がスペースで区切られている言語でだけ有効です。日本語では通常、正常に動作しません ]。</p>
+<p>例:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$string</span> <span class="o">=</span> <span class="s2">&quot;Here is a simple string of text that will help us demonstrate this function.&quot;</span><span class="p">;</span>
 <span class="k">echo</span> <span class="nx">word_wrap</span><span class="p">(</span><span class="nv">$string</span><span class="p">,</span> <span class="mi">25</span><span class="p">);</span>
 
@@ -716,7 +724,8 @@ string</p>
 <span class="c1">// function.</span>
 </pre></div>
 </div>
-</div></blockquote>
+</dd></dl>
+
 <dl class="function">
 <dt id="ellipsize">
 <tt class="descname">ellipsize</tt><big>(</big><em>$str</em>, <em>$max_length</em><span class="optional">[</span>, <em>$position = 1</em><span class="optional">[</span>, <em>$ellipsis = '&amp;hellip;'</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#ellipsize" title="この定義へのパーマリンク">¶</a></dt>
@@ -732,8 +741,10 @@ string</p>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body"><p class="first last">省略された文字列
-string</p>
+<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body"><p class="first">省略された文字列</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">戻り値の型:</th><td class="field-body"><p class="first last">string</p>
 </td>
 </tr>
 </tbody>
