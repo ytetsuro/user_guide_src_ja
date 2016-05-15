@@ -47,6 +47,9 @@
 |function       |オブジェクトでは「メソッド」、オブジェクトでない場合は「関数」|
 |common function|共通関数                                                      |
 |first parameter|第1引数                                                       |
+|parenthesis    |丸括弧                                                        |
+|bracket        |角括弧                                                        |
+|brace          |波括弧                                                        |
 
 ## 長音の統一
 
