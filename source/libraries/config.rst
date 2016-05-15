@@ -88,7 +88,7 @@ application/config/autoload.phpにある **autoload.php** ファイルを開き�
 
 
 設定項目の取り出し
-=====================
+==================
 
 設定ファイルから設定項目を読み取るには、次のメソッドを使います::
 
@@ -131,7 +131,7 @@ NULLを返します。
 .. _config-environments:
 
 複数の環境
-============
+==========
 
 現状の環境により異なった設定ファイルをロードすることができます。
 定数 ENVIRONMENT が index.php で定義されており、 :doc:`複数の
@@ -205,7 +205,7 @@ NULLを返します。
 		:returns:	Configの項目フォワード末尾の値スラッシュ見つからない場合はnull
 		:rtype:	mixed
 
-		この方法は、``item()`` と同じです,  設定項目の末尾に
+		この方法は、 ``item()`` と同じです,  設定項目の末尾に
 		スラッシュを加えます。
 
 	.. php:method:: load([$file = ''[, $use_sections = FALSE[, $fail_gracefully = FALSE]]])

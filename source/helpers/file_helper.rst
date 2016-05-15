@@ -77,7 +77,7 @@
 		write_file('./path/to/file.php', $data, 'r+');
 
 	デフォルトのモードは、 wb です。指定できるモードについては、 `PHP
-	ユーザガイド <http://www.php.net/manual/ja/function.fopen.php>`_をご覧ください。
+	ユーザガイド <http://www.php.net/manual/ja/function.fopen.php>`_ をご覧ください。
 
 	.. note: この関数でファイルにデータを書き込めるようにするには、ファイルのパーミッションを書き込み可能なように
 		(666、777、など)に設定しなければなりません。 ファイルがまだ存在しない

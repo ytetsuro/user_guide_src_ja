@@ -1,6 +1,6 @@
-###########
+########
 変更履歴
-###########
+########
 
 Version 3.1.0
 =============
@@ -329,12 +329,12 @@ Release Date: March 30, 2015
    -  ルーマニア語、ギリシャ語、ベトナム語、キリル文字を *application/config/foreign_characters.php* でサポート
    -  ファイル生成時に設定されるファイルの所有者が変更されました。
    -  非推奨だったSHA1 Libraryが削除されました。
-   -  非推奨だった``$autoload['core']``（ *application/config/autoload.php* ）が削除されました。
-      現在、``$autoload['libraries']``だけが自動ロードされます。
+   -  非推奨だった ``$autoload['core']`` （ *application/config/autoload.php* ）が削除されました。
+      現在、 ``$autoload['libraries']`` だけが自動ロードされます。
    -  非推奨だったEXT定数が削除されました。
-   -  全てのクラスが可読性の高いPHP5形式で書き直され、プロパティにおいて``var``は使われなくなりました。
+   -  全てのクラスが可読性の高いPHP5形式で書き直され、プロパティにおいて ``var`` は使われなくなりました。
    -  例外ハンドラを追加しました。
-   -  エラーテンプレートを *application/views/errors/* へと移動し、``$config['error_views_path']`でパスを指定できるようになりました。
+   -  エラーテンプレートを *application/views/errors/* へと移動し、 ``$config['error_views_path']`` でパスを指定できるようになりました。
    -  コマンドラインインタフェースアプリ向けのnon-HTMLエラーテンプレートに対応しました。
    -  ログクラスを *application/core/* へと変更しました。
    -  グローバル設定ファイルは最初にロードされ、その後環境設定ファイルをロードします。環境設定ファイルは、変更するキーのみグローバル設定ファイルを上書きします。
@@ -344,7 +344,7 @@ Release Date: March 30, 2015
    -  *development* と *testing* と *production* の中で、*development* のみがPHP上での全てのエラーを表示します。
    -  IPv6 address に対応するために、 *ip_address* のデータベースを16から45に変更。:doc:`Trackback Library <libraries/trackback>` と :doc:`Captcha Helper <helpers/captcha_helper>` にドキュメントがあります。
    -  ドキュメンテーションから、 *cheatsheets* と *quick_reference* の記述を削除。
-   -  PHPの危険な関数である ``eval()`` と ``exec()`　は可用性をチェックする機能として取り扱われます。
+   -  PHPの危険な関数である ``eval()`` と ``exec()`` は可用性をチェックする機能として取り扱われます。
    -  ログファイルの拡張子を ``$config['log_file_extension']`` を用いて変更できるようになりました。
    -  Added support for turning newline standardization on/off via ``$config['standardize_newlines']`` and set it to FALSE by default.
    -  Added configuration setting ``$config['composer_autoload']`` to enable loading of a `Composer <https://getcomposer.org>`_ auto-loader.

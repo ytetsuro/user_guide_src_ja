@@ -1,6 +1,6 @@
-#############################
+############################
 ローダ (読み込み処理) クラス
-#############################
+############################
 
 Loader, as the name suggests, is used to load elements. These elements
 can be libraries (classes) :doc:`View files <../general/views>`,
@@ -73,9 +73,9 @@ calling ``add_package_path()``.
 	$this->load->view('my_app_index'); // Loads
 	$this->load->view('welcome_message'); // Loads
 
-*******************
+******************
 クラスリファレンス
-*******************
+******************
 
 .. php:class:: CI_Loader
 
