@@ -29,8 +29,11 @@ Pull Request がマージされたら、[CREDITS.md](CREDITS.md) にご自分の
 
 ## 質問や連絡など
 
-翻訳に関して質問などありましたら、以下の Google グループで聞いてください。
+翻訳に関して質問などありましたら、[Issues](https://github.com/codeigniter-jp/user_guide_src_ja/issues) を作成してください。
+
+連絡事項があれば、[Issues](https://github.com/codeigniter-jp/user_guide_src_ja/issues) や [ユーザガイド日本語版執筆基準](TRANSLATION_STANDARDS.md) に記載します。
+
+なお、以下の Google グループや Slack で個別に質問することもできます。
 
 * https://groups.google.com/forum/#!forum/codeigniter_jp
-
-また、連絡事項はこの Google グループに流しますので、翻訳作業に参加される方は、ご参加ください。
+* http://codeigniter-jp-slack.herokuapp.com/
