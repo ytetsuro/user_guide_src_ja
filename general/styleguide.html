@@ -425,7 +425,7 @@
           <div role="main" class="document">
             
   <div class="section" id="php">
-<h1><a class="toc-backref" href="#id17">PHP スタイルガイド</a><a class="headerlink" href="#php" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<h1><a class="toc-backref" href="#id26">PHP スタイルガイド</a><a class="headerlink" href="#php" title="このヘッドラインへのパーマリンク">¶</a></h1>
 <p>このページでは CodeIgniter の開発に貢献する際に守っている
 コーディングスタイルを記述します。あなた自身の CodeIgniter
 アプリケーションではこのスタイルを使用する必要はありませんが、
@@ -433,43 +433,43 @@
 <div class="contents topic" id="table-of-contents">
 <p class="topic-title first">Table of Contents</p>
 <ul class="simple">
-<li><a class="reference internal" href="#php" id="id17">PHP スタイルガイド</a><ul>
-<li><a class="reference internal" href="#id1" id="id18">ファイル形式</a><ul>
-<li><a class="reference internal" href="#textmate" id="id19">TextMate</a></li>
-<li><a class="reference internal" href="#bbedit" id="id20">BBEdit</a></li>
+<li><a class="reference internal" href="#php" id="id26">PHP スタイルガイド</a><ul>
+<li><a class="reference internal" href="#id1" id="id27">ファイル形式</a><ul>
+<li><a class="reference internal" href="#textmate" id="id28">TextMate</a></li>
+<li><a class="reference internal" href="#bbedit" id="id29">BBEdit</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#id2" id="id21">PHP の閉じタグ</a></li>
-<li><a class="reference internal" href="#id3" id="id22">ファイルの命名</a></li>
-<li><a class="reference internal" href="#id4" id="id23">クラスとメソッドの命名</a></li>
-<li><a class="reference internal" href="#id5" id="id24">変数名</a></li>
-<li><a class="reference internal" href="#id6" id="id25">コメント</a></li>
-<li><a class="reference internal" href="#id7" id="id26">定数</a></li>
-<li><a class="reference internal" href="#true-false-null" id="id27">TRUE 、 FALSE および NULL</a></li>
-<li><a class="reference internal" href="#id8" id="id28">論理演算子</a></li>
-<li><a class="reference internal" href="#id9" id="id29">返り値の比較と型キャスト</a></li>
-<li><a class="reference internal" href="#id11" id="id30">デバッグコード</a></li>
-<li><a class="reference internal" href="#id12" id="id31">ファイル内の空白</a></li>
-<li><a class="reference internal" href="#id13" id="id32">互換性</a></li>
-<li><a class="reference internal" href="#id14" id="id33">クラスごとにひとつのファイル</a></li>
-<li><a class="reference internal" href="#id15" id="id34">空白文字</a></li>
-<li><a class="reference internal" href="#id16" id="id35">改行</a></li>
-<li><a class="reference internal" href="#code-indenting" id="id36">Code Indenting</a></li>
-<li><a class="reference internal" href="#bracket-and-parenthetic-spacing" id="id37">Bracket and Parenthetic Spacing</a></li>
-<li><a class="reference internal" href="#localized-text" id="id38">Localized Text</a></li>
-<li><a class="reference internal" href="#private-methods-and-variables" id="id39">Private Methods and Variables</a></li>
-<li><a class="reference internal" href="#php-errors" id="id40">PHP Errors</a></li>
-<li><a class="reference internal" href="#short-open-tags" id="id41">Short Open Tags</a></li>
-<li><a class="reference internal" href="#one-statement-per-line" id="id42">One Statement Per Line</a></li>
-<li><a class="reference internal" href="#strings" id="id43">Strings</a></li>
-<li><a class="reference internal" href="#sql-queries" id="id44">SQL Queries</a></li>
-<li><a class="reference internal" href="#default-function-arguments" id="id45">Default Function Arguments</a></li>
+<li><a class="reference internal" href="#id2" id="id30">PHP の閉じタグ</a></li>
+<li><a class="reference internal" href="#id3" id="id31">ファイルの命名</a></li>
+<li><a class="reference internal" href="#id4" id="id32">クラスとメソッドの命名</a></li>
+<li><a class="reference internal" href="#id5" id="id33">変数名</a></li>
+<li><a class="reference internal" href="#id6" id="id34">コメント</a></li>
+<li><a class="reference internal" href="#id7" id="id35">定数</a></li>
+<li><a class="reference internal" href="#true-false-null" id="id36">TRUE 、 FALSE および NULL</a></li>
+<li><a class="reference internal" href="#id8" id="id37">論理演算子</a></li>
+<li><a class="reference internal" href="#id9" id="id38">返り値の比較と型キャスト</a></li>
+<li><a class="reference internal" href="#id11" id="id39">デバッグコード</a></li>
+<li><a class="reference internal" href="#id12" id="id40">ファイル内の空白</a></li>
+<li><a class="reference internal" href="#id13" id="id41">互換性</a></li>
+<li><a class="reference internal" href="#id14" id="id42">クラスごとにひとつのファイル</a></li>
+<li><a class="reference internal" href="#id15" id="id43">空白文字</a></li>
+<li><a class="reference internal" href="#id16" id="id44">改行</a></li>
+<li><a class="reference internal" href="#id17" id="id45">コードのインデント</a></li>
+<li><a class="reference internal" href="#id18" id="id46">角括弧と括弧内の空白文字</a></li>
+<li><a class="reference internal" href="#id19" id="id47">ローカライズされたテキスト</a></li>
+<li><a class="reference internal" href="#id20" id="id48">プライベートメソッドと変数</a></li>
+<li><a class="reference internal" href="#id21" id="id49">PHPのエラー</a></li>
+<li><a class="reference internal" href="#id22" id="id50">短い形式の開始タグ</a></li>
+<li><a class="reference internal" href="#id23" id="id51">1 行につき 1 つのステートメント</a></li>
+<li><a class="reference internal" href="#id24" id="id52">文字列</a></li>
+<li><a class="reference internal" href="#sql" id="id53">SQL クエリ</a></li>
+<li><a class="reference internal" href="#id25" id="id54">関数の引数のデフォルト値</a></li>
 </ul>
 </li>
 </ul>
 </div>
 <div class="section" id="id1">
-<h2><a class="toc-backref" href="#id18">ファイル形式</a><a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2><a class="toc-backref" href="#id27">ファイル形式</a><a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>ファイルは Unicode (UTF-8) エンコーディングで保存すべきです。BOM
 は使用 <em>しないべきです</em> 。UTF-16 や UTF-32 とは違い、
 UTF-8 でエンコードされたファイルには示すべきバイトオーダーはなく、 BOM は
@@ -479,7 +479,7 @@ Unix の行末は (LF) を使用すべきです。</p>
 これらの設定を適用する方法を示します。テキストエディタの手順は変更される場合があります。
 テキストエディタのマニュアルを確認してください。</p>
 <div class="section" id="textmate">
-<h3><a class="toc-backref" href="#id19">TextMate</a><a class="headerlink" href="#textmate" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<h3><a class="toc-backref" href="#id28">TextMate</a><a class="headerlink" href="#textmate" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <ol class="arabic simple">
 <li>アプリケーションの Preferences を開きます</li>
 <li>Advanced をクリックし、「 Saving 」タブを選んでください</li>
@@ -490,7 +490,7 @@ Unix の行末は (LF) を使用すべきです。</p>
 </ol>
 </div>
 <div class="section" id="bbedit">
-<h3><a class="toc-backref" href="#id20">BBEdit</a><a class="headerlink" href="#bbedit" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<h3><a class="toc-backref" href="#id29">BBEdit</a><a class="headerlink" href="#bbedit" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <ol class="arabic simple">
 <li>アプリケーションの Preferences を開きます</li>
 <li>左側の「 Text Encodings 」を選択します。</li>
@@ -504,7 +504,7 @@ no BOM) 」を選択してください</li>
 </div>
 </div>
 <div class="section" id="id2">
-<h2><a class="toc-backref" href="#id21">PHP の閉じタグ</a><a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2><a class="toc-backref" href="#id30">PHP の閉じタグ</a><a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>PHP 文書の PHP 閉じタグ <strong>?&gt;</strong> は PHP パーサにとってオプションです。
 しかしながら、使用すると、閉じタグのうしろにあるいくつかの空白文字が、
 開発者が入れたものであれ、ユーザによるものであれ、または FTP アプリケーションによるものであれ、
@@ -513,7 +513,7 @@ no BOM) 」を選択してください</li>
 代わりに単一の空行で終了します。</p>
 </div>
 <div class="section" id="id3">
-<h2><a class="toc-backref" href="#id22">ファイルの命名</a><a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2><a class="toc-backref" href="#id31">ファイルの命名</a><a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>クラスファイルは Ucfirst のように命名しなければならず、その他のファイル名
 (設定、ビュー、一般的なスクリプトなど) はすべて小文字にするべきです。</p>
 <p><strong>誤</strong>:</p>
@@ -540,7 +540,7 @@ no BOM) 」を選択してください</li>
 <strong>Myclass.php</strong> でなければなりません。</p>
 </div>
 <div class="section" id="id4">
-<h2><a class="toc-backref" href="#id23">クラスとメソッドの命名</a><a class="headerlink" href="#id4" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2><a class="toc-backref" href="#id32">クラスとメソッドの命名</a><a class="headerlink" href="#id4" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>クラス名は常に大文字で開始するべきです。複数単語は
 アンダースコアで区切られるべきで、キャメル記法ではありません。</p>
 <p><strong>誤</strong>:</p>
@@ -579,7 +579,7 @@ no BOM) 」を選択してください</li>
 </div>
 </div>
 <div class="section" id="id5">
-<h2><a class="toc-backref" href="#id24">変数名</a><a class="headerlink" href="#id5" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2><a class="toc-backref" href="#id33">変数名</a><a class="headerlink" href="#id5" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>変数命名のガイドラインは、クラスメソッドに使用されるものと非常に類似しています。
 変数は小文字のみで、アンダースコア区切り文字を使用し、
 適切にその目的や内容を示すよう名前をつけるべきです。
@@ -603,7 +603,7 @@ for() ループの中でイテレータとしてのみを使用されるべき�
 </div>
 </div>
 <div class="section" id="id6">
-<h2><a class="toc-backref" href="#id25">コメント</a><a class="headerlink" href="#id6" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2><a class="toc-backref" href="#id34">コメント</a><a class="headerlink" href="#id6" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>一般的に、コードには豊富にコメントするべきです。
 経験の浅いプログラマにコードの流れや意図を説明するのに役立つだけでなく、
 数か月先の将来においてあなた自身のコードに立ち戻ったときに
@@ -659,7 +659,7 @@ IDE によってピックアップできるようなります:</p>
 </div>
 </div>
 <div class="section" id="id7">
-<h2><a class="toc-backref" href="#id26">定数</a><a class="headerlink" href="#id7" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2><a class="toc-backref" href="#id35">定数</a><a class="headerlink" href="#id7" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>定数は変数と同じガイドラインに従います、
 ただし定数は常にすべて大文字にすべきです。 <em>CodeIgniter の定数、すなわち
 SLASH 、 LD 、 RD 、 PATH_CACHE などが割り当てられている場合は常に使用してください。</em></p>
@@ -679,7 +679,7 @@ SLASH 、 LD 、 RD 、 PATH_CACHE などが割り当てられている場合は
 </div>
 </div>
 <div class="section" id="true-false-null">
-<h2><a class="toc-backref" href="#id27">TRUE 、 FALSE および NULL</a><a class="headerlink" href="#true-false-null" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2><a class="toc-backref" href="#id36">TRUE 、 FALSE および NULL</a><a class="headerlink" href="#true-false-null" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p><strong>TRUE</strong> 、 <strong>FALSE</strong> および <strong>NULL</strong> キーワードは常にすべて
 大文字にすべきです。</p>
 <p><strong>誤</strong>:</p>
@@ -696,7 +696,7 @@ SLASH 、 LD 、 RD 、 PATH_CACHE などが割り当てられている場合は
 </div>
 </div>
 <div class="section" id="id8">
-<h2><a class="toc-backref" href="#id28">論理演算子</a><a class="headerlink" href="#id8" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2><a class="toc-backref" href="#id37">論理演算子</a><a class="headerlink" href="#id8" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p><tt class="docutils literal"><span class="pre">||</span></tt> 「論理和」比較演算子の使用はやめましょう。いくつかの出力デバイス上で不明確だからです
 (例として、数字の 11 のように見えます) 。
 <tt class="docutils literal"><span class="pre">&amp;&amp;</span></tt> は <tt class="docutils literal"><span class="pre">AND</span></tt> よりも好ましいですが、どちらとも許容されます。
@@ -717,8 +717,8 @@ SLASH 、 LD 、 RD 、 PATH_CACHE などが割り当てられている場合は
 </div>
 </div>
 <div class="section" id="id9">
-<h2><a class="toc-backref" href="#id29">返り値の比較と型キャスト</a><a class="headerlink" href="#id9" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>いくつかの PHP 関数は失敗した場合に FALSE を返しますが、正当な戻り値として
+<h2><a class="toc-backref" href="#id38">返り値の比較と型キャスト</a><a class="headerlink" href="#id9" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>いくつかの PHP 関数は失敗した場合に FALSE を返しますが、正当な返り値として
 &#8220;&#8221; または 0 を返します。これらは緩やかな比較で FALSE
 と評価されます。条件式においてはそれらの返り値を使用する際、変数型の比較によって明確にします。
 返り値が確かに期待するものであることを確認するためです。
@@ -756,7 +756,7 @@ SLASH 、 LD 、 RD 、 PATH_CACHE などが割り当てられている場合は
 <span class="p">}</span>
 </pre></div>
 </div>
-<p><a class="reference external" href="http://php.net/manual/en/language.types.type-juggling.php#language.types.typecasting">型キャスト</a> に関する情報も参照してください。
+<p><a class="reference external" href="http://php.net/manual/ja/language.types.type-juggling.php#language.types.typecasting">型キャスト</a> に関する情報も参照してください。
 非常に便利です。型キャストには微妙に異なる効果があり、
 それは望ましいものでしょう。文字列として変数をキャストすると、例として、
 NULL と真偽値 FALSE は空文字列となり、 0 (および
@@ -766,36 +766,36 @@ NULL と真偽値 FALSE は空文字列となり、 0 (および
 </div>
 </div>
 <div class="section" id="id11">
-<h2><a class="toc-backref" href="#id30">デバッグコード</a><a class="headerlink" href="#id11" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2><a class="toc-backref" href="#id39">デバッグコード</a><a class="headerlink" href="#id11" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>あなたの成果物にデバッグコードを放置しないでください、たとえコメントアウトしてあってもです。
 <tt class="docutils literal"><span class="pre">var_dump()</span></tt> 、 <tt class="docutils literal"><span class="pre">print_r()</span></tt> 、 <tt class="docutils literal"><span class="pre">die()</span></tt>/<tt class="docutils literal"><span class="pre">exit()</span></tt> のようなものはコードに含めないべきです、
 デバッグ以外の特定の目的を果たすわけでない限りは。</p>
 </div>
 <div class="section" id="id12">
-<h2><a class="toc-backref" href="#id31">ファイル内の空白</a><a class="headerlink" href="#id12" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2><a class="toc-backref" href="#id40">ファイル内の空白</a><a class="headerlink" href="#id12" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>PHP 開始タグの前、もしくは PHP 閉じタグのうしろの空白文字は禁止です。
 出力はバッファリングされているので、ファイル内の空白文字は
 CodeIgniter がその内容を出力する前に出力を開始する原因となりえるため、エラーにつながり、
 CodeIgniter が適切なヘッダを送信することができなくなることにもなりえます。</p>
 </div>
 <div class="section" id="id13">
-<h2><a class="toc-backref" href="#id32">互換性</a><a class="headerlink" href="#id13" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2><a class="toc-backref" href="#id41">互換性</a><a class="headerlink" href="#id13" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>CodeIgniter では PHP 5.5 以降の使用を推奨していますが、
 PHP 5.2.4 と互換性を保つべきです。あなたのコードは次のいずれかでなければなりません。
 この要件と互換性を保つか、適切なフォールバックを提供するか、
-もしくはユーザーのアプリケーションに影響を与えることなく静かに消え去るオプション機能を持つかです。</p>
+もしくはユーザのアプリケーションに影響を与えることなく静かに消え去るオプション機能を持つかです。</p>
 <p>加えて、デフォルト以外のライブラリをインストールする必要がある PHP
 関数を使用してはいけません。
 もしくはその関数が使えない場合の代替手段をそのコードに持たせてください。</p>
 </div>
 <div class="section" id="id14">
-<h2><a class="toc-backref" href="#id33">クラスごとにひとつのファイル</a><a class="headerlink" href="#id14" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2><a class="toc-backref" href="#id42">クラスごとにひとつのファイル</a><a class="headerlink" href="#id14" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>クラスが <em>密接に関連している</em> 場合を除き、各クラスには別々のファイルを使用してください。
 複数のクラスが含まれている CodeIgniter ファイルの例は、
 Xmlrpc ライブラリファイルです。</p>
 </div>
 <div class="section" id="id15">
-<h2><a class="toc-backref" href="#id34">空白文字</a><a class="headerlink" href="#id15" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2><a class="toc-backref" href="#id43">空白文字</a><a class="headerlink" href="#id15" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>コード内では、空白文字にはタブを使用してください。スペースではありません。
 これは小さなことのように思えますが、しかしスペースのかわりにタブを使用することで、
 あなたのコードを読む開発者は彼らの好みのレベルでインデントすることができ、
@@ -804,17 +804,17 @@ Xmlrpc ライブラリファイルです。</p>
 たとえばスペース文字 4 つの保存に対し、タブなら 1 文字です。</p>
 </div>
 <div class="section" id="id16">
-<h2><a class="toc-backref" href="#id35">改行</a><a class="headerlink" href="#id16" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2><a class="toc-backref" href="#id44">改行</a><a class="headerlink" href="#id16" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>ファイルは Unix の改行で保存しなければなりません。これは
 Windows で作業する開発者にとって余計な問題ですが、それでも何であれテキストエディタが
 Unix の改行でファイルを保存するように設定されていることを確認してください。</p>
 </div>
-<div class="section" id="code-indenting">
-<h2><a class="toc-backref" href="#id36">Code Indenting</a><a class="headerlink" href="#code-indenting" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>Use Allman style indenting. With the exception of Class declarations,
-braces are always placed on a line by themselves, and indented at the
-same level as the control statement that &#8220;owns&#8221; them.</p>
-<p><strong>INCORRECT</strong>:</p>
+<div class="section" id="id17">
+<h2><a class="toc-backref" href="#id45">コードのインデント</a><a class="headerlink" href="#id17" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>オールマンスタイルのインデントを使用してください。
+クラス宣言を除き中括弧は常にそれ用の行に配置され、
+それらを「所有」する制御文と同じレベルにインデントされます。</p>
+<p><strong>誤</strong>:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">function</span> <span class="nf">foo</span><span class="p">(</span><span class="nv">$bar</span><span class="p">)</span> <span class="p">{</span>
         <span class="c1">// ...</span>
 <span class="p">}</span>
@@ -845,7 +845,7 @@ same level as the control statement that &#8220;owns&#8221; them.</p>
 <span class="p">}</span>
 </pre></div>
 </div>
-<p><strong>CORRECT</strong>:</p>
+<p><strong>正</strong>:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">function</span> <span class="nf">foo</span><span class="p">(</span><span class="nv">$bar</span><span class="p">)</span>
 <span class="p">{</span>
         <span class="c1">// ...</span>
@@ -884,162 +884,162 @@ same level as the control statement that &#8220;owns&#8221; them.</p>
 </pre></div>
 </div>
 </div>
-<div class="section" id="bracket-and-parenthetic-spacing">
-<h2><a class="toc-backref" href="#id37">Bracket and Parenthetic Spacing</a><a class="headerlink" href="#bracket-and-parenthetic-spacing" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>In general, parenthesis and brackets should not use any additional
-spaces. The exception is that a space should always follow PHP control
-structures that accept arguments with parenthesis (declare, do-while,
-elseif, for, foreach, if, switch, while), to help distinguish them from
-functions and increase readability.</p>
-<p><strong>INCORRECT</strong>:</p>
+<div class="section" id="id18">
+<h2><a class="toc-backref" href="#id46">角括弧と括弧内の空白文字</a><a class="headerlink" href="#id18" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>原則として、丸括弧と角括弧にはスペースを使用しないべきです。
+例外は、丸括弧による引数を受けつける PHP の制御構造
+(宣言、 do-while 、
+elseif 、 for 、 foreach 、 if 、 switch 、 while) のうしろにはスペースを入れるべきです。
+それらと関数を区別する補助とし、読みやすさを向上させるためです。</p>
+<p><strong>誤</strong>:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$arr</span><span class="p">[</span> <span class="nv">$foo</span> <span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;foo&#39;</span><span class="p">;</span>
 </pre></div>
 </div>
-<p><strong>CORRECT</strong>:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$arr</span><span class="p">[</span><span class="nv">$foo</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;foo&#39;</span><span class="p">;</span> <span class="c1">// no spaces around array keys</span>
+<p><strong>正</strong>:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$arr</span><span class="p">[</span><span class="nv">$foo</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;foo&#39;</span><span class="p">;</span> <span class="c1">// 配列のキーの周囲にはスペースを入れません</span>
 </pre></div>
 </div>
-<p><strong>INCORRECT</strong>:</p>
+<p><strong>誤</strong>:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">function</span> <span class="nf">foo</span> <span class="p">(</span> <span class="nv">$bar</span> <span class="p">)</span>
 <span class="p">{</span>
 
 <span class="p">}</span>
 </pre></div>
 </div>
-<p><strong>CORRECT</strong>:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">function</span> <span class="nf">foo</span><span class="p">(</span><span class="nv">$bar</span><span class="p">)</span> <span class="c1">// no spaces around parenthesis in function declarations</span>
+<p><strong>正</strong>:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">function</span> <span class="nf">foo</span><span class="p">(</span><span class="nv">$bar</span><span class="p">)</span> <span class="c1">// 関数宣言の丸括弧の周囲にはスペースを入れません</span>
 <span class="p">{</span>
 
 <span class="p">}</span>
 </pre></div>
 </div>
-<p><strong>INCORRECT</strong>:</p>
+<p><strong>誤</strong>:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">foreach</span><span class="p">(</span> <span class="nv">$query</span><span class="o">-&gt;</span><span class="na">result</span><span class="p">()</span> <span class="k">as</span> <span class="nv">$row</span> <span class="p">)</span>
 </pre></div>
 </div>
-<p><strong>CORRECT</strong>:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">foreach</span> <span class="p">(</span><span class="nv">$query</span><span class="o">-&gt;</span><span class="na">result</span><span class="p">()</span> <span class="k">as</span> <span class="nv">$row</span><span class="p">)</span> <span class="c1">// single space following PHP control structures, but not in interior parenthesis</span>
+<p><strong>正</strong>:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">foreach</span> <span class="p">(</span><span class="nv">$query</span><span class="o">-&gt;</span><span class="na">result</span><span class="p">()</span> <span class="k">as</span> <span class="nv">$row</span><span class="p">)</span> <span class="c1">// PHP 制御構造のうしろにはスペース 1 つを入れます、しかし丸括弧の内側には入れません</span>
 </pre></div>
 </div>
 </div>
-<div class="section" id="localized-text">
-<h2><a class="toc-backref" href="#id38">Localized Text</a><a class="headerlink" href="#localized-text" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>CodeIgniter libraries should take advantage of corresponding language files
-whenever possible.</p>
-<p><strong>INCORRECT</strong>:</p>
+<div class="section" id="id19">
+<h2><a class="toc-backref" href="#id47">ローカライズされたテキスト</a><a class="headerlink" href="#id19" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>CodeIgniter のライブラリは可能な限り、
+対応する言語ファイルを利用するべきです。</p>
+<p><strong>誤</strong>:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">return</span> <span class="s2">&quot;Invalid Selection&quot;</span><span class="p">;</span>
 </pre></div>
 </div>
-<p><strong>CORRECT</strong>:</p>
+<p><strong>正</strong>:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">lang</span><span class="o">-&gt;</span><span class="na">line</span><span class="p">(</span><span class="s1">&#39;invalid_selection&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
-<div class="section" id="private-methods-and-variables">
-<h2><a class="toc-backref" href="#id39">Private Methods and Variables</a><a class="headerlink" href="#private-methods-and-variables" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>Methods and variables that are only accessed internally,
-such as utility and helper functions that your public methods use for
-code abstraction, should be prefixed with an underscore.</p>
+<div class="section" id="id20">
+<h2><a class="toc-backref" href="#id48">プライベートメソッドと変数</a><a class="headerlink" href="#id20" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>内部からのみアクセスできるメソッドと変数、
+コードの抽象化のためにパブリックメソッドが使用するユーティリティやヘルパー関数などは、
+アンダースコアをプレフィックスにつけるべきです。</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">public</span> <span class="k">function</span> <span class="nf">convert_text</span><span class="p">()</span>
 <span class="k">private</span> <span class="k">function</span> <span class="nf">_convert_text</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
-<div class="section" id="php-errors">
-<h2><a class="toc-backref" href="#id40">PHP Errors</a><a class="headerlink" href="#php-errors" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>Code must run error free and not rely on warnings and notices to be
-hidden to meet this requirement. For instance, never access a variable
-that you did not set yourself (such as <tt class="docutils literal"><span class="pre">$_POST</span></tt> array keys) without first
-checking to see that it <tt class="docutils literal"><span class="pre">isset()</span></tt>.</p>
-<p>Make sure that your dev environment has error reporting enabled
-for ALL users, and that display_errors is enabled in the PHP
-environment. You can check this setting with:</p>
+<div class="section" id="id21">
+<h2><a class="toc-backref" href="#id49">PHPのエラー</a><a class="headerlink" href="#id21" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>コードはエラーなく実行されなければならず、この要件を満たすために warning や notice
+を非表示にしてはなりません。例として、自分でセットしていない変数にはまず <tt class="docutils literal"><span class="pre">isset()</span></tt>
+で確認するまでは決してアクセスしません (<tt class="docutils literal"><span class="pre">$_POST</span></tt>
+配列のキーの類です) 。</p>
+<p>あなたの dev 環境で　す　べ　て　のユーザーに対してエラー報告が有効になっていることを確認してください。
+また PHP 環境で display_errors が有効になっていることを確認してください。
+この設定は次のもので確認することができます:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="nb">ini_get</span><span class="p">(</span><span class="s1">&#39;display_errors&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span>
 <span class="p">{</span>
         <span class="k">exit</span> <span class="s2">&quot;Enabled&quot;</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>On some servers where <em>display_errors</em> is disabled, and you do not have
-the ability to change this in the php.ini, you can often enable it with:</p>
+<p>いくつかのサーバでは <em>display_errors</em> は無効になっており、あなたが
+php.ini でこれを変更することができない場合は、だいたいの場合次の方法で有効にすることができます:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nb">ini_set</span><span class="p">(</span><span class="s1">&#39;display_errors&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
 </pre></div>
 </div>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
-<p class="last">Setting the <a class="reference external" href="http://php.net/manual/en/errorfunc.configuration.php#ini.display-errors">display_errors</a>
-setting with <tt class="docutils literal"><span class="pre">ini_set()</span></tt> at runtime is not identical to having
-it enabled in the PHP environment. Namely, it will not have any
-effect if the script has fatal errors.</p>
+<p class="last"><a class="reference external" href="http://php.net/manual/en/errorfunc.configuration.php#ini.display-errors">display_errors</a>
+の <tt class="docutils literal"><span class="pre">ini_set()</span></tt> による実行時設定は
+PHP 環境で有効にした場合と同一ではありません。すなわち、スクリプトに
+fatal error がある場合には何の意味もありません。</p>
 </div>
 </div>
-<div class="section" id="short-open-tags">
-<h2><a class="toc-backref" href="#id41">Short Open Tags</a><a class="headerlink" href="#short-open-tags" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>Always use full PHP opening tags, in case a server does not have
-<em>short_open_tag</em> enabled.</p>
-<p><strong>INCORRECT</strong>:</p>
+<div class="section" id="id22">
+<h2><a class="toc-backref" href="#id50">短い形式の開始タグ</a><a class="headerlink" href="#id22" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>PHP の開始タグには常に完全なものを使用します。
+<em>short_open_tag</em> が有効になっていない場合に備えるためです。</p>
+<p><strong>誤</strong>:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="o">&lt;?</span> <span class="k">echo</span> <span class="nv">$foo</span><span class="p">;</span> <span class="cp">?&gt;</span>
 
 <span class="cp">&lt;?</span><span class="o">=</span><span class="nv">$foo</span><span class="cp">?&gt;</span>
 </pre></div>
 </div>
-<p><strong>CORRECT</strong>:</p>
+<p><strong>正</strong>:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span> <span class="k">echo</span> <span class="nv">$foo</span><span class="p">;</span> <span class="cp">?&gt;</span>
 </pre></div>
 </div>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
-<p class="last">PHP 5.4 will always have the <strong>&lt;?=</strong> tag available.</p>
+<p class="last">PHP 5.4 では常に <strong>&lt;?=</strong> は有効です。</p>
 </div>
 </div>
-<div class="section" id="one-statement-per-line">
-<h2><a class="toc-backref" href="#id42">One Statement Per Line</a><a class="headerlink" href="#one-statement-per-line" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>Never combine statements on one line.</p>
-<p><strong>INCORRECT</strong>:</p>
+<div class="section" id="id23">
+<h2><a class="toc-backref" href="#id51">1 行につき 1 つのステートメント</a><a class="headerlink" href="#id23" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>1 行の中に複数のステートメントは入れません。</p>
+<p><strong>誤</strong>:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$foo</span> <span class="o">=</span> <span class="s1">&#39;this&#39;</span><span class="p">;</span> <span class="nv">$bar</span> <span class="o">=</span> <span class="s1">&#39;that&#39;</span><span class="p">;</span> <span class="nv">$bat</span> <span class="o">=</span> <span class="nb">str_replace</span><span class="p">(</span><span class="nv">$foo</span><span class="p">,</span> <span class="nv">$bar</span><span class="p">,</span> <span class="nv">$bag</span><span class="p">);</span>
 </pre></div>
 </div>
-<p><strong>CORRECT</strong>:</p>
+<p><strong>正</strong>:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$foo</span> <span class="o">=</span> <span class="s1">&#39;this&#39;</span><span class="p">;</span>
 <span class="nv">$bar</span> <span class="o">=</span> <span class="s1">&#39;that&#39;</span><span class="p">;</span>
 <span class="nv">$bat</span> <span class="o">=</span> <span class="nb">str_replace</span><span class="p">(</span><span class="nv">$foo</span><span class="p">,</span> <span class="nv">$bar</span><span class="p">,</span> <span class="nv">$bag</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
-<div class="section" id="strings">
-<h2><a class="toc-backref" href="#id43">Strings</a><a class="headerlink" href="#strings" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>Always use single quoted strings unless you need variables parsed, and
-in cases where you do need variables parsed, use braces to prevent
-greedy token parsing. You may also use double-quoted strings if the
-string contains single quotes, so you do not have to use escape
-characters.</p>
-<p><strong>INCORRECT</strong>:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="s2">&quot;My String&quot;</span>                                     <span class="c1">// no variable parsing, so no use for double quotes</span>
-<span class="s2">&quot;My string </span><span class="si">$foo</span><span class="s2">&quot;</span>                                <span class="c1">// needs braces</span>
-<span class="s1">&#39;SELECT foo FROM bar WHERE baz = \&#39;bag\&#39;&#39;</span>       <span class="c1">// ugly</span>
+<div class="section" id="id24">
+<h2><a class="toc-backref" href="#id52">文字列</a><a class="headerlink" href="#id24" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>変数を展開する必要がない限り、常にシングルクォートを使用してください。
+もし変数を展開する必要があっても、トークンを過剰に解釈しすぎないように
+中括弧を使用してください。
+また、文字列にシングルクォートが含まれている場合はダブルクォート文字列を使ってもよく、
+エスケープ文字を使用する必要はありません。</p>
+<p><strong>誤</strong>:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="s2">&quot;My String&quot;</span>                                     <span class="c1">// 変数展開はありませんので、ダブルクォートは使わないでください</span>
+<span class="s2">&quot;My string </span><span class="si">$foo</span><span class="s2">&quot;</span>                                <span class="c1">// 中括弧が必要です</span>
+<span class="s1">&#39;SELECT foo FROM bar WHERE baz = \&#39;bag\&#39;&#39;</span>       <span class="c1">// 読みにくいです</span>
 </pre></div>
 </div>
-<p><strong>CORRECT</strong>:</p>
+<p><strong>正</strong>:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="s1">&#39;My String&#39;</span>
 <span class="s2">&quot;My string </span><span class="si">{</span><span class="nv">$foo</span><span class="si">}</span><span class="s2">&quot;</span>
 <span class="s2">&quot;SELECT foo FROM bar WHERE baz = &#39;bag&#39;&quot;</span>
 </pre></div>
 </div>
 </div>
-<div class="section" id="sql-queries">
-<h2><a class="toc-backref" href="#id44">SQL Queries</a><a class="headerlink" href="#sql-queries" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>SQL keywords are always capitalized: SELECT, INSERT, UPDATE, WHERE,
-AS, JOIN, ON, IN, etc.</p>
-<p>Break up long queries into multiple lines for legibility, preferably
-breaking for each clause.</p>
-<p><strong>INCORRECT</strong>:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="c1">// keywords are lowercase and query is too long for</span>
-<span class="c1">// a single line (... indicates continuation of line)</span>
+<div class="section" id="sql">
+<h2><a class="toc-backref" href="#id53">SQL クエリ</a><a class="headerlink" href="#sql" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>SQL キーワード常に大文字です: SELECT 、 INSERT 、 UPDATE 、 WHERE 、
+AS 、 JOIN 、 ON 、 IN 、 など。</p>
+<p>長いクエリは複数行に分割してください、読みやすくするためです。
+文節ごとに分割するのが好ましいです。</p>
+<p><strong>誤</strong>:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="c1">// キーワードが小文字になっており、 1 行に納めるにはクエリが長すぎます</span>
+<span class="c1">// (... は行が続くことを表しています)</span>
 <span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">query</span><span class="p">(</span><span class="s2">&quot;select foo, bar, baz, foofoo, foobar as raboof, foobaz from exp_pre_email_addresses</span>
 <span class="s2">...where foo != &#39;oof&#39; and baz != &#39;zab&#39; order by foobaz limit 5, 100&quot;</span><span class="p">);</span>
 </pre></div>
 </div>
-<p><strong>CORRECT</strong>:</p>
+<p><strong>正</strong>:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">query</span><span class="p">(</span><span class="s2">&quot;SELECT foo, bar, baz, foofoo, foobar AS raboof, foobaz</span>
 <span class="s2">                                FROM exp_pre_email_addresses</span>
 <span class="s2">                                WHERE foo != &#39;oof&#39;</span>
@@ -1049,11 +1049,11 @@ breaking for each clause.</p>
 </pre></div>
 </div>
 </div>
-<div class="section" id="default-function-arguments">
-<h2><a class="toc-backref" href="#id45">Default Function Arguments</a><a class="headerlink" href="#default-function-arguments" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>Whenever appropriate, provide function argument defaults, which helps
-prevent PHP errors with mistaken calls and provides common fallback
-values which can save a few lines of code. Example:</p>
+<div class="section" id="id25">
+<h2><a class="toc-backref" href="#id54">関数の引数のデフォルト値</a><a class="headerlink" href="#id25" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>適切な場合はいつでも、関数の引数にはデフォルト値を提供してください。
+呼び出し間違えでの PHP エラーを防ぐことができますし、
+数行のコードを省力化するための共通のフォールバック値を提供できます。例:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">function</span> <span class="nf">foo</span><span class="p">(</span><span class="nv">$bar</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="nv">$baz</span> <span class="o">=</span> <span class="k">FALSE</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1079,7 +1079,7 @@ values which can save a few lines of code. Example:</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2016, British Columbia Institute of Technology.
-      最終更新: May 14, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>
+      最終更新: May 15, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>
     </p>
   </div>
 
