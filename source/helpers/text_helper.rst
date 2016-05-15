@@ -30,7 +30,7 @@
 	:param	int	$limit: 表示する単語の上限数
 	:param	string	$end_char: 終端文字 (通常省略記号(…) )
 	:returns:	単語数で制限された文字列
-		string
+	:rtype:	string
 
 	指定した *単語* 数で、文字列を切り詰めます。[ 訳注: 英語のように単語の間がスペースで区切られている言語でだけ有効です。日本語では通常、正常に動作しません ]。例::
 
@@ -48,7 +48,7 @@
 	:param	int	$n: 文字数
 	:param	string	$end_char: 終端文字 (通常省略記号(…) )
 	:returns:	文字数で制限された文字列
-		string
+	:rtype:	string
 
 	指定した *文字* 数の位置で文字列を切り詰めます。単語の途中で切り詰められないようになっていますので、
 	文字数は指定したもより少し増えたり減ったりします [ 訳注: 英語のように単語の間がスペースで区切られている言語で
@@ -89,7 +89,7 @@
 	:param	string	$str: 入力文字列
 	:param	bool	$all: Whether to convert unsafe entities as well
 	:returns:	HTML エンティティを ASCII 文字コードに変換した文字列
-		string
+	:rtype:	string
 
 	この関数は :php:func:`ascii_to_entities()` と反対になります。
 	文字列エンティティを ASCII に戻します。
@@ -135,7 +135,7 @@
 
 	:param	string	$str: 入力文字列
 	:returns:	HTML をハイライトしたコードを含む文字列
-		string
+	:rtype:	string
 
 	コード ( PHP 、 HTML など)の文字列を色分けします。例::
 
@@ -152,11 +152,12 @@
 	:param	string	$tag_open: ハイライトのための開始タグ
 	:param	string	$tag_close: ハイライトのための終了タグ
 	:returns:	HTML をハイライトしたフレーズを含む文字列
-		string
+	:rtype:	string
 
 	テキスト中のフレーズをハイライトします。 第1引数は元の文字列で、
 	第2引数にハイライトしたいフレーズを指定します。
-	第3、第4引数は、フレーズを囲みたい開始/終了タグを指定します。
+	第3、第4引数は、フレーズを囲みたい開始/終了タグを
+	指定します。
 
 	例::
 
@@ -182,7 +183,7 @@
 	:param	string	$str: 入力文字列
 	:param	int	$charlim: [ 改行の目安となる ] 文字の上限数
 	:returns:	ワードラップされた文字列
-		string
+	:rtype:	string
 
 	指定した *文字* 数の位置で、テキストを折り返します。単語の途中で折り返されません [ 訳注:
 英語のように単語の間がスペースで区切られている言語でだけ有効です。日本語では通常、正常に動作しません ]。
@@ -205,7 +206,7 @@
 	:param	mixed	$position: [ 省略記号との ]分割位置 (整数または小数)
 	:param	string	$ellipsis: 省略記号(…)
 	:returns:	省略された文字列
-		string
+	:rtype:	string
 
 	この関数は文字列からタグを取り除き、指定された最大長に分割して省略記号
 	を挿入します。
