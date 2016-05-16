@@ -27,11 +27,11 @@
 
 .. php:function:: lang($line[, $for = ''[, $attributes = array()]])
 
- 	:param	string	$line: Language line key
- 	:param	string	$for: HTML "for" attribute (ID of the element we're creating a label for)
- 	:param	array	$attributes: Any additional HTML attributes
- 	:returns:	HTML-formatted language line label
-	:rtype:	string
+ 	:パラメータ	string	$line: 言語文字列キー
+ 	:パラメータ	string	$for: HTML "for" 属性 (作成するラベルの for に使用する要素の ID )
+ 	:パラメータ	array	$attributes: 追加で指定する HTML 属性
+ 	:返り値:    	HTML フォーマットされた言語文字列のラベル
+	:返り値型:	string
 
 	この関数は、ビューファイルで言語クラスの ``CI_Lang::line()`` 
 	メソッドを呼び出すよりもより簡単な構文で
@@ -40,4 +40,4 @@
 	例::
 
 		echo lang('language_key', 'form_item_id', array('class' => 'myClass'));
-		// Outputs: <label for="form_item_id" class="myClass">Language line</label>
+		// 出力: <label for="form_item_id" class="myClass">Language line</label>
