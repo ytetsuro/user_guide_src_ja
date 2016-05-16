@@ -1,9 +1,9 @@
 ###############
-Language Helper
+言語ヘルパー
 ###############
 
-The Language Helper file contains functions that assist in working with
-language files.
+言語ヘルパーのファイルの中身は、
+言語ファイルでの動作に役立つ関数です。
 
 .. contents::
   :local:
@@ -12,17 +12,17 @@ language files.
 
   <div class="custom-index container"></div>
 
-Loading this Helper
+ヘルパーのロード
 ===================
 
-This helper is loaded using the following code::
+このヘルパーは次のコードを使ってロードします::
 
 	$this->load->helper('language');
 
 利用できる機能
 ===================
 
-The following functions are available:
+次の関数が利用できます:
 
 
 .. php:function:: lang($line[, $for = ''[, $attributes = array()]])
@@ -33,11 +33,11 @@ The following functions are available:
  	:returns:	HTML-formatted language line label
 	:rtype:	string
 
-	This function returns a line of text from a loaded language file with
-	simplified syntax that may be more desirable for view files than
-	``CI_Lang::line()``.
+	この関数は、ビューファイルで言語クラスの ``CI_Lang::line()`` 
+	メソッドを呼び出すよりもより簡単な構文で
+	ロードされた言語ファイルからのテキスト行を返します。
 
-	Example::
+	例::
 
 		echo lang('language_key', 'form_item_id', array('class' => 'myClass'));
 		// Outputs: <label for="form_item_id" class="myClass">Language line</label>
