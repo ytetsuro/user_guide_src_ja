@@ -28,10 +28,10 @@
 
 .. php:function:: element($item, $array[, $default = NULL])
 
-	:param	string	$item: Item to fetch from the array
-	:param	array	$array: Input array
-	:param	bool	$default: What to return if the array isn't valid
-	:returns:	NULL on failure or the array item.
+	:param	string	$item: 配列から取得したい要素
+	:param	array	$array: 入力配列
+	:param	bool	$default: 要素がない場合に返却する値
+	:returns:	要素が存在しない場合は NULL または配列の要素
 	:rtype:	mixed
 
 	配列から要素を取り出すことができます。この関数は、配列に添字がセットされ、
@@ -53,10 +53,10 @@
 
 .. php:function:: elements($items, $array[, $default = NULL])
 
-	:param	string	$item: Item to fetch from the array
-	:param	array	$array: Input array
-	:param	bool	$default: What to return if the array isn't valid
-	:returns:	NULL on failure or the array item.
+	:param	string	$item: 配列から取得したい要素
+	:param	array	$array: 入力配列
+	:param	bool	$default: 要素がない場合に返却する値
+	:returns:	要素が存在しない場合は NULL または配列の要素
 	:rtype:	mixed
 
 	配列から一部の要素のみを取得します。 このメソッドは、
@@ -113,8 +113,8 @@
 
 .. php:function:: random_element($array)
 
-	:param	array	$array: Input array
-	:returns:	A random element from the array
+	:param	array	$array: 入力配列
+	:returns:	配列からランダムに選択した要素
 	:rtype:	mixed
 
 	配列を入力として要素をランダムに選んで返します。
