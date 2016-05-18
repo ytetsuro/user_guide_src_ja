@@ -8,7 +8,7 @@
 まず *application/config/config.php* ファイルを開き、URI Protocol の情報が
 書いてある部分を探します。他の設定を試します。
 それでもまだ動かない場合は、 *application/config/config* ファイルを開き、
-CodeIgniterのURLにクエスチョンマークを強制的に
+CodeIgniter の URL にクエスチョンマークを強制的に
 付加する必要があります::
 
 	$config['index_page'] = "index.php";
