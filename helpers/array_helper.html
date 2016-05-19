@@ -191,8 +191,8 @@
 <li class="toctree-l2"><a class="reference internal" href="number_helper.html">Number Helper</a></li>
 <li class="toctree-l2"><a class="reference internal" href="path_helper.html">Path Helper</a></li>
 <li class="toctree-l2"><a class="reference internal" href="security_helper.html">Security Helper</a></li>
-<li class="toctree-l2"><a class="reference internal" href="smiley_helper.html">Smiley Helper</a></li>
-<li class="toctree-l2"><a class="reference internal" href="string_helper.html">String Helper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="smiley_helper.html">スマイリーヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="string_helper.html">文字列ヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="text_helper.html">テキストヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="typography_helper.html">タイポグラフィーヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="url_helper.html">URL ヘルパー</a></li>
@@ -377,8 +377,8 @@
 <li class="toctree-l2"><a class="reference internal" href="number_helper.html">Number Helper</a></li>
 <li class="toctree-l2"><a class="reference internal" href="path_helper.html">Path Helper</a></li>
 <li class="toctree-l2"><a class="reference internal" href="security_helper.html">Security Helper</a></li>
-<li class="toctree-l2"><a class="reference internal" href="smiley_helper.html">Smiley Helper</a></li>
-<li class="toctree-l2"><a class="reference internal" href="string_helper.html">String Helper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="smiley_helper.html">スマイリーヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="string_helper.html">文字列ヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="text_helper.html">テキストヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="typography_helper.html">タイポグラフィーヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="url_helper.html">URL ヘルパー</a></li>
@@ -452,13 +452,13 @@
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">パラメタ:</th><td class="field-body"><ul class="first simple">
-<li><strong>$item</strong> (<em>string</em>) &#8211; Item to fetch from the array</li>
-<li><strong>$array</strong> (<em>array</em>) &#8211; Input array</li>
-<li><strong>$default</strong> (<em>bool</em>) &#8211; What to return if the array isn&#8217;t valid</li>
+<li><strong>$item</strong> (<em>string</em>) &#8211; 配列から取得したい要素</li>
+<li><strong>$array</strong> (<em>array</em>) &#8211; 入力配列</li>
+<li><strong>$default</strong> (<em>bool</em>) &#8211; 要素がない場合に返却する値</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body"><p class="first">NULL on failure or the array item.</p>
+<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body"><p class="first">要素が存在しない場合は NULL または配列の要素</p>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name">戻り値の型:</th><td class="field-body"><p class="first last">mixed</p>
@@ -491,13 +491,13 @@
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">パラメタ:</th><td class="field-body"><ul class="first simple">
-<li><strong>$item</strong> (<em>string</em>) &#8211; Item to fetch from the array</li>
-<li><strong>$array</strong> (<em>array</em>) &#8211; Input array</li>
-<li><strong>$default</strong> (<em>bool</em>) &#8211; What to return if the array isn&#8217;t valid</li>
+<li><strong>$item</strong> (<em>string</em>) &#8211; 配列から取得したい要素</li>
+<li><strong>$array</strong> (<em>array</em>) &#8211; 入力配列</li>
+<li><strong>$default</strong> (<em>bool</em>) &#8211; 要素がない場合に返却する値</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body"><p class="first">NULL on failure or the array item.</p>
+<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body"><p class="first">要素が存在しない場合は NULL または配列の要素</p>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name">戻り値の型:</th><td class="field-body"><p class="first last">mixed</p>
@@ -561,11 +561,11 @@
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">パラメタ:</th><td class="field-body"><ul class="first simple">
-<li><strong>$array</strong> (<em>array</em>) &#8211; Input array</li>
+<li><strong>$array</strong> (<em>array</em>) &#8211; 入力配列</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body"><p class="first">A random element from the array</p>
+<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body"><p class="first">配列からランダムに選択した要素</p>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name">戻り値の型:</th><td class="field-body"><p class="first last">mixed</p>
@@ -611,7 +611,7 @@
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2016, British Columbia Institute of Technology.
-      最終更新: May 17, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>
+      最終更新: May 19, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>
     </p>
   </div>
 
