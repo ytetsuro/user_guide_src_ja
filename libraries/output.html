@@ -426,38 +426,38 @@
             
   <div class="section" id="id1">
 <h1>出力クラス<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
-<p>The Output class is a core class with one main function: To send the
-finalized web page to the requesting browser. It is also responsible for
-<a class="reference internal" href="../general/caching.html"><em>caching</em></a> your web pages, if you use that
-feature.</p>
+<p>出力クラスはコアクラスであり、主な機能はひとつだけです: 要求元のブラウザに完成した
+Web ページを送信します。また、あなたが Web ページの
+<a class="reference internal" href="../general/caching.html"><em>キャッシュ機能</em></a> を使用する場合は、
+それを処理する責任も持ちます。</p>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
-<p class="last">This class is initialized automatically by the system so there
-is no need to do it manually.</p>
+<p class="last">このクラスはシステムによって自動的に初期化されますので、
+手動で行う必要はありません。</p>
 </div>
-<p>Under normal circumstances you won&#8217;t even notice the Output class since
-it works transparently without your intervention. For example, when you
-use the <a class="reference internal" href="loader.html"><em>Loader</em></a> class to load a view file,
-it&#8217;s automatically passed to the Output class, which will be called
-automatically by CodeIgniter at the end of system execution. It is
-possible, however, for you to manually intervene with the output if you
-need to.</p>
+<p>通常の状況ではあなたの操作なしに透過的に動作しますので、
+出力クラスを意識することはありません。たとえば、
+ビューファイルをロードするために <a class="reference internal" href="loader.html"><em>Loader</em></a> クラスを使うとき、
+自動的に出力クラスに渡されますが、 CodeIgniter
+によりシステム実行の終了時に自動的に呼び出されます。
+しかしながら、必要がある場合、
+手動で出力を操作することは可能です。</p>
 <div class="contents local topic" id="contents">
 <ul class="simple">
-<li><a class="reference internal" href="#id2" id="id3">クラスリファレンス</a></li>
+<li><a class="reference internal" href="#id2" id="id4">クラスリファレンス</a></li>
 </ul>
 </div>
 <div class="custom-index container"></div><div class="section" id="id2">
-<h2><a class="toc-backref" href="#id3">クラスリファレンス</a><a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2><a class="toc-backref" href="#id4">クラスリファレンス</a><a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <dl class="class">
 <dt id="CI_Output">
 <em class="property">class </em><tt class="descname">CI_Output</tt><a class="headerlink" href="#CI_Output" title="この定義へのパーマリンク">¶</a></dt>
 <dd><dl class="attribute">
 <dt>
 <tt class="descname">$parse_exec_vars = TRUE;</tt></dt>
-<dd><p>Enables/disables parsing of the {elapsed_time} and {memory_usage} pseudo-variables.</p>
-<p>CodeIgniter will parse those tokens in your output by default. To disable this, set
-this property to FALSE in your controller.</p>
+<dd><p>{elapsed_time} と {memory_usage} 擬似変数の構文解析を有効/無効にします。</p>
+<p>CodeIgniterはデフォルトで出力中のこれらのトークンを解析します。
+これを無効にするには、コントローラでこのプロパティを FALSE に設定します。</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">output</span><span class="o">-&gt;</span><span class="na">parse_exec_vars</span> <span class="o">=</span> <span class="k">FALSE</span><span class="p">;</span>
 </pre></div>
 </div>
@@ -471,11 +471,11 @@ this property to FALSE in your controller.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">パラメタ:</th><td class="field-body"><ul class="first simple">
-<li><strong>$output</strong> (<em>string</em>) &#8211; String to set the output to</li>
+<li><strong>$output</strong> (<em>string</em>) &#8211; 出力へ設定する文字列</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body"><p class="first">CI_Output instance (method chaining)</p>
+<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body"><p class="first">CI_Output インスタンス (メソッドチェイン)</p>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name">戻り値の型:</th><td class="field-body"><p class="first last">CI_Output</p>
@@ -483,15 +483,15 @@ this property to FALSE in your controller.</p>
 </tr>
 </tbody>
 </table>
-<p>Permits you to manually set the final output string. Usage example:</p>
+<p>手動で最終的な出力文字列を設定することを可能にします。使用例:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">output</span><span class="o">-&gt;</span><span class="na">set_output</span><span class="p">(</span><span class="nv">$data</span><span class="p">);</span>
 </pre></div>
 </div>
 <div class="admonition important">
 <p class="first admonition-title">重要</p>
-<p class="last">If you do set your output manually, it must be the last thing done
-in the function you call it from. For example, if you build a page in one
-of your controller methods, don&#8217;t set the output until the end.</p>
+<p class="last">手動で出力を設定する場合、それは関数呼び出し元で行う最後のものでなければなりません。
+たとえば、あなたのコントローラメソッドのいずれかでページを作成した場合、
+最後まで出力を設定しないでください。</p>
 </div>
 </dd></dl>
 
@@ -503,12 +503,12 @@ of your controller methods, don&#8217;t set the output until the end.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">パラメタ:</th><td class="field-body"><ul class="first simple">
-<li><strong>$mime_type</strong> (<em>string</em>) &#8211; MIME Type idenitifer string</li>
-<li><strong>$charset</strong> (<em>string</em>) &#8211; Character set</li>
+<li><strong>$mime_type</strong> (<em>string</em>) &#8211; MIME タイプ文字列</li>
+<li><strong>$charset</strong> (<em>string</em>) &#8211; 文字セット</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body"><p class="first">CI_Output instance (method chaining)</p>
+<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body"><p class="first">CI_Output インスタンス (メソッドチェイン)</p>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name">戻り値の型:</th><td class="field-body"><p class="first last">CI_Output</p>
@@ -516,22 +516,22 @@ of your controller methods, don&#8217;t set the output until the end.</p>
 </tr>
 </tbody>
 </table>
-<p>Permits you to set the mime-type of your page so you can serve JSON data, JPEG&#8217;s, XML, etc easily.</p>
+<p>ページの MIME タイプを設定することを可能にします。これにより JSON データ、 JPEG 、 XML などの提供が簡単になります。</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">output</span>
         <span class="o">-&gt;</span><span class="na">set_content_type</span><span class="p">(</span><span class="s1">&#39;application/json&#39;</span><span class="p">)</span>
         <span class="o">-&gt;</span><span class="na">set_output</span><span class="p">(</span><span class="nb">json_encode</span><span class="p">(</span><span class="k">array</span><span class="p">(</span><span class="s1">&#39;foo&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;bar&#39;</span><span class="p">)));</span>
 
 <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">output</span>
-        <span class="o">-&gt;</span><span class="na">set_content_type</span><span class="p">(</span><span class="s1">&#39;jpeg&#39;</span><span class="p">)</span> <span class="c1">// You could also use &quot;.jpeg&quot; which will have the full stop removed before looking in config/mimes.php</span>
+        <span class="o">-&gt;</span><span class="na">set_content_type</span><span class="p">(</span><span class="s1">&#39;jpeg&#39;</span><span class="p">)</span> <span class="c1">// &quot;.jpeg&quot; も使えます。ピリオドは config/mimes.php を探す前に削除されます</span>
         <span class="o">-&gt;</span><span class="na">set_output</span><span class="p">(</span><span class="nb">file_get_contents</span><span class="p">(</span><span class="s1">&#39;files/something.jpg&#39;</span><span class="p">));</span>
 </pre></div>
 </div>
 <div class="admonition important">
 <p class="first admonition-title">重要</p>
-<p class="last">Make sure any non-mime string you pass to this method
-exists in <em>application/config/mimes.php</em> or it will have no effect.</p>
+<p class="last">非MIME文字列をこのメソッドに渡す場合は
+<em>application/config/mimes.php</em> に存在することを確認してください。ない場合は効果はありません。</p>
 </div>
-<p>You can also set the character set of the document, by passing a second argument:</p>
+<p>また、第 2 引数を渡すことでドキュメントの文字セットを設定することができます:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">output</span><span class="o">-&gt;</span><span class="na">set_content_type</span><span class="p">(</span><span class="s1">&#39;css&#39;</span><span class="p">,</span> <span class="s1">&#39;utf-8&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
@@ -544,19 +544,19 @@ exists in <em>application/config/mimes.php</em> or it will have no effect.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">戻り値:</th><td class="field-body">Content-Type string</td>
+<tr class="field-odd field"><th class="field-name">戻り値:</th><td class="field-body">Content-Type の文字列</td>
 </tr>
 <tr class="field-even field"><th class="field-name">戻り値の型:</th><td class="field-body">string</td>
 </tr>
 </tbody>
 </table>
-<p>Returns the Content-Type HTTP header that&#8217;s currently in use, excluding the character set value.</p>
+<p>現在使用中の Content-Type HTTP ヘッダを返します。ただし文字セット値は除きます。</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$mime</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">output</span><span class="o">-&gt;</span><span class="na">get_content_type</span><span class="p">();</span>
 </pre></div>
 </div>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
-<p class="last">If not set, the default return value is &#8216;text/html&#8217;.</p>
+<p class="last">設定されていない場合、デフォルトの戻り値は &#8216;text/html&#8217; です。</p>
 </div>
 </dd></dl>
 
@@ -568,11 +568,11 @@ exists in <em>application/config/mimes.php</em> or it will have no effect.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">パラメタ:</th><td class="field-body"><ul class="first simple">
-<li><strong>$header</strong> (<em>string</em>) &#8211; HTTP header name</li>
+<li><strong>$header</strong> (<em>string</em>) &#8211; HTTP ヘッダ名</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body"><p class="first">HTTP response header or NULL if not found</p>
+<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body"><p class="first">HTTP レスポンスヘッダ、見つからない場合は NULL</p>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name">戻り値の型:</th><td class="field-body"><p class="first last">mixed</p>
@@ -580,20 +580,20 @@ exists in <em>application/config/mimes.php</em> or it will have no effect.</p>
 </tr>
 </tbody>
 </table>
-<p>Returns the requested HTTP header value, or NULL if the requested header is not set.
-Example:</p>
+<p>指定の HTTP ヘッダ値を返します。指定のヘッダが設定されていない場合は NULL を返します。
+例:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">output</span><span class="o">-&gt;</span><span class="na">set_content_type</span><span class="p">(</span><span class="s1">&#39;text/plain&#39;</span><span class="p">,</span> <span class="s1">&#39;UTF-8&#39;</span><span class="p">);</span>
 <span class="k">echo</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">output</span><span class="o">-&gt;</span><span class="na">get_header</span><span class="p">(</span><span class="s1">&#39;content-type&#39;</span><span class="p">);</span>
-<span class="c1">// Outputs: text/plain; charset=utf-8</span>
+<span class="c1">// 出力: text/plain; charset=utf-8</span>
 </pre></div>
 </div>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
-<p class="last">The header name is compared in a case-insensitive manner.</p>
+<p class="last">ヘッダ名は大文字小文字を区別せずに比較されます。</p>
 </div>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
-<p class="last">Raw headers sent via PHP&#8217;s native <tt class="docutils literal"><span class="pre">header()</span></tt> function are also detected.</p>
+<p class="last">PHP 標準の <tt class="docutils literal"><span class="pre">header()</span></tt> 関数を使用して送信される生のヘッダも検出対象です。</p>
 </div>
 </dd></dl>
 
@@ -604,20 +604,20 @@ Example:</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">戻り値:</th><td class="field-body">Output string</td>
+<tr class="field-odd field"><th class="field-name">戻り値:</th><td class="field-body">出力文字列</td>
 </tr>
 <tr class="field-even field"><th class="field-name">戻り値の型:</th><td class="field-body">string</td>
 </tr>
 </tbody>
 </table>
-<p>Permits you to manually retrieve any output that has been sent for
-storage in the output class. Usage example:</p>
+<p>出力クラスに格納された出力を手動で取得することができます。
+使用例:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$string</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">output</span><span class="o">-&gt;</span><span class="na">get_output</span><span class="p">();</span>
 </pre></div>
 </div>
-<p>Note that data will only be retrievable from this function if it has
-been previously sent to the output class by one of the CodeIgniter
-functions like <tt class="docutils literal"><span class="pre">$this-&gt;load-&gt;view()</span></tt>.</p>
+<p><tt class="docutils literal"><span class="pre">$this-&gt;load-&gt;view()</span></tt> などの
+CodeIgniter の機能により出力クラスに送られたデータのみが
+この関数から取得できることに注意してください。</p>
 </dd></dl>
 
 <dl class="method">
@@ -628,11 +628,11 @@ functions like <tt class="docutils literal"><span class="pre">$this-&gt;load-&gt
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">パラメタ:</th><td class="field-body"><ul class="first simple">
-<li><strong>$output</strong> (<em>string</em>) &#8211; Additional output data to append</li>
+<li><strong>$output</strong> (<em>string</em>) &#8211; 追加の出力データ</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body"><p class="first">CI_Output instance (method chaining)</p>
+<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body"><p class="first">CI_Output インスタンス (メソッドチェイン)</p>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name">戻り値の型:</th><td class="field-body"><p class="first last">CI_Output</p>
@@ -640,7 +640,7 @@ functions like <tt class="docutils literal"><span class="pre">$this-&gt;load-&gt
 </tr>
 </tbody>
 </table>
-<p>Appends data onto the output string.</p>
+<p>出力文字列にデータを追加します。</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">output</span><span class="o">-&gt;</span><span class="na">append_output</span><span class="p">(</span><span class="nv">$data</span><span class="p">);</span>
 </pre></div>
 </div>
@@ -654,12 +654,12 @@ functions like <tt class="docutils literal"><span class="pre">$this-&gt;load-&gt
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">パラメタ:</th><td class="field-body"><ul class="first simple">
-<li><strong>$header</strong> (<em>string</em>) &#8211; HTTP response header</li>
-<li><strong>$replace</strong> (<em>bool</em>) &#8211; Whether to replace the old header value, if it is already set</li>
+<li><strong>$header</strong> (<em>string</em>) &#8211; HTTP レスポンスヘッダ</li>
+<li><strong>$replace</strong> (<em>bool</em>) &#8211; すでに設定済みの場合、古いヘッダの値を置換するかどうか</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body"><p class="first">CI_Output instance (method chaining)</p>
+<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body"><p class="first">CI_Output インスタンス (メソッドチェイン)</p>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name">戻り値の型:</th><td class="field-body"><p class="first last">CI_Output</p>
@@ -667,8 +667,8 @@ functions like <tt class="docutils literal"><span class="pre">$this-&gt;load-&gt
 </tr>
 </tbody>
 </table>
-<p>Permits you to manually set server headers, which the output class will
-send for you when outputting the final rendered display. Example:</p>
+<p>手動でサーバのヘッダを設定することができます。
+ヘッダは最終的にレンダリング表示を出力する際、出力クラスが送信します。例:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">output</span><span class="o">-&gt;</span><span class="na">set_header</span><span class="p">(</span><span class="s1">&#39;HTTP/1.0 200 OK&#39;</span><span class="p">);</span>
 <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">output</span><span class="o">-&gt;</span><span class="na">set_header</span><span class="p">(</span><span class="s1">&#39;HTTP/1.1 200 OK&#39;</span><span class="p">);</span>
 <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">output</span><span class="o">-&gt;</span><span class="na">set_header</span><span class="p">(</span><span class="s1">&#39;Last-Modified: &#39;</span><span class="o">.</span><span class="nb">gmdate</span><span class="p">(</span><span class="s1">&#39;D, d M Y H:i:s&#39;</span><span class="p">,</span> <span class="nv">$last_update</span><span class="p">)</span><span class="o">.</span><span class="s1">&#39; GMT&#39;</span><span class="p">);</span>
@@ -687,12 +687,12 @@ send for you when outputting the final rendered display. Example:</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">パラメタ:</th><td class="field-body"><ul class="first simple">
-<li><strong>$code</strong> (<em>int</em>) &#8211; HTTP status code</li>
-<li><strong>$text</strong> (<em>string</em>) &#8211; Optional message</li>
+<li><strong>$code</strong> (<em>int</em>) &#8211; HTTP ステータスコード</li>
+<li><strong>$text</strong> (<em>string</em>) &#8211; オプションのメッセージ</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body"><p class="first">CI_Output instance (method chaining)</p>
+<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body"><p class="first">CI_Output インスタンス (メソッドチェイン)</p>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name">戻り値の型:</th><td class="field-body"><p class="first last">CI_Output</p>
@@ -700,16 +700,16 @@ send for you when outputting the final rendered display. Example:</p>
 </tr>
 </tbody>
 </table>
-<p>Permits you to manually set a server status header. Example:</p>
+<p>サーバステータスヘッダを手動で設定することができます。例:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">output</span><span class="o">-&gt;</span><span class="na">set_status_header</span><span class="p">(</span><span class="mi">401</span><span class="p">);</span>
-<span class="c1">// Sets the header as:  Unauthorized</span>
+<span class="c1">// ヘッダはこれに設定されます:  Unauthorized</span>
 </pre></div>
 </div>
-<p><a class="reference external" href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html">See here</a> for a full list of headers.</p>
+<p>ヘッダの完全なリストについては <a class="reference external" href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html">ここを参照してください</a> 。</p>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
-<p class="last">This method is an alias for <a class="reference internal" href="../general/common_functions.html"><em>Common function</em></a>
-<tt class="xref py py-func docutils literal"><span class="pre">set_status_header()</span></tt>.</p>
+<p class="last">このメソッドは <a class="reference internal" href="../general/common_functions.html"><em>共通関数</em></a> の
+<tt class="xref py py-func docutils literal"><span class="pre">set_status_header()</span></tt> のエイリアスです。</p>
 </div>
 </dd></dl>
 
@@ -721,11 +721,11 @@ send for you when outputting the final rendered display. Example:</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">パラメタ:</th><td class="field-body"><ul class="first simple">
-<li><strong>$val</strong> (<em>bool</em>) &#8211; Whether to enable or disable the Profiler</li>
+<li><strong>$val</strong> (<em>bool</em>) &#8211; プロファイラを有効または無効にするかどうか</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body"><p class="first">CI_Output instance (method chaining)</p>
+<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body"><p class="first">CI_Output インスタンス (メソッドチェイン)</p>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name">戻り値の型:</th><td class="field-body"><p class="first last">CI_Output</p>
@@ -733,15 +733,15 @@ send for you when outputting the final rendered display. Example:</p>
 </tr>
 </tbody>
 </table>
-<p>Permits you to enable/disable the <a class="reference internal" href="../general/profiling.html"><em>Profiler</em></a>, which will display benchmark
-and other data at the bottom of your pages for debugging and optimization purposes.</p>
-<p>To enable the profiler place the following line anywhere within your
-<a class="reference internal" href="../general/controllers.html"><em>Controller</em></a> methods:</p>
+<p><a class="reference internal" href="../general/profiling.html"><em>プロファイラ</em></a> を有効/無効にすることができます。
+プロファイラはデバッグと最適化を目的として、ベンチマークとその他の値をページの下部に表示します。</p>
+<p>プロファイラを有効にするには
+<a class="reference internal" href="../general/controllers.html"><em>コントローラ</em></a> メソッド内の任意の場所につぎの行を追加します:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">output</span><span class="o">-&gt;</span><span class="na">enable_profiler</span><span class="p">(</span><span class="k">TRUE</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>When enabled a report will be generated and inserted at the bottom of your pages.</p>
-<p>To disable the profiler you would use:</p>
+<p>有効にするとレポートが生成され、ページの下部に挿入されます。</p>
+<p>プロファイラを無効にするには次のようにします:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">output</span><span class="o">-&gt;</span><span class="na">enable_profiler</span><span class="p">(</span><span class="k">FALSE</span><span class="p">);</span>
 </pre></div>
 </div>
@@ -755,11 +755,11 @@ and other data at the bottom of your pages for debugging and optimization purpos
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">パラメタ:</th><td class="field-body"><ul class="first simple">
-<li><strong>$sections</strong> (<em>array</em>) &#8211; Profiler sections</li>
+<li><strong>$sections</strong> (<em>array</em>) &#8211; プロファイラセクション</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body"><p class="first">CI_Output instance (method chaining)</p>
+<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body"><p class="first">CI_Output インスタンス (メソッドチェイン)</p>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name">戻り値の型:</th><td class="field-body"><p class="first last">CI_Output</p>
@@ -767,8 +767,8 @@ and other data at the bottom of your pages for debugging and optimization purpos
 </tr>
 </tbody>
 </table>
-<p>Permits you to enable/disable specific sections of the Profiler when it is enabled.
-Please refer to the <a class="reference internal" href="../general/profiling.html"><em>Profiler</em></a> documentation for further information.</p>
+<p>プロファイラが有効になっているとき、特定のセクションを有効/無効にすることができます。
+詳細は <a class="reference internal" href="../general/profiling.html"><em>プロファイラ</em></a> ドキュメントを参照してください。</p>
 </dd></dl>
 
 <dl class="method">
@@ -779,11 +779,11 @@ Please refer to the <a class="reference internal" href="../general/profiling.htm
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">パラメタ:</th><td class="field-body"><ul class="first simple">
-<li><strong>$time</strong> (<em>int</em>) &#8211; Cache expiration time in minutes</li>
+<li><strong>$time</strong> (<em>int</em>) &#8211; 秒単位でキャッシュの有効期限</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body"><p class="first">CI_Output instance (method chaining)</p>
+<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body"><p class="first">CI_Output インスタンス (メソッドチェイン)</p>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name">戻り値の型:</th><td class="field-body"><p class="first last">CI_Output</p>
@@ -791,8 +791,8 @@ Please refer to the <a class="reference internal" href="../general/profiling.htm
 </tr>
 </tbody>
 </table>
-<p>Caches the current page for the specified amount of minutes.</p>
-<p>For more information, please see the <a class="reference internal" href="../general/caching.html"><em>caching documentation</em></a>.</p>
+<p>指定された秒数で現在のページをキャッシュします。</p>
+<p>詳細は <a class="reference internal" href="../general/caching.html"><em>キャッシングのドキュメント</em></a> を参照してください。</p>
 </dd></dl>
 
 <dl class="method">
@@ -803,7 +803,7 @@ Please refer to the <a class="reference internal" href="../general/profiling.htm
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">パラメタ:</th><td class="field-body"><ul class="first simple">
-<li><strong>$output</strong> (<em>string</em>) &#8211; Output data override</li>
+<li><strong>$output</strong> (<em>string</em>) &#8211; 上書きする出力データ</li>
 </ul>
 </td>
 </tr>
@@ -815,14 +815,14 @@ Please refer to the <a class="reference internal" href="../general/profiling.htm
 </tr>
 </tbody>
 </table>
-<p>Sends finalized output data to the browser along with any server headers. It also stops benchmark
-timers.</p>
+<p>いくつかのサーバヘッダとともにブラウザに最終出力データを送信します。
+また、ベンチマークタイマを停止します。</p>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
-<p class="last">This method is called automatically at the end of script execution, you won&#8217;t need to
-call it manually unless you are aborting script execution using <tt class="docutils literal"><span class="pre">exit()</span></tt> or <tt class="docutils literal"><span class="pre">die()</span></tt> in your code.</p>
+<p class="last">このメソッドはスクリプト実行の終了時に自動的に呼び出されるので、
+<tt class="docutils literal"><span class="pre">exit()</span></tt> または <tt class="docutils literal"><span class="pre">die()</span></tt> を使用してスクリプト実行を中止しない限り、手動で呼び出す必要はありません。</p>
 </div>
-<p>Example:</p>
+<p>例:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$response</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span><span class="s1">&#39;status&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;OK&#39;</span><span class="p">);</span>
 
 <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">output</span>
@@ -835,7 +835,7 @@ call it manually unless you are aborting script execution using <tt class="docut
 </div>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
-<p class="last">Calling this method manually without aborting script execution will result in duplicated output.</p>
+<p class="last">スクリプト実行を中断することなく手動でこのメソッドを呼び出すと、出力が重複します。</p>
 </div>
 </dd></dl>
 
