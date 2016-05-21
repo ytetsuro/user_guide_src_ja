@@ -15,7 +15,7 @@
 ヘルパーのロード
 ================
 
-このヘルパーは次のコードを使ってロードします
+このヘルパーは次のコードを使ってロードします:
 
 ::
 
@@ -29,13 +29,13 @@
 
 .. php:function:: directory_map($source_dir[, $directory_depth = 0[, $hidden = FALSE]])
 
-	:param	string	$source_dir: Path to the source directory
-	:param	int	$directory_depth: Depth of directories to traverse (0 = fully recursive, 1 = current dir, etc)
-	:param	bool	$hidden: Whether to include hidden directories
-	:returns:	An array of files
+	:param	string	$source_dir: ソースディレクトリのパス
+	:param	int	$directory_depth: 横断するディレクトリの深さ (0 = 全てのディレクトリを再帰的に行う、 1 = 現在のディレクトリ、その他)
+	:param	bool	$hidden: 隠しディレクトリを含めるかどうか
+	:returns:	ファイルの配列
 	:rtype:	array
 
-	Examples::
+	例::
 
 		$map = directory_map('./mydirectory/');
 
@@ -48,7 +48,7 @@
 
 		$map = directory_map('./mydirectory/', 1);
 
-	初期設定では、戻り値の配列に隠しファイルは含まれません。
+	デフォルトでは、戻り値の配列に隠しファイルは含まれません。
 	この動作をオーバーライドするには、第3引数に true (ブール値)を指定します::
 
 		$map = directory_map('./mydirectory/', FALSE, TRUE);
