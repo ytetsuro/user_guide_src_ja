@@ -84,7 +84,7 @@
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../contributing/index.html">CodeIgniter への貢献</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../documentation/index.html">Writing CodeIgniter Documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../documentation/index.html">CodeIgniter のドキュメントを書く</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../DCO.html">Developer&#8217;s Certificate of Origin 1.1</a></li>
 </ul>
 </li>
@@ -188,9 +188,9 @@
 <li class="toctree-l2"><a class="reference internal" href="../helpers/html_helper.html">HTML Helper</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../helpers/inflector_helper.html">語形変換ヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../helpers/language_helper.html">言語ヘルパー</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../helpers/number_helper.html">Number Helper</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../helpers/path_helper.html">Path Helper</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../helpers/security_helper.html">Security Helper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/number_helper.html">数字ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/path_helper.html">パスヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/security_helper.html">セキュリティヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../helpers/smiley_helper.html">スマイリーヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../helpers/string_helper.html">文字列ヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../helpers/text_helper.html">テキストヘルパー</a></li>
@@ -270,7 +270,7 @@
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../contributing/index.html">CodeIgniter への貢献</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../documentation/index.html">Writing CodeIgniter Documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../documentation/index.html">CodeIgniter のドキュメントを書く</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../DCO.html">Developer&#8217;s Certificate of Origin 1.1</a></li>
 </ul>
 </li>
@@ -374,9 +374,9 @@
 <li class="toctree-l2"><a class="reference internal" href="../helpers/html_helper.html">HTML Helper</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../helpers/inflector_helper.html">語形変換ヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../helpers/language_helper.html">言語ヘルパー</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../helpers/number_helper.html">Number Helper</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../helpers/path_helper.html">Path Helper</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../helpers/security_helper.html">Security Helper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/number_helper.html">数字ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/path_helper.html">パスヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/security_helper.html">セキュリティヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../helpers/smiley_helper.html">スマイリーヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../helpers/string_helper.html">文字列ヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../helpers/text_helper.html">テキストヘルパー</a></li>
@@ -472,24 +472,29 @@
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
 <p>&#8220;code_start&#8221; と &#8220;code_end&#8221; のところの語は、任意の語が使えます。
-これら2つの言葉は、単に観測点を2つ設定するために使われたに過ぎません。    好きな言葉を使えますし、
+これら2つの言葉は、単に観測点を2つ設定するために使われたに過ぎません。好きな言葉を使えますし、
 重複させて観測点の組み合わせを設定することもできます。次のような例が考えられます:</p>
-<blockquote class="last">
-<div><p>$this-&gt;benchmark-&gt;mark(&#8216;dog&#8217;);</p>
-<p>// ここに何かのコードを記述</p>
-<p>$this-&gt;benchmark-&gt;mark(&#8216;cat&#8217;);</p>
-<p>// さらに、ここに何かのコードを記述</p>
-<p>$this-&gt;benchmark-&gt;mark(&#8216;bird&#8217;);</p>
-<p>echo $this-&gt;benchmark-&gt;elapsed_time(&#8216;dog&#8217;, &#8216;cat&#8217;);
-echo $this-&gt;benchmark-&gt;elapsed_time(&#8216;cat&#8217;, &#8216;bird&#8217;);
-echo $this-&gt;benchmark-&gt;elapsed_time(&#8216;dog&#8217;, &#8216;bird&#8217;);</p>
-</div></blockquote>
+<div class="last highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">benchmark</span><span class="o">-&gt;</span><span class="na">mark</span><span class="p">(</span><span class="s1">&#39;dog&#39;</span><span class="p">);</span>
+
+<span class="c1">// ここに何かのコードを記述</span>
+
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">benchmark</span><span class="o">-&gt;</span><span class="na">mark</span><span class="p">(</span><span class="s1">&#39;cat&#39;</span><span class="p">);</span>
+
+<span class="c1">// さらに、ここに何かのコードを記述</span>
+
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">benchmark</span><span class="o">-&gt;</span><span class="na">mark</span><span class="p">(</span><span class="s1">&#39;bird&#39;</span><span class="p">);</span>
+
+<span class="k">echo</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">benchmark</span><span class="o">-&gt;</span><span class="na">elapsed_time</span><span class="p">(</span><span class="s1">&#39;dog&#39;</span><span class="p">,</span> <span class="s1">&#39;cat&#39;</span><span class="p">);</span>
+<span class="k">echo</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">benchmark</span><span class="o">-&gt;</span><span class="na">elapsed_time</span><span class="p">(</span><span class="s1">&#39;cat&#39;</span><span class="p">,</span> <span class="s1">&#39;bird&#39;</span><span class="p">);</span>
+<span class="k">echo</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">benchmark</span><span class="o">-&gt;</span><span class="na">elapsed_time</span><span class="p">(</span><span class="s1">&#39;dog&#39;</span><span class="p">,</span> <span class="s1">&#39;bird&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="id3">
 <h3><a class="toc-backref" href="#id8">プロファイラ用の観測点</a><a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p><a class="reference internal" href="../general/profiling.html"><em>プロファイラ</em></a> でベンチマークデータを使用するには、 観測点はペアにする必要があり、
 各々の観測点の名前の末尾を _start と _end にしなければなりません。 さらに、ペアになる観測点の名前は、
-元が同じ(identicaly)である必要があります [ 訳注: ペアになっている開始点と終了点の名前は、末尾の_start _end
+元が同じ(identically)である必要があります [ 訳注: ペアになっている開始点と終了点の名前は、末尾の_start _end
 を除いた部分が同じものでなければなりません ]。 例:</p>
 <blockquote>
 <div><p>$this-&gt;benchmark-&gt;mark(&#8216;my_mark_start&#8217;);</p>
@@ -507,14 +512,15 @@ echo $this-&gt;benchmark-&gt;elapsed_time(&#8216;dog&#8217;, &#8216;bird&#8217;)
 <p>CodeIgniter がスタートした瞬間から、出力がブラウザに送信された瞬間ま
 での総計の経過時間を表示したいときには、 ビューのテンプレートに次の
 コードを設置するだけです:</p>
-<blockquote>
-<div>&lt;?php echo $this-&gt;benchmark-&gt;elapsed_time();?&gt;</div></blockquote>
-<p>上の2つの観測点の計算で、使った関数と引数がないという
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span> <span class="k">echo</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">benchmark</span><span class="o">-&gt;</span><span class="na">elapsed_time</span><span class="p">();</span><span class="cp">?&gt;</span>
+</pre></div>
+</div>
+<p>上の2つの観測点の計算で、使った関数と引数が <strong>ない</strong> という
 こと以外同じものを使用していることに気づいたと思います。
-CodeIgniterでは、引数が省略されたとき、最終出力がブラウ
-ザに送信されるまでベンチマークは停止しません。どこで関
-数を使用したかには関係なく、タイマーは最後の最後まで継
-続されます。</p>
+CodeIgniter では、引数が省略されたとき、最終出力がブラウザに
+送信されるまでベンチマークは停止しません。
+どこで関数を使用したかには関係なく、
+タイマーは最後の最後まで継続されます。</p>
 <p>PHP をそのまま使用したくないときは、ビューのファイル内で次の
 擬似変数を用いれば、総計経過時間を見る代替手段になります:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="p">{</span><span class="nx">elapsed_time</span><span class="p">}</span>
@@ -529,7 +535,7 @@ CodeIgniterでは、引数が省略されたとき、最終出力がブラウ
 <div class="section" id="id5">
 <h3><a class="toc-backref" href="#id10">メモリ使用量の表示</a><a class="headerlink" href="#id5" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p>PHP の設定が &#8211;enable-memory-limit になっている場合、ビューのファイル内
-に次のコードを配置することで、 システム全体のメモリの使用量を表示させる
+に次のコードを配置することで、システム全体のメモリの使用量を表示させる
 ことができます:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span> <span class="k">echo</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">benchmark</span><span class="o">-&gt;</span><span class="na">memory_usage</span><span class="p">();</span><span class="cp">?&gt;</span>
 </pre></div>
@@ -580,7 +586,7 @@ CodeIgniterでは、引数が省略されたとき、最終出力がブラウ
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">パラメタ:</th><td class="field-body"><ul class="first simple">
 <li><strong>$point1</strong> (<em>string</em>) &#8211; 特定のマークされた点</li>
-<li><strong>$point2</strong> (<em>string</em>) &#8211; a particular marked point</li>
+<li><strong>$point2</strong> (<em>string</em>) &#8211; 特定のマークされた点</li>
 <li><strong>$decimals</strong> (<em>int</em>) &#8211; 小数点以下の桁数</li>
 </ul>
 </td>
@@ -594,7 +600,7 @@ CodeIgniterでは、引数が省略されたとき、最終出力がブラウ
 </tbody>
 </table>
 <p>2つのマークされた点の時差を計算して、返します。</p>
-<p>最初の引数が省略されたとき、｛elapsed_time｝擬似
+<p>最初の引数が省略されたとき、 <tt class="docutils literal"><span class="pre">{elapsed_time}</span></tt> 擬似
 変数を用いれば、システム全体のテンプレートで示さ
 れる実行時間を代替し、クラスが実行値をこの変数に
 変換して出力します。</p>
@@ -613,7 +619,7 @@ CodeIgniterでは、引数が省略されたとき、最終出力がブラウ
 </tr>
 </tbody>
 </table>
-<p>単に``{memory_usage}``マーカーを返します。</p>
+<p>単に <tt class="docutils literal"><span class="pre">{memory_usage}</span></tt> マーカーを返します。</p>
 <p>どこでもテンプレート上の最後まで計算された
 メモリ量を許容し、<a class="reference internal" href="output.html"><em>出力クラス</em></a> は
 実行値をこの変数に変換します。</p>
@@ -643,7 +649,7 @@ CodeIgniterでは、引数が省略されたとき、最終出力がブラウ
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2016, British Columbia Institute of Technology.
-      最終更新: May 19, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>
+      最終更新: May 22, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>
     </p>
   </div>
 

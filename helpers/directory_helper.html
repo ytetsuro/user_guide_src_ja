@@ -84,7 +84,7 @@
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../contributing/index.html">CodeIgniter への貢献</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../documentation/index.html">Writing CodeIgniter Documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../documentation/index.html">CodeIgniter のドキュメントを書く</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../DCO.html">Developer&#8217;s Certificate of Origin 1.1</a></li>
 </ul>
 </li>
@@ -188,9 +188,9 @@
 <li class="toctree-l2"><a class="reference internal" href="html_helper.html">HTML Helper</a></li>
 <li class="toctree-l2"><a class="reference internal" href="inflector_helper.html">語形変換ヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="language_helper.html">言語ヘルパー</a></li>
-<li class="toctree-l2"><a class="reference internal" href="number_helper.html">Number Helper</a></li>
-<li class="toctree-l2"><a class="reference internal" href="path_helper.html">Path Helper</a></li>
-<li class="toctree-l2"><a class="reference internal" href="security_helper.html">Security Helper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="number_helper.html">数字ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="path_helper.html">パスヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security_helper.html">セキュリティヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="smiley_helper.html">スマイリーヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="string_helper.html">文字列ヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="text_helper.html">テキストヘルパー</a></li>
@@ -270,7 +270,7 @@
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../contributing/index.html">CodeIgniter への貢献</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../documentation/index.html">Writing CodeIgniter Documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../documentation/index.html">CodeIgniter のドキュメントを書く</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../DCO.html">Developer&#8217;s Certificate of Origin 1.1</a></li>
 </ul>
 </li>
@@ -374,9 +374,9 @@
 <li class="toctree-l2"><a class="reference internal" href="html_helper.html">HTML Helper</a></li>
 <li class="toctree-l2"><a class="reference internal" href="inflector_helper.html">語形変換ヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="language_helper.html">言語ヘルパー</a></li>
-<li class="toctree-l2"><a class="reference internal" href="number_helper.html">Number Helper</a></li>
-<li class="toctree-l2"><a class="reference internal" href="path_helper.html">Path Helper</a></li>
-<li class="toctree-l2"><a class="reference internal" href="security_helper.html">Security Helper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="number_helper.html">数字ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="path_helper.html">パスヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security_helper.html">セキュリティヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="smiley_helper.html">スマイリーヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="string_helper.html">文字列ヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="text_helper.html">テキストヘルパー</a></li>
@@ -436,7 +436,7 @@
 </div>
 <div class="custom-index container"></div><div class="section" id="id2">
 <h2><a class="toc-backref" href="#id4">ヘルパーのロード</a><a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>このヘルパーは次のコードを使ってロードします</p>
+<p>このヘルパーは次のコードを使ってロードします:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">helper</span><span class="p">(</span><span class="s1">&#39;directory&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
@@ -452,13 +452,13 @@
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">パラメタ:</th><td class="field-body"><ul class="first simple">
-<li><strong>$source_dir</strong> (<em>string</em>) &#8211; Path to the source directory</li>
-<li><strong>$directory_depth</strong> (<em>int</em>) &#8211; Depth of directories to traverse (0 = fully recursive, 1 = current dir, etc)</li>
-<li><strong>$hidden</strong> (<em>bool</em>) &#8211; Whether to include hidden directories</li>
+<li><strong>$source_dir</strong> (<em>string</em>) &#8211; ソースディレクトリのパス</li>
+<li><strong>$directory_depth</strong> (<em>int</em>) &#8211; 横断するディレクトリの深さ (0 = 全てのディレクトリを再帰的に行う、 1 = 現在のディレクトリ、その他)</li>
+<li><strong>$hidden</strong> (<em>bool</em>) &#8211; 隠しディレクトリを含めるかどうか</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body"><p class="first">An array of files</p>
+<tr class="field-even field"><th class="field-name">戻り値:</th><td class="field-body"><p class="first">ファイルの配列</p>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name">戻り値の型:</th><td class="field-body"><p class="first last">array</p>
@@ -466,7 +466,7 @@
 </tr>
 </tbody>
 </table>
-<p>Examples:</p>
+<p>例:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$map</span> <span class="o">=</span> <span class="nx">directory_map</span><span class="p">(</span><span class="s1">&#39;./mydirectory/&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
@@ -480,7 +480,7 @@
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$map</span> <span class="o">=</span> <span class="nx">directory_map</span><span class="p">(</span><span class="s1">&#39;./mydirectory/&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>初期設定では、戻り値の配列に隠しファイルは含まれません。
+<p>デフォルトでは、戻り値の配列に隠しファイルは含まれません。
 この動作をオーバーライドするには、第3引数に true (ブール値)を指定します:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$map</span> <span class="o">=</span> <span class="nx">directory_map</span><span class="p">(</span><span class="s1">&#39;./mydirectory/&#39;</span><span class="p">,</span> <span class="k">FALSE</span><span class="p">,</span> <span class="k">TRUE</span><span class="p">);</span>
 </pre></div>
@@ -538,7 +538,7 @@
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2016, British Columbia Institute of Technology.
-      最終更新: May 19, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>
+      最終更新: May 22, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>
     </p>
   </div>
 
