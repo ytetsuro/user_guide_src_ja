@@ -38,8 +38,7 @@ HTML として挿入された <div> タグは、
 HTML や ePub、PDFなど表示されたものを見るためには、Sphinx と一緒に
 Shpinx のための PHP ドメイン拡張 をインストールする必要があります。
 基本的には、Python をインストールする必要があります。
-最後に、コードブロックが適切にハイライトされるために
-Pygments 用の CI Lexer をインストールします。
+最後に、コードブロックが適切にハイライトされるために Pygments 用の CI Lexer をインストールします。
 
 .. code-block:: bash
 
